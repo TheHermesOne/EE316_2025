@@ -126,7 +126,7 @@ ENTITY DE2_115 IS
 ----  Mezzanine Card (HSMC) connector (not implemented)	  
 ---- 			GPIO	      
       GPIO         : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0)	-- GPIO Connection                                                                                                
---   );
+   );
 END DE2_115;
 
 ARCHITECTURE structural OF DE2_115 IS
@@ -135,9 +135,7 @@ ARCHITECTURE structural OF DE2_115 IS
 
 component top_level is
 		port (
-		iReset_n				: in std_logic; 
 		iClk					: in std_logic; 
-		iCnt_en 				: in std_logic;	
 		oQ						: out std_logic_vector(3 downto 0);
 		oY						: out std_logic_vector(1 downto 0)
 		);
@@ -149,10 +147,8 @@ BEGIN
 
 Inst_top_level: top_level 
 		port map (
-		iReset_n	=> KEY(0), 
 		iClk		=> CLOCK_50, 
-		iCnt_en 	=> SW(0),	
-		oQ			=> LEDR(3 downto 0),
+		oQ			=> LEDG(3 downto 0),
 		oY			=> LEDG(1 downto 0)
 		);
 
