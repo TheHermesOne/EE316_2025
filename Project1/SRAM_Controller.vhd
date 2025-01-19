@@ -38,3 +38,75 @@ entity SRAM_Controller is
 					tri_reg <= '1';
 					we_reg <= '1';
 					oe_reg <= '1';
+				elsif ( clk'event and clk = '1') then
+					state_reg <= state_next;
+					addr_reg <= addr_next;
+					data_f2s_reg <= data_f2s_next;
+					data_s2f_reg <= data_s2f_next;
+					tri_reg <= tri_buf;
+					we_reg <= we_buf;
+					oe_reg <= oe_buf;
+				end if;
+			end process;
+	-- Next state Logic
+	
+		proccess(state_reg, mem, rw, dio, addr, data_f2s, data_f2s_reg, data_s2f_reg, addr_reg)
+			begin
+				addr_next <= addr_reg;
+				data_f2s_next <= data_f2s_reg;
+				data_s2f_next <= data_s2f_reg;
+				ready = '0';
+				case state_reg is
+					when idle => 
+						if (mem = '0') then
+							state_next <= idle;
+						else
+							addr_next <= addr;
+							if (rw = '0') -- writing
+								state_next <= w1;
+								data_f2s_next <= data_f2s;
+							else
+								state_next <= r1;
+							end if;
+						end if;
+						ready <= '1';
+					when w1 => 
+						state_next <= w2;
+					when w2 => 
+						state_next <= idle;
+					when r1 => 
+						state_next <= r2;
+					when r2 => 
+						data_f2s_next <= dio;
+						state_next <= idle;
+				end case;
+			end process;
+		-- Look-ahead output logic
+		process(state_next)
+			begin
+				tri_buf <= '1';
+				we_buf <= '1';
+				oe_buf <= '1';
+				case state_next is
+					when idle => 
+					when w1 =>
+						tri_buf <= '0';
+						we_buf <= '0';
+					when w2 => 
+						tri_buf <= '0';
+					when r1 => 
+						oe_buf <= '0';
+					when r2 =>
+						oe_buf <= '0';
+				end case;
+		end process;
+	-- to main system
+		data_s2f_r <= data_s2f_reg;
+		data_s2f_ur <= dio;
+	-- To SRAM
+		we_n <= we_reg;
+		oe_n <= oe_reg;
+		ad <= addr_reg;
+	-- I/O for SRAM chip
+		ce_n <= '0';
+		dio <= data_f2s_reg when
