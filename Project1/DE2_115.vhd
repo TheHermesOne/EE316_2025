@@ -135,9 +135,13 @@ ARCHITECTURE structural OF DE2_115 IS
 
 component top_level is
 		port (
-		iClk					: in std_logic; 
-		oQ						: out std_logic_vector(3 downto 0);
-		oY						: out std_logic_vector(1 downto 0)
+		iClk					: in std_logic;
+		HEX0					: out std_LOGIC_VECTOR(6 downto 0);
+		HEX1					: out std_LOGIC_VECTOR(6 downto 0);
+		HEX2					: out std_LOGIC_VECTOR(6 downto 0);
+		HEX3					: out std_LOGIC_VECTOR(6 downto 0);
+		HEX4					: out std_LOGIC_VECTOR(6 downto 0);
+		HEX5					: out std_LOGIC_VECTOR(6 downto 0)
 		);
 end component top_level;
 
@@ -148,8 +152,12 @@ BEGIN
 Inst_top_level: top_level 
 		port map (
 		iClk		=> CLOCK_50, 
-		oQ			=> LEDG(3 downto 0),
-		oY			=> LEDG(1 downto 0)
+		HEX0		=> HEX0(6 downto 0),
+		HEX1		=> HEX1(6 downto 0),
+		HEX2		=> HEX2(6 downto 0),
+		HEX3		=> HEX3(6 downto 0),
+		HEX4		=> HEX4(6 downto 0),
+		HEX5		=> HEX5(6 downto 0)
 		);
 
 END structural;

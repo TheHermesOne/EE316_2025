@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Project1
-Thu Jan 16 13:46:05 2025
+Sun Jan 19 14:47:18 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Jan 16 13:46:05 2025                ;
+; Analysis & Synthesis Status        ; Failed - Sun Jan 19 14:47:18 2025                ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; Project1                                         ;
 ; Top-level Entity Name              ; DE2_115                                          ;
@@ -163,7 +163,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Jan 16 13:46:03 2025
+    Info: Processing started: Sun Jan 19 14:47:17 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project1 -c Project1
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file de2_115.vhd
@@ -178,36 +178,22 @@ Info (12021): Found 2 design units, including 1 entities, in source file initrom
 Info (12021): Found 2 design units, including 1 entities, in source file sram.vhd
     Info (12022): Found design unit 1: sram-SYN
     Info (12023): Found entity 1: SRAM
-Info (12127): Elaborating entity "DE2_115" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(16): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(17): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(18): used implicit default value for signal "HEX2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(19): used implicit default value for signal "HEX3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(20): used implicit default value for signal "HEX4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(21): used implicit default value for signal "HEX5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(57): used implicit default value for signal "SRAM_ADDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(58): used implicit default value for signal "SRAM_UB_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(59): used implicit default value for signal "SRAM_LB_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(60): used implicit default value for signal "SRAM_WE_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(61): used implicit default value for signal "SRAM_CE_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(62): used implicit default value for signal "SRAM_OE_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10873): Using initial value X (don't care) for net "LEDG[8..4]" at DE2_115.vhd(25)
-Info (12128): Elaborating entity "top_level" for hierarchy "top_level:Inst_top_level"
-Warning (12125): Using design file clk_enabler.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: clk_enabler-behv
-    Info (12023): Found entity 1: clk_enabler
-Info (12128): Elaborating entity "clk_enabler" for hierarchy "top_level:Inst_top_level|clk_enabler:Inst_clk_enabler"
-Warning (12125): Using design file univ_bin_counter.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: univ_bin_counter-arch
-    Info (12023): Found entity 1: univ_bin_counter
-Info (12128): Elaborating entity "univ_bin_counter" for hierarchy "top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter"
-Warning (10492): VHDL Process Statement warning at univ_bin_counter.vhd(30): signal "clk_en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Error (12006): Node instance "Inst_clk_Reset_Delay" instantiates undefined entity "Reset_Delay" File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 77
-Error (12006): Node instance "Inst_sys_clk" instantiates undefined entity "sys_clk" File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 109
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 2 errors, 16 warnings
+Error (10500): VHDL syntax error at SRAM_Controller.vhd(13) near text "0";  expecting ")", or "," File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/SRAM_Controller.vhd Line: 13
+Error (10523): Ignored construct SRAM_Controller at SRAM_Controller.vhd(4) due to previous errors File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/SRAM_Controller.vhd Line: 4
+Error (10500): VHDL syntax error at SRAM_Controller.vhd(26) near text ":";  expecting an identifier File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/SRAM_Controller.vhd Line: 26
+Error (10500): VHDL syntax error at SRAM_Controller.vhd(27) near text ":";  expecting an identifier File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/SRAM_Controller.vhd Line: 27
+Error (10522): VHDL Syntax error at SRAM_Controller.vhd(40): experienced unexpected end-of-file ;  expecting "end", or "(", or an identifier, or a sequential statement File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/SRAM_Controller.vhd Line: 40
+Info (12021): Found 0 design units, including 0 entities, in source file sram_controller.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file 7_segment_display.vhd
+    Info (12022): Found design unit 1: seven_segment-Behavioral
+    Info (12023): Found entity 1: seven_segment
+Info (12021): Found 2 design units, including 1 entities, in source file kp_controller.vhd
+    Info (12022): Found design unit 1: KP_Controller-Behavioral
+    Info (12023): Found entity 1: KP_Controller
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 5 errors, 0 warnings
     Error: Peak virtual memory: 4623 megabytes
-    Error: Processing ended: Thu Jan 16 13:46:05 2025
-    Error: Elapsed time: 00:00:02
+    Error: Processing ended: Sun Jan 19 14:47:18 2025
+    Error: Elapsed time: 00:00:01
     Error: Total CPU time (on all processors): 00:00:01
 
 

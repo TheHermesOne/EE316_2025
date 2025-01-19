@@ -5,7 +5,8 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity seven_segment is
     Port (
-        keypad_input : in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit input from keypad
+		    clk: in STD_logic;
+		 keypad_input : in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit input from keypad
         HEX0 : out STD_LOGIC_VECTOR(6 downto 0); -- 7-segment display output for HEX0
         HEX1 : out STD_LOGIC_VECTOR(6 downto 0); -- HEX1
         HEX2 : out STD_LOGIC_VECTOR(6 downto 0); -- HEX2
@@ -16,7 +17,15 @@ entity seven_segment is
 end seven_segment;
 
 architecture Behavioral of seven_segment is
-
+	component clk_enabler is
+		 GENERIC (
+			 CONSTANT cnt_max : integer := 49999999);      --  1.0 Hz 	
+		 PORT(	
+			clock						: in std_logic;	 
+			clk_en					: out std_logic
+		);
+	end component;
+	
     -- 7-segment display encoding for HEX values 0 to F
     function to_7_segment(value : STD_LOGIC_VECTOR(3 downto 0)) return STD_LOGIC_VECTOR is -- Defines a helper function to map a 4-bit binary number (value) to the corresponding 7-segment display
     begin
@@ -42,6 +51,13 @@ architecture Behavioral of seven_segment is
     end function;
 
 begin
+	Inst_clk_enabler: clk_enabler
+			generic map(
+			cnt_max 		=> 49999999)
+			port map( 
+			clock 		=> clk, 			-- output from sys_clk
+			clk_en 		=> clk_enable  -- enable every 10th sys_clk edge
+			);
     process(keypad_input)-- main logic that begins process whenever keypad is pressed
     begin
         if keypad_input(4) = '0' then -- checks to see if its Address or DATA
