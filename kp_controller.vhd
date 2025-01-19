@@ -8,30 +8,30 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity KP_Controller is
     Port (
-        clk         : in  std_logic;      -- System clock
-        reset       : in  std_logic;      -- Reset signal
-        rows        : in  std_logic_vector(3 downto 0); 
-        cols        : out std_logic_vector(4 downto 0);
-        oData       : out std_logic_vector(4 downto 0);
-        kp_pulse    : out std_logic       
+        clk         : in  std_logic;     --1HZ
+        reset       : in  std_logic;    
+        keypad_rows : in  std_logic_vector(3 downto 0); 
+        keypad_columns : out std_logic_vector(4 downto 0);
+        key_code    : out std_logic_vector(4 downto 0);
+        key_pulse   : out std_logic       
     );
 end KP_Controller;
 
 architecture Behavioral of KP_Controller is
 -- state machine for key pressing
-    type state_type is (INIT, FIND_ROW, VALID_KEY);
+    type state_type is (STATE_INIT, STATE_FIND_ROW, STATE_VALID_KEY);
     signal current_state, next_state : state_type;
 
--- separate state machine for each row to be debounced
-    type db_state_type is (A, B, C, D);
-    signal current_db_state, next_db_state : db_state_type;
+-- separate state machine for each column to be debounced
+    type debounce_state_type is (DB_STATE_A, DB_STATE_B, DB_STATE_C, DB_STATE_D);
+    signal current_debounce_state, next_debounce_state : debounce_state_type;
 
-    signal kp             : std_logic;                  
-    signal key_valid      : std_logic;      
-    signal column_valid   : std_logic_vector(4 downto 0);
-    signal row_input      : std_logic_vector(3 downto 0);
-    signal key_loc        : integer range 0 to 18;       -- location of key
-    signal debounce_int   : integer range 0 to 5000 := 0; -- 5ms for debouncing             
+    signal key_press         : std_logic;                  
+    signal key_valid_signal  : std_logic;      
+    signal column_signal     : std_logic_vector(4 downto 0);
+    signal row_signal        : std_logic_vector(3 downto 0);
+    signal key_position      : integer range 0 to 18;       -- location of key
+    signal debounce_counter  : integer range 0 to 5000 := 0; -- 5ms for debouncing             
   
 
     constant key_layout : std_logic_vector(4 downto 0) := 
@@ -42,105 +42,101 @@ architecture Behavioral of KP_Controller is
 
 begin
 
-    -- Column Driving Logic
-    cols <= col_active;
+    keypad_columns <= column_signal;
 
-    -- **Row Scanning State Machine**
+-- state machine for finding key
     process(clk, reset)
     begin
         if reset = '1' then
-            current_scan_state <= IDLE;
+            current_state <= STATE_INIT;
         elsif rising_edge(clk) then
-            current_scan_state <= next_scan_state;
+            current_state <= next_state;
         end if;
     end process;
 
-    process(current_scan_state, stable_key, kp, row_input)
+    process(current_state, key_valid_signal, key_press, row_signal)
     begin
-        -- Default values
-        next_scan_state <= current_scan_state;
-        col_active <= "00001"; -- Default first column
+        next_state <= current_state;
+        column_signal <= "00001"; 
 
-        case current_scan_state is
-            when IDLE =>
-                if stable_key = '0' then
-                    next_scan_state <= SCAN_ROW;
+        case current_state is
+            when STATE_INIT =>
+                if key_valid_signal = '0' then
+                    next_state <= STATE_FIND_ROW;
                 end if;
 
-            when SCAN_ROW =>
-                for row_idx in 0 to 3 loop
-                    col_active(row_idx) <= '1';
-                    if kp = '1' then
-                        key_position <= row_idx * 5 + to_integer(unsigned(col_active));
-                        next_scan_state <= PROCESS_KEY;
+            when STATE_FIND_ROW =>
+                for row_index in 0 to 3 loop
+                     column_signal(row_index) <= '1';
+                    if key_press = '1' then
+                        key_position <= row_index * 5 + to_integer(unsigned(column_signal));
+                        next_state <= STATE_VALID_KEY;
                     end if;
                 end loop;
 
-            when PROCESS_KEY =>
-                if stable_key = '1' then
+            when STATE_VALID_KEY =>
+                if key_valid_signal = '1' then
                     key_code <= std_logic_vector(to_unsigned(key_position, 5));
-                    key_valid <= '1';
-                    next_scan_state <= IDLE;
+                    key_valid_signal <= '1';
+                    next_state <= STATE_INIT;
                 end if;
         end case;
     end process;
 
-    -- **Debounce State Machine**
+    -- state machine for debouncing
     process(clk, reset)
     begin
         if reset = '1' then
-            current_debounce_state <= A;
+            current_debounce_state <= DB_STATE_A;
         elsif rising_edge(clk) then
             current_debounce_state <= next_debounce_state;
         end if;
     end process;
 
-    process(current_debounce_state, kp, debounce_timer)
+    process(current_debounce_state, key_press, debounce_counter)
     begin
-        -- Default next state
         next_debounce_state <= current_debounce_state;
 
         case current_debounce_state is
-            when A =>
-                if kp = '1' then
-                    next_debounce_state <= B;
+            when DB_STATE_A =>
+                if key_press = '1' then
+                    next_debounce_state <= DB_STATE_B;
                 end if;
 
-            when B =>
-                if debounce_timer < 5000 then
-                    debounce_timer <= debounce_timer + 1;
+            when DB_STATE_B =>
+                if debounce_counter < 5000 then  -- 5ms delay added for db
+                    debounce_counter <= debounce_counter + 1;
                 else
-                    next_debounce_state <= C;
+                    next_debounce_state <= DB_STATE_C;
                 end if;
 
-            when C =>
-                if kp = '0' then
-                    next_debounce_state <= D;
+            when DB_STATE_C =>
+                if key_press = '0' then
+                    next_debounce_state <= DB_STATE_D;
                 end if;
 
-            when D =>
-                next_debounce_state <= A;
+            when DB_STATE_D =>
+                next_debounce_state <= DB_STATE_A;
         end case;
     end process;
 
-    -- Debounce Timer Logic
+    -- 5ms delay timer/counter
     process(clk, reset)
     begin
         if reset = '1' then
-            debounce_timer <= 0;
+            debounce_counter <= 0;
         elsif rising_edge(clk) then
-            if current_debounce_state = B and debounce_timer < 5000 then
-                debounce_timer <= debounce_timer + 1;
+            if current_debounce_state = DB_STATE_B and debounce_counter < 5000 then
+                debounce_counter <= debounce_counter + 1;
             else
-                debounce_timer <= 0;
+                debounce_counter <= 0;
             end if;
         end if;
     end process;
 
-    -- Key Press Signal
-    kp <= NOT(row_input(0) AND row_input(1) AND row_input(2) AND row_input(3));
+    key_press <= NOT(row_signal(0) AND row_signal(1) AND row_signal(2) AND row_signal(3));
 
-    -- Stable Key Signal
-    stable_key <= '1' when current_debounce_state = C else '0';
+    -- valid debounced key press signal output
+    key_valid_signal <= '1' when current_debounce_state = DB_STATE_C else '0';
 
 end Behavioral;
