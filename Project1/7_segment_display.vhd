@@ -3,77 +3,105 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-entity seven_segment is
+entity SevenSegment is
     Port (
-		    clk: in STD_logic;
-		 keypad_input : in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit input from keypad
-        HEX0 : out STD_LOGIC_VECTOR(6 downto 0); -- 7-segment display output for HEX0
-        HEX1 : out STD_LOGIC_VECTOR(6 downto 0); -- HEX1
-        HEX2 : out STD_LOGIC_VECTOR(6 downto 0); -- HEX2
-        HEX3 : out STD_LOGIC_VECTOR(6 downto 0); -- HEX3
-        HEX4 : out STD_LOGIC_VECTOR(6 downto 0); -- HEX4
-        HEX5 : out STD_LOGIC_VECTOR(6 downto 0)  -- HEX5
+        clk           : in  STD_LOGIC;             -- Clock signal from the keypad logic
+        reset         : in  STD_LOGIC;             -- Reset signal
+        keypad_input  : in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit input from keypad
+        seg_out       : out STD_LOGIC_VECTOR(6 downto 0); -- 7-segment display output
+        digit_select  : out STD_LOGIC_VECTOR(3 downto 0)  -- Select lines for the 7-segment displays
     );
-end seven_segment;
+end SevenSegment;
 
-architecture Behavioral of seven_segment is
-	component clk_enabler is
-		 GENERIC (
-			 CONSTANT cnt_max : integer := 49999999);      --  1.0 Hz 	
-		 PORT(	
-			clock						: in std_logic;	 
-			clk_en					: out std_logic
-		);
-	end component;
-	
-    -- 7-segment display encoding for HEX values 0 to F
-    function to_7_segment(value : STD_LOGIC_VECTOR(3 downto 0)) return STD_LOGIC_VECTOR is -- Defines a helper function to map a 4-bit binary number (value) to the corresponding 7-segment display
+architecture Behavioral of SevenSegment is
+
+    signal address_buffer : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); -- 8-bit address buffer
+    signal data_buffer    : STD_LOGIC_VECTOR(15 downto 0) := (others => '0'); -- 16-bit data buffer
+    signal current_digit  : STD_LOGIC_VECTOR(3 downto 0) := (others => '0'); -- Current digit
+    signal digit_index    : INTEGER range 0 to 3 := 0; -- Tracks the digit to update
+    signal display_mode   : STD_LOGIC := '0'; -- '0' for address, '1' for data
+
+    -- 7-segment encoding for hex digits 0-F
+    function hex_to_7seg(hex : STD_LOGIC_VECTOR(3 downto 0)) return STD_LOGIC_VECTOR is
+        variable seg : STD_LOGIC_VECTOR(6 downto 0);
     begin
-        case value is -- matches each 4 bit input to 7 segment display
-            when "0000" => return "1000000"; -- 0 -- 0 means on 1 means off
-            when "0001" => return "1111001"; -- 1
-            when "0010" => return "0100100"; -- 2
-            when "0011" => return "0110000"; -- 3
-            when "0100" => return "0011001"; -- 4
-            when "0101" => return "0010010"; -- 5
-            when "0110" => return "0000010"; -- 6
-            when "0111" => return "1111000"; -- 7
-            when "1000" => return "0000000"; -- 8
-            when "1001" => return "0010000"; -- 9
-            when "1010" => return "0001000"; -- A
-            when "1011" => return "0000011"; -- B
-            when "1100" => return "1000110"; -- C
-            when "1101" => return "0100001"; -- D
-            when "1110" => return "0000110"; -- E
-            when "1111" => return "0001110"; -- F
-            when others => return "1111111"; -- Blank display if unexpected input
+        case hex is
+            when "0000" => seg := "1000000"; -- 0
+            when "0001" => seg := "1111001"; -- 1
+            when "0010" => seg := "0100100"; -- 2
+            when "0011" => seg := "0110000"; -- 3
+            when "0100" => seg := "0011001"; -- 4
+            when "0101" => seg := "0010010"; -- 5
+            when "0110" => seg := "0000010"; -- 6
+            when "0111" => seg := "1111000"; -- 7
+            when "1000" => seg := "0000000"; -- 8
+            when "1001" => seg := "0010000"; -- 9
+            when "1010" => seg := "0001000"; -- A
+            when "1011" => seg := "0000011"; -- B
+            when "1100" => seg := "1000110"; -- C
+            when "1101" => seg := "0100001"; -- D
+            when "1110" => seg := "0000110"; -- E
+            when "1111" => seg := "0001110"; -- F
+            when others => seg := "1111111"; -- Blank
         end case;
-    end function;
+        return seg;
+    end hex_to_7seg;
 
 begin
-	Inst_clk_enabler: clk_enabler
-			generic map(
-			cnt_max 		=> 49999999)
-			port map( 
-			clock 		=> clk, 			-- output from sys_clk
-			clk_en 		=> clk_enable  -- enable every 10th sys_clk edge
-			);
-    process(keypad_input)-- main logic that begins process whenever keypad is pressed
+
+    process(clk, reset)
     begin
-        if keypad_input(4) = '0' then -- checks to see if its Address or DATA
-            HEX5 <= to_7_segment(keypad_input(3 downto 0)); -- In address mode, display the 4-bit value on HEX 5
-            HEX4 <= "1111111"; -- Blank display since these are unused in address mode
-            HEX3 <= "1111111";
-            HEX2 <= "1111111";
-            HEX1 <= "1111111";
-            HEX0 <= "1111111";
-        else -- Data mode when most sig bit is 1
-            HEX5 <= "1111111"; -- Blank display since these are not used in data mode
-            HEX4 <= "1111111";
-            HEX3 <= to_7_segment(keypad_input(3 downto 0)); -- in data mode, display the 4-bit value (keypad_input(3 downto 0)) on HEX3
-            HEX2 <= "1111111";
-            HEX1 <= "1111111";
-            HEX0 <= "1111111";
+        if reset = '1' then
+            -- Reset everything
+            address_buffer <= (others => '0');
+            data_buffer <= (others => '0');
+            digit_index <= 0;
+            display_mode <= '0';
+        elsif rising_edge(clk) then
+            -- Detect the mode based on MSB of keypad_input
+            display_mode <= keypad_input(4);
+
+            if display_mode = '0' then
+                -- Address mode: Shift input into the address buffer
+                address_buffer <= address_buffer(3 downto 0) & keypad_input(3 downto 0);
+            else
+                -- Data mode: Shift input into the data buffer
+                data_buffer <= data_buffer(11 downto 0) & keypad_input(3 downto 0);
+            end if;
+
+            -- Cycle through digits for display
+            digit_index <= (digit_index + 1) mod 4;
         end if;
     end process;
+
+    -- Assign the 7-segment output based on the current digit
+    process(digit_index, display_mode)
+    begin
+        if display_mode = '0' then
+            -- Address mode: Show the address
+            case digit_index is
+                when 0 => current_digit <= address_buffer(3 downto 0); -- Least significant nibble
+                when 1 => current_digit <= address_buffer(7 downto 4); -- Most significant nibble
+                when others => current_digit <= "0000"; -- Blank for unused displays
+            end case;
+        else
+            -- Data mode: Show the data
+            case digit_index is
+                when 0 => current_digit <= data_buffer(3 downto 0); -- Least significant nibble
+                when 1 => current_digit <= data_buffer(7 downto 4);
+                when 2 => current_digit <= data_buffer(11 downto 8);
+                when 3 => current_digit <= data_buffer(15 downto 12); -- Most significant nibble
+                when others => current_digit <= "0000"; -- Blank for unused displays
+            end case;
+        end if;
+    end process;
+
+    seg_out <= hex_to_7seg(current_digit);
+
+    -- Digit select logic (activates one digit at a time)
+    digit_select <= "1110" when digit_index = 0 else
+                    "1101" when digit_index = 1 else
+                    "1011" when digit_index = 2 else
+                    "0111";
+
 end Behavioral;
