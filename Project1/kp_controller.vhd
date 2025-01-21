@@ -108,21 +108,21 @@ end process;
                 
         when C => 
                 case rows is
-        when "11110" => OutputData <= "01011"; --C
-        when "11101" => OutputData <= "00010"; --3 
-        when "11011" => OutputData <= "00100"; --6
-        when "10111" => OutputData <= "00111"; --9
-        when "01111" => OutputData <= "00000"; --L
+        when "11110" => OutputData <= "01011"; 
+        when "11101" => OutputData <= "00010"; 
+        when "11011" => OutputData <= "00100";
+        when "10111" => OutputData <= "00111"; 
+        when "01111" => OutputData <= "00000"; 
         when others  => OutputData <= "11111";		
 		end case; 
 
         when D => 
                 case rows is
-        when "11110" => OutputData <= "01011"; --C
+        when "11110" => OutputData <= "01011"; 
         when "11101" => OutputData <= "00010"; --3 
-        when "11011" => OutputData <= "00100"; --6
-        when "10111" => OutputData <= "00111"; --9
-        when "01111" => OutputData <= "00000"; --L
+        when "11011" => OutputData <= "00100"; 
+        when "10111" => OutputData <= "00111"; 
+        when "01111" => OutputData <= "00000"; 
         when others  => OutputData <= "11111";		
 		end case; 
     end case;
