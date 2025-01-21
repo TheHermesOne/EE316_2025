@@ -8,8 +8,8 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity KP_Controller is
     Port (
         clk         : in  std_logic;  
-        rows        : in  std_logic_vector(3 downto 0); 
-        columns     : out std_logic_vector(4 downto 0);
+        rows        : in  std_logic_vector(5 downto 0); 
+        columns     : out std_logic_vector(3 downto 0);
         oData       : out std_logic_vector(4 downto 0);
         clk_en_out  : out std_logic;
         kp_pulse    : out std_logic;
