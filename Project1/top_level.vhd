@@ -13,7 +13,7 @@ entity top_level is
 		iReset_n				: in std_logic; 
 		iClk					: in std_logic; 
 		rows					: in std_logic_vector (3 downto 0);
-		columns				: out std_logic_vector(4 downto 0);
+		columns					: out std_logic_vector(4 downto 0);
 		HEX0					: out std_LOGIC_VECTOR(6 downto 0);
 		HEX1					: out std_LOGIC_VECTOR(6 downto 0);
 		HEX2					: out std_LOGIC_VECTOR(6 downto 0);
@@ -25,27 +25,15 @@ end top_level;
 
 architecture Structural of top_level is
 	
-	component seven_segment is
-		Port(
-		  keypad_input : in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit input from keypad
-        HEX0 : out STD_LOGIC_VECTOR(6 downto 0); -- 7-segment display output for HEX0
-        HEX1 : out STD_LOGIC_VECTOR(6 downto 0); -- HEX1
-        HEX2 : out STD_LOGIC_VECTOR(6 downto 0); -- HEX2
-        HEX3 : out STD_LOGIC_VECTOR(6 downto 0); -- HEX3
-        HEX4 : out STD_LOGIC_VECTOR(6 downto 0); -- HEX4
-        HEX5 : out STD_LOGIC_VECTOR(6 downto 0)  -- HEX5
-		);
-		
-	end component;
 	component univ_bin_counter is
 		generic(N: integer := 8);
 		port(
-			clk, reset				: in std_logic;
-			syn_clr, load, en, up: in std_logic;
-			clk_en 					: in std_logic := '1';			
-			d							: in std_logic_vector(N-1 downto 0);
+			clk, reset		: in std_logic;
+			syn_clr, load, en, up	: in std_logic;
+			clk_en 			: in std_logic := '1';			
+			d			: in std_logic_vector(N-1 downto 0);
 			max_tick, min_tick	: out std_logic;
-			q							: out std_logic_vector(N-1 downto 0)
+			q			: out std_logic_vector(N-1 downto 0)
 		);
 	end component;
 
@@ -53,8 +41,8 @@ architecture Structural of top_level is
 		 GENERIC (
 			CONSTANT cnt_max : integer := 49999999);      --  1.0 Hz 	
 		 PORT(	
-			clock					: in std_logic;	 
-			clk_en					: out std_logic
+			clock			 : in std_logic;	 
+			clk_en			 : out std_logic
 		);
 	end component;
 
@@ -67,23 +55,23 @@ architecture Structural of top_level is
 
 	component KP_Controller is 
 		Port ( 
-			clk         : in  std_logic;  
-        		rows        : in  std_logic_vector(4 downto 0); 
-        		columns     : out std_logic_vector(3 downto 0);
-       			oData       : out std_logic_vector(4 downto 0);
-        		clk_en_out  : out std_logic; -- 5ms clock enable
-       			kp_pulse    : out std_logic; -- 5ms for debouncing
-        		et_pulse    : out std_logic -- edge detector pulse
+			clk         		: in  std_logic;  
+        		rows        		: in  std_logic_vector(4 downto 0); 
+        		columns     		: out std_logic_vector(3 downto 0);
+       			oData       		: out std_logic_vector(4 downto 0);
+        		clk_en_out  		: out std_logic; -- 5ms clock enable
+       			kp_pulse    		: out std_logic; -- 5ms for debouncing
+        		et_pulse    		: out std_logic -- edge detector pulse
 		);
 	end component; 	
 
 	component SevenSegment is
 		Port (
-        		clk           : in  STD_LOGIC;             -- Clock signal from the keypad logic
-       			reset         : in  STD_LOGIC;             -- Reset signal
-        		keypad_input  : in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit input from keypad
-        		seg_out       : out STD_LOGIC_VECTOR(6 downto 0); -- 7-segment display output
-        		digit_select  : out STD_LOGIC_VECTOR(3 downto 0)  -- Select lines for the 7-segment displays
+        		clk           		: in  STD_LOGIC;             -- Clock signal from the keypad logic
+       			reset         		: in  STD_LOGIC;             -- Reset signal
+        		keypad_input  		: in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit input from keypad
+        		seg_out       		: out STD_LOGIC_VECTOR(6 downto 0); -- 7-segment display output
+        		digit_select  		: out STD_LOGIC_VECTOR(3 downto 0)  -- Select lines for the 7-segment displays
    		 );
 		
 	component SRAM is
@@ -125,7 +113,7 @@ architecture Structural of top_level is
 
 	begin
 	
-   Rst 					<= not iReset_n;
+  	Rst 			<= not iReset_n;
 	CounterReset 		<= reset or Rst;
 	CounterReset_n  	<= not CounterReset;
 	
