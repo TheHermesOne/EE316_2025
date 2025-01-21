@@ -1,5 +1,4 @@
 -- kp_controller
--- ava lamontagne 
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -8,135 +7,127 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity KP_Controller is
     Port (
-        clk         : in  std_logic;     --1HZ
-        reset       : in  std_logic;    
-        keypad_rows : in  std_logic_vector(3 downto 0); 
-        keypad_columns : out std_logic_vector(4 downto 0);
-        key_code    : out std_logic_vector(4 downto 0);
-        key_pulse   : out std_logic       
+        clk         : in  std_logic;  
+        rows        : in  std_logic_vector(3 downto 0); 
+        columns     : out std_logic_vector(4 downto 0);
+        oData       : out std_logic_vector(4 downto 0);
+        clk_en_out  : out std_logic;
+        kp_pulse    : out std_logic;
+        et_pulse    : out std_logic
     );
+    
 end KP_Controller;
 
 architecture Behavioral of KP_Controller is
--- state machine for key pressing
-    type state_type is (STATE_INIT, STATE_FIND_ROW, STATE_VALID_KEY);
-    signal current_state, next_state : state_type;
+    
+    type state_type is (A, B, C, D);
+    signal state             : state_type := A;
 
--- separate state machine for each column to be debounced
-    type debounce_state_type is (DB_STATE_A, DB_STATE_B, DB_STATE_C, DB_STATE_D);
-    signal current_debounce_state, next_debounce_state : debounce_state_type;
-
+    constant cnt_max         : integer := 250000;
+    signal clk_cnt           : integer range 0 to cnt_max;
+    signal clk_en            : std_logic;
     signal key_press         : std_logic;                  
-    signal key_valid_signal  : std_logic;      
-    signal column_signal     : std_logic_vector(4 downto 0);
-    signal row_signal        : std_logic_vector(3 downto 0);
-    signal key_position      : integer range 0 to 18;       -- location of key
-    signal debounce_counter  : integer range 0 to 5000 := 0; -- 5ms for debouncing             
-  
-
-    constant key_layout : std_logic_vector(4 downto 0) := 
-        ("00000", "00001", "00010", "00011", "00100", 
-         "00101", "00110", "00111", "01000", "01001", 
-         "01010", "01011", "01100", "01101", "01110", 
-         "01111", "10000", "10001", "10010");        
+    signal key_pressed       : std_logic; 
+    signal nkey_pressed      : std_logic;
+    signal reg1              : std_logic;
+    signal reg2              : std_logic;
 
 begin
 
-    keypad_columns <= column_signal;
-
--- state machine for finding key
-    process(clk, reset)
+key_pressed <= not (rows(0) and rows(1) and rows(2) and rows(3) and rows(4));
+    process(clk)
     begin
-        if reset = '1' then
-            current_state <= STATE_INIT;
-        elsif rising_edge(clk) then
-            current_state <= next_state;
-        end if;
-    end process;
-
-    process(current_state, key_valid_signal, key_press, row_signal)
-    begin
-        next_state <= current_state;
-        column_signal <= "00001"; 
-
-        case current_state is
-            when STATE_INIT =>
-                if key_valid_signal = '0' then
-                    next_state <= STATE_FIND_ROW;
-                end if;
-
-            when STATE_FIND_ROW =>
-                for row_index in 0 to 3 loop
-                     column_signal(row_index) <= '1';
-                    if key_press = '1' then
-                        key_position <= row_index * 5 + to_integer(unsigned(column_signal));
-                        next_state <= STATE_VALID_KEY;
-                    end if;
-                end loop;
-
-            when STATE_VALID_KEY =>
-                if key_valid_signal = '1' then
-                    key_code <= std_logic_vector(to_unsigned(key_position, 5));
-                    key_valid_signal <= '1';
-                    next_state <= STATE_INIT;
-                end if;
-        end case;
-    end process;
-
-    -- state machine for debouncing
-    process(clk, reset)
-    begin
-        if reset = '1' then
-            current_debounce_state <= DB_STATE_A;
-        elsif rising_edge(clk) then
-            current_debounce_state <= next_debounce_state;
-        end if;
-    end process;
-
-    process(current_debounce_state, key_press, debounce_counter)
-    begin
-        next_debounce_state <= current_debounce_state;
-
-        case current_debounce_state is
-            when DB_STATE_A =>
-                if key_press = '1' then
-                    next_debounce_state <= DB_STATE_B;
-                end if;
-
-            when DB_STATE_B =>
-                if debounce_counter < 5000 then  -- 5ms delay added for db
-                    debounce_counter <= debounce_counter + 1;
-                else
-                    next_debounce_state <= DB_STATE_C;
-                end if;
-
-            when DB_STATE_C =>
-                if key_press = '0' then
-                    next_debounce_state <= DB_STATE_D;
-                end if;
-
-            when DB_STATE_D =>
-                next_debounce_state <= DB_STATE_A;
-        end case;
-    end process;
-
-    -- 5ms delay timer/counter
-    process(clk, reset)
-    begin
-        if reset = '1' then
-            debounce_counter <= 0;
-        elsif rising_edge(clk) then
-            if current_debounce_state = DB_STATE_B and debounce_counter < 5000 then
-                debounce_counter <= debounce_counter + 1;
+        if rising_edge(clk) then
+            if (clk_cnt = 249999) then 
+                clk_cnt <= 0;
+                clk_en <= '1';
             else
-                debounce_counter <= 0;
+                clk_cnt <= clk_cnt + 1;
+                clk_en <= '0';
             end if;
-        end if;
+        end if
     end process;
 
-    key_press <= NOT(row_signal(0) AND row_signal(1) AND row_signal(2) AND row_signal(3));
+            process(clk)
+            begin 
+                if rising_edge(clk) and clk_en = '1' then
+                key_press <= key_pressed;
+                nkey_Press <= key_press;
+                kp_pulse <= key_press and not nkey_press;
+            end if;
+    end process;
+    
+    process(clk,state)
+    begin
+    if rising_edge(clk) and kp_pulse = '1' then
+        if key_Pressed = '0' then
+            case state is
+                when A => state <= B;
+                when B => state <= C;
+                when C => state <= D;
+                when D => state <= A;
+                when others => state <= A;
+            end case;
+        end if;
+    end if;
+end process;
 
-    -- valid debounced key press signal output
-    key_valid_signal <= '1' when current_debounce_state = DB_STATE_C else '0';
+    process(state)
+        begin
+            case state is
+                when A => columns <= "1110";
+                when B => columns <= "1101";
+                when C => columns <= "1011";
+                when D => columns <= "0111";
+            when others => columns <= "1111";
+        end case;
+    end process;
 
-end Behavioral;
+    process(state, rows)
+    begin
+        case state is
+            when A =>
+                case rows is
+        when "11110" => oData <= "01010";
+        when "11101" => oData <= "00001";
+        when "11110" => oData <= "00100";
+        when "11110" => oData <= "00111";
+        when "11110" => oData <= "00000";
+        when others  => oData <= "11111";
+            end case;
+                
+        when B => 
+                case rows is         
+        when "11110" => oData <= "01011";
+        when "11101" => oData <= "00010";
+        when "11110" => oData <= "00100";
+        when "11110" => oData <= "00111";
+        when "11110" => oData <= "00000";
+        when others  => oData <= "11111";
+            end case;
+                
+        when C => 
+                case rows is
+        when "11110" => OutputData <= "01011"; --C
+        when "11101" => OutputData <= "00010"; --3 
+        when "11011" => OutputData <= "00100"; --6
+        when "10111" => OutputData <= "00111"; --9
+        when "01111" => OutputData <= "00000"; --L
+        when others  => OutputData <= "11111";		
+		end case; 
+
+        when D => 
+                case rows is
+        when "11110" => OutputData <= "01011"; --C
+        when "11101" => OutputData <= "00010"; --3 
+        when "11011" => OutputData <= "00100"; --6
+        when "10111" => OutputData <= "00111"; --9
+        when "01111" => OutputData <= "00000"; --L
+        when others  => OutputData <= "11111";		
+		end case; 
+    end case;
+end process;
+        
+clk_en <= clk_en_out;
+            
+end architecture Behavioral;
