@@ -3,17 +3,18 @@ use ieee.std_logic_1164.all;
 
 entity SRAM_Controller is
 	port(
-		clk,reset: in std_logic;
-		mem: in std_logic;
-		rw: in std_logic;
-		addr: in std_logic_vector(7 downto 0);
-		data_f2s: in std_logic_vector(7 downto 0);
-		ready: out std_logic;
-		data_s2f_r, data_s2f_ur: out std_logic_vector(7 downto 0);
-		ad: out std_logic_vector(18 downto 0);
-		we_n, oe_n: out std_logic;
-		dio: inout std_logic_vector(7 downto 0);
-		ce_n: out std_logic
+		clk,reset: in std_logic; 						-- Set up for 100Mhz clock
+		mem: in std_logic; 								-- when '1' SRAM_Controller is going to be used
+		rw: in std_logic; 								-- read write bit. '1' for read, '0' for write
+		addr: in std_logic_vector(7 downto 0);		-- Address input
+		data_f2s: in std_logic_vector(7 downto 0);-- Data input to SRAM_Controller
+		ready: out std_logic; 							-- Status signal indcating Controller is ready for input?
+		data_s2f_r, data_s2f_ur:
+					out std_logic_vector(7 downto 0);-- Data (registered, unregistered) from SRAM_Controller
+		ad: out std_logic_vector(7   downto 0); 	--address output during read; goes to SRAM
+		we_n, oe_n: out std_logic; 					--Write enable , output enable outputs to the SRAM
+		dio: inout std_logic_vector(7 downto 0); 	--Data input/output that goes to the SRAM
+		ce_n: out std_logic 								--Chip enable output; goes to SRAM 
 	);
 	end SRAM_Controller;
 	
@@ -38,7 +39,7 @@ entity SRAM_Controller is
 					tri_reg <= '1';
 					we_reg <= '1';
 					oe_reg <= '1';
-				elsif ( clk'event and clk = '1') then
+				elsif (clk'event and clk = '1') then
 					state_reg <= state_next;
 					addr_reg <= addr_next;
 					data_f2s_reg <= data_f2s_next;

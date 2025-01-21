@@ -9,7 +9,7 @@ ENTITY DE2_115 IS
 --      CLOCK3_50   : IN STD_LOGIC;  							-- On Board 50 MHz	  
 --      EXT_CLOCK   : IN STD_LOGIC;							-- External Clock
 ---- 			Push Button		      
---      KEY         : IN STD_LOGIC_VECTOR(3 DOWNTO 0);		-- Pushbutton[3:0]
+      KEY         : IN STD_LOGIC_VECTOR(3 DOWNTO 0);		-- Pushbutton[3:0]
 ---- 			DPDT Switch		      
 --      SW          : IN STD_LOGIC_VECTOR(17 DOWNTO 0);		-- Toggle Switch[17:0]
 ---- 			7-SEG Dispaly	      
