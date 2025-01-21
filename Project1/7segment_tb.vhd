@@ -58,15 +58,15 @@ begin
         reset <= '0';
 
         -- Test with keypad input "0010" (decimal 2)
-        keypad_input <= "0010";
+        keypad_input <= "10010";
         wait for clk_period * 10;
 
         -- Test with keypad input "1010" (hexadecimal A)
-        keypad_input <= "1010";
+        keypad_input <= "01010";
         wait for clk_period * 10;
 
         -- Test with keypad input "1111" (hexadecimal F)
-        keypad_input <= "1111";
+        keypad_input <= "01111";
         wait for clk_period * 10;
 
         -- End simulation
