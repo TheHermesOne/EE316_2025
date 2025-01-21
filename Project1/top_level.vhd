@@ -12,12 +12,14 @@ entity top_level is
 		port (
 		iReset_n				: in std_logic; 
 		iClk					: in std_logic; 
+		rows					: in std_logic_vector(4 downto 0);
 		HEX0					: out std_LOGIC_VECTOR(6 downto 0);
 		HEX1					: out std_LOGIC_VECTOR(6 downto 0);
 		HEX2					: out std_LOGIC_VECTOR(6 downto 0);
 		HEX3					: out std_LOGIC_VECTOR(6 downto 0);
 		HEX4					: out std_LOGIC_VECTOR(6 downto 0);
-		HEX5					: out std_LOGIC_VECTOR(6 downto 0)
+		HEX5					: out std_LOGIC_VECTOR(6 downto 0);
+		columns					: out std_logic_vector(3 downto 0)
 		);
 end top_level;
 
@@ -73,15 +75,27 @@ architecture Structural of top_level is
 				);	
 	end component;	
 
-	signal clk								: std_logic;
+	component KP_Controller is 
+		Port ( 
+			clk         : in  std_logic;  
+        		rows        : in  std_logic_vector(3 downto 0); 
+        		columns     : out std_logic_vector(4 downto 0);
+       			oData       : out std_logic_vector(4 downto 0);
+        		clk_en_out  : out std_logic;
+       			kp_pulse    : out std_logic;
+        		et_pulse    : out std_logic
+		);
+	end component; 	
+
+	signal clk					: std_logic;
 	signal clk_enable, Rst				: std_logic;
 	signal reset, Counterreset			: std_logic;
-   signal Counterreset_n        		: std_logic;	
-	signal Qsignal							: std_logic_vector(7 downto 0);
+  	signal Counterreset_n        			: std_logic;	
+	signal Qsignal					: std_logic_vector(7 downto 0);
 
 	begin
 	
-   Rst 					<= not iReset_n;
+   	Rst 			<= not iReset_n;
 	CounterReset 		<= reset or Rst;
 	CounterReset_n  	<= not CounterReset;
 	
@@ -115,7 +129,6 @@ architecture Structural of top_level is
 			min_tick 	=> oMin,
 			q				=> oQ
 		);
-
 			
 	Inst_sys_clk: sys_clk 
 		  generic map (
@@ -126,6 +139,12 @@ architecture Structural of top_level is
 		  iCLK 		=> iCLK,		  
 		  iRST_N 	=> CounterReset_n
 		  );	
-	
-
+		
+	Inst_kp_controller : kp_controller
+		  port map (
+		  clk 		=> clk,	  
+		  rows 		=> rows,		  
+		  columns 	=> columns,
+		  );
+		
 end Structural;
