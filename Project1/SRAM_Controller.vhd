@@ -10,7 +10,7 @@ entity SRAM_Controller is
 		data_f2s: in std_logic_vector(7 downto 0);
 		ready: out std_logic;
 		data_s2f_r, data_s2f_ur: out std_logic_vector(7 downto 0);
-		ad: out std_logic_vector (18 down 0);
+		ad: out std_logic_vector(18 downto 0);
 		we_n, oe_n: out std_logic;
 		dio: inout std_logic_vector(7 downto 0);
 		ce_n: out std_logic
@@ -23,8 +23,8 @@ entity SRAM_Controller is
 				signal data_f2s_reg, data_f2s_next: std_logic_vector(7 downto 0);
 				signal data_s2f_reg, data_s2f_next: std_logic_vector(7 downto 0);
 				signal addr_reg, addr_next: std_logic_vector(18 downto 0);
-				signal we_buf, oe_buf, tri_buf,: std_logic;
-				signal we_reg, oe_reg, tri_reg,: std_logic;
+				signal we_buf, oe_buf, tri_buf: std_logic;
+				signal we_reg, oe_reg, tri_reg: std_logic;
 				
 				
 		begin
@@ -50,19 +50,19 @@ entity SRAM_Controller is
 			end process;
 	-- Next state Logic
 	
-		proccess(state_reg, mem, rw, dio, addr, data_f2s, data_f2s_reg, data_s2f_reg, addr_reg)
+		process(state_reg, mem, rw, dio, addr, data_f2s, data_f2s_reg, data_s2f_reg, addr_reg)
 			begin
 				addr_next <= addr_reg;
 				data_f2s_next <= data_f2s_reg;
 				data_s2f_next <= data_s2f_reg;
-				ready = '0';
+				ready <= '0';
 				case state_reg is
 					when idle => 
 						if (mem = '0') then
 							state_next <= idle;
 						else
 							addr_next <= addr;
-							if (rw = '0') -- writing
+							if (rw = '0') then -- writing
 								state_next <= w1;
 								data_f2s_next <= data_f2s;
 							else
@@ -109,4 +109,7 @@ entity SRAM_Controller is
 		ad <= addr_reg;
 	-- I/O for SRAM chip
 		ce_n <= '0';
-		dio <= data_f2s_reg when
+		dio <= data_f2s_reg when tri_reg = '0'
+			else (others => 'Z');
+	end arch;
+			

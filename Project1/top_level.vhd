@@ -12,14 +12,14 @@ entity top_level is
 		port (
 		iReset_n				: in std_logic; 
 		iClk					: in std_logic; 
-		rows					: in std_logic_vector(4 downto 0);
+		rows					: in std_logic_vector (3 downto 0);
+		columns				: out std_logic_vector(4 downto 0);
 		HEX0					: out std_LOGIC_VECTOR(6 downto 0);
 		HEX1					: out std_LOGIC_VECTOR(6 downto 0);
 		HEX2					: out std_LOGIC_VECTOR(6 downto 0);
 		HEX3					: out std_LOGIC_VECTOR(6 downto 0);
 		HEX4					: out std_LOGIC_VECTOR(6 downto 0);
-		HEX5					: out std_LOGIC_VECTOR(6 downto 0);
-		columns					: out std_logic_vector(3 downto 0)
+		HEX5					: out std_LOGIC_VECTOR(6 downto 0)		
 		);
 end top_level;
 
@@ -57,16 +57,6 @@ architecture Structural of top_level is
 			clk_en					: out std_logic
 		);
 	end component;
-	
-	component sys_clk is	
-		 GENERIC (
-			  CONSTANT REF_CLK : integer := 50000000;  --  50.0 MHz   
-			  CONSTANT OUT_CLK : integer := 10000000); --  10.0 MHz 
-		 PORT (
-			  SIGNAL oCLK 		: INOUT std_logic;	  
-			  SIGNAL iCLK 		: IN std_logic;		  
-			  SIGNAL iRST_N 	: IN std_logic);	
-	end component;	
 
 	component Reset_Delay IS	
 		 PORT (
@@ -78,12 +68,12 @@ architecture Structural of top_level is
 	component KP_Controller is 
 		Port ( 
 			clk         : in  std_logic;  
-        		rows        : in  std_logic_vector(3 downto 0); 
-        		columns     : out std_logic_vector(4 downto 0);
-       			oData       : out std_logic_vector(4 downto 0);
-        		clk_en_out  : out std_logic;
-       			kp_pulse    : out std_logic;
-        		et_pulse    : out std_logic
+        	rows        : in  std_logic_vector(3 downto 0); 
+        	columns     : out std_logic_vector(4 downto 0);
+       	oData       : out std_logic_vector(4 downto 0);
+        	clk_en_out  : out std_logic;
+       	kp_pulse    : out std_logic;
+        	et_pulse    : out std_logic
 		);
 	end component; 	
 
@@ -95,7 +85,7 @@ architecture Structural of top_level is
 
 	begin
 	
-   	Rst 			<= not iReset_n;
+   Rst 					<= not iReset_n;
 	CounterReset 		<= reset or Rst;
 	CounterReset_n  	<= not CounterReset;
 	
@@ -113,38 +103,29 @@ architecture Structural of top_level is
 			clk_en 		=> clk_enable  -- enable every 10th sys_clk edge
 			);
 			
+--		
+--	Inst_univ_bin_counter: univ_bin_counter
+--		generic map(N => N)
+--		port map(
+--			clk 			=> clk,
+--			reset 		=> CounterReset,
+--			syn_clr		=> Rst, 
+--			load			=> iLoad, 
+--			en				=> iCnt_en, 
+--			up				=> iUP, 
+--			clk_en 		=> clk_enable,
+--			d				=> iData,
+--			max_tick		=> oMax, 
+--			min_tick 	=> oMin,
+--			q				=> oQ
+--		);
+--				
 		
-	Inst_univ_bin_counter: univ_bin_counter
-		generic map(N => N)
-		port map(
-			clk 			=> clk,
-			reset 		=> CounterReset,
-			syn_clr		=> Rst, 
-			load			=> iLoad, 
-			en				=> iCnt_en, 
-			up				=> iUP, 
-			clk_en 		=> clk_enable,
-			d				=> iData,
-			max_tick		=> oMax, 
-			min_tick 	=> oMin,
-			q				=> oQ
-		);
-			
-	Inst_sys_clk: sys_clk 
-		  generic map (
-		  REF_CLK   => 50000000, --  50.0 MHz   
-		  OUT_CLK   => 5000000)  --   5.0 MHz 
-		  port map (
-		  oCLK 		=> clk,	  
-		  iCLK 		=> iCLK,		  
-		  iRST_N 	=> CounterReset_n
-		  );	
-		
-	Inst_kp_controller : kp_controller
-		  port map (
-		  clk 		=> clk,	  
-		  rows 		=> rows,		  
-		  columns 	=> columns,
-		  );
-		
+--	Inst_kp_controller : kp_controller
+--		  port map (
+--		  clk 		=> clk,	  
+--		  rows 		=> rows,		  
+--		  columns 	=> columns
+--		  );
+--		
 end Structural;
