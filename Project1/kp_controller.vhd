@@ -30,6 +30,8 @@ architecture Behavioral of KP_Controller is
     signal reg2              : std_logic;
     signal kp_pulse5         : std_logic;
     signal r                 : std_logic_vector(1 downto 0); -- registers
+    signal q                 : std_logic_vector(1 downto 0); -- registers
+
 
 begin
 
@@ -126,8 +128,8 @@ end process;
 process(clk)
    begin
    if rising_edge(clk) then
-   Q(0) <= key_pressed;
-   Q(1) <= Q(0);
+   q(0) <= key_pressed;
+   q(1) <= q(0);
    kp_pulse5 <= Q(0) and not Q(1);
    end if;
 end process;
