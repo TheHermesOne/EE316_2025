@@ -12,15 +12,15 @@ entity top_level is
 		port (
 		iClk										: in std_logic;
 		HEX0,HEX1,HEX2,HEX3,HEX4,HEX5		: out std_LOGIC_VECTOR(6 downto 0);
-		SRAM_DQ     : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);	-- SRAM Data bus 16 Bits
-      SRAM_ADDR   : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);	-- SRAM Address bus 18 Bits
-      SRAM_UB_N   : OUT STD_LOGIC;							-- SRAM High-byte Data Mask
-      SRAM_LB_N   : OUT STD_LOGIC;							-- SRAM Low-byte Data Mask
-      SRAM_WE_N   : OUT STD_LOGIC;							-- SRAM Write Enable
-      SRAM_CE_N   : OUT STD_LOGIC;							-- SRAM Chip Enable
-      SRAM_OE_N   : OUT STD_LOGIC;							-- SRAM Output Enable
-		LEDG0       : OUT STD_LOGIC;		-- LED Green[8:0]
-		KEY0        : IN STD_LOGIC		-- Pushbutton[3:0]
+		SRAM_DQ     							: INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);	-- SRAM Data bus 16 Bits
+      SRAM_ADDR   							: OUT STD_LOGIC_VECTOR(19 DOWNTO 0);	-- SRAM Address bus 18 Bits
+      SRAM_UB_N  								: OUT STD_LOGIC;							-- SRAM High-byte Data Mask
+      SRAM_LB_N  								: OUT STD_LOGIC;							-- SRAM Low-byte Data Mask
+      SRAM_WE_N   							: OUT STD_LOGIC;							-- SRAM Write Enable
+      SRAM_CE_N   							: OUT STD_LOGIC;							-- SRAM Chip Enable
+      SRAM_OE_N   							: OUT STD_LOGIC;							-- SRAM Output Enable
+		LEDG0       							: OUT STD_LOGIC;							-- LED Green[8:0]
+		KEY0        							: IN STD_LOGIC								-- Pushbutton[3:0]
 		);
 end top_level;
 
@@ -29,12 +29,12 @@ architecture Structural of top_level is
 	component univ_bin_counter is
 		generic(N: integer := 8);
 		port(
-			clk, reset		: in std_logic;
+			clk, reset					: in std_logic;
 			syn_clr, load, en, up	: in std_logic;
-			clk_en 			: in std_logic := '1';			
-			d			: in std_logic_vector(N-1 downto 0);
-			max_tick, min_tick	: out std_logic;
-			q			: out std_logic_vector(N-1 downto 0)
+			clk_en 						: in std_logic := '1';			
+			d								: in std_logic_vector(N-1 downto 0);
+			max_tick, min_tick		: out std_logic;
+			q								: out std_logic_vector(N-1 downto 0)
 		);
 	end component;
 
@@ -42,11 +42,21 @@ architecture Structural of top_level is
 		 GENERIC (
 			CONSTANT cnt_max : integer := 49999999);      --  1.0 Hz 	
 		 PORT(	
-			clock			 : in std_logic;	 
-			clk_en			 : out std_logic
+			clock			 	: in std_logic;	 
+			clk_en			: out std_logic
 		);
 	end component;
-
+	
+	component btn_debounce_toggle is
+		GENERIC(
+			CONSTANT CNTR_MAX : std_logic_vector(15 downto 0) := X"FFFF");  
+    Port ( BTN_I 	: in  STD_LOGIC;
+           CLK 		: in  STD_LOGIC;
+           BTN_O 	: out  STD_LOGIC;
+           TOGGLE_O : out  STD_LOGIC;
+				PULSE_O  : out STD_LOGIC);
+	end component;
+	
 	component Reset_Delay IS	
 		 PORT (
 			  SIGNAL iCLK 		: IN std_logic;	
@@ -108,6 +118,7 @@ architecture Structural of top_level is
 	signal reset, Counterreset	: std_logic;
   	signal Counterreset_n      : std_logic;	
 	signal Qsignal					: std_logic_vector(7 downto 0);
+	signal reset_db				: std_logic;
 	
 	--Signals below are made to satiate inputs and outputs temporaly
 	-- unitl we can figure out what goes where
@@ -125,9 +136,9 @@ architecture Structural of top_level is
 	
 begin
 	
---		Rst 					<= not iReset_n;
---		CounterReset 		<= reset or Rst;
---		CounterReset_n  	<= not CounterReset;
+		Rst 					<= not iReset_n;
+		CounterReset 		<= reset or Rst;
+		CounterReset_n  	<= not CounterReset;
 		
 		Inst_clk_Reset_Delay: Reset_Delay	
 				port map(
@@ -135,30 +146,39 @@ begin
 				  oRESET    => reset
 					);			
 
+		Inst_btn_debounce: btn_debounce_toggle
+			port map(
+				BTN_I => KEY0,
+				CLK => iCLK,
+				BTN_O => Reset_db,
+				TOGGLE_O => open,
+				PULSE_O => open
+			);
+					
 		Inst_clk_enabler: clk_enabler
 				generic map(
-				cnt_max 		=> 9)
+					cnt_max 		=> 9)
 				port map( 
-				clock 		=> clk, 			-- output from sys_clk
-				clk_en 		=> clk_enable  -- enable every 10th sys_clk edge
+					clock 		=> clk, 			-- output from sys_clk
+					clk_en 		=> clk_enable  -- enable every 10th sys_clk edge
 				);
 				
 	--		
-	--	Inst_univ_bin_counter: univ_bin_counter
-	--		generic map(N => N)
-	--		port map(
-	--			clk 			=> clk,
-	--			reset 		=> CounterReset,
-	--			syn_clr		=> Rst, 
-	--			load			=> iLoad, 
-	--			en				=> iCnt_en, 
-	--			up				=> iUP, 
-	--			clk_en 		=> clk_enable,
-	--			d				=> iData,
-	--			max_tick		=> oMax, 
-	--			min_tick 	=> oMin,
-	--			q				=> oQ
-	--		);
+		Inst_univ_bin_counter: univ_bin_counter
+			generic map(N => N)
+			port map(
+				clk 			=> clk,
+				reset 		=> CounterReset,
+				syn_clr		=> Rst, 
+				load			=> iLoad, 
+				en				=> iCnt_en, 
+				up				=> iUP, 
+				clk_en 		=> clk_enable,
+				d				=> iData,
+				max_tick		=> oMax, 
+				min_tick 	=> oMin,
+				q				=> oQ
+			);
 		
 		Inst_kp_controller : kp_controller
 			  port map (
@@ -183,7 +203,7 @@ begin
 		Inst_SRAM_Controller : SRAM_Controller
 			PORT map(
 			clk			=> clk,
-			reset			=> reset,
+			reset			=> reset_db,
 			mem			=> mem,
 			rw				=> rw,
 			addr			=> addr,
@@ -204,4 +224,8 @@ begin
 			clock		=> clock,
 			q			=> q
 			);
+			
+		--------------------STATE MACHINE-----------------------
+		
+		
 end Structural;

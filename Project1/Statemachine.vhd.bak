@@ -1,0 +1,28 @@
+
+
+
+
+
+
+
+
+process(Iclk)
+			begin
+				type State_type is (INIT,OP_PAUSE_F,OP_PAUSE_B,OP_RUN_F,OP_RUN_B,PROG_ADDR,PROG_DATA);
+				signal stateVAR : state_type;
+				signal prevCountVal : std_LOGIC;
+				
+							
+					if (reset = '1') then
+						stateVAR <= INIT
+					elsif rising_edge(iclk)
+						case stateVAR is
+							when INIT =>
+								if 
+								
+							
+							
+							
+							
+							
+							when others => stateVAR <= INIT;
