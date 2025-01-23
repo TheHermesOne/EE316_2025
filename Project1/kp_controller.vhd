@@ -35,7 +35,7 @@ architecture Behavioral of KP_Controller is
 
 begin
 
-key_pressed <= not (rows(0) and rows(1) and rows(2) and rows(3)); --and rows(4));
+key_pressed <= not (rows(0) and rows(1) and rows(2) and rows(3) and rows(4));
     process(clk)
     begin
         if rising_edge(clk) then
@@ -120,7 +120,7 @@ end case;
         when "11101" => oData <= '1' & X"0"; -- SHIFT
         when "11110" => oData <= '1' & X"1"; -- L
         when others  => oData <= '1' & X"F"; -- no connection
-    end case;
+end case;
 end case;
 end if;
 end process;
