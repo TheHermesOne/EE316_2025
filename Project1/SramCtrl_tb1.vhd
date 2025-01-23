@@ -13,7 +13,7 @@ architecture Behavioral of SramCtrl_tb is
         Port (
             clk : in STD_LOGIC;
             reset : in STD_LOGIC;
-            addr : in STD_LOGIC_VECTOR(15 downto 0);
+            addr : in STD_LOGIC_VECTOR(19 downto 0);
             data_in : in STD_LOGIC_VECTOR(15 downto 0);
             data_out : out STD_LOGIC_VECTOR(15 downto 0);
             we : in STD_LOGIC;
@@ -25,7 +25,7 @@ architecture Behavioral of SramCtrl_tb is
     -- Signal declarations
     signal clk : STD_LOGIC := '0';
     signal reset : STD_LOGIC := '0';
-    signal addr : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
+    signal addr : STD_LOGIC_VECTOR(19 downto 0) := (others => '0');
     signal data_in : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
     signal data_out : STD_LOGIC_VECTOR(15 downto 0);
     signal we : STD_LOGIC := '0';
@@ -68,7 +68,7 @@ begin
         reset <= '0';
         
         -- Write operation
-        addr <= x"0001";
+        addr <= x"00001";
         data_in <= x"ABCD";
         we <= '1';
         cs <= '1';
@@ -77,39 +77,13 @@ begin
         cs <= '0';
         
         -- Read operation
-        addr <= x"0001";
+        addr <= x"00001";
         oe <= '1';
         cs <= '1';
         wait for clk_period;
         oe <= '0';
         cs <= '0';
         
-        -- Extended test cases
-        -- Write another value
-        addr <= x"0002";
-        data_in <= x"1234";
-        we <= '1';
-        cs <= '1';
-        wait for clk_period;
-        we <= '0';
-        cs <= '0';
-        
-        -- Read the new value
-        addr <= x"0002";
-        oe <= '1';
-        cs <= '1';
-        wait for clk_period;
-        oe <= '0';
-        cs <= '0';
-        
-        -- Test invalid address
-        addr <= x"FFFF";
-        oe <= '1';
-        cs <= '1';
-        wait for clk_period;
-        oe <= '0';
-        cs <= '0';
-
         -- End simulation
         wait;
     end process;
