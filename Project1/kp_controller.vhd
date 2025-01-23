@@ -9,10 +9,9 @@ entity KP_Controller is
     Port (
         clk         : in  std_logic;  
         rows        : in  std_logic_vector(4 downto 0);
-
         columns     : out std_logic_vector(3 downto 0);
         oData       : out std_logic_vector(4 downto 0);
-        kp_pulse    : out std_logic
+        kp_pulse20  : out std_logic
     );
    
 end KP_Controller;
@@ -29,7 +28,7 @@ architecture Behavioral of KP_Controller is
     signal nkey_press        : std_logic;
     signal reg1              : std_logic;
     signal reg2              : std_logic;
-    signal internal_kp_pulse : std_logic;
+    signal kp_pulse5         : std_logic;
     signal r                 : std_logic_vector(1 downto 0); -- registers
 
 begin
@@ -77,8 +76,9 @@ end process;
         end case;
     end process;
 
-    process(state, rows)
+    process(clk, rows)
     begin
+        if rising_edge(clk) then
         case state is
             when A =>
                 case rows is
@@ -86,7 +86,7 @@ end process;
         when "10111" => oData <= "00001"; -- 1
         when "11011" => oData <= "00100"; -- 4
         when "11101" => oData <= "00111"; -- 7
-        when "11110" => oData <= "00000"; -- 0
+        when "11111" => oData <= "00000"; -- not connected
         when others  => oData <= "11111";
             end case;
                
@@ -96,7 +96,7 @@ end process;
         when "10111" => oData <= "00010"; -- 2
         when "11011" => oData <= "00100"; -- 5
         when "11101" => oData <= "00111"; -- 8
-        when "11110" => oData <= "00000"; -- 0?
+        when "11110" => oData <= "00000"; -- 0
         when others  => oData <= "11111";
             end case;
                
@@ -126,9 +126,18 @@ end process;
 process(clk)
    begin
    if rising_edge(clk) then
-   r(0) <= key_pressed;
+   Q(0) <= key_pressed;
+   Q(1) <= Q(0);
+   kp_pulse5 <= Q(0) and not Q(1);
+   end if;
+end process;
+       
+process(clk)
+   begin
+   if rising_edge(clk) then
+   r(0) <= kp_pulse5;
    r(1) <= r(0);
-   kp_pulse <= r(0) and not r(1);
+   kp_pulse20 <= r(0) and not r(1);
    end if;
 end process;
           
