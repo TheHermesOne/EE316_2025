@@ -84,42 +84,42 @@ end process;
         case state is
             when A =>
                 case rows is
-        when "01111" => oData <= "01010"; -- A
-        when "10111" => oData <= "00001"; -- 1
-        when "11011" => oData <= "00100"; -- 4
-        when "11101" => oData <= "00111"; -- 7
-        when "11111" => oData <= "00000"; -- not connected
-        when others  => oData <= "11111";
+        when "01111" => oData <= '0'&X"A"; -- A
+        when "10111" => oData <= '0'&X"1"; -- 1
+        when "11011" => oData <= '0'&X"4"; -- 4
+        when "11101" => oData <= '0'&X"7"; -- 7
+        when "11111" => oData <= '1'&X"F"; -- not connected
+        when others  => oData <= '1'&X"F"; -- no connection
             end case;
                
         when B =>
                 case rows is        
-        when "01111" => oData <= "01011"; -- B
-        when "10111" => oData <= "00010"; -- 2
-        when "11011" => oData <= "00100"; -- 5
-        when "11101" => oData <= "00111"; -- 8
-        when "11110" => oData <= "00000"; -- 0
-        when others  => oData <= "11111";
+        when "01111" => oData <= '0'&X"B"; -- B
+        when "10111" => oData <= '0'&X"2"; -- 2
+        when "11011" => oData <= '0'&X"5"; -- 5
+        when "11101" => oData <= '0'&X"8"; -- 8
+        when "11110" => oData <= '0'&X"0"; -- 0
+        when others  => oData <= '1'&X"F"; -- no connection
             end case;
                
         when C =>
                 case rows is
-        when "01111" => oData <= "01011"; -- C
-        when "10111" => oData <= "00010"; -- 3
-        when "11011" => oData <= "00100"; -- 6
-        when "11101" => oData <= "00111"; -- 9
-        when "11110" => oData <= "00000"; -- H
-        when others  => oData <= "11111";
+        when "01111" => oData <= '0'&X"C"; -- C
+        when "10111" => oData <= '0'&X"3"; -- 3
+        when "11011" => oData <= '0'&X"6"; -- 6
+        when "11101" => oData <= '0'&X"9"; -- 9
+        when "11110" => oData <= '1'&X"H"; -- H
+        when others  => oData <= '1'&X"F"; -- no connection
 end case;
 
         when D =>
                 case rows is
-        when "011110" => oData <= "01011"; -- D
-        when "101101" => oData <= "00010"; -- E
-        when "11011" => oData <= "00100"; -- F
-        when "11101" => oData <= "00111"; -- SHIFT
-        when "11110" => oData <= "00000"; -- L
-        when others  => oData <= "11111";
+        when "01111" => oData <= '0'&X"D"; -- D
+        when "10111" => oData <= '0'&X"E"; -- E
+        when "11011" => oData <= '0'&X"F"; -- F
+        when "11101" => oData <= '1'&X"0"; -- SHIFT
+        when "11110" => oData <= '1'&X"1"; -- L
+        when others  => oData <= '1'&X"F"; -- no connection
 end case;
     end case;
         end if;
