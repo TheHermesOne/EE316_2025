@@ -18,6 +18,9 @@ architecture struct of statemachine is
 				type State_type is (INIT,OP_PAUSE_F,OP_PAUSE_B,OP_RUN_F,OP_RUN_B,PROG_ADDR,PROG_DATA);
 				signal stateVAR : state_type;
 				signal prevCountVal : std_LOGIC;
+				signal Lcmd : std_LOGIC := ('1' & X"1");
+				signal Hcmd : std_LOGIC := ('1' & X"2");
+				signal Shiftcmd: std_logic := ('1' & X"0");
 	begin
 			prevCountVal <= CountVal;
 		process(Iclk)
@@ -32,44 +35,44 @@ architecture struct of statemachine is
 								stateVAR <= OP_PAUSE_F;
 							end if;
 						when OP_PAUSE_F =>
-							if (kp_data = '<'L' data>' and kp_pulse='1') then
+							if (kp_data = Lcmd and kp_pulse='1') then
 								stateVAR <= OP_PAUSE_B;
-							elsif (kp_data = '<'H' data>' and kp_pulse='1') then
+							elsif (kp_data = Hcmd and kp_pulse='1') then
 								stateVAR <= OP_RUN_F;
-							elsif (kp_data = '<'Shift' data>' and kp_pulse='1') then
+							elsif (kp_data = Shiftcmd and kp_pulse='1') then
 								stateVAR <= PROG_ADDR;
 							end if;
 						when OP_PAUSE_B =>
-							if (kp_data = '<'L' data>' and kp_pulse='1') then
+							if (kp_data = Lcmd and kp_pulse='1') then
 								stateVAR <= OP_PAUSE_F;
-							elsif (kp_data = '<'H' data>' and kp_pulse='1') then
+							elsif (kp_data = Hcmd and kp_pulse='1') then
 								stateVAR <= OP_RUN_B;
-							elsif (kp_data = '<'Shift' data>' and kp_pulse='1') then
+							elsif (kp_data = Shiftcmd and kp_pulse='1') then
 								stateVAR <= PROG_ADDR;
 							end if;
 						when OP_RUN_F =>
-							if (kp_data = '<'L' data>' and kp_pulse='1') then
+							if (kp_data = Lcmd and kp_pulse='1') then
 								stateVAR <= OP_RUN_B;
-							elsif (kp_data = '<'H' data>' and kp_pulse='1') then
+							elsif (kp_data = Hcmd and kp_pulse='1') then
 								stateVAR <= OP_PAUSE_F;
-							elsif (kp_data = '<'Shift' data>' and kp_pulse='1') then
+							elsif (kp_data = Shiftcmd and kp_pulse='1') then
 								stateVAR <= PROG_ADDR;
 							end if;
 						when OP_RUN_B =>
-							if (kp_data = '<'L' data>' and kp_pulse='1') then
+							if (kp_data = Lcmd and kp_pulse='1') then
 								stateVAR <= OP_RUN_F;
-							elsif (kp_data = '<'H' data>' and kp_pulse='1') then
+							elsif (kp_data = Hcmd and kp_pulse='1') then
 								stateVAR <= OP_PAUSE_B;
-							elsif (kp_data = '<'Shift' data>' and kp_pulse='1') then
+							elsif (kp_data = Shiftcmd and kp_pulse='1') then
 								stateVAR <= PROG_ADDR;
 							end if;
 						when PROG_ADDR =>
-								if (kp_data = '<'L' data>' and kp_pulse='1') then
+								if (kp_data = Lcmd and kp_pulse='1') then
 -- TODO -- needs to write data from screen to SRAM
 		  -- does it need to be done outside of this code
-								elsif (kp_data = '<'H' data>' and kp_pulse='1') then
+								elsif (kp_data = Hcmd and kp_pulse='1') then
 									stateVAR <= PROG_DATA;
-								elsif (kp_data = '<'Shift' data>' and kp_pulse='1') then
+								elsif (kp_data = Shiftcmd and kp_pulse='1') then
 									if(state(1) = "1") then
 										stateVAR <= OP_PAUSE_B;
 									else
@@ -77,12 +80,13 @@ architecture struct of statemachine is
 									end if;
 								end if;
 						when PROG_DATA =>
-								if (kp_data = '<'L' data>' and kp_pulse='1') then
+								if (kp_data = Lcmd and kp_pulse='1') then
 -- TODO -- needs to write data from screen to SRAM
-		  -- does it need to be done outside of thiss code
-								elsif (kp_data = '<'H' data>' and kp_pulse='1') then
+		  -- does it need to be done outside of this code
+		  -- Send out a pulse to read write?
+								elsif (kp_data = Hcmd and kp_pulse='1') then
 									stateVAR <= PROG_ADDR;
-								elsif (kp_data = '<'Shift' data>' and kp_pulse='1') then
+								elsif (kp_data = Shiftcmd and kp_pulse='1') then
 									if(state(1) = "1") then
 										stateVAR <= OP_PAUSE_B;
 									else

@@ -108,7 +108,7 @@ end process;
         when "10111" => oData <= '0' & X"3"; -- 3
         when "11011" => oData <= '0' & X"6"; -- 6
         when "11101" => oData <= '0' & X"9"; -- 9
-        when "11110" => oData <= '1' & X"H"; -- H
+        when "11110" => oData <= '1' & X"2"; -- H
         when others  => oData <= '1' & X"F"; -- no connection
 end case;
 

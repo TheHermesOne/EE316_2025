@@ -86,7 +86,6 @@ architecture Structural of top_level is
    		 );
 	end component;
 
-	
 
 	component SRAM_Controller is
 		Port(
@@ -136,7 +135,7 @@ architecture Structural of top_level is
 	
 begin
 	
-		Rst 					<= not iReset_n;
+		Rst 					<= not reset_db;--iReset_n;
 		CounterReset 		<= reset or Rst;
 		CounterReset_n  	<= not CounterReset;
 		
@@ -163,7 +162,6 @@ begin
 					clk_en 		=> clk_enable  -- enable every 10th sys_clk edge
 				);
 				
-	--		
 		Inst_univ_bin_counter: univ_bin_counter
 			generic map(N => N)
 			port map(
@@ -225,7 +223,6 @@ begin
 			q			=> q
 			);
 			
-		--------------------STATE MACHINE-----------------------
 		
 		
 end Structural;
