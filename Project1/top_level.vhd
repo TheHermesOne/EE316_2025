@@ -78,11 +78,11 @@ architecture Structural of top_level is
 
 	component SevenSegment is
 		Port (
-        		clk           		: in  STD_LOGIC;             -- Clock signal from the keypad logic
-       		reset         		: in  STD_LOGIC;             -- Reset signal
+        		clk           		: in  STD_LOGIC;    -- Clock from keypad
+       		reset         		: in  STD_LOGIC;            -- Reset signal
         		keypad_input  		: in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit input from keypad
-        		seg_out       		: out STD_LOGIC_VECTOR(6 downto 0); -- 7-segment display output
-        		digit_select  		: out STD_LOGIC_VECTOR(3 downto 0)  -- Select lines for the 7-segment displays
+        		seg_out       		: out STD_LOGIC_VECTOR(6 downto 0); -- 7-segment output
+        		digit_select  		: out STD_LOGIC_VECTOR(3 downto 0)  -- choose 7 segment
    		 );
 	end component;
 
