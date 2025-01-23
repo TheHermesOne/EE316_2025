@@ -30,7 +30,7 @@ architecture Behavioral of KP_Controller is
     signal reg1              : std_logic;
     signal reg2              : std_logic;
     signal internal_kp_pulse : std_logic;
-    signal r     : std_logic_vector(1 downto 0);
+    signal r                 : std_logic_vector(1 downto 0); -- registers
 
 begin
 
@@ -69,10 +69,10 @@ end process;
     process(state)
         begin
             case state is
-                when A => columns <= "1110";
-                when B => columns <= "1101";
-                when C => columns <= "1011";
-                when D => columns <= "0111";
+                when A => columns <= "0111";
+                when B => columns <= "1011";
+                when C => columns <= "1101";
+                when D => columns <= "1110";
             when others => columns <= "1111";
         end case;
     end process;
@@ -82,48 +82,47 @@ end process;
         case state is
             when A =>
                 case rows is
-        when "11110" => oData <= "01010";
-        when "11101" => oData <= "00001";
-        when "11011" => oData <= "00100";
-        when "10111" => oData <= "00111";
-        when "01111" => oData <= "00000";
+        when "01111" => oData <= "01010"; -- A
+        when "10111" => oData <= "00001"; -- 1
+        when "11011" => oData <= "00100"; -- 4
+        when "11101" => oData <= "00111"; -- 7
+        when "11110" => oData <= "00000"; -- 0
         when others  => oData <= "11111";
             end case;
                
         when B =>
                 case rows is        
-        when "11110" => oData <= "01011";
-        when "11101" => oData <= "00010";
-
-
-        when "11011" => oData <= "00100";
-        when "10111" => oData <= "00111";
-        when "01111" => oData <= "00000";
+        when "01111" => oData <= "01011"; -- B
+        when "10111" => oData <= "00010"; -- 2
+        when "11011" => oData <= "00100"; -- 5
+        when "11101" => oData <= "00111"; -- 8
+        when "11110" => oData <= "00000"; -- 0?
         when others  => oData <= "11111";
             end case;
                
         when C =>
                 case rows is
-        when "11110" => oData <= "01011";
-        when "11101" => oData <= "00010";
-        when "11011" => oData <= "00100";
-        when "10111" => oData <= "00111";
-        when "01111" => oData <= "00000";
+        when "01111" => oData <= "01011"; -- C
+        when "10111" => oData <= "00010"; -- 3
+        when "11011" => oData <= "00100"; -- 6
+        when "11101" => oData <= "00111"; -- 9
+        when "11110" => oData <= "00000"; -- H
         when others  => oData <= "11111";
 end case;
 
         when D =>
                 case rows is
-        when "11110" => oData <= "01011";
-        when "11101" => oData <= "00010"; --3
-        when "11011" => oData <= "00100";
-        when "10111" => oData <= "00111";
-        when "01111" => oData <= "00000";
+        when "011110" => oData <= "01011"; -- D
+        when "101101" => oData <= "00010"; -- E
+        when "11011" => oData <= "00100"; -- F
+        when "11101" => oData <= "00111"; -- SHIFT
+        when "11110" => oData <= "00000"; -- L
         when others  => oData <= "11111";
 end case;
     end case;
 end process;
-       
+
+        -- register work for data transmission
 process(clk)
    begin
    if rising_edge(clk) then
