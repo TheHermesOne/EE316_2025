@@ -54,7 +54,7 @@ ENTITY DE2_115 IS
 --      FL_WP_N     : OUT STD_LOGIC;							-- FLASH Chip Enable	  	  
 ---- 			SRAM Interface		      
       SRAM_DQ     : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);	-- SRAM Data bus 16 Bits
-      SRAM_ADDR   : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);		-- SRAM Address bus 18 Bits
+      SRAM_ADDR   : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);	-- SRAM Address bus 18 Bits
       SRAM_UB_N   : OUT STD_LOGIC;							-- SRAM High-byte Data Mask
       SRAM_LB_N   : OUT STD_LOGIC;							-- SRAM Low-byte Data Mask
       SRAM_WE_N   : OUT STD_LOGIC;							-- SRAM Write Enable
@@ -135,13 +135,17 @@ ARCHITECTURE structural OF DE2_115 IS
 
 component top_level is
 		port (
-		iClk					: in std_logic;
-		HEX0					: out std_LOGIC_VECTOR(6 downto 0);
-		HEX1					: out std_LOGIC_VECTOR(6 downto 0);
-		HEX2					: out std_LOGIC_VECTOR(6 downto 0);
-		HEX3					: out std_LOGIC_VECTOR(6 downto 0);
-		HEX4					: out std_LOGIC_VECTOR(6 downto 0);
-		HEX5					: out std_LOGIC_VECTOR(6 downto 0)
+		iClk										: in std_logic;
+		HEX0,HEX1,HEX2,HEX3,HEX4,HEX5		: out std_LOGIC_VECTOR(6 downto 0);
+		SRAM_DQ     : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);	-- SRAM Data bus 16 Bits
+      SRAM_ADDR   : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);	-- SRAM Address bus 18 Bits
+      SRAM_UB_N   : OUT STD_LOGIC;							-- SRAM High-byte Data Mask
+      SRAM_LB_N   : OUT STD_LOGIC;							-- SRAM Low-byte Data Mask
+      SRAM_WE_N   : OUT STD_LOGIC;							-- SRAM Write Enable
+      SRAM_CE_N   : OUT STD_LOGIC;							-- SRAM Chip Enable
+      SRAM_OE_N   : OUT STD_LOGIC;							-- SRAM Output Enable
+		LEDG0       : OUT STD_LOGIC;		-- LED Green[8:0]
+		KEY0        : IN STD_LOGIC		-- Pushbutton[3:0]
 		);
 end component top_level;
 
@@ -157,7 +161,16 @@ Inst_top_level: top_level
 		HEX2		=> HEX2(6 downto 0),
 		HEX3		=> HEX3(6 downto 0),
 		HEX4		=> HEX4(6 downto 0),
-		HEX5		=> HEX5(6 downto 0)
+		HEX5		=> HEX5(6 downto 0),
+		SRAM_DQ  => SRAM_DQ,										-- SRAM Data bus 16 Bits
+      SRAM_ADDR  => SRAM_ADDR(19 DOWNTO 0),				-- SRAM Address bus 18 Bits
+      SRAM_UB_N   => SRAM_UB_N,							-- SRAM High-byte Data Mask
+      SRAM_LB_N   => SRAM_LB_N,							-- SRAM Low-byte Data Mask
+      SRAM_WE_N   => SRAM_WE_N,							-- SRAM Write Enable
+      SRAM_CE_N   => SRAM_CE_N,							-- SRAM Chip Enable
+      SRAM_OE_N   => SRAM_OE_N,							-- SRAM Output Enable
+		LEDG0 => LEDG(0),
+		KEY0 => KEY(0)
 		);
 
 END structural;

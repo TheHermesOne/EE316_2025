@@ -1,5 +1,5 @@
 Flow report for Project1
-Tue Jan 21 12:28:06 2025
+Thu Jan 23 12:35:54 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,22 +40,22 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Tue Jan 21 12:28:06 2025            ;
+; Flow Status                        ; Flow Failed - Thu Jan 23 12:35:54 2025           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; Project1                                         ;
 ; Top-level Entity Name              ; DE2_115                                          ;
 ; Family                             ; Cyclone IV E                                     ;
 ; Device                             ; EP4CE115F29C7                                    ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 0                                                ;
-;     Total combinational functions  ; 0                                                ;
-;     Dedicated logic registers      ; 0                                                ;
-; Total registers                    ; 0                                                ;
-; Total pins                         ; 129                                              ;
-; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 0                                                ;
-; Embedded Multiplier 9-bit elements ; 0                                                ;
-; Total PLLs                         ; 0                                                ;
+; Total logic elements               ; N/A until Partition Merge                        ;
+;     Total combinational functions  ; N/A until Partition Merge                        ;
+;     Dedicated logic registers      ; N/A until Partition Merge                        ;
+; Total registers                    ; N/A until Partition Merge                        ;
+; Total pins                         ; N/A until Partition Merge                        ;
+; Total virtual pins                 ; N/A until Partition Merge                        ;
+; Total memory bits                  ; N/A until Partition Merge                        ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                        ;
+; Total PLLs                         ; N/A until Partition Merge                        ;
 +------------------------------------+--------------------------------------------------+
 
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/21/2025 12:28:05 ;
+; Start date & time ; 01/23/2025 12:35:54 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Project1            ;
 +-------------------+---------------------+
@@ -75,17 +75,11 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 194042950359781.173748048402476       ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 194042950359781.173765375412720       ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
-; IP_TOOL_NAME                        ; ROM: 1-PORT                           ; --            ; --          ; --             ;
-; IP_TOOL_NAME                        ; RAM: 1-PORT                           ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                     ; 13.0                                  ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                     ; 13.0                                  ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
-; MISC_FILE                           ; initRom.cmp                           ; --            ; --          ; --             ;
-; MISC_FILE                           ; SRAM.cmp                              ; --            ; --          ; --             ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                  ; --            ; --          ; --             ;
 ; PARTITION_COLOR                     ; 16764057                              ; --            ; DE2_115     ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; DE2_115     ; Top            ;
@@ -102,8 +96,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:02     ; 1.0                     ; 4639 MB             ; 00:00:01                           ;
-; Total                ; 00:00:02     ; --                      ; --                  ; 00:00:01                           ;
+; Analysis & Synthesis ; 00:00:01     ; 1.0                     ; 4622 MB             ; 00:00:01                           ;
+; Total                ; 00:00:01     ; --                      ; --                  ; 00:00:01                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

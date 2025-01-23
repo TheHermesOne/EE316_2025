@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Project1
-Tue Jan 21 12:28:06 2025
+Thu Jan 23 12:35:54 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -10,17 +10,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: top_level:Inst_top_level
- 10. Parameter Settings for User Entity Instance: top_level:Inst_top_level|clk_enabler:Inst_clk_enabler
- 11. Port Connectivity Checks: "top_level:Inst_top_level|clk_enabler:Inst_clk_enabler"
- 12. Port Connectivity Checks: "top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay"
- 13. Port Connectivity Checks: "top_level:Inst_top_level"
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -46,20 +36,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jan 21 12:28:06 2025            ;
+; Analysis & Synthesis Status        ; Failed - Thu Jan 23 12:35:54 2025                ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; Project1                                         ;
 ; Top-level Entity Name              ; DE2_115                                          ;
 ; Family                             ; Cyclone IV E                                     ;
-; Total logic elements               ; 0                                                ;
-;     Total combinational functions  ; 0                                                ;
-;     Dedicated logic registers      ; 0                                                ;
-; Total registers                    ; 0                                                ;
-; Total pins                         ; 129                                              ;
-; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 0                                                ;
-; Embedded Multiplier 9-bit elements ; 0                                                ;
-; Total PLLs                         ; 0                                                ;
+; Total logic elements               ; N/A until Partition Merge                        ;
+;     Total combinational functions  ; N/A until Partition Merge                        ;
+;     Dedicated logic registers      ; N/A until Partition Merge                        ;
+; Total registers                    ; N/A until Partition Merge                        ;
+; Total pins                         ; N/A until Partition Merge                        ;
+; Total virtual pins                 ; N/A until Partition Merge                        ;
+; Total memory bits                  ; N/A until Partition Merge                        ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                        ;
+; Total PLLs                         ; N/A until Partition Merge                        ;
 +------------------------------------+--------------------------------------------------+
 
 
@@ -167,137 +157,13 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                       ;
-+----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                          ; Library ;
-+----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------+---------+
-; DE2_115.vhd                      ; yes             ; User VHDL File        ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/DE2_115.vhd     ;         ;
-; top_level.vhd                    ; yes             ; User VHDL File        ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd   ;         ;
-; reset_delay.vhd                  ; yes             ; User VHDL File        ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/reset_delay.vhd ;         ;
-; clk_enabler.vhd                  ; yes             ; Auto-Found VHDL File  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/clk_enabler.vhd ;         ;
-+----------------------------------+-----------------+-----------------------+-----------------------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                     ;
-+---------------------------------------------+-------------------+
-; Resource                                    ; Usage             ;
-+---------------------------------------------+-------------------+
-;                                             ;                   ;
-; Total combinational functions               ; 0                 ;
-; Logic element usage by number of LUT inputs ;                   ;
-;     -- 4 input functions                    ; 0                 ;
-;     -- 3 input functions                    ; 0                 ;
-;     -- <=2 input functions                  ; 0                 ;
-;                                             ;                   ;
-; Logic elements by mode                      ;                   ;
-;     -- normal mode                          ; 0                 ;
-;     -- arithmetic mode                      ; 0                 ;
-;                                             ;                   ;
-; Total registers                             ; 0                 ;
-;     -- Dedicated logic registers            ; 0                 ;
-;     -- I/O registers                        ; 0                 ;
-;                                             ;                   ;
-; I/O pins                                    ; 129               ;
-; Embedded Multiplier 9-bit elements          ; 0                 ;
-; Maximum fan-out node                        ; SRAM_DQ[0]~output ;
-; Maximum fan-out                             ; 1                 ;
-; Total fan-out                               ; 181               ;
-; Average fan-out                             ; 0.58              ;
-+---------------------------------------------+-------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |DE2_115                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 129  ; 0            ; |DE2_115            ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: top_level:Inst_top_level ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; N              ; 4     ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: top_level:Inst_top_level|clk_enabler:Inst_clk_enabler ;
-+----------------+-------+---------------------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                                      ;
-+----------------+-------+---------------------------------------------------------------------------+
-; cnt_max        ; 9     ; Signed Integer                                                            ;
-+----------------+-------+---------------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "top_level:Inst_top_level|clk_enabler:Inst_clk_enabler"                                ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; clk_en ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay"                            ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; oreset ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "top_level:Inst_top_level"                                                                                                                        ;
-+----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                                                                                      ;
-+----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; ireset_n ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; rows     ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; columns  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-+----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue Jan 21 12:28:04 2025
+    Info: Processing started: Thu Jan 23 12:35:53 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project1 -c Project1
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file de2_115.vhd
@@ -306,12 +172,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file de2_115
 Info (12021): Found 2 design units, including 1 entities, in source file top_level.vhd
     Info (12022): Found design unit 1: top_level-Structural
     Info (12023): Found entity 1: top_level
-Info (12021): Found 2 design units, including 1 entities, in source file initrom.vhd
-    Info (12022): Found design unit 1: initrom-SYN
-    Info (12023): Found entity 1: initRom
-Info (12021): Found 2 design units, including 1 entities, in source file sram.vhd
-    Info (12022): Found design unit 1: sram-SYN
-    Info (12023): Found entity 1: SRAM
 Info (12021): Found 2 design units, including 1 entities, in source file sram_controller.vhd
     Info (12022): Found design unit 1: SRAM_Controller-arch
     Info (12023): Found entity 1: SRAM_Controller
@@ -321,182 +181,30 @@ Info (12021): Found 2 design units, including 1 entities, in source file 7_segme
 Info (12021): Found 2 design units, including 1 entities, in source file kp_controller.vhd
     Info (12022): Found design unit 1: KP_Controller-Behavioral
     Info (12023): Found entity 1: KP_Controller
-Info (12021): Found 2 design units, including 1 entities, in source file sramctrl_tb.vhd
-    Info (12022): Found design unit 1: ram_ctrl_test-arch
-    Info (12023): Found entity 1: ram_ctrl_test
 Info (12021): Found 2 design units, including 1 entities, in source file btn_debounce_toggle.vhd
     Info (12022): Found design unit 1: btn_debounce_toggle-Behavioral
     Info (12023): Found entity 1: btn_debounce_toggle
 Info (12021): Found 2 design units, including 1 entities, in source file reset_delay.vhd
     Info (12022): Found design unit 1: Reset_Delay-Arch
     Info (12023): Found entity 1: Reset_Delay
-Info (12127): Elaborating entity "DE2_115" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(25): used implicit default value for signal "LEDG" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(57): used implicit default value for signal "SRAM_ADDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(58): used implicit default value for signal "SRAM_UB_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(59): used implicit default value for signal "SRAM_LB_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(60): used implicit default value for signal "SRAM_WE_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(61): used implicit default value for signal "SRAM_CE_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(62): used implicit default value for signal "SRAM_OE_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Info (12128): Elaborating entity "top_level" for hierarchy "top_level:Inst_top_level"
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(16): used implicit default value for signal "columns" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(17): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(18): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(19): used implicit default value for signal "HEX2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(20): used implicit default value for signal "HEX3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(21): used implicit default value for signal "HEX4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(22): used implicit default value for signal "HEX5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(91): used implicit default value for signal "clk" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(92): object "clk_enable" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(94): object "Counterreset_n" assigned a value but never read
-Info (12128): Elaborating entity "Reset_Delay" for hierarchy "top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay"
-Warning (12125): Using design file clk_enabler.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: clk_enabler-behv
-    Info (12023): Found entity 1: clk_enabler
-Info (12128): Elaborating entity "clk_enabler" for hierarchy "top_level:Inst_top_level|clk_enabler:Inst_clk_enabler"
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13039): The following bidir pins have no drivers
-    Warning (13040): Bidir "SRAM_DQ[0]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[1]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[2]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[3]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[4]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[5]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[6]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[7]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[8]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[9]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[10]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[11]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[12]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[13]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[14]" has no driver
-    Warning (13040): Bidir "SRAM_DQ[15]" has no driver
-    Warning (13040): Bidir "GPIO[0]" has no driver
-    Warning (13040): Bidir "GPIO[1]" has no driver
-    Warning (13040): Bidir "GPIO[2]" has no driver
-    Warning (13040): Bidir "GPIO[3]" has no driver
-    Warning (13040): Bidir "GPIO[4]" has no driver
-    Warning (13040): Bidir "GPIO[5]" has no driver
-    Warning (13040): Bidir "GPIO[6]" has no driver
-    Warning (13040): Bidir "GPIO[7]" has no driver
-    Warning (13040): Bidir "GPIO[8]" has no driver
-    Warning (13040): Bidir "GPIO[9]" has no driver
-    Warning (13040): Bidir "GPIO[10]" has no driver
-    Warning (13040): Bidir "GPIO[11]" has no driver
-    Warning (13040): Bidir "GPIO[12]" has no driver
-    Warning (13040): Bidir "GPIO[13]" has no driver
-    Warning (13040): Bidir "GPIO[14]" has no driver
-    Warning (13040): Bidir "GPIO[15]" has no driver
-    Warning (13040): Bidir "GPIO[16]" has no driver
-    Warning (13040): Bidir "GPIO[17]" has no driver
-    Warning (13040): Bidir "GPIO[18]" has no driver
-    Warning (13040): Bidir "GPIO[19]" has no driver
-    Warning (13040): Bidir "GPIO[20]" has no driver
-    Warning (13040): Bidir "GPIO[21]" has no driver
-    Warning (13040): Bidir "GPIO[22]" has no driver
-    Warning (13040): Bidir "GPIO[23]" has no driver
-    Warning (13040): Bidir "GPIO[24]" has no driver
-    Warning (13040): Bidir "GPIO[25]" has no driver
-    Warning (13040): Bidir "GPIO[26]" has no driver
-    Warning (13040): Bidir "GPIO[27]" has no driver
-    Warning (13040): Bidir "GPIO[28]" has no driver
-    Warning (13040): Bidir "GPIO[29]" has no driver
-    Warning (13040): Bidir "GPIO[30]" has no driver
-    Warning (13040): Bidir "GPIO[31]" has no driver
-    Warning (13040): Bidir "GPIO[32]" has no driver
-    Warning (13040): Bidir "GPIO[33]" has no driver
-    Warning (13040): Bidir "GPIO[34]" has no driver
-    Warning (13040): Bidir "GPIO[35]" has no driver
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND
-    Warning (13410): Pin "HEX0[1]" is stuck at GND
-    Warning (13410): Pin "HEX0[2]" is stuck at GND
-    Warning (13410): Pin "HEX0[3]" is stuck at GND
-    Warning (13410): Pin "HEX0[4]" is stuck at GND
-    Warning (13410): Pin "HEX0[5]" is stuck at GND
-    Warning (13410): Pin "HEX0[6]" is stuck at GND
-    Warning (13410): Pin "HEX1[0]" is stuck at GND
-    Warning (13410): Pin "HEX1[1]" is stuck at GND
-    Warning (13410): Pin "HEX1[2]" is stuck at GND
-    Warning (13410): Pin "HEX1[3]" is stuck at GND
-    Warning (13410): Pin "HEX1[4]" is stuck at GND
-    Warning (13410): Pin "HEX1[5]" is stuck at GND
-    Warning (13410): Pin "HEX1[6]" is stuck at GND
-    Warning (13410): Pin "HEX2[0]" is stuck at GND
-    Warning (13410): Pin "HEX2[1]" is stuck at GND
-    Warning (13410): Pin "HEX2[2]" is stuck at GND
-    Warning (13410): Pin "HEX2[3]" is stuck at GND
-    Warning (13410): Pin "HEX2[4]" is stuck at GND
-    Warning (13410): Pin "HEX2[5]" is stuck at GND
-    Warning (13410): Pin "HEX2[6]" is stuck at GND
-    Warning (13410): Pin "HEX3[0]" is stuck at GND
-    Warning (13410): Pin "HEX3[1]" is stuck at GND
-    Warning (13410): Pin "HEX3[2]" is stuck at GND
-    Warning (13410): Pin "HEX3[3]" is stuck at GND
-    Warning (13410): Pin "HEX3[4]" is stuck at GND
-    Warning (13410): Pin "HEX3[5]" is stuck at GND
-    Warning (13410): Pin "HEX3[6]" is stuck at GND
-    Warning (13410): Pin "HEX4[0]" is stuck at GND
-    Warning (13410): Pin "HEX4[1]" is stuck at GND
-    Warning (13410): Pin "HEX4[2]" is stuck at GND
-    Warning (13410): Pin "HEX4[3]" is stuck at GND
-    Warning (13410): Pin "HEX4[4]" is stuck at GND
-    Warning (13410): Pin "HEX4[5]" is stuck at GND
-    Warning (13410): Pin "HEX4[6]" is stuck at GND
-    Warning (13410): Pin "HEX5[0]" is stuck at GND
-    Warning (13410): Pin "HEX5[1]" is stuck at GND
-    Warning (13410): Pin "HEX5[2]" is stuck at GND
-    Warning (13410): Pin "HEX5[3]" is stuck at GND
-    Warning (13410): Pin "HEX5[4]" is stuck at GND
-    Warning (13410): Pin "HEX5[5]" is stuck at GND
-    Warning (13410): Pin "HEX5[6]" is stuck at GND
-    Warning (13410): Pin "LEDG[0]" is stuck at GND
-    Warning (13410): Pin "LEDG[1]" is stuck at GND
-    Warning (13410): Pin "LEDG[2]" is stuck at GND
-    Warning (13410): Pin "LEDG[3]" is stuck at GND
-    Warning (13410): Pin "LEDG[4]" is stuck at GND
-    Warning (13410): Pin "LEDG[5]" is stuck at GND
-    Warning (13410): Pin "LEDG[6]" is stuck at GND
-    Warning (13410): Pin "LEDG[7]" is stuck at GND
-    Warning (13410): Pin "LEDG[8]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[0]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[1]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[2]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[3]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[4]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[5]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[6]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[7]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[8]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[9]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[10]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[11]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[12]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[13]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[14]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[15]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[16]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[17]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[18]" is stuck at GND
-    Warning (13410): Pin "SRAM_ADDR[19]" is stuck at GND
-    Warning (13410): Pin "SRAM_UB_N" is stuck at GND
-    Warning (13410): Pin "SRAM_LB_N" is stuck at GND
-    Warning (13410): Pin "SRAM_WE_N" is stuck at GND
-    Warning (13410): Pin "SRAM_CE_N" is stuck at GND
-    Warning (13410): Pin "SRAM_OE_N" is stuck at GND
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50"
-Info (21057): Implemented 129 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 76 output pins
-    Info (21060): Implemented 52 bidirectional pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 151 warnings
-    Info: Peak virtual memory: 4642 megabytes
-    Info: Processing ended: Tue Jan 21 12:28:06 2025
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+Info (12021): Found 2 design units, including 1 entities, in source file initrom.vhd
+    Info (12022): Found design unit 1: initrom-SYN
+    Info (12023): Found entity 1: initRom
+Error (10482): VHDL error at top_level.vhd(187): object "mem" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 187
+Error (10482): VHDL error at top_level.vhd(188): object "rw" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 188
+Error (10482): VHDL error at top_level.vhd(189): object "addr" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 189
+Error (10482): VHDL error at top_level.vhd(190): object "data_f2s" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 190
+Error (10482): VHDL error at top_level.vhd(191): object "ready" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 191
+Error (10558): VHDL error at top_level.vhd(191): cannot associate formal port "ready" of mode "out" with an expression File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 191
+Error (10482): VHDL error at top_level.vhd(192): object "data_s2f_r" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 192
+Error (10558): VHDL error at top_level.vhd(192): cannot associate formal port "data_s2f_r" of mode "out" with an expression File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 192
+Error (10482): VHDL error at top_level.vhd(193): object "data_s2f_ur" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 193
+Error (10558): VHDL error at top_level.vhd(193): cannot associate formal port "data_s2f_ur" of mode "out" with an expression File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 193
+Error (10349): VHDL Association List error at top_level.vhd(196): formal "ow_n" does not exist File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 196
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 11 errors, 0 warnings
+    Error: Peak virtual memory: 4623 megabytes
+    Error: Processing ended: Thu Jan 23 12:35:54 2025
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:01
 
 
