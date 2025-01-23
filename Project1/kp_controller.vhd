@@ -122,6 +122,7 @@ end case;
         when others  => oData <= "11111";
 end case;
     end case;
+        end if;
 end process;
 
         -- register work for data transmission
