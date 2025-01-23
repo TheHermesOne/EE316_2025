@@ -128,7 +128,7 @@ end process;
         -- register work for data transmission
 process(clk)
    begin
-   if rising_edge(clk) then
+   if rising_edge(clk) and clk_en = '1' then -- give 5ms pulse
    q(0) <= key_pressed;
    q(1) <= q(0);
    kp_pulse5 <= q(0) and not q(1);
