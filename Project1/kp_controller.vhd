@@ -84,45 +84,45 @@ end process;
         case state is
             when A =>
                 case rows is
-        when "01111" => oData <= '0'&X"A"; -- A
-        when "10111" => oData <= '0'&X"1"; -- 1
-        when "11011" => oData <= '0'&X"4"; -- 4
-        when "11101" => oData <= '0'&X"7"; -- 7
-        when "11111" => oData <= '1'&X"F"; -- not connected
-        when others  => oData <= '1'&X"F"; -- no connection
+        when "01111" => oData <= '0' & X"A"; -- A
+        when "10111" => oData <= '0' & X"1"; -- 1
+        when "11011" => oData <= '0' & X"4"; -- 4
+        when "11101" => oData <= '0' & X"7"; -- 7
+        when "11111" => oData <= '1' & X"F"; -- not connected
+        when others  => oData <= '1' & X"F"; -- no connection
             end case;
                
         when B =>
                 case rows is        
-        when "01111" => oData <= '0'&X"B"; -- B
-        when "10111" => oData <= '0'&X"2"; -- 2
-        when "11011" => oData <= '0'&X"5"; -- 5
-        when "11101" => oData <= '0'&X"8"; -- 8
-        when "11110" => oData <= '0'&X"0"; -- 0
-        when others  => oData <= '1'&X"F"; -- no connection
+        when "01111" => oData <= '0' & X"B"; -- B
+        when "10111" => oData <= '0' & X"2"; -- 2
+        when "11011" => oData <= '0' & X"5"; -- 5
+        when "11101" => oData <= '0' & X"8"; -- 8
+        when "11110" => oData <= '0' & X"0"; -- 0
+        when others  => oData <= '1' & X"F"; -- no connection
             end case;
                
         when C =>
                 case rows is
-        when "01111" => oData <= '0'&X"C"; -- C
-        when "10111" => oData <= '0'&X"3"; -- 3
-        when "11011" => oData <= '0'&X"6"; -- 6
-        when "11101" => oData <= '0'&X"9"; -- 9
-        when "11110" => oData <= '1'&X"H"; -- H
-        when others  => oData <= '1'&X"F"; -- no connection
+        when "01111" => oData <= '0' & X"C"; -- C
+        when "10111" => oData <= '0' & X"3"; -- 3
+        when "11011" => oData <= '0' & X"6"; -- 6
+        when "11101" => oData <= '0' & X"9"; -- 9
+        when "11110" => oData <= '1' & X"H"; -- H
+        when others  => oData <= '1' & X"F"; -- no connection
 end case;
 
         when D =>
                 case rows is
-        when "01111" => oData <= '0'&X"D"; -- D
-        when "10111" => oData <= '0'&X"E"; -- E
-        when "11011" => oData <= '0'&X"F"; -- F
-        when "11101" => oData <= '1'&X"0"; -- SHIFT
-        when "11110" => oData <= '1'&X"1"; -- L
-        when others  => oData <= '1'&X"F"; -- no connection
-end case;
+        when "01111" => oData <= '0' & X"D"; -- D
+        when "10111" => oData <= '0' & X"E"; -- E
+        when "11011" => oData <= '0' & X"F"; -- F
+        when "11101" => oData <= '1' & X"0"; -- SHIFT
+        when "11110" => oData <= '1' & X"1"; -- L
+        when others  => oData <= '1' & X"F"; -- no connection
     end case;
-        end if;
+end case;
+end if;
 end process;
 
         -- register work for data transmission
@@ -131,7 +131,7 @@ process(clk)
    if rising_edge(clk) then
    q(0) <= key_pressed;
    q(1) <= q(0);
-   kp_pulse5 <= Q(0) and not Q(1);
+   kp_pulse5 <= q(0) and not q(1);
    end if;
 end process;
        
