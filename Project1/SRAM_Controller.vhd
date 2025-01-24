@@ -6,7 +6,7 @@ entity SRAM_Controller is
 		clk,reset					: in std_logic; 							-- Set up for 100Mhz clock
 		mem							: in std_logic; 							-- when '1' SRAM_Controller is going to be used
 		rw								: in std_logic; 							-- read write bit. '1' for read, '0' for write
-		addr							: in std_logic_vector(7 downto 0);	-- Address input
+		addr							: in std_logic_vector(19 downto 0);	-- Address input
 		data_f2s						: in std_logic_vector(7 downto 0);	-- Data input to SRAM_Controller
 		ready							: out std_logic; 							-- Status signal indcating Controller is ready for input?
 		data_s2f_r, data_s2f_ur	: out std_logic_vector(7 downto 0);	-- Data (registered, unregistered) from SRAM_Controller
@@ -22,7 +22,8 @@ entity SRAM_Controller is
 				signal state_reg, state_next: state_type;
 				signal data_f2s_reg, data_f2s_next: std_logic_vector(7 downto 0);
 				signal data_s2f_reg, data_s2f_next: std_logic_vector(7 downto 0);
-				signal addr_reg, addr_next: std_logic_vector(18 downto 0);
+				signal addr_reg: std_logic_vector(19 downto 0);
+				signal addr_next: std_logic_vector(19 downto 0);
 				signal we_buf, oe_buf, tri_buf: std_logic;
 				signal we_reg, oe_reg, tri_reg: std_logic;
 				

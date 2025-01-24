@@ -19,7 +19,7 @@ architecture behav of statemachine_tb is
 	end component;
 
 	signal clk :STD_LOGIC := '0';
-	signal reset : std_LOGIC;
+	signal reset : std_LOGIC := '0';
 	signal countVal : std_logic_vector(7 downto 0);
 	signal kp_data : std_LOGIC_vector(4 downto 0);
 	signal kp_pulse : std_LOGIC;
@@ -30,7 +30,7 @@ architecture behav of statemachine_tb is
 	signal ShiftCommand : std_LOGIC_vector(4 downto 0) := ('1' & X"0");
 	
 	begin
-	clk <= not clk after 5 ns;
+	clk <= not clk after 10 ns;
 
 	DUT:Statemachine
 		port map (
@@ -44,17 +44,43 @@ architecture behav of statemachine_tb is
 	
 	process
 		begin
-			
+			reset <= '1';
+			wait for 20 ns;
+			reset <= '0';
+			wait for 50 ns;					
 			countVal <= X"FF";
-			wait for 200ns;
+			wait for 50 ns;
 			countVal <= X"00";
-			wait for 200ns;
+			wait for 50 ns;
 			--Init ends should go to OP_PAUSE_F
---			kp_data <= Lcommand;
---			kp_pulse <= '1';
---			wait for 20ns;
---			kp_pulse <= '0';
+			kp_data <= Lcommand;
+			kp_pulse <= '1';
+			wait for 20 ns;
+			kp_pulse <= '0';
+			wait for 20 ns;
 			--Should go into OP_PAUSE_B
-			
+			kp_data <= Hcommand;
+			kp_pulse <= '1';
+			wait for 20 ns;
+			kp_pulse <= '0';
+			wait for 20 ns;
+			--Should go to OP_RUN_B
+			kp_data <= shiftCommand;
+			kp_pulse <= '1';
+			wait for 20 ns;
+			kp_pulse <= '0';
+			wait for 20 ns;
+			--Should go into PROG_ADDR
+			kp_data <= shiftCommand;
+			kp_pulse <= '1';
+			wait for 20 ns;
+			kp_pulse <= '0';
+			wait for 50 ns;
+			--Should go into OP_PAUSE_B
+			reset <= '1';
+			wait for 20 ns;
+			reset <= '0';
+			--Should go Back to INIT
+			wait;
 	end process;
 end behav;

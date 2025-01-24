@@ -1,4 +1,3 @@
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -22,7 +21,7 @@ architecture struct of statemachine is
 				signal Hcmd : std_LOGIC_vector(4 downto 0) := ('1' & X"2");
 				signal Shiftcmd: std_logic_vector(4 downto 0) := ('1' & X"0");
 	begin
-		process
+		process(Clk, reset)
 			begin
 				if (reset = '1') then
 					stateVAR <= INIT;
@@ -66,32 +65,32 @@ architecture struct of statemachine is
 								stateVAR <= PROG_ADDR;
 							end if;
 						when PROG_ADDR =>
-								if (kp_data = Lcmd and kp_pulse='1') then
+							if (kp_data = Lcmd and kp_pulse='1') then
 -- TODO -- needs to write data from screen to SRAM
 		  -- does it need to be done outside of this code
-								elsif (kp_data = Hcmd and kp_pulse='1') then
-									stateVAR <= PROG_DATA;
-								elsif (kp_data = Shiftcmd and kp_pulse='1') then
-									if(state(1) = '1') then
-										stateVAR <= OP_PAUSE_B;
-									else
-										stateVAR <= OP_PAUSE_F;
-									end if;
+							elsif (kp_data = Hcmd and kp_pulse='1') then
+								stateVAR <= PROG_DATA;
+							elsif (kp_data = Shiftcmd and kp_pulse='1') then
+								if(state(1) = '1') then
+									stateVAR <= OP_PAUSE_B;
+								else
+									stateVAR <= OP_PAUSE_F;
 								end if;
+							end if;
 						when PROG_DATA =>
-								if (kp_data = Lcmd and kp_pulse='1') then
+							if (kp_data = Lcmd and kp_pulse='1') then
 -- TODO -- needs to write data from screen to SRAM
 		  -- does it need to be done outside of this code
-		  -- Send out a pulse to read write?
-								elsif (kp_data = Hcmd and kp_pulse='1') then
-									stateVAR <= PROG_ADDR;
-								elsif (kp_data = Shiftcmd and kp_pulse='1') then
-									if(state(1) = '1') then
-										stateVAR <= OP_PAUSE_B;
-									else
-										stateVAR <= OP_PAUSE_F;
-									end if;
+		  -- Send out a pulse to read/write?
+							elsif (kp_data = Hcmd and kp_pulse='1') then
+								stateVAR <= PROG_ADDR;
+							elsif (kp_data = Shiftcmd and kp_pulse='1') then
+								if(state(1) = '1') then
+									stateVAR <= OP_PAUSE_B;
+								else
+									stateVAR <= OP_PAUSE_F;
 								end if;
+							end if;
 						when others => stateVAR <= INIT;		
 					end case;		
 				end if;
