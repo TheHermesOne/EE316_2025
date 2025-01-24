@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Project1
-Thu Jan 23 15:38:05 2025
+Fri Jan 24 10:32:25 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Jan 23 15:38:04 2025                ;
+; Analysis & Synthesis Status        ; Failed - Fri Jan 24 10:32:25 2025                ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; Project1                                         ;
 ; Top-level Entity Name              ; DE2_115                                          ;
@@ -163,7 +163,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Jan 23 15:38:03 2025
+    Info: Processing started: Fri Jan 24 10:32:24 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project1 -c Project1
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file de2_115.vhd
@@ -193,21 +193,29 @@ Info (12021): Found 2 design units, including 1 entities, in source file initrom
 Info (12021): Found 2 design units, including 1 entities, in source file statemachine.vhd
     Info (12022): Found design unit 1: statemachine-struct
     Info (12023): Found entity 1: statemachine
-Error (10482): VHDL error at top_level.vhd(206): object "mem" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 206
-Error (10482): VHDL error at top_level.vhd(207): object "rw" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 207
-Error (10482): VHDL error at top_level.vhd(208): object "addr" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 208
-Error (10482): VHDL error at top_level.vhd(209): object "data_f2s" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 209
-Error (10482): VHDL error at top_level.vhd(210): object "ready" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 210
-Error (10558): VHDL error at top_level.vhd(210): cannot associate formal port "ready" of mode "out" with an expression File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 210
-Error (10482): VHDL error at top_level.vhd(211): object "data_s2f_r" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 211
-Error (10558): VHDL error at top_level.vhd(211): cannot associate formal port "data_s2f_r" of mode "out" with an expression File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 211
-Error (10482): VHDL error at top_level.vhd(212): object "data_s2f_ur" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 212
-Error (10558): VHDL error at top_level.vhd(212): cannot associate formal port "data_s2f_ur" of mode "out" with an expression File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 212
-Error (10349): VHDL Association List error at top_level.vhd(215): formal "ow_n" does not exist File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 215
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 11 errors, 0 warnings
+Info (12021): Found 2 design units, including 1 entities, in source file shift_registers.vhd
+    Info (12022): Found design unit 1: ShiftRegisters-Behavioral
+    Info (12023): Found entity 1: ShiftRegisters
+Info (12021): Found 2 design units, including 1 entities, in source file statemachine_tb.vhd
+    Info (12022): Found design unit 1: statemachine_tb-behav
+    Info (12023): Found entity 1: statemachine_tb
+Info (12021): Found 2 design units, including 1 entities, in source file univ_bin_counter.vhd
+    Info (12022): Found design unit 1: univ_bin_counter-arch
+    Info (12023): Found entity 1: univ_bin_counter
+Error (10482): VHDL error at top_level.vhd(169): object "iLoad" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 169
+Error (10482): VHDL error at top_level.vhd(170): object "iCnt_en" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 170
+Error (10482): VHDL error at top_level.vhd(171): object "iUP" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 171
+Error (10482): VHDL error at top_level.vhd(173): object "iData" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 173
+Error (10482): VHDL error at top_level.vhd(174): object "oMax" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 174
+Error (10558): VHDL error at top_level.vhd(174): cannot associate formal port "max_tick" of mode "out" with an expression File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 174
+Error (10482): VHDL error at top_level.vhd(175): object "oMin" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 175
+Error (10558): VHDL error at top_level.vhd(175): cannot associate formal port "min_tick" of mode "out" with an expression File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 175
+Error (10482): VHDL error at top_level.vhd(176): object "oQ" is used but not declared File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 176
+Error (10558): VHDL error at top_level.vhd(176): cannot associate formal port "q" of mode "out" with an expression File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd Line: 176
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 10 errors, 0 warnings
     Error: Peak virtual memory: 4623 megabytes
-    Error: Processing ended: Thu Jan 23 15:38:05 2025
-    Error: Elapsed time: 00:00:02
+    Error: Processing ended: Fri Jan 24 10:32:25 2025
+    Error: Elapsed time: 00:00:01
     Error: Total CPU time (on all processors): 00:00:01
 
 

@@ -66,13 +66,11 @@ architecture Structural of top_level is
 
 	component KP_Controller is 
 		Port ( 
-			clk         		: in  std_logic;  
-        	rows        		: in  std_logic_vector(4 downto 0); 
-        	columns     		: out std_logic_vector(3 downto 0);
-       	oData       		: out std_logic_vector(4 downto 0);
-        	clk_en_out  		: out std_logic; -- 5ms clock enable
-       	kp_pulse    		: out std_logic; -- 5ms for debouncing
-        	et_pulse    		: out std_logic -- edge detector pulse
+        clk         : in  std_logic;  
+        rows        : in  std_logic_vector(4 downto 0);
+        columns     : out std_logic_vector(3 downto 0);
+        oData       : out std_logic_vector(4 downto 0);
+        kp_pulse20  : out std_logic
 		);
 	end component; 	
 
@@ -184,9 +182,7 @@ begin
 				rows        => rows,
 				columns     => columns,
 				oData       => oData,
-				clk_en_out  => clk_en_out,
-				kp_pulse    => kp_pulse,
-				et_pulse    => et_pulse
+				kp_pulse20    => kp_pulse
 			  );
 
 		Inst_SevenSegment : SevenSegment

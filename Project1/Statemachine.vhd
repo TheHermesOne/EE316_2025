@@ -6,7 +6,7 @@ entity statemachine is
 port(
 	Clk :in std_LOGIC;
 	reset : in std_logic;
-	CountVal: in std_logic;
+	CountVal: in std_logic_vector(7 downto 0);
 	kp_data: in std_logic_vector(4 downto 0);
 	kp_pulse: in std_logic;
 	State: buffer std_logic_vector(3 downto 0)
@@ -17,23 +17,22 @@ end statemachine;
 architecture struct of statemachine is
 				type State_type is (INIT,OP_PAUSE_F,OP_PAUSE_B,OP_RUN_F,OP_RUN_B,PROG_ADDR,PROG_DATA);
 				signal stateVAR : state_type;
-				signal prevCountVal : std_LOGIC;
-				signal Lcmd : std_LOGIC := ('1' & X"1");
-				signal Hcmd : std_LOGIC := ('1' & X"2");
-				signal Shiftcmd: std_logic := ('1' & X"0");
+				signal prevCountVal : std_LOGIC_vector(7 downto 0);
+				signal Lcmd : std_LOGIC_vector(4 downto 0) := ('1' & X"1");
+				signal Hcmd : std_LOGIC_vector(4 downto 0) := ('1' & X"2");
+				signal Shiftcmd: std_logic_vector(4 downto 0) := ('1' & X"0");
 	begin
-			prevCountVal <= CountVal;
-		process(Iclk)
+		process
 			begin
-
 				if (reset = '1') then
 					stateVAR <= INIT;
-				elsif rising_edge(iclk) then
+				elsif rising_edge(Clk) then
 					case stateVAR is
 						when INIT =>
-							if (prevCountVal = "255" and countVal = "0") then
+							if (prevCountVal = X"FF" and countVal = X"00") then
 								stateVAR <= OP_PAUSE_F;
 							end if;
+							prevCountVal <= CountVal;
 						when OP_PAUSE_F =>
 							if (kp_data = Lcmd and kp_pulse='1') then
 								stateVAR <= OP_PAUSE_B;
@@ -73,7 +72,7 @@ architecture struct of statemachine is
 								elsif (kp_data = Hcmd and kp_pulse='1') then
 									stateVAR <= PROG_DATA;
 								elsif (kp_data = Shiftcmd and kp_pulse='1') then
-									if(state(1) = "1") then
+									if(state(1) = '1') then
 										stateVAR <= OP_PAUSE_B;
 									else
 										stateVAR <= OP_PAUSE_F;
@@ -87,7 +86,7 @@ architecture struct of statemachine is
 								elsif (kp_data = Hcmd and kp_pulse='1') then
 									stateVAR <= PROG_ADDR;
 								elsif (kp_data = Shiftcmd and kp_pulse='1') then
-									if(state(1) = "1") then
+									if(state(1) = '1') then
 										stateVAR <= OP_PAUSE_B;
 									else
 										stateVAR <= OP_PAUSE_F;
@@ -105,8 +104,8 @@ architecture struct of statemachine is
 					when OP_PAUSE_B => state <= "0110"; -- in OP mode, backwards direction, counter off
 					when OP_RUN_F => state <= "0101";	-- in OP mode, forward direction, counter on 
 					when OP_RUN_B => state <= "0111";	-- in OP mode, backwards direction, counter on
-					when PROG_ADDR => state(3 downto 2) <= "10"; state(0) <= "0"; --Changes PROG mode only and turns counter off
-					when PROG_DATA => state(3 downto 2) <= "10"; state(0) <= "0";  --Changes PROG mode only and turns counter off
+					when PROG_ADDR => state(3 downto 2) <= "10"; state(0) <= '0'; --Changes PROG mode only and turns counter off
+					when PROG_DATA => state(3 downto 2) <= "10"; state(0) <= '0';  --Changes PROG mode only and turns counter off
 				end case;
 		end process;
 end struct;
