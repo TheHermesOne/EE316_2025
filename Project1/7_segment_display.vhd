@@ -6,33 +6,37 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity SevenSegment is
     Port (
         clk           : in  STD_LOGIC;             -- Clock from keypad
-        reset         : in  STD_LOGIC;             -- Reset 
-        keypad_input  : in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit keypad
+        reset         : in  STD_LOGIC;             -- Reset signal
+        keypad_input  : in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit from keypad
         seg_out       : out STD_LOGIC_VECTOR(6 downto 0); -- 7-seg display output
-        digit_select  : out STD_LOGIC_VECTOR(3 downto 0)  -- select 7 segment
+        digit_select  : out STD_LOGIC_VECTOR(3 downto 0)  -- Select lines for the 7-segment displays
     );
 end SevenSegment;
 
 architecture Behavioral of SevenSegment is
 
     component ShiftRegisters
+        Generic (
+            NUM_ADDR_REGS : integer := 2; -- # of 4-bit registers for address buffer
+            NUM_DATA_REGS : integer := 4  -- # of 4-bit registers for data buffer
+        );
         Port (
             clk           : in  STD_LOGIC;
             reset         : in  STD_LOGIC;
             keypad_input  : in  STD_LOGIC_VECTOR(4 downto 0);
-            address_buffer: out STD_LOGIC_VECTOR(7 downto 0);
-            data_buffer   : out STD_LOGIC_VECTOR(15 downto 0);
+            address_buffer: out STD_LOGIC_VECTOR((NUM_ADDR_REGS * 4 - 1) downto 0);
+            data_buffer   : out STD_LOGIC_VECTOR((NUM_DATA_REGS * 4 - 1) downto 0);
             display_mode  : out STD_LOGIC
         );
     end component;
 
-    signal address_buffer : STD_LOGIC_VECTOR(7 downto 0) := (others => '0'); -- address buffer
-    signal data_buffer    : STD_LOGIC_VECTOR(15 downto 0) := (others => '0'); -- data buffer
-    signal current_digit  : STD_LOGIC_VECTOR(3 downto 0) := (others => '0'); -- Current nubmer
-    signal digit_index    : INTEGER range 0 to 3 := 0; -- Tracks the digit to update
-    signal display_mode   : STD_LOGIC := '0'; -- '0' for address, '1' for data
+    signal address_buffer : STD_LOGIC_VECTOR(7 downto 0); -- NUM_ADDR_REGS
+    signal data_buffer    : STD_LOGIC_VECTOR(15 downto 0); -- NUM_DATA_REGS 
+    signal display_mode   : STD_LOGIC;
+    signal current_digit  : STD_LOGIC_VECTOR(3 downto 0) := (others => '0'); -- Current digit
+    signal digit_index    : INTEGER range 0 to 3 := 0; -- updates digit
 
-    -- 7-segment encoding for hex digits 0-F
+    -- 7-segment encoding 
     function hex_to_7seg(hex : STD_LOGIC_VECTOR(3 downto 0)) return STD_LOGIC_VECTOR is
         variable seg : STD_LOGIC_VECTOR(6 downto 0);
     begin
@@ -53,7 +57,7 @@ architecture Behavioral of SevenSegment is
             when "1101" => seg := "0100001"; -- D
             when "1110" => seg := "0000110"; -- E
             when "1111" => seg := "0001110"; -- F
-            when others => seg := "1111111"; -- otherwsie
+            when others => seg := "1111111"; -- Blank
         end case;
         return seg;
     end hex_to_7seg;
@@ -61,6 +65,10 @@ architecture Behavioral of SevenSegment is
 begin
 
     U_ShiftRegisters: ShiftRegisters
+        Generic Map (
+            NUM_ADDR_REGS => 2, -- Matches the default for address registers
+            NUM_DATA_REGS => 4  -- Matches the default for data registers
+        )
         Port Map (
             clk => clk,
             reset => reset,
@@ -70,31 +78,31 @@ begin
             display_mode => display_mode
         );
 
-    -- choose 7 segment depending on what number is selected
+    -- Assign  7-segment output based on the current digit
     process(digit_index, display_mode)
     begin
         if display_mode = '0' then
             -- Address mode
             case digit_index is
                 when 0 => current_digit <= address_buffer(3 downto 0); -- Least significant bit
-                when 1 => current_digit <= address_buffer(7 downto 4); -- Most significant bit
-                when others => current_digit <= "0000"; -- otherwise leave it blank
+                when 1 => current_digit <= address_buffer(7 downto 4); -- Most sig bit
+                when others => current_digit <= "0000"; -- otherwise blak
             end case;
         else
             -- Data mode
             case digit_index is
-                when 0 => current_digit <= data_buffer(3 downto 0); -- Least significant bit
+                when 0 => current_digit <= data_buffer(3 downto 0); -- Least sig bit
                 when 1 => current_digit <= data_buffer(7 downto 4);
                 when 2 => current_digit <= data_buffer(11 downto 8);
-                when 3 => current_digit <= data_buffer(15 downto 12); -- Most significant bit
-                when others => current_digit <= "0000"; -- otherwise leave it blank
+                when 3 => current_digit <= data_buffer(15 downto 12); -- Most sig bit
+                when others => current_digit <= "0000"; 
             end case;
         end if;
     end process;
 
     seg_out <= hex_to_7seg(current_digit);
 
-    -- Digit selects one at a time.
+    -- Digit select
     digit_select <= "1110" when digit_index = 0 else
                     "1101" when digit_index = 1 else
                     "1011" when digit_index = 2 else
