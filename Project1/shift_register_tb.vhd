@@ -38,7 +38,7 @@ architecture Behavioral of Testbench_ShiftRegisters is
     -- Clock generation
     constant CLK_PERIOD : time := 10 ns;
 
-    -- Procedure to generate a clock signal
+    -- Clock generation process
     process
     begin
         while true loop
