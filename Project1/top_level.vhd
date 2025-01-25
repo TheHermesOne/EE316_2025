@@ -1,14 +1,8 @@
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
 entity top_level is
-		generic(N: integer := 4);
+		generic(N: integer := 8);
 		port (
 		iClk										: in std_logic;
 		HEX0,HEX1,HEX2,HEX3,HEX4,HEX5		: out std_LOGIC_VECTOR(6 downto 0);
@@ -24,8 +18,11 @@ entity top_level is
 		);
 end top_level;
 
+---------------------Architecture---------------------------
+
 architecture Structural of top_level is
 	
+	-------------Component Declaration---------------------
 	component univ_bin_counter is
 		generic(N: integer := 8);
 		port(
@@ -84,23 +81,21 @@ architecture Structural of top_level is
    		 );
 	end component;
 
-
 	component SRAM_Controller is
 		Port(
 			clk,reset					: in std_logic;
 			mem							: in std_logic;
 			rw								: in std_logic;
-			addr							: in std_logic_vector(7 downto 0);
-			data_f2s						: in std_logic_vector(7 downto 0);
+			addr							: in std_logic_vector(19 downto 0);
+			data_f2s						: in std_logic_vector(15 downto 0);
 			ready							: out std_logic;
-			data_s2f_r, data_s2f_ur : out std_logic_vector(7 downto 0);
-			ad								: out std_logic_vector(18 downto 0);
+			data_s2f_r, data_s2f_ur : out std_logic_vector(15 downto 0);
+			ad								: out std_logic_vector(19 downto 0);
 			we_n, oe_n					: out std_logic;
-			dio							: inout std_logic_vector(7 downto 0);
+			dio							: inout std_logic_vector(15 downto 0);
 			ce_n							: out std_logic
 		);
 		end component;
-
 	
 	component initRom is
 		Port(
@@ -109,14 +104,52 @@ architecture Structural of top_level is
 			q		: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
 		);
 	end component;
-
+	
+	component statemachine is
+		port(
+			Clk :in std_LOGIC;
+			reset : in std_logic;
+			CountVal: in std_logic_vector(7 downto 0);
+			kp_data: in std_logic_vector(4 downto 0);
+			kp_pulse: in std_logic;
+			State: buffer std_logic_vector(3 downto 0)
+		);
+	end component;
+	
+	
+	component ShiftRegisters is
+	    Generic (
+        NUM_ADDR_REGS : integer := 2; -- Number of 4-bit registers for address buffer
+        NUM_DATA_REGS : integer := 4  -- Number of 4-bit registers for data buffer
+    );
+		PORT(
+			clk           : in  STD_LOGIC;             -- Clock signal
+        reset         : in  STD_LOGIC;             -- Reset signal
+        keypad_input  : in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit from keypad
+        address_buffer: out STD_LOGIC_VECTOR((NUM_ADDR_REGS * 4 - 1) downto 0); -- Addr buffer
+        data_buffer   : out STD_LOGIC_VECTOR((NUM_DATA_REGS * 4 - 1) downto 0); -- Data buffer
+        display_mode  : out STD_LOGIC              -- '0' for address, '1' for data
+		);
+	end component;
+	-------------------Temp Variables(Internal only)--------------------
 	signal clk						: std_logic;
-	signal clk_enable, Rst		: std_logic;
+	signal clk_enable,clk_enable60ns,clk_enable1hz, Rst		: std_logic;
 	signal reset, Counterreset	: std_logic;
   	signal Counterreset_n      : std_logic;	
 	signal Qsignal					: std_logic_vector(7 downto 0);
 	signal reset_db				: std_logic;
-	
+	signal iData					: std_logic_vector(N-1 downto 0);
+	signal oQ						: std_logic_vector(N-1 downto 0);
+	signal cntrEn					: std_LOGIC;
+	signal DirEn					: std_logic;
+	signal data2Sram				: std_logic_vector(15 downto 0);
+	signal SramReady				: std_logic;
+	signal SramAddrIn				: std_logic_vector(19 downto 0);
+	signal bReadWrite				: std_logic;
+	signal SramActive				: std_logic;
+	signal data_outR,data_outUR: std_logic_vector(15 downto 0);
+	signal romDataOut				: std_LOGIC_VECTOR(15 downto 0);
+	signal oState					: std_logIC_VECTOR(3 downto 0);
 	--Signals below are made to satiate inputs and outputs temporaly
 	-- unitl we can figure out what goes where
 	-----------------------------------------
@@ -133,17 +166,18 @@ architecture Structural of top_level is
 	
 begin
 	
-		Rst 					<= not reset_db;--iReset_n;
+		Rst 					<= not reset_db;--iReset_n;?
 		CounterReset 		<= reset or Rst;
 		CounterReset_n  	<= not CounterReset;
 		
+		------------Entity Instantiation-------------
 		Inst_clk_Reset_Delay: Reset_Delay	
 				port map(
 				  iCLK 		=> iCLK,	
 				  oRESET    => reset
 					);			
 
-		Inst_btn_debounce: btn_debounce_toggle
+		Inst_reset_debounce: btn_debounce_toggle
 			port map(
 				BTN_I => KEY0,
 				CLK => iCLK,
@@ -152,12 +186,19 @@ begin
 				PULSE_O => open
 			);
 					
-		Inst_clk_enabler: clk_enabler
+		Inst_clk_enabler60ns: clk_enabler  
 				generic map(
-					cnt_max 		=> 9)
+					cnt_max 		=> 9) --Needs to be set to 60 ns
 				port map( 
 					clock 		=> clk, 			-- output from sys_clk
-					clk_en 		=> clk_enable  -- enable every 10th sys_clk edge
+					clk_en 		=> clk_enable60ns  -- enable every 10th sys_clk edge
+				);
+		Inst_clk_enabler1hz: clk_enabler
+				generic map(
+					cnt_max => 10) --Needs to be set to 1hz
+				port map(
+					clock => clk,
+					clk_en => clk_enable1hz
 				);
 				
 		Inst_univ_bin_counter: univ_bin_counter
@@ -166,16 +207,24 @@ begin
 				clk 			=> clk,
 				reset 		=> CounterReset,
 				syn_clr		=> Rst, 
-				load			=> iLoad, 
-				en				=> iCnt_en, 
-				up				=> iUP, 
+				load			=> '0', 
+				en				=> cntrEn, 
+				up				=> dirEn, 
 				clk_en 		=> clk_enable,
 				d				=> iData,
-				max_tick		=> oMax, 
-				min_tick 	=> oMin,
+				max_tick		=> open, 
+				min_tick 	=> open,
 				q				=> oQ
 			);
-		
+		Inst_StateMachine: statemachine
+			port map(
+				clk => clk,
+				reset => counterReset,
+				countVal => oQ,
+				kp_data => oData,
+				kp_pulse => kp_pulse,
+				state => oState
+			);
 		Inst_kp_controller : kp_controller
 			  port map (
 				clk         => clk,
@@ -198,27 +247,27 @@ begin
 			PORT map(
 			clk			=> clk,
 			reset			=> reset_db,
-			mem			=> mem,
-			rw				=> rw,
-			addr			=> addr,
-			data_f2s		=> data_f2s,
-			ready			=> ready,
-			data_s2f_r	=> data_s2f_r,
-			data_s2f_ur	=> data_s2f_ur,
+			mem			=> SramActive,
+			rw				=> bReadWrite,
+			addr			=> SramAddrIn,
+			data_f2s		=> data2Sram,
+			ready			=> SramReady,
+			data_s2f_r	=> data_outR,
+			data_s2f_ur	=> data_outUR,
 			ad				=> SRAM_ADDR,
 			we_n			=> SRAM_WE_N,
-			ow_n			=> SRAM_OE_N,
+			oe_n			=> SRAM_OE_N,
 			dio			=> SRAM_DQ,
 			ce_n			=> SRAM_CE_N
 			);
 		
 		Inst_initRom : initRom
 			PORT map (
-			address	=> address,
-			clock		=> clock,
-			q			=> q
+			address	=> oQ,
+			clock		=> clk,
+			q			=> RomDataOut
 			);
 			
-		
+		---Make Muxs ( if statements ) to finish the logic
 		
 end Structural;

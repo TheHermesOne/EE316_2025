@@ -1,0 +1,25 @@
+
+State Machine - |DE2_115|top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg
+Name state_reg.w2 state_reg.w1 state_reg.r2 state_reg.r1 state_reg.idle 
+state_reg.idle 0 0 0 0 0 
+state_reg.r1 0 0 0 1 1 
+state_reg.r2 0 0 1 0 1 
+state_reg.w1 0 1 0 0 1 
+state_reg.w2 1 0 0 0 1 
+
+State Machine - |DE2_115|top_level:Inst_top_level|KP_Controller:Inst_kp_controller|state
+Name state.D state.C state.B state.A 
+state.A 0 0 0 0 
+state.B 0 0 1 1 
+state.C 0 1 0 1 
+state.D 1 0 0 1 
+
+State Machine - |DE2_115|top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR
+Name stateVAR.PROG_DATA stateVAR.PROG_ADDR stateVAR.OP_RUN_B stateVAR.OP_RUN_F stateVAR.OP_PAUSE_B stateVAR.OP_PAUSE_F stateVAR.INIT 
+stateVAR.INIT 0 0 0 0 0 0 0 
+stateVAR.OP_PAUSE_F 0 0 0 0 0 1 1 
+stateVAR.OP_PAUSE_B 0 0 0 0 1 0 1 
+stateVAR.OP_RUN_F 0 0 0 1 0 0 1 
+stateVAR.OP_RUN_B 0 0 1 0 0 0 1 
+stateVAR.PROG_ADDR 0 1 0 0 0 0 1 
+stateVAR.PROG_DATA 1 0 0 0 0 0 1 

@@ -7,12 +7,12 @@ entity SRAM_Controller is
 		mem							: in std_logic; 							-- when '1' SRAM_Controller is going to be used
 		rw								: in std_logic; 							-- read write bit. '1' for read, '0' for write
 		addr							: in std_logic_vector(19 downto 0);	-- Address input
-		data_f2s						: in std_logic_vector(7 downto 0);	-- Data input to SRAM_Controller
+		data_f2s						: in std_logic_vector(15 downto 0);	-- Data input to SRAM_Controller
 		ready							: out std_logic; 							-- Status signal indcating Controller is ready for input?
-		data_s2f_r, data_s2f_ur	: out std_logic_vector(7 downto 0);	-- Data (registered, unregistered) from SRAM_Controller
+		data_s2f_r, data_s2f_ur	: out std_logic_vector(15 downto 0);	-- Data (registered, unregistered) from SRAM_Controller
 		ad								: out std_logic_vector(19 downto 0); --address output during read; goes to SRAM
 		we_n, oe_n					: out std_logic; 							--Write enable , output enable outputs to the SRAM
-		dio							: inout std_logic_vector(7 downto 0);--Data input/output that goes to the SRAM
+		dio							: inout std_logic_vector(15 downto 0);--Data input/output that goes to the SRAM
 		ce_n							: out std_logic 							--Chip enable output; goes to SRAM 
 	);
 	end SRAM_Controller;
@@ -20,8 +20,8 @@ entity SRAM_Controller is
 	architecture arch of SRAM_Controller is
 		type state_type is (idle,r1,r2,w1,w2);
 				signal state_reg, state_next: state_type;
-				signal data_f2s_reg, data_f2s_next: std_logic_vector(7 downto 0);
-				signal data_s2f_reg, data_s2f_next: std_logic_vector(7 downto 0);
+				signal data_f2s_reg, data_f2s_next: std_logic_vector(15 downto 0);
+				signal data_s2f_reg, data_s2f_next: std_logic_vector(15 downto 0);
 				signal addr_reg: std_logic_vector(19 downto 0);
 				signal addr_next: std_logic_vector(19 downto 0);
 				signal we_buf, oe_buf, tri_buf: std_logic;
