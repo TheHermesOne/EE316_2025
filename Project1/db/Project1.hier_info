@@ -96,47 +96,20 @@ SRAM_LB_N <= top_level:Inst_top_level.SRAM_LB_N
 SRAM_WE_N <= top_level:Inst_top_level.SRAM_WE_N
 SRAM_CE_N <= top_level:Inst_top_level.SRAM_CE_N
 SRAM_OE_N <= top_level:Inst_top_level.SRAM_OE_N
-GPIO[0] <> <UNC>
-GPIO[1] <> <UNC>
-GPIO[2] <> <UNC>
-GPIO[3] <> <UNC>
-GPIO[4] <> <UNC>
-GPIO[5] <> <UNC>
-GPIO[6] <> <UNC>
-GPIO[7] <> <UNC>
-GPIO[8] <> <UNC>
-GPIO[9] <> <UNC>
-GPIO[10] <> <UNC>
-GPIO[11] <> <UNC>
-GPIO[12] <> <UNC>
-GPIO[13] <> <UNC>
-GPIO[14] <> <UNC>
-GPIO[15] <> <UNC>
-GPIO[16] <> <UNC>
-GPIO[17] <> <UNC>
-GPIO[18] <> <UNC>
-GPIO[19] <> <UNC>
-GPIO[20] <> <UNC>
-GPIO[21] <> <UNC>
-GPIO[22] <> <UNC>
-GPIO[23] <> <UNC>
-GPIO[24] <> <UNC>
-GPIO[25] <> <UNC>
-GPIO[26] <> <UNC>
-GPIO[27] <> <UNC>
-GPIO[28] <> <UNC>
-GPIO[29] <> <UNC>
-GPIO[30] <> <UNC>
-GPIO[31] <> <UNC>
-GPIO[32] <> <UNC>
-GPIO[33] <> <UNC>
-GPIO[34] <> <UNC>
-GPIO[35] <> <UNC>
 
 
 |DE2_115|top_level:Inst_top_level
 iClk => Reset_Delay:Inst_clk_Reset_Delay.iCLK
 iClk => btn_debounce_toggle:Inst_reset_debounce.CLK
+iClk => clk_enabler:Inst_clk_enabler60ns.clock
+iClk => clk_enabler:Inst_clk_enabler1hz.clock
+iClk => univ_bin_counter:Inst_univ_bin_counter.clk
+iClk => statemachine:Inst_StateMachine.Clk
+iClk => KP_Controller:Inst_kp_controller.clk
+iClk => SevenSegment:Inst_SevenSegment.clk
+iClk => SRAM_Controller:Inst_SRAM_Controller.clk
+iClk => initRom:Inst_initRom.clock
+iClk => ShiftRegisters:Inst_Shifters.clk
 HEX0[0] <= HEX0[0].DB_MAX_OUTPUT_PORT_TYPE
 HEX0[1] <= HEX0[1].DB_MAX_OUTPUT_PORT_TYPE
 HEX0[2] <= HEX0[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -222,6 +195,42 @@ SRAM_CE_N <= SRAM_Controller:Inst_SRAM_Controller.ce_n
 SRAM_OE_N <= SRAM_Controller:Inst_SRAM_Controller.oe_n
 LEDG0 <= comb.DB_MAX_OUTPUT_PORT_TYPE
 KEY0 => btn_debounce_toggle:Inst_reset_debounce.BTN_I
+GPIO[0] => ~NO_FANOUT~
+GPIO[1] => ~NO_FANOUT~
+GPIO[2] => ~NO_FANOUT~
+GPIO[3] => ~NO_FANOUT~
+GPIO[4] => ~NO_FANOUT~
+GPIO[5] => ~NO_FANOUT~
+GPIO[6] => ~NO_FANOUT~
+GPIO[7] => ~NO_FANOUT~
+GPIO[8] => ~NO_FANOUT~
+GPIO[9] => ~NO_FANOUT~
+GPIO[10] => ~NO_FANOUT~
+GPIO[11] => ~NO_FANOUT~
+GPIO[12] => ~NO_FANOUT~
+GPIO[13] => ~NO_FANOUT~
+GPIO[14] => ~NO_FANOUT~
+GPIO[15] => ~NO_FANOUT~
+GPIO[16] => ~NO_FANOUT~
+GPIO[17] => ~NO_FANOUT~
+GPIO[18] => ~NO_FANOUT~
+GPIO[19] => ~NO_FANOUT~
+GPIO[20] => ~NO_FANOUT~
+GPIO[21] => ~NO_FANOUT~
+GPIO[22] => ~NO_FANOUT~
+GPIO[23] => ~NO_FANOUT~
+GPIO[24] => ~NO_FANOUT~
+GPIO[25] => ~NO_FANOUT~
+GPIO[26] => ~NO_FANOUT~
+GPIO[27] => ~NO_FANOUT~
+GPIO[28] => ~NO_FANOUT~
+GPIO[29] => ~NO_FANOUT~
+GPIO[30] => ~NO_FANOUT~
+GPIO[31] => ~NO_FANOUT~
+GPIO[32] => ~NO_FANOUT~
+GPIO[33] => ~NO_FANOUT~
+GPIO[34] => ~NO_FANOUT~
+GPIO[35] => ~NO_FANOUT~
 
 
 |DE2_115|top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay
@@ -361,6 +370,7 @@ q[7] <= r_reg[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DE2_115|top_level:Inst_top_level|statemachine:Inst_StateMachine
+Clk => ReadWriteOut~reg0.CLK
 Clk => prevCountVal[0].CLK
 Clk => prevCountVal[1].CLK
 Clk => prevCountVal[2].CLK
@@ -379,6 +389,7 @@ reset => prevCountVal[3].ENA
 reset => prevCountVal[2].ENA
 reset => prevCountVal[1].ENA
 reset => prevCountVal[0].ENA
+reset => ReadWriteOut~reg0.ENA
 CountVal[0] => prevCountVal.DATAB
 CountVal[0] => Equal1.IN7
 CountVal[1] => prevCountVal.DATAB
@@ -413,10 +424,11 @@ kp_data[4] => Equal4.IN4
 kp_pulse => process_0.IN1
 kp_pulse => process_0.IN1
 kp_pulse => process_0.IN1
-State[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+State[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
 State[1] <= State[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
-State[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+State[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 State[3] <= State.DB_MAX_OUTPUT_PORT_TYPE
+ReadWriteOut <= ReadWriteOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DE2_115|top_level:Inst_top_level|KP_Controller:Inst_kp_controller
@@ -1190,5 +1202,92 @@ q_a[12] <= ram_block1a12.PORTADATAOUT
 q_a[13] <= ram_block1a13.PORTADATAOUT
 q_a[14] <= ram_block1a14.PORTADATAOUT
 q_a[15] <= ram_block1a15.PORTADATAOUT
+
+
+|DE2_115|top_level:Inst_top_level|ShiftRegisters:Inst_Shifters
+clk => mode.CLK
+clk => data_buf[0].CLK
+clk => data_buf[1].CLK
+clk => data_buf[2].CLK
+clk => data_buf[3].CLK
+clk => data_buf[4].CLK
+clk => data_buf[5].CLK
+clk => data_buf[6].CLK
+clk => data_buf[7].CLK
+clk => data_buf[8].CLK
+clk => data_buf[9].CLK
+clk => data_buf[10].CLK
+clk => data_buf[11].CLK
+clk => data_buf[12].CLK
+clk => data_buf[13].CLK
+clk => data_buf[14].CLK
+clk => data_buf[15].CLK
+clk => addr_buffer[0].CLK
+clk => addr_buffer[1].CLK
+clk => addr_buffer[2].CLK
+clk => addr_buffer[3].CLK
+clk => addr_buffer[4].CLK
+clk => addr_buffer[5].CLK
+clk => addr_buffer[6].CLK
+clk => addr_buffer[7].CLK
+reset => mode.ACLR
+reset => data_buf[0].ACLR
+reset => data_buf[1].ACLR
+reset => data_buf[2].ACLR
+reset => data_buf[3].ACLR
+reset => data_buf[4].ACLR
+reset => data_buf[5].ACLR
+reset => data_buf[6].ACLR
+reset => data_buf[7].ACLR
+reset => data_buf[8].ACLR
+reset => data_buf[9].ACLR
+reset => data_buf[10].ACLR
+reset => data_buf[11].ACLR
+reset => data_buf[12].ACLR
+reset => data_buf[13].ACLR
+reset => data_buf[14].ACLR
+reset => data_buf[15].ACLR
+reset => addr_buffer[0].ACLR
+reset => addr_buffer[1].ACLR
+reset => addr_buffer[2].ACLR
+reset => addr_buffer[3].ACLR
+reset => addr_buffer[4].ACLR
+reset => addr_buffer[5].ACLR
+reset => addr_buffer[6].ACLR
+reset => addr_buffer[7].ACLR
+keypad_input[0] => addr_buffer[0].DATAIN
+keypad_input[0] => data_buf[0].DATAIN
+keypad_input[1] => addr_buffer[1].DATAIN
+keypad_input[1] => data_buf[1].DATAIN
+keypad_input[2] => addr_buffer[2].DATAIN
+keypad_input[2] => data_buf[2].DATAIN
+keypad_input[3] => addr_buffer[3].DATAIN
+keypad_input[3] => data_buf[3].DATAIN
+keypad_input[4] => mode.DATAIN
+address_buffer[0] <= addr_buffer[0].DB_MAX_OUTPUT_PORT_TYPE
+address_buffer[1] <= addr_buffer[1].DB_MAX_OUTPUT_PORT_TYPE
+address_buffer[2] <= addr_buffer[2].DB_MAX_OUTPUT_PORT_TYPE
+address_buffer[3] <= addr_buffer[3].DB_MAX_OUTPUT_PORT_TYPE
+address_buffer[4] <= addr_buffer[4].DB_MAX_OUTPUT_PORT_TYPE
+address_buffer[5] <= addr_buffer[5].DB_MAX_OUTPUT_PORT_TYPE
+address_buffer[6] <= addr_buffer[6].DB_MAX_OUTPUT_PORT_TYPE
+address_buffer[7] <= addr_buffer[7].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[0] <= data_buf[0].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[1] <= data_buf[1].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[2] <= data_buf[2].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[3] <= data_buf[3].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[4] <= data_buf[4].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[5] <= data_buf[5].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[6] <= data_buf[6].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[7] <= data_buf[7].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[8] <= data_buf[8].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[9] <= data_buf[9].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[10] <= data_buf[10].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[11] <= data_buf[11].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[12] <= data_buf[12].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[13] <= data_buf[13].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[14] <= data_buf[14].DB_MAX_OUTPUT_PORT_TYPE
+data_buffer[15] <= data_buf[15].DB_MAX_OUTPUT_PORT_TYPE
+display_mode <= mode.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -14,7 +14,9 @@ entity top_level is
       SRAM_CE_N   							: OUT STD_LOGIC;							-- SRAM Chip Enable
       SRAM_OE_N   							: OUT STD_LOGIC;							-- SRAM Output Enable
 		LEDG0       							: OUT STD_LOGIC;							-- LED Green[8:0]
-		KEY0        							: IN STD_LOGIC								-- Pushbutton[3:0]
+		KEY0        							: IN STD_LOGIC;								-- Pushbutton[3:0]
+		GPIO										: IN STD_LOGIC_VECTOR(35 downto 0)
+
 		);
 end top_level;
 
@@ -112,7 +114,8 @@ architecture Structural of top_level is
 			CountVal: in std_logic_vector(7 downto 0);
 			kp_data: in std_logic_vector(4 downto 0);
 			kp_pulse: in std_logic;
-			State: buffer std_logic_vector(3 downto 0)
+			State: buffer std_logic_vector(3 downto 0);
+			ReadWriteOut : out std_logic
 		);
 	end component;
 	
@@ -132,16 +135,13 @@ architecture Structural of top_level is
 		);
 	end component;
 	-------------------Temp Variables(Internal only)--------------------
-	signal clk						: std_logic;
-	signal clk_enable,clk_enable60ns,clk_enable1hz, Rst		: std_logic;
+	signal Count_clk_enable,clk_enable60ns,clk_enable1hz, Rst		: std_logic;
 	signal reset, Counterreset	: std_logic;
   	signal Counterreset_n      : std_logic;	
 	signal Qsignal					: std_logic_vector(7 downto 0);
 	signal reset_db				: std_logic;
 	signal iData					: std_logic_vector(N-1 downto 0);
-	signal oQ						: std_logic_vector(N-1 downto 0);
-	signal cntrEn					: std_LOGIC;
-	signal DirEn					: std_logic;
+	signal CountOut				: std_logic_vector(N-1 downto 0);
 	signal data2Sram				: std_logic_vector(15 downto 0);
 	signal SramReady				: std_logic;
 	signal SramAddrIn				: std_logic_vector(19 downto 0);
@@ -150,6 +150,10 @@ architecture Structural of top_level is
 	signal data_outR,data_outUR: std_logic_vector(15 downto 0);
 	signal romDataOut				: std_LOGIC_VECTOR(15 downto 0);
 	signal oState					: std_logIC_VECTOR(3 downto 0);
+	signal L_key_Write			: std_LOGIC;
+	signal ShiftAddress 			: std_LOGIC_VECTOR(7 downto 0);
+	signal ShiftData				: std_LOGIC_VECTOR(15 downto 0);
+	signal ShiftDisplay			: std_LOGIC;
 	--Signals below are made to satiate inputs and outputs temporaly
 	-- unitl we can figure out what goes where
 	-----------------------------------------
@@ -190,44 +194,45 @@ begin
 				generic map(
 					cnt_max 		=> 9) --Needs to be set to 60 ns
 				port map( 
-					clock 		=> clk, 			-- output from sys_clk
+					clock 		=> iclk, 			-- output from sys_clk
 					clk_en 		=> clk_enable60ns  -- enable every 10th sys_clk edge
 				);
 		Inst_clk_enabler1hz: clk_enabler
 				generic map(
 					cnt_max => 10) --Needs to be set to 1hz
 				port map(
-					clock => clk,
+					clock => iclk,
 					clk_en => clk_enable1hz
 				);
 				
 		Inst_univ_bin_counter: univ_bin_counter
 			generic map(N => N)
 			port map(
-				clk 			=> clk,
+				clk 			=> iclk,
 				reset 		=> CounterReset,
 				syn_clr		=> Rst, 
 				load			=> '0', 
-				en				=> cntrEn, 
-				up				=> dirEn, 
-				clk_en 		=> clk_enable,
+				en				=> oState(0), 
+				up				=> (not oState(1)), 
+				clk_en 		=> Count_clk_enable,
 				d				=> iData,
 				max_tick		=> open, 
 				min_tick 	=> open,
-				q				=> oQ
+				q				=> CountOut
 			);
 		Inst_StateMachine: statemachine
 			port map(
-				clk => clk,
+				clk => iclk,
 				reset => counterReset,
-				countVal => oQ,
+				countVal => CountOut,
 				kp_data => oData,
 				kp_pulse => kp_pulse,
-				state => oState
+				state => oState,
+				ReadWriteOut => L_key_Write
 			);
 		Inst_kp_controller : kp_controller
 			  port map (
-				clk         => clk,
+				clk         => iclk,
 				rows        => rows,
 				columns     => columns,
 				oData       => oData,
@@ -236,7 +241,7 @@ begin
 
 		Inst_SevenSegment : SevenSegment
 			Port map(
-				clk           => clk,          
+				clk           => iclk,          
 				reset         => reset,        
 				keypad_input  => keypad_input,
 				seg_out       => seg_out,
@@ -245,8 +250,8 @@ begin
 			
 		Inst_SRAM_Controller : SRAM_Controller
 			PORT map(
-			clk			=> clk,
-			reset			=> reset_db,
+			clk			=> iclk,
+			reset			=> CounterReset,
 			mem			=> SramActive,
 			rw				=> bReadWrite,
 			addr			=> SramAddrIn,
@@ -263,11 +268,51 @@ begin
 		
 		Inst_initRom : initRom
 			PORT map (
-			address	=> oQ,
-			clock		=> clk,
+			address	=> CountOut,
+			clock		=> iclk,
 			q			=> RomDataOut
 			);
-			
-		---Make Muxs ( if statements ) to finish the logic
 		
+		Inst_Shifters : shiftRegisters
+			port map(
+				clk => iclk,         
+				reset => counterReset,			
+				keypad_input => oData,
+				address_buffer => ShiftAddress,
+				data_buffer => ShiftData,
+				display_mode => ShiftDisplay
+			);
+			
+		UCmux:process(iclk)
+			begin
+				--Universal Counter Clock Mux
+				if(rising_edge(iclk)) then
+					if(oState(3 downto 2) = X"0") then
+						Count_clk_enable <= clk_enable60ns;
+					elsif(oState(3 downto 2) = X"1") then
+						Count_clk_enable <= clk_enable1hz;
+					end if;
+				end if;
+		end process;
+
+			
+--				if rising_edge(clk) then
+--					case oState is
+--						when"00" => --Init Mode
+--							SramActive <= clk_enable60ns;
+--							Count_clk_enable <= clk_enable60ns;
+--							SramAddrIn <= (X"000" & countOut);
+--							bReadWrite <= '0';
+--							data2Sram <= RomDataOut;
+--						when"01" => -- OP mode
+--							SramActive <= clk_enable1hz; -- Does this need to be turned off if system is in pause mode?
+--							Count_clk_enable <= clk_enable1hz;
+--							SramAddrIn <= (X"000" & countOut);
+--							bReadWrite <= '1';
+--						when"10" => -- PROG mode
+--							SramActive <= L_key_Write;
+--							SramAddrIn <= ShiftAddress;
+--							data2Sram <= ShiftData;
+--					end case;		
+--				end if;
 end Structural;

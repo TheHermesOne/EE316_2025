@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
 
--- DATE "01/25/2025 15:35:59"
+-- DATE "01/26/2025 13:42:29"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -33,6 +33,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY 	DE2_115 IS
     PORT (
+	GPIO : INOUT std_logic_vector(35 DOWNTO 0);
 	CLOCK_50 : IN std_logic;
 	KEY : IN std_logic_vector(3 DOWNTO 0);
 	HEX0 : OUT std_logic_vector(6 DOWNTO 0);
@@ -48,8 +49,7 @@ ENTITY 	DE2_115 IS
 	SRAM_LB_N : OUT std_logic;
 	SRAM_WE_N : OUT std_logic;
 	SRAM_CE_N : OUT std_logic;
-	SRAM_OE_N : OUT std_logic;
-	GPIO : INOUT std_logic_vector(35 DOWNTO 0)
+	SRAM_OE_N : OUT std_logic
 	);
 END DE2_115;
 
@@ -135,58 +135,58 @@ END DE2_115;
 -- SRAM_OE_N	=>  Location: PIN_C7,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- CLOCK_50	=>  Location: PIN_Y12,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- KEY[0]	=>  Location: PIN_G4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[0]	=>  Location: PIN_B22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[1]	=>  Location: PIN_H16,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[2]	=>  Location: PIN_K28,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[3]	=>  Location: PIN_D27,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[4]	=>  Location: PIN_G22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[5]	=>  Location: PIN_K27,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[6]	=>  Location: PIN_C27,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[7]	=>  Location: PIN_AE25,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[8]	=>  Location: PIN_C12,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[9]	=>  Location: PIN_AF5,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[10]	=>  Location: PIN_AH21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[11]	=>  Location: PIN_AA22,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[12]	=>  Location: PIN_AE23,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[13]	=>  Location: PIN_AG7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[14]	=>  Location: PIN_AF20,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[15]	=>  Location: PIN_P2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[16]	=>  Location: PIN_H23,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[17]	=>  Location: PIN_G28,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[18]	=>  Location: PIN_V2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[19]	=>  Location: PIN_D2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[20]	=>  Location: PIN_AD8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[21]	=>  Location: PIN_J23,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[22]	=>  Location: PIN_A23,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[23]	=>  Location: PIN_L25,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[24]	=>  Location: PIN_Y13,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[25]	=>  Location: PIN_AA14,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[26]	=>  Location: PIN_R26,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[27]	=>  Location: PIN_K21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[28]	=>  Location: PIN_AH10,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[29]	=>  Location: PIN_K25,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[30]	=>  Location: PIN_H24,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[31]	=>  Location: PIN_M26,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[32]	=>  Location: PIN_F28,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[33]	=>  Location: PIN_V28,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[34]	=>  Location: PIN_M25,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[35]	=>  Location: PIN_F27,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[0]	=>  Location: PIN_U28,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[1]	=>  Location: PIN_N26,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[2]	=>  Location: PIN_E28,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[3]	=>  Location: PIN_J13,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[4]	=>  Location: PIN_J17,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[5]	=>  Location: PIN_T8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[6]	=>  Location: PIN_F25,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[7]	=>  Location: PIN_D26,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[8]	=>  Location: PIN_G9,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[9]	=>  Location: PIN_F24,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[10]	=>  Location: PIN_H25,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[11]	=>  Location: PIN_G24,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[12]	=>  Location: PIN_J26,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[13]	=>  Location: PIN_G23,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[14]	=>  Location: PIN_L26,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[15]	=>  Location: PIN_U23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[0]	=>  Location: PIN_B22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[1]	=>  Location: PIN_H16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[2]	=>  Location: PIN_K28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[3]	=>  Location: PIN_D27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[4]	=>  Location: PIN_G22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[5]	=>  Location: PIN_K27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[6]	=>  Location: PIN_C27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[7]	=>  Location: PIN_AE25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[8]	=>  Location: PIN_C12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[9]	=>  Location: PIN_AF5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[10]	=>  Location: PIN_AH21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[11]	=>  Location: PIN_AA22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[12]	=>  Location: PIN_AE23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[13]	=>  Location: PIN_AG7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[14]	=>  Location: PIN_AF20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[15]	=>  Location: PIN_P2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[0]	=>  Location: PIN_H23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[1]	=>  Location: PIN_G28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[2]	=>  Location: PIN_V2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[3]	=>  Location: PIN_D2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[4]	=>  Location: PIN_AD8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[5]	=>  Location: PIN_J23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[6]	=>  Location: PIN_A23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[7]	=>  Location: PIN_L25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[8]	=>  Location: PIN_Y13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[9]	=>  Location: PIN_AA14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[10]	=>  Location: PIN_R26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[11]	=>  Location: PIN_K21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[12]	=>  Location: PIN_AH10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[13]	=>  Location: PIN_K25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[14]	=>  Location: PIN_H24,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[15]	=>  Location: PIN_M26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[16]	=>  Location: PIN_F28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[17]	=>  Location: PIN_V28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[18]	=>  Location: PIN_M25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[19]	=>  Location: PIN_F27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[20]	=>  Location: PIN_U28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[21]	=>  Location: PIN_N26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[22]	=>  Location: PIN_E28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[23]	=>  Location: PIN_J13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[24]	=>  Location: PIN_J17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[25]	=>  Location: PIN_T8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[26]	=>  Location: PIN_F25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[27]	=>  Location: PIN_D26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[28]	=>  Location: PIN_G9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[29]	=>  Location: PIN_F24,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[30]	=>  Location: PIN_H25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[31]	=>  Location: PIN_G24,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[32]	=>  Location: PIN_J26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[33]	=>  Location: PIN_G23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[34]	=>  Location: PIN_L26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[35]	=>  Location: PIN_U23,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF DE2_115 IS
@@ -219,6 +219,22 @@ SIGNAL \KEY[2]~input_o\ : std_logic;
 SIGNAL \KEY[3]~input_o\ : std_logic;
 SIGNAL \CLOCK_50~input_o\ : std_logic;
 SIGNAL \KEY[0]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[0]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[1]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[2]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[3]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[4]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[5]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[6]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[7]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[8]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[9]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[10]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[11]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[12]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[13]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[14]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[15]~input_o\ : std_logic;
 SIGNAL \GPIO[0]~input_o\ : std_logic;
 SIGNAL \GPIO[1]~input_o\ : std_logic;
 SIGNAL \GPIO[2]~input_o\ : std_logic;
@@ -255,22 +271,22 @@ SIGNAL \GPIO[32]~input_o\ : std_logic;
 SIGNAL \GPIO[33]~input_o\ : std_logic;
 SIGNAL \GPIO[34]~input_o\ : std_logic;
 SIGNAL \GPIO[35]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[0]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[1]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[2]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[3]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[4]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[5]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[6]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[7]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[8]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[9]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[10]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[11]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[12]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[13]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[14]~input_o\ : std_logic;
-SIGNAL \SRAM_DQ[15]~input_o\ : std_logic;
+SIGNAL \SRAM_DQ[0]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[1]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[2]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[3]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[4]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[5]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[6]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[7]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[8]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[9]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[10]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[11]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[12]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[13]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[14]~output_o\ : std_logic;
+SIGNAL \SRAM_DQ[15]~output_o\ : std_logic;
 SIGNAL \GPIO[0]~output_o\ : std_logic;
 SIGNAL \GPIO[1]~output_o\ : std_logic;
 SIGNAL \GPIO[2]~output_o\ : std_logic;
@@ -307,22 +323,6 @@ SIGNAL \GPIO[32]~output_o\ : std_logic;
 SIGNAL \GPIO[33]~output_o\ : std_logic;
 SIGNAL \GPIO[34]~output_o\ : std_logic;
 SIGNAL \GPIO[35]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[0]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[1]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[2]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[3]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[4]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[5]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[6]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[7]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[8]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[9]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[10]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[11]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[12]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[13]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[14]~output_o\ : std_logic;
-SIGNAL \SRAM_DQ[15]~output_o\ : std_logic;
 SIGNAL \HEX0[0]~output_o\ : std_logic;
 SIGNAL \HEX0[1]~output_o\ : std_logic;
 SIGNAL \HEX0[2]~output_o\ : std_logic;
@@ -422,438 +422,6 @@ ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
 -- Location: IOOBUF_X89_Y73_N16
-\GPIO[0]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[0]~output_o\);
-
--- Location: IOOBUF_X65_Y73_N23
-\GPIO[1]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[1]~output_o\);
-
--- Location: IOOBUF_X115_Y49_N2
-\GPIO[2]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[2]~output_o\);
-
--- Location: IOOBUF_X115_Y61_N23
-\GPIO[3]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[3]~output_o\);
-
--- Location: IOOBUF_X72_Y73_N23
-\GPIO[4]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[4]~output_o\);
-
--- Location: IOOBUF_X115_Y50_N9
-\GPIO[5]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[5]~output_o\);
-
--- Location: IOOBUF_X115_Y61_N16
-\GPIO[6]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[6]~output_o\);
-
--- Location: IOOBUF_X89_Y0_N9
-\GPIO[7]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[7]~output_o\);
-
--- Location: IOOBUF_X52_Y73_N16
-\GPIO[8]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[8]~output_o\);
-
--- Location: IOOBUF_X5_Y0_N16
-\GPIO[9]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[9]~output_o\);
-
--- Location: IOOBUF_X74_Y0_N2
-\GPIO[10]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[10]~output_o\);
-
--- Location: IOOBUF_X115_Y6_N16
-\GPIO[11]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[11]~output_o\);
-
--- Location: IOOBUF_X105_Y0_N16
-\GPIO[12]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[12]~output_o\);
-
--- Location: IOOBUF_X16_Y0_N23
-\GPIO[13]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[13]~output_o\);
-
--- Location: IOOBUF_X85_Y0_N16
-\GPIO[14]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[14]~output_o\);
-
--- Location: IOOBUF_X0_Y43_N16
-\GPIO[15]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[15]~output_o\);
-
--- Location: IOOBUF_X115_Y65_N16
-\GPIO[16]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[16]~output_o\);
-
--- Location: IOOBUF_X115_Y52_N9
-\GPIO[17]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[17]~output_o\);
-
--- Location: IOOBUF_X0_Y28_N16
-\GPIO[18]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[18]~output_o\);
-
--- Location: IOOBUF_X0_Y68_N2
-\GPIO[19]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[19]~output_o\);
-
--- Location: IOOBUF_X9_Y0_N9
-\GPIO[20]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[20]~output_o\);
-
--- Location: IOOBUF_X115_Y63_N2
-\GPIO[21]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[21]~output_o\);
-
--- Location: IOOBUF_X102_Y73_N2
-\GPIO[22]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[22]~output_o\);
-
--- Location: IOOBUF_X115_Y54_N16
-\GPIO[23]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[23]~output_o\);
-
--- Location: IOOBUF_X52_Y0_N9
-\GPIO[24]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[24]~output_o\);
-
--- Location: IOOBUF_X54_Y0_N23
-\GPIO[25]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[25]~output_o\);
-
--- Location: IOOBUF_X115_Y33_N9
-\GPIO[26]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[26]~output_o\);
-
--- Location: IOOBUF_X115_Y64_N2
-\GPIO[27]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[27]~output_o\);
-
--- Location: IOOBUF_X31_Y0_N2
-\GPIO[28]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[28]~output_o\);
-
--- Location: IOOBUF_X115_Y55_N16
-\GPIO[29]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[29]~output_o\);
-
--- Location: IOOBUF_X115_Y65_N23
-\GPIO[30]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[30]~output_o\);
-
--- Location: IOOBUF_X115_Y46_N2
-\GPIO[31]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[31]~output_o\);
-
--- Location: IOOBUF_X115_Y56_N23
-\GPIO[32]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[32]~output_o\);
-
--- Location: IOOBUF_X115_Y22_N23
-\GPIO[33]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[33]~output_o\);
-
--- Location: IOOBUF_X115_Y47_N23
-\GPIO[34]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[34]~output_o\);
-
--- Location: IOOBUF_X115_Y56_N16
-\GPIO[35]~output\ : cycloneive_io_obuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	open_drain_output => "true")
--- pragma translate_on
-PORT MAP (
-	i => VCC,
-	devoe => ww_devoe,
-	o => \GPIO[35]~output_o\);
-
--- Location: IOOBUF_X115_Y28_N2
 \SRAM_DQ[0]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -865,7 +433,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[0]~output_o\);
 
--- Location: IOOBUF_X115_Y44_N2
+-- Location: IOOBUF_X65_Y73_N23
 \SRAM_DQ[1]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -877,7 +445,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[1]~output_o\);
 
--- Location: IOOBUF_X115_Y57_N23
+-- Location: IOOBUF_X115_Y49_N2
 \SRAM_DQ[2]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -889,7 +457,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[2]~output_o\);
 
--- Location: IOOBUF_X40_Y73_N2
+-- Location: IOOBUF_X115_Y61_N23
 \SRAM_DQ[3]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -901,7 +469,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[3]~output_o\);
 
--- Location: IOOBUF_X69_Y73_N2
+-- Location: IOOBUF_X72_Y73_N23
 \SRAM_DQ[4]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -913,7 +481,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[4]~output_o\);
 
--- Location: IOOBUF_X0_Y20_N16
+-- Location: IOOBUF_X115_Y50_N9
 \SRAM_DQ[5]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -925,7 +493,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[5]~output_o\);
 
--- Location: IOOBUF_X115_Y68_N23
+-- Location: IOOBUF_X115_Y61_N16
 \SRAM_DQ[6]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -937,7 +505,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[6]~output_o\);
 
--- Location: IOOBUF_X115_Y62_N23
+-- Location: IOOBUF_X89_Y0_N9
 \SRAM_DQ[7]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -949,7 +517,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[7]~output_o\);
 
--- Location: IOOBUF_X13_Y73_N23
+-- Location: IOOBUF_X52_Y73_N16
 \SRAM_DQ[8]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -961,7 +529,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[8]~output_o\);
 
--- Location: IOOBUF_X115_Y68_N16
+-- Location: IOOBUF_X5_Y0_N16
 \SRAM_DQ[9]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -973,7 +541,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[9]~output_o\);
 
--- Location: IOOBUF_X115_Y58_N16
+-- Location: IOOBUF_X74_Y0_N2
 \SRAM_DQ[10]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -985,7 +553,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[10]~output_o\);
 
--- Location: IOOBUF_X115_Y69_N23
+-- Location: IOOBUF_X115_Y6_N16
 \SRAM_DQ[11]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -997,7 +565,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[11]~output_o\);
 
--- Location: IOOBUF_X115_Y51_N9
+-- Location: IOOBUF_X105_Y0_N16
 \SRAM_DQ[12]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1009,7 +577,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[12]~output_o\);
 
--- Location: IOOBUF_X115_Y69_N16
+-- Location: IOOBUF_X16_Y0_N23
 \SRAM_DQ[13]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1021,7 +589,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[13]~output_o\);
 
--- Location: IOOBUF_X115_Y50_N2
+-- Location: IOOBUF_X85_Y0_N16
 \SRAM_DQ[14]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1033,7 +601,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[14]~output_o\);
 
--- Location: IOOBUF_X115_Y22_N2
+-- Location: IOOBUF_X0_Y43_N16
 \SRAM_DQ[15]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1044,6 +612,438 @@ PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
 	o => \SRAM_DQ[15]~output_o\);
+
+-- Location: IOOBUF_X115_Y65_N16
+\GPIO[0]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[0]~output_o\);
+
+-- Location: IOOBUF_X115_Y52_N9
+\GPIO[1]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[1]~output_o\);
+
+-- Location: IOOBUF_X0_Y28_N16
+\GPIO[2]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[2]~output_o\);
+
+-- Location: IOOBUF_X0_Y68_N2
+\GPIO[3]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[3]~output_o\);
+
+-- Location: IOOBUF_X9_Y0_N9
+\GPIO[4]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[4]~output_o\);
+
+-- Location: IOOBUF_X115_Y63_N2
+\GPIO[5]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[5]~output_o\);
+
+-- Location: IOOBUF_X102_Y73_N2
+\GPIO[6]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[6]~output_o\);
+
+-- Location: IOOBUF_X115_Y54_N16
+\GPIO[7]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[7]~output_o\);
+
+-- Location: IOOBUF_X52_Y0_N9
+\GPIO[8]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[8]~output_o\);
+
+-- Location: IOOBUF_X54_Y0_N23
+\GPIO[9]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[9]~output_o\);
+
+-- Location: IOOBUF_X115_Y33_N9
+\GPIO[10]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[10]~output_o\);
+
+-- Location: IOOBUF_X115_Y64_N2
+\GPIO[11]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[11]~output_o\);
+
+-- Location: IOOBUF_X31_Y0_N2
+\GPIO[12]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[12]~output_o\);
+
+-- Location: IOOBUF_X115_Y55_N16
+\GPIO[13]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[13]~output_o\);
+
+-- Location: IOOBUF_X115_Y65_N23
+\GPIO[14]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[14]~output_o\);
+
+-- Location: IOOBUF_X115_Y46_N2
+\GPIO[15]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[15]~output_o\);
+
+-- Location: IOOBUF_X115_Y56_N23
+\GPIO[16]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[16]~output_o\);
+
+-- Location: IOOBUF_X115_Y22_N23
+\GPIO[17]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[17]~output_o\);
+
+-- Location: IOOBUF_X115_Y47_N23
+\GPIO[18]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[18]~output_o\);
+
+-- Location: IOOBUF_X115_Y56_N16
+\GPIO[19]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[19]~output_o\);
+
+-- Location: IOOBUF_X115_Y28_N2
+\GPIO[20]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[20]~output_o\);
+
+-- Location: IOOBUF_X115_Y44_N2
+\GPIO[21]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[21]~output_o\);
+
+-- Location: IOOBUF_X115_Y57_N23
+\GPIO[22]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[22]~output_o\);
+
+-- Location: IOOBUF_X40_Y73_N2
+\GPIO[23]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[23]~output_o\);
+
+-- Location: IOOBUF_X69_Y73_N2
+\GPIO[24]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[24]~output_o\);
+
+-- Location: IOOBUF_X0_Y20_N16
+\GPIO[25]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[25]~output_o\);
+
+-- Location: IOOBUF_X115_Y68_N23
+\GPIO[26]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[26]~output_o\);
+
+-- Location: IOOBUF_X115_Y62_N23
+\GPIO[27]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[27]~output_o\);
+
+-- Location: IOOBUF_X13_Y73_N23
+\GPIO[28]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[28]~output_o\);
+
+-- Location: IOOBUF_X115_Y68_N16
+\GPIO[29]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[29]~output_o\);
+
+-- Location: IOOBUF_X115_Y58_N16
+\GPIO[30]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[30]~output_o\);
+
+-- Location: IOOBUF_X115_Y69_N23
+\GPIO[31]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[31]~output_o\);
+
+-- Location: IOOBUF_X115_Y51_N9
+\GPIO[32]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[32]~output_o\);
+
+-- Location: IOOBUF_X115_Y69_N16
+\GPIO[33]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[33]~output_o\);
+
+-- Location: IOOBUF_X115_Y50_N2
+\GPIO[34]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[34]~output_o\);
+
+-- Location: IOOBUF_X115_Y22_N2
+\GPIO[35]~output\ : cycloneive_io_obuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	open_drain_output => "true")
+-- pragma translate_on
+PORT MAP (
+	i => VCC,
+	devoe => ww_devoe,
+	o => \GPIO[35]~output_o\);
 
 -- Location: IOOBUF_X87_Y73_N2
 \HEX0[0]~output\ : cycloneive_io_obuf
@@ -2013,402 +2013,6 @@ PORT MAP (
 	o => \KEY[0]~input_o\);
 
 -- Location: IOIBUF_X89_Y73_N15
-\GPIO[0]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(0),
-	o => \GPIO[0]~input_o\);
-
--- Location: IOIBUF_X65_Y73_N22
-\GPIO[1]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(1),
-	o => \GPIO[1]~input_o\);
-
--- Location: IOIBUF_X115_Y49_N1
-\GPIO[2]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(2),
-	o => \GPIO[2]~input_o\);
-
--- Location: IOIBUF_X115_Y61_N22
-\GPIO[3]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(3),
-	o => \GPIO[3]~input_o\);
-
--- Location: IOIBUF_X72_Y73_N22
-\GPIO[4]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(4),
-	o => \GPIO[4]~input_o\);
-
--- Location: IOIBUF_X115_Y50_N8
-\GPIO[5]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(5),
-	o => \GPIO[5]~input_o\);
-
--- Location: IOIBUF_X115_Y61_N15
-\GPIO[6]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(6),
-	o => \GPIO[6]~input_o\);
-
--- Location: IOIBUF_X89_Y0_N8
-\GPIO[7]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(7),
-	o => \GPIO[7]~input_o\);
-
--- Location: IOIBUF_X52_Y73_N15
-\GPIO[8]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(8),
-	o => \GPIO[8]~input_o\);
-
--- Location: IOIBUF_X5_Y0_N15
-\GPIO[9]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(9),
-	o => \GPIO[9]~input_o\);
-
--- Location: IOIBUF_X74_Y0_N1
-\GPIO[10]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(10),
-	o => \GPIO[10]~input_o\);
-
--- Location: IOIBUF_X115_Y6_N15
-\GPIO[11]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(11),
-	o => \GPIO[11]~input_o\);
-
--- Location: IOIBUF_X105_Y0_N15
-\GPIO[12]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(12),
-	o => \GPIO[12]~input_o\);
-
--- Location: IOIBUF_X16_Y0_N22
-\GPIO[13]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(13),
-	o => \GPIO[13]~input_o\);
-
--- Location: IOIBUF_X85_Y0_N15
-\GPIO[14]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(14),
-	o => \GPIO[14]~input_o\);
-
--- Location: IOIBUF_X0_Y43_N15
-\GPIO[15]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(15),
-	o => \GPIO[15]~input_o\);
-
--- Location: IOIBUF_X115_Y65_N15
-\GPIO[16]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(16),
-	o => \GPIO[16]~input_o\);
-
--- Location: IOIBUF_X115_Y52_N8
-\GPIO[17]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(17),
-	o => \GPIO[17]~input_o\);
-
--- Location: IOIBUF_X0_Y28_N15
-\GPIO[18]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(18),
-	o => \GPIO[18]~input_o\);
-
--- Location: IOIBUF_X0_Y68_N1
-\GPIO[19]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(19),
-	o => \GPIO[19]~input_o\);
-
--- Location: IOIBUF_X9_Y0_N8
-\GPIO[20]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(20),
-	o => \GPIO[20]~input_o\);
-
--- Location: IOIBUF_X115_Y63_N1
-\GPIO[21]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(21),
-	o => \GPIO[21]~input_o\);
-
--- Location: IOIBUF_X102_Y73_N1
-\GPIO[22]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(22),
-	o => \GPIO[22]~input_o\);
-
--- Location: IOIBUF_X115_Y54_N15
-\GPIO[23]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(23),
-	o => \GPIO[23]~input_o\);
-
--- Location: IOIBUF_X52_Y0_N8
-\GPIO[24]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(24),
-	o => \GPIO[24]~input_o\);
-
--- Location: IOIBUF_X54_Y0_N22
-\GPIO[25]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(25),
-	o => \GPIO[25]~input_o\);
-
--- Location: IOIBUF_X115_Y33_N8
-\GPIO[26]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(26),
-	o => \GPIO[26]~input_o\);
-
--- Location: IOIBUF_X115_Y64_N1
-\GPIO[27]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(27),
-	o => \GPIO[27]~input_o\);
-
--- Location: IOIBUF_X31_Y0_N1
-\GPIO[28]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(28),
-	o => \GPIO[28]~input_o\);
-
--- Location: IOIBUF_X115_Y55_N15
-\GPIO[29]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(29),
-	o => \GPIO[29]~input_o\);
-
--- Location: IOIBUF_X115_Y65_N22
-\GPIO[30]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(30),
-	o => \GPIO[30]~input_o\);
-
--- Location: IOIBUF_X115_Y46_N1
-\GPIO[31]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(31),
-	o => \GPIO[31]~input_o\);
-
--- Location: IOIBUF_X115_Y56_N22
-\GPIO[32]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(32),
-	o => \GPIO[32]~input_o\);
-
--- Location: IOIBUF_X115_Y22_N22
-\GPIO[33]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(33),
-	o => \GPIO[33]~input_o\);
-
--- Location: IOIBUF_X115_Y47_N22
-\GPIO[34]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(34),
-	o => \GPIO[34]~input_o\);
-
--- Location: IOIBUF_X115_Y56_N15
-\GPIO[35]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => GPIO(35),
-	o => \GPIO[35]~input_o\);
-
--- Location: IOIBUF_X115_Y28_N1
 \SRAM_DQ[0]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2419,7 +2023,7 @@ PORT MAP (
 	i => SRAM_DQ(0),
 	o => \SRAM_DQ[0]~input_o\);
 
--- Location: IOIBUF_X115_Y44_N1
+-- Location: IOIBUF_X65_Y73_N22
 \SRAM_DQ[1]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2430,7 +2034,7 @@ PORT MAP (
 	i => SRAM_DQ(1),
 	o => \SRAM_DQ[1]~input_o\);
 
--- Location: IOIBUF_X115_Y57_N22
+-- Location: IOIBUF_X115_Y49_N1
 \SRAM_DQ[2]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2441,7 +2045,7 @@ PORT MAP (
 	i => SRAM_DQ(2),
 	o => \SRAM_DQ[2]~input_o\);
 
--- Location: IOIBUF_X40_Y73_N1
+-- Location: IOIBUF_X115_Y61_N22
 \SRAM_DQ[3]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2452,7 +2056,7 @@ PORT MAP (
 	i => SRAM_DQ(3),
 	o => \SRAM_DQ[3]~input_o\);
 
--- Location: IOIBUF_X69_Y73_N1
+-- Location: IOIBUF_X72_Y73_N22
 \SRAM_DQ[4]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2463,7 +2067,7 @@ PORT MAP (
 	i => SRAM_DQ(4),
 	o => \SRAM_DQ[4]~input_o\);
 
--- Location: IOIBUF_X0_Y20_N15
+-- Location: IOIBUF_X115_Y50_N8
 \SRAM_DQ[5]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2474,7 +2078,7 @@ PORT MAP (
 	i => SRAM_DQ(5),
 	o => \SRAM_DQ[5]~input_o\);
 
--- Location: IOIBUF_X115_Y68_N22
+-- Location: IOIBUF_X115_Y61_N15
 \SRAM_DQ[6]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2485,7 +2089,7 @@ PORT MAP (
 	i => SRAM_DQ(6),
 	o => \SRAM_DQ[6]~input_o\);
 
--- Location: IOIBUF_X115_Y62_N22
+-- Location: IOIBUF_X89_Y0_N8
 \SRAM_DQ[7]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2496,7 +2100,7 @@ PORT MAP (
 	i => SRAM_DQ(7),
 	o => \SRAM_DQ[7]~input_o\);
 
--- Location: IOIBUF_X13_Y73_N22
+-- Location: IOIBUF_X52_Y73_N15
 \SRAM_DQ[8]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2507,7 +2111,7 @@ PORT MAP (
 	i => SRAM_DQ(8),
 	o => \SRAM_DQ[8]~input_o\);
 
--- Location: IOIBUF_X115_Y68_N15
+-- Location: IOIBUF_X5_Y0_N15
 \SRAM_DQ[9]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2518,7 +2122,7 @@ PORT MAP (
 	i => SRAM_DQ(9),
 	o => \SRAM_DQ[9]~input_o\);
 
--- Location: IOIBUF_X115_Y58_N15
+-- Location: IOIBUF_X74_Y0_N1
 \SRAM_DQ[10]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2529,7 +2133,7 @@ PORT MAP (
 	i => SRAM_DQ(10),
 	o => \SRAM_DQ[10]~input_o\);
 
--- Location: IOIBUF_X115_Y69_N22
+-- Location: IOIBUF_X115_Y6_N15
 \SRAM_DQ[11]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2540,7 +2144,7 @@ PORT MAP (
 	i => SRAM_DQ(11),
 	o => \SRAM_DQ[11]~input_o\);
 
--- Location: IOIBUF_X115_Y51_N8
+-- Location: IOIBUF_X105_Y0_N15
 \SRAM_DQ[12]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2551,7 +2155,7 @@ PORT MAP (
 	i => SRAM_DQ(12),
 	o => \SRAM_DQ[12]~input_o\);
 
--- Location: IOIBUF_X115_Y69_N15
+-- Location: IOIBUF_X16_Y0_N22
 \SRAM_DQ[13]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2562,7 +2166,7 @@ PORT MAP (
 	i => SRAM_DQ(13),
 	o => \SRAM_DQ[13]~input_o\);
 
--- Location: IOIBUF_X115_Y50_N1
+-- Location: IOIBUF_X85_Y0_N15
 \SRAM_DQ[14]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2573,7 +2177,7 @@ PORT MAP (
 	i => SRAM_DQ(14),
 	o => \SRAM_DQ[14]~input_o\);
 
--- Location: IOIBUF_X115_Y22_N1
+-- Location: IOIBUF_X0_Y43_N15
 \SRAM_DQ[15]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2583,6 +2187,402 @@ GENERIC MAP (
 PORT MAP (
 	i => SRAM_DQ(15),
 	o => \SRAM_DQ[15]~input_o\);
+
+-- Location: IOIBUF_X115_Y65_N15
+\GPIO[0]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(0),
+	o => \GPIO[0]~input_o\);
+
+-- Location: IOIBUF_X115_Y52_N8
+\GPIO[1]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(1),
+	o => \GPIO[1]~input_o\);
+
+-- Location: IOIBUF_X0_Y28_N15
+\GPIO[2]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(2),
+	o => \GPIO[2]~input_o\);
+
+-- Location: IOIBUF_X0_Y68_N1
+\GPIO[3]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(3),
+	o => \GPIO[3]~input_o\);
+
+-- Location: IOIBUF_X9_Y0_N8
+\GPIO[4]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(4),
+	o => \GPIO[4]~input_o\);
+
+-- Location: IOIBUF_X115_Y63_N1
+\GPIO[5]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(5),
+	o => \GPIO[5]~input_o\);
+
+-- Location: IOIBUF_X102_Y73_N1
+\GPIO[6]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(6),
+	o => \GPIO[6]~input_o\);
+
+-- Location: IOIBUF_X115_Y54_N15
+\GPIO[7]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(7),
+	o => \GPIO[7]~input_o\);
+
+-- Location: IOIBUF_X52_Y0_N8
+\GPIO[8]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(8),
+	o => \GPIO[8]~input_o\);
+
+-- Location: IOIBUF_X54_Y0_N22
+\GPIO[9]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(9),
+	o => \GPIO[9]~input_o\);
+
+-- Location: IOIBUF_X115_Y33_N8
+\GPIO[10]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(10),
+	o => \GPIO[10]~input_o\);
+
+-- Location: IOIBUF_X115_Y64_N1
+\GPIO[11]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(11),
+	o => \GPIO[11]~input_o\);
+
+-- Location: IOIBUF_X31_Y0_N1
+\GPIO[12]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(12),
+	o => \GPIO[12]~input_o\);
+
+-- Location: IOIBUF_X115_Y55_N15
+\GPIO[13]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(13),
+	o => \GPIO[13]~input_o\);
+
+-- Location: IOIBUF_X115_Y65_N22
+\GPIO[14]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(14),
+	o => \GPIO[14]~input_o\);
+
+-- Location: IOIBUF_X115_Y46_N1
+\GPIO[15]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(15),
+	o => \GPIO[15]~input_o\);
+
+-- Location: IOIBUF_X115_Y56_N22
+\GPIO[16]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(16),
+	o => \GPIO[16]~input_o\);
+
+-- Location: IOIBUF_X115_Y22_N22
+\GPIO[17]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(17),
+	o => \GPIO[17]~input_o\);
+
+-- Location: IOIBUF_X115_Y47_N22
+\GPIO[18]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(18),
+	o => \GPIO[18]~input_o\);
+
+-- Location: IOIBUF_X115_Y56_N15
+\GPIO[19]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(19),
+	o => \GPIO[19]~input_o\);
+
+-- Location: IOIBUF_X115_Y28_N1
+\GPIO[20]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(20),
+	o => \GPIO[20]~input_o\);
+
+-- Location: IOIBUF_X115_Y44_N1
+\GPIO[21]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(21),
+	o => \GPIO[21]~input_o\);
+
+-- Location: IOIBUF_X115_Y57_N22
+\GPIO[22]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(22),
+	o => \GPIO[22]~input_o\);
+
+-- Location: IOIBUF_X40_Y73_N1
+\GPIO[23]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(23),
+	o => \GPIO[23]~input_o\);
+
+-- Location: IOIBUF_X69_Y73_N1
+\GPIO[24]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(24),
+	o => \GPIO[24]~input_o\);
+
+-- Location: IOIBUF_X0_Y20_N15
+\GPIO[25]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(25),
+	o => \GPIO[25]~input_o\);
+
+-- Location: IOIBUF_X115_Y68_N22
+\GPIO[26]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(26),
+	o => \GPIO[26]~input_o\);
+
+-- Location: IOIBUF_X115_Y62_N22
+\GPIO[27]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(27),
+	o => \GPIO[27]~input_o\);
+
+-- Location: IOIBUF_X13_Y73_N22
+\GPIO[28]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(28),
+	o => \GPIO[28]~input_o\);
+
+-- Location: IOIBUF_X115_Y68_N15
+\GPIO[29]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(29),
+	o => \GPIO[29]~input_o\);
+
+-- Location: IOIBUF_X115_Y58_N15
+\GPIO[30]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(30),
+	o => \GPIO[30]~input_o\);
+
+-- Location: IOIBUF_X115_Y69_N22
+\GPIO[31]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(31),
+	o => \GPIO[31]~input_o\);
+
+-- Location: IOIBUF_X115_Y51_N8
+\GPIO[32]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(32),
+	o => \GPIO[32]~input_o\);
+
+-- Location: IOIBUF_X115_Y69_N15
+\GPIO[33]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(33),
+	o => \GPIO[33]~input_o\);
+
+-- Location: IOIBUF_X115_Y50_N1
+\GPIO[34]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(34),
+	o => \GPIO[34]~input_o\);
+
+-- Location: IOIBUF_X115_Y22_N1
+\GPIO[35]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => GPIO(35),
+	o => \GPIO[35]~input_o\);
 
 ww_HEX0(0) <= \HEX0[0]~output_o\;
 
@@ -2736,6 +2736,38 @@ ww_SRAM_CE_N <= \SRAM_CE_N~output_o\;
 
 ww_SRAM_OE_N <= \SRAM_OE_N~output_o\;
 
+SRAM_DQ(0) <= \SRAM_DQ[0]~output_o\;
+
+SRAM_DQ(1) <= \SRAM_DQ[1]~output_o\;
+
+SRAM_DQ(2) <= \SRAM_DQ[2]~output_o\;
+
+SRAM_DQ(3) <= \SRAM_DQ[3]~output_o\;
+
+SRAM_DQ(4) <= \SRAM_DQ[4]~output_o\;
+
+SRAM_DQ(5) <= \SRAM_DQ[5]~output_o\;
+
+SRAM_DQ(6) <= \SRAM_DQ[6]~output_o\;
+
+SRAM_DQ(7) <= \SRAM_DQ[7]~output_o\;
+
+SRAM_DQ(8) <= \SRAM_DQ[8]~output_o\;
+
+SRAM_DQ(9) <= \SRAM_DQ[9]~output_o\;
+
+SRAM_DQ(10) <= \SRAM_DQ[10]~output_o\;
+
+SRAM_DQ(11) <= \SRAM_DQ[11]~output_o\;
+
+SRAM_DQ(12) <= \SRAM_DQ[12]~output_o\;
+
+SRAM_DQ(13) <= \SRAM_DQ[13]~output_o\;
+
+SRAM_DQ(14) <= \SRAM_DQ[14]~output_o\;
+
+SRAM_DQ(15) <= \SRAM_DQ[15]~output_o\;
+
 GPIO(0) <= \GPIO[0]~output_o\;
 
 GPIO(1) <= \GPIO[1]~output_o\;
@@ -2807,38 +2839,6 @@ GPIO(33) <= \GPIO[33]~output_o\;
 GPIO(34) <= \GPIO[34]~output_o\;
 
 GPIO(35) <= \GPIO[35]~output_o\;
-
-SRAM_DQ(0) <= \SRAM_DQ[0]~output_o\;
-
-SRAM_DQ(1) <= \SRAM_DQ[1]~output_o\;
-
-SRAM_DQ(2) <= \SRAM_DQ[2]~output_o\;
-
-SRAM_DQ(3) <= \SRAM_DQ[3]~output_o\;
-
-SRAM_DQ(4) <= \SRAM_DQ[4]~output_o\;
-
-SRAM_DQ(5) <= \SRAM_DQ[5]~output_o\;
-
-SRAM_DQ(6) <= \SRAM_DQ[6]~output_o\;
-
-SRAM_DQ(7) <= \SRAM_DQ[7]~output_o\;
-
-SRAM_DQ(8) <= \SRAM_DQ[8]~output_o\;
-
-SRAM_DQ(9) <= \SRAM_DQ[9]~output_o\;
-
-SRAM_DQ(10) <= \SRAM_DQ[10]~output_o\;
-
-SRAM_DQ(11) <= \SRAM_DQ[11]~output_o\;
-
-SRAM_DQ(12) <= \SRAM_DQ[12]~output_o\;
-
-SRAM_DQ(13) <= \SRAM_DQ[13]~output_o\;
-
-SRAM_DQ(14) <= \SRAM_DQ[14]~output_o\;
-
-SRAM_DQ(15) <= \SRAM_DQ[15]~output_o\;
 END structure;
 
 

@@ -1,5 +1,5 @@
 Fitter report for Project1
-Sat Jan 25 15:35:48 2025
+Sun Jan 26 13:42:19 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                        ;
 +------------------------------------+--------------------------------------------------+
-; Fitter Status                      ; Successful - Sat Jan 25 15:35:48 2025            ;
+; Fitter Status                      ; Successful - Sun Jan 26 13:42:19 2025            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; Project1                                         ;
 ; Top-level Entity Name              ; DE2_115                                          ;
@@ -145,12 +145,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 1.56        ;
+; Average used               ; 1.63        ;
 ; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;  11.1%      ;
+;     Processors 2-6         ;  12.5%      ;
 ;     Processors 7-12        ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -241,6 +241,22 @@ applicable agreement for further details.
 ; SRAM_OE_N     ; Incomplete set of assignments ;
 ; CLOCK_50      ; Incomplete set of assignments ;
 ; KEY[0]        ; Incomplete set of assignments ;
+; SRAM_DQ[0]    ; Incomplete set of assignments ;
+; SRAM_DQ[1]    ; Incomplete set of assignments ;
+; SRAM_DQ[2]    ; Incomplete set of assignments ;
+; SRAM_DQ[3]    ; Incomplete set of assignments ;
+; SRAM_DQ[4]    ; Incomplete set of assignments ;
+; SRAM_DQ[5]    ; Incomplete set of assignments ;
+; SRAM_DQ[6]    ; Incomplete set of assignments ;
+; SRAM_DQ[7]    ; Incomplete set of assignments ;
+; SRAM_DQ[8]    ; Incomplete set of assignments ;
+; SRAM_DQ[9]    ; Incomplete set of assignments ;
+; SRAM_DQ[10]   ; Incomplete set of assignments ;
+; SRAM_DQ[11]   ; Incomplete set of assignments ;
+; SRAM_DQ[12]   ; Incomplete set of assignments ;
+; SRAM_DQ[13]   ; Incomplete set of assignments ;
+; SRAM_DQ[14]   ; Incomplete set of assignments ;
+; SRAM_DQ[15]   ; Incomplete set of assignments ;
 ; GPIO[0]       ; Incomplete set of assignments ;
 ; GPIO[1]       ; Incomplete set of assignments ;
 ; GPIO[2]       ; Incomplete set of assignments ;
@@ -277,22 +293,6 @@ applicable agreement for further details.
 ; GPIO[33]      ; Incomplete set of assignments ;
 ; GPIO[34]      ; Incomplete set of assignments ;
 ; GPIO[35]      ; Incomplete set of assignments ;
-; SRAM_DQ[0]    ; Incomplete set of assignments ;
-; SRAM_DQ[1]    ; Incomplete set of assignments ;
-; SRAM_DQ[2]    ; Incomplete set of assignments ;
-; SRAM_DQ[3]    ; Incomplete set of assignments ;
-; SRAM_DQ[4]    ; Incomplete set of assignments ;
-; SRAM_DQ[5]    ; Incomplete set of assignments ;
-; SRAM_DQ[6]    ; Incomplete set of assignments ;
-; SRAM_DQ[7]    ; Incomplete set of assignments ;
-; SRAM_DQ[8]    ; Incomplete set of assignments ;
-; SRAM_DQ[9]    ; Incomplete set of assignments ;
-; SRAM_DQ[10]   ; Incomplete set of assignments ;
-; SRAM_DQ[11]   ; Incomplete set of assignments ;
-; SRAM_DQ[12]   ; Incomplete set of assignments ;
-; SRAM_DQ[13]   ; Incomplete set of assignments ;
-; SRAM_DQ[14]   ; Incomplete set of assignments ;
-; SRAM_DQ[15]   ; Incomplete set of assignments ;
 +---------------+-------------------------------+
 
 
@@ -559,58 +559,58 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 +-------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------+------+----------------------+---------------------+
 ; Name        ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Output Termination                ; Termination Control Block ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------+------+----------------------+---------------------+
-; GPIO[0]     ; B22   ; 7        ; 89           ; 73           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[10]    ; AH21  ; 4        ; 74           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[11]    ; AA22  ; 5        ; 115          ; 6            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[12]    ; AE23  ; 4        ; 105          ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[13]    ; AG7   ; 3        ; 16           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[14]    ; AF20  ; 4        ; 85           ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[15]    ; P2    ; 1        ; 0            ; 43           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[16]    ; H23   ; 6        ; 115          ; 65           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[17]    ; G28   ; 6        ; 115          ; 52           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[18]    ; V2    ; 2        ; 0            ; 28           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[19]    ; D2    ; 1        ; 0            ; 68           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[1]     ; H16   ; 7        ; 65           ; 73           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[20]    ; AD8   ; 3        ; 9            ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[21]    ; J23   ; 6        ; 115          ; 63           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[22]    ; A23   ; 7        ; 102          ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[23]    ; L25   ; 6        ; 115          ; 54           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[24]    ; Y13   ; 3        ; 52           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[25]    ; AA14  ; 3        ; 54           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[26]    ; R26   ; 5        ; 115          ; 33           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[27]    ; K21   ; 6        ; 115          ; 64           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[28]    ; AH10  ; 3        ; 31           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[29]    ; K25   ; 6        ; 115          ; 55           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[2]     ; K28   ; 6        ; 115          ; 49           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[30]    ; H24   ; 6        ; 115          ; 65           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[31]    ; M26   ; 6        ; 115          ; 46           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[32]    ; F28   ; 6        ; 115          ; 56           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[33]    ; V28   ; 5        ; 115          ; 22           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[34]    ; M25   ; 6        ; 115          ; 47           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[35]    ; F27   ; 6        ; 115          ; 56           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[3]     ; D27   ; 6        ; 115          ; 61           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[4]     ; G22   ; 7        ; 72           ; 73           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[5]     ; K27   ; 6        ; 115          ; 50           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[6]     ; C27   ; 6        ; 115          ; 61           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[7]     ; AE25  ; 4        ; 89           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[8]     ; C12   ; 8        ; 52           ; 73           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; GPIO[9]     ; AF5   ; 3        ; 5            ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[0]  ; U28   ; 5        ; 115          ; 28           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[10] ; H25   ; 6        ; 115          ; 58           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[11] ; G24   ; 6        ; 115          ; 69           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[12] ; J26   ; 6        ; 115          ; 51           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[13] ; G23   ; 6        ; 115          ; 69           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[14] ; L26   ; 6        ; 115          ; 50           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[15] ; U23   ; 5        ; 115          ; 22           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[1]  ; N26   ; 6        ; 115          ; 44           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[2]  ; E28   ; 6        ; 115          ; 57           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[3]  ; J13   ; 8        ; 40           ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[4]  ; J17   ; 7        ; 69           ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[5]  ; T8    ; 2        ; 0            ; 20           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[6]  ; F25   ; 6        ; 115          ; 68           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[7]  ; D26   ; 6        ; 115          ; 62           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[8]  ; G9    ; 8        ; 13           ; 73           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; SRAM_DQ[9]  ; F24   ; 6        ; 115          ; 68           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[0]     ; H23   ; 6        ; 115          ; 65           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[10]    ; R26   ; 5        ; 115          ; 33           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[11]    ; K21   ; 6        ; 115          ; 64           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[12]    ; AH10  ; 3        ; 31           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[13]    ; K25   ; 6        ; 115          ; 55           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[14]    ; H24   ; 6        ; 115          ; 65           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[15]    ; M26   ; 6        ; 115          ; 46           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[16]    ; F28   ; 6        ; 115          ; 56           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[17]    ; V28   ; 5        ; 115          ; 22           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[18]    ; M25   ; 6        ; 115          ; 47           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[19]    ; F27   ; 6        ; 115          ; 56           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[1]     ; G28   ; 6        ; 115          ; 52           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[20]    ; U28   ; 5        ; 115          ; 28           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[21]    ; N26   ; 6        ; 115          ; 44           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[22]    ; E28   ; 6        ; 115          ; 57           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[23]    ; J13   ; 8        ; 40           ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[24]    ; J17   ; 7        ; 69           ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[25]    ; T8    ; 2        ; 0            ; 20           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[26]    ; F25   ; 6        ; 115          ; 68           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[27]    ; D26   ; 6        ; 115          ; 62           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[28]    ; G9    ; 8        ; 13           ; 73           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[29]    ; F24   ; 6        ; 115          ; 68           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[2]     ; V2    ; 2        ; 0            ; 28           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[30]    ; H25   ; 6        ; 115          ; 58           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[31]    ; G24   ; 6        ; 115          ; 69           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[32]    ; J26   ; 6        ; 115          ; 51           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[33]    ; G23   ; 6        ; 115          ; 69           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[34]    ; L26   ; 6        ; 115          ; 50           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[35]    ; U23   ; 5        ; 115          ; 22           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[3]     ; D2    ; 1        ; 0            ; 68           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[4]     ; AD8   ; 3        ; 9            ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[5]     ; J23   ; 6        ; 115          ; 63           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[6]     ; A23   ; 7        ; 102          ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[7]     ; L25   ; 6        ; 115          ; 54           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[8]     ; Y13   ; 3        ; 52           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; GPIO[9]     ; AA14  ; 3        ; 54           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[0]  ; B22   ; 7        ; 89           ; 73           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[10] ; AH21  ; 4        ; 74           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[11] ; AA22  ; 5        ; 115          ; 6            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[12] ; AE23  ; 4        ; 105          ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[13] ; AG7   ; 3        ; 16           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[14] ; AF20  ; 4        ; 85           ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[15] ; P2    ; 1        ; 0            ; 43           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[1]  ; H16   ; 7        ; 65           ; 73           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[2]  ; K28   ; 6        ; 115          ; 49           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[3]  ; D27   ; 6        ; 115          ; 61           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[4]  ; G22   ; 7        ; 72           ; 73           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[5]  ; K27   ; 6        ; 115          ; 50           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[6]  ; C27   ; 6        ; 115          ; 61           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[7]  ; AE25  ; 4        ; 89           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[8]  ; C12   ; 8        ; 52           ; 73           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; SRAM_DQ[9]  ; AF5   ; 3        ; 5            ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------+------+----------------------+---------------------+
 
 
@@ -633,17 +633,17 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; M22      ; MSEL2                                  ; -                        ; -                       ; Dedicated Programming Pin ;
 ; P22      ; MSEL3                                  ; -                        ; -                       ; Dedicated Programming Pin ;
 ; P28      ; DIFFIO_R23n, nCEO                      ; Use as programming pin   ; ~ALTERA_nCEO~           ; Dual Purpose Pin          ;
-; G28      ; DIFFIO_R15n, nWE                       ; Use as regular IO        ; GPIO[17]                ; Dual Purpose Pin          ;
-; F28      ; DIFFIO_R13n, nAVD                      ; Use as regular IO        ; GPIO[32]                ; Dual Purpose Pin          ;
-; F27      ; DIFFIO_R13p                            ; Use as regular IO        ; GPIO[35]                ; Dual Purpose Pin          ;
-; E28      ; DIFFIO_R12n, PADD23                    ; Use as regular IO        ; SRAM_DQ[2]              ; Dual Purpose Pin          ;
-; D27      ; DIFFIO_R9p, PADD21                     ; Use as regular IO        ; GPIO[3]                 ; Dual Purpose Pin          ;
-; C27      ; DIFFIO_R8n, PADD20, DQS2R/CQ3R,CDPCLK5 ; Use as regular IO        ; GPIO[6]                 ; Dual Purpose Pin          ;
-; B22      ; DIFFIO_T53p, PADD0                     ; Use as regular IO        ; GPIO[0]                 ; Dual Purpose Pin          ;
+; G28      ; DIFFIO_R15n, nWE                       ; Use as regular IO        ; GPIO[1]                 ; Dual Purpose Pin          ;
+; F28      ; DIFFIO_R13n, nAVD                      ; Use as regular IO        ; GPIO[16]                ; Dual Purpose Pin          ;
+; F27      ; DIFFIO_R13p                            ; Use as regular IO        ; GPIO[19]                ; Dual Purpose Pin          ;
+; E28      ; DIFFIO_R12n, PADD23                    ; Use as regular IO        ; GPIO[22]                ; Dual Purpose Pin          ;
+; D27      ; DIFFIO_R9p, PADD21                     ; Use as regular IO        ; SRAM_DQ[3]              ; Dual Purpose Pin          ;
+; C27      ; DIFFIO_R8n, PADD20, DQS2R/CQ3R,CDPCLK5 ; Use as regular IO        ; SRAM_DQ[6]              ; Dual Purpose Pin          ;
+; B22      ; DIFFIO_T53p, PADD0                     ; Use as regular IO        ; SRAM_DQ[0]              ; Dual Purpose Pin          ;
 ; C18      ; DIFFIO_T50n, PADD1                     ; Use as regular IO        ; HEX4[3]                 ; Dual Purpose Pin          ;
 ; D18      ; DIFFIO_T50p, PADD2                     ; Use as regular IO        ; KEY[1]                  ; Dual Purpose Pin          ;
 ; D14      ; DIFFIO_T30p, PADD15                    ; Use as regular IO        ; HEX2[0]                 ; Dual Purpose Pin          ;
-; C12      ; DIFFIO_T29n, PADD16                    ; Use as regular IO        ; GPIO[8]                 ; Dual Purpose Pin          ;
+; C12      ; DIFFIO_T29n, PADD16                    ; Use as regular IO        ; SRAM_DQ[8]              ; Dual Purpose Pin          ;
 ; B10      ; DIFFIO_T23p, DATA4                     ; Use as regular IO        ; HEX0[3]                 ; Dual Purpose Pin          ;
 ; C11      ; DIFFIO_T15n, DATA7                     ; Use as regular IO        ; SRAM_ADDR[18]           ; Dual Purpose Pin          ;
 ; C7       ; DIFFIO_T9n, DATA10                     ; Use as regular IO        ; SRAM_OE_N               ; Dual Purpose Pin          ;
@@ -692,7 +692,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; A20      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; A21      ; 425        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A22      ; 423        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; A23      ; 412        ; 7        ; GPIO[22]                                                  ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; A23      ; 412        ; 7        ; GPIO[6]                                                   ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A24      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; A25      ; 405        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; A26      ; 404        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -710,7 +710,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; AA11     ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; AA12     ; 188        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA13     ; 190        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AA14     ; 191        ; 3        ; GPIO[25]                                                  ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AA14     ; 191        ; 3        ; GPIO[9]                                                   ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AA15     ; 213        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; AA16     ; 211        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA17     ; 241        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -718,7 +718,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; AA19     ; 264        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA20     ;            ;          ; GNDA4                                                     ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AA21     ; 269        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AA22     ; 275        ; 5        ; GPIO[11]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; AA22     ; 275        ; 5        ; SRAM_DQ[11]                                               ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; AA23     ; 280        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AA24     ; 279        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; AA25     ; 294        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -788,7 +788,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; AD5      ; 128        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AD6      ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; AD7      ; 134        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AD8      ; 143        ; 3        ; GPIO[20]                                                  ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AD8      ; 143        ; 3        ; GPIO[4]                                                   ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AD9      ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; AD10     ; 149        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AD11     ; 186        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -831,9 +831,9 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; AE20     ; 235        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE21     ; 238        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AE22     ; 251        ; 4        ; HEX1[3]                                                   ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; AE23     ; 261        ; 4        ; GPIO[12]                                                  ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AE23     ; 261        ; 4        ; SRAM_DQ[12]                                               ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AE24     ; 256        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AE25     ; 243        ; 4        ; GPIO[7]                                                   ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AE25     ; 243        ; 4        ; SRAM_DQ[7]                                                ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AE26     ; 278        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AE27     ; 284        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; AE28     ; 283        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -841,7 +841,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; AF2      ; 123        ; 2        ; HEX4[5]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; AF3      ; 138        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF4      ; 131        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AF5      ; 136        ; 3        ; GPIO[9]                                                   ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AF5      ; 136        ; 3        ; SRAM_DQ[9]                                                ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AF6      ; 139        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF7      ; 159        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF8      ; 162        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -856,7 +856,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; AF17     ; 216        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF18     ; 226        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF19     ; 232        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AF20     ; 236        ; 4        ; GPIO[14]                                                  ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AF20     ; 236        ; 4        ; SRAM_DQ[14]                                               ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AF21     ; 239        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF22     ; 252        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AF23     ; 262        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -871,7 +871,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; AG4      ; 141        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AG5      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AG6      ; 145        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AG7      ; 150        ; 3        ; GPIO[13]                                                  ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AG7      ; 150        ; 3        ; SRAM_DQ[13]                                               ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AG8      ; 156        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AG9      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AG10     ; 167        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -901,7 +901,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; AH7      ; 151        ; 3        ; LEDG[1]                                                   ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AH8      ; 157        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AH9      ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; AH10     ; 168        ; 3        ; GPIO[28]                                                  ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AH10     ; 168        ; 3        ; GPIO[12]                                                  ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AH11     ; 176        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AH12     ; 194        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AH13     ;            ; 3        ; VCCIO3                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -912,7 +912,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; AH18     ; 218        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AH19     ; 220        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AH20     ;            ; 4        ; VCCIO4                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; AH21     ; 224        ; 4        ; GPIO[10]                                                  ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AH21     ; 224        ; 4        ; SRAM_DQ[10]                                               ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AH22     ; 228        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AH23     ; 230        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AH24     ;            ; 4        ; VCCIO4                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -940,7 +940,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; B19      ; 441        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B20      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B21      ; 426        ; 7        ; HEX0[0]                                                   ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; B22      ; 424        ; 7        ; GPIO[0]                                                   ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; B22      ; 424        ; 7        ; SRAM_DQ[0]                                                ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B23      ; 413        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; B24      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B25      ; 406        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -958,7 +958,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; C9       ; 510        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C10      ; 495        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C11      ; 508        ; 8        ; SRAM_ADDR[18]                                             ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; C12      ; 478        ; 8        ; GPIO[8]                                                   ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; C12      ; 478        ; 8        ; SRAM_DQ[8]                                                ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C13      ; 474        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C14      ; 476        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C15      ; 468        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -973,10 +973,10 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; C24      ; 416        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C25      ; 411        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; C26      ; 400        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; C27      ; 382        ; 6        ; GPIO[6]                                                   ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; C27      ; 382        ; 6        ; SRAM_DQ[6]                                                ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; C28      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; D1       ; 3          ; 1        ; SRAM_ADDR[9]                                              ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; D2       ; 2          ; 1        ; GPIO[19]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; D2       ; 2          ; 1        ; GPIO[3]                                                   ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; D3       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; D4       ; 540        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D5       ; 537        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -1000,8 +1000,8 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; D23      ; 414        ; 7        ; HEX3[2]                                                   ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; D24      ; 417        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; D25      ; 410        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; D26      ; 383        ; 6        ; SRAM_DQ[7]                                                ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; D27      ; 381        ; 6        ; GPIO[3]                                                   ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; D26      ; 383        ; 6        ; GPIO[27]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; D27      ; 381        ; 6        ; SRAM_DQ[3]                                                ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; D28      ; 380        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; E1       ; 17         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; E2       ; 16         ; 1        ; ~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; On           ;
@@ -1030,7 +1030,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; E25      ; 434        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; E26      ; 378        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; E27      ; 375        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; E28      ; 374        ; 6        ; SRAM_DQ[2]                                                ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; E28      ; 374        ; 6        ; GPIO[22]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; F1       ; 19         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F2       ; 18         ; 1        ; SRAM_ADDR[11]                                             ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; F3       ; 8          ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1054,11 +1054,11 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; F21      ; 408        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; F22      ; 409        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; F23      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; F24      ; 396        ; 6        ; SRAM_DQ[9]                                                ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; F25      ; 395        ; 6        ; SRAM_DQ[6]                                                ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F24      ; 396        ; 6        ; GPIO[29]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F25      ; 395        ; 6        ; GPIO[26]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; F26      ; 379        ; 6        ; SRAM_ADDR[13]                                             ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; F27      ; 373        ; 6        ; GPIO[35]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; F28      ; 372        ; 6        ; GPIO[32]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F27      ; 373        ; 6        ; GPIO[19]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F28      ; 372        ; 6        ; GPIO[16]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; G1       ; 26         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G2       ; 25         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G3       ; 13         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1067,7 +1067,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; G6       ; 5          ; 1        ; SRAM_ADDR[19]                                             ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; G7       ; 530        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; G8       ; 528        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; G9       ; 525        ; 8        ; SRAM_DQ[8]                                                ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; G9       ; 525        ; 8        ; GPIO[28]                                                  ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; G10      ; 513        ; 8        ; HEX2[4]                                                   ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; G11      ; 506        ; 8        ; HEX3[1]                                                   ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; G12      ; 503        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
@@ -1080,13 +1080,13 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; G19      ; 451        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; G20      ; 444        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; G21      ; 445        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; G22      ; 449        ; 7        ; GPIO[4]                                                   ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; G23      ; 398        ; 6        ; SRAM_DQ[13]                                               ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; G24      ; 397        ; 6        ; SRAM_DQ[11]                                               ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G22      ; 449        ; 7        ; SRAM_DQ[4]                                                ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; G23      ; 398        ; 6        ; GPIO[33]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G24      ; 397        ; 6        ; GPIO[31]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; G25      ; 393        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G26      ; 392        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G27      ; 367        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; G28      ; 366        ; 6        ; GPIO[17]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G28      ; 366        ; 6        ; GPIO[1]                                                   ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; H1       ;            ; 1        ; VCCIO1                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; H2       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H3       ; 15         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1102,16 +1102,16 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; H13      ; 494        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; H14      ; 480        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; H15      ; 464        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; H16      ; 459        ; 7        ; GPIO[1]                                                   ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; H16      ; 459        ; 7        ; SRAM_DQ[1]                                                ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; H17      ; 454        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; H18      ;            ; 7        ; VCCIO7                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; H19      ; 446        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; H20      ;            ;          ; GNDA2                                                     ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H21      ; 448        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; H22      ; 399        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; H23      ; 391        ; 6        ; GPIO[16]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; H24      ; 390        ; 6        ; GPIO[30]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; H25      ; 377        ; 6        ; SRAM_DQ[10]                                               ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H23      ; 391        ; 6        ; GPIO[0]                                                   ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H24      ; 390        ; 6        ; GPIO[14]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H25      ; 377        ; 6        ; GPIO[30]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; H26      ; 376        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; H27      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H28      ;            ; 6        ; VCCIO6                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -1127,20 +1127,20 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; J10      ; 515        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; J11      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; J12      ; 490        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; J13      ; 489        ; 8        ; SRAM_DQ[3]                                                ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; J13      ; 489        ; 8        ; GPIO[23]                                                  ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; J14      ; 481        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; J15      ; 465        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; J16      ; 458        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; J17      ; 450        ; 7        ; SRAM_DQ[4]                                                ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; J17      ; 450        ; 7        ; GPIO[24]                                                  ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; J18      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; J19      ; 447        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; J20      ;            ;          ; VCCD_PLL2                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; J21      ;            ; --       ; VCCA2                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; J22      ; 394        ; 6        ; SRAM_ADDR[15]                                             ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; J23      ; 387        ; 6        ; GPIO[21]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J23      ; 387        ; 6        ; GPIO[5]                                                   ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J24      ; 386        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J25      ; 365        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; J26      ; 364        ; 6        ; SRAM_DQ[12]                                               ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J26      ; 364        ; 6        ; GPIO[32]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J27      ; 338        ; 6        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; J28      ; 337        ; 6        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; K1       ; 28         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1163,14 +1163,14 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; K18      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; K19      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; K20      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; K21      ; 389        ; 6        ; GPIO[27]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K21      ; 389        ; 6        ; GPIO[11]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; K22      ; 388        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K23      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; K24      ;            ; 6        ; VCCIO6                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; K25      ; 371        ; 6        ; GPIO[29]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K25      ; 371        ; 6        ; GPIO[13]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; K26      ; 370        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; K27      ; 362        ; 6        ; GPIO[5]                                                   ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; K28      ; 361        ; 6        ; GPIO[2]                                                   ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K27      ; 362        ; 6        ; SRAM_DQ[5]                                                ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K28      ; 361        ; 6        ; SRAM_DQ[2]                                                ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; L1       ; 49         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L2       ; 48         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L3       ; 32         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1195,8 +1195,8 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; L22      ; 384        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L23      ; 360        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L24      ; 359        ; 6        ; LEDG[2]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; L25      ; 369        ; 6        ; GPIO[23]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; L26      ; 363        ; 6        ; SRAM_DQ[14]                                               ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; L25      ; 369        ; 6        ; GPIO[7]                                                   ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; L26      ; 363        ; 6        ; GPIO[34]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; L27      ; 358        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L28      ; 357        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M1       ; 51         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1223,8 +1223,8 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; M22      ; 342        ; 6        ; ^MSEL2                                                    ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; M23      ; 344        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M24      ; 347        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; M25      ; 356        ; 6        ; GPIO[34]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; M26      ; 355        ; 6        ; GPIO[31]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; M25      ; 356        ; 6        ; GPIO[18]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; M26      ; 355        ; 6        ; GPIO[15]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; M27      ; 354        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; M28      ; 353        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N1       ;            ; 1        ; VCCIO1                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -1252,11 +1252,11 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; N23      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; N24      ;            ; 6        ; VCCIO6                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; N25      ; 352        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; N26      ; 351        ; 6        ; SRAM_DQ[1]                                                ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; N26      ; 351        ; 6        ; GPIO[21]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; N27      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; N28      ;            ; 6        ; VCCIO6                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; P1       ; 53         ; 1        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; P2       ; 52         ; 1        ; GPIO[15]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; P2       ; 52         ; 1        ; SRAM_DQ[15]                                               ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; P3       ; 55         ; 1        ; ~ALTERA_DCLK~                                             ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; On           ;
 ; P4       ; 57         ; 1        ; ^nCONFIG                                                  ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; P5       ; 59         ; 1        ; #TCK                                                      ; input  ;              ;         ; --         ;                 ; --       ; --           ;
@@ -1308,7 +1308,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; R23      ; 331        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; R24      ; 330        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; R25      ; 327        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; R26      ; 326        ; 5        ; GPIO[26]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; R26      ; 326        ; 5        ; GPIO[10]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; R27      ; 329        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; R28      ; 328        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; T1       ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -1318,7 +1318,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; T5       ;            ; 2        ; VCCIO2                                                    ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; T6       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T7       ; 78         ; 2        ; SRAM_ADDR[7]                                              ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; T8       ; 100        ; 2        ; SRAM_DQ[5]                                                ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; T8       ; 100        ; 2        ; GPIO[25]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; T9       ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; T10      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T11      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -1361,14 +1361,14 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; U20      ;            ;          ; VCCINT                                                    ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; U21      ; 319        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; U22      ; 313        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; U23      ; 305        ; 5        ; SRAM_DQ[15]                                               ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; U23      ; 305        ; 5        ; GPIO[35]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; U24      ; 316        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; U25      ; 315        ; 5        ; HEX3[4]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; U26      ; 314        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; U27      ; 318        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; U28      ; 317        ; 5        ; SRAM_DQ[0]                                                ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; U28      ; 317        ; 5        ; GPIO[20]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; V1       ; 84         ; 2        ; SRAM_ADDR[10]                                             ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
-; V2       ; 83         ; 2        ; GPIO[18]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; V2       ; 83         ; 2        ; GPIO[2]                                                   ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; V3       ; 82         ; 2        ; HEX0[6]                                                   ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; V4       ; 81         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V5       ; 108        ; 2        ; SRAM_ADDR[2]                                              ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
@@ -1394,7 +1394,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; V25      ; 307        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V26      ; 306        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; V27      ; 304        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; V28      ; 303        ; 5        ; GPIO[33]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; V28      ; 303        ; 5        ; GPIO[17]                                                  ; bidir  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; W1       ; 88         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; W2       ; 87         ; 2        ; SRAM_ADDR[5]                                              ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; W3       ; 112        ; 2        ; SRAM_ADDR[16]                                             ; output ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
@@ -1435,7 +1435,7 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; Y10      ; 140        ; 3        ; HEX1[6]                                                   ; output ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; Y11      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; Y12      ; 187        ; 3        ; CLOCK_50                                                  ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
-; Y13      ; 189        ; 3        ; GPIO[24]                                                  ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; Y13      ; 189        ; 3        ; GPIO[8]                                                   ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; Y14      ; 197        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; Y15      ; 198        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; Y16      ; 250        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -1551,6 +1551,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SRAM_OE_N     ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; CLOCK_50      ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; KEY[0]        ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[0]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[1]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[2]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[3]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[4]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[5]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[6]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[7]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[8]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[9]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[10]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[11]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[12]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[13]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[14]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; SRAM_DQ[15]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[0]       ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[1]       ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[2]       ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
@@ -1587,22 +1603,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GPIO[33]      ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[34]      ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; GPIO[35]      ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[0]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[1]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[2]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[3]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[4]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[5]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[6]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[7]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[8]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[9]    ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[10]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[11]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[12]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[13]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[14]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
-; SRAM_DQ[15]   ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 +---------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -1616,6 +1616,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; KEY[3]              ;                   ;         ;
 ; CLOCK_50            ;                   ;         ;
 ; KEY[0]              ;                   ;         ;
+; SRAM_DQ[0]          ;                   ;         ;
+; SRAM_DQ[1]          ;                   ;         ;
+; SRAM_DQ[2]          ;                   ;         ;
+; SRAM_DQ[3]          ;                   ;         ;
+; SRAM_DQ[4]          ;                   ;         ;
+; SRAM_DQ[5]          ;                   ;         ;
+; SRAM_DQ[6]          ;                   ;         ;
+; SRAM_DQ[7]          ;                   ;         ;
+; SRAM_DQ[8]          ;                   ;         ;
+; SRAM_DQ[9]          ;                   ;         ;
+; SRAM_DQ[10]         ;                   ;         ;
+; SRAM_DQ[11]         ;                   ;         ;
+; SRAM_DQ[12]         ;                   ;         ;
+; SRAM_DQ[13]         ;                   ;         ;
+; SRAM_DQ[14]         ;                   ;         ;
+; SRAM_DQ[15]         ;                   ;         ;
 ; GPIO[0]             ;                   ;         ;
 ; GPIO[1]             ;                   ;         ;
 ; GPIO[2]             ;                   ;         ;
@@ -1652,22 +1668,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GPIO[33]            ;                   ;         ;
 ; GPIO[34]            ;                   ;         ;
 ; GPIO[35]            ;                   ;         ;
-; SRAM_DQ[0]          ;                   ;         ;
-; SRAM_DQ[1]          ;                   ;         ;
-; SRAM_DQ[2]          ;                   ;         ;
-; SRAM_DQ[3]          ;                   ;         ;
-; SRAM_DQ[4]          ;                   ;         ;
-; SRAM_DQ[5]          ;                   ;         ;
-; SRAM_DQ[6]          ;                   ;         ;
-; SRAM_DQ[7]          ;                   ;         ;
-; SRAM_DQ[8]          ;                   ;         ;
-; SRAM_DQ[9]          ;                   ;         ;
-; SRAM_DQ[10]         ;                   ;         ;
-; SRAM_DQ[11]         ;                   ;         ;
-; SRAM_DQ[12]         ;                   ;         ;
-; SRAM_DQ[13]         ;                   ;         ;
-; SRAM_DQ[14]         ;                   ;         ;
-; SRAM_DQ[15]         ;                   ;         ;
 +---------------------+-------------------+---------+
 
 
@@ -1828,6 +1828,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SRAM_OE_N          ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; CLOCK_50           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[0]             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[0]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[1]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[2]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[3]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[4]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[5]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[6]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[7]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[8]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[9]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[10]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[11]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[12]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[13]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[14]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SRAM_DQ[15]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[0]            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[1]            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[2]            ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -1864,22 +1880,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GPIO[33]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[34]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; GPIO[35]           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[0]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[1]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[2]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[3]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[4]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[5]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[6]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[7]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[8]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[9]         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[10]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[11]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[12]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[13]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[14]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SRAM_DQ[15]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
 
@@ -2028,6 +2028,22 @@ Critical Warning (169085): No exact pin location assignment(s) for 133 pins of 1
     Info (169086): Pin SRAM_OE_N not assigned to an exact location on the device
     Info (169086): Pin CLOCK_50 not assigned to an exact location on the device
     Info (169086): Pin KEY[0] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[0] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[1] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[2] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[3] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[4] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[5] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[6] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[7] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[8] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[9] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[10] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[11] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[12] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[13] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[14] not assigned to an exact location on the device
+    Info (169086): Pin SRAM_DQ[15] not assigned to an exact location on the device
     Info (169086): Pin GPIO[0] not assigned to an exact location on the device
     Info (169086): Pin GPIO[1] not assigned to an exact location on the device
     Info (169086): Pin GPIO[2] not assigned to an exact location on the device
@@ -2064,22 +2080,6 @@ Critical Warning (169085): No exact pin location assignment(s) for 133 pins of 1
     Info (169086): Pin GPIO[33] not assigned to an exact location on the device
     Info (169086): Pin GPIO[34] not assigned to an exact location on the device
     Info (169086): Pin GPIO[35] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[0] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[1] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[2] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[3] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[4] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[5] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[6] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[7] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[8] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[9] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[10] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[11] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[12] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[13] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[14] not assigned to an exact location on the device
-    Info (169086): Pin SRAM_DQ[15] not assigned to an exact location on the device
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'Project1.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
@@ -2116,13 +2116,29 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.06 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.02 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (169064): Following 52 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
+    Info (169065): Pin SRAM_DQ[0] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[1] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[2] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[3] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[4] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[5] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[6] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[7] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[8] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[9] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[10] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[11] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[12] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[13] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[14] has a permanently disabled output enable
+    Info (169065): Pin SRAM_DQ[15] has a permanently disabled output enable
     Info (169065): Pin GPIO[0] has a permanently disabled output enable
     Info (169065): Pin GPIO[1] has a permanently disabled output enable
     Info (169065): Pin GPIO[2] has a permanently disabled output enable
@@ -2159,26 +2175,10 @@ Warning (169064): Following 52 pins have no output enable or a GND or VCC output
     Info (169065): Pin GPIO[33] has a permanently disabled output enable
     Info (169065): Pin GPIO[34] has a permanently disabled output enable
     Info (169065): Pin GPIO[35] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[0] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[1] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[2] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[3] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[4] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[5] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[6] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[7] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[8] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[9] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[10] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[11] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[12] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[13] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[14] has a permanently disabled output enable
-    Info (169065): Pin SRAM_DQ[15] has a permanently disabled output enable
 Info (144001): Generated suppressed messages file C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/output_files/Project1.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5605 megabytes
-    Info: Processing ended: Sat Jan 25 15:35:48 2025
+    Info: Peak virtual memory: 5595 megabytes
+    Info: Processing ended: Sun Jan 26 13:42:19 2025
     Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:13
 

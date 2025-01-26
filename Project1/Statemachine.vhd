@@ -8,7 +8,8 @@ port(
 	CountVal: in std_logic_vector(7 downto 0);
 	kp_data: in std_logic_vector(4 downto 0);
 	kp_pulse: in std_logic;
-	State: buffer std_logic_vector(3 downto 0)
+	State: buffer std_logic_vector(3 downto 0);
+	ReadWriteOut: out std_logic
 );
 end statemachine;
 
@@ -66,8 +67,7 @@ architecture struct of statemachine is
 							end if;
 						when PROG_ADDR =>
 							if (kp_data = Lcmd and kp_pulse='1') then
--- TODO -- needs to write data from screen to SRAM
-		  -- does it need to be done outside of this code
+								ReadWriteOut <= '1';
 							elsif (kp_data = Hcmd and kp_pulse='1') then
 								stateVAR <= PROG_DATA;
 							elsif (kp_data = Shiftcmd and kp_pulse='1') then
@@ -76,12 +76,12 @@ architecture struct of statemachine is
 								else
 									stateVAR <= OP_PAUSE_F;
 								end if;
+							else	
+								ReadWriteOut <= '0';
 							end if;
 						when PROG_DATA =>
 							if (kp_data = Lcmd and kp_pulse='1') then
--- TODO -- needs to write data from screen to SRAM
-		  -- does it need to be done outside of this code
-		  -- Send out a pulse to read/write?
+									ReadWriteOut <= '1';
 							elsif (kp_data = Hcmd and kp_pulse='1') then
 								stateVAR <= PROG_ADDR;
 							elsif (kp_data = Shiftcmd and kp_pulse='1') then
@@ -90,6 +90,8 @@ architecture struct of statemachine is
 								else
 									stateVAR <= OP_PAUSE_F;
 								end if;
+							else	
+								ReadWriteOut <= '0';
 							end if;
 						when others => stateVAR <= INIT;		
 					end case;		

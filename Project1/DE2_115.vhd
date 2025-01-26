@@ -145,7 +145,8 @@ component top_level is
       SRAM_CE_N   : OUT STD_LOGIC;							-- SRAM Chip Enable
       SRAM_OE_N   : OUT STD_LOGIC;							-- SRAM Output Enable
 		LEDG0       : OUT STD_LOGIC;		-- LED Green[8:0]
-		KEY0        : IN STD_LOGIC		-- Pushbutton[3:0]
+		KEY0        : IN STD_LOGIC;		-- Pushbutton[3:0]
+		GPIO			: IN STD_LOGIC_VECTOR(35 downto 0)
 		);
 end component top_level;
 
@@ -170,7 +171,8 @@ Inst_top_level: top_level
       SRAM_CE_N   => SRAM_CE_N,							-- SRAM Chip Enable
       SRAM_OE_N   => SRAM_OE_N,							-- SRAM Output Enable
 		LEDG0 => LEDG(0),
-		KEY0 => KEY(0)
+		KEY0 => KEY(0),
+		GPIO => GPIO(35 downto 0)
 		);
 
 END structural;

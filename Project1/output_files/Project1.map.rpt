@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Project1
-Sat Jan 25 15:35:37 2025
+Sun Jan 26 13:42:09 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -29,19 +29,21 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
  21. Parameter Settings for User Entity Instance: top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter
  22. Parameter Settings for User Entity Instance: top_level:Inst_top_level|SevenSegment:Inst_SevenSegment|ShiftRegisters:U_ShiftRegisters
  23. Parameter Settings for User Entity Instance: top_level:Inst_top_level|initRom:Inst_initRom|altsyncram:altsyncram_component
- 24. altsyncram Parameter Settings by Entity Instance
- 25. Port Connectivity Checks: "top_level:Inst_top_level|initRom:Inst_initRom"
- 26. Port Connectivity Checks: "top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller"
- 27. Port Connectivity Checks: "top_level:Inst_top_level|SevenSegment:Inst_SevenSegment|ShiftRegisters:U_ShiftRegisters"
- 28. Port Connectivity Checks: "top_level:Inst_top_level|SevenSegment:Inst_SevenSegment"
- 29. Port Connectivity Checks: "top_level:Inst_top_level|KP_Controller:Inst_kp_controller"
- 30. Port Connectivity Checks: "top_level:Inst_top_level|statemachine:Inst_StateMachine"
- 31. Port Connectivity Checks: "top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter"
- 32. Port Connectivity Checks: "top_level:Inst_top_level|clk_enabler:Inst_clk_enabler1hz"
- 33. Port Connectivity Checks: "top_level:Inst_top_level|clk_enabler:Inst_clk_enabler60ns"
- 34. Port Connectivity Checks: "top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce"
- 35. Elapsed Time Per Partition
- 36. Analysis & Synthesis Messages
+ 24. Parameter Settings for User Entity Instance: top_level:Inst_top_level|ShiftRegisters:Inst_Shifters
+ 25. altsyncram Parameter Settings by Entity Instance
+ 26. Port Connectivity Checks: "top_level:Inst_top_level|ShiftRegisters:Inst_Shifters"
+ 27. Port Connectivity Checks: "top_level:Inst_top_level|initRom:Inst_initRom"
+ 28. Port Connectivity Checks: "top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller"
+ 29. Port Connectivity Checks: "top_level:Inst_top_level|SevenSegment:Inst_SevenSegment|ShiftRegisters:U_ShiftRegisters"
+ 30. Port Connectivity Checks: "top_level:Inst_top_level|SevenSegment:Inst_SevenSegment"
+ 31. Port Connectivity Checks: "top_level:Inst_top_level|KP_Controller:Inst_kp_controller"
+ 32. Port Connectivity Checks: "top_level:Inst_top_level|statemachine:Inst_StateMachine"
+ 33. Port Connectivity Checks: "top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter"
+ 34. Port Connectivity Checks: "top_level:Inst_top_level|clk_enabler:Inst_clk_enabler1hz"
+ 35. Port Connectivity Checks: "top_level:Inst_top_level|clk_enabler:Inst_clk_enabler60ns"
+ 36. Port Connectivity Checks: "top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce"
+ 37. Elapsed Time Per Partition
+ 38. Analysis & Synthesis Messages
 
 
 
@@ -67,7 +69,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jan 25 15:35:37 2025            ;
+; Analysis & Synthesis Status        ; Successful - Sun Jan 26 13:42:09 2025            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; Project1                                         ;
 ; Top-level Entity Name              ; DE2_115                                          ;
@@ -219,33 +221,33 @@ applicable agreement for further details.
 +----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-;                                             ;                ;
-; Total combinational functions               ; 0              ;
-; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 0              ;
-;     -- 3 input functions                    ; 0              ;
-;     -- <=2 input functions                  ; 0              ;
-;                                             ;                ;
-; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 0              ;
-;     -- arithmetic mode                      ; 0              ;
-;                                             ;                ;
-; Total registers                             ; 0              ;
-;     -- Dedicated logic registers            ; 0              ;
-;     -- I/O registers                        ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 133            ;
-; Embedded Multiplier 9-bit elements          ; 0              ;
-; Maximum fan-out node                        ; GPIO[0]~output ;
-; Maximum fan-out                             ; 1              ;
-; Total fan-out                               ; 185            ;
-; Average fan-out                             ; 0.58           ;
-+---------------------------------------------+----------------+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+;                                             ;                   ;
+; Total combinational functions               ; 0                 ;
+; Logic element usage by number of LUT inputs ;                   ;
+;     -- 4 input functions                    ; 0                 ;
+;     -- 3 input functions                    ; 0                 ;
+;     -- <=2 input functions                  ; 0                 ;
+;                                             ;                   ;
+; Logic elements by mode                      ;                   ;
+;     -- normal mode                          ; 0                 ;
+;     -- arithmetic mode                      ; 0                 ;
+;                                             ;                   ;
+; Total registers                             ; 0                 ;
+;     -- Dedicated logic registers            ; 0                 ;
+;     -- I/O registers                        ; 0                 ;
+;                                             ;                   ;
+; I/O pins                                    ; 133               ;
+; Embedded Multiplier 9-bit elements          ; 0                 ;
+; Maximum fan-out node                        ; SRAM_DQ[0]~output ;
+; Maximum fan-out                             ; 1                 ;
+; Total fan-out                               ; 185               ;
+; Average fan-out                             ; 0.58              ;
++---------------------------------------------+-------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -310,111 +312,147 @@ Encoding Type:  One-Hot
 +---------------------+--------------------+--------------------+-------------------+-------------------+---------------------+---------------------+---------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                       ;
-+-----------------------------------------------------------------------------------+--------------------------------------+
-; Register name                                                                     ; Reason for Removal                   ;
-+-----------------------------------------------------------------------------------+--------------------------------------+
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|addr_reg[0..19]     ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[0..15] ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|tri_reg             ; Stuck at VCC due to stuck port clock ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|we_reg              ; Stuck at VCC due to stuck port clock ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|oe_reg              ; Stuck at VCC due to stuck port clock ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|oData[1..4]             ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|q[1]                    ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_en                  ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|q[0]                    ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|kp_pulse5               ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|r[0,1]                  ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|kp_pulse20              ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|oData[0]                ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[0..17]          ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[0..7]        ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter|r_reg[0..7]       ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.idle      ; Lost fanout                          ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.r2        ; Lost fanout                          ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.w2        ; Lost fanout                          ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.r1        ; Lost fanout                          ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.w1        ; Lost fanout                          ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|state.A                 ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|state.B                 ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|state.C                 ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|state.D                 ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR.INIT             ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR.OP_PAUSE_F       ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR.OP_PAUSE_B       ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR.OP_RUN_F         ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR.OP_RUN_B         ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR.PROG_ADDR        ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR.PROG_DATA        ; Stuck at GND due to stuck port clock ;
-; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|oRESET                  ; Lost fanout                          ;
-; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_reg          ; Lost fanout                          ;
-; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[0..15]  ; Lost fanout                          ;
-; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[0..19]             ; Lost fanout                          ;
-; Total Number of Removed Registers = 139                                           ;                                      ;
-+-----------------------------------------------------------------------------------+--------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                              ;
++-----------------------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                                     ; Reason for Removal                          ;
++-----------------------------------------------------------------------------------+---------------------------------------------+
+; top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter|r_reg[0..7]       ; Stuck at GND due to stuck port clock_enable ;
+; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[0..7]        ; Stuck at GND due to stuck port data_in      ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|addr_reg[0..19]     ; Stuck at GND due to stuck port data_in      ;
+; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|q[0]                    ; Stuck at VCC due to stuck port data_in      ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|we_reg              ; Stuck at VCC due to stuck port data_in      ;
+; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|q[1]                    ; Stuck at VCC due to stuck port data_in      ;
+; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|kp_pulse5               ; Stuck at GND due to stuck port data_in      ;
+; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|r[0,1]                  ; Stuck at GND due to stuck port data_in      ;
+; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|kp_pulse20              ; Stuck at GND due to stuck port data_in      ;
+; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_en                  ; Lost fanout                                 ;
+; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[0..17]          ; Lost fanout                                 ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|oe_reg              ; Stuck at VCC due to stuck port data_in      ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|tri_reg             ; Stuck at VCC due to stuck port data_in      ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.idle      ; Lost fanout                                 ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.w2        ; Lost fanout                                 ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.r1        ; Lost fanout                                 ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.w1        ; Lost fanout                                 ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.r2        ; Stuck at GND due to stuck port data_in      ;
+; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|state.A                 ; Lost fanout                                 ;
+; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|state.B                 ; Lost fanout                                 ;
+; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|state.C                 ; Lost fanout                                 ;
+; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|state.D                 ; Lost fanout                                 ;
+; top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR.INIT             ; Lost fanout                                 ;
+; top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR.OP_PAUSE_F       ; Lost fanout                                 ;
+; top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR.OP_PAUSE_B       ; Lost fanout                                 ;
+; top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR.OP_RUN_F         ; Lost fanout                                 ;
+; top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR.OP_RUN_B         ; Lost fanout                                 ;
+; top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR.PROG_ADDR        ; Lost fanout                                 ;
+; top_level:Inst_top_level|statemachine:Inst_StateMachine|stateVAR.PROG_DATA        ; Lost fanout                                 ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[0..15] ; Stuck at GND due to stuck port clock_enable ;
+; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|oRESET                  ; Lost fanout                                 ;
+; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_reg          ; Lost fanout                                 ;
+; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[0..19]             ; Lost fanout                                 ;
+; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[0..15]  ; Lost fanout                                 ;
+; Total Number of Removed Registers = 134                                           ;                                             ;
++-----------------------------------------------------------------------------------+---------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                             ;
-+------------------------------------------------------------------------------+-------------------------+--------------------------------------------------------------------------------+
-; Register name                                                                ; Reason for Removal      ; Registers Removed due to This Register                                         ;
-+------------------------------------------------------------------------------+-------------------------+--------------------------------------------------------------------------------+
-; top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter|r_reg[1]     ; Stuck at GND            ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|oRESET,              ;
-;                                                                              ; due to stuck port clock ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[0],             ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[1],             ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[2],             ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[3],             ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[4],             ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[5],             ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[6],             ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[7],             ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[8],             ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[9],             ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[10],            ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[11],            ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[12],            ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[13],            ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[14],            ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[15],            ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[16],            ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[17],            ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[18],            ;
-;                                                                              ;                         ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[19]             ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|addr_reg[19]   ; Stuck at GND            ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_reg,      ;
-;                                                                              ; due to stuck port clock ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[15], ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[14], ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[13], ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[12], ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[11], ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[10], ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[9],  ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[8],  ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[7],  ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[6],  ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[5],  ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[4],  ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[3],  ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[2],  ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[1],  ;
-;                                                                              ;                         ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[0]   ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|oData[4]           ; Stuck at GND            ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[7],       ;
-;                                                                              ; due to stuck port clock ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[6],       ;
-;                                                                              ;                         ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[5],       ;
-;                                                                              ;                         ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[4],       ;
-;                                                                              ;                         ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[3],       ;
-;                                                                              ;                         ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[2],       ;
-;                                                                              ;                         ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[1],       ;
-;                                                                              ;                         ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[0]        ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|q[1]               ; Stuck at GND            ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|kp_pulse5,           ;
-;                                                                              ; due to stuck port clock ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|r[0]                 ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_en             ; Stuck at GND            ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|q[0],                ;
-;                                                                              ; due to stuck port clock ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|oData[0]             ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.idle ; Lost Fanouts            ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.r2,    ;
-;                                                                              ;                         ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.w2     ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|r[1]               ; Stuck at GND            ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|kp_pulse20           ;
-;                                                                              ; due to stuck port clock ;                                                                                ;
-+------------------------------------------------------------------------------+-------------------------+--------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                     ;
++------------------------------------------------------------------------------+--------------------------------+---------------------------------------------------------------------------------+
+; Register name                                                                ; Reason for Removal             ; Registers Removed due to This Register                                          ;
++------------------------------------------------------------------------------+--------------------------------+---------------------------------------------------------------------------------+
+; top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter|r_reg[1]     ; Stuck at GND                   ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[1],        ;
+;                                                                              ; due to stuck port clock_enable ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|oRESET,               ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_reg,       ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[0],              ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[1],              ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[2],              ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[3],              ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[4],              ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[5],              ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[6],              ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[7],              ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[8],              ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[9],              ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[10],             ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[11],             ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[12],             ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[13],             ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[14],             ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[15],             ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[16],             ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[17],             ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[18],             ;
+;                                                                              ;                                ; top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay|Cont[19],             ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[15],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[14],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[13],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[12],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[11],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[10],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[9],   ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[8],   ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[7],   ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[6],   ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[5],   ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[4],   ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[3],   ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[2],   ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[1],   ;
+;                                                                              ;                                ; top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[0]    ;
+; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|q[0]               ; Stuck at VCC                   ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|kp_pulse5,            ;
+;                                                                              ; due to stuck port data_in      ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|r[0],                 ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|kp_pulse20,           ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_en,               ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[0],           ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[1],           ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[2],           ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[3],           ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[4],           ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[5],           ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[6],           ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[7],           ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[8],           ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[9],           ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[10],          ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[11],          ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[12],          ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[13],          ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[14],          ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[15],          ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[16],          ;
+;                                                                              ;                                ; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[17]           ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|tri_reg        ; Stuck at VCC                   ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[0],  ;
+;                                                                              ; due to stuck port data_in      ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[1],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[2],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[3],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[4],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[5],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[6],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[7],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[8],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[9],  ;
+;                                                                              ;                                ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[10], ;
+;                                                                              ;                                ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[11], ;
+;                                                                              ;                                ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[12], ;
+;                                                                              ;                                ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[13], ;
+;                                                                              ;                                ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[14], ;
+;                                                                              ;                                ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[15]  ;
+; top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter|r_reg[0]     ; Stuck at GND                   ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[0]         ;
+;                                                                              ; due to stuck port clock_enable ;                                                                                 ;
+; top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter|r_reg[2]     ; Stuck at GND                   ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[2]         ;
+;                                                                              ; due to stuck port clock_enable ;                                                                                 ;
+; top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter|r_reg[3]     ; Stuck at GND                   ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[3]         ;
+;                                                                              ; due to stuck port clock_enable ;                                                                                 ;
+; top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter|r_reg[4]     ; Stuck at GND                   ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[4]         ;
+;                                                                              ; due to stuck port clock_enable ;                                                                                 ;
+; top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter|r_reg[5]     ; Stuck at GND                   ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[5]         ;
+;                                                                              ; due to stuck port clock_enable ;                                                                                 ;
+; top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter|r_reg[6]     ; Stuck at GND                   ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[6]         ;
+;                                                                              ; due to stuck port clock_enable ;                                                                                 ;
+; top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter|r_reg[7]     ; Stuck at GND                   ; top_level:Inst_top_level|statemachine:Inst_StateMachine|prevCountVal[7]         ;
+;                                                                              ; due to stuck port clock_enable ;                                                                                 ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.idle ; Lost Fanouts                   ; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.w2      ;
++------------------------------------------------------------------------------+--------------------------------+---------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -437,7 +475,9 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[15] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[10] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[0] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |DE2_115|top_level:Inst_top_level|KP_Controller:Inst_kp_controller|state.D             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
 
 
@@ -572,6 +612,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: top_level:Inst_top_level|ShiftRegisters:Inst_Shifters ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; num_addr_regs  ; 2     ; Signed Integer                                                            ;
+; num_data_regs  ; 4     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +---------------------------------------------------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                                                          ;
 +-------------------------------------------+-------------------------------------------------------------------------------+
@@ -590,6 +641,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                          ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                     ;
 +-------------------------------------------+-------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top_level:Inst_top_level|ShiftRegisters:Inst_Shifters"                                        ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; address_buffer ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_buffer    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; display_mode   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -641,13 +703,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "top_level:Inst_top_level|statemachine:Inst_StateMachine"                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; state ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top_level:Inst_top_level|statemachine:Inst_StateMachine"                                    ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; state[3..2]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; readwriteout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -656,6 +719,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port     ; Type   ; Severity ; Details                                                                             ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 ; load     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; clk_en   ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; max_tick ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; min_tick ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
@@ -704,7 +768,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Sat Jan 25 15:35:35 2025
+    Info: Processing started: Sun Jan 26 13:42:06 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project1 -c Project1
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file de2_115.vhd
@@ -755,14 +819,8 @@ Warning (10541): VHDL Signal Declaration warning at top_level.vhd(8): used impli
 Warning (10541): VHDL Signal Declaration warning at top_level.vhd(11): used implicit default value for signal "SRAM_UB_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at top_level.vhd(12): used implicit default value for signal "SRAM_LB_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at top_level.vhd(16): used implicit default value for signal "LEDG0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(135): used implicit default value for signal "clk" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(136): used implicit default value for signal "clk_enable" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(136): object "clk_enable60ns" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(136): object "clk_enable1hz" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(138): object "Counterreset_n" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(141): used implicit default value for signal "iData" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(143): used implicit default value for signal "cntrEn" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(144): used implicit default value for signal "DirEn" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(140): object "Counterreset_n" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at top_level.vhd(143): used implicit default value for signal "iData" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at top_level.vhd(145): used implicit default value for signal "data2Sram" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(146): object "SramReady" assigned a value but never read
 Warning (10541): VHDL Signal Declaration warning at top_level.vhd(147): used implicit default value for signal "SramAddrIn" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
@@ -771,11 +829,18 @@ Warning (10541): VHDL Signal Declaration warning at top_level.vhd(149): used imp
 Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(150): object "data_outR" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(150): object "data_outUR" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(151): object "romDataOut" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(155): used implicit default value for signal "rows" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(156): object "columns" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(161): used implicit default value for signal "keypad_input" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(162): object "seg_out" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(163): object "digit_select" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(153): object "L_key_Write" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(154): object "ShiftAddress" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(155): object "ShiftData" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(156): object "ShiftDisplay" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at top_level.vhd(160): used implicit default value for signal "rows" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(161): object "columns" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at top_level.vhd(166): used implicit default value for signal "keypad_input" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(167): object "seg_out" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(168): object "digit_select" assigned a value but never read
+Warning (10620): VHDL warning at top_level.vhd(290): comparison between unequal length operands always returns FALSE
+Warning (10620): VHDL warning at top_level.vhd(292): comparison between unequal length operands always returns FALSE
+Warning (10873): Using initial value X (don't care) for net "Count_clk_enable" at top_level.vhd(138)
 Info (12128): Elaborating entity "Reset_Delay" for hierarchy "top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay"
 Info (12128): Elaborating entity "btn_debounce_toggle" for hierarchy "top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce"
 Warning (12125): Using design file clk_enabler.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
@@ -786,11 +851,11 @@ Info (12128): Elaborating entity "clk_enabler" for hierarchy "top_level:Inst_top
 Info (12128): Elaborating entity "univ_bin_counter" for hierarchy "top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter"
 Warning (10492): VHDL Process Statement warning at univ_bin_counter.vhd(30): signal "clk_en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "statemachine" for hierarchy "top_level:Inst_top_level|statemachine:Inst_StateMachine"
-Warning (10540): VHDL Signal Declaration warning at Statemachine.vhd(20): used explicit default value for signal "Lcmd" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at Statemachine.vhd(21): used explicit default value for signal "Hcmd" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at Statemachine.vhd(22): used explicit default value for signal "Shiftcmd" because signal was never assigned a value
-Warning (10631): VHDL Process Statement warning at Statemachine.vhd(98): inferring latch(es) for signal or variable "State", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "State[1]" at Statemachine.vhd(98)
+Warning (10540): VHDL Signal Declaration warning at Statemachine.vhd(21): used explicit default value for signal "Lcmd" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at Statemachine.vhd(22): used explicit default value for signal "Hcmd" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at Statemachine.vhd(23): used explicit default value for signal "Shiftcmd" because signal was never assigned a value
+Warning (10631): VHDL Process Statement warning at Statemachine.vhd(100): inferring latch(es) for signal or variable "State", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "State[1]" at Statemachine.vhd(100)
 Info (12128): Elaborating entity "KP_Controller" for hierarchy "top_level:Inst_top_level|KP_Controller:Inst_kp_controller"
 Warning (10492): VHDL Process Statement warning at kp_controller.vhd(56): signal "clk_en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at kp_controller.vhd(131): signal "clk_en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -953,7 +1018,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "SRAM_WE_N" is stuck at VCC
     Warning (13410): Pin "SRAM_CE_N" is stuck at GND
     Warning (13410): Pin "SRAM_OE_N" is stuck at VCC
-Info (17049): 43 registers lost all their fanouts during netlist optimizations.
+Info (17049): 72 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 5 input pin(s) that do not drive logic
@@ -966,10 +1031,10 @@ Info (21057): Implemented 133 device resources after synthesis - the final resou
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 76 output pins
     Info (21060): Implemented 52 bidirectional pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 180 warnings
-    Info: Peak virtual memory: 4651 megabytes
-    Info: Processing ended: Sat Jan 25 15:35:37 2025
-    Info: Elapsed time: 00:00:02
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 181 warnings
+    Info: Peak virtual memory: 4650 megabytes
+    Info: Processing ended: Sun Jan 26 13:42:09 2025
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 
