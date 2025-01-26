@@ -20,7 +20,7 @@ architecture struct of statemachine is
 				signal prevCountVal : std_LOGIC_vector(7 downto 0);
 				signal Lcmd : std_LOGIC_vector(4 downto 0) := ('1' & X"1");
 				signal Hcmd : std_LOGIC_vector(4 downto 0) := ('1' & X"2");
-				signal Shiftcmd: std_logic_vector(4 downto 0) := ('1' & X"0");
+				signal Shiftcmd: std_logic_vector(4 downto 0) := ('1' & X"3");
 	begin
 		process(Clk, reset)
 			begin

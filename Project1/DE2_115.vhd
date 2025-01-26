@@ -35,7 +35,7 @@ ENTITY DE2_115 IS
 ---- 			SDRAM Interface		      
 --      DRAM_DQ     : INOUT STD_LOGIC_VECTOR(31 DOWNTO 0);	-- SDRAM Data bus 32 Bits
 --      DRAM_ADDR   : OUT STD_LOGIC_VECTOR(12 DOWNTO 0);		-- SDRAM Address bus 13 Bits
---	  DRAM_DQM    : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);	    -- SDRAM DQM Mask
+--	  	  DRAM_DQM    : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);	    -- SDRAM DQM Mask
 --      DRAM_WE_N   : OUT STD_LOGIC;							-- SDRAM Write Enable
 --      DRAM_CAS_N  : OUT STD_LOGIC;							-- SDRAM Column Address Strobe
 --      DRAM_RAS_N  : OUT STD_LOGIC;							-- SDRAM Row Address Strobe

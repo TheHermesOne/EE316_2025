@@ -27,7 +27,7 @@ architecture behav of statemachine_tb is
 
 	signal Lcommand : std_LOGIC_vector(4 downto 0) := ('1' & X"1");
 	signal Hcommand : std_LOGIC_vector(4 downto 0) := ('1' & X"2");
-	signal ShiftCommand : std_LOGIC_vector(4 downto 0) := ('1' & X"0");
+	signal ShiftCommand : std_LOGIC_vector(4 downto 0) := ('1' & X"3");
 	
 	begin
 	clk <= not clk after 10 ns;

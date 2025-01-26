@@ -24,70 +24,231 @@
 # -- Loading package std_logic_1164
 # -- Compiling entity top_level
 # -- Compiling architecture Structural of top_level
-# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(216): (vcom-1436) Actual expression (prefix expression) of formal "up" is not globally static.
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/SRAM_Controller.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity SRAM_Controller
+# -- Compiling architecture arch of SRAM_Controller
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/7_segment_display.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity SevenSegment
+# -- Compiling architecture Behavioral of SevenSegment
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/kp_controller.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity KP_Controller
+# -- Compiling architecture Behavioral of KP_Controller
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/btn_debounce_toggle.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity btn_debounce_toggle
+# -- Compiling architecture Behavioral of btn_debounce_toggle
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/reset_delay.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Reset_Delay
+# -- Compiling architecture Arch of Reset_Delay
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/initRom.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity initRom
+# -- Compiling architecture SYN of initrom
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/Statemachine.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/shift_registers.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity ShiftRegisters
+# -- Compiling architecture Behavioral of ShiftRegisters
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/univ_bin_counter.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity univ_bin_counter
+# -- Compiling architecture arch of univ_bin_counter
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/clk_enabler.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clk_enabler
+# -- Compiling architecture behv of clk_enabler
 # 
-# ** Warning: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(290): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 2 is not equal to right length 4).
+vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/statemachine_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine_tb
+# -- Compiling architecture behav of statemachine_tb
+vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/Statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+vsim +altera -do Project1_run_msim_rtl_vhdl.do -l msim_transcript -gui work.statemachine_tb
+# vsim +altera -do Project1_run_msim_rtl_vhdl.do -l msim_transcript -gui work.statemachine_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.statemachine_tb(behav)
+# Loading work.statemachine(struct)
+# do Project1_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
 # 
-# ** Warning: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(292): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 2 is not equal to right length 4).
-# 
-# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(318): VHDL Compiler exiting
-# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./Project1_run_msim_rtl_vhdl.do line 9
-# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
-#     while executing
-# "vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd}"
-vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/DE2_115.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DE2_115
+# -- Compiling architecture structural of DE2_115
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity top_level
 # -- Compiling architecture Structural of top_level
-# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(216): (vcom-1436) Actual expression (prefix expression) of formal "up" is not globally static.
-# 
-# ** Warning: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(290): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 2 is not equal to right length 4).
-# 
-# ** Warning: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(292): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 2 is not equal to right length 4).
-# 
-# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(318): VHDL Compiler exiting
-vcom -reportprogress 30 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/SRAM_Controller.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity top_level
-# -- Compiling architecture Structural of top_level
-# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(216): (vcom-1436) Actual expression (prefix expression) of formal "up" is not globally static.
-# 
-# ** Warning: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(290): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 2 is not equal to right length 4).
-# 
-# ** Warning: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(292): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 2 is not equal to right length 4).
-# 
-# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(318): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd
+# -- Compiling entity SRAM_Controller
+# -- Compiling architecture arch of SRAM_Controller
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/7_segment_display.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity top_level
-# -- Compiling architecture Structural of top_level
-# ** Warning: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(291): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 2 is not equal to right length 4).
-# 
-# ** Warning: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(293): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 2 is not equal to right length 4).
-# 
-vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity SevenSegment
+# -- Compiling architecture Behavioral of SevenSegment
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/kp_controller.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity top_level
-# -- Compiling architecture Structural of top_level
-# ** Warning: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(293): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 2 is not equal to right length 4).
-# 
-vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity KP_Controller
+# -- Compiling architecture Behavioral of KP_Controller
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/btn_debounce_toggle.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity top_level
-# -- Compiling architecture Structural of top_level
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity btn_debounce_toggle
+# -- Compiling architecture Behavioral of btn_debounce_toggle
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/reset_delay.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Reset_Delay
+# -- Compiling architecture Arch of Reset_Delay
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/initRom.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity initRom
+# -- Compiling architecture SYN of initrom
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/Statemachine.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/shift_registers.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity ShiftRegisters
+# -- Compiling architecture Behavioral of ShiftRegisters
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/univ_bin_counter.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity univ_bin_counter
+# -- Compiling architecture arch of univ_bin_counter
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/clk_enabler.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clk_enabler
+# -- Compiling architecture behv of clk_enabler
+# 
+add wave -position end  sim:/statemachine_tb/clk
+add wave -position end  sim:/statemachine_tb/reset
+add wave -position end  sim:/statemachine_tb/countVal
+add wave -position end  sim:/statemachine_tb/kp_data
+add wave -position end  sim:/statemachine_tb/kp_pulse
+add wave -position end  sim:/statemachine_tb/state
+add wave -position end  sim:/statemachine_tb/Lcommand
+add wave -position end  sim:/statemachine_tb/Hcommand
+add wave -position end  sim:/statemachine_tb/ShiftCommand
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
