@@ -15,8 +15,7 @@ entity top_level is
       SRAM_OE_N   							: OUT STD_LOGIC;							-- SRAM Output Enable
 		LEDG0       							: OUT STD_LOGIC;							-- LED Green[8:0]
 		KEY0        							: IN STD_LOGIC;								-- Pushbutton[3:0]
-		GPIO										: IN STD_LOGIC_VECTOR(35 downto 0)
-
+		GPIO										: INOUT STD_LOGIC_VECTOR(35 downto 0)
 		);
 end top_level;
 
@@ -154,16 +153,17 @@ architecture Structural of top_level is
 	signal ShiftAddress 			: std_LOGIC_VECTOR(7 downto 0);
 	signal ShiftData				: std_LOGIC_VECTOR(15 downto 0);
 	signal ShiftDisplay			: std_LOGIC;
+	signal CntDir					: std_LOGIC;
+	signal Cnten					: std_LOGIC;
+	signal StateState				: std_LOGIC_VECTOR(1 downto 0);
+	signal ErrorVal				: std_logic_vector(3 downto 0);
+	signal kp_pulse				: std_LOGIC;
+	
 	--Signals below are made to satiate inputs and outputs temporaly
 	-- unitl we can figure out what goes where
 	-----------------------------------------
-	signal rows        			: std_logic_vector(4 downto 0); 
-   signal columns     			: std_logic_vector(3 downto 0);
 	signal odata					: std_LOGIC_VECTOR(4 downto 0);
-	signal clk_en_out				: std_LOGIC;
-	signal kp_pulse				: std_LOGIC;
-	signal et_pulse				: std_LOGIC;
-	signal keypad_input			: std_LOGIC_VECTOR(4 downto 0);
+	signal segkeypad_input			: std_LOGIC_VECTOR(4 downto 0);
 	signal seg_out					: std_LOGIC_VECTOR(6 downto 0);
 	signal digit_select			: std_LOGIC_VECTOR(3 downto 0);
 	-----------------------------------------
@@ -173,7 +173,9 @@ begin
 		Rst 					<= not reset_db;--iReset_n;?
 		CounterReset 		<= reset or Rst;
 		CounterReset_n  	<= not CounterReset;
-		
+		CntDir				<= not oState(1);
+		Cnten					<= oState(0);
+		StateState			<= oState(3 downto 2);
 		------------Entity Instantiation-------------
 		Inst_clk_Reset_Delay: Reset_Delay	
 				port map(
@@ -192,14 +194,14 @@ begin
 					
 		Inst_clk_enabler60ns: clk_enabler  
 				generic map(
-					cnt_max 		=> 9) --Needs to be set to 60 ns
+					cnt_max 	=> 2) --Needs to be set to 60 ns
 				port map( 
 					clock 		=> iclk, 			-- output from sys_clk
 					clk_en 		=> clk_enable60ns  -- enable every 10th sys_clk edge
 				);
 		Inst_clk_enabler1hz: clk_enabler
 				generic map(
-					cnt_max => 10) --Needs to be set to 1hz
+					cnt_max => 49999999) --Needs to be set to 1hz
 				port map(
 					clock => iclk,
 					clk_en => clk_enable1hz
@@ -212,8 +214,8 @@ begin
 				reset 		=> CounterReset,
 				syn_clr		=> Rst, 
 				load			=> '0', 
-				en				=> oState(0), 
-				up				=> (not oState(1)), 
+				en				=> Cnten, 
+				up				=> CntDir, 
 				clk_en 		=> Count_clk_enable,
 				d				=> iData,
 				max_tick		=> open, 
@@ -233,8 +235,8 @@ begin
 		Inst_kp_controller : kp_controller
 			  port map (
 				clk         => iclk,
-				rows        => rows,
-				columns     => columns,
+				rows        => GPIO(4 downto 0),
+				columns     => GPIO(8 downto 5),
 				oData       => oData,
 				kp_pulse20    => kp_pulse
 			  );
@@ -243,7 +245,7 @@ begin
 			Port map(
 				clk           => iclk,          
 				reset         => reset,        
-				keypad_input  => keypad_input,
+				keypad_input  => Segkeypad_input,
 				seg_out       => seg_out,
 				digit_select  => digit_select
 				 );
@@ -282,37 +284,40 @@ begin
 				data_buffer => ShiftData,
 				display_mode => ShiftDisplay
 			);
-			
-		UCmux:process(iclk)
-			begin
-				--Universal Counter Clock Mux
-				if(rising_edge(iclk)) then
-					if(oState(3 downto 2) = X"0") then
-						Count_clk_enable <= clk_enable60ns;
-					elsif(oState(3 downto 2) = X"1") then
-						Count_clk_enable <= clk_enable1hz;
-					end if;
+		
+--		SevSegMux:process
+--			begin
+--				case digit_select is
+--					when "1110" =>
+--						HEX0 <= seg_out;
+--				end case;
+--			end process;
+		
+		
+		UCmux:process(iclk,stateState)
+			begin		
+				if rising_edge(iclk) then
+					case StateState is
+						when"00" => --Init Mode
+							SramActive <= clk_enable60ns;
+							Count_clk_enable <= clk_enable60ns;
+							SramAddrIn <= (X"000" & countOut);
+							bReadWrite <= '0';
+							data2Sram <= RomDataOut;
+						when"01" => -- OP mode
+							SramActive <= clk_enable1hz; -- Does this need to be turned off if system is in pause mode?
+							Count_clk_enable <= clk_enable1hz;
+							SramAddrIn <= (X"000" & countOut);
+							bReadWrite <= '1';
+							segkeypad_input <= ('0'& Data_outR(3 downto 0));
+						when"10" => -- PROG mode
+							SramActive <= L_key_Write;
+							SramAddrIn <= (X"000" & ShiftAddress); 
+							data2Sram <= ShiftData;
+							bReadWrite <= '0';
+							segkeypad_input <= oData;
+						when others=> ErrorVal <= "0001";
+					end case;		
 				end if;
 		end process;
-
-			
---				if rising_edge(clk) then
---					case oState is
---						when"00" => --Init Mode
---							SramActive <= clk_enable60ns;
---							Count_clk_enable <= clk_enable60ns;
---							SramAddrIn <= (X"000" & countOut);
---							bReadWrite <= '0';
---							data2Sram <= RomDataOut;
---						when"01" => -- OP mode
---							SramActive <= clk_enable1hz; -- Does this need to be turned off if system is in pause mode?
---							Count_clk_enable <= clk_enable1hz;
---							SramAddrIn <= (X"000" & countOut);
---							bReadWrite <= '1';
---						when"10" => -- PROG mode
---							SramActive <= L_key_Write;
---							SramAddrIn <= ShiftAddress;
---							data2Sram <= ShiftData;
---					end case;		
---				end if;
 end Structural;

@@ -146,7 +146,7 @@ component top_level is
       SRAM_OE_N   : OUT STD_LOGIC;							-- SRAM Output Enable
 		LEDG0       : OUT STD_LOGIC;		-- LED Green[8:0]
 		KEY0        : IN STD_LOGIC;		-- Pushbutton[3:0]
-		GPIO			: IN STD_LOGIC_VECTOR(35 downto 0)
+		GPIO			: INOUT STD_LOGIC_VECTOR(35 downto 0)
 		);
 end component top_level;
 

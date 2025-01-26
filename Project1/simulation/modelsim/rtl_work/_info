@@ -3,147 +3,73 @@ K3
 13
 cModel Technology
 Z0 dC:\Users\nathani\Documents\GitHub\EE316_2025\Project1\simulation\modelsim
-Eclk_enabler
-Z1 w1737049014
-Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
-Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z5 dC:\Users\nathani\Documents\GitHub\EE316_2025\Project1\simulation\modelsim
-Z6 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/clk_enabler.vhd
-Z7 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project1/clk_enabler.vhd
+Ede2_115
+Z1 w1737912477
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\nathani\Documents\GitHub\EE316_2025\Project1\simulation\modelsim
+Z5 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/DE2_115.vhd
+Z6 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project1/DE2_115.vhd
 l0
-L7
-V5`@OBnOj4Z5bM5RWn7B<C2
-!s100 AFSH;@Fal[B52>>mUX?gJ1
-Z8 OV;C;10.1d;51
+L4
+VZnS@DRV4nAO8FSGPWLiP71
+Z7 OV;C;10.1d;51
 31
+Z8 !s108 1737917705.903000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/DE2_115.vhd|
+Z10 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/DE2_115.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 kjgT7?2`Z;7MF5;8iiZa30
 !i10b 1
-Z9 !s108 1737480579.995000
-Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/clk_enabler.vhd|
-Z11 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/clk_enabler.vhd|
-Z12 o-93 -work work -O0
-Z13 tExplicit 1
-Abehv
+Astructural
 R2
 R3
-R4
-DEx4 work 11 clk_enabler 0 22 5`@OBnOj4Z5bM5RWn7B<C2
-l22
-L18
-V^@JF<XHidU@?>Ie4H1PLA0
-!s100 ]58g:ONa8FXaYPJkg6W=I2
-R8
+DEx4 work 7 de2_115 0 22 ZnS@DRV4nAO8FSGPWLiP71
+l153
+L132
+V^15Un4eZD7=:AX6bD]7aH3
+R7
 31
-!i10b 1
+R8
 R9
 R10
 R11
 R12
-R13
-Ede2_115
-Z14 w1737315873
+!s100 `AeiN[nn6NNb5:SJ]5WN_0
+!i10b 1
+Etop_level
+Z13 w1737917953
+R2
 R3
 R4
-R5
-Z15 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/DE2_115.vhd
-Z16 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project1/DE2_115.vhd
+Z14 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd
+Z15 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd
 l0
 L4
-V9AfN3C=g<4A;PbBnhI;:U1
-R8
-31
-Z17 !s108 1737480579.550000
-Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/DE2_115.vhd|
-Z19 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/DE2_115.vhd|
-R12
-R13
-!s100 4S3Z8>kUE^k>DM`[@Je^43
+V<nTVddQG`]OBc@;86MNkD1
+!s100 elFTmd<d4nCH65zdb^fDV2
+R7
+32
 !i10b 1
+Z16 !s108 1737917971.254000
+Z17 !s90 -reportprogress|300|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd|
+Z18 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd|
+Z19 o-work work -O0
+R12
 Astructural
+R2
 R3
-R4
-DEx4 work 7 de2_115 0 22 9AfN3C=g<4A;PbBnhI;:U1
-l148
-L132
-V5cGEe>h85@l1^H;1;83JR0
-R8
-31
+Z20 DEx4 work 9 top_level 0 22 <nTVddQG`]OBc@;86MNkD1
+l172
+L25
+VFVig[?0K_R2lRoU`]mfFm0
+!s100 6NhV;3M0^lP?:Jg1QC5B=3
+R7
+32
+!i10b 1
+R16
 R17
 R18
 R19
 R12
-R13
-!s100 9WXnUF@QFCI[BLUe;US6@1
-!i10b 1
-Ereset_delay
-Z20 w1737480266
-R2
-R3
-R4
-R5
-Z21 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/reset_delay.vhd
-Z22 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project1/reset_delay.vhd
-l0
-L8
-V=a]kVzmg4QOF^gm=?beXU3
-R8
-31
-Z23 !s108 1737480579.850000
-Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/reset_delay.vhd|
-Z25 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/reset_delay.vhd|
-R12
-R13
-!s100 N[2z`b;IbX_Kc24fd56ET1
-!i10b 1
-Aarch
-R2
-R3
-R4
-DEx4 work 11 reset_delay 0 22 =a]kVzmg4QOF^gm=?beXU3
-l20
-L16
-V5JS[LklNCIPKz3f[1c2GY2
-R8
-31
-R23
-R24
-R25
-R12
-R13
-!s100 [fVl1VUR=a@1Td717l74<2
-!i10b 1
-Etop_level
-Z26 w1737480337
-R3
-R4
-R5
-Z27 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd
-Z28 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd
-l0
-L10
-VKn8PBjzI7Zeci8YW3UmaS2
-R8
-31
-Z29 !s108 1737480579.696000
-Z30 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd|
-Z31 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd|
-R12
-R13
-!s100 Yg@2A6gXXG[g:I1d^n52n0
-!i10b 1
-Astructural
-R3
-R4
-DEx4 work 9 top_level 0 22 Kn8PBjzI7Zeci8YW3UmaS2
-l97
-L26
-VnOhXAC6Az_e[N0ocQmh7j1
-R8
-31
-R29
-R30
-R31
-R12
-R13
-!s100 9UW8f]^80ac7ALbHlk><M3
-!i10b 1

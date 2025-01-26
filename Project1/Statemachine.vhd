@@ -8,7 +8,7 @@ port(
 	CountVal: in std_logic_vector(7 downto 0);
 	kp_data: in std_logic_vector(4 downto 0);
 	kp_pulse: in std_logic;
-	State: buffer std_logic_vector(3 downto 0);
+	state: buffer std_logic_vector(3 downto 0);
 	ReadWriteOut: out std_logic
 );
 end statemachine;
