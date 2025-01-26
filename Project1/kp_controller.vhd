@@ -22,21 +22,19 @@ architecture Behavioral of KP_Controller is
     signal state             : state_type := A;
 
     signal clk_cnt           : integer range 0 to 249999 ;
-    signal clk_en            : std_logic;
-    signal key_press         : std_logic;                  
+    signal clk_en            : std_logic; -- 5ms clock e             
     signal key_pressed       : std_logic;
-    signal nkey_press        : std_logic;
-    signal reg1              : std_logic;
-    signal reg2              : std_logic;
     signal kp_pulse5         : std_logic;
     signal r                 : std_logic_vector(1 downto 0); -- registers
-    signal q                 : std_logic_vector(1 downto 0); -- registers
+	 signal q                 : std_logic_vector(1 downto 0); -- registers
+
 
 
 begin
 
 key_pressed <= not (rows(0) and rows(1) and rows(2) and rows(3) and rows(4));
-    process(clk)
+    
+	 process(clk)
     begin
         if rising_edge(clk) then
             if (clk_cnt = 249999) then
@@ -44,7 +42,7 @@ key_pressed <= not (rows(0) and rows(1) and rows(2) and rows(3) and rows(4));
                 clk_en <= '1';
             else
                 clk_cnt <= clk_cnt + 1;
-                clk_en <= '0';
+                clk_en  <= '0';
             end if;
         end if;
     end process;
@@ -55,7 +53,7 @@ key_pressed <= not (rows(0) and rows(1) and rows(2) and rows(3) and rows(4));
     begin
     if rising_edge(clk) and clk_en = '1' then
 
-        if key_Pressed = '0' then
+        if key_pressed = '0' then
             case state is
                 when A => state <= B;
                 when B => state <= C;
@@ -126,22 +124,23 @@ end if;
 end process;
 
         -- register work for data transmission
-process(clk)
-   begin
-   if rising_edge(clk) and clk_en = '1' then -- give 5ms pulse
-   q(0) <= key_pressed;
-   q(1) <= q(0);
-   kp_pulse5 <= q(0) and not q(1);
-   end if;
-end process;
-       
+		  
 process(clk)
    begin
    if rising_edge(clk) then
-   r(0) <= kp_pulse5;
+   r(0) <= key_pressed;
    r(1) <= r(0);
-   kp_pulse20 <= r(0) and not r(1);
    end if;
 end process;
+          
+process(clk)
+   begin
+   if rising_edge(clk) and clk_en = '1' then -- give 5ms pulse
+    q(0) <= r(0);
+	 q(1) <= q(0);
+	 kp_pulse20 <= r(0) and not r(1);
+   end if;
+end process;
+       
           
 end architecture Behavioral;
