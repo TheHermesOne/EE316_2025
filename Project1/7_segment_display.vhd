@@ -9,7 +9,7 @@ entity SevenSegment is
         reset         : in  STD_LOGIC;             -- Reset signal
         keypad_input  : in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit input from keypad
         seg_out       : out STD_LOGIC_VECTOR(6 downto 0); -- 7-segment display output
-        digit_select  : out STD_LOGIC_VECTOR(3 downto 0); -- Select lines for 7-segment displays
+        digit_select  : out STD_LOGIC_VECTOR(5 downto 0); -- Select lines for 7-segment displays
         mode          : in  STD_LOGIC              -- Operational (1) or Programming (0)
     );
 end SevenSegment;
@@ -34,7 +34,7 @@ architecture Behavioral of SevenSegment is
     signal address_buffer : STD_LOGIC_VECTOR(7 downto 0); -- NUM_ADDR_REGS
     signal data_buffer    : STD_LOGIC_VECTOR(15 downto 0); -- NUM_DATA_REGS 
     signal current_digit  : STD_LOGIC_VECTOR(3 downto 0) := (others => '0'); -- Current digit
-    signal digit_index    : INTEGER range 0 to 3 := 0; -- Index for selecting digits
+    signal digit_index    : INTEGER range 0 to 5 := 0; -- Index for selecting digits
     signal refresh_count  : INTEGER := 0; -- Counter for multiplexing displays
 
     -- 7-segment encoding function
@@ -89,7 +89,7 @@ begin
             refresh_count <= refresh_count + 1;
             if refresh_count = 1000 then -- Adjust for refresh rate
                 refresh_count <= 0;
-                digit_index <= (digit_index + 1) mod 4;
+                digit_index <= (digit_index + 1) mod 6;
             end if;
         end if;
     end process;
@@ -97,32 +97,26 @@ begin
     -- Assign digit values and select lines based on mode
     process(digit_index, mode, address_buffer, data_buffer)
     begin
-        if mode = '0' then
-            -- Programming mode: Show one digit at a time from address buffer
-            case digit_index is
-                when 0 => current_digit <= address_buffer(3 downto 0);
-                when 1 => current_digit <= address_buffer(7 downto 4);
-                when others => current_digit <= "0000";
-            end case;
-        else
-            -- Operational mode: Show all four digits from data buffer
-            case digit_index is
-                when 0 => current_digit <= data_buffer(3 downto 0);
-                when 1 => current_digit <= data_buffer(7 downto 4);
-                when 2 => current_digit <= data_buffer(11 downto 8);
-                when 3 => current_digit <= data_buffer(15 downto 12);
-                when others => current_digit <= "0000";
-            end case;
-        end if;
+        case digit_index is
+            when 0 => current_digit <= data_buffer(3 downto 0);   -- HEX0
+            when 1 => current_digit <= data_buffer(7 downto 4);   -- HEX1
+            when 2 => current_digit <= data_buffer(11 downto 8);  -- HEX2
+            when 3 => current_digit <= data_buffer(15 downto 12); -- HEX3
+            when 4 => current_digit <= address_buffer(3 downto 0); -- HEX4
+            when 5 => current_digit <= address_buffer(7 downto 4); -- HEX5
+            when others => current_digit <= "0000";
+        end case;
     end process;
 
     -- Drive the 7-segment display output
     seg_out <= hex_to_7seg(current_digit);
 
     -- Drive the digit select lines
-    digit_select <= "1110" when digit_index = 0 else
-                    "1101" when digit_index = 1 else
-                    "1011" when digit_index = 2 else
-                    "0111";
+    digit_select <= "111110" when digit_index = 0 else
+                    "111101" when digit_index = 1 else
+                    "111011" when digit_index = 2 else
+                    "110111" when digit_index = 3 else
+                    "101111" when digit_index = 4 else
+                    "011111";
 
 end Behavioral;
