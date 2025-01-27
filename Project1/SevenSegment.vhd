@@ -7,18 +7,18 @@ entity SevenSegment is
     Port (
         clk           : in  STD_LOGIC;             -- Clock signal
         reset         : in  STD_LOGIC;             -- Reset signal
-        keypad_input  : in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit input from keypad
         seg_out       : out STD_LOGIC_VECTOR(6 downto 0); -- 7-segment display output
         digit_select  : out STD_LOGIC_VECTOR(5 downto 0); -- Select lines for 7-segment displays
-        mode          : in  STD_LOGIC              -- Operational (1) or Programming (0)
+		address_input : in  STD_LOGIC_VECTOR(15 downto 0); 
+		data_input	 : in  STD_LOGIC_VECTOR(7 downto 0);
+		  
     );
 end SevenSegment;
 
 architecture Behavioral of SevenSegment is
 
-
     signal address_buffer : STD_LOGIC_VECTOR(7 downto 0); -- NUM_ADDR_REGS
-    signal data_buffer    : STD_LOGIC_VECTOR(15 downto 0); -- NUM_DATA_REGS 
+    signal data_buffer    : STD_LOGIC_VECTOR(15 downto 0); 
     signal current_digit  : STD_LOGIC_VECTOR(3 downto 0) := (others => '0'); -- Current digit
     signal digit_index    : INTEGER range 0 to 5 := 0; -- Index for selecting digits
     signal refresh_count  : INTEGER := 0; -- Counter for multiplexing displays
@@ -50,6 +50,8 @@ architecture Behavioral of SevenSegment is
     end hex_to_7seg;
 
 begin
+
+
 
     -- Process for multiplexing and digit selection
     process(clk, reset)
