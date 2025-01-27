@@ -113,25 +113,23 @@ architecture Structural of top_level is
 			CountVal: in std_logic_vector(7 downto 0);
 			kp_data: in std_logic_vector(4 downto 0);
 			kp_pulse: in std_logic;
-			State: buffer std_logic_vector(3 downto 0);
+			stateOut: out std_logic_vector(3 downto 0);
 			ReadWriteOut : out std_logic
 		);
 	end component;
 	
 	
 	component ShiftRegisters is
-	    Generic (
-        NUM_ADDR_REGS : integer := 2; -- Number of 4-bit registers for address buffer
+    Generic (
         NUM_DATA_REGS : integer := 4  -- Number of 4-bit registers for data buffer
     );
-		PORT(
-			clk           : in  STD_LOGIC;             -- Clock signal
-        reset         : in  STD_LOGIC;             -- Reset signal
-        keypad_input  : in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit from keypad
-        address_buffer: out STD_LOGIC_VECTOR((NUM_ADDR_REGS * 4 - 1) downto 0); -- Addr buffer
-        data_buffer   : out STD_LOGIC_VECTOR((NUM_DATA_REGS * 4 - 1) downto 0); -- Data buffer
-        display_mode  : out STD_LOGIC              -- '0' for address, '1' for data
-		);
+    Port (
+        clk					: in STD_LOGIC;             -- Clock signal
+        reset				: in STD_LOGIC;             -- Reset signal
+        keypad_input		: in STD_LOGIC_VECTOR(4 downto 0); -- 5-bit from keypad
+		  keypulse			: in std_LOGIC;
+        data_out			: out STD_LOGIC_VECTOR((NUM_DATA_REGS * 4 - 1) downto 0) -- Data buffer
+    );
 	end component;
 	-------------------Temp Variables(Internal only)--------------------
 	signal Count_clk_enable,clk_enable60ns,clk_enable1hz, Rst		: std_logic;
@@ -150,7 +148,7 @@ architecture Structural of top_level is
 	signal romDataOut				: std_LOGIC_VECTOR(15 downto 0);
 	signal oState					: std_logIC_VECTOR(3 downto 0);
 	signal L_key_Write			: std_LOGIC;
-	signal ShiftAddress 			: std_LOGIC_VECTOR(7 downto 0);
+	signal ShiftAddr	 			: std_LOGIC_VECTOR(7 downto 0);
 	signal ShiftData				: std_LOGIC_VECTOR(15 downto 0);
 	signal ShiftDisplay			: std_LOGIC;
 	signal CntDir					: std_LOGIC;
@@ -158,7 +156,9 @@ architecture Structural of top_level is
 	signal StateState				: std_LOGIC_VECTOR(1 downto 0);
 	signal ErrorVal				: std_logic_vector(3 downto 0);
 	signal kp_pulse				: std_LOGIC;
-	
+	signal shiftmode				: std_LOGIC;
+	signal addrShiftIn			: std_LOGIC_VECTOR(4 downto 0);
+	signal dataShiftIn			: std_LOGIC_VECTOR(4 downto 0);
 	--Signals below are made to satiate inputs and outputs temporaly
 	-- unitl we can figure out what goes where
 	-----------------------------------------
@@ -229,7 +229,7 @@ begin
 				countVal => CountOut,
 				kp_data => oData,
 				kp_pulse => kp_pulse,
-				state => oState,
+				stateOut => oState,
 				ReadWriteOut => L_key_Write
 			);
 		Inst_kp_controller : kp_controller
@@ -275,15 +275,27 @@ begin
 			q			=> RomDataOut
 			);
 		
-		Inst_Shifters : shiftRegisters
+		Inst_AddrShifters : shiftRegisters
+			generic map(Num_DATA_REGS => 2)
 			port map(
 				clk => iclk,         
-				reset => counterReset,			
-				keypad_input => oData,
-				address_buffer => ShiftAddress,
-				data_buffer => ShiftData,
-				display_mode => ShiftDisplay
+				reset => counterReset,
+				keypad_input => addrShiftIn,
+				keypulse => kp_pulse,
+				data_out => ShiftAddr
 			);
+		
+		Inst_dataShifters : shiftRegisters
+			generic map(Num_DATA_REGS => 4)
+			port map(
+				clk => iclk,         
+				reset => counterReset,
+				keypad_input => dataShiftIn,
+				keypulse => kp_pulse,
+				data_out => ShiftData
+			);
+		
+		
 		
 --		SevSegMux:process
 --			begin
@@ -310,12 +322,16 @@ begin
 							SramAddrIn <= (X"000" & countOut);
 							bReadWrite <= '1';
 							segkeypad_input <= ('0'& Data_outR(3 downto 0));
-						when"10" => -- PROG mode
+						when "10" => -- PROG mode
 							SramActive <= L_key_Write;
-							SramAddrIn <= (X"000" & ShiftAddress); 
+							SramAddrIn <= (X"000" & ShiftAddr); 
+							bReadWrite <= '0';
+							addrShiftIn <= oData;
+						when "11" => -- PROG mode
+							SramActive <= L_key_Write;
 							data2Sram <= ShiftData;
 							bReadWrite <= '0';
-							segkeypad_input <= oData;
+							dataShiftIn <= oData;
 						when others=> ErrorVal <= "0001";
 					end case;		
 				end if;

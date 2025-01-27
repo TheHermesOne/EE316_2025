@@ -8,7 +8,7 @@ port(
 	CountVal: in std_logic_vector(7 downto 0);
 	kp_data: in std_logic_vector(4 downto 0);
 	kp_pulse: in std_logic;
-	state: buffer std_logic_vector(3 downto 0);
+	stateOut: out std_logic_vector(3 downto 0);
 	ReadWriteOut: out std_logic
 );
 end statemachine;
@@ -21,6 +21,7 @@ architecture struct of statemachine is
 				signal Lcmd : std_LOGIC_vector(4 downto 0) := ('1' & X"1");
 				signal Hcmd : std_LOGIC_vector(4 downto 0) := ('1' & X"2");
 				signal Shiftcmd: std_logic_vector(4 downto 0) := ('1' & X"3");
+				signal state 	: std_LOGIC_vector(3 downto 0);
 	begin
 		process(Clk, reset)
 			begin
@@ -97,7 +98,7 @@ architecture struct of statemachine is
 					end case;		
 				end if;
 			end process;
-		process(stateVar)
+		process(stateVar,state)
 			begin
 				case stateVAR is  
 					when INIT => state <= "0001"; -- In init mode, counter on
@@ -106,7 +107,8 @@ architecture struct of statemachine is
 					when OP_RUN_F => state <= "0101";	-- in OP mode, forward direction, counter on 
 					when OP_RUN_B => state <= "0111";	-- in OP mode, backwards direction, counter on
 					when PROG_ADDR => state(3 downto 2) <= "10"; state(0) <= '0'; --Changes PROG mode only and turns counter off
-					when PROG_DATA => state(3 downto 2) <= "10"; state(0) <= '0';  --Changes PROG mode only and turns counter off
+					when PROG_DATA => state(3 downto 2) <= "11"; state(0) <= '0';  --Changes PROG mode only and turns counter off
 				end case;
+			stateOut <= state;
 		end process;
 end struct;

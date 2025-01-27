@@ -1,16 +1,16 @@
-Fitter Status : Successful - Sun Jan 26 18:21:01 2025
+Fitter Status : Successful - Mon Jan 27 16:30:00 2025
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : Project1
 Top-level Entity Name : DE2_115
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 2,444 / 114,480 ( 2 % )
-    Total combinational functions : 1,061 / 114,480 ( < 1 % )
-    Dedicated logic registers : 2,165 / 114,480 ( 2 % )
-Total registers : 2165
+Total logic elements : 2,406 / 114,480 ( 2 % )
+    Total combinational functions : 1,030 / 114,480 ( < 1 % )
+    Dedicated logic registers : 2,130 / 114,480 ( 2 % )
+Total registers : 2130
 Total pins : 133 / 529 ( 25 % )
 Total virtual pins : 0
-Total memory bits : 21,760 / 3,981,312 ( < 1 % )
+Total memory bits : 21,120 / 3,981,312 ( < 1 % )
 Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )

@@ -24,6 +24,7 @@
 # -- Loading package std_logic_1164
 # -- Compiling entity top_level
 # -- Compiling architecture Structural of top_level
+# ** Warning: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(313): Choice in CASE statement alternative must be locally static.
 # vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/SRAM_Controller.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
@@ -113,13 +114,13 @@ vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025
 # -- Loading package std_logic_1164
 # -- Compiling entity statemachine_tb
 # -- Compiling architecture behav of statemachine_tb
-vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/Statemachine.vhd
+vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/statemachine_tb.vhd
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity statemachine
-# -- Compiling architecture struct of statemachine
+# -- Compiling entity statemachine_tb
+# -- Compiling architecture behav of statemachine_tb
 vsim +altera -do Project1_run_msim_rtl_vhdl.do -l msim_transcript -gui work.statemachine_tb
 # vsim +altera -do Project1_run_msim_rtl_vhdl.do -l msim_transcript -gui work.statemachine_tb 
 # Loading std.standard
@@ -149,6 +150,7 @@ vsim +altera -do Project1_run_msim_rtl_vhdl.do -l msim_transcript -gui work.stat
 # -- Loading package std_logic_1164
 # -- Compiling entity top_level
 # -- Compiling architecture Structural of top_level
+# ** Warning: C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd(313): Choice in CASE statement alternative must be locally static.
 # vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/SRAM_Controller.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
@@ -240,14 +242,6 @@ add wave -position end  sim:/statemachine_tb/state
 add wave -position end  sim:/statemachine_tb/Lcommand
 add wave -position end  sim:/statemachine_tb/Hcommand
 add wave -position end  sim:/statemachine_tb/ShiftCommand
-run
-run
-run
-run
-run
-run
-run
-run
 run
 run
 run

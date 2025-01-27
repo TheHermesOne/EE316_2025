@@ -16,20 +16,6 @@ end SevenSegment;
 
 architecture Behavioral of SevenSegment is
 
-    component ShiftRegisters
-        Generic (
-            NUM_ADDR_REGS : integer := 2; -- # of 4-bit registers for address buffer
-            NUM_DATA_REGS : integer := 4  -- # of 4-bit registers for data buffer
-        );
-        Port (
-            clk           : in  STD_LOGIC;
-            reset         : in  STD_LOGIC;
-            keypad_input  : in  STD_LOGIC_VECTOR(4 downto 0);
-            address_buffer: out STD_LOGIC_VECTOR((NUM_ADDR_REGS * 4 - 1) downto 0);
-            data_buffer   : out STD_LOGIC_VECTOR((NUM_DATA_REGS * 4 - 1) downto 0);
-            display_mode  : out STD_LOGIC
-        );
-    end component;
 
     signal address_buffer : STD_LOGIC_VECTOR(7 downto 0); -- NUM_ADDR_REGS
     signal data_buffer    : STD_LOGIC_VECTOR(15 downto 0); -- NUM_DATA_REGS 
@@ -64,20 +50,6 @@ architecture Behavioral of SevenSegment is
     end hex_to_7seg;
 
 begin
-
-    U_ShiftRegisters: ShiftRegisters
-        Generic Map (
-            NUM_ADDR_REGS => 2,
-            NUM_DATA_REGS => 4
-        )
-        Port Map (
-            clk => clk,
-            reset => reset,
-            keypad_input => keypad_input,
-            address_buffer => address_buffer,
-            data_buffer => data_buffer,
-            display_mode => open
-        );
 
     -- Process for multiplexing and digit selection
     process(clk, reset)

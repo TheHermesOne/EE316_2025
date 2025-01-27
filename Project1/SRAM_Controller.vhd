@@ -78,7 +78,7 @@ entity SRAM_Controller is
 					when r1 => 
 						state_next <= r2;
 					when r2 => 
-						data_f2s_next <= dio;
+						data_s2f_next <= dio;
 						state_next <= idle;
 				end case;
 			end process;
