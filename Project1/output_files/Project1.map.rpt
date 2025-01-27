@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Project1
-Mon Jan 27 16:29:45 2025
+Mon Jan 27 18:42:49 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -36,13 +36,12 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
  28. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
  29. altsyncram Parameter Settings by Entity Instance
  30. Port Connectivity Checks: "top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller"
- 31. Port Connectivity Checks: "top_level:Inst_top_level|SevenSegment:Inst_SevenSegment"
- 32. Port Connectivity Checks: "top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter"
- 33. Port Connectivity Checks: "top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce"
- 34. SignalTap II Logic Analyzer Settings
- 35. Elapsed Time Per Partition
- 36. Connections to In-System Debugging Instance "auto_signaltap_0"
- 37. Analysis & Synthesis Messages
+ 31. Port Connectivity Checks: "top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter"
+ 32. Port Connectivity Checks: "top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce"
+ 33. SignalTap II Logic Analyzer Settings
+ 34. Elapsed Time Per Partition
+ 35. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 36. Analysis & Synthesis Messages
 
 
 
@@ -68,15 +67,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jan 27 16:29:45 2025            ;
+; Analysis & Synthesis Status        ; Successful - Mon Jan 27 18:42:49 2025            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; Project1                                         ;
 ; Top-level Entity Name              ; DE2_115                                          ;
 ; Family                             ; Cyclone IV E                                     ;
-; Total logic elements               ; 2,552                                            ;
-;     Total combinational functions  ; 1,028                                            ;
-;     Dedicated logic registers      ; 2,130                                            ;
-; Total registers                    ; 2130                                             ;
+; Total logic elements               ; 2,557                                            ;
+;     Total combinational functions  ; 1,033                                            ;
+;     Dedicated logic registers      ; 2,132                                            ;
+; Total registers                    ; 2132                                             ;
 ; Total pins                         ; 133                                              ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 21,120                                           ;
@@ -198,7 +197,6 @@ applicable agreement for further details.
 ; DE2_115.vhd                      ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/DE2_115.vhd              ;         ;
 ; top_level.vhd                    ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/top_level.vhd            ;         ;
 ; SRAM_Controller.vhd              ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/SRAM_Controller.vhd      ;         ;
-; 7_segment_display.vhd            ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/7_segment_display.vhd    ;         ;
 ; kp_controller.vhd                ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/kp_controller.vhd        ;         ;
 ; btn_debounce_toggle.vhd          ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/btn_debounce_toggle.vhd  ;         ;
 ; reset_delay.vhd                  ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project1/reset_delay.vhd          ;         ;
@@ -265,29 +263,29 @@ applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 2,552          ;
+; Estimated Total logic elements              ; 2,557          ;
 ;                                             ;                ;
-; Total combinational functions               ; 1028           ;
+; Total combinational functions               ; 1033           ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 554            ;
-;     -- 3 input functions                    ; 241            ;
-;     -- <=2 input functions                  ; 233            ;
+;     -- 4 input functions                    ; 548            ;
+;     -- 3 input functions                    ; 239            ;
+;     -- <=2 input functions                  ; 246            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 901            ;
-;     -- arithmetic mode                      ; 127            ;
+;     -- normal mode                          ; 904            ;
+;     -- arithmetic mode                      ; 129            ;
 ;                                             ;                ;
-; Total registers                             ; 2130           ;
-;     -- Dedicated logic registers            ; 2130           ;
+; Total registers                             ; 2132           ;
+;     -- Dedicated logic registers            ; 2132           ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 133            ;
 ; Total memory bits                           ; 21120          ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 1547           ;
+; Maximum fan-out                             ; 1549           ;
 ; Total fan-out                               ; 12104          ;
-; Average fan-out                             ; 3.33           ;
+; Average fan-out                             ; 3.32           ;
 +---------------------------------------------+----------------+
 
 
@@ -296,9 +294,9 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                            ; Library Name ;
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2_115                                                                                                ; 1028 (1)          ; 2130 (0)     ; 21120       ; 0            ; 0       ; 0         ; 133  ; 0            ; |DE2_115                                                                                                                                                                                                                                                                                                                                       ; work         ;
-;    |sld_hub:auto_hub|                                                                                   ; 122 (1)           ; 86 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                      ; work         ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 121 (83)          ; 86 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                         ; work         ;
+; |DE2_115                                                                                                ; 1033 (1)          ; 2132 (0)     ; 21120       ; 0            ; 0       ; 0         ; 133  ; 0            ; |DE2_115                                                                                                                                                                                                                                                                                                                                       ; work         ;
+;    |sld_hub:auto_hub|                                                                                   ; 124 (1)           ; 86 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                      ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 123 (85)          ; 86 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                         ; work         ;
 ;          |sld_rom_sr:hub_info_reg|                                                                      ; 21 (21)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                                                                                                                                 ; work         ;
 ;          |sld_shadow_jsm:shadow_jsm|                                                                    ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                                                                                                                                                                                               ; work         ;
 ;    |sld_signaltap:auto_signaltap_0|                                                                     ; 645 (1)           ; 1810 (266)   ; 17024       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                        ; work         ;
@@ -467,8 +465,8 @@ applicable agreement for further details.
 ;                |lpm_shiftreg:ram_data_shift_out|                                                        ; 133 (133)         ; 133 (133)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                          ; work         ;
 ;                |lpm_shiftreg:status_data_shift_out|                                                     ; 15 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                       ; work         ;
 ;             |sld_rom_sr:crc_rom_sr|                                                                     ; 19 (19)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                     ; work         ;
-;    |top_level:Inst_top_level|                                                                           ; 260 (30)          ; 234 (37)     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|top_level:Inst_top_level                                                                                                                                                                                                                                                                                                              ; work         ;
-;       |KP_Controller:Inst_kp_controller|                                                                ; 72 (72)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|top_level:Inst_top_level|KP_Controller:Inst_kp_controller                                                                                                                                                                                                                                                                             ; work         ;
+;    |top_level:Inst_top_level|                                                                           ; 263 (30)          ; 236 (37)     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|top_level:Inst_top_level                                                                                                                                                                                                                                                                                                              ; work         ;
+;       |KP_Controller:Inst_kp_controller|                                                                ; 75 (75)           ; 35 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|top_level:Inst_top_level|KP_Controller:Inst_kp_controller                                                                                                                                                                                                                                                                             ; work         ;
 ;       |Reset_Delay:Inst_clk_Reset_Delay|                                                                ; 27 (27)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay                                                                                                                                                                                                                                                                             ; work         ;
 ;       |SRAM_Controller:Inst_SRAM_Controller|                                                            ; 6 (6)             ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller                                                                                                                                                                                                                                                                         ; work         ;
 ;       |ShiftRegisters:Inst_AddrShifters|                                                                ; 1 (1)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|top_level:Inst_top_level|ShiftRegisters:Inst_AddrShifters                                                                                                                                                                                                                                                                             ; work         ;
@@ -558,34 +556,28 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                                                                                                                                                                                                          ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                                                                                                          ; Reason for Removal                                                                                                                                                                                 ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; top_level:Inst_top_level|SramAddrIn[8,9,11..19]                                                                                                                                        ; Merged with top_level:Inst_top_level|SramAddrIn[10]                                                                                                                                                ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|addr_reg[8,9,11..19]                                                                                                     ; Merged with top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|addr_reg[10]                                                                                                             ;
-; top_level:Inst_top_level|SramAddrIn[10]                                                                                                                                                ; Stuck at GND due to stuck port data_in                                                                                                                                                             ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|addr_reg[10]                                                                                                             ; Stuck at GND due to stuck port data_in                                                                                                                                                             ;
-; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[0]                                                                                                                   ; Merged with top_level:Inst_top_level|clk_enabler:Inst_clk_enabler1hz|clk_cnt[0]                                                                                                                    ;
-; Total Number of Removed Registers = 25                                                                                                                                                 ;                                                                                                                                                                                                    ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|segment_shift_clk_ena                                                      ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_enable_delayed                                                ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[0] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[0] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[1] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[1] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[2] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[2] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[3] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[3] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[4] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[4] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[5] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[5] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[6] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[6] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[0]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[0]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[1]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[1]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[2]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[2]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[3]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[3]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[4]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[4]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[5]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[5]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[6]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[6]                                            ;
-; Total Number of Removed Registers = 15                                                                                                                                                 ;                                                                                                                                                                                                    ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                          ;
++------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+; Register name                                                                      ; Reason for Removal                                                                     ;
++------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+; top_level:Inst_top_level|HEX0[4]                                                   ; Merged with top_level:Inst_top_level|HEX0[0]                                           ;
+; top_level:Inst_top_level|HEX1[1,2,6]                                               ; Merged with top_level:Inst_top_level|HEX0[0]                                           ;
+; top_level:Inst_top_level|HEX2[0,6]                                                 ; Merged with top_level:Inst_top_level|HEX0[0]                                           ;
+; top_level:Inst_top_level|HEX3[1..3]                                                ; Merged with top_level:Inst_top_level|HEX0[0]                                           ;
+; top_level:Inst_top_level|HEX0[2,3,5,6]                                             ; Merged with top_level:Inst_top_level|HEX0[1]                                           ;
+; top_level:Inst_top_level|HEX1[0,3..5]                                              ; Merged with top_level:Inst_top_level|HEX0[1]                                           ;
+; top_level:Inst_top_level|HEX2[1..5]                                                ; Merged with top_level:Inst_top_level|HEX0[1]                                           ;
+; top_level:Inst_top_level|HEX3[0,4..6]                                              ; Merged with top_level:Inst_top_level|HEX0[1]                                           ;
+; top_level:Inst_top_level|SramAddrIn[8,9,11..19]                                    ; Merged with top_level:Inst_top_level|SramAddrIn[10]                                    ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|addr_reg[8,9,11..19] ; Merged with top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|addr_reg[10] ;
+; top_level:Inst_top_level|SramAddrIn[10]                                            ; Stuck at GND due to stuck port data_in                                                 ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|addr_reg[10]         ; Stuck at GND due to stuck port data_in                                                 ;
+; top_level:Inst_top_level|HEX0[0]                                                   ; Stuck at VCC due to stuck port data_in                                                 ;
+; top_level:Inst_top_level|HEX0[1]                                                   ; Stuck at GND due to stuck port data_in                                                 ;
+; top_level:Inst_top_level|KP_Controller:Inst_kp_controller|clk_cnt[0]               ; Merged with top_level:Inst_top_level|clk_enabler:Inst_clk_enabler1hz|clk_cnt[0]        ;
+; Total Number of Removed Registers = 53                                             ;                                                                                        ;
++------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -603,7 +595,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2130  ;
+; Total registers                              ; 2132  ;
 ; Number of registers using Synchronous Clear  ; 28    ;
 ; Number of registers using Synchronous Load   ; 31    ;
 ; Number of registers using Asynchronous Clear ; 751   ;
@@ -637,24 +629,26 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|top_level:Inst_top_level|data2Sram[6]                                                                                                                               ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|top_level:Inst_top_level|SramAddrIn[3]                                                                                                                              ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[9]                                                                                        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter|r_reg[5]                                                                                            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |DE2_115|top_level:Inst_top_level|KP_Controller:Inst_kp_controller|oData[4]                                                                                                  ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |DE2_115|top_level:Inst_top_level|KP_Controller:Inst_kp_controller|oData[2]                                                                                                  ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |DE2_115|top_level:Inst_top_level|KP_Controller:Inst_kp_controller|state.A                                                                                                   ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE2_115|top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_next.w1                                                                                         ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE2_115|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|counter[6]   ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr|word_counter[3]                   ;
-; 12:1               ; 4 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |DE2_115|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr|WORD_SR[1]                        ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |DE2_115|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|offset_count ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|top_level:Inst_top_level|data2Sram[11]                                                                ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|top_level:Inst_top_level|SramAddrIn[4]                                                                ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce|btn_cntr[9]                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|top_level:Inst_top_level|univ_bin_counter:Inst_univ_bin_counter|r_reg[0]                              ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |DE2_115|top_level:Inst_top_level|KP_Controller:Inst_kp_controller|oData[3]                                    ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |DE2_115|top_level:Inst_top_level|KP_Controller:Inst_kp_controller|oData[1]                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |DE2_115|top_level:Inst_top_level|KP_Controller:Inst_kp_controller|state.C                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE2_115|top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_next.r1                           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                       ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[0] ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[2]                             ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 60 LEs               ; 28 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[3]                      ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 36 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
@@ -877,26 +871,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller"                                   ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port              ; Type   ; Severity ; Details                                                                             ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------+
-; ready             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; data_s2f_r[15..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; data_s2f_ur       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "top_level:Inst_top_level|SevenSegment:Inst_SevenSegment"                                                                                             ;
-+--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                                                                                      ;
-+--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; seg_out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; digit_select ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; mode         ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+--------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller"                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; ready       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_s2f_r  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_s2f_ur ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -929,14 +912,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
 
 
-+-----------------------------------------------+
-; Elapsed Time Per Partition                    ;
-+--------------------------------+--------------+
-; Partition Name                 ; Elapsed Time ;
-+--------------------------------+--------------+
-; sld_signaltap:auto_signaltap_0 ; 00:00:02     ;
-; Top                            ; 00:00:00     ;
-+--------------------------------+--------------+
++---------------------------------+
+; Elapsed Time Per Partition      ;
++------------------+--------------+
+; Partition Name   ; Elapsed Time ;
++------------------+--------------+
+; Top              ; 00:00:00     ;
+; sld_hub:auto_hub ; 00:00:00     ;
++------------------+--------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1220,7 +1203,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Mon Jan 27 16:29:34 2025
+    Info: Processing started: Mon Jan 27 18:42:38 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project1 -c Project1
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file de2_115.vhd
@@ -1262,10 +1245,6 @@ Info (12021): Found 2 design units, including 1 entities, in source file univ_bi
 Info (12127): Elaborating entity "DE2_115" for the top level hierarchy
 Warning (10873): Using initial value X (don't care) for net "LEDG[8..1]" at DE2_115.vhd(25)
 Info (12128): Elaborating entity "top_level" for hierarchy "top_level:Inst_top_level"
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(8): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(8): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(8): used implicit default value for signal "HEX2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at top_level.vhd(8): used implicit default value for signal "HEX3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at top_level.vhd(8): used implicit default value for signal "HEX4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at top_level.vhd(8): used implicit default value for signal "HEX5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at top_level.vhd(11): used implicit default value for signal "SRAM_UB_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
@@ -1276,8 +1255,7 @@ Warning (10541): VHDL Signal Declaration warning at top_level.vhd(140): used imp
 Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(143): object "SramReady" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(147): object "data_outUR" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(157): object "ErrorVal" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(167): object "seg_out" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(168): object "digit_select" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at top_level.vhd(166): object "segkeypad_input" assigned a value but never read
 Info (12128): Elaborating entity "Reset_Delay" for hierarchy "top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay"
 Info (12128): Elaborating entity "btn_debounce_toggle" for hierarchy "top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce"
 Warning (12125): Using design file clk_enabler.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
@@ -1296,9 +1274,6 @@ Info (10041): Inferred latch for "state[1]" at Statemachine.vhd(101)
 Info (12128): Elaborating entity "KP_Controller" for hierarchy "top_level:Inst_top_level|KP_Controller:Inst_kp_controller"
 Warning (10492): VHDL Process Statement warning at kp_controller.vhd(54): signal "clk_en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at kp_controller.vhd(129): signal "clk_en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (12128): Elaborating entity "SevenSegment" for hierarchy "top_level:Inst_top_level|SevenSegment:Inst_SevenSegment"
-Warning (10541): VHDL Signal Declaration warning at 7_segment_display.vhd(20): used implicit default value for signal "address_buffer" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at 7_segment_display.vhd(21): used implicit default value for signal "data_buffer" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info (12128): Elaborating entity "SRAM_Controller" for hierarchy "top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller"
 Info (12128): Elaborating entity "initRom" for hierarchy "top_level:Inst_top_level|initRom:Inst_initRom"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "top_level:Inst_top_level|initRom:Inst_initRom|altsyncram:altsyncram_component"
@@ -1346,7 +1321,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cntr
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ngc.tdf
     Info (12023): Found entity 1: cmpr_ngc
 Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[5]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[6]" and its non-tri-state driver.
@@ -1393,31 +1367,31 @@ Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "GPIO[7]~synth"
     Warning (13010): Node "GPIO[8]~synth"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND
+    Warning (13410): Pin "HEX0[0]" is stuck at VCC
     Warning (13410): Pin "HEX0[1]" is stuck at GND
     Warning (13410): Pin "HEX0[2]" is stuck at GND
     Warning (13410): Pin "HEX0[3]" is stuck at GND
-    Warning (13410): Pin "HEX0[4]" is stuck at GND
+    Warning (13410): Pin "HEX0[4]" is stuck at VCC
     Warning (13410): Pin "HEX0[5]" is stuck at GND
     Warning (13410): Pin "HEX0[6]" is stuck at GND
     Warning (13410): Pin "HEX1[0]" is stuck at GND
-    Warning (13410): Pin "HEX1[1]" is stuck at GND
-    Warning (13410): Pin "HEX1[2]" is stuck at GND
+    Warning (13410): Pin "HEX1[1]" is stuck at VCC
+    Warning (13410): Pin "HEX1[2]" is stuck at VCC
     Warning (13410): Pin "HEX1[3]" is stuck at GND
     Warning (13410): Pin "HEX1[4]" is stuck at GND
     Warning (13410): Pin "HEX1[5]" is stuck at GND
-    Warning (13410): Pin "HEX1[6]" is stuck at GND
-    Warning (13410): Pin "HEX2[0]" is stuck at GND
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC
+    Warning (13410): Pin "HEX2[0]" is stuck at VCC
     Warning (13410): Pin "HEX2[1]" is stuck at GND
     Warning (13410): Pin "HEX2[2]" is stuck at GND
     Warning (13410): Pin "HEX2[3]" is stuck at GND
     Warning (13410): Pin "HEX2[4]" is stuck at GND
     Warning (13410): Pin "HEX2[5]" is stuck at GND
-    Warning (13410): Pin "HEX2[6]" is stuck at GND
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC
     Warning (13410): Pin "HEX3[0]" is stuck at GND
-    Warning (13410): Pin "HEX3[1]" is stuck at GND
-    Warning (13410): Pin "HEX3[2]" is stuck at GND
-    Warning (13410): Pin "HEX3[3]" is stuck at GND
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC
     Warning (13410): Pin "HEX3[4]" is stuck at GND
     Warning (13410): Pin "HEX3[5]" is stuck at GND
     Warning (13410): Pin "HEX3[6]" is stuck at GND
@@ -1467,8 +1441,9 @@ Warning (18029): Output pin "pre_syn.bp.Inst_top_level_Inst_kp_controller_rows_4
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (18057): The assignment to disallow NOT gate push-back on register "sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|trigger_out_mode_ff" is ignored
-Info (286031): Timing-Driven Synthesis is running on partition "sld_signaltap:auto_signaltap_0"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
+Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
 Info (35024): Succesfully connected in-system debug instance "auto_signaltap_0" to all 267 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -1476,16 +1451,16 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]"
     Warning (15610): No output dependent on input pin "KEY[2]"
     Warning (15610): No output dependent on input pin "KEY[3]"
-Info (21057): Implemented 2865 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2871 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 77 output pins
     Info (21060): Implemented 52 bidirectional pins
-    Info (21061): Implemented 2578 logic cells
+    Info (21061): Implemented 2584 logic cells
     Info (21064): Implemented 149 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 150 warnings
-    Info: Peak virtual memory: 4748 megabytes
-    Info: Processing ended: Mon Jan 27 16:29:46 2025
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:11
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 143 warnings
+    Info: Peak virtual memory: 4743 megabytes
+    Info: Processing ended: Mon Jan 27 18:42:49 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:09
 
 

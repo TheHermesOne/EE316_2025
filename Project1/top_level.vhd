@@ -241,14 +241,14 @@ begin
 				kp_pulse20    => kp_pulse
 			  );
 
-		Inst_SevenSegment : SevenSegment
-			Port map(
-				clk           => iclk,          
-				reset         => reset,        
-				keypad_input  => Segkeypad_input,
-				seg_out       => seg_out,
-				digit_select  => digit_select
-				 );
+--		Inst_SevenSegment : SevenSegment
+--			Port map(
+--				clk           => iclk,          
+--				reset         => reset,        
+--				keypad_input  => Segkeypad_input,
+--				seg_out       => seg_out,
+--				digit_select  => digit_select
+--				 );
 			
 		Inst_SRAM_Controller : SRAM_Controller
 			PORT map(
@@ -322,6 +322,10 @@ begin
 							SramAddrIn <= (X"000" & countOut);
 							bReadWrite <= '1';
 							segkeypad_input <= ('0'& Data_outR(3 downto 0));
+							HEX3 <= "0001110";
+							HEX2 <= "1000001";
+							HEX1 <= "1000110";
+							HEX0 <= "0010001";
 						when "10" => -- PROG mode
 							SramActive <= L_key_Write;
 							SramAddrIn <= (X"000" & ShiftAddr); 

@@ -21,7 +21,7 @@ architecture Behavioral of KP_Controller is
     type state_type is (A, B, C, D);
     signal state             : state_type := A;
 
-    signal clk_cnt           : integer range 0 to 249999 ;
+    signal clk_cnt           : integer range 0 to 999999 ;
     signal clk_en            : std_logic; -- 5ms clock e             
     signal key_pressed       : std_logic;
     signal kp_pulse5         : std_logic;
@@ -37,7 +37,7 @@ key_pressed <= not (rows(0) and rows(1) and rows(2) and rows(3) and rows(4));
 	 process(clk)
     begin
         if rising_edge(clk) then
-            if (clk_cnt = 249999) then
+            if (clk_cnt = 999999) then
                 clk_cnt <= 0;
                 clk_en <= '1';
             else
