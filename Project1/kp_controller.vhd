@@ -122,23 +122,23 @@ end case;
 end if;
 end process;
 
-        -- register work for data transmission
+        -- r and q are used to generate pulses based on key_pressed transitions
 		  
 process(clk)
    begin
-   if rising_edge(clk) and clk_en = '1' then
-   r(0) <= key_pressed;
-   r(1) <= r(0);
-	kp_pulse5 <= r(0) and not r(1);
+   if rising_edge(clk) and clk_en = '1' then -- r is a 2 bit shift register
+  	 r(0) <= key_pressed; 		-- r(0) stores current value
+   	 r(1) <= r(0); 			-- r(1) stores previous value
+	 kp_pulse5 <= r(0) and not r(1);
    end if;
 end process;
           
-process(clk)
+process(clk) -- second process uses 2 bit shift reg q to store states of key_pressed 
    begin
    if rising_edge(clk) then 
-    q(0) <= kp_pulse5;
-	 q(1) <= q(0);
-	 kp_pulse20 <= q(0) and not q(1);
+    	 q(0) <= kp_pulse5; 		  -- q(0) stores current state
+	 q(1) <= q(0); 			  -- q(1) stores prev state
+	 kp_pulse20 <= q(0) and not q(1); -- on rising_edge of kp_pulse5 kp_pulse20 is created?
    end if;
 end process;
        
