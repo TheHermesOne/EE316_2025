@@ -117,6 +117,7 @@ architecture Structural of top_level is
 			kp_data: in std_logic_vector(4 downto 0);
 			kp_pulse: in std_logic;
 			stateOut: out std_logic_vector(3 downto 0);
+			resetPulse: out std_LOGIC;
 			ReadWriteOut : out std_logic
 		);
 	end component;
@@ -136,11 +137,9 @@ architecture Structural of top_level is
 	end component;
 	-------------------Temp Variables(Internal only)--------------------
 	signal Count_clk_enable,clk_enable60ns,clk_enable1hz, Rst		: std_logic;
-	signal reset, Counterreset	: std_logic;
+	signal reset, counterReset	: std_logic;
   	signal Counterreset_n      : std_logic;	
-	signal Qsignal					: std_logic_vector(7 downto 0);
 	signal reset_db				: std_logic;
-	signal iData					: std_logic_vector(N-1 downto 0);
 	signal CountOut				: std_logic_vector(N-1 downto 0);
 	signal data2Sram				: std_logic_vector(15 downto 0);
 	signal SramReady				: std_logic;
@@ -166,22 +165,21 @@ architecture Structural of top_level is
 	signal Addr2Seg				: std_LOGIC_vector(7 downto 0);
 	signal SegData2Board			: std_LOGIC_vector(27 downto 0);
 	signal SegAddr2Board			: std_LOGIC_vector(13 downto 0);
-	--Signals below are made to satiate inputs and outputs temporaly
-	-- unitl we can figure out what goes where
-	-----------------------------------------
+	signal resetmux 				: std_LOGIC;
+	signal statereset				: std_LOGIC;
 	signal odata					: std_LOGIC_VECTOR(4 downto 0);
-	signal seg_out					: std_LOGIC_VECTOR(6 downto 0);
-	signal digit_select			: std_LOGIC_VECTOR(3 downto 0);
-	-----------------------------------------
-	
+	signal sramAddressout		: std_LOGIC_VECTOR(19 downto 0);
+	signal countoutNoDelay		: std_logic_vector(N-1 downto 0);
 begin
 	
 		Rst 					<= not reset_db;--iReset_n;?
-		CounterReset 		<= reset or Rst;
-		CounterReset_n  	<= not CounterReset;
+		counterReset 		<= reset or Rst;
+		-- counterReset_n  	<= not counterReset;
 		CntDir				<= not oState(1);
 		Cnten					<= oState(0);
 		StateState			<= oState(3 downto 2);
+		resetmux 			<= counterReset or statereset;
+		SRAM_ADDR 			<= sramAddressout; 
 		------------Entity Instantiation-------------
 		Inst_clk_Reset_Delay: Reset_Delay	
 				port map(
@@ -217,13 +215,13 @@ begin
 			generic map(N => N)
 			port map(
 				clk 			=> iclk,
-				reset 		=> CounterReset,
+				reset 		=> resetmux,
 				syn_clr		=> Rst, 
 				load			=> '0', 
 				en				=> Cnten, 
 				up				=> CntDir, 
 				clk_en 		=> Count_clk_enable,
-				d				=> iData,
+				d				=> (others => '0'),
 				max_tick		=> open, 
 				min_tick 	=> open,
 				q				=> CountOut
@@ -236,6 +234,7 @@ begin
 				kp_data => oData,
 				kp_pulse => kp_pulse,
 				stateOut => oState,
+				resetPulse => statereset,
 				ReadWriteOut => L_key_Write
 			);
 		Inst_kp_controller : kp_controller
@@ -251,7 +250,7 @@ begin
 			Generic map(NUM_SEG_DISPLAY =>  4  )
 			Port map (
 				clk           => iclk,
-				reset         => counterReset,
+				reset         => resetmux,
 				data_in       => data2Seg,
 				data_out		 => segData2Board
 				);
@@ -259,7 +258,7 @@ begin
 			Generic map(NUM_SEG_DISPLAY => 2)
 			Port map (
         clk           => iclk,
-        reset         => counterReset,
+        reset         => resetmux,
 		  data_in       => Addr2Seg,
 		  data_out		 => segAddr2Board
 		);
@@ -267,7 +266,7 @@ begin
 		Inst_SRAM_Controller : SRAM_Controller
 			PORT map(
 			clk			=> iclk,
-			reset			=> CounterReset,
+			reset			=> resetmux,
 			mem			=> SramActive,
 			rw				=> bReadWrite,
 			addr			=> SramAddrIn,
@@ -275,7 +274,7 @@ begin
 			ready			=> SramReady,
 			data_s2f_r	=> data_outR,
 			data_s2f_ur	=> data_outUR,
-			ad				=> SRAM_ADDR,
+			ad				=> sramAddressout,
 			we_n			=> SRAM_WE_N,
 			oe_n			=> SRAM_OE_N,
 			dio			=> SRAM_DQ,
@@ -321,34 +320,39 @@ begin
 				HEX5 <= segAddr2Board(13 downto 7);
 			end process;
 		
+
 		
 		UCmux:process(iclk,stateState)
-			begin		
+			begin	
 				if rising_edge(iclk) then
 					case StateState is
 						when"00" => --Init Mode
+							bReadWrite <= '0';
 							SramActive <= clk_enable60ns;
 							Count_clk_enable <= clk_enable60ns;
 							SramAddrIn <= (X"000" & countOut);
-							bReadWrite <= '0';
 							data2Sram <= RomDataOut;
 						when"01" => -- OP mode
-							SramActive <= clk_enable1hz; -- Does this need to be turned off if system is in pause mode?
+							SramActive <= clk_enable1hz; 
 							Count_clk_enable <= clk_enable1hz;
 							SramAddrIn <= (X"000" & countOut);
 							bReadWrite <= '1';
 							data2Seg <= data_outR;
-							addr2Seg <= countOut;
-						when "10" => -- PROG mode
+							addr2Seg <= sramAddressout(7 downto 0);
+							LEDG0 <= '1';
+						when "10" => -- PROG mode -addr
 							SramActive <= L_key_Write;
 							SramAddrIn <= (X"000" & ShiftAddr); 
 							bReadWrite <= '0';
 							addrShiftIn <= oData;
-						when "11" => -- PROG mode
+							addr2Seg <= ShiftAddr;
+							LEDG0 <= '0';
+						when "11" => -- PROG mode -data
 							SramActive <= L_key_Write;
 							data2Sram <= ShiftData;
 							bReadWrite <= '0';
 							dataShiftIn <= oData;
+							data2Seg <= shiftData;
 						when others=> ErrorVal <= "0001";
 					end case;		
 				end if;

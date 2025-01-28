@@ -9,6 +9,7 @@ port(
 	kp_data: in std_logic_vector(4 downto 0);
 	kp_pulse: in std_logic;
 	stateOut: out std_logic_vector(3 downto 0);
+	resetPulse : out std_LOGIC;
 	ReadWriteOut: out std_logic
 );
 end statemachine;
@@ -32,9 +33,11 @@ architecture struct of statemachine is
 						when INIT =>
 							if (prevCountVal = X"FF" and countVal = X"00") then
 								stateVAR <= OP_PAUSE_F;
+								resetPulse <= '0';
 							end if;
 							prevCountVal <= CountVal;
 						when OP_PAUSE_F =>
+							resetPulse <= '0';
 							if (kp_data = Lcmd and kp_pulse='1') then
 								stateVAR <= OP_PAUSE_B;
 							elsif (kp_data = Hcmd and kp_pulse='1') then
@@ -43,6 +46,7 @@ architecture struct of statemachine is
 								stateVAR <= PROG_ADDR;
 							end if;
 						when OP_PAUSE_B =>
+							resetPulse <= '0';
 							if (kp_data = Lcmd and kp_pulse='1') then
 								stateVAR <= OP_PAUSE_F;
 							elsif (kp_data = Hcmd and kp_pulse='1') then
@@ -51,6 +55,7 @@ architecture struct of statemachine is
 								stateVAR <= PROG_ADDR;
 							end if;
 						when OP_RUN_F =>
+							resetPulse <= '0';
 							if (kp_data = Lcmd and kp_pulse='1') then
 								stateVAR <= OP_RUN_B;
 							elsif (kp_data = Hcmd and kp_pulse='1') then
@@ -59,6 +64,7 @@ architecture struct of statemachine is
 								stateVAR <= PROG_ADDR;
 							end if;
 						when OP_RUN_B =>
+							resetPulse <= '0';
 							if (kp_data = Lcmd and kp_pulse='1') then
 								stateVAR <= OP_RUN_F;
 							elsif (kp_data = Hcmd and kp_pulse='1') then
@@ -67,11 +73,13 @@ architecture struct of statemachine is
 								stateVAR <= PROG_ADDR;
 							end if;
 						when PROG_ADDR =>
+							resetPulse <= '0';
 							if (kp_data = Lcmd and kp_pulse='1') then
 								ReadWriteOut <= '1';
 							elsif (kp_data = Hcmd and kp_pulse='1') then
 								stateVAR <= PROG_DATA;
 							elsif (kp_data = Shiftcmd and kp_pulse='1') then
+								resetPulse <= '1';
 								if(state(1) = '1') then
 									stateVAR <= OP_PAUSE_B;
 								else
@@ -81,11 +89,13 @@ architecture struct of statemachine is
 								ReadWriteOut <= '0';
 							end if;
 						when PROG_DATA =>
+							resetPulse <= '0';
 							if (kp_data = Lcmd and kp_pulse='1') then
 									ReadWriteOut <= '1';
 							elsif (kp_data = Hcmd and kp_pulse='1') then
 								stateVAR <= PROG_ADDR;
 							elsif (kp_data = Shiftcmd and kp_pulse='1') then
+								resetPulse <= '1';
 								if(state(1) = '1') then
 									stateVAR <= OP_PAUSE_B;
 								else
