@@ -13,7 +13,6 @@ entity SevenSegment is
         clk           : in  STD_LOGIC;             -- Clock signal
         reset         : in  STD_LOGIC;             -- Reset signal
 		  data_in       : in  STD_LOGIC_VECTOR((NUM_SEG_DISPLAY * 4 - 1) downto 0);
-		  address_in    : in  STD_LOGIC_VECTOR((NUM_SEG_DISPLAY * 7 - 1) downto 0);
 		  data_out		 : out STD_LOGIC_VECTOR((NUM_SEG_DISPLAY * 7 - 1) downto 0)
     );
 end SevenSegment;
@@ -26,11 +25,30 @@ architecture Behavioral of SevenSegment is
     signal refresh_count  : INTEGER := 0; -- Counter for multiplexing displays
 	 signal hex            : STD_LOGIC_VECTOR(3 downto 0);
 	 signal seg            : STD_LOGIC_VECTOR(6 downto 0);
+	 signal loopiter			: integer range 0 to 4;
     -- 7-segment encoding 
     
  begin
-	process(seg)
+	
+	process(clk, reset,hex,seg)
+	 begin
+      if reset = '1' then
+		 data_out <= (others => '0');
+		 elsif rising_edge(clk)then
+			hex <= data_in(3 downto 0);
+			data_out(6 downto 0) <= seg;
+
+--			for loopiter in 0 to(NUM_SEG_DISPLAY-1) loop			-- input for how big it is (segments) 
+--				hex <= data_in((loopiter+1)*4-1 downto loopiter*4); 
+--				data_out((loopiter+1)*7-1 downto loopiter*7) <= seg;
+			end loop;
+			end if;
+		end process;
+			
+			
+	process(hex,seg,clk)
 		begin
+		if (rising_edge(clk)) then
         case hex is
             when "0000" => seg <= "1000000"; -- 0
             when "0001" => seg <= "1111001"; -- 1
@@ -50,26 +68,8 @@ architecture Behavioral of SevenSegment is
             when "1111" => seg <= "0001110"; -- F
             when others => seg <= "1111111"; -- Blank
         end case;
+		 end if;
     end process;
-
---begin
-    -- Process for doing the stuff 
-    process(clk, reset)
-    
-	 begin
-      if reset = '1' then
-		 data_out <= (others => '0');
-		 
-		 elsif rising_edge(clk)then
-			for i in (NUM_SEG_DISPLAY-1) downto 0 loop			
-				hex <= data_in((i+1)*4-1 downto i*4);
-				data_out((i+1)*7-1 downto i*7) <= seg;
-				
-			end loop;
-			end if;
-			
-				end process;
-			
 		 
 
 end Behavioral;

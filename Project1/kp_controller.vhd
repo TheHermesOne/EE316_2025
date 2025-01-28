@@ -37,7 +37,7 @@ key_pressed <= not (rows(0) and rows(1) and rows(2) and rows(3) and rows(4));
 	 process(clk)
     begin
         if rising_edge(clk) then
-            if (clk_cnt = 999999) then
+            if (clk_cnt = 499999) then
                 clk_cnt <= 0;
                 clk_en <= '1';
             else

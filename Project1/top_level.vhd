@@ -73,13 +73,16 @@ architecture Structural of top_level is
 	end component; 	
 
 	component SevenSegment is
-		Port (
-        		clk           		: in  STD_LOGIC;    -- Clock from keypad
-       		reset         		: in  STD_LOGIC;            -- Reset signal
-        		keypad_input  		: in  STD_LOGIC_VECTOR(4 downto 0); -- 5-bit input from keypad
-        		seg_out       		: out STD_LOGIC_VECTOR(6 downto 0); -- 7-segment output
-        		digit_select  		: out STD_LOGIC_VECTOR(3 downto 0)  -- choose 7 segment
-   		 );
+    Generic (
+	 NUM_SEG_DISPLAY : integer := 4  
+	 );
+	 Port (
+		  
+        clk           : in  STD_LOGIC;             -- Clock signal
+        reset         : in  STD_LOGIC;             -- Reset signal
+		  data_in       : in  STD_LOGIC_VECTOR((NUM_SEG_DISPLAY * 4 - 1) downto 0);
+		  data_out		 : out STD_LOGIC_VECTOR((NUM_SEG_DISPLAY * 7 - 1) downto 0)
+    );
 	end component;
 
 	component SRAM_Controller is
@@ -159,11 +162,14 @@ architecture Structural of top_level is
 	signal shiftmode				: std_LOGIC;
 	signal addrShiftIn			: std_LOGIC_VECTOR(4 downto 0);
 	signal dataShiftIn			: std_LOGIC_VECTOR(4 downto 0);
+	signal data2Seg				: std_LOGIC_vector(15 downto 0);
+	signal Addr2Seg				: std_LOGIC_vector(7 downto 0);
+	signal SegData2Board			: std_LOGIC_vector(27 downto 0);
+	signal SegAddr2Board			: std_LOGIC_vector(13 downto 0);
 	--Signals below are made to satiate inputs and outputs temporaly
 	-- unitl we can figure out what goes where
 	-----------------------------------------
 	signal odata					: std_LOGIC_VECTOR(4 downto 0);
-	signal segkeypad_input			: std_LOGIC_VECTOR(4 downto 0);
 	signal seg_out					: std_LOGIC_VECTOR(6 downto 0);
 	signal digit_select			: std_LOGIC_VECTOR(3 downto 0);
 	-----------------------------------------
@@ -241,14 +247,22 @@ begin
 				kp_pulse20    => kp_pulse
 			  );
 
---		Inst_SevenSegment : SevenSegment
---			Port map(
---				clk           => iclk,          
---				reset         => reset,        
---				keypad_input  => Segkeypad_input,
---				seg_out       => seg_out,
---				digit_select  => digit_select
---				 );
+		Inst_SevenSegmentDATA : SevenSegment
+			Generic map(NUM_SEG_DISPLAY =>  4  )
+			Port map (
+				clk           => iclk,
+				reset         => counterReset,
+				data_in       => data2Seg,
+				data_out		 => segData2Board
+				);
+		Inst_SevenSegmentADDR : SevenSegment
+			Generic map(NUM_SEG_DISPLAY => 2)
+			Port map (
+        clk           => iclk,
+        reset         => counterReset,
+		  data_in       => Addr2Seg,
+		  data_out		 => segAddr2Board
+		);
 			
 		Inst_SRAM_Controller : SRAM_Controller
 			PORT map(
@@ -297,13 +311,15 @@ begin
 		
 		
 		
---		SevSegMux:process
---			begin
---				case digit_select is
---					when "1110" =>
---						HEX0 <= seg_out;
---				end case;
---			end process;
+		SevSegMux:process(segData2Board,segAddr2Board)
+			begin
+				HEX0 <= segData2Board(6 downto 0);
+				HEX1 <= segData2Board(13 downto 7);
+				HEX2 <= segData2Board(20 downto 14);
+				HEX3 <= segData2Board(27 downto 21);
+				HEX4 <= segAddr2Board(6 downto 0);
+				HEX5 <= segAddr2Board(13 downto 7);
+			end process;
 		
 		
 		UCmux:process(iclk,stateState)
@@ -321,11 +337,8 @@ begin
 							Count_clk_enable <= clk_enable1hz;
 							SramAddrIn <= (X"000" & countOut);
 							bReadWrite <= '1';
-							segkeypad_input <= ('0'& Data_outR(3 downto 0));
-							HEX3 <= "0001110";
-							HEX2 <= "1000001";
-							HEX1 <= "1000110";
-							HEX0 <= "0010001";
+							data2Seg <= data_outR;
+							addr2Seg <= countOut;
 						when "10" => -- PROG mode
 							SramActive <= L_key_Write;
 							SramAddrIn <= (X"000" & ShiftAddr); 
