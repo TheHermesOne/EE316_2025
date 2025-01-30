@@ -38,7 +38,7 @@ architecture Structural of top_level is
 			en, up						: in std_logic;
 			CountStep					: in integer := 1;
 			clk_en 						: in std_logic := '1';			
-			q								: out std_logic_vector(N-1 downto 0)
+			q								: out std_logic_vector(N-1 downto N-8) -- takes only the first 8 bits 
 		);
 	end component;
 	
@@ -97,7 +97,7 @@ architecture Structural of top_level is
 		);
 		end component;
 	
-	component initRom is
+	component Rom is
 		Port(
 			address		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 			clock		: IN STD_LOGIC  := '1';
@@ -123,8 +123,8 @@ architecture Structural of top_level is
 	signal clk_enable60ns, Rst	: std_logic;
 	signal reset, counterReset	: std_logic;
 	signal reset_db				: std_logic;
-	signal CountOut_univ			: std_logic_vector(8-1 downto 0);
-	signal CountOut_var			: std_logic_vector(32-1 downto 0);
+	signal CountOut_univ			: std_logic_vector(7 downto 0);
+	signal CountOut_var			: std_logic_vector(7 downto 0);
 	signal data2Sram				: std_logic_vector(15 downto 0);
 	signal SramReady				: std_logic;
 	signal SramAddrIn				: std_logic_vector(19 downto 0);
@@ -228,7 +228,7 @@ begin
 			ce_n			=> SRAM_CE_N
 			);
 		
-		Inst_initRom : initRom
+		Inst_initRom : Rom
 			PORT map (
 			address	=> CountOut_univ, 
 			clock		=> iclk,

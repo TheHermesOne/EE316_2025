@@ -1,0 +1,8 @@
+
+State Machine - |DE2_115|top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg
+Name state_reg.w2 state_reg.w1 state_reg.r2 state_reg.r1 state_reg.idle 
+state_reg.idle 0 0 0 0 0 
+state_reg.r1 0 0 0 1 1 
+state_reg.r2 0 0 1 0 1 
+state_reg.w1 0 1 0 0 1 
+state_reg.w2 1 0 0 0 1 

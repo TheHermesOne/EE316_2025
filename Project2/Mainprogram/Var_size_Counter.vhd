@@ -12,7 +12,7 @@ entity var_size_counter is
       en, up					: in std_logic;
 		Countstep				: in integer := 1;
 		clk_en 					: in std_logic := '1';
-      q							: out std_logic_vector(N-1 downto N-9) -- takes only the first 8 bits 
+      q							: out std_logic_vector(N-1 downto N-8) -- takes only the first 8 bits 
    );
 end var_size_counter;
 
@@ -35,6 +35,6 @@ begin
              r_reg - countstep     when en ='1' and up='0' else
              r_reg;
    -- output logic
-   q <= std_logic_vector(r_reg)(N-1 downto N-9);
+   q <= std_logic_vector(r_reg(N-1 downto N-8));
 end arch;
 
