@@ -1,0 +1,86 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity Var_counter is
+-- No ports in the testbench entity
+end Var_counter;
+
+architecture behav of Var_counter is
+
+	component Statemachine is
+		port(
+			Clk :in std_LOGIC;
+			reset : in std_logic;
+			CountVal: in std_logic_vector(7 downto 0);
+			kp_data: in std_logic_vector(4 downto 0);
+			kp_pulse: in std_logic;
+			State: buffer std_logic_vector(3 downto 0)
+		);
+	end component;
+
+	signal clk :STD_LOGIC := '0';
+	signal reset : std_LOGIC := '0';
+	signal countVal : std_logic_vector(7 downto 0);
+	signal kp_data : std_LOGIC_vector(4 downto 0);
+	signal kp_pulse : std_LOGIC;
+	signal state: std_LOGIC_vector(3 downto 0);
+
+	signal Lcommand : std_LOGIC_vector(4 downto 0) := ('1' & X"1");
+	signal Hcommand : std_LOGIC_vector(4 downto 0) := ('1' & X"2");
+	signal ShiftCommand : std_LOGIC_vector(4 downto 0) := ('1' & X"3");
+	
+	begin
+	clk <= not clk after 10 ns;
+
+	DUT:Statemachine
+		port map (
+			Clk => clk,
+			reset => reset,
+			countVal => countVal,
+			kp_data => kp_data,
+			kp_pulse => kp_pulse,
+			state => state
+		);
+	
+	process
+		begin
+			reset <= '1';
+			wait for 20 ns;
+			reset <= '0';
+			wait for 50 ns;					
+			countVal <= X"FF";
+			wait for 50 ns;
+			countVal <= X"00";
+			wait for 50 ns;
+			--Init ends should go to OP_PAUSE_F
+			kp_data <= Lcommand;
+			kp_pulse <= '1';
+			wait for 20 ns;
+			kp_pulse <= '0';
+			wait for 20 ns;
+			--Should go into OP_PAUSE_B
+			kp_data <= Hcommand;
+			kp_pulse <= '1';
+			wait for 20 ns;
+			kp_pulse <= '0';
+			wait for 20 ns;
+			--Should go to OP_RUN_B
+			kp_data <= shiftCommand;
+			kp_pulse <= '1';
+			wait for 20 ns;
+			kp_pulse <= '0';
+			wait for 20 ns;
+			--Should go into PROG_ADDR
+			kp_data <= shiftCommand;
+			kp_pulse <= '1';
+			wait for 20 ns;
+			kp_pulse <= '0';
+			wait for 50 ns;
+			--Should go into OP_PAUSE_B
+			reset <= '1';
+			wait for 20 ns;
+			reset <= '0';
+			--Should go Back to INIT
+			wait;
+	end process;
+end behav;

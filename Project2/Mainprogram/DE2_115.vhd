@@ -163,9 +163,17 @@ BEGIN
 
 Inst_top_level: top_level 
 		port map (
-		iClk		=> CLOCK_50, 
-		SRAM_DQ  => SRAM_DQ,										-- SRAM Data bus 16 Bits
-      SRAM_ADDR  => SRAM_ADDR(19 DOWNTO 0),				-- SRAM Address bus 18 Bits
+		iClk			=> CLOCK_50,
+		LCD_ON      => LCD_ON,							-- LCD Power ON/OFF
+      LCD_BLON    => LCD_BLON,							-- LCD Back Light ON/OFF
+      LCD_RW      => LCD_RW,							-- LCD Read/Write Select, 0 = Write, 1 = Read
+      LCD_EN      => LCD_EN,							-- LCD Enable
+      LCD_RS      => LCD_RS,							-- LCD Command/Data Select, 0 = Command, 1 = Data
+      LCD_DATA    => LCD_DATA,		-- LCD Data bus 8 bits
+		I2C_SDAT    => I2C_SDAT,						-- I2C Data
+      I2C_SCLK    => I2C_SCLK,		
+		SRAM_DQ  	=> SRAM_DQ,										-- SRAM Data bus 16 Bits
+      SRAM_ADDR  	=> SRAM_ADDR(19 DOWNTO 0),				-- SRAM Address bus 18 Bits
       SRAM_UB_N   => SRAM_UB_N,							-- SRAM High-byte Data Mask
       SRAM_LB_N   => SRAM_LB_N,							-- SRAM Low-byte Data Mask
       SRAM_WE_N   => SRAM_WE_N,							-- SRAM Write Enable
