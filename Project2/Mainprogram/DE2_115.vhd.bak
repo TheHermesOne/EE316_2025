@@ -13,12 +13,12 @@ ENTITY DE2_115 IS
 ---- 			DPDT Switch		      
 --      SW          : IN STD_LOGIC_VECTOR(17 DOWNTO 0);		-- Toggle Switch[17:0]
 ---- 			7-SEG Dispaly	      
---      HEX0        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 0
---      HEX1        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 1
---      HEX2        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 2
---      HEX3        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 3
---      HEX4        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 4
---      HEX5        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 5
+      HEX0        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 0
+      HEX1        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 1
+      HEX2        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 2
+      HEX3        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 3
+      HEX4        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 4
+      HEX5        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 5
 --      HEX6        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 6
 --      HEX7        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 7
 ---- 			LED		      
@@ -73,20 +73,20 @@ ENTITY DE2_115 IS
 --      OTG_DREQ    : IN STD_LOGIC_VECTOR(1 DOWNTO 0);		-- ISP1362 DMA Request 0
 --      OTG_DACK_N  : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);		-- ISP1362 DMA Acknowledge 0
 ---- 			LCD Module 16X2		            
-      LCD_ON      : OUT STD_LOGIC;							-- LCD Power ON/OFF
-      LCD_BLON    : OUT STD_LOGIC;							-- LCD Back Light ON/OFF
-      LCD_RW      : OUT STD_LOGIC;							-- LCD Read/Write Select, 0 = Write, 1 = Read
-      LCD_EN      : OUT STD_LOGIC;							-- LCD Enable
-      LCD_RS      : OUT STD_LOGIC;							-- LCD Command/Data Select, 0 = Command, 1 = Data
-      LCD_DATA    : INOUT STD_LOGIC_VECTOR(7 DOWNTO 0);		-- LCD Data bus 8 bits
+--      LCD_ON      : OUT STD_LOGIC;							-- LCD Power ON/OFF
+--      LCD_BLON    : OUT STD_LOGIC;							-- LCD Back Light ON/OFF
+--      LCD_RW      : OUT STD_LOGIC;							-- LCD Read/Write Select, 0 = Write, 1 = Read
+--      LCD_EN      : OUT STD_LOGIC;							-- LCD Enable
+--      LCD_RS      : OUT STD_LOGIC;							-- LCD Command/Data Select, 0 = Command, 1 = Data
+--      LCD_DATA    : INOUT STD_LOGIC_VECTOR(7 DOWNTO 0);		-- LCD Data bus 8 bits
 ---- 			SD_Card Interface	
 --      SD_DAT      : INOUT STD_LOGIC_VECTOR(3 DOWNTO 0);		-- SD Card Data
 --      SD_WP_N     : IN STD_LOGIC;							-- SD Card WP_N
 --      SD_CMD      : INOUT STD_LOGIC;						-- SD Card Command Signal
 --      SD_CLK      : INOUT STD_LOGIC;						-- SD Card Clock    
 ---- 			I2C		      
-      I2C_SDAT     : INOUT STD_LOGIC;						-- I2C Data
-      I2C_SCLK     : OUT STD_LOGIC;							-- I2C Clock
+--      I2C_SDAT     : INOUT STD_LOGIC;						-- I2C Data
+--      I2C_SCLK     : OUT STD_LOGIC;							-- I2C Clock
 ---- 			PS2		      
 --      PS2_DAT      : INOUT STD_LOGIC;						-- PS2 Data
 --      PS2_CLK      : INOUT STD_LOGIC;						-- PS2 Clock
@@ -136,14 +136,7 @@ ARCHITECTURE structural OF DE2_115 IS
 component top_level is
 		port (
 		iClk										: in std_logic;
-		LCD_ON      : OUT STD_LOGIC;							-- LCD Power ON/OFF
-      LCD_BLON    : OUT STD_LOGIC;							-- LCD Back Light ON/OFF
-      LCD_RW      : OUT STD_LOGIC;							-- LCD Read/Write Select, 0 = Write, 1 = Read
-      LCD_EN      : OUT STD_LOGIC;							-- LCD Enable
-      LCD_RS      : OUT STD_LOGIC;							-- LCD Command/Data Select, 0 = Command, 1 = Data
-      LCD_DATA    : INOUT STD_LOGIC_VECTOR(7 DOWNTO 0);		-- LCD Data bus 8 bits
-		I2C_SDAT     : INOUT STD_LOGIC;						-- I2C Data
-      I2C_SCLK     : OUT STD_LOGIC;							-- I2C Clock
+		HEX0,HEX1,HEX2,HEX3,HEX4,HEX5		: out std_LOGIC_VECTOR(6 downto 0);
 		SRAM_DQ     : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0);	-- SRAM Data bus 16 Bits
       SRAM_ADDR   : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);	-- SRAM Address bus 18 Bits
       SRAM_UB_N   : OUT STD_LOGIC;							-- SRAM High-byte Data Mask
@@ -164,6 +157,12 @@ BEGIN
 Inst_top_level: top_level 
 		port map (
 		iClk		=> CLOCK_50, 
+		HEX0		=> HEX0(6 downto 0),
+		HEX1		=> HEX1(6 downto 0),
+		HEX2		=> HEX2(6 downto 0),
+		HEX3		=> HEX3(6 downto 0),
+		HEX4		=> HEX4(6 downto 0),
+		HEX5		=> HEX5(6 downto 0),
 		SRAM_DQ  => SRAM_DQ,										-- SRAM Data bus 16 Bits
       SRAM_ADDR  => SRAM_ADDR(19 DOWNTO 0),				-- SRAM Address bus 18 Bits
       SRAM_UB_N   => SRAM_UB_N,							-- SRAM High-byte Data Mask
