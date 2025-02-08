@@ -1,5 +1,5 @@
 Fitter report for Project2_main
-Thu Jan 30 14:40:40 2025
+Sat Feb 08 14:39:27 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                        ;
 +------------------------------------+--------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Jan 30 14:40:40 2025            ;
+; Fitter Status                      ; Successful - Sat Feb 08 14:39:27 2025            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; Project2_main                                    ;
 ; Top-level Entity Name              ; DE2_115                                          ;
@@ -145,12 +145,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 2.25        ;
+; Average used               ; 1.63        ;
 ; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;  25.0%      ;
+;     Processors 2-6         ;  12.5%      ;
 ;     Processors 7-12        ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -307,7 +307,7 @@ applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/output_files/Project2_main.pin.
+The pin-out file can be found in C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/output_files/Project2_main.pin.
 
 
 +---------------------------------------------------------------------+
@@ -536,9 +536,9 @@ The pin-out file can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Pr
 ; LCD_DATA[0] ; AB27  ; 5        ; 115          ; 18           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; LCD_DATA[1] ; A23   ; 7        ; 102          ; 73           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; LCD_DATA[2] ; AB19  ; 4        ; 98           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; LCD_DATA[3] ; R26   ; 5        ; 115          ; 33           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; LCD_DATA[4] ; AC14  ; 3        ; 56           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
-; LCD_DATA[5] ; R25   ; 5        ; 115          ; 33           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; LCD_DATA[3] ; R26   ; 5        ; 115          ; 33           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; no         ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; LCD_DATA[4] ; AC14  ; 3        ; 56           ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; no         ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
+; LCD_DATA[5] ; R25   ; 5        ; 115          ; 33           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; no         ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; LCD_DATA[6] ; Y25   ; 5        ; 115          ; 19           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; LCD_DATA[7] ; W22   ; 5        ; 115          ; 30           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; SRAM_DQ[0]  ; B22   ; 7        ; 89           ; 73           ; 14           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; Fitter               ; 0 pF ; -                    ; -                   ;
@@ -1665,9 +1665,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 ; Pin/Rules          ; IO_000001    ; IO_000002    ; IO_000003    ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007    ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000033 ; IO_000034    ; IO_000042    ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
-; Total Pass         ; 0            ; 0            ; 0            ; 0            ; 0            ; 106       ; 0            ; 0            ; 106       ; 106       ; 0            ; 101          ; 0            ; 0            ; 66           ; 0            ; 101          ; 66           ; 0            ; 0            ; 61           ; 101          ; 0            ; 0            ; 0            ; 0            ; 0            ; 106       ; 0            ; 0            ;
+; Total Pass         ; 0            ; 0            ; 0            ; 0            ; 0            ; 106       ; 0            ; 0            ; 106       ; 106       ; 0            ; 101          ; 0            ; 0            ; 66           ; 0            ; 101          ; 66           ; 0            ; 0            ; 58           ; 101          ; 0            ; 0            ; 0            ; 0            ; 0            ; 106       ; 0            ; 0            ;
 ; Total Unchecked    ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
-; Total Inapplicable ; 106          ; 106          ; 106          ; 106          ; 106          ; 0         ; 106          ; 106          ; 0         ; 0         ; 106          ; 5            ; 106          ; 106          ; 40           ; 106          ; 5            ; 40           ; 106          ; 106          ; 45           ; 5            ; 106          ; 106          ; 106          ; 106          ; 106          ; 0         ; 106          ; 106          ;
+; Total Inapplicable ; 106          ; 106          ; 106          ; 106          ; 106          ; 0         ; 106          ; 106          ; 0         ; 0         ; 106          ; 5            ; 106          ; 106          ; 40           ; 106          ; 5            ; 40           ; 106          ; 106          ; 48           ; 5            ; 106          ; 106          ; 106          ; 106          ; 106          ; 0         ; 106          ; 106          ;
 ; Total Fail         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; KEY[0]             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[1]             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -1733,9 +1733,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LCD_DATA[0]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LCD_DATA[1]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LCD_DATA[2]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; LCD_DATA[3]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; LCD_DATA[4]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; LCD_DATA[5]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; LCD_DATA[3]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; LCD_DATA[4]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; LCD_DATA[5]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LCD_DATA[6]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; LCD_DATA[7]        ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; I2C_SDAT           ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -1984,7 +1984,7 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.02 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.03 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2007,14 +2007,14 @@ Warning (169064): Following 61 pins have no output enable or a GND or VCC output
     Info (169065): Pin SRAM_DQ[13] has a permanently disabled output enable
     Info (169065): Pin SRAM_DQ[14] has a permanently disabled output enable
     Info (169065): Pin SRAM_DQ[15] has a permanently disabled output enable
-    Info (169065): Pin LCD_DATA[0] has a permanently disabled output enable
-    Info (169065): Pin LCD_DATA[1] has a permanently disabled output enable
-    Info (169065): Pin LCD_DATA[2] has a permanently disabled output enable
-    Info (169065): Pin LCD_DATA[3] has a permanently disabled output enable
-    Info (169065): Pin LCD_DATA[4] has a permanently disabled output enable
-    Info (169065): Pin LCD_DATA[5] has a permanently disabled output enable
-    Info (169065): Pin LCD_DATA[6] has a permanently disabled output enable
-    Info (169065): Pin LCD_DATA[7] has a permanently disabled output enable
+    Info (169065): Pin LCD_DATA[0] has a permanently enabled output enable
+    Info (169065): Pin LCD_DATA[1] has a permanently enabled output enable
+    Info (169065): Pin LCD_DATA[2] has a permanently enabled output enable
+    Info (169065): Pin LCD_DATA[3] has a permanently enabled output enable
+    Info (169065): Pin LCD_DATA[4] has a permanently enabled output enable
+    Info (169065): Pin LCD_DATA[5] has a permanently enabled output enable
+    Info (169065): Pin LCD_DATA[6] has a permanently enabled output enable
+    Info (169065): Pin LCD_DATA[7] has a permanently enabled output enable
     Info (169065): Pin I2C_SDAT has a permanently disabled output enable
     Info (169065): Pin GPIO[0] has a permanently disabled output enable
     Info (169065): Pin GPIO[1] has a permanently disabled output enable
@@ -2052,10 +2052,10 @@ Warning (169064): Following 61 pins have no output enable or a GND or VCC output
     Info (169065): Pin GPIO[33] has a permanently disabled output enable
     Info (169065): Pin GPIO[34] has a permanently disabled output enable
     Info (169065): Pin GPIO[35] has a permanently disabled output enable
-Info (144001): Generated suppressed messages file C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/output_files/Project2_main.fit.smsg
+Info (144001): Generated suppressed messages file C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/output_files/Project2_main.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5603 megabytes
-    Info: Processing ended: Thu Jan 30 14:40:41 2025
+    Info: Peak virtual memory: 5609 megabytes
+    Info: Processing ended: Sat Feb 08 14:39:28 2025
     Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:13
 
@@ -2063,6 +2063,6 @@ Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/output_files/Project2_main.fit.smsg.
+The suppressed messages can be found in C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/output_files/Project2_main.fit.smsg.
 
 

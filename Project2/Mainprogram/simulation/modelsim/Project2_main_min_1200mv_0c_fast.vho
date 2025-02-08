@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
 
--- DATE "01/30/2025 14:40:51"
+-- DATE "02/08/2025 14:39:38"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -578,7 +578,7 @@ GENERIC MAP (
 	open_drain_output => "true")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \LCD_DATA[0]~output_o\);
 
@@ -590,7 +590,7 @@ GENERIC MAP (
 	open_drain_output => "true")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \LCD_DATA[1]~output_o\);
 
@@ -602,7 +602,7 @@ GENERIC MAP (
 	open_drain_output => "true")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \LCD_DATA[2]~output_o\);
 
@@ -611,10 +611,11 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
-	open_drain_output => "true")
+	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
 	i => VCC,
+	oe => VCC,
 	devoe => ww_devoe,
 	o => \LCD_DATA[3]~output_o\);
 
@@ -623,10 +624,11 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
-	open_drain_output => "true")
+	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
 	i => VCC,
+	oe => VCC,
 	devoe => ww_devoe,
 	o => \LCD_DATA[4]~output_o\);
 
@@ -635,10 +637,11 @@ PORT MAP (
 -- pragma translate_off
 GENERIC MAP (
 	bus_hold => "false",
-	open_drain_output => "true")
+	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
 	i => VCC,
+	oe => VCC,
 	devoe => ww_devoe,
 	o => \LCD_DATA[5]~output_o\);
 
@@ -650,7 +653,7 @@ GENERIC MAP (
 	open_drain_output => "true")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \LCD_DATA[6]~output_o\);
 
@@ -662,7 +665,7 @@ GENERIC MAP (
 	open_drain_output => "true")
 -- pragma translate_on
 PORT MAP (
-	i => VCC,
+	i => GND,
 	devoe => ww_devoe,
 	o => \LCD_DATA[7]~output_o\);
 

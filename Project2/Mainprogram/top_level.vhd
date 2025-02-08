@@ -90,7 +90,7 @@ architecture Structural of top_level is
 			data_f2s						: in std_logic_vector(15 downto 0);
 			ready							: out std_logic;
 			data_s2f_r, data_s2f_ur : out std_logic_vector(15 downto 0);
-			ad								: out std_logic_vector(19 downto 0);
+			ad								: out std_logic_vector(19 downto 0); 
 			we_n, oe_n					: out std_logic;
 			dio							: inout std_logic_vector(15 downto 0);
 			ce_n							: out std_logic
@@ -118,6 +118,18 @@ architecture Structural of top_level is
 		);
 	end component;
 	
+	component LCD_Controller is
+			port(
+			iClk				: in std_logic; 
+			LCD_Mode_SW		: in std_logic_vector(3 downto 0); -- switch for state machine input
+			SRAM_DATA		: in std_logic_vector(15 downto 0);
+			SRAM_ADDRESS	: in std_logic_vector(19 downto 0);
+			LCD_DATA			: inout std_logic_vector(7 downto 0);
+			LCD_EN			: out std_logic;
+			LCD_RW			: out std_logic;
+			LCD_RS			: out std_logic
+			);
+	end component;
 
 	-------------------Temp Variables(Internal only)--------------------
 	signal clk_enable60ns, Rst	: std_logic;
@@ -235,6 +247,17 @@ begin
 			q			=> RomDataOut
 			);
 		
+		Inst_LCD_Controller : LCD_Controller
+		PORT map (
+		iclk 				=> iclk,
+		LCD_Mode_SW    => "0000", --temp until SM finished
+		SRAM_DATA		=> data_outR,
+		SRAM_ADDRESS	=> sramAddressout,
+		LCD_DATA 		=> LCD_DATA,
+		LCD_EN			=> LCD_EN,
+		LCD_RW			=> LCD_RW,
+		LCD_RS 			=> LCD_RS
+		);
 --		
 --		UCmux:process(iclk,stateState)
 --			begin	

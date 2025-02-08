@@ -73,8 +73,8 @@ ENTITY DE2_115 IS
 --      OTG_DREQ    : IN STD_LOGIC_VECTOR(1 DOWNTO 0);		-- ISP1362 DMA Request 0
 --      OTG_DACK_N  : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);		-- ISP1362 DMA Acknowledge 0
 ---- 			LCD Module 16X2		            
-      LCD_ON      : OUT STD_LOGIC;							-- LCD Power ON/OFF
-      LCD_BLON    : OUT STD_LOGIC;							-- LCD Back Light ON/OFF
+      LCD_ON      : OUT STD_LOGIC := '1';							-- LCD Power ON/OFF
+      LCD_BLON    : OUT STD_LOGIC := '1';							-- LCD Back Light ON/OFF
       LCD_RW      : OUT STD_LOGIC;							-- LCD Read/Write Select, 0 = Write, 1 = Read
       LCD_EN      : OUT STD_LOGIC;							-- LCD Enable
       LCD_RS      : OUT STD_LOGIC;							-- LCD Command/Data Select, 0 = Command, 1 = Data
