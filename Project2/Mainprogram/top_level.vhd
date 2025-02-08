@@ -54,106 +54,6 @@ architecture Structural of top_level is
     );
   end component;
 
-	component clk_enabler is
-		 GENERIC (
-			CONSTANT cnt_max : integer := 49999999);      --  1.0 Hz 	
-		 PORT(	
-			clock			 	: in std_logic;	 
-			clk_en			: out std_logic
-		);
-	end component;
-	
-	component btn_debounce_toggle is
-		GENERIC(
-			CONSTANT CNTR_MAX : std_logic_vector(15 downto 0) := X"FFFF");  
-    Port ( BTN_I 	: in  STD_LOGIC;
-           CLK 		: in  STD_LOGIC;
-           BTN_O 	: out  STD_LOGIC;
-           TOGGLE_O : out  STD_LOGIC;
-				PULSE_O  : out STD_LOGIC);
-	end component;
-	
-	component Reset_Delay IS	
-		 PORT (
-			  SIGNAL iCLK 		: IN std_logic;	
-			  SIGNAL oRESET 	: OUT std_logic
-				);	
-	end component;		
-
-
-	component SRAM_Controller is
-		Port(
-			clk,reset					: in std_logic;
-			mem							: in std_logic;
-			rw								: in std_logic;
-			addr							: in std_logic_vector(19 downto 0);
-			data_f2s						: in std_logic_vector(15 downto 0);
-			ready							: out std_logic;
-			data_s2f_r, data_s2f_ur : out std_logic_vector(15 downto 0);
-			ad								: out std_logic_vector(19 downto 0); 
-			we_n, oe_n					: out std_logic;
-			dio							: inout std_logic_vector(15 downto 0);
-			ce_n							: out std_logic
-		);
-		end component;
-	
-	component Rom is
-		Port(
-			address		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-			clock		: IN STD_LOGIC  := '1';
-			q		: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
-		);
-	end component;
-	
-	component statemachine is
-		port(
-			Clk :in std_LOGIC;
-			reset : in std_logic;
-			CountVal: in std_logic_vector(7 downto 0);
-			kp_data: in std_logic_vector(4 downto 0);
-			kp_pulse: in std_logic;
-			stateOut: out std_logic_vector(3 downto 0);
-			resetPulse: out std_LOGIC;
-			ReadWriteOut : out std_logic
-		);
-	end component;
-	
-	component LCD_Controller is
-			port(
-			iClk				: in std_logic; 
-			LCD_Mode_SW		: in std_logic_vector(3 downto 0); -- switch for state machine input
-			SRAM_DATA		: in std_logic_vector(15 downto 0);
-			SRAM_ADDRESS	: in std_logic_vector(19 downto 0);
-			LCD_DATA			: inout std_logic_vector(7 downto 0);
-			LCD_EN			: out std_logic;
-			LCD_RW			: out std_logic;
-			LCD_RS			: out std_logic
-			);
-	end component;
-
-	-------------------Temp Variables(Internal only)--------------------
-	signal clk_enable60ns, Rst	: std_logic;
-	signal reset, counterReset	: std_logic;
-	signal reset_db				: std_logic;
-	signal CountOut_univ			: std_logic_vector(7 downto 0);
-	signal CountOut_var			: std_logic_vector(7 downto 0);
-	signal data2Sram				: std_logic_vector(15 downto 0);
-	signal SramReady				: std_logic;
-	signal SramAddrIn				: std_logic_vector(19 downto 0);
-	signal bReadWrite				: std_logic;
-	signal SramActive				: std_logic;
-	signal data_outR,data_outUR: std_logic_vector(15 downto 0);
-	signal romDataOut				: std_LOGIC_VECTOR(15 downto 0);
-	signal ErrorVal				: std_logic_vector(3 downto 0);
-	signal resetmux 				: std_LOGIC;
-	signal statereset				: std_LOGIC;
-	signal odata					: std_LOGIC_VECTOR(4 downto 0);
-	signal sramAddressout		: std_LOGIC_VECTOR(19 downto 0);
-	signal CountStep				: integer;
-	signal Cnten					:std_LOGIC;
-	signal cntDir					:std_LOGIC;
-	signal Cnten_univ				:std_LOGIC;
-	signal cntDir_univ			:std_LOGIC;
   component clk_enabler is
     generic (
       constant cnt_max : integer := 49999999); --  1.0 Hz 	
@@ -204,16 +104,32 @@ architecture Structural of top_level is
     );
   end component;
 
-  component statemachine
+  component statemachine is
     port (
-      Clk      : in std_logic;
-      reset    : in std_logic;
-      CountVal : in std_logic_vector(7 downto 0);
-      Keys     : in std_logic_vector(3 downto 0);
-	  resetPulse : out std_logic;
-      stateOut : out std_logic_vector(3 downto 0)
+      Clk          : in std_logic;
+      reset        : in std_logic;
+      CountVal     : in std_logic_vector(7 downto 0);
+      kp_data      : in std_logic_vector(4 downto 0);
+      kp_pulse     : in std_logic;
+      stateOut     : out std_logic_vector(3 downto 0);
+      resetPulse   : out std_logic;
+      ReadWriteOut : out std_logic
     );
   end component;
+
+  component LCD_Controller is
+    port (
+      iClk         : in std_logic;
+      LCD_Mode_SW  : in std_logic_vector(3 downto 0); -- switch for state machine input
+      SRAM_DATA    : in std_logic_vector(15 downto 0);
+      SRAM_ADDRESS : in std_logic_vector(19 downto 0);
+      LCD_DATA     : inout std_logic_vector(7 downto 0);
+      LCD_EN       : out std_logic;
+      LCD_RW       : out std_logic;
+      LCD_RS       : out std_logic
+    );
+  end component;
+
   -------------------Temp Variables(Internal only)--------------------
   signal clk_enable60ns, Rst   : std_logic;
   signal reset, counterReset   : std_logic;
@@ -229,6 +145,7 @@ architecture Structural of top_level is
   signal romDataOut            : std_logic_vector(15 downto 0);
   signal ErrorVal              : std_logic_vector(3 downto 0);
   signal resetmux              : std_logic;
+  signal statereset            : std_logic;
   signal odata                 : std_logic_vector(4 downto 0);
   signal sramAddressout        : std_logic_vector(19 downto 0);
   signal CountStep             : integer;
@@ -236,8 +153,6 @@ architecture Structural of top_level is
   signal cntDir                : std_logic;
   signal Cnten_univ            : std_logic;
   signal cntDir_univ           : std_logic;
-  signal StateState            : STD_LOGIC_VECTOR(3 downto 0);
-  signal statereset			: std_logic;
 begin
 
   Rst          <= not reset_db;
@@ -306,12 +221,12 @@ begin
   Inst_StateMachine : statemachine
   port map
   (
-    clk      => iclk,
-    reset    => counterReset,
-    countVal => CountOut_univ,
-    keys     => KEY,
-	resetPulse => statereset,
-    stateOut => StateState
+    clk        => iclk,
+    reset      => counterReset,
+    countVal   => CountOut_univ,
+    keys       => KEY,
+    resetPulse => statereset,
+    stateOut   => StateState
   );
 
   Inst_SRAM_Controller : SRAM_Controller
@@ -341,17 +256,18 @@ begin
     q       => RomDataOut
   );
 
-		Inst_LCD_Controller : LCD_Controller
-		PORT map (
-		iclk 				=> iclk,
-		LCD_Mode_SW    => "0000", --temp until SM finished
-		SRAM_DATA		=> data_outR,
-		SRAM_ADDRESS	=> sramAddressout,
-		LCD_DATA 		=> LCD_DATA,
-		LCD_EN			=> LCD_EN,
-		LCD_RW			=> LCD_RW,
-		LCD_RS 			=> LCD_RS
-		);
+  Inst_LCD_Controller : LCD_Controller
+  port map
+  (
+    iclk         => iclk,
+    LCD_Mode_SW  => "0000", --temp until SM finished
+    SRAM_DATA    => data_outR,
+    SRAM_ADDRESS => sramAddressout,
+    LCD_DATA     => LCD_DATA,
+    LCD_EN       => LCD_EN,
+    LCD_RW       => LCD_RW,
+    LCD_RS       => LCD_RS
+  );
   --		
   --		UCmux:process(iclk,stateState)
   --			begin	

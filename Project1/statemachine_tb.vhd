@@ -1,49 +1,43 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity statemachine_tb is
--- No ports in the testbench entity
-end statemachine_tb;
+end;
 
-architecture behav of statemachine_tb is
+architecture bench of statemachine_tb is
+  -- Clock period
+  constant clk_period : time := 5 ns;
+  -- Generics
+  -- Ports
+  signal Clk : std_LOGIC;
+  signal reset : std_logic;
+  signal CountVal : std_logic_vector(7 downto 0);
+  signal kp_data : std_logic_vector(4 downto 0);
+  signal kp_pulse : std_logic;
+  signal stateOut : std_logic_vector(3 downto 0);
+  signal resetPulse : std_LOGIC;
+  signal ReadWriteOut : std_logic;
+  signal Lcommand : std_LOGIC_vector(4 downto 0) := ('1' & X"1");
+  signal Hcommand : std_LOGIC_vector(4 downto 0) := ('1' & X"2");
+  signal ShiftCommand : std_LOGIC_vector(4 downto 0) := ('1' & X"3");
+begin
+  statemachine_inst : entity work.statemachine
+  port map (
+    Clk => Clk,
+    reset => reset,
+    CountVal => CountVal,
+    kp_data => kp_data,
+    kp_pulse => kp_pulse,
+    stateOut => stateOut,
+    resetPulse => resetPulse,
+    ReadWriteOut => ReadWriteOut
+  );
+  clk <= not clk after 10 ns;
 
-	component Statemachine is
-		port(
-			Clk :in std_LOGIC;
-			reset : in std_logic;
-			CountVal: in std_logic_vector(7 downto 0);
-			kp_data: in std_logic_vector(4 downto 0);
-			kp_pulse: in std_logic;
-			State: buffer std_logic_vector(3 downto 0)
-		);
-	end component;
-
-	signal clk :STD_LOGIC := '0';
-	signal reset : std_LOGIC := '0';
-	signal countVal : std_logic_vector(7 downto 0);
-	signal kp_data : std_LOGIC_vector(4 downto 0);
-	signal kp_pulse : std_LOGIC;
-	signal state: std_LOGIC_vector(3 downto 0);
-
-	signal Lcommand : std_LOGIC_vector(4 downto 0) := ('1' & X"1");
-	signal Hcommand : std_LOGIC_vector(4 downto 0) := ('1' & X"2");
-	signal ShiftCommand : std_LOGIC_vector(4 downto 0) := ('1' & X"3");
-	
-	begin
-	clk <= not clk after 10 ns;
-
-	DUT:Statemachine
-		port map (
-			Clk => clk,
-			reset => reset,
-			countVal => countVal,
-			kp_data => kp_data,
-			kp_pulse => kp_pulse,
-			state => state
-		);
-	
 	process
-		begin
+		begin	
 			reset <= '1';
 			wait for 20 ns;
 			reset <= '0';
@@ -83,4 +77,4 @@ architecture behav of statemachine_tb is
 			--Should go Back to INIT
 			wait;
 	end process;
-end behav;
+end bench;

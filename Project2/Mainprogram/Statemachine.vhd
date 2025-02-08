@@ -10,6 +10,7 @@ entity statemachine is
     stateOut : out std_logic_vector(3 downto 0)
   );
 end statemachine;
+
 architecture struct of statemachine is
   type State_type is (INIT, TEST, PAUSE, PWM);
   signal stateVAR : state_type;
@@ -17,19 +18,21 @@ architecture struct of statemachine is
   signal freqState    : freqType;
   signal prevCountVal : std_logic_vector(7 downto 0);
   signal state        : std_logic_vector(3 downto 0);
+
 begin
-  process (Clk, reset)
+  process (Clk, reset, Keys)
   begin
     if (reset = '1') then
       stateVAR <= INIT;
     elsif rising_edge(Clk) then
       case stateVAR is
         when INIT =>
-          if keys(0) /= '1' then
+          if keys(0) = '0' then
             if (prevCountVal = X"FF" and countVal = X"00") then
               stateVAR <= TEST;
             end if;
           end if;
+          prevCountVal <= CountVal;
         when TEST =>
           if Keys(0) = '1' then
             stateVAR <= INIT;
