@@ -120,8 +120,8 @@ begin
 		else    
 			iCLK_Cnt <= 0;
 			byte_Cnt <= byte_Cnt +1; 
-			if byte_Cnt = 29 then
-				byte_Cnt <= 22;
+			if byte_Cnt = 31 then
+				byte_Cnt <= 10;
 			end if;
 		end if;
 		if iCLK_Cnt = 1 then

@@ -1,0 +1,40 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\nevindi\Documents\GitHub\EE316_2025\Project2\Isaac\statemachine\simulation\modelsim
+Estatemachine
+Z1 w1739051845
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\nevindi\Documents\GitHub\EE316_2025\Project2\Isaac\statemachine\simulation\modelsim
+Z5 8C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd
+Z6 FC:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd
+l0
+L5
+VZ<oA53Xi:o:IE<zgcUNZ80
+!s100 zfO8nOK8_onQfjP;4dl>O2
+Z7 OV;C;10.1d;51
+31
+!i10b 1
+Z8 !s108 1739052754.423000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd|
+Z10 !s107 C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+Astruct
+R2
+R3
+DEx4 work 12 statemachine 0 22 Z<oA53Xi:o:IE<zgcUNZ80
+l23
+L15
+VJQ8DgPdPK=ie6::mL?UaZ2
+!s100 5=>kZ5_;CzW:?7Dz;A68]3
+R7
+31
+!i10b 1
+R8
+R9
+R10
+R11
+R12

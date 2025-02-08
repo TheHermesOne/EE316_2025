@@ -1,0 +1,267 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do statemachine_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+# 
+vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/tb_statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity statemachine_tb
+# -- Compiling architecture bench of statemachine_tb
+vsim +altera -do statemachine_run_msim_rtl_vhdl.do -l msim_transcript -gui work.statemachine_tb
+# vsim +altera -do statemachine_run_msim_rtl_vhdl.do -l msim_transcript -gui work.statemachine_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.statemachine_tb(bench)
+# Loading work.statemachine(struct)
+# do statemachine_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+# 
+add wave -position insertpoint  \
+sim:/statemachine_tb/Clk \
+sim:/statemachine_tb/reset \
+sim:/statemachine_tb/countVal \
+sim:/statemachine_tb/Keys \
+sim:/statemachine_tb/stateOut
+run
+add wave -position insertpoint  \
+sim:/statemachine_tb/statemachine_inst/prevCountVal
+run
+run
+# Load canceled
+vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/tb_statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity statemachine_tb
+# -- Compiling architecture bench of statemachine_tb
+vsim +altera -do statemachine_run_msim_rtl_vhdl.do -l msim_transcript -gui work.statemachine_tb
+# vsim +altera -do statemachine_run_msim_rtl_vhdl.do -l msim_transcript -gui work.statemachine_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.statemachine_tb(bench)
+# Loading work.statemachine(struct)
+# do statemachine_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+# 
+add wave -position insertpoint  \
+sim:/statemachine_tb/Clk \
+sim:/statemachine_tb/reset \
+sim:/statemachine_tb/countVal \
+sim:/statemachine_tb/Keys \
+sim:/statemachine_tb/stateOut
+add wave -position insertpoint  \
+sim:/statemachine_tb/statemachine_inst/prevCountVal
+add wave -position insertpoint  \
+sim:/statemachine_tb/statemachine_inst/CountVal
+force -freeze sim:/statemachine_tb/statemachine_inst/CountVal 00000000 0
+# ** Warning: (vsim-8780) Forcing /statemachine_tb/countVal as root of /statemachine_tb/statemachine_inst/CountVal specified in the force.
+# 
+force -freeze sim:/statemachine_tb/statemachine_inst/prevCountVal FF 0
+# Value length (2) does not equal array index length (8).
+# 
+# ** Error: (vsim-4011) Invalid force value: FF 0.
+# 
+run
+vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/tb_statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity statemachine_tb
+# -- Compiling architecture bench of statemachine_tb
+vsim +altera -do statemachine_run_msim_rtl_vhdl.do -l msim_transcript -gui work.statemachine_tb
+# vsim +altera -do statemachine_run_msim_rtl_vhdl.do -l msim_transcript -gui work.statemachine_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.statemachine_tb(bench)
+# Loading work.statemachine(struct)
+# do statemachine_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+# 
+add wave -position insertpoint  \
+sim:/statemachine_tb/Clk \
+sim:/statemachine_tb/Keys \
+sim:/statemachine_tb/countVal \
+sim:/statemachine_tb/reset \
+sim:/statemachine_tb/stateOut
+run
+vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/tb_statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity statemachine_tb
+# -- Compiling architecture bench of statemachine_tb
+vsim +altera -do statemachine_run_msim_rtl_vhdl.do -l msim_transcript -gui work.statemachine_tb
+# vsim +altera -do statemachine_run_msim_rtl_vhdl.do -l msim_transcript -gui work.statemachine_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.statemachine_tb(bench)
+# Loading work.statemachine(struct)
+# do statemachine_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+# 
+add wave -position insertpoint  \
+sim:/statemachine_tb/Clk \
+sim:/statemachine_tb/Keys \
+sim:/statemachine_tb/countVal \
+sim:/statemachine_tb/reset \
+sim:/statemachine_tb/stateOut
+run
+vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/tb_statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity statemachine_tb
+# -- Compiling architecture bench of statemachine_tb
+vsim +altera -do statemachine_run_msim_rtl_vhdl.do -l msim_transcript -gui work.statemachine_tb
+# vsim +altera -do statemachine_run_msim_rtl_vhdl.do -l msim_transcript -gui work.statemachine_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.statemachine_tb(bench)
+# Loading work.statemachine(struct)
+# do statemachine_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/statemachine/statemachine.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+# 
+add wave -position insertpoint  \
+sim:/statemachine_tb/Clk \
+sim:/statemachine_tb/Keys \
+sim:/statemachine_tb/countVal \
+sim:/statemachine_tb/reset \
+sim:/statemachine_tb/stateOut
+run

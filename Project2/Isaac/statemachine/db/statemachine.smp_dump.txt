@@ -1,0 +1,13 @@
+
+State Machine - |DE2_115|top_level:Inst_top_level|statemachine:inst_statemachine|freqState
+Name freqState.Hz1000 freqState.Hz120 freqState.Hz60 
+freqState.Hz60 0 0 0 
+freqState.Hz120 0 1 1 
+freqState.Hz1000 1 0 1 
+
+State Machine - |DE2_115|top_level:Inst_top_level|statemachine:inst_statemachine|stateVAR
+Name stateVAR.PWM stateVAR.PAUSE stateVAR.TEST stateVAR.INIT 
+stateVAR.INIT 0 0 0 0 
+stateVAR.TEST 0 0 1 1 
+stateVAR.PAUSE 0 1 0 1 
+stateVAR.PWM 1 0 0 1 

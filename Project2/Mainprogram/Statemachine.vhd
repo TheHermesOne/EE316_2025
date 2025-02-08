@@ -1,12 +1,7 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
+LIBRARY ieee;
+   USE ieee.std_logic_1164.all;
 
 entity statemachine is
-  port (
-    Clk      : in std_logic;
-    reset    : in std_logic;
-    CountVal : in std_logic_vector(7 downto 0);
-    Keys     : in std_logic_vector(3 downto 0);
     stateOut : out std_logic_vector(3 downto 0)
   );
 end statemachine;
@@ -14,12 +9,12 @@ end statemachine;
 architecture struct of statemachine is
   type State_type is (INIT, TEST, PAUSE, PWM);
   signal stateVAR : state_type;
-  type freqType is (Hz60, Hz120, Hz1000);
   signal freqState    : freqType;
   signal prevCountVal : std_logic_vector(7 downto 0);
   signal state        : std_logic_vector(3 downto 0);
 
 begin
+  process (Clk, reset)
   process (Clk, reset, Keys)
   begin
     if (reset = '1') then
@@ -27,6 +22,7 @@ begin
     elsif rising_edge(Clk) then
       case stateVAR is
         when INIT =>
+          if keys(0) /= '1' then
           if keys(0) = '0' then
             if (prevCountVal = X"FF" and countVal = X"00") then
               stateVAR <= TEST;
