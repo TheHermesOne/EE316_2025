@@ -29,12 +29,13 @@
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
 USE ieee.std_logic_unsigned.all;
 
 ENTITY i2c_master IS
   GENERIC(
     input_clk : INTEGER := 100_000_000; --input clock speed from user logic in Hz
-    bus_clk   : INTEGER := 400_000);   --speed the i2c bus (scl) will run at in Hz
+    bus_clk   : INTEGER := 100_000);   --speed the i2c bus (scl) will run at in Hz
   PORT(
     clk       : IN     STD_LOGIC;                    --system clock
     reset_n   : IN     STD_LOGIC;                    --active low reset
@@ -69,8 +70,7 @@ BEGIN
 
   --generate the timing for the bus clock (scl_clk) and the data clock (data_clk)
   PROCESS(clk, reset_n)
-    VARIABLE count  	:  INTEGER RANGE 0 TO divider*4;  --timing for clock generation
-            
+		VARIABLE count : INTEGER RANGE 0 TO 1000;
   BEGIN
     IF(reset_n = '0') THEN                --reset asserted
       stretch <= '0';
