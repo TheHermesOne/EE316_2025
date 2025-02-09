@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
 
--- DATE "02/08/2025 14:39:38"
+-- DATE "02/09/2025 16:46:13"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -57,50 +57,50 @@ END DE2_115;
 
 -- Design Ports Information
 -- KEY[0]	=>  Location: PIN_AC4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- KEY[1]	=>  Location: PIN_D23,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- KEY[2]	=>  Location: PIN_AE16,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- KEY[3]	=>  Location: PIN_J5,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- LEDG[0]	=>  Location: PIN_AE13,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- LEDG[1]	=>  Location: PIN_F2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- LEDG[0]	=>  Location: PIN_D23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- LEDG[1]	=>  Location: PIN_AE16,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- LEDG[2]	=>  Location: PIN_K8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- LEDG[3]	=>  Location: PIN_C18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- LEDG[3]	=>  Location: PIN_AE13,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- LEDG[4]	=>  Location: PIN_F1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- LEDG[5]	=>  Location: PIN_D5,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- LEDG[6]	=>  Location: PIN_AG21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- LEDG[7]	=>  Location: PIN_G16,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- LEDG[8]	=>  Location: PIN_V7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_ADDR[0]	=>  Location: PIN_G6,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_ADDR[1]	=>  Location: PIN_J4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_ADDR[2]	=>  Location: PIN_L6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- LEDG[5]	=>  Location: PIN_L8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- LEDG[6]	=>  Location: PIN_C18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- LEDG[7]	=>  Location: PIN_H5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- LEDG[8]	=>  Location: PIN_D5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_ADDR[0]	=>  Location: PIN_AG21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_ADDR[1]	=>  Location: PIN_G16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_ADDR[2]	=>  Location: PIN_V7,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SRAM_ADDR[3]	=>  Location: PIN_G5,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SRAM_ADDR[4]	=>  Location: PIN_J3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_ADDR[5]	=>  Location: PIN_K7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_ADDR[5]	=>  Location: PIN_N4,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SRAM_ADDR[6]	=>  Location: PIN_E3,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SRAM_ADDR[7]	=>  Location: PIN_G2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_ADDR[8]	=>  Location: PIN_C23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_ADDR[8]	=>  Location: PIN_K7,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SRAM_ADDR[9]	=>  Location: PIN_F3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_ADDR[10]	=>  Location: PIN_AA8,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_ADDR[11]	=>  Location: PIN_M8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_ADDR[10]	=>  Location: PIN_G1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_ADDR[11]	=>  Location: PIN_C23,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SRAM_ADDR[12]	=>  Location: PIN_F5,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_ADDR[13]	=>  Location: PIN_AE11,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_ADDR[14]	=>  Location: PIN_E19,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_ADDR[15]	=>  Location: PIN_AG11,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_ADDR[16]	=>  Location: PIN_AC21,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_ADDR[17]	=>  Location: PIN_AG25,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_ADDR[18]	=>  Location: PIN_V2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_ADDR[19]	=>  Location: PIN_K4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_UB_N	=>  Location: PIN_AD25,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_LB_N	=>  Location: PIN_D19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_ADDR[13]	=>  Location: PIN_AA8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_ADDR[14]	=>  Location: PIN_M7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_ADDR[15]	=>  Location: PIN_H6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_ADDR[16]	=>  Location: PIN_AE11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_ADDR[17]	=>  Location: PIN_E19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_ADDR[18]	=>  Location: PIN_AG11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_ADDR[19]	=>  Location: PIN_AD21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_UB_N	=>  Location: PIN_AG25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_LB_N	=>  Location: PIN_V2,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SRAM_WE_N	=>  Location: PIN_K3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_CE_N	=>  Location: PIN_AB18,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_OE_N	=>  Location: PIN_H4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- LCD_ON	=>  Location: PIN_E12,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- LCD_BLON	=>  Location: PIN_M1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- LCD_RW	=>  Location: PIN_AF4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- LCD_EN	=>  Location: PIN_Y26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_CE_N	=>  Location: PIN_AD25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_OE_N	=>  Location: PIN_D19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- LCD_ON	=>  Location: PIN_L4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- LCD_BLON	=>  Location: PIN_AB18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- LCD_RW	=>  Location: PIN_H3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- LCD_EN	=>  Location: PIN_E12,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- LCD_RS	=>  Location: PIN_P2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- I2C_SCLK	=>  Location: PIN_C7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- CLOCK_50	=>  Location: PIN_Y12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- I2C_SCLK	=>  Location: PIN_AF4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- KEY[3]	=>  Location: PIN_M3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- CLOCK_50	=>  Location: PIN_J6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- KEY[2]	=>  Location: PIN_C7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- KEY[1]	=>  Location: PIN_Y12,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SRAM_DQ[0]	=>  Location: PIN_B22,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SRAM_DQ[1]	=>  Location: PIN_AB26,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SRAM_DQ[2]	=>  Location: PIN_U22,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -115,7 +115,7 @@ END DE2_115;
 -- SRAM_DQ[11]	=>  Location: PIN_U28,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SRAM_DQ[12]	=>  Location: PIN_AA22,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SRAM_DQ[13]	=>  Location: PIN_AB28,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- SRAM_DQ[14]	=>  Location: PIN_G4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- SRAM_DQ[14]	=>  Location: PIN_G3,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- SRAM_DQ[15]	=>  Location: PIN_AF27,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- LCD_DATA[0]	=>  Location: PIN_AB27,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- LCD_DATA[1]	=>  Location: PIN_A23,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -134,7 +134,7 @@ END DE2_115;
 -- GPIO[5]	=>  Location: PIN_J25,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- GPIO[6]	=>  Location: PIN_J13,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- GPIO[7]	=>  Location: PIN_J17,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[8]	=>  Location: PIN_K1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[8]	=>  Location: PIN_AC21,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- GPIO[9]	=>  Location: PIN_W28,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- GPIO[10]	=>  Location: PIN_G9,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- GPIO[11]	=>  Location: PIN_AD28,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -157,7 +157,7 @@ END DE2_115;
 -- GPIO[28]	=>  Location: PIN_R23,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- GPIO[29]	=>  Location: PIN_AE14,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- GPIO[30]	=>  Location: PIN_C14,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- GPIO[31]	=>  Location: PIN_L2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- GPIO[31]	=>  Location: PIN_L1,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- GPIO[32]	=>  Location: PIN_C4,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- GPIO[33]	=>  Location: PIN_G10,	 I/O Standard: 2.5 V,	 Current Strength: Default
 -- GPIO[34]	=>  Location: PIN_P21,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -190,10 +190,10 @@ SIGNAL ww_LCD_EN : std_logic;
 SIGNAL ww_LCD_RS : std_logic;
 SIGNAL ww_I2C_SCLK : std_logic;
 SIGNAL \KEY[0]~input_o\ : std_logic;
-SIGNAL \KEY[1]~input_o\ : std_logic;
-SIGNAL \KEY[2]~input_o\ : std_logic;
 SIGNAL \KEY[3]~input_o\ : std_logic;
 SIGNAL \CLOCK_50~input_o\ : std_logic;
+SIGNAL \KEY[2]~input_o\ : std_logic;
+SIGNAL \KEY[1]~input_o\ : std_logic;
 SIGNAL \SRAM_DQ[0]~input_o\ : std_logic;
 SIGNAL \SRAM_DQ[1]~input_o\ : std_logic;
 SIGNAL \SRAM_DQ[2]~input_o\ : std_logic;
@@ -546,7 +546,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_DQ[13]~output_o\);
 
--- Location: IOOBUF_X0_Y63_N16
+-- Location: IOOBUF_X0_Y63_N23
 \SRAM_DQ[14]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -777,7 +777,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \GPIO[7]~output_o\);
 
--- Location: IOOBUF_X0_Y54_N9
+-- Location: IOOBUF_X102_Y0_N23
 \GPIO[8]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1053,7 +1053,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \GPIO[30]~output_o\);
 
--- Location: IOOBUF_X0_Y44_N2
+-- Location: IOOBUF_X0_Y44_N9
 \GPIO[31]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1113,7 +1113,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \GPIO[35]~output_o\);
 
--- Location: IOOBUF_X42_Y0_N23
+-- Location: IOOBUF_X100_Y73_N16
 \LEDG[0]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1125,7 +1125,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \LEDG[0]~output_o\);
 
--- Location: IOOBUF_X0_Y60_N16
+-- Location: IOOBUF_X65_Y0_N23
 \LEDG[1]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1149,7 +1149,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \LEDG[2]~output_o\);
 
--- Location: IOOBUF_X87_Y73_N23
+-- Location: IOOBUF_X42_Y0_N23
 \LEDG[3]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1173,7 +1173,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \LEDG[4]~output_o\);
 
--- Location: IOOBUF_X3_Y73_N2
+-- Location: IOOBUF_X0_Y48_N9
 \LEDG[5]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1185,7 +1185,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \LEDG[5]~output_o\);
 
--- Location: IOOBUF_X74_Y0_N9
+-- Location: IOOBUF_X87_Y73_N23
 \LEDG[6]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1197,7 +1197,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \LEDG[6]~output_o\);
 
--- Location: IOOBUF_X67_Y73_N2
+-- Location: IOOBUF_X0_Y59_N23
 \LEDG[7]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1209,7 +1209,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \LEDG[7]~output_o\);
 
--- Location: IOOBUF_X0_Y14_N2
+-- Location: IOOBUF_X3_Y73_N2
 \LEDG[8]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1221,7 +1221,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \LEDG[8]~output_o\);
 
--- Location: IOOBUF_X0_Y67_N16
+-- Location: IOOBUF_X74_Y0_N9
 \SRAM_ADDR[0]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1233,7 +1233,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_ADDR[0]~output_o\);
 
--- Location: IOOBUF_X0_Y57_N16
+-- Location: IOOBUF_X67_Y73_N2
 \SRAM_ADDR[1]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1245,7 +1245,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_ADDR[1]~output_o\);
 
--- Location: IOOBUF_X0_Y47_N23
+-- Location: IOOBUF_X0_Y14_N2
 \SRAM_ADDR[2]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1281,7 +1281,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_ADDR[4]~output_o\);
 
--- Location: IOOBUF_X0_Y49_N9
+-- Location: IOOBUF_X0_Y46_N16
 \SRAM_ADDR[5]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1317,7 +1317,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_ADDR[7]~output_o\);
 
--- Location: IOOBUF_X100_Y73_N23
+-- Location: IOOBUF_X0_Y49_N9
 \SRAM_ADDR[8]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1341,7 +1341,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_ADDR[9]~output_o\);
 
--- Location: IOOBUF_X18_Y0_N16
+-- Location: IOOBUF_X0_Y55_N16
 \SRAM_ADDR[10]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1353,7 +1353,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_ADDR[10]~output_o\);
 
--- Location: IOOBUF_X0_Y45_N16
+-- Location: IOOBUF_X100_Y73_N23
 \SRAM_ADDR[11]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1377,7 +1377,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_ADDR[12]~output_o\);
 
--- Location: IOOBUF_X35_Y0_N23
+-- Location: IOOBUF_X18_Y0_N16
 \SRAM_ADDR[13]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1389,7 +1389,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_ADDR[13]~output_o\);
 
--- Location: IOOBUF_X94_Y73_N9
+-- Location: IOOBUF_X0_Y45_N23
 \SRAM_ADDR[14]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1401,7 +1401,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_ADDR[14]~output_o\);
 
--- Location: IOOBUF_X40_Y0_N23
+-- Location: IOOBUF_X0_Y64_N2
 \SRAM_ADDR[15]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1413,7 +1413,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_ADDR[15]~output_o\);
 
--- Location: IOOBUF_X102_Y0_N23
+-- Location: IOOBUF_X35_Y0_N23
 \SRAM_ADDR[16]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1425,7 +1425,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_ADDR[16]~output_o\);
 
--- Location: IOOBUF_X91_Y0_N23
+-- Location: IOOBUF_X94_Y73_N9
 \SRAM_ADDR[17]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1437,7 +1437,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_ADDR[17]~output_o\);
 
--- Location: IOOBUF_X0_Y28_N16
+-- Location: IOOBUF_X40_Y0_N23
 \SRAM_ADDR[18]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1449,7 +1449,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_ADDR[18]~output_o\);
 
--- Location: IOOBUF_X0_Y53_N2
+-- Location: IOOBUF_X102_Y0_N16
 \SRAM_ADDR[19]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1461,7 +1461,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_ADDR[19]~output_o\);
 
--- Location: IOOBUF_X100_Y0_N23
+-- Location: IOOBUF_X91_Y0_N23
 \SRAM_UB_N~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1473,7 +1473,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_UB_N~output_o\);
 
--- Location: IOOBUF_X83_Y73_N16
+-- Location: IOOBUF_X0_Y28_N16
 \SRAM_LB_N~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1497,7 +1497,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_WE_N~output_o\);
 
--- Location: IOOBUF_X98_Y0_N16
+-- Location: IOOBUF_X100_Y0_N23
 \SRAM_CE_N~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1509,7 +1509,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_CE_N~output_o\);
 
--- Location: IOOBUF_X0_Y62_N16
+-- Location: IOOBUF_X83_Y73_N16
 \SRAM_OE_N~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1521,7 +1521,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \SRAM_OE_N~output_o\);
 
--- Location: IOOBUF_X33_Y73_N2
+-- Location: IOOBUF_X0_Y52_N2
 \LCD_ON~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1533,7 +1533,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \LCD_ON~output_o\);
 
--- Location: IOOBUF_X0_Y44_N23
+-- Location: IOOBUF_X98_Y0_N16
 \LCD_BLON~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1545,7 +1545,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \LCD_BLON~output_o\);
 
--- Location: IOOBUF_X1_Y0_N2
+-- Location: IOOBUF_X0_Y62_N23
 \LCD_RW~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1557,7 +1557,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \LCD_RW~output_o\);
 
--- Location: IOOBUF_X115_Y18_N2
+-- Location: IOOBUF_X33_Y73_N2
 \LCD_EN~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1581,7 +1581,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \LCD_RS~output_o\);
 
--- Location: IOOBUF_X16_Y73_N23
+-- Location: IOOBUF_X1_Y0_N2
 \I2C_SCLK~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1604,29 +1604,7 @@ PORT MAP (
 	i => ww_KEY(0),
 	o => \KEY[0]~input_o\);
 
--- Location: IOIBUF_X100_Y73_N15
-\KEY[1]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_KEY(1),
-	o => \KEY[1]~input_o\);
-
--- Location: IOIBUF_X65_Y0_N22
-\KEY[2]~input\ : cycloneive_io_ibuf
--- pragma translate_off
-GENERIC MAP (
-	bus_hold => "false",
-	simulate_z_as => "z")
--- pragma translate_on
-PORT MAP (
-	i => ww_KEY(2),
-	o => \KEY[2]~input_o\);
-
--- Location: IOIBUF_X0_Y50_N22
+-- Location: IOIBUF_X0_Y51_N15
 \KEY[3]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1637,7 +1615,7 @@ PORT MAP (
 	i => ww_KEY(3),
 	o => \KEY[3]~input_o\);
 
--- Location: IOIBUF_X52_Y0_N22
+-- Location: IOIBUF_X0_Y50_N15
 \CLOCK_50~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -1647,6 +1625,28 @@ GENERIC MAP (
 PORT MAP (
 	i => ww_CLOCK_50,
 	o => \CLOCK_50~input_o\);
+
+-- Location: IOIBUF_X16_Y73_N22
+\KEY[2]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_KEY(2),
+	o => \KEY[2]~input_o\);
+
+-- Location: IOIBUF_X52_Y0_N22
+\KEY[1]~input\ : cycloneive_io_ibuf
+-- pragma translate_off
+GENERIC MAP (
+	bus_hold => "false",
+	simulate_z_as => "z")
+-- pragma translate_on
+PORT MAP (
+	i => ww_KEY(1),
+	o => \KEY[1]~input_o\);
 
 -- Location: IOIBUF_X89_Y73_N15
 \SRAM_DQ[0]~input\ : cycloneive_io_ibuf
@@ -1802,7 +1802,7 @@ PORT MAP (
 	i => SRAM_DQ(13),
 	o => \SRAM_DQ[13]~input_o\);
 
--- Location: IOIBUF_X0_Y63_N15
+-- Location: IOIBUF_X0_Y63_N22
 \SRAM_DQ[14]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2011,7 +2011,7 @@ PORT MAP (
 	i => GPIO(7),
 	o => \GPIO[7]~input_o\);
 
--- Location: IOIBUF_X0_Y54_N8
+-- Location: IOIBUF_X102_Y0_N22
 \GPIO[8]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -2264,7 +2264,7 @@ PORT MAP (
 	i => GPIO(30),
 	o => \GPIO[30]~input_o\);
 
--- Location: IOIBUF_X0_Y44_N1
+-- Location: IOIBUF_X0_Y44_N8
 \GPIO[31]~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (

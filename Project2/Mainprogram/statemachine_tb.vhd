@@ -15,7 +15,7 @@ architecture bench of statemachine_tb is
   signal stateOut : std_logic_vector(3 downto 0);
 begin
 
-  Clk <= not Clk after 10 ns;
+  Clk <= not Clk after 5 ns;
 
   statemachine_inst : entity work.statemachine
     port map

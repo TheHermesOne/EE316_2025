@@ -47,158 +47,6 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity clk_enabler
 # -- Compiling architecture behv of clk_enabler
-# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/btn_debounce_toggle.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity btn_debounce_toggle
-# -- Compiling architecture Behavioral of btn_debounce_toggle
-# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity var_size_counter
-# -- Compiling architecture arch of var_size_counter
-# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd(38): Prefix of slice name cannot be type conversion (STD_LOGIC_VECTOR) expression.
-# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd(39): VHDL Compiler exiting
-# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
-# Error in macro ./Project2_main_run_msim_rtl_vhdl.do line 14
-# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
-#     while executing
-# "vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd}"
-vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity var_size_counter
-# -- Compiling architecture arch of var_size_counter
-# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd(38): Prefix of slice name cannot be type conversion (STD_LOGIC_VECTOR) expression.
-# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd(39): VHDL Compiler exiting
-vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_Counter_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity Var_counter_tb
-# -- Compiling architecture behav of Var_counter_tb
-vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity var_size_counter
-# -- Compiling architecture arch of var_size_counter
-vsim +altera -do Project2_main_run_msim_rtl_vhdl.do -l msim_transcript -gui work.var_counter_tb
-# vsim +altera -do Project2_main_run_msim_rtl_vhdl.do -l msim_transcript -gui work.var_counter_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.var_counter_tb(behav)
-# Loading ieee.numeric_std(body)
-# Loading work.var_size_counter(arch)
-# ** Fatal: (vsim-3348) Port length (8) does not match actual length (32) for port '/var_counter_tb/DUT/q'.
-#    Time: 0 ps  Iteration: 0  Instance: /var_counter_tb/DUT File: C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd Line: 15
-# FATAL ERROR while loading design
-# Error loading design
-vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_Counter_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity Var_counter_tb
-# -- Compiling architecture behav of Var_counter_tb
-vsim +altera -do Project2_main_run_msim_rtl_vhdl.do -l msim_transcript -gui work.var_counter_tb
-# vsim +altera -do Project2_main_run_msim_rtl_vhdl.do -l msim_transcript -gui work.var_counter_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.var_counter_tb(behav)
-# Loading ieee.numeric_std(body)
-# Loading work.var_size_counter(arch)
-# ** Error: (vsim-3733) C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_Counter_tb.vhd(43): No default binding for component instance 'DUT'.
-# 
-#    The following component generic is not on the entity:
-#           M
-# 
-#         Region: /var_counter_tb/DUT
-# Error loading design
-vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_Counter_tb.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity Var_counter_tb
-# -- Compiling architecture behav of Var_counter_tb
-vsim +altera -do Project2_main_run_msim_rtl_vhdl.do -l msim_transcript -gui work.var_counter_tb
-# vsim +altera -do Project2_main_run_msim_rtl_vhdl.do -l msim_transcript -gui work.var_counter_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.var_counter_tb(behav)
-# Loading ieee.numeric_std(body)
-# Loading work.var_size_counter(arch)
-# do Project2_main_run_msim_rtl_vhdl.do 
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Modifying modelsim.ini
-# 
-# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/top_level.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity top_level
-# -- Compiling architecture Structural of top_level
-# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/SRAM_Controller.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity SRAM_Controller
-# -- Compiling architecture arch of SRAM_Controller
-# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/reset_delay.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity Reset_Delay
-# -- Compiling architecture Arch of Reset_Delay
-# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/DE2_115.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity DE2_115
-# -- Compiling architecture structural of DE2_115
-# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/clk_enabler.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity clk_enabler
-# -- Compiling architecture behv of clk_enabler
-# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/btn_debounce_toggle.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity btn_debounce_toggle
-# -- Compiling architecture Behavioral of btn_debounce_toggle
 # vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
@@ -222,127 +70,164 @@ vsim +altera -do Project2_main_run_msim_rtl_vhdl.do -l msim_transcript -gui work
 # -- Loading package std_logic_1164
 # -- Compiling entity ROM
 # -- Compiling architecture SYN of rom
-# 
-add wave -position insertpoint  \
-sim:/var_counter_tb/clk \
-sim:/var_counter_tb/reset \
-sim:/var_counter_tb/syn_clr \
-sim:/var_counter_tb/en \
-sim:/var_counter_tb/up \
-sim:/var_counter_tb/COuntstep \
-sim:/var_counter_tb/q
-run
-vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_Counter_tb.vhd
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/LCD_Controller.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity Var_counter_tb
-# -- Compiling architecture behav of Var_counter_tb
-# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_Counter_tb.vhd(24): Integer literal 0 is not of type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_Counter_tb.vhd(25): Integer literal 0 is not of type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_Counter_tb.vhd(50): VHDL Compiler exiting
-vsim -voptargs=+acc work.var_size_counter
-# vsim -voptargs=+acc work.var_size_counter 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.var_size_counter(arch)
-vsim -voptargs=+acc work.var_counter_tb
-# vsim -voptargs=+acc work.var_counter_tb 
-# Loading std.standard
-# ** Error: (vsim-3173) Entity 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/simulation/modelsim/rtl_work.var_counter_tb' has no architecture.
-# 
-# Error loading design
-vsim -voptargs=+acc work.var_counter_tb
-# vsim -voptargs=+acc work.var_counter_tb 
-# Loading std.standard
-# ** Error: (vsim-3173) Entity 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/simulation/modelsim/rtl_work.var_counter_tb' has no architecture.
-# 
-# Error loading design
-vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_Counter_tb.vhd
+# -- Compiling entity LCD_Controller
+# -- Compiling architecture structural of LCD_Controller
+# vcom -93 -work work {C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/statemachine.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity Var_counter_tb
-# -- Compiling architecture behav of Var_counter_tb
-vsim -voptargs=+acc work.var_counter_tb
-# vsim -voptargs=+acc work.var_counter_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.var_counter_tb(behav)
-# Loading ieee.numeric_std(body)
-# Loading work.var_size_counter(arch)
-add wave -position insertpoint  \
-sim:/var_counter_tb/clk \
-sim:/var_counter_tb/reset \
-sim:/var_counter_tb/syn_clr \
-sim:/var_counter_tb/en \
-sim:/var_counter_tb/up \
-sim:/var_counter_tb/COuntstep \
-sim:/var_counter_tb/q
-run
-run
-run
-run
-run
-vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_Counter_tb.vhd
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+# 
+vcom -reportprogress 300 -work work C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/statemachine_tb.vhd
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity Var_counter_tb
-# -- Compiling architecture behav of Var_counter_tb
-# ** Warning: [4] C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_Counter_tb.vhd(48): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-vsim -voptargs=+acc work.var_counter_tb
-# vsim -voptargs=+acc work.var_counter_tb 
+# -- Loading package NUMERIC_STD
+# -- Compiling entity statemachine_tb
+# -- Compiling architecture bench of statemachine_tb
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading entity statemachine
+vsim work.statemachine_tb
+# vsim work.statemachine_tb 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.var_counter_tb(behav)
 # Loading ieee.numeric_std(body)
-# Loading work.var_size_counter(arch)
-add wave -position insertpoint  \
-sim:/var_counter_tb/clk \
-sim:/var_counter_tb/reset \
-sim:/var_counter_tb/syn_clr \
-sim:/var_counter_tb/en \
-sim:/var_counter_tb/up \
-sim:/var_counter_tb/COuntstep \
-sim:/var_counter_tb/q
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.statemachine_tb(bench)
+# Loading work.statemachine(struct)
+add wave -position end  sim:/statemachine_tb/Clk
+add wave -position end  sim:/statemachine_tb/reset
+add wave -position end  sim:/statemachine_tb/countVal
+add wave -position end  sim:/statemachine_tb/Keys
+add wave -position end  sim:/statemachine_tb/stateOut
+add wave -position end  sim:/statemachine_tb/statemachine_inst/stateVAR
+add wave -position end  sim:/statemachine_tb/statemachine_inst/btn1
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 25 ns  Iteration: 0  Instance: /statemachine_tb/statemachine_inst
+run
+run
+run
+vcom -work work -O0 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/statemachine_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity statemachine_tb
+# -- Compiling architecture bench of statemachine_tb
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading entity statemachine
+vcom -93 -work work -O0 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd(101): near "if": expecting ';'
+# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd(104): near "elsif": expecting END or WHEN
+# ** Error: C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd(107): near "when": expecting END
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vcom failed.
+vcom -work work -O0 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/statemachine_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity statemachine_tb
+# -- Compiling architecture bench of statemachine_tb
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading entity statemachine
+vcom -93 -work work -O0 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+restart
+# Loading work.statemachine_tb(bench)
+# Loading work.statemachine(struct)
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 25 ns  Iteration: 0  Instance: /statemachine_tb/statemachine_inst
 run
 run
 run
 run
 run
+vcom -work work -O0 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/statemachine_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity statemachine_tb
+# -- Compiling architecture bench of statemachine_tb
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading entity statemachine
+vcom -93 -work work -O0 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+vcom -work work -O0 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/statemachine_tb.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity statemachine_tb
+# -- Compiling architecture bench of statemachine_tb
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading entity statemachine
+vcom -93 -work work -O0 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity statemachine
+# -- Compiling architecture struct of statemachine
+restart
+# Loading work.statemachine_tb(bench)
+# Loading work.statemachine(struct)
+# Warning in wave window restart: (vish-4014) No objects found matching '/statemachine_tb/statemachine_inst/btn1'. 
 run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 25 ns  Iteration: 0  Instance: /statemachine_tb/statemachine_inst
 run
 run
 run

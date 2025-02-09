@@ -41,7 +41,7 @@ architecture Structural of top_level is
       q          : out std_logic_vector(N - 1 downto N - 8) -- takes only the first 8 bits 
     );
   end component;
-
+  	
   component univ_bin_counter is
     generic (N : integer := 8);
     port (
@@ -105,16 +105,13 @@ architecture Structural of top_level is
   end component;
 
   component statemachine is
-    port (
-      Clk          : in std_logic;
-      reset        : in std_logic;
-      CountVal     : in std_logic_vector(7 downto 0);
-      kp_data      : in std_logic_vector(4 downto 0);
-      kp_pulse     : in std_logic;
-      stateOut     : out std_logic_vector(3 downto 0);
-      resetPulse   : out std_logic;
-      ReadWriteOut : out std_logic
-    );
+  port (
+    Clk      : in std_logic;
+    reset    : in std_logic;
+    CountVal : in std_logic_vector(7 downto 0);
+    Keys     : in std_logic_vector(3 downto 0);
+    stateOut : out std_logic_vector(3 downto 0)
+  );
   end component;
 
   component LCD_Controller is
@@ -153,6 +150,8 @@ architecture Structural of top_level is
   signal cntDir                : std_logic;
   signal Cnten_univ            : std_logic;
   signal cntDir_univ           : std_logic;
+  signal keys_db					: std_logic_vector(3 downto 0):= (others => '0');
+  signal StateState				: std_logic_vector(3 downto 0);
 begin
 
   Rst          <= not reset_db;
@@ -168,15 +167,33 @@ begin
     oRESET => reset
   );
 
-  --   Inst_reset_debounce : btn_debounce_toggle
-  --   port map
-  --   (
-  --     BTN_I    => KEY0,
-  --     CLK      => iCLK,
-  --     BTN_O    => Reset_db,
-  --     TOGGLE_O => open,
-  --     PULSE_O  => open
-  --   );
+   Inst_Key1_debounce : btn_debounce_toggle
+   port map
+   (
+     BTN_I    => KEY(1),
+     CLK      => iCLK,
+     BTN_O    => open,
+     TOGGLE_O => open,
+     PULSE_O  => Keys_db(1)
+   );
+	   Inst_Key2_debsounce : btn_debounce_toggle
+   port map
+   (
+     BTN_I    => KEY(2),
+     CLK      => iCLK,
+     BTN_O    => open,
+     TOGGLE_O => open,
+     PULSE_O  => Keys_db(2)
+   );
+	   Inst_Key3_debounce : btn_debounce_toggle
+   port map
+   (
+     BTN_I    => KEY(3),
+     CLK      => iCLK,
+     BTN_O    => open,
+     TOGGLE_O => open,
+     PULSE_O  => Keys_db(3)
+   );
 
   Inst_clk_enabler60ns : clk_enabler
   generic map(
@@ -224,8 +241,7 @@ begin
     clk        => iclk,
     reset      => counterReset,
     countVal   => CountOut_univ,
-    keys       => KEY,
-    resetPulse => statereset,
+    keys       => KEYs_db,
     stateOut   => StateState
   );
 

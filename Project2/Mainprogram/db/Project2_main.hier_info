@@ -1,9 +1,9 @@
 |DE2_115
 CLOCK_50 => top_level:Inst_top_level.iClk
-KEY[0] => top_level:Inst_top_level.KEY0
-KEY[1] => ~NO_FANOUT~
-KEY[2] => ~NO_FANOUT~
-KEY[3] => ~NO_FANOUT~
+KEY[0] => top_level:Inst_top_level.KEY[0]
+KEY[1] => top_level:Inst_top_level.KEY[1]
+KEY[2] => top_level:Inst_top_level.KEY[2]
+KEY[3] => top_level:Inst_top_level.KEY[3]
 LEDG[0] <= top_level:Inst_top_level.LEDG0
 LEDG[1] <= <GND>
 LEDG[2] <= <GND>
@@ -109,10 +109,13 @@ GPIO[35] <> top_level:Inst_top_level.GPIO[35]
 
 |DE2_115|top_level:Inst_top_level
 iClk => Reset_Delay:Inst_clk_Reset_Delay.iCLK
-iClk => btn_debounce_toggle:Inst_reset_debounce.CLK
+iClk => btn_debounce_toggle:Inst_Key1_debounce.CLK
+iClk => btn_debounce_toggle:Inst_Key2_debsounce.CLK
+iClk => btn_debounce_toggle:Inst_Key3_debounce.CLK
 iClk => clk_enabler:Inst_clk_enabler60ns.clock
 iClk => var_size_counter:Inst_var_size_counter.clk
 iClk => univ_bin_counter:Inst_univ_bin_counter.clk
+iClk => statemachine:Inst_StateMachine.Clk
 iClk => SRAM_Controller:Inst_SRAM_Controller.clk
 iClk => Rom:Inst_initRom.clock
 iClk => LCD_Controller:Inst_LCD_Controller.iClk
@@ -172,8 +175,11 @@ SRAM_LB_N <= SRAM_LB_N.DB_MAX_OUTPUT_PORT_TYPE
 SRAM_WE_N <= SRAM_Controller:Inst_SRAM_Controller.we_n
 SRAM_CE_N <= SRAM_Controller:Inst_SRAM_Controller.ce_n
 SRAM_OE_N <= SRAM_Controller:Inst_SRAM_Controller.oe_n
-LEDG0 <= comb.DB_MAX_OUTPUT_PORT_TYPE
-KEY0 => btn_debounce_toggle:Inst_reset_debounce.BTN_I
+LEDG0 <= Rst.DB_MAX_OUTPUT_PORT_TYPE
+KEY[0] => ~NO_FANOUT~
+KEY[1] => btn_debounce_toggle:Inst_Key1_debounce.BTN_I
+KEY[2] => btn_debounce_toggle:Inst_Key2_debsounce.BTN_I
+KEY[3] => btn_debounce_toggle:Inst_Key3_debounce.BTN_I
 GPIO[0] <> <UNC>
 GPIO[1] <> <UNC>
 GPIO[2] <> <UNC>
@@ -237,7 +243,63 @@ iCLK => Cont[19].CLK
 oRESET <= oRESET~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_reset_debounce
+|DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_Key1_debounce
+BTN_I => btn_counter_process.IN1
+CLK => btn_toggle.CLK
+CLK => btn_pulse.CLK
+CLK => btn_sync[0].CLK
+CLK => btn_sync[1].CLK
+CLK => btn_cntr[0].CLK
+CLK => btn_cntr[1].CLK
+CLK => btn_cntr[2].CLK
+CLK => btn_cntr[3].CLK
+CLK => btn_cntr[4].CLK
+CLK => btn_cntr[5].CLK
+CLK => btn_cntr[6].CLK
+CLK => btn_cntr[7].CLK
+CLK => btn_cntr[8].CLK
+CLK => btn_cntr[9].CLK
+CLK => btn_cntr[10].CLK
+CLK => btn_cntr[11].CLK
+CLK => btn_cntr[12].CLK
+CLK => btn_cntr[13].CLK
+CLK => btn_cntr[14].CLK
+CLK => btn_cntr[15].CLK
+CLK => btn_reg.CLK
+BTN_O <= btn_reg.DB_MAX_OUTPUT_PORT_TYPE
+TOGGLE_O <= btn_toggle.DB_MAX_OUTPUT_PORT_TYPE
+PULSE_O <= btn_pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_Key2_debsounce
+BTN_I => btn_counter_process.IN1
+CLK => btn_toggle.CLK
+CLK => btn_pulse.CLK
+CLK => btn_sync[0].CLK
+CLK => btn_sync[1].CLK
+CLK => btn_cntr[0].CLK
+CLK => btn_cntr[1].CLK
+CLK => btn_cntr[2].CLK
+CLK => btn_cntr[3].CLK
+CLK => btn_cntr[4].CLK
+CLK => btn_cntr[5].CLK
+CLK => btn_cntr[6].CLK
+CLK => btn_cntr[7].CLK
+CLK => btn_cntr[8].CLK
+CLK => btn_cntr[9].CLK
+CLK => btn_cntr[10].CLK
+CLK => btn_cntr[11].CLK
+CLK => btn_cntr[12].CLK
+CLK => btn_cntr[13].CLK
+CLK => btn_cntr[14].CLK
+CLK => btn_cntr[15].CLK
+CLK => btn_reg.CLK
+BTN_O <= btn_reg.DB_MAX_OUTPUT_PORT_TYPE
+TOGGLE_O <= btn_toggle.DB_MAX_OUTPUT_PORT_TYPE
+PULSE_O <= btn_pulse.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_Key3_debounce
 BTN_I => btn_counter_process.IN1
 CLK => btn_toggle.CLK
 CLK => btn_pulse.CLK
@@ -541,6 +603,86 @@ q[4] <= r_reg[4].DB_MAX_OUTPUT_PORT_TYPE
 q[5] <= r_reg[5].DB_MAX_OUTPUT_PORT_TYPE
 q[6] <= r_reg[6].DB_MAX_OUTPUT_PORT_TYPE
 q[7] <= r_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE2_115|top_level:Inst_top_level|statemachine:Inst_StateMachine
+Clk => prevCountVal[0].CLK
+Clk => prevCountVal[1].CLK
+Clk => prevCountVal[2].CLK
+Clk => prevCountVal[3].CLK
+Clk => prevCountVal[4].CLK
+Clk => prevCountVal[5].CLK
+Clk => prevCountVal[6].CLK
+Clk => prevCountVal[7].CLK
+Clk => freqState~4.DATAIN
+Clk => stateVAR~5.DATAIN
+reset => freqState.Hz1000.OUTPUTSELECT
+reset => freqState.Hz120.OUTPUTSELECT
+reset => freqState.Hz60.OUTPUTSELECT
+reset => stateVAR~7.DATAIN
+reset => prevCountVal[7].ENA
+reset => prevCountVal[6].ENA
+reset => prevCountVal[5].ENA
+reset => prevCountVal[4].ENA
+reset => prevCountVal[3].ENA
+reset => prevCountVal[2].ENA
+reset => prevCountVal[1].ENA
+reset => prevCountVal[0].ENA
+CountVal[0] => Equal1.IN15
+CountVal[0] => prevCountVal.DATAB
+CountVal[1] => Equal1.IN14
+CountVal[1] => prevCountVal.DATAB
+CountVal[2] => Equal1.IN13
+CountVal[2] => prevCountVal.DATAB
+CountVal[3] => Equal1.IN12
+CountVal[3] => prevCountVal.DATAB
+CountVal[4] => Equal1.IN11
+CountVal[4] => prevCountVal.DATAB
+CountVal[5] => Equal1.IN10
+CountVal[5] => prevCountVal.DATAB
+CountVal[6] => Equal1.IN9
+CountVal[6] => prevCountVal.DATAB
+CountVal[7] => Equal1.IN8
+CountVal[7] => prevCountVal.DATAB
+Keys[0] => stateVAR.OUTPUTSELECT
+Keys[0] => stateVAR.OUTPUTSELECT
+Keys[0] => stateVAR.OUTPUTSELECT
+Keys[0] => stateVAR.OUTPUTSELECT
+Keys[0] => stateVAR.OUTPUTSELECT
+Keys[0] => stateVAR.OUTPUTSELECT
+Keys[0] => stateVAR.OUTPUTSELECT
+Keys[0] => stateVAR.OUTPUTSELECT
+Keys[0] => stateVAR.OUTPUTSELECT
+Keys[0] => stateVAR.OUTPUTSELECT
+Keys[0] => freqState.OUTPUTSELECT
+Keys[0] => freqState.OUTPUTSELECT
+Keys[0] => freqState.OUTPUTSELECT
+Keys[0] => stateVAR.OUTPUTSELECT
+Keys[0] => stateVAR.OUTPUTSELECT
+Keys[0] => stateVAR.OUTPUTSELECT
+Keys[0] => stateVAR.OUTPUTSELECT
+Keys[1] => stateVAR.OUTPUTSELECT
+Keys[1] => stateVAR.OUTPUTSELECT
+Keys[1] => stateVAR.OUTPUTSELECT
+Keys[1] => stateVAR.OUTPUTSELECT
+Keys[1] => stateVAR.OUTPUTSELECT
+Keys[1] => stateVAR.OUTPUTSELECT
+Keys[2] => stateVAR.OUTPUTSELECT
+Keys[2] => stateVAR.OUTPUTSELECT
+Keys[2] => stateVAR.OUTPUTSELECT
+Keys[2] => stateVAR.OUTPUTSELECT
+Keys[2] => stateVAR.OUTPUTSELECT
+Keys[2] => stateVAR.OUTPUTSELECT
+Keys[2] => freqState.OUTPUTSELECT
+Keys[2] => freqState.OUTPUTSELECT
+Keys[2] => freqState.OUTPUTSELECT
+Keys[3] => freqState.OUTPUTSELECT
+Keys[3] => freqState.OUTPUTSELECT
+Keys[3] => freqState.OUTPUTSELECT
+stateOut[0] <= state[0].DB_MAX_OUTPUT_PORT_TYPE
+stateOut[1] <= state[1].DB_MAX_OUTPUT_PORT_TYPE
+stateOut[2] <= state.DB_MAX_OUTPUT_PORT_TYPE
+stateOut[3] <= state.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DE2_115|top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller
