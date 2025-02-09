@@ -26,27 +26,28 @@ begin
       Keys     => Keys,
       stateOut => stateOut
     );
+    
   process
     begin
     reset <= '1';
     wait for 20 ns;
     reset <= '0';
-    -- Keys <= "0000";
-    -- wait for 50 ns;
-    -- countVal <= X"FF";
-    -- wait for 50 ns;
-    -- countVal <= X"00";
-    -- wait for 50 ns;
-    -- -- Test state transitions
+    Keys <= "0000";
+    wait for 50 ns;
+    countVal <= X"FF";
+    wait for 50 ns;
+    countVal <= X"00";
+    wait for 50 ns;
+    -- Test state transitions
    
-    -- -- wait for 50 ns;
-    -- Keys <= "0010";
     -- wait for 50 ns;
-    -- Keys <= "0100";
-    -- wait for 50 ns;
-    -- Keys <= "1000";
-    -- wait for 50 ns;
-    -- Keys <= "0000";
-    -- wait;
+    Keys <= "0010";
+    wait for 50 ns;
+    Keys <= "0100";
+    wait for 50 ns;
+    Keys <= "1000";
+    wait for 50 ns;
+    Keys <= "0000";
+    wait;
   end process;
 end bench;

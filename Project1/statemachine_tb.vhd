@@ -7,9 +7,6 @@ entity statemachine_tb is
 end;
 
 architecture bench of statemachine_tb is
-  -- Clock period
-  constant clk_period : time := 5 ns;
-  -- Generics
   -- Ports
   signal Clk : std_LOGIC;
   signal reset : std_logic;
