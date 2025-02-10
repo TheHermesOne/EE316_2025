@@ -1,11 +1,11 @@
 
-State Machine - |i2c_user_logic|state
+State Machine - |DE2_115|i2c_user_logic:inst_i2c_user_logic|state
 Name state.repeat state.write_data state.start 
 state.start 0 0 0 
 state.write_data 0 1 1 
 state.repeat 1 0 1 
 
-State Machine - |i2c_user_logic|i2c_master:inst_i2c_master|state
+State Machine - |DE2_115|i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|state
 Name state.stop state.mstr_ack state.slv_ack2 state.rd state.wr state.slv_ack1 state.command state.start state.ready 
 state.ready 0 0 0 0 0 0 0 0 0 
 state.start 0 0 0 0 0 0 0 1 1 

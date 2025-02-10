@@ -1,4 +1,46 @@
-|i2c_user_logic
+|DE2_115
+CLOCK_50 => i2c_user_logic:inst_i2c_user_logic.clk
+CLOCK2_50 => ~NO_FANOUT~
+CLOCK3_50 => ~NO_FANOUT~
+GPIO[0] <> <UNC>
+GPIO[1] <> <UNC>
+GPIO[2] <> <UNC>
+GPIO[3] <> <UNC>
+GPIO[4] <> <UNC>
+GPIO[5] <> <UNC>
+GPIO[6] <> <UNC>
+GPIO[7] <> <UNC>
+GPIO[8] <> <UNC>
+GPIO[9] <> <UNC>
+GPIO[10] <> <UNC>
+GPIO[11] <> <UNC>
+GPIO[12] <> <UNC>
+GPIO[13] <> <UNC>
+GPIO[14] <> <UNC>
+GPIO[15] <> <UNC>
+GPIO[16] <> <UNC>
+GPIO[17] <> <UNC>
+GPIO[18] <> <UNC>
+GPIO[19] <> <UNC>
+GPIO[20] <> <UNC>
+GPIO[21] <> <UNC>
+GPIO[22] <> <UNC>
+GPIO[23] <> <UNC>
+GPIO[24] <> <UNC>
+GPIO[25] <> <UNC>
+GPIO[26] <> <UNC>
+GPIO[27] <> <UNC>
+GPIO[28] <> <UNC>
+GPIO[29] <> <UNC>
+GPIO[30] <> <UNC>
+GPIO[31] <> <UNC>
+GPIO[32] <> <UNC>
+GPIO[33] <> <UNC>
+GPIO[34] <> i2c_user_logic:inst_i2c_user_logic.scl
+GPIO[35] <> i2c_user_logic:inst_i2c_user_logic.sda
+
+
+|DE2_115|i2c_user_logic:inst_i2c_user_logic
 clk => i2c_master:inst_i2c_master.clk
 clk => byteSel[0].CLK
 clk => byteSel[1].CLK
@@ -56,7 +98,7 @@ sda <> i2c_master:inst_i2c_master.sda
 scl <> i2c_master:inst_i2c_master.scl
 
 
-|i2c_user_logic|i2c_master:inst_i2c_master
+|DE2_115|i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master
 clk => data_rx[0].CLK
 clk => data_rx[1].CLK
 clk => data_rx[2].CLK
