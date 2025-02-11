@@ -62,15 +62,15 @@ end function;
 
  constant iCLK_Lim                   : integer := 83333;
  constant iCLK_Lim_sram              : integer := 12500000;   -- .25s
- signal byte_Cnt                     : integer range 0 to 32 := 0;
+ signal byte_Cnt                     : integer range 0 to 50 := 0;
  signal iCLK_Cnt                     : integer := 0;
  signal iCLK_Cnt_sram                : integer := 0;
  signal LCD_Data_Temp                : STD_LOGIC_VECTOR(7 downto 0);
  signal LCD_EN_Temp                  : STD_LOGIC;
  signal LCD_RS_Temp                  : STD_LOGIC;
  signal data_EN                      : STD_LOGIC;
- signal a1,a2,d1,d2,d3,d4				 : std_logic_vector(7 downto 0);
-signal state_prev						 : std_logic_vector(3 downto 0);
+ signal a1,a2								 : std_logic_vector(7 downto 0) := x"00";
+signal a1_prev, a2_prev,d1,d2,d3,d4	 : std_logic_vector(7 downto 0);
 
 signal main_mode							: std_logic_vector(1 downto 0);
  begin 
@@ -79,7 +79,7 @@ signal main_mode							: std_logic_vector(1 downto 0);
  begin
  if rising_edge(iclk) then
 
- state_prev <= LCD_Mode_SW;
+
 
  end if;
  end process;
@@ -90,17 +90,18 @@ signal main_mode							: std_logic_vector(1 downto 0);
  
 process(SRAM_ADDRESS,SRAM_DATA)
 begin
-		if iCLK_Cnt_sram < iCLK_Lim_sram then
-			iCLK_Cnt_sram <= iCLK_Cnt_sram +1;
-		else    
+--		if iCLK_Cnt_sram < iCLK_Lim_sram then
+--			iCLK_Cnt_sram <= iCLK_Cnt_sram +1;
+--		else    
 			a1 <= SRAM_addr_decoder(SRAM_ADDRESS(3 downto 0));
 			a2 <= SRAM_addr_decoder(SRAM_ADDRESS(7 downto 4));
-
+			a1_prev <= a1;
+			a2_prev <= a2;
 			d1 <= SRAM_data_decoder(SRAM_DATA(3 downto 0));
 			d2 <= SRAM_data_decoder(SRAM_DATA(7 downto 4));
 			d3 <= SRAM_data_decoder(SRAM_DATA(11 downto 8));
 			d4 <= SRAM_data_decoder(SRAM_DATA(15 downto 12));
-		end if;
+--		end if;
 end process;
 
  LCD_DATA    <= LCD_Data_Temp;
@@ -123,28 +124,16 @@ begin
 		else    
 			iCLK_Cnt <= 0;
 			byte_Cnt <= byte_Cnt +1; 
-			if byte_Cnt = 33 then
+			if byte_Cnt = 50 then
 				byte_Cnt <= 9;
 			end if;
---		elsif LCD_Mode_SW /= state_prev and LCD_Mode_SW /= "1000" then    
---			iCLK_Cnt <= 0;
---			byte_Cnt <= 0;
---			if byte_Cnt < 34 then
---			byte_Cnt <= byte_Cnt + 1;
---			end if;
---		elsif LCD_Mode_SW = "1000" then
---			iCLK_Cnt <= 0;
---			byte_Cnt <= byte_Cnt +1; 
---			if byte_Cnt = 32 then
---				byte_Cnt <= 9;
---			end if;
---		end if;
---		if iCLK_Cnt = 1 then
---			LCD_EN_Temp <= '0';
---			data_EN <= '0';
---		end if;
+
 		end if;
-	end if;
+		if iCLK_Cnt = 1 then
+			LCD_EN_Temp <= '0';
+			data_EN <= '0';
+		end if;
+		end if;
 end process;
 
 process(byte_Cnt, LCD_Mode_SW)
@@ -215,8 +204,8 @@ case(main_mode) is
 			  when 19 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
 			  when 20 => LCD_Data_Temp <= X"C0"; LCD_RS_Temp <= '0'; -- move cursor
 			
-			  when 21 => LCD_Data_Temp <= a1; LCD_RS_Temp <= '1'; --sram address
-			  when 22 => LCD_Data_Temp <= a2; LCD_RS_Temp <= '1';
+			  when 21 => LCD_Data_Temp <= a1_prev; LCD_RS_Temp <= '1'; --sram address
+			  when 22 => LCD_Data_Temp <= a2_prev; LCD_RS_Temp <= '1';
 			  when 23 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' '
 			  when 24 => LCD_Data_Temp <= d1; LCD_RS_Temp <= '1'; --sram data
 			  when 25 => LCD_Data_Temp <= d2; LCD_RS_Temp <= '1';
@@ -256,8 +245,8 @@ case(main_mode) is
 			when 20 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
 			when 21 => LCD_Data_Temp <= X"C0"; LCD_RS_Temp <= '0'; -- move cursor
 			
-			when 22 => LCD_Data_Temp <= a1; LCD_RS_Temp <= '1'; --sram address
-			when 23 => LCD_Data_Temp <= a2; LCD_RS_Temp <= '1';
+			when 22 => LCD_Data_Temp <= a1_prev; LCD_RS_Temp <= '1'; --sram address
+			when 23 => LCD_Data_Temp <= a2_prev; LCD_RS_Temp <= '1';
 			when 24 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' '
 			when 25 => LCD_Data_Temp <= d1; LCD_RS_Temp <= '1'; --sram data
 			when 26 => LCD_Data_Temp <= d2; LCD_RS_Temp <= '1';
@@ -409,7 +398,7 @@ case(main_mode) is
 				when 30 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
 				when 31 => LCD_Data_Temp <= X"48"; LCD_RS_Temp <= '1'; -- 'H'
 				when 32 => LCD_Data_Temp <= X"5A"; LCD_RS_Temp <= '1'; -- 'z'
-
+				when 33 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' '
 				when others =>
 					LCD_Data_Temp <= (others => '0');
 					LCD_RS_Temp <= '0';
