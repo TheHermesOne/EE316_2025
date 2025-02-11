@@ -163,14 +163,13 @@ end component;
   signal CountStep            : integer;
   signal Cnten                : std_logic;
   signal count_clk_enable		: std_logic;
-  signal cntDir               : std_logic;
   signal Cnten_univ           : std_logic;
-  signal cntDir_univ          : std_logic := '1';
   signal keys_db				 	: std_logic_vector(3 downto 0):= (others => '0');
   signal StateState				: std_logic_vector(3 downto 0);
   signal dataDisplay				: std_logic_vector(15 downto 0);
   signal addrDisplay				: std_logic_vector(19 downto 0);
   signal PWMen						: std_logic;
+  signal PWMDATA					: std_logic_vector(15 downto 0);
 begin
 
   Rst          <= not key(0);
@@ -243,7 +242,7 @@ begin
     syn_clr   => Rst,
     CountStep => countStep,
     en        => Cnten,
-    up        => CntDir,
+    up        => '1',
     q         => CountOut_var
   );
 
@@ -256,7 +255,7 @@ begin
     syn_clr  => Rst,
     load     => '0',
     en       => Cnten_univ,
-    up       => CntDir_univ,
+    up       => '1',
     clk_en   => count_clk_enable,
     d 		 => (others => '0'),
     max_tick => open,
@@ -278,7 +277,7 @@ begin
   port map
   (
     clk         => iclk,
-    reset       => resetmux,
+    reset       => counterReset,
     mem         => SramActive,
     rw          => bReadWrite,
     addr        => SramAddrIn,
@@ -317,8 +316,8 @@ begin
   port map(
 	clk => iclk,
 	en => PWMen,
-	Sram_dataOut => Data_outR,
-	stateIn => StateState(3 downto 2),
+	Sram_dataOut => PWMDATA,
+	stateIn => StateState(1 downto 0),
 	PWMOut => GPIO(0)
   );
   
@@ -337,6 +336,7 @@ begin
 						reset_State <= '1';
 						bReadWrite <= '0';
 						Cnten_univ <= '1';
+						cnten <= '0';
 						SramActive <= clk_enable60ns;
 						Count_clk_enable <= clk_enable60ns;
 						SramAddrIn <= (X"000" & countOut_univ);
@@ -347,6 +347,7 @@ begin
 						SramAddrIn <= (X"000" & countOut_univ);
 						bReadWrite <= '1';
 						cnten_univ <= '1';
+						cnten <= '0';
 						dataDisplay <= data_outR;
 						addrDisplay <= (X"000" & countOut_univ_delay);
 					when "01" => -- Pause Mode				-- do I need to do anything in this mode?
@@ -361,6 +362,7 @@ begin
 						cnten <= '1';
 						SramaddrIn <= (X"000" & countOut_var);
 						PWMen <= '1';
+						PWMDATA <= data_outR;
 						case StateState(1 downto 0) is
 							when "00" => 
 								countStep <= 5153;

@@ -99,7 +99,7 @@ GPIO[35] <> top_level:Inst_top_level.GPIO[35]
 
 
 |DE2_115|top_level:Inst_top_level
-iClk => Mux33.IN0
+iClk => Mux34.IN0
 iClk => Reset_Delay:Inst_clk_Reset_Delay.iCLK
 iClk => CountStep[0].CLK
 iClk => CountStep[1].CLK
@@ -133,8 +133,23 @@ iClk => CountStep[28].CLK
 iClk => CountStep[29].CLK
 iClk => CountStep[30].CLK
 iClk => CountStep[31].CLK
+iClk => PWMDATA[0].CLK
+iClk => PWMDATA[1].CLK
+iClk => PWMDATA[2].CLK
+iClk => PWMDATA[3].CLK
+iClk => PWMDATA[4].CLK
+iClk => PWMDATA[5].CLK
+iClk => PWMDATA[6].CLK
+iClk => PWMDATA[7].CLK
+iClk => PWMDATA[8].CLK
+iClk => PWMDATA[9].CLK
+iClk => PWMDATA[10].CLK
+iClk => PWMDATA[11].CLK
+iClk => PWMDATA[12].CLK
+iClk => PWMDATA[13].CLK
+iClk => PWMDATA[14].CLK
+iClk => PWMDATA[15].CLK
 iClk => PWMen.CLK
-iClk => Cnten.CLK
 iClk => addrDisplay[0].CLK
 iClk => addrDisplay[1].CLK
 iClk => addrDisplay[2].CLK
@@ -209,6 +224,7 @@ iClk => SramAddrIn[18].CLK
 iClk => SramAddrIn[19].CLK
 iClk => count_clk_enable.CLK
 iClk => SramActive.CLK
+iClk => Cnten.CLK
 iClk => Cnten_univ.CLK
 iClk => bReadWrite.CLK
 iClk => CountOut_univ_delay[0].CLK
