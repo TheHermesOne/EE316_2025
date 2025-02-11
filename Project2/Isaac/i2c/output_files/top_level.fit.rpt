@@ -1,5 +1,5 @@
 Fitter report for top_level
-Mon Feb 10 18:50:06 2025
+Mon Feb 10 20:03:58 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                        ;
 +------------------------------------+--------------------------------------------------+
-; Fitter Status                      ; Successful - Mon Feb 10 18:50:06 2025            ;
+; Fitter Status                      ; Successful - Mon Feb 10 20:03:58 2025            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; top_level                                        ;
 ; Top-level Entity Name              ; DE2_115                                          ;
@@ -4851,7 +4851,7 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.20 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.25 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -4935,8 +4935,8 @@ Warning (169064): Following 34 pins have no output enable or a GND or VCC output
     Info (169065): Pin GPIO[33] has a permanently disabled output enable
 Info (144001): Generated suppressed messages file C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/output_files/top_level.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 983 warnings
-    Info: Peak virtual memory: 5683 megabytes
-    Info: Processing ended: Mon Feb 10 18:50:07 2025
+    Info: Peak virtual memory: 5696 megabytes
+    Info: Processing ended: Mon Feb 10 20:03:59 2025
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:16
 

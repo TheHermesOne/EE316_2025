@@ -71,6 +71,8 @@ end function;
  signal data_EN                      : STD_LOGIC;
  signal a1,a2,d1,d2,d3,d4				 : std_logic_vector(7 downto 0);
 signal state_prev						 : std_logic_vector(3 downto 0);
+
+signal main_mode							: std_logic_vector(1 downto 0);
  begin 
 --
  process(iclK)
@@ -81,6 +83,11 @@ signal state_prev						 : std_logic_vector(3 downto 0);
 
  end if;
  end process;
+ process(lcd_Mode_SW)
+ begin
+ main_mode <= lcd_Mode_SW(3 downto 2);
+ end process;
+ 
 process(SRAM_ADDRESS,SRAM_DATA)
 begin
 		if iCLK_Cnt_sram < iCLK_Lim_sram then
@@ -145,9 +152,8 @@ process(byte_Cnt, LCD_Mode_SW)
 	  
 	  LCD_Data_Temp <= (others => '0');
 	  LCD_RS_Temp <= '0';
- 
-case(LCD_Mode_SW) is
-when "0000" =>
+case(main_mode) is
+	when "00" =>
 	  case byte_Cnt is       
 			when 0  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
 			when 1  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
@@ -181,230 +187,236 @@ when "0000" =>
 				 LCD_Data_Temp <= (others => '0');
 				 LCD_RS_Temp <= '0';
 			end case;
-when "1000" =>
-    case byte_Cnt is       
-        when 0  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-        when 1  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-        when 2  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-        when 3  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-        when 4  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-        when 5  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-        when 6  => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0';
-        when 7  => LCD_Data_Temp <= X"0C"; LCD_RS_Temp <= '0';
-        when 8  => LCD_Data_Temp <= X"06"; LCD_RS_Temp <= '0';
-        when 9  => LCD_Data_Temp <= X"80"; LCD_RS_Temp <= '0';
+	when "10" =>
+		 case byte_Cnt is       
+			  when 0  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+			  when 1  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+			  when 2  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+			  when 3  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+			  when 4  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+			  when 5  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+			  when 6  => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0';
+			  when 7  => LCD_Data_Temp <= X"0C"; LCD_RS_Temp <= '0';
+			  when 8  => LCD_Data_Temp <= X"06"; LCD_RS_Temp <= '0';
+			  when 9  => LCD_Data_Temp <= X"80"; LCD_RS_Temp <= '0';
 
-        -- Inserted Clear Display Command
-        when 10 => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0'; -- Clear display
+			  -- Inserted Clear Display Command
+			  when 10 => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0'; -- Clear display
 
-        -- Test Mode
-        when 11 => LCD_Data_Temp <= X"54"; LCD_RS_Temp <= '1'; -- 'T'
-        when 12 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
-        when 13 => LCD_Data_Temp <= X"73"; LCD_RS_Temp <= '1'; -- 's'
-        when 14 => LCD_Data_Temp <= X"74"; LCD_RS_Temp <= '1'; -- 't'
-        when 15 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
-        when 16 => LCD_Data_Temp <= X"4D"; LCD_RS_Temp <= '1'; -- 'M'
-        when 17 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
-        when 18 => LCD_Data_Temp <= X"64"; LCD_RS_Temp <= '1'; -- 'd'
-        when 19 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
-		  when 20 => LCD_Data_Temp <= X"C0"; LCD_RS_Temp <= '0'; -- move cursor
-		
-		  when 21 => LCD_Data_Temp <= a1; LCD_RS_Temp <= '1'; --sram address
-		  when 22 => LCD_Data_Temp <= a2; LCD_RS_Temp <= '1';
-		  when 23 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' '
-		  when 24 => LCD_Data_Temp <= d1; LCD_RS_Temp <= '1'; --sram data
-		  when 25 => LCD_Data_Temp <= d2; LCD_RS_Temp <= '1';
-		  when 26 => LCD_Data_Temp <= d3; LCD_RS_Temp <= '1';
-		  when 27 => LCD_Data_Temp <= d4; LCD_RS_Temp <= '1';
-        when others =>
-            LCD_Data_Temp <= (others => '0');
-            LCD_RS_Temp <= '0';
-    end case;
-when "0100" =>
-	case byte_Cnt is       
-		when 0  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 1  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 2  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 3  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 4  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 5  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 6  => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0';
-		when 7  => LCD_Data_Temp <= X"0C"; LCD_RS_Temp <= '0';
-		when 8  => LCD_Data_Temp <= X"06"; LCD_RS_Temp <= '0';
-		when 9  => LCD_Data_Temp <= X"80"; LCD_RS_Temp <= '0';
+			  -- Test Mode
+			  when 11 => LCD_Data_Temp <= X"54"; LCD_RS_Temp <= '1'; -- 'T'
+			  when 12 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
+			  when 13 => LCD_Data_Temp <= X"73"; LCD_RS_Temp <= '1'; -- 's'
+			  when 14 => LCD_Data_Temp <= X"74"; LCD_RS_Temp <= '1'; -- 't'
+			  when 15 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
+			  when 16 => LCD_Data_Temp <= X"4D"; LCD_RS_Temp <= '1'; -- 'M'
+			  when 17 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
+			  when 18 => LCD_Data_Temp <= X"64"; LCD_RS_Temp <= '1'; -- 'd'
+			  when 19 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
+			  when 20 => LCD_Data_Temp <= X"C0"; LCD_RS_Temp <= '0'; -- move cursor
+			
+			  when 21 => LCD_Data_Temp <= a1; LCD_RS_Temp <= '1'; --sram address
+			  when 22 => LCD_Data_Temp <= a2; LCD_RS_Temp <= '1';
+			  when 23 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' '
+			  when 24 => LCD_Data_Temp <= d1; LCD_RS_Temp <= '1'; --sram data
+			  when 25 => LCD_Data_Temp <= d2; LCD_RS_Temp <= '1';
+			  when 26 => LCD_Data_Temp <= d3; LCD_RS_Temp <= '1';
+			  when 27 => LCD_Data_Temp <= d4; LCD_RS_Temp <= '1';
+			  when others =>
+					LCD_Data_Temp <= (others => '0');
+					LCD_RS_Temp <= '0';
 
-		-- Inserted Clear Display Command
-		when 10 => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0'; -- Clear display
+			end case;
+	when "01" =>
+		case byte_Cnt is       
+			when 0  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+			when 1  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+			when 2  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+			when 3  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+			when 4  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+			when 5  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+			when 6  => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0';
+			when 7  => LCD_Data_Temp <= X"0C"; LCD_RS_Temp <= '0';
+			when 8  => LCD_Data_Temp <= X"06"; LCD_RS_Temp <= '0';
+			when 9  => LCD_Data_Temp <= X"80"; LCD_RS_Temp <= '0';
 
-		-- Pause Mode
-		when 11 => LCD_Data_Temp <= X"50"; LCD_RS_Temp <= '1'; -- 'P'
-		when 12 => LCD_Data_Temp <= X"61"; LCD_RS_Temp <= '1'; -- 'a'
-		when 13 => LCD_Data_Temp <= X"75"; LCD_RS_Temp <= '1'; -- 'u'
-		when 14 => LCD_Data_Temp <= X"73"; LCD_RS_Temp <= '1'; -- 's'
-		when 15 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
-		when 16 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
-		when 17 => LCD_Data_Temp <= X"4D"; LCD_RS_Temp <= '1'; -- 'M'
-		when 18 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
-		when 19 => LCD_Data_Temp <= X"64"; LCD_RS_Temp <= '1'; -- 'd'
-		when 20 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
-		when 21 => LCD_Data_Temp <= X"C0"; LCD_RS_Temp <= '0'; -- move cursor
-		
-		when 22 => LCD_Data_Temp <= a1; LCD_RS_Temp <= '1'; --sram address
-		when 23 => LCD_Data_Temp <= a2; LCD_RS_Temp <= '1';
-		when 24 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' '
-		when 25 => LCD_Data_Temp <= d1; LCD_RS_Temp <= '1'; --sram data
-		when 26 => LCD_Data_Temp <= d2; LCD_RS_Temp <= '1';
-		when 27 => LCD_Data_Temp <= d3; LCD_RS_Temp <= '1';
-		when 28 => LCD_Data_Temp <= d4; LCD_RS_Temp <= '1';
+			-- Inserted Clear Display Command
+			when 10 => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0'; -- Clear display
 
+			-- Pause Mode
+			when 11 => LCD_Data_Temp <= X"50"; LCD_RS_Temp <= '1'; -- 'P'
+			when 12 => LCD_Data_Temp <= X"61"; LCD_RS_Temp <= '1'; -- 'a'
+			when 13 => LCD_Data_Temp <= X"75"; LCD_RS_Temp <= '1'; -- 'u'
+			when 14 => LCD_Data_Temp <= X"73"; LCD_RS_Temp <= '1'; -- 's'
+			when 15 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
+			when 16 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
+			when 17 => LCD_Data_Temp <= X"4D"; LCD_RS_Temp <= '1'; -- 'M'
+			when 18 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
+			when 19 => LCD_Data_Temp <= X"64"; LCD_RS_Temp <= '1'; -- 'd'
+			when 20 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
+			when 21 => LCD_Data_Temp <= X"C0"; LCD_RS_Temp <= '0'; -- move cursor
+			
+			when 22 => LCD_Data_Temp <= a1; LCD_RS_Temp <= '1'; --sram address
+			when 23 => LCD_Data_Temp <= a2; LCD_RS_Temp <= '1';
+			when 24 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' '
+			when 25 => LCD_Data_Temp <= d1; LCD_RS_Temp <= '1'; --sram data
+			when 26 => LCD_Data_Temp <= d2; LCD_RS_Temp <= '1';
+			when 27 => LCD_Data_Temp <= d3; LCD_RS_Temp <= '1';
+			when 28 => LCD_Data_Temp <= d4; LCD_RS_Temp <= '1';
+
+			when others =>
+				LCD_Data_Temp <= (others => '0');
+				LCD_RS_Temp <= '0';
+			end case;
 		when others =>
-			LCD_Data_Temp <= (others => '0');
-			LCD_RS_Temp <= '0';
+
+
+		case(LCD_Mode_SW) is
+			when "1100" =>
+				case byte_Cnt is       
+					when 0  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+					when 1  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+					when 2  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+					when 3  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+					when 4  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+					when 5  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+					when 6  => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0';
+					when 7  => LCD_Data_Temp <= X"0C"; LCD_RS_Temp <= '0';
+					when 8  => LCD_Data_Temp <= X"06"; LCD_RS_Temp <= '0';
+					when 9  => LCD_Data_Temp <= X"80"; LCD_RS_Temp <= '0';
+
+					-- Inserted Clear Display Command
+					when 10 => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0'; -- Clear display
+
+					-- Operation Mode
+					when 11 => LCD_Data_Temp <= X"4F"; LCD_RS_Temp <= '1'; -- 'O'
+					when 12 => LCD_Data_Temp <= X"70"; LCD_RS_Temp <= '1'; -- 'p'
+					when 13 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
+					when 14 => LCD_Data_Temp <= X"72"; LCD_RS_Temp <= '1'; -- 'r'
+					when 15 => LCD_Data_Temp <= X"61"; LCD_RS_Temp <= '1'; -- 'a'
+					when 16 => LCD_Data_Temp <= X"74"; LCD_RS_Temp <= '1'; -- 't'
+					when 17 => LCD_Data_Temp <= X"69"; LCD_RS_Temp <= '1'; -- 'i'
+					when 18 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
+					when 19 => LCD_Data_Temp <= X"6E"; LCD_RS_Temp <= '1'; -- 'n'
+					when 20 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
+					when 21 => LCD_Data_Temp <= X"4D"; LCD_RS_Temp <= '1'; -- 'M'
+					when 22 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
+					when 23 => LCD_Data_Temp <= X"64"; LCD_RS_Temp <= '1'; -- 'd'
+					when 24 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
+
+					-- Move cursor to second line (Address C0h)
+					when 25 => LCD_Data_Temp <= X"C0"; LCD_RS_Temp <= '0'; 
+
+					-- "60 Hz" (Second Line)
+					when 26 => LCD_Data_Temp <= X"36"; LCD_RS_Temp <= '1'; -- '6'
+					when 27 => LCD_Data_Temp <= X"30"; LCD_RS_Temp <= '1'; -- '0'
+					when 28 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
+					when 29 => LCD_Data_Temp <= X"48"; LCD_RS_Temp <= '1'; -- 'H'
+					when 30 => LCD_Data_Temp <= X"5A"; LCD_RS_Temp <= '1'; -- 'z'
+
+					when others =>
+						LCD_Data_Temp <= (others => '0');
+						LCD_RS_Temp <= '0';
+			end case;
+		when "1110" =>
+			case byte_Cnt is       
+				when 0  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+				when 1  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+				when 2  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+				when 3  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+				when 4  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+				when 5  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+				when 6  => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0';
+				when 7  => LCD_Data_Temp <= X"0C"; LCD_RS_Temp <= '0';
+				when 8  => LCD_Data_Temp <= X"06"; LCD_RS_Temp <= '0';
+				when 9  => LCD_Data_Temp <= X"80"; LCD_RS_Temp <= '0';  -- Move cursor to beginning of first line
+				
+				-- Inserted Clear Display Command
+				when 10 => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0'; -- Clear display
+
+				-- Operation Mode (First Line)
+				when 11 => LCD_Data_Temp <= X"4F"; LCD_RS_Temp <= '1'; -- 'O'
+				when 12 => LCD_Data_Temp <= X"70"; LCD_RS_Temp <= '1'; -- 'p'
+				when 13 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
+				when 14 => LCD_Data_Temp <= X"72"; LCD_RS_Temp <= '1'; -- 'r'
+				when 15 => LCD_Data_Temp <= X"61"; LCD_RS_Temp <= '1'; -- 'a'
+				when 16 => LCD_Data_Temp <= X"74"; LCD_RS_Temp <= '1'; -- 't'
+				when 17 => LCD_Data_Temp <= X"69"; LCD_RS_Temp <= '1'; -- 'i'
+				when 18 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
+				when 19 => LCD_Data_Temp <= X"6E"; LCD_RS_Temp <= '1'; -- 'n'
+				when 20 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
+				when 21 => LCD_Data_Temp <= X"4D"; LCD_RS_Temp <= '1'; -- 'M'
+				when 22 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
+				when 23 => LCD_Data_Temp <= X"64"; LCD_RS_Temp <= '1'; -- 'd'
+				when 24 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
+				
+				-- Move cursor to second line (Address C0h)
+				when 25 => LCD_Data_Temp <= X"C0"; LCD_RS_Temp <= '0'; 
+				
+				-- "100 Hz" (Second Line)
+				when 26 => LCD_Data_Temp <= X"31"; LCD_RS_Temp <= '1'; -- '1'
+				when 27 => LCD_Data_Temp <= X"32"; LCD_RS_Temp <= '1'; -- '2'
+				when 28 => LCD_Data_Temp <= X"30"; LCD_RS_Temp <= '1'; -- '0'
+				when 29 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
+				when 30 => LCD_Data_Temp <= X"48"; LCD_RS_Temp <= '1'; -- 'H'
+				when 31 => LCD_Data_Temp <= X"5A"; LCD_RS_Temp <= '1'; -- 'z'
+				when 32 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' '
+
+				when others =>
+					LCD_Data_Temp <= (others => '0');
+					LCD_RS_Temp <= '0';
+			end case;
+		when "1111" =>
+			case byte_Cnt is       
+				when 0  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+				when 1  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+				when 2  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+				when 3  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+				when 4  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+				when 5  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
+				when 6  => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0';
+				when 7  => LCD_Data_Temp <= X"0C"; LCD_RS_Temp <= '0';
+				when 8  => LCD_Data_Temp <= X"06"; LCD_RS_Temp <= '0';
+				when 9  => LCD_Data_Temp <= X"80"; LCD_RS_Temp <= '0';  -- Move cursor to beginning of first line
+
+				-- Inserted Clear Display Command
+				when 10 => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0'; -- Clear display
+
+				-- Operation Mode (First Line)
+				when 11 => LCD_Data_Temp <= X"4F"; LCD_RS_Temp <= '1'; -- 'O'
+				when 12 => LCD_Data_Temp <= X"70"; LCD_RS_Temp <= '1'; -- 'p'
+				when 13 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
+				when 14 => LCD_Data_Temp <= X"72"; LCD_RS_Temp <= '1'; -- 'r'
+				when 15 => LCD_Data_Temp <= X"61"; LCD_RS_Temp <= '1'; -- 'a'
+				when 16 => LCD_Data_Temp <= X"74"; LCD_RS_Temp <= '1'; -- 't'
+				when 17 => LCD_Data_Temp <= X"69"; LCD_RS_Temp <= '1'; -- 'i'
+				when 18 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
+				when 19 => LCD_Data_Temp <= X"6E"; LCD_RS_Temp <= '1'; -- 'n'
+				when 20 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
+				when 21 => LCD_Data_Temp <= X"4D"; LCD_RS_Temp <= '1'; -- 'M'
+				when 22 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
+				when 23 => LCD_Data_Temp <= X"64"; LCD_RS_Temp <= '1'; -- 'd'
+				when 24 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
+
+				-- Move cursor to second line (Address C0h)
+				when 25 => LCD_Data_Temp <= X"C0"; LCD_RS_Temp <= '0'; 
+				
+				-- "1000 Hz" (Second Line)
+				when 26 => LCD_Data_Temp <= X"31"; LCD_RS_Temp <= '1'; -- '1'
+				when 27 => LCD_Data_Temp <= X"30"; LCD_RS_Temp <= '1'; -- '0'
+				when 28 => LCD_Data_Temp <= X"30"; LCD_RS_Temp <= '1'; -- '0'
+				when 29 => LCD_Data_Temp <= X"30"; LCD_RS_Temp <= '1'; -- '0'
+				when 30 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
+				when 31 => LCD_Data_Temp <= X"48"; LCD_RS_Temp <= '1'; -- 'H'
+				when 32 => LCD_Data_Temp <= X"5A"; LCD_RS_Temp <= '1'; -- 'z'
+
+				when others =>
+					LCD_Data_Temp <= (others => '0');
+					LCD_RS_Temp <= '0';
+		end case;
+		when others => null;
 	end case;
-when "1101" =>
-	case byte_Cnt is       
-		when 0  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 1  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 2  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 3  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 4  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 5  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 6  => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0';
-		when 7  => LCD_Data_Temp <= X"0C"; LCD_RS_Temp <= '0';
-		when 8  => LCD_Data_Temp <= X"06"; LCD_RS_Temp <= '0';
-		when 9  => LCD_Data_Temp <= X"80"; LCD_RS_Temp <= '0';
-
-		-- Inserted Clear Display Command
-		when 10 => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0'; -- Clear display
-
-		-- Operation Mode
-		when 11 => LCD_Data_Temp <= X"4F"; LCD_RS_Temp <= '1'; -- 'O'
-		when 12 => LCD_Data_Temp <= X"70"; LCD_RS_Temp <= '1'; -- 'p'
-		when 13 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
-		when 14 => LCD_Data_Temp <= X"72"; LCD_RS_Temp <= '1'; -- 'r'
-		when 15 => LCD_Data_Temp <= X"61"; LCD_RS_Temp <= '1'; -- 'a'
-		when 16 => LCD_Data_Temp <= X"74"; LCD_RS_Temp <= '1'; -- 't'
-		when 17 => LCD_Data_Temp <= X"69"; LCD_RS_Temp <= '1'; -- 'i'
-		when 18 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
-		when 19 => LCD_Data_Temp <= X"6E"; LCD_RS_Temp <= '1'; -- 'n'
-		when 20 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
-		when 21 => LCD_Data_Temp <= X"4D"; LCD_RS_Temp <= '1'; -- 'M'
-		when 22 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
-		when 23 => LCD_Data_Temp <= X"64"; LCD_RS_Temp <= '1'; -- 'd'
-		when 24 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
-
-		-- Move cursor to second line (Address C0h)
-		when 25 => LCD_Data_Temp <= X"C0"; LCD_RS_Temp <= '0'; 
-
-		-- "60 Hz" (Second Line)
-		when 26 => LCD_Data_Temp <= X"36"; LCD_RS_Temp <= '1'; -- '6'
-		when 27 => LCD_Data_Temp <= X"30"; LCD_RS_Temp <= '1'; -- '0'
-		when 28 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
-		when 29 => LCD_Data_Temp <= X"48"; LCD_RS_Temp <= '1'; -- 'H'
-		when 30 => LCD_Data_Temp <= X"5A"; LCD_RS_Temp <= '1'; -- 'z'
-
-		when others =>
-			LCD_Data_Temp <= (others => '0');
-			LCD_RS_Temp <= '0';
-	end case;
-when "1110" =>
-	case byte_Cnt is       
-		when 0  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 1  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 2  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 3  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 4  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 5  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 6  => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0';
-		when 7  => LCD_Data_Temp <= X"0C"; LCD_RS_Temp <= '0';
-		when 8  => LCD_Data_Temp <= X"06"; LCD_RS_Temp <= '0';
-		when 9  => LCD_Data_Temp <= X"80"; LCD_RS_Temp <= '0';  -- Move cursor to beginning of first line
-		
-		-- Inserted Clear Display Command
-		when 10 => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0'; -- Clear display
-
-		-- Operation Mode (First Line)
-		when 11 => LCD_Data_Temp <= X"4F"; LCD_RS_Temp <= '1'; -- 'O'
-		when 12 => LCD_Data_Temp <= X"70"; LCD_RS_Temp <= '1'; -- 'p'
-		when 13 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
-		when 14 => LCD_Data_Temp <= X"72"; LCD_RS_Temp <= '1'; -- 'r'
-		when 15 => LCD_Data_Temp <= X"61"; LCD_RS_Temp <= '1'; -- 'a'
-		when 16 => LCD_Data_Temp <= X"74"; LCD_RS_Temp <= '1'; -- 't'
-		when 17 => LCD_Data_Temp <= X"69"; LCD_RS_Temp <= '1'; -- 'i'
-		when 18 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
-		when 19 => LCD_Data_Temp <= X"6E"; LCD_RS_Temp <= '1'; -- 'n'
-		when 20 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
-		when 21 => LCD_Data_Temp <= X"4D"; LCD_RS_Temp <= '1'; -- 'M'
-		when 22 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
-		when 23 => LCD_Data_Temp <= X"64"; LCD_RS_Temp <= '1'; -- 'd'
-		when 24 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
-		
-		-- Move cursor to second line (Address C0h)
-		when 25 => LCD_Data_Temp <= X"C0"; LCD_RS_Temp <= '0'; 
-		
-		-- "100 Hz" (Second Line)
-		when 26 => LCD_Data_Temp <= X"31"; LCD_RS_Temp <= '1'; -- '1'
-		when 27 => LCD_Data_Temp <= X"30"; LCD_RS_Temp <= '1'; -- '0'
-		when 28 => LCD_Data_Temp <= X"30"; LCD_RS_Temp <= '1'; -- '0'
-		when 29 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
-		when 30 => LCD_Data_Temp <= X"48"; LCD_RS_Temp <= '1'; -- 'H'
-		when 31 => LCD_Data_Temp <= X"5A"; LCD_RS_Temp <= '1'; -- 'z'
-		when 32 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' '
-
-		when others =>
-			LCD_Data_Temp <= (others => '0');
-			LCD_RS_Temp <= '0';
-	end case;
-when "1111" =>
-	case byte_Cnt is       
-		when 0  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 1  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 2  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 3  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 4  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 5  => LCD_Data_Temp <= X"38"; LCD_RS_Temp <= '0';
-		when 6  => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0';
-		when 7  => LCD_Data_Temp <= X"0C"; LCD_RS_Temp <= '0';
-		when 8  => LCD_Data_Temp <= X"06"; LCD_RS_Temp <= '0';
-		when 9  => LCD_Data_Temp <= X"80"; LCD_RS_Temp <= '0';  -- Move cursor to beginning of first line
-
-		-- Inserted Clear Display Command
-		when 10 => LCD_Data_Temp <= X"01"; LCD_RS_Temp <= '0'; -- Clear display
-
-		-- Operation Mode (First Line)
-		when 11 => LCD_Data_Temp <= X"4F"; LCD_RS_Temp <= '1'; -- 'O'
-		when 12 => LCD_Data_Temp <= X"70"; LCD_RS_Temp <= '1'; -- 'p'
-		when 13 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
-		when 14 => LCD_Data_Temp <= X"72"; LCD_RS_Temp <= '1'; -- 'r'
-		when 15 => LCD_Data_Temp <= X"61"; LCD_RS_Temp <= '1'; -- 'a'
-		when 16 => LCD_Data_Temp <= X"74"; LCD_RS_Temp <= '1'; -- 't'
-		when 17 => LCD_Data_Temp <= X"69"; LCD_RS_Temp <= '1'; -- 'i'
-		when 18 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
-		when 19 => LCD_Data_Temp <= X"6E"; LCD_RS_Temp <= '1'; -- 'n'
-		when 20 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
-		when 21 => LCD_Data_Temp <= X"4D"; LCD_RS_Temp <= '1'; -- 'M'
-		when 22 => LCD_Data_Temp <= X"6F"; LCD_RS_Temp <= '1'; -- 'o'
-		when 23 => LCD_Data_Temp <= X"64"; LCD_RS_Temp <= '1'; -- 'd'
-		when 24 => LCD_Data_Temp <= X"65"; LCD_RS_Temp <= '1'; -- 'e'
-
-		-- Move cursor to second line (Address C0h)
-		when 25 => LCD_Data_Temp <= X"C0"; LCD_RS_Temp <= '0'; 
-		
-		-- "1000 Hz" (Second Line)
-		when 26 => LCD_Data_Temp <= X"31"; LCD_RS_Temp <= '1'; -- '1'
-		when 27 => LCD_Data_Temp <= X"30"; LCD_RS_Temp <= '1'; -- '0'
-		when 28 => LCD_Data_Temp <= X"30"; LCD_RS_Temp <= '1'; -- '0'
-		when 29 => LCD_Data_Temp <= X"30"; LCD_RS_Temp <= '1'; -- '0'
-		when 30 => LCD_Data_Temp <= X"20"; LCD_RS_Temp <= '1'; -- ' ' (space)
-		when 31 => LCD_Data_Temp <= X"48"; LCD_RS_Temp <= '1'; -- 'H'
-		when 32 => LCD_Data_Temp <= X"5A"; LCD_RS_Temp <= '1'; -- 'z'
-
-		when others =>
-			LCD_Data_Temp <= (others => '0');
-			LCD_RS_Temp <= '0';
-	end case;
-	when others => null;
-	end case;
+end case;
  end process;
 
  end architecture;

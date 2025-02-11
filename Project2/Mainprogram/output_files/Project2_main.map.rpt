@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Project2_main
-Mon Feb 10 20:39:30 2025
+Mon Feb 10 21:07:40 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -70,13 +70,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Feb 10 20:39:30 2025            ;
+; Analysis & Synthesis Status        ; Successful - Mon Feb 10 21:07:40 2025            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; Project2_main                                    ;
 ; Top-level Entity Name              ; DE2_115                                          ;
 ; Family                             ; Cyclone IV E                                     ;
-; Total logic elements               ; 1,436                                            ;
-;     Total combinational functions  ; 960                                              ;
+; Total logic elements               ; 1,434                                            ;
+;     Total combinational functions  ; 958                                              ;
 ;     Dedicated logic registers      ; 896                                              ;
 ; Total registers                    ; 896                                              ;
 ; Total pins                         ; 97                                               ;
@@ -183,12 +183,11 @@ applicable agreement for further details.
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
-;     Processors 3-12        ;   0.0%      ;
+;     Processors 2-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -197,18 +196,18 @@ applicable agreement for further details.
 +----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                              ; Library ;
 +----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------+---------+
-; top_level.vhd                    ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/top_level.vhd           ;         ;
-; SRAM_Controller.vhd              ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/SRAM_Controller.vhd     ;         ;
-; reset_delay.vhd                  ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/reset_delay.vhd         ;         ;
-; DE2_115.vhd                      ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/DE2_115.vhd             ;         ;
-; clk_enabler.vhd                  ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/clk_enabler.vhd         ;         ;
-; btn_debounce_toggle.vhd          ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/btn_debounce_toggle.vhd ;         ;
-; Var_size_Counter.vhd             ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd    ;         ;
-; univ_bin_counter.vhd             ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/univ_bin_counter.vhd    ;         ;
-; ROM.vhd                          ; yes             ; User Wizard-Generated File             ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/ROM.vhd                 ;         ;
-; LCD_Controller.vhd               ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/LCD_Controller.vhd      ;         ;
-; Statemachine.vhd                 ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd        ;         ;
-; PWM_Gen.vhd                      ; yes             ; User VHDL File                         ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/PWM_Gen.vhd             ;         ;
+; top_level.vhd                    ; yes             ; User VHDL File                         ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/top_level.vhd           ;         ;
+; SRAM_Controller.vhd              ; yes             ; User VHDL File                         ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/SRAM_Controller.vhd     ;         ;
+; reset_delay.vhd                  ; yes             ; User VHDL File                         ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/reset_delay.vhd         ;         ;
+; DE2_115.vhd                      ; yes             ; User VHDL File                         ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/DE2_115.vhd             ;         ;
+; clk_enabler.vhd                  ; yes             ; User VHDL File                         ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/clk_enabler.vhd         ;         ;
+; btn_debounce_toggle.vhd          ; yes             ; User VHDL File                         ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/btn_debounce_toggle.vhd ;         ;
+; Var_size_Counter.vhd             ; yes             ; User VHDL File                         ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd    ;         ;
+; univ_bin_counter.vhd             ; yes             ; User VHDL File                         ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/univ_bin_counter.vhd    ;         ;
+; ROM.vhd                          ; yes             ; User Wizard-Generated File             ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/ROM.vhd                 ;         ;
+; LCD_Controller.vhd               ; yes             ; User VHDL File                         ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/LCD_Controller.vhd      ;         ;
+; Statemachine.vhd                 ; yes             ; User VHDL File                         ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd        ;         ;
+; PWM_Gen.vhd                      ; yes             ; User VHDL File                         ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/PWM_Gen.vhd             ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                          ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                   ;         ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                             ;         ;
@@ -218,8 +217,8 @@ applicable agreement for further details.
 ; altrom.inc                       ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                              ;         ;
 ; altram.inc                       ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                              ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                            ;         ;
-; db/altsyncram_oe91.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/altsyncram_oe91.tdf  ;         ;
-; project2.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/project2.mif            ;         ;
+; db/altsyncram_oe91.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/altsyncram_oe91.tdf  ;         ;
+; project2.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/project2.mif            ;         ;
 ; sld_signaltap.vhd                ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_signaltap.vhd                       ;         ;
 ; sld_signaltap_impl.vhd           ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                  ;         ;
 ; sld_ela_control.vhd              ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_ela_control.vhd                     ;         ;
@@ -229,7 +228,7 @@ applicable agreement for further details.
 ; sld_mbpmg.vhd                    ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_mbpmg.vhd                           ;         ;
 ; sld_ela_trigger_flow_mgr.vhd     ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd            ;         ;
 ; sld_buffer_manager.vhd           ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_buffer_manager.vhd                  ;         ;
-; db/altsyncram_fu14.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/altsyncram_fu14.tdf  ;         ;
+; db/altsyncram_fu14.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/altsyncram_fu14.tdf  ;         ;
 ; altdpram.tdf                     ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.tdf                            ;         ;
 ; memmodes.inc                     ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/others/maxplus2/memmodes.inc                          ;         ;
 ; a_hdffe.inc                      ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_hdffe.inc                             ;         ;
@@ -239,23 +238,23 @@ applicable agreement for further details.
 ; muxlut.inc                       ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/muxlut.inc                              ;         ;
 ; bypassff.inc                     ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc                            ;         ;
 ; altshift.inc                     ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc                            ;         ;
-; db/mux_ssc.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/mux_ssc.tdf          ;         ;
+; db/mux_ssc.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/mux_ssc.tdf          ;         ;
 ; lpm_decode.tdf                   ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.tdf                          ;         ;
 ; declut.inc                       ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/declut.inc                              ;         ;
 ; lpm_compare.inc                  ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_compare.inc                         ;         ;
-; db/decode_dvf.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/decode_dvf.tdf       ;         ;
+; db/decode_dvf.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/decode_dvf.tdf       ;         ;
 ; lpm_counter.tdf                  ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_counter.tdf                         ;         ;
 ; lpm_add_sub.inc                  ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc                         ;         ;
 ; cmpconst.inc                     ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/cmpconst.inc                            ;         ;
 ; lpm_counter.inc                  ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_counter.inc                         ;         ;
 ; alt_counter_stratix.inc          ; yes             ; Megafunction                           ; c:/altera/13.0sp1/quartus/libraries/megafunctions/alt_counter_stratix.inc                 ;         ;
-; db/cntr_lgi.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/cntr_lgi.tdf         ;         ;
-; db/cmpr_sgc.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/cmpr_sgc.tdf         ;         ;
-; db/cntr_i6j.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/cntr_i6j.tdf         ;         ;
-; db/cntr_egi.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/cntr_egi.tdf         ;         ;
-; db/cmpr_qgc.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/cmpr_qgc.tdf         ;         ;
-; db/cntr_23j.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/cntr_23j.tdf         ;         ;
-; db/cmpr_ngc.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/cmpr_ngc.tdf         ;         ;
+; db/cntr_lgi.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/cntr_lgi.tdf         ;         ;
+; db/cmpr_sgc.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/cmpr_sgc.tdf         ;         ;
+; db/cntr_i6j.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/cntr_i6j.tdf         ;         ;
+; db/cntr_egi.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/cntr_egi.tdf         ;         ;
+; db/cmpr_qgc.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/cmpr_qgc.tdf         ;         ;
+; db/cntr_23j.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/cntr_23j.tdf         ;         ;
+; db/cmpr_ngc.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/db/cmpr_ngc.tdf         ;         ;
 ; sld_rom_sr.vhd                   ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_rom_sr.vhd                          ;         ;
 ; sld_hub.vhd                      ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_hub.vhd                             ;         ;
 ; sld_jtag_hub.vhd                 ; yes             ; Encrypted Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                        ;         ;
@@ -267,16 +266,16 @@ applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 1,436          ;
+; Estimated Total logic elements              ; 1,434          ;
 ;                                             ;                ;
-; Total combinational functions               ; 960            ;
+; Total combinational functions               ; 958            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 445            ;
-;     -- 3 input functions                    ; 192            ;
-;     -- <=2 input functions                  ; 323            ;
+;     -- 4 input functions                    ; 436            ;
+;     -- 3 input functions                    ; 195            ;
+;     -- <=2 input functions                  ; 327            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 755            ;
+;     -- normal mode                          ; 753            ;
 ;     -- arithmetic mode                      ; 205            ;
 ;                                             ;                ;
 ; Total registers                             ; 896            ;
@@ -288,8 +287,8 @@ applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 596            ;
-; Total fan-out                               ; 6335           ;
-; Average fan-out                             ; 2.94           ;
+; Total fan-out                               ; 6316           ;
+; Average fan-out                             ; 2.93           ;
 +---------------------------------------------+----------------+
 
 
@@ -298,7 +297,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                           ; Library Name ;
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2_115                                                                                                ; 960 (3)           ; 896 (0)      ; 4352        ; 0            ; 0       ; 0         ; 97   ; 0            ; |DE2_115                                                                                                                                                                                                                                                                                                                                      ; work         ;
+; |DE2_115                                                                                                ; 958 (3)           ; 896 (0)      ; 4352        ; 0            ; 0       ; 0         ; 97   ; 0            ; |DE2_115                                                                                                                                                                                                                                                                                                                                      ; work         ;
 ;    |sld_hub:auto_hub|                                                                                   ; 120 (1)           ; 86 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                     ; work         ;
 ;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 119 (81)          ; 86 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                        ; work         ;
 ;          |sld_rom_sr:hub_info_reg|                                                                      ; 21 (21)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                                                                                                                                ; work         ;
@@ -370,8 +369,8 @@ applicable agreement for further details.
 ;                |lpm_shiftreg:ram_data_shift_out|                                                        ; 34 (34)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                         ; work         ;
 ;                |lpm_shiftreg:status_data_shift_out|                                                     ; 15 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                      ; work         ;
 ;             |sld_rom_sr:crc_rom_sr|                                                                     ; 20 (20)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                    ; work         ;
-;    |top_level:Inst_top_level|                                                                           ; 525 (3)           ; 190 (17)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|top_level:Inst_top_level                                                                                                                                                                                                                                                                                                             ; work         ;
-;       |LCD_Controller:Inst_LCD_Controller|                                                              ; 339 (339)         ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller                                                                                                                                                                                                                                                                          ; work         ;
+;    |top_level:Inst_top_level|                                                                           ; 523 (3)           ; 190 (17)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|top_level:Inst_top_level                                                                                                                                                                                                                                                                                                             ; work         ;
+;       |LCD_Controller:Inst_LCD_Controller|                                                              ; 337 (337)         ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller                                                                                                                                                                                                                                                                          ; work         ;
 ;       |Reset_Delay:Inst_clk_Reset_Delay|                                                                ; 27 (27)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|top_level:Inst_top_level|Reset_Delay:Inst_clk_Reset_Delay                                                                                                                                                                                                                                                                            ; work         ;
 ;       |btn_debounce_toggle:Inst_Key1_debounce|                                                          ; 24 (24)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_Key1_debounce                                                                                                                                                                                                                                                                      ; work         ;
 ;       |btn_debounce_toggle:Inst_Key2_debsounce|                                                         ; 24 (24)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_Key2_debsounce                                                                                                                                                                                                                                                                     ; work         ;
@@ -398,7 +397,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+----------------------------------------------------+---------------------------------------------------------------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                    ; IP Include File                                                           ;
 +--------+--------------+---------+--------------+--------------+----------------------------------------------------+---------------------------------------------------------------------------+
-; Altera ; ROM: 1-PORT  ; N/A     ; N/A          ; N/A          ; |DE2_115|top_level:Inst_top_level|ROM:Inst_initRom ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/ROM.vhd ;
+; Altera ; ROM: 1-PORT  ; N/A     ; N/A          ; N/A          ; |DE2_115|top_level:Inst_top_level|ROM:Inst_initRom ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Mainprogram/ROM.vhd ;
 +--------+--------------+---------+--------------+--------------+----------------------------------------------------+---------------------------------------------------------------------------+
 
 
@@ -448,16 +447,16 @@ Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------+-----------------------------------------------------------------------+------------------------+
 ; top_level:Inst_top_level|statemachine:Inst_StateMachine|state[0]              ; top_level:Inst_top_level|statemachine:Inst_StateMachine|state         ; yes                    ;
 ; top_level:Inst_top_level|statemachine:Inst_StateMachine|state[1]              ; top_level:Inst_top_level|statemachine:Inst_StateMachine|state         ; yes                    ;
-; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a1[0]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
 ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a2[0]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
-; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a2[1]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
+; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a1[0]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
 ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a1[1]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
-; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a1[2]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
+; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a2[1]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
 ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a2[2]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
+; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a1[2]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
 ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a1[3]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
 ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a2[3]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
-; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a1[4]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
 ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a2[4]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
+; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a1[4]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
 ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a2[5]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
 ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a1[5]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
 ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a2[6]             ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LessThan0 ; yes                    ;
@@ -499,52 +498,36 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                                                                                                                                                                                                          ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                                                                                                          ; Reason for Removal                                                                                                                                                                                 ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; top_level:Inst_top_level|Cnten_univ                                                                                                                                                    ; Stuck at VCC due to stuck port data_in                                                                                                                                                             ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|addr_reg[0..19]                                                                                                          ; Stuck at GND due to stuck port clear                                                                                                                                                               ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[0..15]                                                                                                      ; Stuck at GND due to stuck port clear                                                                                                                                                               ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_s2f_reg[0..15]                                                                                                      ; Stuck at GND due to stuck port clear                                                                                                                                                               ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|tri_reg                                                                                                                  ; Stuck at VCC due to stuck port preset                                                                                                                                                              ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|we_reg                                                                                                                   ; Stuck at VCC due to stuck port preset                                                                                                                                                              ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|oe_reg                                                                                                                   ; Stuck at VCC due to stuck port preset                                                                                                                                                              ;
-; top_level:Inst_top_level|CountStep[0..30]                                                                                                                                              ; Lost fanout                                                                                                                                                                                        ;
-; top_level:Inst_top_level|Cnten                                                                                                                                                         ; Lost fanout                                                                                                                                                                                        ;
-; top_level:Inst_top_level|data2Sram[0..15]                                                                                                                                              ; Lost fanout                                                                                                                                                                                        ;
-; top_level:Inst_top_level|SramAddrIn[0..19]                                                                                                                                             ; Lost fanout                                                                                                                                                                                        ;
-; top_level:Inst_top_level|var_size_counter:Inst_var_size_counter|r_reg[0..31]                                                                                                           ; Lost fanout                                                                                                                                                                                        ;
-; top_level:Inst_top_level|dataDisplay[1..15]                                                                                                                                            ; Merged with top_level:Inst_top_level|dataDisplay[0]                                                                                                                                                ;
-; top_level:Inst_top_level|PWM_gen:inst_PWM|r_reg[0..7]                                                                                                                                  ; Lost fanout                                                                                                                                                                                        ;
-; top_level:Inst_top_level|PWMen                                                                                                                                                         ; Lost fanout                                                                                                                                                                                        ;
-; top_level:Inst_top_level|dataDisplay[0]                                                                                                                                                ; Stuck at GND due to stuck port data_in                                                                                                                                                             ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.idle                                                                                                           ; Stuck at GND due to stuck port clear                                                                                                                                                               ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.r2                                                                                                             ; Lost fanout                                                                                                                                                                                        ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.r1                                                                                                             ; Lost fanout                                                                                                                                                                                        ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.w2                                                                                                             ; Lost fanout                                                                                                                                                                                        ;
-; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.w1                                                                                                             ; Lost fanout                                                                                                                                                                                        ;
-; top_level:Inst_top_level|bReadWrite                                                                                                                                                    ; Lost fanout                                                                                                                                                                                        ;
-; top_level:Inst_top_level|SramActive                                                                                                                                                    ; Lost fanout                                                                                                                                                                                        ;
-; Total Number of Removed Registers = 188                                                                                                                                                ;                                                                                                                                                                                                    ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|segment_shift_clk_ena                                                      ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_enable_delayed                                                ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[0] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[0] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[1] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[1] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[2] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[2] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[3] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[3] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[4] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[4] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[5] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[5] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[6] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[6] ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[0]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[0]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[1]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[1]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[2]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[2]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[3]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[3]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[4]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[4]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[5]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[5]                                            ;
-; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[6]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[6]                                            ;
-; Total Number of Removed Registers = 15                                                                                                                                                 ;                                                                                                                                                                                                    ;
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                      ;
++-----------------------------------------------------------------------------------+-----------------------------------------------------+
+; Register name                                                                     ; Reason for Removal                                  ;
++-----------------------------------------------------------------------------------+-----------------------------------------------------+
+; top_level:Inst_top_level|Cnten_univ                                               ; Stuck at VCC due to stuck port data_in              ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|addr_reg[0..19]     ; Stuck at GND due to stuck port clear                ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_f2s_reg[0..15] ; Stuck at GND due to stuck port clear                ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|data_s2f_reg[0..15] ; Stuck at GND due to stuck port clear                ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|tri_reg             ; Stuck at VCC due to stuck port preset               ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|we_reg              ; Stuck at VCC due to stuck port preset               ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|oe_reg              ; Stuck at VCC due to stuck port preset               ;
+; top_level:Inst_top_level|CountStep[0..30]                                         ; Lost fanout                                         ;
+; top_level:Inst_top_level|Cnten                                                    ; Lost fanout                                         ;
+; top_level:Inst_top_level|data2Sram[0..15]                                         ; Lost fanout                                         ;
+; top_level:Inst_top_level|SramAddrIn[0..19]                                        ; Lost fanout                                         ;
+; top_level:Inst_top_level|var_size_counter:Inst_var_size_counter|r_reg[0..31]      ; Lost fanout                                         ;
+; top_level:Inst_top_level|dataDisplay[1..15]                                       ; Merged with top_level:Inst_top_level|dataDisplay[0] ;
+; top_level:Inst_top_level|PWM_gen:inst_PWM|r_reg[0..7]                             ; Lost fanout                                         ;
+; top_level:Inst_top_level|PWMen                                                    ; Lost fanout                                         ;
+; top_level:Inst_top_level|dataDisplay[0]                                           ; Stuck at GND due to stuck port data_in              ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.idle      ; Stuck at GND due to stuck port clear                ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.r2        ; Lost fanout                                         ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.r1        ; Lost fanout                                         ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.w2        ; Lost fanout                                         ;
+; top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg.w1        ; Lost fanout                                         ;
+; top_level:Inst_top_level|bReadWrite                                               ; Lost fanout                                         ;
+; top_level:Inst_top_level|SramActive                                               ; Lost fanout                                         ;
+; Total Number of Removed Registers = 188                                           ;                                                     ;
++-----------------------------------------------------------------------------------+-----------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -674,27 +657,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_Key1_debounce|btn_cntr[11]                                                                                        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_Key2_debsounce|btn_cntr[11]                                                                                       ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_Key3_debounce|btn_cntr[9]                                                                                         ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE2_115|top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_next.r1                                                                                         ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; No         ; |DE2_115|top_level:Inst_top_level|statemachine:Inst_StateMachine|freqState.Hz1000                                                                                            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE2_115|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|counter[4]   ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr|word_counter[1]                   ;
-; 12:1               ; 4 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |DE2_115|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr|WORD_SR[1]                        ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |DE2_115|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|offset_count ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                                                                                  ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                                                                                     ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[0]                                                               ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[2]                                                                                           ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 60 LEs               ; 28 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[3]                                                                                    ;
-; 20:1               ; 4 bits    ; 52 LEs        ; 36 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[0]                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_Key1_debounce|btn_cntr[13]                          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_Key2_debsounce|btn_cntr[9]                          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|top_level:Inst_top_level|btn_debounce_toggle:Inst_Key3_debounce|btn_cntr[3]                           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE2_115|top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_next.w1                           ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; No         ; |DE2_115|top_level:Inst_top_level|statemachine:Inst_StateMachine|freqState.Hz1000                              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                       ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[0] ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[2]                             ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 60 LEs               ; 28 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[3]                      ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 36 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -989,15 +968,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
 
 
-+-----------------------------------------------+
-; Elapsed Time Per Partition                    ;
-+--------------------------------+--------------+
-; Partition Name                 ; Elapsed Time ;
-+--------------------------------+--------------+
-; sld_signaltap:auto_signaltap_0 ; 00:00:01     ;
-; Top                            ; 00:00:01     ;
-; sld_hub:auto_hub               ; 00:00:00     ;
-+--------------------------------+--------------+
++---------------------------------+
+; Elapsed Time Per Partition      ;
++------------------+--------------+
+; Partition Name   ; Elapsed Time ;
++------------------+--------------+
+; Top              ; 00:00:01     ;
+; sld_hub:auto_hub ; 00:00:00     ;
++------------------+--------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1010,8 +988,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; LCD_EN                                                                       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|LCD_EN_Temp    ; N/A     ;
 ; LCD_ON                                                                       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ~VCC                                                                       ; N/A     ;
 ; LCD_ON                                                                       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ~VCC                                                                       ; N/A     ;
-; LCD_RS                                                                       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|Mux93~10       ; N/A     ;
-; LCD_RS                                                                       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|Mux93~10       ; N/A     ;
+; LCD_RS                                                                       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|Mux102~1       ; N/A     ;
+; LCD_RS                                                                       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|Mux102~1       ; N/A     ;
 ; LCD_RW                                                                       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ~GND                                                                       ; N/A     ;
 ; LCD_RW                                                                       ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ~GND                                                                       ; N/A     ;
 ; top_level:Inst_top_level|GPIO[0]                                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GND                                                                        ; N/A     ;
@@ -1083,7 +1061,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Mon Feb 10 20:39:20 2025
+    Info: Processing started: Mon Feb 10 21:07:33 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project2_main -c Project2_main
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file top_level.vhd
@@ -1173,107 +1151,108 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
 Info (12128): Elaborating entity "altsyncram_oe91" for hierarchy "top_level:Inst_top_level|ROM:Inst_initRom|altsyncram:altsyncram_component|altsyncram_oe91:auto_generated"
 Info (12128): Elaborating entity "LCD_Controller" for hierarchy "top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller"
 Warning (10036): Verilog HDL or VHDL warning at LCD_Controller.vhd(73): object "state_prev" assigned a value but never read
-Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(86): signal "iCLK_Cnt_sram" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(87): signal "iCLK_Cnt_sram" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at LCD_Controller.vhd(84): inferring latch(es) for signal or variable "iCLK_Cnt_sram", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at LCD_Controller.vhd(84): inferring latch(es) for signal or variable "a1", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at LCD_Controller.vhd(84): inferring latch(es) for signal or variable "a2", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at LCD_Controller.vhd(84): inferring latch(es) for signal or variable "d1", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at LCD_Controller.vhd(84): inferring latch(es) for signal or variable "d2", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at LCD_Controller.vhd(84): inferring latch(es) for signal or variable "d3", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at LCD_Controller.vhd(84): inferring latch(es) for signal or variable "d4", which holds its previous value in one or more paths through the process
-Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(212): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(213): signal "a2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(215): signal "d1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(216): signal "d2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(217): signal "d3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(218): signal "d4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(252): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(253): signal "a2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(255): signal "d1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(256): signal "d2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(257): signal "d3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(258): signal "d4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (10041): Inferred latch for "d4[0]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d4[1]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d4[2]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d4[3]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d4[4]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d4[5]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d4[6]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d4[7]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d3[0]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d3[1]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d3[2]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d3[3]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d3[4]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d3[5]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d3[6]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d3[7]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d2[0]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d2[1]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d2[2]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d2[3]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d2[4]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d2[5]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d2[6]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d2[7]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d1[0]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d1[1]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d1[2]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d1[3]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d1[4]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d1[5]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d1[6]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "d1[7]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a2[0]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a2[1]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a2[2]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a2[3]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a2[4]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a2[5]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a2[6]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a2[7]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a1[0]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a1[1]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a1[2]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a1[3]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a1[4]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a1[5]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a1[6]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "a1[7]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[0]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[1]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[2]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[3]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[4]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[5]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[6]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[7]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[8]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[9]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[10]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[11]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[12]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[13]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[14]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[15]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[16]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[17]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[18]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[19]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[20]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[21]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[22]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[23]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[24]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[25]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[26]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[27]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[28]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[29]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[30]" at LCD_Controller.vhd(84)
-Info (10041): Inferred latch for "iCLK_Cnt_sram[31]" at LCD_Controller.vhd(84)
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(93): signal "iCLK_Cnt_sram" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(94): signal "iCLK_Cnt_sram" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at LCD_Controller.vhd(91): inferring latch(es) for signal or variable "iCLK_Cnt_sram", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at LCD_Controller.vhd(91): inferring latch(es) for signal or variable "a1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at LCD_Controller.vhd(91): inferring latch(es) for signal or variable "a2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at LCD_Controller.vhd(91): inferring latch(es) for signal or variable "d1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at LCD_Controller.vhd(91): inferring latch(es) for signal or variable "d2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at LCD_Controller.vhd(91): inferring latch(es) for signal or variable "d3", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at LCD_Controller.vhd(91): inferring latch(es) for signal or variable "d4", which holds its previous value in one or more paths through the process
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(155): signal "main_mode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(218): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(219): signal "a2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(221): signal "d1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(222): signal "d2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(223): signal "d3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(224): signal "d4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(259): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(260): signal "a2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(262): signal "d1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(263): signal "d2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(264): signal "d3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at LCD_Controller.vhd(265): signal "d4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (10041): Inferred latch for "d4[0]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d4[1]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d4[2]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d4[3]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d4[4]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d4[5]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d4[6]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d4[7]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d3[0]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d3[1]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d3[2]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d3[3]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d3[4]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d3[5]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d3[6]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d3[7]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d2[0]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d2[1]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d2[2]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d2[3]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d2[4]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d2[5]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d2[6]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d2[7]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d1[0]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d1[1]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d1[2]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d1[3]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d1[4]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d1[5]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d1[6]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "d1[7]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a2[0]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a2[1]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a2[2]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a2[3]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a2[4]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a2[5]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a2[6]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a2[7]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a1[0]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a1[1]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a1[2]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a1[3]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a1[4]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a1[5]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a1[6]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "a1[7]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[0]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[1]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[2]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[3]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[4]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[5]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[6]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[7]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[8]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[9]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[10]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[11]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[12]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[13]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[14]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[15]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[16]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[17]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[18]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[19]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[20]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[21]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[22]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[23]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[24]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[25]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[26]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[27]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[28]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[29]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[30]" at LCD_Controller.vhd(91)
+Info (10041): Inferred latch for "iCLK_Cnt_sram[31]" at LCD_Controller.vhd(91)
 Info (12128): Elaborating entity "PWM_gen" for hierarchy "top_level:Inst_top_level|PWM_gen:inst_PWM"
 Warning (10492): VHDL Process Statement warning at PWM_Gen.vhd(37): signal "en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at PWM_Gen.vhd(48): signal "en" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
@@ -1371,8 +1350,8 @@ Warning (13032): The following tri-state nodes are fed by constants
 Info (13036): One or more bidirs are fed by always-enabled (GND-fed) open-drain buffers
     Info (13037): Fan-out of permanently enabled (GND-fed) open-drain buffer feeding bidir "GPIO[0]" is set to GND
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a1[5]" merged with LATCH primitive "top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a1[4]"
     Info (13026): Duplicate LATCH primitive "top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a2[5]" merged with LATCH primitive "top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a2[4]"
+    Info (13026): Duplicate LATCH primitive "top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a1[5]" merged with LATCH primitive "top_level:Inst_top_level|LCD_Controller:Inst_LCD_Controller|a1[4]"
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "LCD_DATA[0]~synth"
     Warning (13010): Node "LCD_DATA[1]~synth"
@@ -1416,26 +1395,22 @@ Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (17049): 115 registers lost all their fanouts during netlist optimizations.
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (18057): The assignment to disallow NOT gate push-back on register "sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|trigger_out_mode_ff" is ignored
-Info (286031): Timing-Driven Synthesis is running on partition "sld_signaltap:auto_signaltap_0"
-Info (13000): Registers with preset signals will power-up high
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
 Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
 Info (35024): Succesfully connected in-system debug instance "auto_signaltap_0" to all 69 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1594 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1592 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 32 output pins
     Info (21060): Implemented 61 bidirectional pins
-    Info (21061): Implemented 1458 logic cells
+    Info (21061): Implemented 1456 logic cells
     Info (21064): Implemented 34 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 151 warnings
-    Info: Peak virtual memory: 4723 megabytes
-    Info: Processing ended: Mon Feb 10 20:39:30 2025
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Peak virtual memory: 4711 megabytes
+    Info: Processing ended: Mon Feb 10 21:07:40 2025
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 
