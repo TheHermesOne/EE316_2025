@@ -7,4 +7,5 @@ vmap work rtl_work
 
 vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd}
 vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_master.vhd}
+vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/DE2_115.vhd}
 

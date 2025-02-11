@@ -30,92 +30,21 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity i2c_master
 # -- Compiling architecture logic of i2c_master
+# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/DE2_115.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DE2_115
+# -- Compiling architecture structural of DE2_115
 # 
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_master.vhd
+vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/DE2_115.vhd
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_master
-# -- Compiling architecture logic of i2c_master
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_user_logic
-# -- Compiling architecture logic of i2c_user_logic
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/tb_i2c_master.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity tb_i2c_master
-# -- Compiling architecture behavioral of tb_i2c_master
-vsim +altera -do top_level_run_msim_rtl_vhdl.do -l msim_transcript -gui work.tb_i2c_master
-# vsim +altera -do top_level_run_msim_rtl_vhdl.do -l msim_transcript -gui work.tb_i2c_master 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.tb_i2c_master(behavioral)
-# Loading ieee.numeric_std(body)
-# Loading work.i2c_master(logic)
-# do top_level_run_msim_rtl_vhdl.do 
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Modifying modelsim.ini
-# 
-# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_user_logic
-# -- Compiling architecture logic of i2c_user_logic
-# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_master.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_master
-# -- Compiling architecture logic of i2c_master
-# 
-add wave -position insertpoint  \
-sim:/tb_i2c_master/ack_error \
-sim:/tb_i2c_master/addr \
-sim:/tb_i2c_master/bus_clk \
-sim:/tb_i2c_master/busy \
-sim:/tb_i2c_master/clk \
-sim:/tb_i2c_master/data_rd \
-sim:/tb_i2c_master/data_wr \
-sim:/tb_i2c_master/ena \
-sim:/tb_i2c_master/input_clk \
-sim:/tb_i2c_master/reset_n \
-sim:/tb_i2c_master/rw \
-sim:/tb_i2c_master/scl \
-sim:/tb_i2c_master/sda
-run
-run
-run
+# -- Compiling entity DE2_115
+# -- Compiling architecture structural of DE2_115
 vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_master.vhd
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
@@ -192,538 +121,45 @@ vsim +altera -do top_level_run_msim_rtl_vhdl.do -l msim_transcript -gui work.i2c
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity i2c_master
 # -- Compiling architecture logic of i2c_master
+# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/DE2_115.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DE2_115
+# -- Compiling architecture structural of DE2_115
 # 
 add wave -position insertpoint  \
 sim:/i2c_user_logic_tb/clk \
-sim:/i2c_user_logic_tb/clk_period \
 sim:/i2c_user_logic_tb/iData \
-sim:/i2c_user_logic_tb/scl \
-sim:/i2c_user_logic_tb/sda
+sim:/i2c_user_logic_tb/sda \
+sim:/i2c_user_logic_tb/scl
 add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/addr \
-sim:/i2c_user_logic_tb/uut/busy \
-sim:/i2c_user_logic_tb/uut/busy_prev \
-sim:/i2c_user_logic_tb/uut/byteSel \
-sim:/i2c_user_logic_tb/uut/cont \
-sim:/i2c_user_logic_tb/uut/data_rd \
-sim:/i2c_user_logic_tb/uut/data_wr \
-sim:/i2c_user_logic_tb/uut/i2c_addr \
-sim:/i2c_user_logic_tb/uut/i2c_busy \
-sim:/i2c_user_logic_tb/uut/i2c_data_wr \
-sim:/i2c_user_logic_tb/uut/i2c_ena \
-sim:/i2c_user_logic_tb/uut/i2c_rw \
 sim:/i2c_user_logic_tb/uut/iData \
-sim:/i2c_user_logic_tb/uut/rw \
-sim:/i2c_user_logic_tb/uut/scl \
 sim:/i2c_user_logic_tb/uut/sda \
-sim:/i2c_user_logic_tb/uut/state
-run
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_master.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_master
-# -- Compiling architecture logic of i2c_master
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_user_logic
-# -- Compiling architecture logic of i2c_user_logic
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/tb_i2c_master.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity tb_i2c_master
-# -- Compiling architecture behavioral of tb_i2c_master
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/tb_i2c_user_logic.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity i2c_user_logic_tb
-# -- Compiling architecture testbench of i2c_user_logic_tb
-vsim +altera -do top_level_run_msim_rtl_vhdl.do -l msim_transcript -gui work.i2c_user_logic_tb
-# vsim +altera -do top_level_run_msim_rtl_vhdl.do -l msim_transcript -gui work.i2c_user_logic_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.i2c_user_logic_tb(testbench)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.i2c_user_logic(logic)
-# Loading work.i2c_master(logic)
-# do top_level_run_msim_rtl_vhdl.do 
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Modifying modelsim.ini
-# 
-# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_user_logic
-# -- Compiling architecture logic of i2c_user_logic
-# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_master.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_master
-# -- Compiling architecture logic of i2c_master
-# 
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/iData \
-sim:/i2c_user_logic_tb/scl \
-sim:/i2c_user_logic_tb/sda
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/ack_error \
-sim:/i2c_user_logic_tb/uut/addr \
-sim:/i2c_user_logic_tb/uut/busy \
-sim:/i2c_user_logic_tb/uut/busy_prev \
-sim:/i2c_user_logic_tb/uut/byteSel \
-sim:/i2c_user_logic_tb/uut/clk \
+sim:/i2c_user_logic_tb/uut/scl \
 sim:/i2c_user_logic_tb/uut/cont \
-sim:/i2c_user_logic_tb/uut/data_rd \
-sim:/i2c_user_logic_tb/uut/data_wr \
-sim:/i2c_user_logic_tb/uut/i2c_addr \
-sim:/i2c_user_logic_tb/uut/i2c_busy \
-sim:/i2c_user_logic_tb/uut/i2c_data_wr \
-sim:/i2c_user_logic_tb/uut/i2c_ena \
-sim:/i2c_user_logic_tb/uut/i2c_rw \
-sim:/i2c_user_logic_tb/uut/iData \
+sim:/i2c_user_logic_tb/uut/state \
 sim:/i2c_user_logic_tb/uut/reset_n \
-sim:/i2c_user_logic_tb/uut/scl \
-sim:/i2c_user_logic_tb/uut/sda \
-sim:/i2c_user_logic_tb/uut/state
-run
-run
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_master.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_master
-# -- Compiling architecture logic of i2c_master
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_user_logic
-# -- Compiling architecture logic of i2c_user_logic
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/tb_i2c_master.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity tb_i2c_master
-# -- Compiling architecture behavioral of tb_i2c_master
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/tb_i2c_user_logic.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity i2c_user_logic_tb
-# -- Compiling architecture testbench of i2c_user_logic_tb
-vsim +altera -do top_level_run_msim_rtl_vhdl.do -l msim_transcript -gui work.i2c_user_logic_tb
-# vsim +altera -do top_level_run_msim_rtl_vhdl.do -l msim_transcript -gui work.i2c_user_logic_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.i2c_user_logic_tb(testbench)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.i2c_user_logic(logic)
-# Loading work.i2c_master(logic)
-# do top_level_run_msim_rtl_vhdl.do 
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Modifying modelsim.ini
-# 
-# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_user_logic
-# -- Compiling architecture logic of i2c_user_logic
-# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_master.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_master
-# -- Compiling architecture logic of i2c_master
-# 
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/iData \
-sim:/i2c_user_logic_tb/scl \
-sim:/i2c_user_logic_tb/sda
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/ack_error \
-sim:/i2c_user_logic_tb/uut/addr \
-sim:/i2c_user_logic_tb/uut/busy_prev \
-sim:/i2c_user_logic_tb/uut/byteSel \
-sim:/i2c_user_logic_tb/uut/clk \
-sim:/i2c_user_logic_tb/uut/cont \
-sim:/i2c_user_logic_tb/uut/data_rd \
-sim:/i2c_user_logic_tb/uut/data_wr \
-sim:/i2c_user_logic_tb/uut/i2c_addr \
 sim:/i2c_user_logic_tb/uut/i2c_busy \
-sim:/i2c_user_logic_tb/uut/i2c_data_wr \
-sim:/i2c_user_logic_tb/uut/i2c_ena \
-sim:/i2c_user_logic_tb/uut/i2c_rw \
-sim:/i2c_user_logic_tb/uut/iData \
-sim:/i2c_user_logic_tb/uut/reset_n \
-sim:/i2c_user_logic_tb/uut/scl \
-sim:/i2c_user_logic_tb/uut/sda \
-sim:/i2c_user_logic_tb/uut/state
-run
-run
-run
-run
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_master.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_master
-# -- Compiling architecture logic of i2c_master
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_user_logic
-# -- Compiling architecture logic of i2c_user_logic
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/tb_i2c_master.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity tb_i2c_master
-# -- Compiling architecture behavioral of tb_i2c_master
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/tb_i2c_user_logic.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity i2c_user_logic_tb
-# -- Compiling architecture testbench of i2c_user_logic_tb
-vsim +altera -do top_level_run_msim_rtl_vhdl.do -l msim_transcript -gui work.i2c_user_logic_tb
-# vsim +altera -do top_level_run_msim_rtl_vhdl.do -l msim_transcript -gui work.i2c_user_logic_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.i2c_user_logic_tb(testbench)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.i2c_user_logic(logic)
-# Loading work.i2c_master(logic)
-# do top_level_run_msim_rtl_vhdl.do 
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Modifying modelsim.ini
-# 
-# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_user_logic
-# -- Compiling architecture logic of i2c_user_logic
-# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_master.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_master
-# -- Compiling architecture logic of i2c_master
-# 
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/iData
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/iData \
-sim:/i2c_user_logic_tb/scl \
-sim:/i2c_user_logic_tb/sda
-add wave -position insertpoint  \
 sim:/i2c_user_logic_tb/uut/busy_prev \
-sim:/i2c_user_logic_tb/uut/i2c_busy
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/state
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/i2c_ena
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/i2c_rw
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/data_rd
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/data_wr
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/byteSel
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/inst_i2c_master/data_wr
-run
-run
-run
-run
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_master.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_master
-# -- Compiling architecture logic of i2c_master
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_user_logic
-# -- Compiling architecture logic of i2c_user_logic
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/tb_i2c_master.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity tb_i2c_master
-# -- Compiling architecture behavioral of tb_i2c_master
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/tb_i2c_user_logic.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity i2c_user_logic_tb
-# -- Compiling architecture testbench of i2c_user_logic_tb
-vsim +altera -do top_level_run_msim_rtl_vhdl.do -l msim_transcript -gui work.i2c_user_logic_tb
-# vsim +altera -do top_level_run_msim_rtl_vhdl.do -l msim_transcript -gui work.i2c_user_logic_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.i2c_user_logic_tb(testbench)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.i2c_user_logic(logic)
-# Loading work.i2c_master(logic)
-# do top_level_run_msim_rtl_vhdl.do 
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Modifying modelsim.ini
-# 
-# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_user_logic
-# -- Compiling architecture logic of i2c_user_logic
-# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_master.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_master
-# -- Compiling architecture logic of i2c_master
-# 
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/clk
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/iData
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/inst_i2c_master/data_wr
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/inst_i2c_master/sda
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/inst_i2c_master/scl
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/inst_i2c_master/addr
-# Load canceled
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_master.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_master
-# -- Compiling architecture logic of i2c_master
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_user_logic
-# -- Compiling architecture logic of i2c_user_logic
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/tb_i2c_master.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity tb_i2c_master
-# -- Compiling architecture behavioral of tb_i2c_master
-vcom -reportprogress 300 -work work C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/tb_i2c_user_logic.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity i2c_user_logic_tb
-# -- Compiling architecture testbench of i2c_user_logic_tb
-vsim +altera -do top_level_run_msim_rtl_vhdl.do -l msim_transcript -gui work.i2c_user_logic_tb
-# vsim +altera -do top_level_run_msim_rtl_vhdl.do -l msim_transcript -gui work.i2c_user_logic_tb 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.i2c_user_logic_tb(testbench)
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.i2c_user_logic(logic)
-# Loading work.i2c_master(logic)
-# do top_level_run_msim_rtl_vhdl.do 
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# vlib rtl_work
-# vmap work rtl_work
-# Modifying modelsim.ini
-# 
-# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_user_logic
-# -- Compiling architecture logic of i2c_user_logic
-# vcom -93 -work work {C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_master.vhd}
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package std_logic_arith
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Compiling entity i2c_master
-# -- Compiling architecture logic of i2c_master
-# 
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/iData
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/clk
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/inst_i2c_master/data_wr
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/inst_i2c_master/sda
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/inst_i2c_master/scl
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/inst_i2c_master/addr
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/state
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/cont
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/reset_n
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/i2c_ena
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/i2c_addr
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/i2c_rw
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/i2c_busy
-add wave -position insertpoint  \
-sim:/i2c_user_logic_tb/uut/busy_prev
-add wave -position insertpoint  \
+sim:/i2c_user_logic_tb/uut/data_rd \
+sim:/i2c_user_logic_tb/uut/i2c_ena \
+sim:/i2c_user_logic_tb/uut/i2c_addr \
+sim:/i2c_user_logic_tb/uut/i2c_rw \
+sim:/i2c_user_logic_tb/uut/byteSel \
+sim:/i2c_user_logic_tb/uut/i2c_data_wr \
+sim:/i2c_user_logic_tb/uut/data_wr \
 sim:/i2c_user_logic_tb/uut/ack_error
 run
+run
+run
+run
+run
+# ** Fatal: (vsim-3421) Value 13 for byteSel is out of range 0 to 12.
+#    Time: 2855210 ns  Iteration: 1  Process: /i2c_user_logic_tb/uut/line__56 File: C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd
+# Fatal error in Process line__56 at C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd line 77
+# 
+# HDL call sequence:
+# Stopped at C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/i2c_user_logic.vhd 77 Process line__56
+# 
