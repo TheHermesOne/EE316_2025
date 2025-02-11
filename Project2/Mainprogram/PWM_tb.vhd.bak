@@ -1,0 +1,53 @@
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity statemachine_tb is
+end;
+
+architecture bench of statemachine_tb is
+  -- Ports
+  signal Clk      : std_logic := '0';
+  signal reset    : std_logic := '0';
+  signal countVal : std_logic_vector(7 downto 0) := (others => '0');
+  signal Keys     : std_logic_vector(3 downto 0);
+  signal stateOut : std_logic_vector(3 downto 0);
+begin
+
+  Clk <= not Clk after 5 ns;
+
+  statemachine_inst : entity work.statemachine
+    port map
+    (
+      Clk      => Clk,
+      reset    => reset,
+      CountVal => countVal,
+      Keys     => Keys,
+      stateOut => stateOut
+    );
+    
+  process
+    begin
+    reset <= '1';
+    wait for 20 ns;
+    reset <= '0';
+    Keys <= "0000";
+    wait for 50 ns;
+    countVal <= X"FF";
+    wait for 50 ns;
+    countVal <= X"00";
+    wait for 50 ns;
+    -- Test state transitions
+   
+    -- wait for 50 ns;
+    Keys <= "0010";
+    wait for 50 ns;
+    Keys <= "0100";
+    wait for 50 ns;
+    Keys <= "1000";
+    wait for 50 ns;
+    Keys <= "0000";
+    wait;
+  end process;
+end bench;

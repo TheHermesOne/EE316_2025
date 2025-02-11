@@ -1,12 +1,18 @@
+--TODO
+--* Make the PWM module 
+--	- Needs to take in the 256 from a Univ_bin_counter 
+--	- needs to take data from first 6-8 bits of SRAM output
+--* Make the top level MUXs to pass values to diffrent modules
+
+
+
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 
 entity top_level is
   port (
     iClk      : in std_logic;
-    LCD_ON    : out std_logic; -- LCD Power ON/OFF
-    LCD_BLON  : out std_logic; -- LCD Back Light ON/OFF
-    LCD_RW    : out std_logic; -- LCD Read/Write Select, 0 = Write, 1 = Read
     LCD_EN    : out std_logic; -- LCD Enable
     LCD_RS    : out std_logic; -- LCD Command/Data Select, 0 = Command, 1 = Data
     LCD_DATA  : inout std_logic_vector(7 downto 0); -- LCD Data bus 8 bits
@@ -19,7 +25,6 @@ entity top_level is
     SRAM_WE_N : out std_logic; -- SRAM Write Enable
     SRAM_CE_N : out std_logic; -- SRAM Chip Enable
     SRAM_OE_N : out std_logic; -- SRAM Output Enable
-    LEDG0     : out std_logic; -- LED Green[8:0]
     KEY       : in std_logic_vector(3 downto 0); -- Pushbutton[3:0]
     GPIO      : inout std_logic_vector(35 downto 0)
   );
@@ -122,42 +127,55 @@ architecture Structural of top_level is
       SRAM_ADDRESS : in std_logic_vector(19 downto 0);
       LCD_DATA     : inout std_logic_vector(7 downto 0);
       LCD_EN       : out std_logic;
-      LCD_RW       : out std_logic;
       LCD_RS       : out std_logic
     );
   end component;
+  
+  component PWM_gen is
+   port(
+      clk						: in std_logic;
+		en							: in std_logic;
+		Sram_DataOut			: in std_logic_vector(15 downto 0);
+		StateIn					: in std_logic_vector(1 downto 0);
+		PWMout					: out std_logic		
+   );
+end component;
 
   -------------------Temp Variables(Internal only)--------------------
-  signal clk_enable60ns, Rst   : std_logic;
-  signal reset, counterReset   : std_logic;
-  signal reset_db              : std_logic;
-  signal CountOut_univ         : std_logic_vector(7 downto 0);
-  signal CountOut_var          : std_logic_vector(7 downto 0);
-  signal data2Sram             : std_logic_vector(15 downto 0);
-  signal SramReady             : std_logic;
-  signal SramAddrIn            : std_logic_vector(19 downto 0);
-  signal bReadWrite            : std_logic;
-  signal SramActive            : std_logic;
-  signal data_outR, data_outUR : std_logic_vector(15 downto 0);
-  signal romDataOut            : std_logic_vector(15 downto 0);
-  signal ErrorVal              : std_logic_vector(3 downto 0);
-  signal resetmux              : std_logic;
-  signal statereset            : std_logic;
-  signal odata                 : std_logic_vector(4 downto 0);
-  signal sramAddressout        : std_logic_vector(19 downto 0);
-  signal CountStep             : integer;
-  signal Cnten                 : std_logic;
-  signal cntDir                : std_logic;
-  signal Cnten_univ            : std_logic;
-  signal cntDir_univ           : std_logic;
-  signal keys_db					: std_logic_vector(3 downto 0):= (others => '0');
+  signal clk_enable60ns,clk_enable1hz   : std_logic;
+  signal reset,counterReset,Rst   : std_logic;
+  signal reset_State             : std_logic;
+  signal CountOut_univ        : std_logic_vector(7 downto 0);
+  signal CountOut_univ_delay	: std_logic_vector(7 downto 0);
+  signal CountOut_var         : std_logic_vector(7 downto 0);
+  signal data2Sram            : std_logic_vector(15 downto 0);
+  signal SramReady            : std_logic;
+  signal SramAddrIn           : std_logic_vector(19 downto 0);
+  signal bReadWrite           : std_logic;
+  signal SramActive           : std_logic;
+  signal data_outR, data_outUR: std_logic_vector(15 downto 0);
+  signal romDataOut           : std_logic_vector(15 downto 0);
+  signal ErrorVal             : std_logic_vector(3 downto 0);
+  signal resetmux             : std_logic;
+  signal statereset           : std_logic;
+  signal odata                : std_logic_vector(4 downto 0);
+--  signal sramAddressout       : std_logic_vector(19 downto 0);
+  signal CountStep            : integer;
+  signal Cnten                : std_logic;
+  signal count_clk_enable		: std_logic;
+  signal cntDir               : std_logic;
+  signal Cnten_univ           : std_logic;
+  signal cntDir_univ          : std_logic := '1';
+  signal keys_db				 	: std_logic_vector(3 downto 0):= (others => '0');
   signal StateState				: std_logic_vector(3 downto 0);
+  signal dataDisplay				: std_logic_vector(15 downto 0);
+  signal addrDisplay				: std_logic_vector(19 downto 0);
+  signal PWMen						: std_logic;
 begin
 
-  Rst          <= not reset_db;
+  Rst          <= not key(0);
   counterReset <= reset or Rst;
   resetmux     <= counterReset or statereset;
-  SRAM_ADDR    <= sramAddressout;
 
   ------------Entity Instantiation-------------
   Inst_clk_Reset_Delay : Reset_Delay
@@ -166,11 +184,11 @@ begin
     iCLK   => iCLK,
     oRESET => reset
   );
-
+	
    Inst_Key1_debounce : btn_debounce_toggle
    port map
    (
-     BTN_I    => KEY(1),
+     BTN_I    => not KEY(1),
      CLK      => iCLK,
      BTN_O    => open,
      TOGGLE_O => open,
@@ -179,22 +197,24 @@ begin
 	   Inst_Key2_debsounce : btn_debounce_toggle
    port map
    (
-     BTN_I    => KEY(2),
+     BTN_I    => not KEY(2),
      CLK      => iCLK,
      BTN_O    => open,
      TOGGLE_O => open,
      PULSE_O  => Keys_db(2)
    );
-	   Inst_Key3_debounce : btn_debounce_toggle
+	Inst_Key3_debounce : btn_debounce_toggle
    port map
    (
-     BTN_I    => KEY(3),
+     BTN_I    => not KEY(3),
      CLK      => iCLK,
      BTN_O    => open,
      TOGGLE_O => open,
      PULSE_O  => Keys_db(3)
    );
 
+	Keys_db(0) <= not Key(0);
+	
   Inst_clk_enabler60ns : clk_enabler
   generic map(
     cnt_max => 2) --Needs to be set to 60 ns
@@ -203,6 +223,15 @@ begin
     clock  => iclk, -- output from sys_clk
     clk_en => clk_enable60ns -- enable every 10th sys_clk edge
   );
+  
+    Inst_clk_enabler1hz : clk_enabler
+  generic map(
+    cnt_max => 49999999) --Needs to be set to 60 ns
+  port map
+  (
+    clock  => iclk, -- output from sys_clk
+    clk_en => clk_enable1hz -- enable every 10th sys_clk edge
+  );
 
   Inst_var_size_counter : var_size_counter
   generic map(
@@ -210,7 +239,7 @@ begin
   port map
   (
     clk       => iclk,
-    reset     => resetmux,
+    reset     => counterReset,
     syn_clr   => Rst,
     CountStep => countStep,
     en        => Cnten,
@@ -223,13 +252,13 @@ begin
   port map
   (
     clk      => iclk,
-    reset    => resetmux,
+    reset    => counterReset,
     syn_clr  => Rst,
     load     => '0',
     en       => Cnten_univ,
     up       => CntDir_univ,
-    clk_en   => clk_enable60ns,
-    d => (others => '0'),
+    clk_en   => count_clk_enable,
+    d 		 => (others => '0'),
     max_tick => open,
     min_tick => open,
     q        => CountOut_univ
@@ -257,7 +286,7 @@ begin
     ready       => SramReady,
     data_s2f_r  => data_outR,
     data_s2f_ur => data_outUR,
-    ad          => sramAddressout,
+    ad          => SRAM_ADDR,
     we_n        => SRAM_WE_N,
     oe_n        => SRAM_OE_N,
     dio         => SRAM_DQ,
@@ -276,48 +305,73 @@ begin
   port map
   (
     iclk         => iclk,
-    LCD_Mode_SW  => "0000", --temp until SM finished
-    SRAM_DATA    => data_outR,
-    SRAM_ADDRESS => sramAddressout,
+    LCD_Mode_SW  => StateState,
+    SRAM_DATA    => dataDisplay,
+    SRAM_ADDRESS => addrDisplay, -- Delay before sending to sync correctly
     LCD_DATA     => LCD_DATA,
     LCD_EN       => LCD_EN,
-    LCD_RW       => LCD_RW,
     LCD_RS       => LCD_RS
   );
-  --		
-  --		UCmux:process(iclk,stateState)
-  --			begin	
-  --				if rising_edge(iclk) then
-  --					case StateState is
-  --						when"00" => --Init Mode
-  --							bReadWrite <= '0';
-  --							SramActive <= clk_enable60ns;
-  --							Count_clk_enable <= clk_enable60ns;
-  --							SramAddrIn <= (X"000" & countOut);
-  --							data2Sram <= RomDataOut;
-  --						when"01" => -- OP mode
-  --							SramActive <= clk_enable1hz; 
-  --							Count_clk_enable <= clk_enable1hz;
-  --							SramAddrIn <= (X"000" & countOut);
-  --							bReadWrite <= '1';
-  --							data2Seg <= data_outR;
-  --							addr2Seg <= sramAddressout(7 downto 0);
-  --							LEDG0 <= '1';
-  --						when "10" => -- PROG mode -addr
-  --							SramActive <= L_key_Write;
-  --							SramAddrIn <= (X"000" & ShiftAddr); 
-  --							bReadWrite <= '0';
-  --							addrShiftIn <= oData;
-  --							addr2Seg <= ShiftAddr;
-  --							LEDG0 <= '0';
-  --						when "11" => -- PROG mode -data
-  --							SramActive <= L_key_Write;
-  --							data2Sram <= ShiftData;
-  --							bReadWrite <= '0';
-  --							dataShiftIn <= oData;
-  --							data2Seg <= shiftData;
-  --						when others=> ErrorVal <= "0001";
-  --					end case;		
-  --				end if;
-  --		end process;
+  
+  inst_PWM: PWM_gen
+  port map(
+	clk => iclk,
+	en => PWMen,
+	Sram_dataOut => Data_outR,
+	stateIn => StateState(3 downto 2),
+	PWMOut => GPIO(0)
+  );
+  
+  process(iclk)
+	begin
+		if (rising_edge(iclk)) then 
+			countOut_univ_delay <= countOut_univ;
+		end if;
+	end process;
+	
+	UCmux:process(iclk,stateState)
+		begin	
+			if rising_edge(iclk) then
+				case StateState(3 downto 2) is
+					when "00" => --Init Mode  		--  This could cause issues
+						reset_State <= '1';
+						bReadWrite <= '0';
+						Cnten_univ <= '1';
+						SramActive <= clk_enable60ns;
+						Count_clk_enable <= clk_enable60ns;
+						SramAddrIn <= (X"000" & countOut_univ);
+						data2Sram <= RomDataOut;
+					when"10" => -- Test Mode
+						SramActive <= clk_enable1hz; 
+						Count_clk_enable <= clk_enable1hz;
+						SramAddrIn <= (X"000" & countOut_univ);
+						bReadWrite <= '1';
+						cnten_univ <= '1';
+						dataDisplay <= data_outR;
+						addrDisplay <= (X"000" & countOut_univ_delay);
+					when "01" => -- Pause Mode				-- do I need to do anything in this mode?
+	--							SramActive <= L_key_Write;
+	--							SramAddrIn <= (X"000" & ShiftAddr); 
+	--							bReadWrite <= '0';
+	--							addrShiftIn <= oData;
+	--							addr2Seg <= ShiftAddr;
+					when "11" => -- PWM Mode
+						SramActive <= iclk;
+						bReadWrite <= '1';
+						cnten <= '1';
+						SramaddrIn <= (X"000" & countOut_var);
+						PWMen <= '1';
+						case StateState(1 downto 0) is
+							when "00" => 
+								countStep <= 5153;
+							when "10" =>
+								countStep <= 10307;
+							when "11" =>
+								countStep <= 85899;
+							when others => ErrorVal <= "0010";
+						end case;
+					when others=> ErrorVal <= "0001";
+				end case;		
+			end if;
+	end process;
 end Structural;

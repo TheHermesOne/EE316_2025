@@ -3,407 +3,481 @@ K3
 13
 cModel Technology
 Z0 dC:\Users\nathani\Documents\GitHub\EE316_2025\Project2\Mainprogram\simulation\modelsim
-Eclk_enabler
+Ebtn_debounce_toggle
 Z1 w1739116975
-Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
-Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z5 dC:\Users\nathani\Documents\GitHub\EE316_2025\Project2\Mainprogram\simulation\modelsim
-Z6 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/clk_enabler.vhd
-Z7 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/clk_enabler.vhd
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 dC:\Users\nathani\Documents\GitHub\EE316_2025\Project2\Mainprogram\simulation\modelsim
+Z7 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/btn_debounce_toggle.vhd
+Z8 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/btn_debounce_toggle.vhd
 l0
-L7
-V5`@OBnOj4Z5bM5RWn7B<C2
-Z8 OV;C;10.1d;51
+L32
+VaE75?aXQH9SSmW=KB6A3Z3
+Z9 OV;C;10.1d;51
 31
-Z9 !s108 1739136796.044000
-Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/clk_enabler.vhd|
-Z11 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/clk_enabler.vhd|
-Z12 o-93 -work work -O0
-Z13 tExplicit 1
-!s100 AFSH;@Fal[B52>>mUX?gJ1
+Z10 !s108 1739221329.056000
+Z11 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/btn_debounce_toggle.vhd|
+Z12 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/btn_debounce_toggle.vhd|
+Z13 o-93 -work work -O0
+Z14 tExplicit 1
+!s100 FF9dY`ima7TQ;>FY^8]W>2
 !i10b 1
-Abehv
+Abehavioral
 R2
 R3
 R4
-DEx4 work 11 clk_enabler 0 22 5`@OBnOj4Z5bM5RWn7B<C2
-l22
-L18
-V^@JF<XHidU@?>Ie4H1PLA0
-R8
-31
+R5
+DEx4 work 19 btn_debounce_toggle 0 22 aE75?aXQH9SSmW=KB6A3Z3
+l52
+L42
+VS0n1X:zfNc[?LaDi?8GSX0
 R9
+31
 R10
 R11
 R12
 R13
+R14
+!s100 4B3C?g84nMRh`moo9J[`W3
+!i10b 1
+Eclk_enabler
+R1
+Z15 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R4
+R5
+R6
+Z16 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/clk_enabler.vhd
+Z17 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/clk_enabler.vhd
+l0
+L7
+V5`@OBnOj4Z5bM5RWn7B<C2
+R9
+31
+Z18 !s108 1739221328.878000
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/clk_enabler.vhd|
+Z20 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/clk_enabler.vhd|
+R13
+R14
+!s100 AFSH;@Fal[B52>>mUX?gJ1
+!i10b 1
+Abehv
+R15
+R4
+R5
+DEx4 work 11 clk_enabler 0 22 5`@OBnOj4Z5bM5RWn7B<C2
+l22
+L18
+V^@JF<XHidU@?>Ie4H1PLA0
+R9
+31
+R18
+R19
+R20
+R13
+R14
 !s100 ]58g:ONa8FXaYPJkg6W=I2
 !i10b 1
 Ede2_115
 R1
-R3
 R4
 R5
-Z14 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/DE2_115.vhd
-Z15 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/DE2_115.vhd
+R6
+Z21 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/DE2_115.vhd
+Z22 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/DE2_115.vhd
 l0
 L4
 VknWdfh`8]5:7Rj<NTjBg;3
-R8
+R9
 31
-Z16 !s108 1739136795.884000
-Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/DE2_115.vhd|
-Z18 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/DE2_115.vhd|
-R12
+Z23 !s108 1739221328.701000
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/DE2_115.vhd|
+Z25 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/DE2_115.vhd|
 R13
+R14
 !s100 >G::mn[552S;SdDPjjURM1
 !i10b 1
 Astructural
-R3
 R4
+R5
 DEx4 work 7 de2_115 0 22 knWdfh`8]5:7Rj<NTjBg;3
 l160
 L132
 VScg0HOWdm3<8g[iEeNjbe3
-R8
+R9
 31
-R16
-R17
-R18
-R12
+R23
+R24
+R25
 R13
+R14
 !s100 M`A;o^5hImCAhjMljOF>00
 !i10b 1
 Elcd_controller
 R1
-R3
 R4
 R5
-Z19 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/LCD_Controller.vhd
-Z20 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/LCD_Controller.vhd
+R6
+Z26 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/LCD_Controller.vhd
+Z27 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/LCD_Controller.vhd
 l0
 L4
 VWOHiX9PlF>_D2bCdVJh<^2
-R8
+R9
 31
-Z21 !s108 1739136796.711000
-Z22 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/LCD_Controller.vhd|
-Z23 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/LCD_Controller.vhd|
-R12
+Z28 !s108 1739221329.732000
+Z29 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/LCD_Controller.vhd|
+Z30 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/LCD_Controller.vhd|
 R13
+R14
 !s100 TAFn4ZgFH=GfD7T?gKPTF0
 !i10b 1
 Astructural
-R3
 R4
+R5
 DEx4 work 14 lcd_controller 0 22 WOHiX9PlF>_D2bCdVJh<^2
 l73
 L17
 VQk5O;zoM:PZn_GSWQ[bD80
-R8
+R9
 31
-R21
-R22
-R23
-R12
+R28
+R29
+R30
 R13
+R14
 !s100 ^liB`MbT1zDh]jWIF@>jP0
 !i10b 1
-Ereset_delay
-Z24 w1739116976
-R2
-R3
+Epwm_gen
+Z31 w1739222631
+R15
 R4
 R5
-Z25 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/reset_delay.vhd
-Z26 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/reset_delay.vhd
+R6
+Z32 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/PWM_Gen.vhd
+Z33 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/PWM_Gen.vhd
+l0
+L7
+VW<DzE=0KTzTLKj_`^fGS<2
+!s100 a@cOCQnPiPSJ883l=o^g_1
+R9
+32
+!i10b 1
+Z34 !s108 1739222707.772000
+Z35 !s90 -reportprogress|300|-work|work|-O0|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/PWM_Gen.vhd|
+Z36 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/PWM_Gen.vhd|
+Z37 o-work work -O0
+R14
+Aarch
+R15
+R4
+R5
+Z38 DEx4 work 7 pwm_gen 0 22 W<DzE=0KTzTLKj_`^fGS<2
+l22
+L16
+Z39 V^LOfJ^Ca_2=z3cdJC:jRg3
+Z40 !s100 oezziI5zQAU[BYRG`G4[j1
+R9
+32
+!i10b 1
+R34
+R35
+R36
+R37
+R14
+Epwm_tb
+Z41 w1739222700
+R15
+R4
+R5
+R6
+Z42 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/PWM_tb.vhd
+Z43 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/PWM_tb.vhd
+l0
+L6
+V3@335j;j`86gMh__<>Vcc0
+R9
+32
+Z44 !s108 1739222707.614000
+Z45 !s90 -reportprogress|300|-work|work|-O0|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/PWM_tb.vhd|
+Z46 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/PWM_tb.vhd|
+R37
+R14
+!s100 <48hjD]3?NPMQU^=iPh_90
+!i10b 1
+Abench
+R38
+R15
+R4
+R5
+DEx4 work 6 pwm_tb 0 22 3@335j;j`86gMh__<>Vcc0
+l16
+L9
+V44LGE8N1no^B:A2240aGY3
+R9
+32
+R44
+R45
+R46
+R37
+R14
+!s100 `SYDj<C9=Rd?:0foKN9B53
+!i10b 1
+Ereset_delay
+Z47 w1739116976
+R15
+R4
+R5
+R6
+Z48 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/reset_delay.vhd
+Z49 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/reset_delay.vhd
 l0
 L8
 V=a]kVzmg4QOF^gm=?beXU3
-R8
+R9
 31
-Z27 !s108 1739136795.718000
-Z28 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/reset_delay.vhd|
-Z29 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/reset_delay.vhd|
-R12
+Z50 !s108 1739221328.528000
+Z51 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/reset_delay.vhd|
+Z52 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/reset_delay.vhd|
 R13
+R14
 !s100 N[2z`b;IbX_Kc24fd56ET1
 !i10b 1
 Aarch
-R2
-R3
+R15
 R4
+R5
 DEx4 work 11 reset_delay 0 22 =a]kVzmg4QOF^gm=?beXU3
 l20
 L16
 V5JS[LklNCIPKz3f[1c2GY2
-R8
+R9
 31
-R27
-R28
-R29
-R12
+R50
+R51
+R52
 R13
+R14
 !s100 [fVl1VUR=a@1Td717l74<2
 !i10b 1
 Erom
 R1
-R3
 R4
 R5
-Z30 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/ROM.vhd
-Z31 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/ROM.vhd
+R6
+Z53 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/ROM.vhd
+Z54 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/ROM.vhd
 l0
 L42
 VeN5ZONNP^@mXL99>iN9fR0
-R8
+R9
 31
-Z32 !s108 1739136796.538000
-Z33 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/ROM.vhd|
-Z34 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/ROM.vhd|
-R12
+Z55 !s108 1739221329.567000
+Z56 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/ROM.vhd|
+Z57 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/ROM.vhd|
 R13
+R14
 !s100 UfTehAFVFDioZ^7olC^KM2
 !i10b 1
 Asyn
-R3
 R4
+R5
 DEx4 work 3 rom 0 22 eN5ZONNP^@mXL99>iN9fR0
 l82
 L52
 V@c_d7;;GOO3F_Q^IQNWmF1
-R8
+R9
 31
-R32
-R33
-R34
-R12
+R55
+R56
+R57
 R13
+R14
 !s100 66cG8e3UiBJRClD[[I6c83
 !i10b 1
 Esram_controller
 R1
-R3
 R4
 R5
-Z35 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/SRAM_Controller.vhd
-Z36 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/SRAM_Controller.vhd
+R6
+Z58 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/SRAM_Controller.vhd
+Z59 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/SRAM_Controller.vhd
 l0
 L4
 VBYL5KMVB0nF;Wb1@`dV`c3
-R8
+R9
 31
-Z37 !s108 1739136795.026000
-Z38 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/SRAM_Controller.vhd|
-Z39 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/SRAM_Controller.vhd|
-R12
+Z60 !s108 1739221328.359000
+Z61 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/SRAM_Controller.vhd|
+Z62 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/SRAM_Controller.vhd|
 R13
+R14
 !s100 jICWb0lzWBRhXflH25Qbf3
 !i10b 1
 Aarch
-R3
 R4
+R5
 DEx4 work 15 sram_controller 0 22 BYL5KMVB0nF;Wb1@`dV`c3
 l31
 L20
 VVGEf2AHlA66O52EdMdAAZ2
-R8
+R9
 31
-R37
-R38
-R39
-R12
+R60
+R61
+R62
 R13
+R14
 !s100 Z6YU[OLWbJJ8Rn;gJBCS;2
 !i10b 1
 Estatemachine
-Z40 w1739137630
-Z41 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
-Z42 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z63 w1739137630
 R2
 R3
+R15
 R4
 R5
-Z43 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd
-Z44 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd
+R6
+Z64 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd
+Z65 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd
 l0
 L6
 VQ?K4284b]_c>R2L8UZn1o0
-!s100 B:;TCUj8e@jgNKheSO@<e0
-R8
+R9
 31
-!i10b 1
-Z45 !s108 1739137641.864000
-Z46 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd|
-Z47 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd|
-R12
+Z66 !s108 1739221329.910000
+Z67 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd|
+Z68 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Statemachine.vhd|
 R13
+R14
+!s100 B:;TCUj8e@jgNKheSO@<e0
+!i10b 1
 Astruct
-R41
-R42
 R2
 R3
+R15
 R4
-Z48 DEx4 work 12 statemachine 0 22 Q?K4284b]_c>R2L8UZn1o0
+R5
+DEx4 work 12 statemachine 0 22 Q?K4284b]_c>R2L8UZn1o0
 l77
 L16
 VUOcaUeJ;DW=loQVDkN;DE2
-!s100 <^Q?PnzmHI[=4za1`PVO?3
-R8
+R9
 31
-!i10b 1
-R45
-R46
-R47
-R12
+R66
+R67
+R68
 R13
-Estatemachine_tb
-Z49 w1739137610
-R2
-R3
-R4
-R5
-Z50 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/statemachine_tb.vhd
-Z51 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/statemachine_tb.vhd
-l0
-L6
-Venf0@MnDbI0:]9]N5oTfn0
-R8
-32
-Z52 !s108 1739137641.701000
-Z53 !s90 -reportprogress|300|-work|work|-O0|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/statemachine_tb.vhd|
-Z54 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/statemachine_tb.vhd|
-Z55 o-work work -O0
-R13
-!s100 kogPCNF1<86o1QbQ_HRzL2
-!i10b 1
-Abench
-R41
-R42
-R48
-R2
-R3
-R4
-DEx4 work 15 statemachine_tb 0 22 enf0@MnDbI0:]9]N5oTfn0
-l16
-L9
-V=fdd@K_0?ma]UWj`MGQ]J0
-R8
-32
-R52
-R53
-R54
-R55
-R13
-!s100 Z^;K1g4:5XzcN=_XecAI21
+R14
+!s100 <^Q?PnzmHI[=4za1`PVO?3
 !i10b 1
 Etop_level
-Z56 w1739119352
-R3
+Z69 w1739139210
 R4
 R5
-Z57 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/top_level.vhd
-Z58 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/top_level.vhd
+R6
+Z70 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/top_level.vhd
+Z71 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/top_level.vhd
 l0
-L4
+L13
 VTh4?38Ma[`i8RB<9kJkN;1
-R8
+R9
 31
-Z59 !s108 1739136794.857000
-Z60 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/top_level.vhd|
-Z61 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/top_level.vhd|
-R12
+Z72 !s108 1739221328.187000
+Z73 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/top_level.vhd|
+Z74 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/top_level.vhd|
 R13
-!s100 F8HQ:K7bTikE5`2MQ^:i=0
+R14
+!s100 h;XTd3;@e]]K2j5@]NZ360
 !i10b 1
 Astructural
-R3
-R4
-DEx4 work 9 top_level 0 22 Th4?38Ma[`i8RB<9kJkN;1
-l154
-L30
-VCV@PE0jnaoaUMNK0MIJL51
-R8
-31
-R59
-R60
-R61
-R12
-R13
-!s100 9:O7lgPW[3<EzHZ12zYIz2
-!i10b 1
-Euniv_bin_counter
-Z62 w1739116977
-R2
-R3
 R4
 R5
-Z63 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/univ_bin_counter.vhd
-Z64 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/univ_bin_counter.vhd
+DEx4 work 9 top_level 0 22 Th4?38Ma[`i8RB<9kJkN;1
+l164
+L39
+VnTE>PiizKUUOo=BL^ef6d3
+R9
+31
+R72
+R73
+R74
+R13
+R14
+!s100 a0BURTj>JZ?h6@h[1k;bN1
+!i10b 1
+Euniv_bin_counter
+Z75 w1739116977
+R15
+R4
+R5
+R6
+Z76 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/univ_bin_counter.vhd
+Z77 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/univ_bin_counter.vhd
 l0
 L9
 VaTVYh>l:MNBX68MX[c:H43
-R8
+R9
 31
-Z65 !s108 1739136796.369000
-Z66 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/univ_bin_counter.vhd|
-Z67 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/univ_bin_counter.vhd|
-R12
+Z78 !s108 1739221329.403000
+Z79 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/univ_bin_counter.vhd|
+Z80 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/univ_bin_counter.vhd|
 R13
+R14
 !s100 cHQ3L1]c^Ul0iL@TO?@T83
 !i10b 1
 Aarch
-R2
-R3
+R15
 R4
+R5
 DEx4 work 16 univ_bin_counter 0 22 aTVYh>l:MNBX68MX[c:H43
 l24
 L21
 Ve^L7jlXT<XCCLaR8RATVJ0
-R8
+R9
 31
-R65
-R66
-R67
-R12
+R78
+R79
+R80
 R13
+R14
 !s100 >WGSH4?fWCGME0P6jj5c63
 !i10b 1
 Evar_size_counter
 R1
-R2
-R3
+R15
 R4
 R5
-Z68 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd
-Z69 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd
+R6
+Z81 8C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd
+Z82 FC:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd
 l0
 L7
 V`m7OAzd=:4M><Ui`Z39_f3
-R8
+R9
 31
-Z70 !s108 1739136796.205000
-Z71 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd|
-Z72 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd|
-R12
+Z83 !s108 1739221329.229000
+Z84 !s90 -reportprogress|300|-93|-work|work|C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd|
+Z85 !s107 C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Mainprogram/Var_size_Counter.vhd|
 R13
+R14
 !s100 Ajh8bj0?ZCV8;3[T?2ZWM1
 !i10b 1
 Aarch
-R2
-R3
+R15
 R4
+R5
 DEx4 work 16 var_size_counter 0 22 `m7OAzd=:4M><Ui`Z39_f3
 l22
 L19
 V64NlW0U10l>k^EB`zN8JP3
-R8
+R9
 31
-R70
-R71
-R72
-R12
+R83
+R84
+R85
 R13
+R14
 !s100 JLS^`g_Ike@L24i?GGc:e0
 !i10b 1

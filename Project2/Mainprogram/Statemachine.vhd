@@ -21,59 +21,6 @@ architecture struct of statemachine is
   signal prevCountVal : std_logic_vector(7 downto 0);
   signal state        : std_logic_vector(3 downto 0);
 
---procedure btn_pulse_procedure(
---		signal clk : in std_logic;
---		signal Btn : in std_logic;
---		signal btn_pulse: out std_logic;	
---		signal btncnt : out integer	
---		) is
-----	constant CNTR_MAX : std_logic_vector(15 downto 0) := X"00FF";
-----	variable btn_cntr   : std_logic_vector(15 downto 0) := (others => '0');
-----	variable btn_sync: std_logic_vector(1 downto 0):= (others => '0');
-----	variable btn_reg: std_logic:= '0';
---	variable cnt : integer range 0 to 255;
---	
---	begin
---	if (rising_edge(clk)) then
---		cnt := cnt + 1;
---	end if;
---	btncnt <= cnt;
-----		if ((btn_reg = '1') xor (Btn = '1')) then
-----			if (btn_cntr = CNTR_MAX) then
-----				btn_cntr := (others => '0');
-----			else
-----				btn_cntr := btn_cntr + 1;
-----			end if;
-----		else
-----			btn_cntr := (others => '0');
-----		end if;
-----		if (btn_cntr = CNTR_MAX) then
-----			btn_reg := not(btn_reg);
-----		end if;
-----		btn_sync(0) := btn_reg;
-----		btn_sync(1) := btn_sync(0);
-----	end if;
-----	if (btn_cntr = CNTR_MAX) then
-----		btn_pulse <= '1';
-----	else
-----		btn_pulse <= '0';
-----		btncnt <= btn_cntr;
-----	end if;
---	
---	--	btn_pulse   <= (not btn_sync(1)) and btn_sync(0);	
---end procedure;
---
---
---function btn_pulse(btn_in : std_logic) return std_logic is
---	variable btn_sync: std_logic_vector(1 downto 0):= (others => '0');
---	variable btn_pulse: std_logic;
---	begin
---		btn_sync(0) := btn_in;
---		btn_sync(1) := btn_sync(0);
---		btn_pulse := (not btn_sync(1)) and btn_sync(0);	
---		return btn_pulse;
---end function;
-
 begin	
    process (Clk, reset, Keys)
   begin

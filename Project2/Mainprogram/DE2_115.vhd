@@ -22,7 +22,7 @@ entity DE2_115 is
     --      HEX6        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 6
     --      HEX7        : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);		-- Seven Segment Digit 7
     ---- 			LED		      
-    LEDG : out std_logic_vector(8 downto 0); -- LED Green[8:0]
+--    LEDG : out std_logic_vector(8 downto 0); -- LED Green[8:0]
     --      LEDR        : OUT STD_LOGIC_VECTOR(17 DOWNTO 0);		-- LED Red[17:0]
     ---- 			UART
     --      UART_CTS    : OUT STD_LOGIC;							-- UART Transmitter
@@ -73,9 +73,9 @@ entity DE2_115 is
     --      OTG_DREQ    : IN STD_LOGIC_VECTOR(1 DOWNTO 0);		-- ISP1362 DMA Request 0
     --      OTG_DACK_N  : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);		-- ISP1362 DMA Acknowledge 0
     ---- 			LCD Module 16X2		            
-    LCD_ON   : out std_logic; -- LCD Power ON/OFF
-    LCD_BLON : out std_logic; -- LCD Back Light ON/OFF
-    LCD_RW   : out std_logic; -- LCD Read/Write Select, 0 = Write, 1 = Read
+    LCD_ON   : out std_logic := '1'; -- LCD Power ON/OFF
+    LCD_BLON : out std_logic := '1'; -- LCD Back Light ON/OFF
+    LCD_RW   : out std_logic := '0'; -- LCD Read/Write Select, 0 = Write, 1 = Read
     LCD_EN   : out std_logic; -- LCD Enable
     LCD_RS   : out std_logic; -- LCD Command/Data Select, 0 = Command, 1 = Data
     LCD_DATA : inout std_logic_vector(7 downto 0); -- LCD Data bus 8 bits
@@ -136,9 +136,6 @@ architecture structural of DE2_115 is
   component top_level is
     port (
       iClk      : in std_logic;
-      LCD_ON    : out std_logic; -- LCD Power ON/OFF
-      LCD_BLON  : out std_logic; -- LCD Back Light ON/OFF
-      LCD_RW    : out std_logic; -- LCD Read/Write Select, 0 = Write, 1 = Read
       LCD_EN    : out std_logic; -- LCD Enable
       LCD_RS    : out std_logic; -- LCD Command/Data Select, 0 = Command, 1 = Data
       LCD_DATA  : inout std_logic_vector(7 downto 0); -- LCD Data bus 8 bits
@@ -151,7 +148,6 @@ architecture structural of DE2_115 is
       SRAM_WE_N : out std_logic; -- SRAM Write Enable
       SRAM_CE_N : out std_logic; -- SRAM Chip Enable
       SRAM_OE_N : out std_logic; -- SRAM Output Enable
-      LEDG0     : out std_logic; -- LED Green[8:0]
       KEY       : in std_logic_vector(3 downto 0); -- Pushbutton[3:0]
       GPIO      : inout std_logic_vector(35 downto 0)
     );
@@ -165,9 +161,6 @@ begin
   port map
   (
     iClk      => CLOCK_50,
-    LCD_ON    => LCD_ON, -- LCD Power ON/OFF
-    LCD_BLON  => LCD_BLON, -- LCD Back Light ON/OFF
-    LCD_RW    => LCD_RW, -- LCD Read/Write Select, 0 = Write, 1 = Read
     LCD_EN    => LCD_EN, -- LCD Enable
     LCD_RS    => LCD_RS, -- LCD Command/Data Select, 0 = Command, 1 = Data
     LCD_DATA  => LCD_DATA, -- LCD Data bus 8 bits
@@ -180,7 +173,6 @@ begin
     SRAM_WE_N => SRAM_WE_N, -- SRAM Write Enable
     SRAM_CE_N => SRAM_CE_N, -- SRAM Chip Enable
     SRAM_OE_N => SRAM_OE_N, -- SRAM Output Enable
-    LEDG0     => LEDG(0),
     KEY       => KEY,
     GPIO      => GPIO(35 downto 0)
   );
