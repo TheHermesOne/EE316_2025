@@ -1,4 +1,22 @@
 
+State Machine - |DE2_115|top_level:Inst_top_level|i2c_user_logic:inst_I2C|state
+Name state.repeat state.write_data state.start 
+state.start 0 0 0 
+state.write_data 0 1 1 
+state.repeat 1 0 1 
+
+State Machine - |DE2_115|top_level:Inst_top_level|i2c_user_logic:inst_I2C|i2c_master:inst_i2c_master|state
+Name state.stop state.mstr_ack state.slv_ack2 state.rd state.wr state.slv_ack1 state.command state.start state.ready 
+state.ready 0 0 0 0 0 0 0 0 0 
+state.start 0 0 0 0 0 0 0 1 1 
+state.command 0 0 0 0 0 0 1 0 1 
+state.slv_ack1 0 0 0 0 0 1 0 0 1 
+state.wr 0 0 0 0 1 0 0 0 1 
+state.rd 0 0 0 1 0 0 0 0 1 
+state.slv_ack2 0 0 1 0 0 0 0 0 1 
+state.mstr_ack 0 1 0 0 0 0 0 0 1 
+state.stop 1 0 0 0 0 0 0 0 1 
+
 State Machine - |DE2_115|top_level:Inst_top_level|SRAM_Controller:Inst_SRAM_Controller|state_reg
 Name state_reg.w2 state_reg.w1 state_reg.r2 state_reg.r1 state_reg.idle 
 state_reg.idle 0 0 0 0 0 

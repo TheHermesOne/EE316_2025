@@ -1,7 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity statemachine is
 port(
 	Clk :in std_LOGIC;
 	reset : in std_logic;

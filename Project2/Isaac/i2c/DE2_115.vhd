@@ -5,11 +5,11 @@ ENTITY DE2_115 IS
    PORT (
  -- 			Clock Input	 	     
       CLOCK_50    : IN STD_LOGIC;							-- On Board 50 MHz
-      CLOCK2_50   : IN STD_LOGIC;  							-- On Board 50 MHz
-      CLOCK3_50   : IN STD_LOGIC;  							-- On Board 50 MHz	  
+--      CLOCK2_50   : IN STD_LOGIC;  							-- On Board 50 MHz
+--      CLOCK3_50   : IN STD_LOGIC;  							-- On Board 50 MHz	  
 --      EXT_CLOCK   : IN STD_LOGIC;							-- External Clock
 ---- 			Push Button		      
---      KEY         : IN STD_LOGIC_VECTOR(3 DOWNTO 0);		-- Pushbutton[3:0]
+      KEY         : IN STD_LOGIC_VECTOR(3 DOWNTO 0);		-- Pushbutton[3:0]
 ---- 			DPDT Switch		      
 --      SW          : IN STD_LOGIC_VECTOR(17 DOWNTO 0);		-- Toggle Switch[17:0]
 ---- 			7-SEG Dispaly	      
@@ -136,7 +136,9 @@ ARCHITECTURE structural OF DE2_115 IS
 component i2c_user_logic is
 port(
 		clk       : IN     STD_LOGIC;                    --system clock
-	 iData     : IN  	  STD_LOGIC_vector(15 downto 0);
+		reset_h  : in    std_logic;                     --active-high reset
+	 data_hex     : IN  	  STD_LOGIC_vector(15 downto 0);
+	 address_hex : in std_logic_vector(7 downto 0);  --The address to display.
     sda       : INOUT  STD_LOGIC;                    --serial data output of i2c bus
     scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
 end component i2c_user_logic;
@@ -148,9 +150,11 @@ BEGIN
 inst_i2c_user_logic: i2c_user_logic
 		port map (
 		Clk		=> CLOCK_50, 
-		iData		=> x"BEEF",
-		sda		=> GPIO(35),
-		scl		=> GPIO(34)	
+		reset_h => Key(0),                    --active-high reset
+		data_hex		=> x"BEEF",
+		address_hex => x"02",
+		sda		=> GPIO(0),
+		scl		=> GPIO(1)	
 		);
 
 END structural;

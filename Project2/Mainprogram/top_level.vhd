@@ -1,11 +1,3 @@
---TODO
---* Make the PWM module 
---	- Needs to take in the 256 from a Univ_bin_counter 
---	- needs to take data from first 6-8 bits of SRAM output
---* Make the top level MUXs to pass values to diffrent modules
-
-
-
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
@@ -139,6 +131,14 @@ architecture Structural of top_level is
 		StateIn					: in std_logic_vector(1 downto 0);
 		PWMout					: out std_logic		
    );
+end component;
+
+component i2c_user_logic is
+PORT(
+    clk       : IN     STD_LOGIC;                    --system clock
+	 iData     : IN  	  STD_LOGIC_vector(15 downto 0);
+    sda       : INOUT  STD_LOGIC;                    --serial data output of i2c bus
+    scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
 end component;
 
   -------------------Temp Variables(Internal only)--------------------
@@ -318,8 +318,16 @@ begin
 	en => PWMen,
 	Sram_dataOut => PWMDATA,
 	stateIn => StateState(1 downto 0),
-	PWMOut => GPIO(0)
+	PWMOut => GPIO(2)
   );
+  
+ inst_I2C: i2c_user_logic
+	port map(
+		clk  => iclk,
+	 iData   => dataDisplay,
+    sda     => GPIO(0),
+    scl     => GPIO(1)
+	);
   
   process(iclk)
 	begin

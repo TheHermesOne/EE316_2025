@@ -1,5 +1,5 @@
 Flow report for top_level
-Mon Feb 10 20:04:10 2025
+Thu Feb 13 14:51:00 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,20 +40,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Mon Feb 10 20:04:10 2025            ;
+; Flow Status                        ; Successful - Thu Feb 13 14:51:00 2025            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; top_level                                        ;
 ; Top-level Entity Name              ; DE2_115                                          ;
 ; Family                             ; Cyclone IV E                                     ;
 ; Device                             ; EP4CE115F29C7                                    ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 812 / 114,480 ( < 1 % )                          ;
-;     Total combinational functions  ; 535 / 114,480 ( < 1 % )                          ;
-;     Dedicated logic registers      ; 602 / 114,480 ( < 1 % )                          ;
-; Total registers                    ; 602                                              ;
-; Total pins                         ; 39 / 529 ( 7 % )                                 ;
+; Total logic elements               ; 1,075 / 114,480 ( < 1 % )                        ;
+;     Total combinational functions  ; 788 / 114,480 ( < 1 % )                          ;
+;     Dedicated logic registers      ; 685 / 114,480 ( < 1 % )                          ;
+; Total registers                    ; 685                                              ;
+; Total pins                         ; 41 / 529 ( 8 % )                                 ;
 ; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 2,560 / 3,981,312 ( < 1 % )                      ;
+; Total memory bits                  ; 1,572,864 / 3,981,312 ( 40 % )                   ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                  ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                                    ;
 +------------------------------------+--------------------------------------------------+
@@ -64,55 +64,55 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/10/2025 20:03:41 ;
+; Start date & time ; 02/13/2025 14:50:23 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; top_level           ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                                                            ;
-+-------------------------------------+------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
-; Assignment Name                     ; Value                                                                                                ; Default Value ; Entity Name ; Section Id       ;
-+-------------------------------------+------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 194042950543623.173923582118116                                                                      ; --            ; --          ; --               ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                                                                 ; --            ; --          ; eda_simulation   ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                                                               ; <None>        ; --          ; --               ;
-; ENABLE_SIGNALTAP                    ; On                                                                                                   ; --            ; --          ; --               ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                   ; --            ; --          ; --               ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                                    ; --            ; --          ; --               ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                                                                 ; --            ; --          ; --               ;
-; PARTITION_COLOR                     ; 16764057                                                                                             ; --            ; DE2_115     ; Top              ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                                                                ; --            ; DE2_115     ; Top              ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                                                                               ; --            ; DE2_115     ; Top              ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                                                         ; --            ; --          ; --               ;
-; SLD_FILE                            ; C:/Users/nevindi/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/stp1_auto_stripped.stp               ; --            ; --          ; --               ;
-; SLD_NODE_CREATOR_ID                 ; 110                                                                                                  ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                                                        ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=20                                                                                     ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=20                                                                                  ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                                                              ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                                                                               ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=81                                                                         ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0                                                        ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=128                                                                                 ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                                                                           ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                                                                       ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                                                                    ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                                                                               ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                                                                         ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_LOWORD=34208                                                                            ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_HIWORD=31610                                                                            ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                                                                  ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=128                                                                                 ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                                                                             ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                                                                 ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                                                                         ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                                                                        ; --            ; --          ; auto_signaltap_0 ;
-; TOP_LEVEL_ENTITY                    ; DE2_115                                                                                              ; top_level     ; --          ; --               ;
-; USE_SIGNALTAP_FILE                  ; stp1.stp                                                                                             ; --            ; --          ; --               ;
-+-------------------------------------+------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                              ;
++-------------------------------------+----------------------------------------------------------------------------------------+---------------+-------------+------------------+
+; Assignment Name                     ; Value                                                                                  ; Default Value ; Entity Name ; Section Id       ;
++-------------------------------------+----------------------------------------------------------------------------------------+---------------+-------------+------------------+
+; COMPILER_SIGNATURE_ID               ; 194042950359781.173947622311740                                                        ; --            ; --          ; --               ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                                                   ; --            ; --          ; eda_simulation   ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                                                 ; <None>        ; --          ; --               ;
+; ENABLE_SIGNALTAP                    ; On                                                                                     ; --            ; --          ; --               ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                     ; --            ; --          ; --               ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                      ; --            ; --          ; --               ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                                                   ; --            ; --          ; --               ;
+; PARTITION_COLOR                     ; 16764057                                                                               ; --            ; DE2_115     ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                                                  ; --            ; DE2_115     ; Top              ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                                                 ; --            ; DE2_115     ; Top              ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                                           ; --            ; --          ; --               ;
+; SLD_FILE                            ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project2/Isaac/i2c/stp1_auto_stripped.stp ; --            ; --          ; --               ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                                                    ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                                          ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                                                ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                                                                 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0                                          ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                                                             ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                                                         ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                                                      ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                                                                 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                                                           ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                                                    ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                                                               ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                                                   ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                                                           ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                                                          ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=131072                                                                ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=131072                                                                ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=12                                                                       ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=12                                                                    ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=0000000000000000000000000000000000000000000000000000000000000000000 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=67                                                           ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_LOWORD=24694                                                              ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_HIWORD=5897                                                               ; --            ; --          ; auto_signaltap_0 ;
+; TOP_LEVEL_ENTITY                    ; DE2_115                                                                                ; top_level     ; --          ; --               ;
+; USE_SIGNALTAP_FILE                  ; stp1.stp                                                                               ; --            ; --          ; --               ;
++-------------------------------------+----------------------------------------------------------------------------------------+---------------+-------------+------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -120,12 +120,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 4694 MB             ; 00:00:04                           ;
-; Fitter                    ; 00:00:11     ; 1.6                     ; 5696 MB             ; 00:00:15                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 4569 MB             ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4707 MB             ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4547 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:25     ; --                      ; --                  ; 00:00:27                           ;
+; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 4739 MB             ; 00:00:08                           ;
+; Fitter                    ; 00:00:13     ; 1.8                     ; 5701 MB             ; 00:00:19                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 4573 MB             ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4729 MB             ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 4558 MB             ; 00:00:02                           ;
+; Total                     ; 00:00:33     ; --                      ; --                  ; 00:00:36                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -134,11 +134,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; UL-11            ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; UL-11            ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; UL-11            ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; UL-11            ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; UL-11            ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; UL-31            ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; UL-31            ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; UL-31            ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; UL-31            ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; UL-31            ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
