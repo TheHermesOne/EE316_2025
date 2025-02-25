@@ -74,8 +74,9 @@ begin
     
 -- ASCII SPLITTER --
 
-    process(LCD_Nibble, iCLK)
+    process(LCD_Nibble)
     begin
+        
         
     
     
