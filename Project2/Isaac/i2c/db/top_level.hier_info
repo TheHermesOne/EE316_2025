@@ -1,6 +1,6 @@
 |DE2_115
 CLOCK_50 => i2c_user_logic:inst_i2c_user_logic.clk
-KEY[0] => i2c_user_logic:inst_i2c_user_logic.reset_h
+KEY[0] => i2c_user_logic:inst_i2c_user_logic.reset
 KEY[1] => ~NO_FANOUT~
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
@@ -43,57 +43,41 @@ GPIO[35] <> <UNC>
 
 
 |DE2_115|i2c_user_logic:inst_i2c_user_logic
-clk => i2c_master:Inst_i2c_master.clk
-clk => i2c_enable.CLK
-clk => first.CLK
-clk => address_sel.CLK
+clk => i2c_master:inst_i2c_master.clk
+clk => i2c_ena.CLK
 clk => byteSel[0].CLK
 clk => byteSel[1].CLK
 clk => byteSel[2].CLK
 clk => byteSel[3].CLK
-clk => next_state~6.DATAIN
-reset_h => next_state.OUTPUTSELECT
-reset_h => next_state.OUTPUTSELECT
-reset_h => next_state.OUTPUTSELECT
-reset_h => next_state.OUTPUTSELECT
-reset_h => next_state.OUTPUTSELECT
-reset_h => byteSel.OUTPUTSELECT
-reset_h => byteSel.OUTPUTSELECT
-reset_h => byteSel.OUTPUTSELECT
-reset_h => byteSel.OUTPUTSELECT
-reset_h => address_sel.OUTPUTSELECT
-reset_h => first.OUTPUTSELECT
-reset_h => i2c_master:Inst_i2c_master.reset_n
-reset_h => i2c_enable.ENA
-data_hex[0] => data_disp[0].DATAA
-data_hex[1] => data_disp[1].DATAA
-data_hex[2] => data_disp[2].DATAA
-data_hex[3] => data_disp[3].DATAA
-data_hex[4] => data_disp[4].DATAA
-data_hex[5] => data_disp[5].DATAA
-data_hex[6] => data_disp[6].DATAA
-data_hex[7] => data_disp[7].DATAA
-data_hex[8] => data_disp[8].DATAA
-data_hex[9] => data_disp[9].DATAA
-data_hex[10] => data_disp[10].DATAA
-data_hex[11] => data_disp[11].DATAA
-data_hex[12] => data_disp[12].DATAA
-data_hex[13] => data_disp[13].DATAA
-data_hex[14] => data_disp[14].DATAA
-data_hex[15] => data_disp[15].DATAA
-address_hex[0] => data_disp[0].DATAB
-address_hex[1] => data_disp[1].DATAB
-address_hex[2] => data_disp[2].DATAB
-address_hex[3] => data_disp[3].DATAB
-address_hex[4] => data_disp[4].DATAB
-address_hex[5] => data_disp[5].DATAB
-address_hex[6] => data_disp[6].DATAB
-address_hex[7] => data_disp[7].DATAB
-sda <> i2c_master:Inst_i2c_master.sda
-scl <> i2c_master:Inst_i2c_master.scl
+clk => statebuffer~6.DATAIN
+reset => i2c_master:inst_i2c_master.reset_n
+reset => byteSel[0].ACLR
+reset => byteSel[1].ACLR
+reset => byteSel[2].ACLR
+reset => byteSel[3].ACLR
+reset => statebuffer~8.DATAIN
+reset => i2c_ena.ENA
+iData[0] => Mux7.IN15
+iData[1] => Mux6.IN15
+iData[2] => Mux5.IN15
+iData[3] => Mux4.IN15
+iData[4] => Mux7.IN14
+iData[5] => Mux6.IN14
+iData[6] => Mux5.IN14
+iData[7] => Mux4.IN14
+iData[8] => Mux7.IN13
+iData[9] => Mux6.IN13
+iData[10] => Mux5.IN13
+iData[11] => Mux4.IN13
+iData[12] => Mux7.IN12
+iData[13] => Mux6.IN12
+iData[14] => Mux5.IN12
+iData[15] => Mux4.IN12
+sda <> i2c_master:inst_i2c_master.sda
+scl <> i2c_master:inst_i2c_master.scl
 
 
-|DE2_115|i2c_user_logic:inst_i2c_user_logic|i2c_master:Inst_i2c_master
+|DE2_115|i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master
 clk => data_rx[0].CLK
 clk => data_rx[1].CLK
 clk => data_rx[2].CLK

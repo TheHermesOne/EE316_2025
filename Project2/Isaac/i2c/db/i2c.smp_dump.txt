@@ -1,13 +1,13 @@
 
-State Machine - |DE2_115|i2c_user_logic:inst_i2c_user_logic|next_state
-Name next_state.repeat next_state.busy_high next_state.data_valid next_state.ready next_state.start 
-next_state.start 0 0 0 0 0 
-next_state.ready 0 0 0 1 1 
-next_state.data_valid 0 0 1 0 1 
-next_state.busy_high 0 1 0 0 1 
-next_state.repeat 1 0 0 0 1 
+State Machine - |DE2_115|i2c_user_logic:inst_i2c_user_logic|statebuffer
+Name statebuffer.repeat statebuffer.busy_high statebuffer.data_valid statebuffer.ready statebuffer.start 
+statebuffer.start 0 0 0 0 0 
+statebuffer.ready 0 0 0 1 1 
+statebuffer.data_valid 0 0 1 0 1 
+statebuffer.busy_high 0 1 0 0 1 
+statebuffer.repeat 1 0 0 0 1 
 
-State Machine - |DE2_115|i2c_user_logic:inst_i2c_user_logic|i2c_master:Inst_i2c_master|state
+State Machine - |DE2_115|i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|state
 Name state.stop state.mstr_ack state.slv_ack2 state.rd state.wr state.slv_ack1 state.command state.start state.ready 
 state.ready 0 0 0 0 0 0 0 0 0 
 state.start 0 0 0 0 0 0 0 1 1 

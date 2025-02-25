@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg225-1" LaunchTime="1740424351">
+  <File Type="PA-TCL" Name="i2c_user_logic.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="i2c_user_logic_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="i2c_user_logic_reports.tcl"/>
+  <File Type="RDS-RDS" Name="i2c_user_logic.vds"/>
+  <File Type="RDS-UTIL" Name="i2c_user_logic_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="i2c_user_logic_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="i2c_user_logic.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="i2c_user_logic_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="i2c_user_logic_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/project_3_main/i2c_master.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/i2c_master.vhd"/>
+        <Attr Name="ImportTime" Val="1739290269"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/project_3_main/i2c_user_logic.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/i2c_user_logic.vhd"/>
+        <Attr Name="ImportTime" Val="1739474921"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/project_3_main/btn_debounce_toggle.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/btn_debounce_toggle.vhd"/>
+        <Attr Name="ImportTime" Val="1739116975"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/project_3_main/reset_delay.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/reset_delay.vhd"/>
+        <Attr Name="ImportTime" Val="1739116976"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/project_3_main/Statemachine.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/Statemachine.vhd"/>
+        <Attr Name="ImportTime" Val="1739235514"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/project_3_main/clk_enabler.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/clk_enabler.vhd"/>
+        <Attr Name="ImportTime" Val="1739116975"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/project_3_main/univ_bin_counter.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/univ_bin_counter.vhd"/>
+        <Attr Name="ImportTime" Val="1739116977"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/project_3_main/LCD_Controller.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/LCD_Controller.vhd"/>
+        <Attr Name="ImportTime" Val="1739305793"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/project_3_main/PWM_Gen.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/PWM_Gen.vhd"/>
+        <Attr Name="ImportTime" Val="1739222631"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/project_3_main/Var_size_Counter.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/Var_size_Counter.vhd"/>
+        <Attr Name="ImportTime" Val="1739116975"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="i2c_user_logic"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/project_3_main/TE0726.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/TE0726.xdc"/>
+        <Attr Name="ImportTime" Val="1740424313"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

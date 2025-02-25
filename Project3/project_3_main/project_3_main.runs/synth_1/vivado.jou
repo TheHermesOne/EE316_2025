@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Feb 24 14:12:35 2025
+# Process ID: 12820
+# Current directory: C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.runs/synth_1
+# Command line: vivado.exe -log i2c_user_logic.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source i2c_user_logic.tcl
+# Log file: C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.runs/synth_1/i2c_user_logic.vds
+# Journal file: C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source i2c_user_logic.tcl -notrace
