@@ -1,11 +1,11 @@
 |DE2_115
-CLOCK_50 => i2c_user_logic_read:inst_i2c_user_logic_read.clk
-KEY[0] => i2c_user_logic_read:inst_i2c_user_logic_read.reset
+CLOCK_50 => i2c_user_logic_ADC:inst_i2c_user_logic_ADC.clk
+KEY[0] => i2c_user_logic_ADC:inst_i2c_user_logic_ADC.reset
 KEY[1] => ~NO_FANOUT~
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
-GPIO[0] <> i2c_user_logic_read:inst_i2c_user_logic_read.sda
-GPIO[1] <> i2c_user_logic_read:inst_i2c_user_logic_read.scl
+GPIO[0] <> i2c_user_logic_ADC:inst_i2c_user_logic_ADC.sda
+GPIO[1] <> i2c_user_logic_ADC:inst_i2c_user_logic_ADC.scl
 GPIO[2] <> <UNC>
 GPIO[3] <> <UNC>
 GPIO[4] <> <UNC>
@@ -42,7 +42,7 @@ GPIO[34] <> <UNC>
 GPIO[35] <> <UNC>
 
 
-|DE2_115|i2c_user_logic_read:inst_i2c_user_logic_read
+|DE2_115|i2c_user_logic_ADC:inst_i2c_user_logic_ADC
 clk => i2c_master:inst_i2c_master.clk
 clk => Data_out[0]~reg0.CLK
 clk => Data_out[1]~reg0.CLK
@@ -131,7 +131,7 @@ sda <> i2c_master:inst_i2c_master.sda
 scl <> i2c_master:inst_i2c_master.scl
 
 
-|DE2_115|i2c_user_logic_read:inst_i2c_user_logic_read|i2c_master:inst_i2c_master
+|DE2_115|i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master
 clk => data_rx[0].CLK
 clk => data_rx[1].CLK
 clk => data_rx[2].CLK

@@ -1,8 +1,9 @@
 LIBRARY ieee;
-   USE ieee.std_logic_1164.all;
+USE ieee.std_logic_1164.all;
+
 
 ENTITY DE2_115 IS
-   PORT (
+PORT (
  -- 			Clock Input	 	     
       CLOCK_50    : IN STD_LOGIC;							-- On Board 50 MHz
 --      CLOCK2_50   : IN STD_LOGIC;  							-- On Board 50 MHz
@@ -133,7 +134,7 @@ ARCHITECTURE structural OF DE2_115 IS
 
 -- TOP LEVEL COMPONENT
 
-component i2c_user_logic_read is
+component i2c_user_logic_ADC is
 port(
 		clk       : IN     STD_LOGIC;                    --system clock
 		reset  : in    std_logic;                     --active-high reset
@@ -142,13 +143,13 @@ port(
 		Data_out	: OUT			std_LOGIC_VECTOR(7 downto 0);
 		sda       : INOUT  STD_LOGIC;                    --serial data output of i2c bus
 		scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
-end component i2c_user_logic_read;
+end component i2c_user_logic_ADC;
 
 BEGIN
    
 -- INSTANTIATION OF THE TOP LEVEL COMPONENT
 
-inst_i2c_user_logic_read: i2c_user_logic_read
+inst_i2c_user_logic_ADC: i2c_user_logic_ADC
 		port map (
 		clk		=> CLOCK_50, 
 		reset => Key(0),                    --active-high reset

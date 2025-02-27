@@ -3,7 +3,7 @@ USE ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 USE ieee.std_logic_unsigned.all;
 
-entity i2c_user_logic is
+entity i2c_user_logic_LCD is
 PORT(
     clk       : IN         STD_LOGIC;                    --system clock
     reset     : IN         STD_LOGIC;
@@ -11,9 +11,9 @@ PORT(
 	 BusyOut	  : OUT 			std_LOGIC;
     sda       : INOUT  STD_LOGIC;                    --serial data output of i2c bus
     scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
-end i2c_user_logic;
+end i2c_user_logic_LCD;
 
-ARCHITECTURE logic OF i2c_user_logic IS
+ARCHITECTURE logic OF i2c_user_logic_LCD IS
 
 component i2c_master IS
   GENERIC(
@@ -61,7 +61,7 @@ port map(
 	 clk     	=> clk,           
     reset_n 	=> reset,     
     ena     	=> i2c_ena,
-    addr    	=> svnSeg_addr(6 downto 0),
+    addr    	=> LCD_addr(6 downto 0),
     rw      	=> '0',
     data_wr 	=> data_wr,
     busy      	=> i2c_busy,                 --indicates transaction in progress
@@ -117,7 +117,7 @@ process(clk)
 begin
 	if rising_edge(clk) then
 		busy_sync(0) <= busyTemp;
-		busy_sync(1) <= busy_sync(0)
+		busy_sync(1) <= busy_sync(0);
 		busyOut <= not busy_sync(1) and busy_sync(0);
 	end if;
 end process;
