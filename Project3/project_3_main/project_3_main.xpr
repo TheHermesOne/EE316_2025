@@ -68,10 +68,10 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/project_3_main/i2c_user_logic.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/I2CTesting/i2c_user_logic_ADC.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/i2c_user_logic.vhd"/>
-          <Attr Name="ImportTime" Val="1739474921"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../I2CTesting/i2c_user_logic_ADC.vhd"/>
+          <Attr Name="ImportTime" Val="1740615709"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -85,10 +85,54 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/project_3_main/PWM_Gen.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/PWM_Gen.vhd"/>
+          <Attr Name="ImportTime" Val="1739222631"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/project_3_main/Statemachine.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/Statemachine.vhd"/>
+          <Attr Name="ImportTime" Val="1739235514"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/project_3_main/Var_size_Counter.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/Var_size_Counter.vhd"/>
+          <Attr Name="ImportTime" Val="1739116975"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/project_3_main/btn_debounce_toggle.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/btn_debounce_toggle.vhd"/>
+          <Attr Name="ImportTime" Val="1739116975"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/project_3_main/clk_enabler.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/clk_enabler.vhd"/>
           <Attr Name="ImportTime" Val="1739116975"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -103,24 +147,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/project_3_main/Statemachine.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/Statemachine.vhd"/>
-          <Attr Name="ImportTime" Val="1739235514"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/project_3_main/clk_enabler.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/clk_enabler.vhd"/>
-          <Attr Name="ImportTime" Val="1739116975"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/project_3_main/univ_bin_counter.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -130,35 +156,21 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/project_3_main/PWM_Gen.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/I2CTesting/i2c_user_logic_LCD.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/PWM_Gen.vhd"/>
-          <Attr Name="ImportTime" Val="1739222631"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../I2CTesting/i2c_user_logic_LCD.vhd"/>
+          <Attr Name="ImportTime" Val="1740616234"/>
           <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/project_3_main/Var_size_Counter.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/Var_size_Counter.vhd"/>
-          <Attr Name="ImportTime" Val="1739116975"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="i2c_user_logic"/>
+        <Option Name="TopModule" Val="i2c_user_logic_ADC"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TopArchitecture" Val="logic"/>
+        <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/imports/I2CTesting/i2c_user_logic_ADC.vhd"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
@@ -180,8 +192,10 @@
       <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="i2c_user_logic"/>
+        <Option Name="TopModule" Val="i2c_user_logic_ADC"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TopArchitecture" Val="logic"/>
+        <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/imports/I2CTesting/i2c_user_logic_ADC.vhd"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>

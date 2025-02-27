@@ -1,5 +1,5 @@
 Analysis & Synthesis report for I2CTesting
-Wed Feb 26 19:22:14 2025
+Wed Feb 26 20:37:49 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -14,21 +14,20 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. State Machine - |DE2_115|i2c_user_logic_ADC:inst_i2c_user_logic_ADC|statebuffer
- 10. State Machine - |DE2_115|i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|state
+  9. State Machine - |DE2_115|i2c_user_logic:inst_i2c_user_logic|statebuffer
+ 10. State Machine - |DE2_115|i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|state
  11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Parameter Settings for User Entity Instance: i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master
- 17. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 18. Port Connectivity Checks: "i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master"
- 19. Port Connectivity Checks: "i2c_user_logic_ADC:inst_i2c_user_logic_ADC"
- 20. SignalTap II Logic Analyzer Settings
- 21. Elapsed Time Per Partition
- 22. Connections to In-System Debugging Instance "auto_signaltap_0"
- 23. Analysis & Synthesis Messages
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master
+ 16. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 17. Port Connectivity Checks: "i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master"
+ 18. Port Connectivity Checks: "i2c_user_logic:inst_i2c_user_logic"
+ 19. SignalTap II Logic Analyzer Settings
+ 20. Elapsed Time Per Partition
+ 21. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -54,15 +53,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Feb 26 19:22:14 2025            ;
+; Analysis & Synthesis Status        ; Successful - Wed Feb 26 20:37:49 2025            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; I2CTesting                                       ;
 ; Top-level Entity Name              ; DE2_115                                          ;
 ; Family                             ; Cyclone IV E                                     ;
-; Total logic elements               ; 1,091                                            ;
-;     Total combinational functions  ; 753                                              ;
-;     Dedicated logic registers      ; 685                                              ;
-; Total registers                    ; 685                                              ;
+; Total logic elements               ; 1,112                                            ;
+;     Total combinational functions  ; 775                                              ;
+;     Dedicated logic registers      ; 693                                              ;
+; Total registers                    ; 693                                              ;
 ; Total pins                         ; 41                                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 1,703,936                                        ;
@@ -176,97 +175,97 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                            ; Library ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
-; i2c_user_logic_ADC.vhd           ; yes             ; User VHDL File               ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/i2c_user_logic_ADC.vhd ;         ;
-; i2c_master.vhd                   ; yes             ; User VHDL File               ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/i2c_master.vhd         ;         ;
-; DE2_115.vhd                      ; yes             ; User VHDL File               ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/DE2_115.vhd            ;         ;
-; sld_signaltap.vhd                ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_signaltap.vhd                     ;         ;
-; sld_signaltap_impl.vhd           ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                ;         ;
-; sld_ela_control.vhd              ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_ela_control.vhd                   ;         ;
-; lpm_shiftreg.tdf                 ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_shiftreg.tdf                      ;         ;
-; lpm_constant.inc                 ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_constant.inc                      ;         ;
-; dffeea.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/dffeea.inc                            ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                        ;         ;
-; sld_mbpmg.vhd                    ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_mbpmg.vhd                         ;         ;
-; sld_ela_trigger_flow_mgr.vhd     ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd          ;         ;
-; sld_buffer_manager.vhd           ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_buffer_manager.vhd                ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                 ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                            ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                          ;         ;
-; db/altsyncram_a124.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/altsyncram_a124.tdf ;         ;
-; db/decode_bua.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/decode_bua.tdf      ;         ;
-; db/mux_7qb.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/mux_7qb.tdf         ;         ;
-; altdpram.tdf                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.tdf                          ;         ;
-; memmodes.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/others/maxplus2/memmodes.inc                        ;         ;
-; a_hdffe.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_hdffe.inc                           ;         ;
-; alt_le_rden_reg.inc              ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/alt_le_rden_reg.inc                   ;         ;
-; altsyncram.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.inc                        ;         ;
-; lpm_mux.tdf                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.tdf                           ;         ;
-; muxlut.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/muxlut.inc                            ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc                          ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc                          ;         ;
-; db/mux_usc.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/mux_usc.tdf         ;         ;
-; lpm_decode.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.tdf                        ;         ;
-; declut.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/declut.inc                            ;         ;
-; lpm_compare.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_compare.inc                       ;         ;
-; db/decode_dvf.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/decode_dvf.tdf      ;         ;
-; lpm_counter.tdf                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_counter.tdf                       ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc                       ;         ;
-; cmpconst.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/cmpconst.inc                          ;         ;
-; lpm_counter.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_counter.inc                       ;         ;
-; alt_counter_stratix.inc          ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/alt_counter_stratix.inc               ;         ;
-; db/cntr_cgi.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/cntr_cgi.tdf        ;         ;
-; db/cmpr_qgc.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/cmpr_qgc.tdf        ;         ;
-; db/cntr_mcj.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/cntr_mcj.tdf        ;         ;
-; db/cntr_igi.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/cntr_igi.tdf        ;         ;
-; db/cmpr_sgc.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/cmpr_sgc.tdf        ;         ;
-; db/cntr_23j.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/cntr_23j.tdf        ;         ;
-; db/cmpr_ngc.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/cmpr_ngc.tdf        ;         ;
-; sld_rom_sr.vhd                   ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_rom_sr.vhd                        ;         ;
-; sld_hub.vhd                      ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_hub.vhd                           ;         ;
-; sld_jtag_hub.vhd                 ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                      ;         ;
-; i2c_user_logic_read.vhd          ; yes             ; User VHDL File               ; i2c_user_logic_read.vhd                                                                 ;         ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                           ;
++---------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path            ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                            ; Library ;
++---------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
+; ../../../../../Downloads/i2c_user_logic.vhd ; yes             ; User VHDL File               ; C:/Users/nathani/Downloads/i2c_user_logic.vhd                                           ;         ;
+; i2c_master.vhd                              ; yes             ; User VHDL File               ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/i2c_master.vhd         ;         ;
+; DE2_115.vhd                                 ; yes             ; User VHDL File               ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/DE2_115.vhd            ;         ;
+; sld_signaltap.vhd                           ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_signaltap.vhd                     ;         ;
+; sld_signaltap_impl.vhd                      ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                ;         ;
+; sld_ela_control.vhd                         ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_ela_control.vhd                   ;         ;
+; lpm_shiftreg.tdf                            ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_shiftreg.tdf                      ;         ;
+; lpm_constant.inc                            ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_constant.inc                      ;         ;
+; dffeea.inc                                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/dffeea.inc                            ;         ;
+; aglobal130.inc                              ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                        ;         ;
+; sld_mbpmg.vhd                               ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_mbpmg.vhd                         ;         ;
+; sld_ela_trigger_flow_mgr.vhd                ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd          ;         ;
+; sld_buffer_manager.vhd                      ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_buffer_manager.vhd                ;         ;
+; altsyncram.tdf                              ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                        ;         ;
+; stratix_ram_block.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                 ;         ;
+; lpm_mux.inc                                 ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                           ;         ;
+; lpm_decode.inc                              ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                        ;         ;
+; a_rdenreg.inc                               ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                         ;         ;
+; altrom.inc                                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                            ;         ;
+; altram.inc                                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                            ;         ;
+; altdpram.inc                                ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                          ;         ;
+; db/altsyncram_a124.tdf                      ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/altsyncram_a124.tdf ;         ;
+; db/decode_bua.tdf                           ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/decode_bua.tdf      ;         ;
+; db/mux_7qb.tdf                              ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/mux_7qb.tdf         ;         ;
+; altdpram.tdf                                ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.tdf                          ;         ;
+; memmodes.inc                                ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/others/maxplus2/memmodes.inc                        ;         ;
+; a_hdffe.inc                                 ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_hdffe.inc                           ;         ;
+; alt_le_rden_reg.inc                         ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/alt_le_rden_reg.inc                   ;         ;
+; altsyncram.inc                              ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.inc                        ;         ;
+; lpm_mux.tdf                                 ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.tdf                           ;         ;
+; muxlut.inc                                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/muxlut.inc                            ;         ;
+; bypassff.inc                                ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc                          ;         ;
+; altshift.inc                                ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc                          ;         ;
+; db/mux_usc.tdf                              ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/mux_usc.tdf         ;         ;
+; lpm_decode.tdf                              ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.tdf                        ;         ;
+; declut.inc                                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/declut.inc                            ;         ;
+; lpm_compare.inc                             ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_compare.inc                       ;         ;
+; db/decode_dvf.tdf                           ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/decode_dvf.tdf      ;         ;
+; lpm_counter.tdf                             ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_counter.tdf                       ;         ;
+; lpm_add_sub.inc                             ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc                       ;         ;
+; cmpconst.inc                                ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/cmpconst.inc                          ;         ;
+; lpm_counter.inc                             ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_counter.inc                       ;         ;
+; alt_counter_stratix.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/alt_counter_stratix.inc               ;         ;
+; db/cntr_cgi.tdf                             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/cntr_cgi.tdf        ;         ;
+; db/cmpr_qgc.tdf                             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/cmpr_qgc.tdf        ;         ;
+; db/cntr_mcj.tdf                             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/cntr_mcj.tdf        ;         ;
+; db/cntr_igi.tdf                             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/cntr_igi.tdf        ;         ;
+; db/cmpr_sgc.tdf                             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/cmpr_sgc.tdf        ;         ;
+; db/cntr_23j.tdf                             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/cntr_23j.tdf        ;         ;
+; db/cmpr_ngc.tdf                             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/db/cmpr_ngc.tdf        ;         ;
+; sld_rom_sr.vhd                              ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_rom_sr.vhd                        ;         ;
+; sld_hub.vhd                                 ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_hub.vhd                           ;         ;
+; sld_jtag_hub.vhd                            ; yes             ; Encrypted Megafunction       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                      ;         ;
+; i2c_user_logic_read.vhd                     ; yes             ; User VHDL File               ; i2c_user_logic_read.vhd                                                                 ;         ;
++---------------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                            ;
-+---------------------------------------------+--------------------------+
-; Resource                                    ; Usage                    ;
-+---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 1,091                    ;
-;                                             ;                          ;
-; Total combinational functions               ; 753                      ;
-; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 427                      ;
-;     -- 3 input functions                    ; 153                      ;
-;     -- <=2 input functions                  ; 173                      ;
-;                                             ;                          ;
-; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 660                      ;
-;     -- arithmetic mode                      ; 93                       ;
-;                                             ;                          ;
-; Total registers                             ; 685                      ;
-;     -- Dedicated logic registers            ; 685                      ;
-;     -- I/O registers                        ; 0                        ;
-;                                             ;                          ;
-; I/O pins                                    ; 41                       ;
-; Total memory bits                           ; 1703936                  ;
-; Embedded Multiplier 9-bit elements          ; 0                        ;
-; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
-; Maximum fan-out                             ; 566                      ;
-; Total fan-out                               ; 11168                    ;
-; Average fan-out                             ; 6.30                     ;
-+---------------------------------------------+--------------------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 1,112          ;
+;                                             ;                ;
+; Total combinational functions               ; 775            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 446            ;
+;     -- 3 input functions                    ; 148            ;
+;     -- <=2 input functions                  ; 181            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 682            ;
+;     -- arithmetic mode                      ; 93             ;
+;                                             ;                ;
+; Total registers                             ; 693            ;
+;     -- Dedicated logic registers            ; 693            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 41             ;
+; Total memory bits                           ; 1703936        ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 567            ;
+; Total fan-out                               ; 11275          ;
+; Average fan-out                             ; 6.25           ;
++---------------------------------------------+----------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -274,11 +273,11 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                           ; Library Name ;
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2_115                                                                                                ; 753 (1)           ; 685 (0)      ; 1703936     ; 0            ; 0       ; 0         ; 41   ; 0            ; |DE2_115                                                                                                                                                                                                                                                                                                                                      ; work         ;
-;    |i2c_user_logic_ADC:inst_i2c_user_logic_ADC|                                                         ; 84 (9)            ; 37 (7)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|i2c_user_logic_ADC:inst_i2c_user_logic_ADC                                                                                                                                                                                                                                                                                           ; work         ;
-;       |i2c_master:inst_i2c_master|                                                                      ; 75 (75)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master                                                                                                                                                                                                                                                                ; work         ;
-;    |sld_hub:auto_hub|                                                                                   ; 118 (1)           ; 86 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                     ; work         ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 117 (79)          ; 86 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                        ; work         ;
+; |DE2_115                                                                                                ; 775 (1)           ; 693 (0)      ; 1703936     ; 0            ; 0       ; 0         ; 41   ; 0            ; |DE2_115                                                                                                                                                                                                                                                                                                                                      ; work         ;
+;    |i2c_user_logic:inst_i2c_user_logic|                                                                 ; 104 (19)          ; 45 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|i2c_user_logic:inst_i2c_user_logic                                                                                                                                                                                                                                                                                                   ; work         ;
+;       |i2c_master:inst_i2c_master|                                                                      ; 85 (85)           ; 35 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master                                                                                                                                                                                                                                                                        ; work         ;
+;    |sld_hub:auto_hub|                                                                                   ; 120 (1)           ; 86 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                     ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 119 (81)          ; 86 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                        ; work         ;
 ;          |sld_rom_sr:hub_info_reg|                                                                      ; 21 (21)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                                                                                                                                ; work         ;
 ;          |sld_shadow_jsm:shadow_jsm|                                                                    ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                                                                                                                                                                                              ; work         ;
 ;    |sld_signaltap:auto_signaltap_0|                                                                     ; 550 (1)           ; 562 (26)     ; 1703936     ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                       ; work         ;
@@ -343,21 +342,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------+
-; State Machine - |DE2_115|i2c_user_logic_ADC:inst_i2c_user_logic_ADC|statebuffer                                 ;
-+------------------------+-----------------------+------------------------+-------------------+-------------------+
-; Name                   ; statebuffer.readState ; statebuffer.writeState ; statebuffer.ready ; statebuffer.start ;
-+------------------------+-----------------------+------------------------+-------------------+-------------------+
-; statebuffer.start      ; 0                     ; 0                      ; 0                 ; 0                 ;
-; statebuffer.ready      ; 0                     ; 0                      ; 1                 ; 1                 ;
-; statebuffer.writeState ; 0                     ; 1                      ; 0                 ; 1                 ;
-; statebuffer.readState  ; 1                     ; 0                      ; 0                 ; 1                 ;
-+------------------------+-----------------------+------------------------+-------------------+-------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE2_115|i2c_user_logic:inst_i2c_user_logic|statebuffer                                                              ;
++------------------------+--------------------+-----------------------+------------------------+-------------------+-------------------+
+; Name                   ; statebuffer.repeat ; statebuffer.busy_high ; statebuffer.data_valid ; statebuffer.ready ; statebuffer.start ;
++------------------------+--------------------+-----------------------+------------------------+-------------------+-------------------+
+; statebuffer.start      ; 0                  ; 0                     ; 0                      ; 0                 ; 0                 ;
+; statebuffer.ready      ; 0                  ; 0                     ; 0                      ; 1                 ; 1                 ;
+; statebuffer.data_valid ; 0                  ; 0                     ; 1                      ; 0                 ; 1                 ;
+; statebuffer.busy_high  ; 0                  ; 1                     ; 0                      ; 0                 ; 1                 ;
+; statebuffer.repeat     ; 1                  ; 0                     ; 0                      ; 0                 ; 1                 ;
++------------------------+--------------------+-----------------------+------------------------+-------------------+-------------------+
 
 
 Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |DE2_115|i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|state                                             ;
+; State Machine - |DE2_115|i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|state                                                     ;
 +----------------+------------+----------------+----------------+----------+----------+----------------+---------------+-------------+-------------+
 ; Name           ; state.stop ; state.mstr_ack ; state.slv_ack2 ; state.rd ; state.wr ; state.slv_ack1 ; state.command ; state.start ; state.ready ;
 +----------------+------------+----------------+----------------+----------+----------+----------------+---------------+-------------+-------------+
@@ -373,35 +373,18 @@ Encoding Type:  One-Hot
 +----------------+------------+----------------+----------------+----------+----------+----------------+---------------+-------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                    ;
-+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-; Register name                                                                          ; Reason for Removal                                                                           ;
-+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_addr[7]                                 ; Stuck at VCC due to stuck port data_in                                                       ;
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_addr[5,6]                               ; Stuck at GND due to stuck port data_in                                                       ;
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_addr[4]                                 ; Stuck at VCC due to stuck port data_in                                                       ;
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_addr[1..3]                              ; Stuck at GND due to stuck port data_in                                                       ;
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|data_wr[0..7]                               ; Stuck at GND due to stuck port data_in                                                       ;
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|addr_rw[7]       ; Merged with i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|addr_rw[4] ;
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|addr_rw[2,3,5,6] ; Merged with i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|addr_rw[1] ;
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|data_tx[0..7]    ; Merged with i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|addr_rw[1] ;
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|addr_rw[1]       ; Stuck at GND due to stuck port data_in                                                       ;
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|addr_rw[4]       ; Stuck at VCC due to stuck port data_in                                                       ;
-; Total Number of Removed Registers = 30                                                 ;                                                                                              ;
-+----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                           ;
-+--------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------+
-; Register name                                          ; Reason for Removal        ; Registers Removed due to This Register                                           ;
-+--------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------+
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_addr[4] ; Stuck at VCC              ; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|addr_rw[4] ;
-;                                                        ; due to stuck port data_in ;                                                                                  ;
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_addr[1] ; Stuck at GND              ; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|addr_rw[1] ;
-;                                                        ; due to stuck port data_in ;                                                                                  ;
-+--------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                 ;
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+; Register name                                                               ; Reason for Removal                                                                   ;
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+; i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|addr_rw[5..7] ; Merged with i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|addr_rw[1] ;
+; i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|addr_rw[2..4] ; Merged with i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|addr_rw[0] ;
+; i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|addr_rw[0]    ; Stuck at GND due to stuck port data_in                                               ;
+; i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|addr_rw[1]    ; Stuck at VCC due to stuck port data_in                                               ;
+; i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|data_tx[5,6]  ; Merged with i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|data_tx[4] ;
+; Total Number of Removed Registers = 10                                      ;                                                                                      ;
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -409,12 +392,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 685   ;
+; Total registers                              ; 693   ;
 ; Number of registers using Synchronous Clear  ; 12    ;
 ; Number of registers using Synchronous Load   ; 38    ;
-; Number of registers using Asynchronous Clear ; 314   ;
+; Number of registers using Asynchronous Clear ; 319   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 395   ;
+; Number of registers using Clock Enable       ; 403   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -424,11 +407,11 @@ Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                              ; Fan out ;
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|sda_int                                                                                                  ; 2       ;
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|bit_cnt[1]                                                                                               ; 9       ;
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|bit_cnt[2]                                                                                               ; 8       ;
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|bit_cnt[0]                                                                                               ; 10      ;
-; i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|busy                                                                                                     ; 6       ;
+; i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|sda_int                                                                                                          ; 2       ;
+; i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|bit_cnt[2]                                                                                                       ; 11      ;
+; i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|bit_cnt[1]                                                                                                       ; 16      ;
+; i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|bit_cnt[0]                                                                                                       ; 15      ;
+; i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|busy                                                                                                             ; 6       ;
 ; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|tdo                                                                                                              ; 1       ;
 ; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|jtag_ir_reg[2]                                                                                                   ; 2       ;
 ; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|jtag_ir_reg[1]                                                                                                   ; 3       ;
@@ -460,26 +443,27 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE2_115|i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master|bit_cnt[0]                      ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DE2_115|i2c_user_logic_ADC:inst_i2c_user_logic_ADC|Selector2                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |DE2_115|i2c_user_logic_ADC:inst_i2c_user_logic_ADC|Selector4                                                  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DE2_115|i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|data_tx[6]                              ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE2_115|i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master|bit_cnt[1]                              ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |DE2_115|i2c_user_logic:inst_i2c_user_logic|Selector2                                                          ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |DE2_115|i2c_user_logic:inst_i2c_user_logic|Selector5                                                          ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                    ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                       ;
 ; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[0] ;
 ; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[2]                             ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 60 LEs               ; 28 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[3]                      ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 56 LEs               ; 32 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[3]                      ;
 ; 20:1               ; 4 bits    ; 52 LEs        ; 36 LEs               ; 16 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master ;
-+----------------+----------+----------------------------------------------------------------------------------------+
-; Parameter Name ; Value    ; Type                                                                                   ;
-+----------------+----------+----------------------------------------------------------------------------------------+
-; input_clk      ; 50000000 ; Signed Integer                                                                         ;
-; bus_clk        ; 50000    ; Signed Integer                                                                         ;
-+----------------+----------+----------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master ;
++----------------+----------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                           ;
++----------------+----------+--------------------------------------------------------------------------------+
+; input_clk      ; 50000000 ; Signed Integer                                                                 ;
+; bus_clk        ; 50000    ; Signed Integer                                                                 ;
++----------------+----------+--------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -543,30 +527,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master"                   ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; ack_error ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master"                            ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; addr[6..4] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; addr[3..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; addr[0]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; rw         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_rd    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; ack_error  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "i2c_user_logic_ADC:inst_i2c_user_logic_ADC"                                                 ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; mchnstate    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; idata[13..9] ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; idata[7..5]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; idata[3..0]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; idata[15]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; idata[14]    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; idata[8]     ; Input  ; Info     ; Stuck at GND                                                                        ;
-; idata[4]     ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data_out     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "i2c_user_logic:inst_i2c_user_logic" ;
++--------------+-------+----------+------------------------------+
+; Port         ; Type  ; Severity ; Details                      ;
++--------------+-------+----------+------------------------------+
+; idata[13..9] ; Input ; Info     ; Stuck at VCC                 ;
+; idata[7..5]  ; Input ; Info     ; Stuck at VCC                 ;
+; idata[3..0]  ; Input ; Info     ; Stuck at VCC                 ;
+; idata[15]    ; Input ; Info     ; Stuck at VCC                 ;
+; idata[14]    ; Input ; Info     ; Stuck at GND                 ;
+; idata[8]     ; Input ; Info     ; Stuck at GND                 ;
+; idata[4]     ; Input ; Info     ; Stuck at GND                 ;
++--------------+-------+----------+------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -629,9 +616,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed Feb 26 19:22:06 2025
+    Info: Processing started: Wed Feb 26 20:37:40 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off I2CTesting -c I2CTesting
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file /users/nathani/downloads/i2c_user_logic.vhd
+    Info (12022): Found design unit 1: i2c_user_logic-logic
+    Info (12023): Found entity 1: i2c_user_logic
 Info (12021): Found 2 design units, including 1 entities, in source file i2c_user_logic_adc.vhd
     Info (12022): Found design unit 1: i2c_user_logic_ADC-logic
     Info (12023): Found entity 1: i2c_user_logic_ADC
@@ -648,12 +638,16 @@ Info (12021): Found 2 design units, including 1 entities, in source file i2c_use
     Info (12022): Found design unit 1: i2c_user_logic_combo-logic
     Info (12023): Found entity 1: i2c_user_logic_combo
 Info (12127): Elaborating entity "DE2_115" for the top level hierarchy
-Info (12128): Elaborating entity "i2c_user_logic_ADC" for hierarchy "i2c_user_logic_ADC:inst_i2c_user_logic_ADC"
-Warning (10036): Verilog HDL or VHDL warning at i2c_user_logic_ADC.vhd(46): object "byteSel" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at i2c_user_logic_ADC.vhd(48): object "ack_error" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at i2c_user_logic_ADC.vhd(49): object "SvnSeg_addr" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at i2c_user_logic_ADC.vhd(50): object "LCD_addr" assigned a value but never read
-Info (12128): Elaborating entity "i2c_master" for hierarchy "i2c_user_logic_ADC:inst_i2c_user_logic_ADC|i2c_master:inst_i2c_master"
+Info (12128): Elaborating entity "i2c_user_logic" for hierarchy "i2c_user_logic:inst_i2c_user_logic"
+Warning (10036): Verilog HDL or VHDL warning at i2c_user_logic.vhd(40): object "data_rd" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at i2c_user_logic.vhd(46): object "ack_error" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at i2c_user_logic.vhd(48): object "LCD_addr" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at i2c_user_logic.vhd(49): object "ADC_addr" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at i2c_user_logic.vhd(127): signal "iData" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at i2c_user_logic.vhd(128): signal "iData" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at i2c_user_logic.vhd(129): signal "iData" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at i2c_user_logic.vhd(130): signal "iData" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "i2c_master" for hierarchy "i2c_user_logic:inst_i2c_user_logic|i2c_master:inst_i2c_master"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_a124.tdf
     Info (12023): Found entity 1: altsyncram_a124
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_bua.tdf
@@ -729,16 +723,16 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]"
     Warning (15610): No output dependent on input pin "KEY[2]"
     Warning (15610): No output dependent on input pin "KEY[3]"
-Info (21057): Implemented 1374 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1401 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 1 output pins
     Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 1120 logic cells
+    Info (21061): Implemented 1147 logic cells
     Info (21064): Implemented 208 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 46 warnings
-    Info: Peak virtual memory: 4718 megabytes
-    Info: Processing ended: Wed Feb 26 19:22:14 2025
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:07
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 50 warnings
+    Info: Peak virtual memory: 4707 megabytes
+    Info: Processing ended: Wed Feb 26 20:37:49 2025
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:06
 
 
