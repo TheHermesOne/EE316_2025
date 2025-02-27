@@ -7,8 +7,8 @@ LIBRARY ieee;
 			iClk			: in std_logic; 
 			state			: in std_logic_vector(1 downto 0);
 			Clock_on        : in std_logic;
-            LCD_DATA		: out std_logic_vector(11 downto 0);
-			clk_en          : out std_logic
+			Next_data       : in std_logic;
+            LCD_DATA		: out std_logic_vector(11 downto 0)
 
 			);
 	END LCD_Controller;
@@ -28,7 +28,10 @@ architecture structural of LCD_Controller is
  signal LCD_index_TL 				: integer range 0 to 2;
  signal LCD_index_BL 				: integer range 3 to 4;
  signal prev_state 				    : state_type;
+ signal prev_CO                     : std_logic;
  signal clk_cnt					    : integer := 0;
+ signal clk_change                  : std_logic;
+ signal clk_sync                    : std_logic_vector(1 downto 0);
  
  --- ARRAY DEFINING ---
  
@@ -93,7 +96,7 @@ begin
     if byte_Cnt < 6 then
         -- Initial LCD commands
         case byte_Cnt is
-            when 0 | 1 | 2 => LCD_Data_Temp <= X"020"; -- Function Set
+            when 0 | 1 | 2 => LCD_Data_Temp <= X"020"; -- Function Set 4-bit mode
             when 3 => LCD_Data_Temp <= X"001";	-- Clear Display
             when 4 => LCD_Data_Temp <= X"00C";	 -- Display ON
             when 5 => LCD_Data_Temp <= X"006"; 	 -- Entry Mode
@@ -115,35 +118,59 @@ end process;
  
 process(iCLK, reset)
 begin
+    if reset = '1' then
+        byte_Cnt <= 0;
+        prev_state <= current_state;  
+    elsif rising_edge(iCLK) then
+        if current_state /= prev_state or clk_change = '1' then
+            byte_Cnt <= 0;  -- Reset byte_Cnt if state changes
+        end if;
+        if Next_data = '1' then
+            byte_cnt <= byte_cnt + 1; 
+            
+            if byte_cnt = 39 then
+                byte_cnt <= 6;
+            end if;
+        end if;
+    end if;
+end process;
 
-	if reset = '1' then
-		byte_Cnt <= 0;
-		iCLK_Cnt <= 0;
-		prev_state <= current_state;
-	elsif rising_edge(iCLK) then
-		if current_state /= prev_state then
-			byte_Cnt <= 0;  -- Reset byte_Cnt if state changes
-		end if;
-		if iCLK_Cnt < iCLK_Lim then
-			iCLK_Cnt <= iCLK_Cnt +1;
-			clk_en   <= '0';
-			if iCLK_Cnt = iCLK_Lim/3 then
-			elsif iCLK_Cnt = (iCLK_Lim*2)/3 then
-			end if;              
-		else    
-			iCLK_Cnt <= 0;
-			clk_en <= '1';
-			byte_Cnt <= byte_Cnt +1; 
-			if byte_Cnt = 39 then
-					byte_Cnt <= 6; 
-			else
-				byte_Cnt <= byte_Cnt +1;
-			end if;
-		end if;
-		if iCLK_Cnt = 1 then
-		end if;
-		prev_state <= current_state;
+-- CLOCK ON PULSE --
+
+process(iCLK)
+begin
+	if rising_edge(ICLK) then
+		clk_sync(0) <= Next_data;
+		clk_sync(1) <= clk_sync(0);
+		clk_change <= not clk_sync(1) and clk_sync(0);
 	end if;
 end process;
+
+--	if reset = '1' then
+--		byte_Cnt <= 0;
+--		iCLK_Cnt <= 0;
+--		prev_state <= current_state;
+--	elsif rising_edge(iCLK) then
+--		if current_state /= prev_state then
+--			byte_Cnt <= 0;  -- Reset byte_Cnt if state changes
+--		end if;
+--		if iCLK_Cnt < iCLK_Lim then
+--			iCLK_Cnt <= iCLK_Cnt +1;
+--			if iCLK_Cnt = iCLK_Lim/3 then
+--			elsif iCLK_Cnt = (iCLK_Lim*2)/3 then
+--			end if;              
+--		else    
+--			iCLK_Cnt <= 0;
+--			byte_Cnt <= byte_Cnt +1; 
+--			if byte_Cnt = 39 then
+--					byte_Cnt <= 6; 
+--			else
+--				byte_Cnt <= byte_Cnt +1; -- IF DATA_NEXT is TRUE then move byte_cnt
+--			end if;
+--		end if;
+--		if iCLK_Cnt = 1 then
+--		end if;
+--		prev_state <= current_state;
+--	end if;
 
 end architecture;
