@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x5A169FADC0FE66BB",
+      "boundary_crc": "0x8B058C42BC36A9F2",
       "device": "xc7z010clg225-1",
       "name": "FullBuild",
       "synth_flow_mode": "None",
@@ -17,10 +17,11 @@
       "xlconstant_0": "",
       "processing_system7_0": "",
       "PWM_gen_0": "",
-      "LCD_Controller_0": "",
+      "i2c_user_logic_ADC_0": "",
       "i2c_user_logic_LCD_0": "",
+      "LCD_Controller_0": "",
       "LCD_Data_Cutter_0": "",
-      "i2c_user_logic_ADC_0": ""
+      "clock_gen_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -114,6 +115,28 @@
       },
       "sda_1": {
         "direction": "IO"
+      },
+      "clock_out_0": {
+        "type": "clk",
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "FullBuild_clock_gen_0_1_clock_out",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
       }
     },
     "components": {
@@ -134,7 +157,7 @@
                 "value_src": "default_prop"
               },
               "FREQ_HZ": {
-                "value": "49999996",
+                "value": "5e+07",
                 "value_src": "user_prop"
               },
               "PHASE": {
@@ -170,7 +193,7 @@
                 "value_src": "default_prop"
               },
               "FREQ_HZ": {
-                "value": "49999996",
+                "value": "5e+07",
                 "value_src": "user_prop"
               }
             }
@@ -210,7 +233,7 @@
                 "value_src": "default_prop"
               },
               "FREQ_HZ": {
-                "value": "49999996",
+                "value": "5e+07",
                 "value_src": "user_prop"
               }
             }
@@ -247,7 +270,7 @@
                 "value_src": "default_prop"
               },
               "FREQ_HZ": {
-                "value": "49999996",
+                "value": "5e+07",
                 "value_src": "user_prop"
               }
             }
@@ -858,7 +881,7 @@
                 "value_src": "default_prop"
               },
               "FREQ_HZ": {
-                "value": "49999996",
+                "value": "5e+07",
                 "value_src": "user_prop"
               }
             }
@@ -876,48 +899,55 @@
           }
         }
       },
-      "LCD_Controller_0": {
-        "vlnv": "xilinx.com:module_ref:LCD_Controller:1.0",
-        "xci_name": "FullBuild_LCD_Controller_0_0",
+      "i2c_user_logic_ADC_0": {
+        "vlnv": "xilinx.com:module_ref:i2c_user_logic_ADC:1.0",
+        "xci_name": "FullBuild_i2c_user_logic_ADC_0_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "LCD_Controller",
+          "ref_name": "i2c_user_logic_ADC",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "iClk": {
+          "clk": {
+            "type": "clk",
             "direction": "I",
             "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
               "CLK_DOMAIN": {
                 "value": "FullBuild_processing_system7_0_0_FCLK_CLK0",
                 "value_src": "default_prop"
               },
               "FREQ_HZ": {
-                "value": "49999996",
+                "value": "5e+07",
                 "value_src": "user_prop"
-              },
-              "PHASE": {
-                "value": "0.000",
-                "value_src": "default_prop"
               }
             }
           },
-          "state": {
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "Mchnstate": {
             "direction": "I",
             "left": "3",
             "right": "0"
           },
-          "Next_data": {
-            "direction": "I"
-          },
-          "LCD_DATA": {
+          "Data_out": {
             "direction": "O",
-            "left": "11",
+            "left": "7",
             "right": "0"
+          },
+          "readReady": {
+            "direction": "O"
+          },
+          "sda": {
+            "direction": "IO"
+          },
+          "scl": {
+            "direction": "IO"
           }
         }
       },
@@ -943,7 +973,7 @@
                 "value_src": "default_prop"
               },
               "FREQ_HZ": {
-                "value": "49999996",
+                "value": "5e+07",
                 "value_src": "user_prop"
               }
             }
@@ -968,6 +998,51 @@
           }
         }
       },
+      "LCD_Controller_0": {
+        "vlnv": "xilinx.com:module_ref:LCD_Controller:1.0",
+        "xci_name": "FullBuild_LCD_Controller_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "LCD_Controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "iClk": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "FullBuild_processing_system7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "5e+07",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "state": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "Next_data": {
+            "direction": "I"
+          },
+          "LCD_DATA": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
       "LCD_Data_Cutter_0": {
         "vlnv": "xilinx.com:module_ref:LCD_Data_Cutter:1.0",
         "xci_name": "FullBuild_LCD_Data_Cutter_0_0",
@@ -989,7 +1064,7 @@
                 "value_src": "default_prop"
               },
               "FREQ_HZ": {
-                "value": "49999996",
+                "value": "5e+07",
                 "value_src": "user_prop"
               },
               "PHASE": {
@@ -1016,12 +1091,12 @@
           }
         }
       },
-      "i2c_user_logic_ADC_0": {
-        "vlnv": "xilinx.com:module_ref:i2c_user_logic_ADC:1.0",
-        "xci_name": "FullBuild_i2c_user_logic_ADC_0_0",
+      "clock_gen_0": {
+        "vlnv": "xilinx.com:module_ref:clock_gen:1.0",
+        "xci_name": "FullBuild_clock_gen_0_1",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "i2c_user_logic_ADC",
+          "ref_name": "clock_gen",
           "boundary_crc": "0x0"
         },
         "ports": {
@@ -1029,16 +1104,12 @@
             "type": "clk",
             "direction": "I",
             "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              },
               "CLK_DOMAIN": {
                 "value": "FullBuild_processing_system7_0_0_FCLK_CLK0",
                 "value_src": "default_prop"
               },
               "FREQ_HZ": {
-                "value": "49999996",
+                "value": "5e+07",
                 "value_src": "user_prop"
               }
             }
@@ -1047,21 +1118,14 @@
             "type": "rst",
             "direction": "I"
           },
-          "Mchnstate": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
+          "clock_out": {
+            "type": "clk",
+            "direction": "O"
           },
-          "Data_out": {
-            "direction": "O",
+          "datain": {
+            "direction": "I",
             "left": "7",
             "right": "0"
-          },
-          "sda": {
-            "direction": "IO"
-          },
-          "scl": {
-            "direction": "IO"
           }
         }
       }
@@ -1091,10 +1155,11 @@
         "ports": [
           "util_vector_logic_0/Res",
           "statemachine_0/reset",
-          "LCD_Controller_0/reset",
+          "i2c_user_logic_ADC_0/reset",
           "i2c_user_logic_LCD_0/reset",
+          "LCD_Controller_0/reset",
           "LCD_Data_Cutter_0/reset",
-          "i2c_user_logic_ADC_0/reset"
+          "clock_gen_0/reset"
         ]
       },
       "btn_debounce_toggle_0_PULSE_O": {
@@ -1118,14 +1183,8 @@
       "statemachine_0_stateOut": {
         "ports": [
           "statemachine_0/stateOut",
-          "LCD_Controller_0/state",
-          "i2c_user_logic_ADC_0/Mchnstate"
-        ]
-      },
-      "i2c_user_logic_ADC_0_Data_out": {
-        "ports": [
-          "i2c_user_logic_ADC_0/Data_out",
-          "PWM_gen_0/iData"
+          "i2c_user_logic_ADC_0/Mchnstate",
+          "LCD_Controller_0/state"
         ]
       },
       "processing_system7_0_FCLK_CLK0": {
@@ -1137,10 +1196,11 @@
           "btn_debounce_toggle_1/CLK",
           "Reset_Delay_0/iCLK",
           "PWM_gen_0/clk",
-          "LCD_Controller_0/iClk",
+          "i2c_user_logic_ADC_0/clk",
           "i2c_user_logic_LCD_0/clk",
+          "LCD_Controller_0/iClk",
           "LCD_Data_Cutter_0/iCLK",
-          "i2c_user_logic_ADC_0/clk"
+          "clock_gen_0/clk"
         ]
       },
       "Op2_0_1": {
@@ -1213,6 +1273,24 @@
         "ports": [
           "sda_1",
           "i2c_user_logic_LCD_0/sda"
+        ]
+      },
+      "i2c_user_logic_ADC_0_Data_out": {
+        "ports": [
+          "i2c_user_logic_ADC_0/Data_out",
+          "PWM_gen_0/iData",
+          "clock_gen_0/datain"
+        ]
+      },
+      "clock_gen_0_clock_out": {
+        "ports": [
+          "clock_gen_0/clock_out",
+          "clock_out_0"
+        ]
+      },
+      "i2c_user_logic_ADC_0_readReady": {
+        "ports": [
+          "i2c_user_logic_ADC_0/readReady"
         ]
       }
     },

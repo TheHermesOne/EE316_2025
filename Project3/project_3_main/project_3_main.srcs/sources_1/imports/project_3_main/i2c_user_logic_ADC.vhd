@@ -9,6 +9,7 @@ PORT(
     reset    	: IN         STD_LOGIC;
 	 Mchnstate		: IN 				Std_LOGIC_VECTOR(3 downto 0);
 	 Data_out	: OUT			std_LOGIC_VECTOR(7 downto 0);
+	 readReady  : OUT          std_logic;  
     sda       	: INOUT  STD_LOGIC;                    --serial data output of i2c bus
     scl       	: INOUT  STD_LOGIC);                   --serial clock output of i2c bus
 end i2c_user_logic_ADC;
@@ -52,6 +53,7 @@ signal i2c_busy_prev: std_LOGIC;
 signal mode				: std_LOGIC_VECTOR(7 downto 0) := x"00";
 signal mchnStatePrev   : Std_LOGIC_VECTOR(3 downto 0);
 begin
+
 reset_h <= not reset;
 state <= statebuffer;
 SvnSeg_addr <= x"71";
@@ -117,8 +119,10 @@ elsif(rising_edge(clk)) then
 			end if;
 			
 		when readState => 
+			readReady <= '1';
 			if i2c_busy = '0' and i2c_busy_prev = '1' then
 				Data_out <= data_rd;
+				readReady <= '0';
 			elsif(Mchnstate /= mchnStatePrev) then
 			     statebuffer <= start;
 			end if;

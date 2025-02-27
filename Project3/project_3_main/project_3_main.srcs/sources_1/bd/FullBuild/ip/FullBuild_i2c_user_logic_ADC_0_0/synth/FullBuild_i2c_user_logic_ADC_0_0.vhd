@@ -59,6 +59,7 @@ ENTITY FullBuild_i2c_user_logic_ADC_0_0 IS
     reset : IN STD_LOGIC;
     Mchnstate : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     Data_out : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+    readReady : OUT STD_LOGIC;
     sda : INOUT STD_LOGIC;
     scl : INOUT STD_LOGIC
   );
@@ -73,6 +74,7 @@ ARCHITECTURE FullBuild_i2c_user_logic_ADC_0_0_arch OF FullBuild_i2c_user_logic_A
       reset : IN STD_LOGIC;
       Mchnstate : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
       Data_out : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+      readReady : OUT STD_LOGIC;
       sda : INOUT STD_LOGIC;
       scl : INOUT STD_LOGIC
     );
@@ -89,7 +91,7 @@ ARCHITECTURE FullBuild_i2c_user_logic_ADC_0_0_arch OF FullBuild_i2c_user_logic_A
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF reset: SIGNAL IS "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF reset: SIGNAL IS "xilinx.com:signal:reset:1.0 reset RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF clk: SIGNAL IS "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 49999996, PHASE 0.000, CLK_DOMAIN FullBuild_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF clk: SIGNAL IS "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 5e+07, PHASE 0.000, CLK_DOMAIN FullBuild_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF clk: SIGNAL IS "xilinx.com:signal:clock:1.0 clk CLK";
 BEGIN
   U0 : i2c_user_logic_ADC
@@ -98,6 +100,7 @@ BEGIN
       reset => reset,
       Mchnstate => Mchnstate,
       Data_out => Data_out,
+      readReady => readReady,
       sda => sda,
       scl => scl
     );

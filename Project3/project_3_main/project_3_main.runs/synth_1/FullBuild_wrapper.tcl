@@ -17,11 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param tcl.collectionResultDisplayLimit 0
 set_param chipscope.maxJobs 3
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7z010clg225-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -45,6 +41,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/btn_debounce_toggle.vhd
   C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Controller.vhd
   C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Data_Cutter.vhd
+  C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/clock_gen.vhd
   C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/hdl/FullBuild_wrapper.vhd
 }
 add_files C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/FullBuild.bd

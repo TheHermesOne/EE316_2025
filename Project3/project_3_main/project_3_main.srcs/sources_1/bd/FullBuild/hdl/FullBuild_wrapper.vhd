@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Thu Feb 27 03:47:41 2025
+--Date        : Thu Feb 27 11:06:40 2025
 --Host        : UL-31 running 64-bit major release  (build 9200)
 --Command     : generate_target FullBuild_wrapper.bd
 --Design      : FullBuild_wrapper
@@ -38,6 +38,7 @@ entity FullBuild_wrapper is
     Key1 : in STD_LOGIC;
     Key2 : in STD_LOGIC;
     PWMout_0 : out STD_LOGIC;
+    clock_out_0 : out STD_LOGIC;
     scl_0 : inout STD_LOGIC;
     scl_1 : inout STD_LOGIC;
     sda_0 : inout STD_LOGIC;
@@ -48,6 +49,21 @@ end FullBuild_wrapper;
 architecture STRUCTURE of FullBuild_wrapper is
   component FullBuild is
   port (
+    Key0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    Key1 : in STD_LOGIC;
+    Key2 : in STD_LOGIC;
+    PWMout_0 : out STD_LOGIC;
+    scl_0 : inout STD_LOGIC;
+    sda_0 : inout STD_LOGIC;
+    scl_1 : inout STD_LOGIC;
+    sda_1 : inout STD_LOGIC;
+    clock_out_0 : out STD_LOGIC;
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 31 downto 0 );
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -62,21 +78,7 @@ architecture STRUCTURE of FullBuild_wrapper is
     DDR_dm : inout STD_LOGIC_VECTOR ( 1 downto 0 );
     DDR_dq : inout STD_LOGIC_VECTOR ( 15 downto 0 );
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 1 downto 0 );
-    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 1 downto 0 );
-    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 31 downto 0 );
-    FIXED_IO_ddr_vrn : inout STD_LOGIC;
-    FIXED_IO_ddr_vrp : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC;
-    FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC;
-    Key0 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    Key1 : in STD_LOGIC;
-    Key2 : in STD_LOGIC;
-    PWMout_0 : out STD_LOGIC;
-    scl_0 : inout STD_LOGIC;
-    sda_0 : inout STD_LOGIC;
-    scl_1 : inout STD_LOGIC;
-    sda_1 : inout STD_LOGIC
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   end component FullBuild;
 begin
@@ -107,6 +109,7 @@ FullBuild_i: component FullBuild
       Key1 => Key1,
       Key2 => Key2,
       PWMout_0 => PWMout_0,
+      clock_out_0 => clock_out_0,
       scl_0 => scl_0,
       scl_1 => scl_1,
       sda_0 => sda_0,

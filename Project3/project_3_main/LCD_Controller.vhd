@@ -93,24 +93,26 @@ process(byte_Cnt)
 begin
     LCD_Data_Temp <= (others => '0');
 			
-    if byte_Cnt < 6 then
+    if byte_Cnt < 8 then
         -- Initial LCD commands
         case byte_Cnt is
-            when 0 | 1 | 2 => LCD_Data_Temp <= X"020"; -- Function Set 4-bit mode
-            when 3 => LCD_Data_Temp <= X"001";	-- Clear Display
-            when 4 => LCD_Data_Temp <= X"00C";	 -- Display ON
-            when 5 => LCD_Data_Temp <= X"006"; 	 -- Entry Mode
+            when 0 | 1 | 2 => LCD_Data_Temp <= X"030"; -- Function Set 8-bit mode
+            when 3 => LCD_Data_Temp <= X"020"; -- Changes to 4-bit mode
+            when 4 => LCD_Data_Temp <= X"028";	-- 4-bit mode, 2x16 lcd
+            when 5 => LCD_Data_Temp <= X"006";	 -- cursor to right
+            when 6 => LCD_Data_Temp <= X"001"; 	 -- clear display
+            when 7 => LCD_Data_Temp <= X"00F"; 	 -- display on for loading
             when others => null;
         end case;
-	 elsif byte_Cnt < 23 then
+	 elsif byte_Cnt < 25 then
         -- First-line characters
-        LCD_Data_Temp <= LCD_display(LCD_index_TL, byte_Cnt - 5);
-    elsif byte_Cnt = 23 then
+        LCD_Data_Temp <= LCD_display(LCD_index_TL, byte_Cnt - 7);
+    elsif byte_Cnt = 25 then
         -- Move to second LCD line
         LCD_Data_Temp <= X"0C0";
-    elsif byte_Cnt > 23 then
+    elsif byte_Cnt > 25 then
 		  -- Second-line characters (Offset needs to be adjusted)
-		  LCD_Data_Temp <= LCD_display(LCD_index_BL, byte_Cnt - 7);
+		  LCD_Data_Temp <= LCD_display(LCD_index_BL, byte_Cnt - 9);
 	  end if;
 end process;
  
@@ -123,13 +125,13 @@ begin
         prev_state <= current_state;  
     elsif rising_edge(iCLK) then
         if current_state /= prev_state or clk_change = '1' then
-            byte_Cnt <= 0;  -- Reset byte_Cnt if state changes
+            byte_Cnt <= 6;  -- Reset byte_Cnt if state changes
         end if;
         if Next_data = '1' then
             byte_cnt <= byte_cnt + 1; 
             
-            if byte_cnt = 39 then
-                byte_cnt <= 6;
+            if byte_cnt = 41 then
+                byte_cnt <= 8;
             end if;
         end if;
     end if;

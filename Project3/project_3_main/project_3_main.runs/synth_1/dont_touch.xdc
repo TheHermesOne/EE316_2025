@@ -42,6 +42,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==FullBuild_LCD_C
 # IP: bd/FullBuild/ip/FullBuild_LCD_Data_Cutter_0_0/FullBuild_LCD_Data_Cutter_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==FullBuild_LCD_Data_Cutter_0_0 || ORIG_REF_NAME==FullBuild_LCD_Data_Cutter_0_0} -quiet] -quiet
 
+# IP: bd/FullBuild/ip/FullBuild_clock_gen_0_1/FullBuild_clock_gen_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==FullBuild_clock_gen_0_1 || ORIG_REF_NAME==FullBuild_clock_gen_0_1} -quiet] -quiet
+
 # XDC: bd/FullBuild/ip/FullBuild_processing_system7_0_0/FullBuild_processing_system7_0_0.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==FullBuild_processing_system7_0_0 || ORIG_REF_NAME==FullBuild_processing_system7_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
 

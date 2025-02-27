@@ -33,7 +33,7 @@ component i2c_master IS
     scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
 END component;
 
-TYPE machine IS(start, ready, writeData); --needed states
+TYPE machine IS(start, ready,INIT,writeData); --needed states
 signal state		: machine := start;
 signal statebuffer  : machine := start;
 signal i2c_busy,busy_prev     : STD_LOGIC;                    --indicates transaction in progress
@@ -48,9 +48,14 @@ signal SvnSeg_addr     : STD_LOGIC_VECTOR(7 DOWNTO 0);
 signal LCD_addr     : STD_LOGIC_VECTOR(7 DOWNTO 0); 
 signal ADC_addr     : STD_LOGIC_VECTOR(7 DOWNTO 0); 
 signal busy_sync   : std_logic_vector(1 downto 0)  := (others => '0');
+signal busyTemp     : std_logic;
+signal reset_h,reset_n      : std_logic;
+signal count15msWait 	  : unsigned(27 DOWNTO 0):=X"00B71B0";
+signal count1msWait 	  : unsigned(27 DOWNTO 0):=X"000C350";
 
 begin
 
+reset_h <= not reset;
 state <= statebuffer;
 SvnSeg_addr <= x"71";
 LCD_addr <= x"27";
@@ -59,7 +64,7 @@ ADC_addr <= x"90";
 inst_i2c_master : i2c_master
 port map(
 	 clk     	=> clk,           
-    reset_n 	=> reset,     
+    reset_n 	=> reset_n,     
     ena     	=> i2c_ena,
     addr    	=> LCD_addr(6 downto 0),
     rw      	=> '0',
@@ -74,44 +79,62 @@ port map(
 
 process(clk,reset)
 begin  
-	if reset = '0' then 
+	if reset_h = '0' then 
 		 statebuffer <= start;
-		 byteSel <= 0;
 	elsif(rising_edge(clk)) then
 		CASE state is
 			when start =>
-				i2c_ena <= '0';
-				statebuffer <= ready;
+	           if count15msWait /= X"0000000" then                         
+		          count15msWait   <= count15msWait - 1;	
+		          reset_n <= '0';	
+		          state   <= start;
+		          i2c_ena 	<= '0';  
+	           else
+		          reset_n <= '1'; 
+   	              state   <= ready;
+                end if;
 			  when ready => 
 				if i2c_busy = '0' then
 				  i2c_ena <= '1';
-				 statebuffer <= writeData;
+				 statebuffer <= INIT;
 				end if; 
---			  when data_valid => 
---				 if i2c_busy = '1' then
---					i2c_ena <= '0';
---					statebuffer <= busy_high;
---				end if;
---			  when busy_high =>
---				if i2c_busy = '0' then
---					statebuffer <= writeData;
---				end if;	
+            when INIT => 
+                if count1msWait /= X"0000000" then
+                   count1msWait <= count1msWait -1;
+                   data_wr <= iData;
+                    busyOut <= '1';
+                end if;
+              statebuffer <= writeData;
 			  when writeData =>
+			     busyOut <= '0';
 			     if i2c_busy = '0' and busy_prev = '1' then
-				    data_wr <= iData;
+--			     	data_wr <= iData;
+--			     	busyOut <= '1';
+				    statebuffer <= writeData;
 				 end if;
+				
 	  end case;
 	end if;  
 end process;
 
-process(clk)
-begin
-	if rising_edge(clk) then
-		busy_sync(0) <= i2c_busy;
-		busy_sync(1) <= busy_sync(0);
-		busyOut <= not busy_sync(1) and busy_sync(0);
-	end if;
-end process;
+--process(i2c_busy)
+--begin
+--busy_prev <= i2c_busy;
+--	if i2c_busy = '0' and busy_prev = '1' then
+--		busyTemp <= '1';
+--	else
+--		busyTemp <= '0';
+--	end if;
+--end process;
+
+--process(clk)
+--begin
+--	if rising_edge(clk) then
+--		busy_sync(0) <= i2c_busy;
+--		busy_sync(1) <= busy_sync(0);
+--		busyOut <= not busy_sync(1) and busy_sync(0);
+--	end if;
+--end process;
 
 
 end logic;

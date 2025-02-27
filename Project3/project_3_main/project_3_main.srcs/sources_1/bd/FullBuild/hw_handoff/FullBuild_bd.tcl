@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# LCD_Controller, LCD_Data_Cutter, PWM_gen, Reset_Delay, btn_debounce_toggle, btn_debounce_toggle, i2c_user_logic_ADC, i2c_user_logic_LCD, statemachine
+# LCD_Controller, LCD_Data_Cutter, PWM_gen, Reset_Delay, btn_debounce_toggle, btn_debounce_toggle, clock_gen, i2c_user_logic_ADC, i2c_user_logic_LCD, statemachine
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -173,6 +173,7 @@ proc create_root_design { parentCell } {
   set Key1 [ create_bd_port -dir I Key1 ]
   set Key2 [ create_bd_port -dir I Key2 ]
   set PWMout_0 [ create_bd_port -dir O PWMout_0 ]
+  set clock_out_0 [ create_bd_port -dir O -type clk clock_out_0 ]
   set scl_0 [ create_bd_port -dir IO scl_0 ]
   set scl_1 [ create_bd_port -dir IO scl_1 ]
   set sda_0 [ create_bd_port -dir IO sda_0 ]
@@ -240,6 +241,17 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    } elseif { $btn_debounce_toggle_1 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: clock_gen_0, and set properties
+  set block_name clock_gen
+  set block_cell_name clock_gen_0
+  if { [catch {set clock_gen_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $clock_gen_0 eq "" } {
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -605,11 +617,13 @@ proc create_root_design { parentCell } {
   connect_bd_net -net Reset_Delay_0_oRESET [get_bd_pins Reset_Delay_0/oRESET] [get_bd_pins util_vector_logic_0/Op1]
   connect_bd_net -net btn_debounce_toggle_0_PULSE_O [get_bd_pins btn_debounce_toggle_0/PULSE_O] [get_bd_pins statemachine_0/Keys1]
   connect_bd_net -net btn_debounce_toggle_1_PULSE_O [get_bd_pins btn_debounce_toggle_1/PULSE_O] [get_bd_pins statemachine_0/Keys2]
-  connect_bd_net -net i2c_user_logic_ADC_0_Data_out [get_bd_pins PWM_gen_0/iData] [get_bd_pins i2c_user_logic_ADC_0/Data_out]
+  connect_bd_net -net clock_gen_0_clock_out [get_bd_ports clock_out_0] [get_bd_pins clock_gen_0/clock_out]
+  connect_bd_net -net i2c_user_logic_ADC_0_Data_out [get_bd_pins PWM_gen_0/iData] [get_bd_pins clock_gen_0/datain] [get_bd_pins i2c_user_logic_ADC_0/Data_out]
+  connect_bd_net -net i2c_user_logic_ADC_0_readReady [get_bd_pins i2c_user_logic_ADC_0/readReady]
   connect_bd_net -net i2c_user_logic_LCD_0_BusyOut [get_bd_pins LCD_Data_Cutter_0/ready] [get_bd_pins i2c_user_logic_LCD_0/BusyOut]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins LCD_Controller_0/iClk] [get_bd_pins LCD_Data_Cutter_0/iCLK] [get_bd_pins PWM_gen_0/clk] [get_bd_pins Reset_Delay_0/iCLK] [get_bd_pins btn_debounce_toggle_0/CLK] [get_bd_pins btn_debounce_toggle_1/CLK] [get_bd_pins i2c_user_logic_ADC_0/clk] [get_bd_pins i2c_user_logic_LCD_0/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins statemachine_0/Clk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins LCD_Controller_0/iClk] [get_bd_pins LCD_Data_Cutter_0/iCLK] [get_bd_pins PWM_gen_0/clk] [get_bd_pins Reset_Delay_0/iCLK] [get_bd_pins btn_debounce_toggle_0/CLK] [get_bd_pins btn_debounce_toggle_1/CLK] [get_bd_pins clock_gen_0/clk] [get_bd_pins i2c_user_logic_ADC_0/clk] [get_bd_pins i2c_user_logic_LCD_0/clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins statemachine_0/Clk]
   connect_bd_net -net statemachine_0_stateOut [get_bd_pins LCD_Controller_0/state] [get_bd_pins i2c_user_logic_ADC_0/Mchnstate] [get_bd_pins statemachine_0/stateOut]
-  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins LCD_Controller_0/reset] [get_bd_pins LCD_Data_Cutter_0/reset] [get_bd_pins i2c_user_logic_ADC_0/reset] [get_bd_pins i2c_user_logic_LCD_0/reset] [get_bd_pins statemachine_0/reset] [get_bd_pins util_vector_logic_0/Res]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins LCD_Controller_0/reset] [get_bd_pins LCD_Data_Cutter_0/reset] [get_bd_pins clock_gen_0/reset] [get_bd_pins i2c_user_logic_ADC_0/reset] [get_bd_pins i2c_user_logic_LCD_0/reset] [get_bd_pins statemachine_0/reset] [get_bd_pins util_vector_logic_0/Res]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins PWM_gen_0/en] [get_bd_pins xlconstant_0/dout]
 
   # Create address segments

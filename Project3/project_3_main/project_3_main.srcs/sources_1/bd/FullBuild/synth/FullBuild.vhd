@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Thu Feb 27 03:47:40 2025
+--Date        : Thu Feb 27 11:06:40 2025
 --Host        : UL-31 running 64-bit major release  (build 9200)
 --Command     : generate_target FullBuild.bd
 --Design      : FullBuild
@@ -38,13 +38,14 @@ entity FullBuild is
     Key1 : in STD_LOGIC;
     Key2 : in STD_LOGIC;
     PWMout_0 : out STD_LOGIC;
+    clock_out_0 : out STD_LOGIC;
     scl_0 : inout STD_LOGIC;
     scl_1 : inout STD_LOGIC;
     sda_0 : inout STD_LOGIC;
     sda_1 : inout STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of FullBuild : entity is "FullBuild,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=FullBuild,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=12,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=9,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=6,da_ps7_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of FullBuild : entity is "FullBuild,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=FullBuild,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=13,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=10,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=6,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of FullBuild : entity is "FullBuild.hwdef";
 end FullBuild;
@@ -179,15 +180,17 @@ architecture STRUCTURE of FullBuild is
     PWMout : out STD_LOGIC
   );
   end component FullBuild_PWM_gen_0_0;
-  component FullBuild_LCD_Controller_0_0 is
+  component FullBuild_i2c_user_logic_ADC_0_0 is
   port (
+    clk : in STD_LOGIC;
     reset : in STD_LOGIC;
-    iClk : in STD_LOGIC;
-    state : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    Next_data : in STD_LOGIC;
-    LCD_DATA : out STD_LOGIC_VECTOR ( 11 downto 0 )
+    Mchnstate : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    Data_out : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    readReady : out STD_LOGIC;
+    sda : inout STD_LOGIC;
+    scl : inout STD_LOGIC
   );
-  end component FullBuild_LCD_Controller_0_0;
+  end component FullBuild_i2c_user_logic_ADC_0_0;
   component FullBuild_i2c_user_logic_LCD_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -198,6 +201,15 @@ architecture STRUCTURE of FullBuild is
     scl : inout STD_LOGIC
   );
   end component FullBuild_i2c_user_logic_LCD_0_0;
+  component FullBuild_LCD_Controller_0_0 is
+  port (
+    reset : in STD_LOGIC;
+    iClk : in STD_LOGIC;
+    state : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    Next_data : in STD_LOGIC;
+    LCD_DATA : out STD_LOGIC_VECTOR ( 11 downto 0 )
+  );
+  end component FullBuild_LCD_Controller_0_0;
   component FullBuild_LCD_Data_Cutter_0_0 is
   port (
     iCLK : in STD_LOGIC;
@@ -208,16 +220,14 @@ architecture STRUCTURE of FullBuild is
     LCD_Nibble : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component FullBuild_LCD_Data_Cutter_0_0;
-  component FullBuild_i2c_user_logic_ADC_0_0 is
+  component FullBuild_clock_gen_0_1 is
   port (
     clk : in STD_LOGIC;
     reset : in STD_LOGIC;
-    Mchnstate : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    Data_out : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    sda : inout STD_LOGIC;
-    scl : inout STD_LOGIC
+    datain : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    clock_out : out STD_LOGIC
   );
-  end component FullBuild_i2c_user_logic_ADC_0_0;
+  end component FullBuild_clock_gen_0_1;
   signal BTN_I_0_1 : STD_LOGIC;
   signal BTN_I_0_2 : STD_LOGIC;
   signal LCD_Controller_0_LCD_DATA : STD_LOGIC_VECTOR ( 11 downto 0 );
@@ -232,7 +242,9 @@ architecture STRUCTURE of FullBuild is
   signal Reset_Delay_0_oRESET : STD_LOGIC;
   signal btn_debounce_toggle_0_PULSE_O : STD_LOGIC;
   signal btn_debounce_toggle_1_PULSE_O : STD_LOGIC;
+  signal clock_gen_0_clock_out : STD_LOGIC;
   signal i2c_user_logic_ADC_0_Data_out : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal i2c_user_logic_ADC_0_readReady : STD_LOGIC;
   signal i2c_user_logic_LCD_0_BusyOut : STD_LOGIC;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -317,6 +329,8 @@ architecture STRUCTURE of FullBuild is
   attribute X_INTERFACE_INFO of FIXED_IO_ps_clk : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
   attribute X_INTERFACE_INFO of FIXED_IO_ps_porb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
   attribute X_INTERFACE_INFO of FIXED_IO_ps_srstb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
+  attribute X_INTERFACE_INFO of clock_out_0 : signal is "xilinx.com:signal:clock:1.0 CLK.CLOCK_OUT_0 CLK";
+  attribute X_INTERFACE_PARAMETER of clock_out_0 : signal is "XIL_INTERFACENAME CLK.CLOCK_OUT_0, CLK_DOMAIN FullBuild_clock_gen_0_1_clock_out, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000";
   attribute X_INTERFACE_INFO of DDR_addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
   attribute X_INTERFACE_PARAMETER of DDR_addr : signal is "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250";
   attribute X_INTERFACE_INFO of DDR_ba : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
@@ -330,6 +344,7 @@ begin
   BTN_I_0_2 <= Key2;
   Op2_0_1(0) <= Key0(0);
   PWMout_0 <= PWM_gen_0_PWMout;
+  clock_out_0 <= clock_gen_0_clock_out;
 LCD_Controller_0: component FullBuild_LCD_Controller_0_0
      port map (
       LCD_DATA(11 downto 0) => LCD_Controller_0_LCD_DATA(11 downto 0),
@@ -375,11 +390,19 @@ btn_debounce_toggle_1: component FullBuild_btn_debounce_toggle_0_1
       PULSE_O => btn_debounce_toggle_1_PULSE_O,
       TOGGLE_O => NLW_btn_debounce_toggle_1_TOGGLE_O_UNCONNECTED
     );
+clock_gen_0: component FullBuild_clock_gen_0_1
+     port map (
+      clk => processing_system7_0_FCLK_CLK0,
+      clock_out => clock_gen_0_clock_out,
+      datain(7 downto 0) => i2c_user_logic_ADC_0_Data_out(7 downto 0),
+      reset => util_vector_logic_0_Res(0)
+    );
 i2c_user_logic_ADC_0: component FullBuild_i2c_user_logic_ADC_0_0
      port map (
       Data_out(7 downto 0) => i2c_user_logic_ADC_0_Data_out(7 downto 0),
       Mchnstate(3 downto 0) => statemachine_0_stateOut(3 downto 0),
       clk => processing_system7_0_FCLK_CLK0,
+      readReady => i2c_user_logic_ADC_0_readReady,
       reset => util_vector_logic_0_Res(0),
       scl => scl_0,
       sda => sda_0

@@ -22,6 +22,8 @@ signal ndTemp       : std_logic;
 signal nd_prev      : std_logic;
 signal Next_data_ready  : std_logic;
 signal nd_sync   : std_logic_vector(1 downto 0)  := (others => '0');
+signal state_cnt_prev   : integer := 0;
+signal state_prev       : state_type;
 
 begin
 
@@ -47,6 +49,13 @@ begin
     end if;
 end process;
 
+--process(iclk)
+--begin
+--    if rising_edge(iCLK) then
+--        state_cnt_prev <= state_cnt;
+--        state_prev <= current_state;
+--    end if;
+--end process;
 --process(current_state)
 --begin
 --    case state_cnt is
@@ -89,7 +98,11 @@ begin
                 when others =>
                     current_state <= hn1;
             end case;
-
+            if state_cnt = 4 then
+               Next_data_ready <= '1';
+           else
+               Next_data_ready <= '0';  
+            end if;
             -- Now increment state_cnt
             if state_cnt = 5 then
                 state_cnt <= 0;

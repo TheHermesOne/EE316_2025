@@ -1,9 +1,84 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Feb 27 03:47:41 2025" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Feb 27 11:06:56 2025" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="trenz.biz:te0726_10_1c:part0:2.1" DEVICE="7z010" NAME="FullBuild" PACKAGE="clg225" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
+    <PORT DIR="I" LEFT="0" NAME="Key0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_Key0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="Key1" SIGIS="undef" SIGNAME="External_Ports_Key1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="btn_debounce_toggle_0" PORT="BTN_I"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="Key2" SIGIS="undef" SIGNAME="External_Ports_Key2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="btn_debounce_toggle_1" PORT="BTN_I"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="PWMout_0" SIGIS="undef" SIGNAME="PWM_gen_0_PWMout">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="PWM_gen_0" PORT="PWMout"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="scl_0" SIGIS="undef" SIGNAME="External_Ports_scl_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="i2c_user_logic_ADC_0" PORT="scl"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="sda_0" SIGIS="undef" SIGNAME="External_Ports_sda_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="i2c_user_logic_ADC_0" PORT="sda"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="scl_1" SIGIS="undef" SIGNAME="External_Ports_scl_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="i2c_user_logic_LCD_0" PORT="scl"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="sda_1" SIGIS="undef" SIGNAME="External_Ports_sda_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="i2c_user_logic_LCD_0" PORT="sda"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="O" NAME="clock_out_0" SIGIS="clk" SIGNAME="clock_gen_0_clock_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="clock_gen_0" PORT="clock_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" LEFT="31" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_MIO">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="processing_system7_0" PORT="MIO"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrn" SIGIS="undef" SIGNAME="processing_system7_0_DDR_VRN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_VRN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrp" SIGIS="undef" SIGNAME="processing_system7_0_DDR_VRP">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_VRP"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef" SIGNAME="processing_system7_0_PS_SRSTB">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="processing_system7_0" PORT="PS_SRSTB"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef" SIGNAME="processing_system7_0_PS_CLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="processing_system7_0" PORT="PS_CLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef" SIGNAME="processing_system7_0_PS_PORB">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="processing_system7_0" PORT="PS_PORB"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef" SIGNAME="processing_system7_0_DDR_CAS_n">
       <CONNECTIONS>
         <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_CAS_n"/>
@@ -77,76 +152,6 @@
     <PORT DIR="IO" LEFT="1" NAME="DDR_dqs_p" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_DDR_DQS">
       <CONNECTIONS>
         <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_DQS"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" LEFT="31" NAME="FIXED_IO_mio" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_MIO">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="processing_system7_0" PORT="MIO"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrn" SIGIS="undef" SIGNAME="processing_system7_0_DDR_VRN">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_VRN"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ddr_vrp" SIGIS="undef" SIGNAME="processing_system7_0_DDR_VRP">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="processing_system7_0" PORT="DDR_VRP"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef" SIGNAME="processing_system7_0_PS_SRSTB">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="processing_system7_0" PORT="PS_SRSTB"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef" SIGNAME="processing_system7_0_PS_CLK">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="processing_system7_0" PORT="PS_CLK"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef" SIGNAME="processing_system7_0_PS_PORB">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="processing_system7_0" PORT="PS_PORB"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="0" NAME="Key0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_Key0">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="util_vector_logic_0" PORT="Op2"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="Key1" SIGIS="undef" SIGNAME="External_Ports_Key1">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="btn_debounce_toggle_0" PORT="BTN_I"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="Key2" SIGIS="undef" SIGNAME="External_Ports_Key2">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="btn_debounce_toggle_1" PORT="BTN_I"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="PWMout_0" SIGIS="undef" SIGNAME="PWM_gen_0_PWMout">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="PWM_gen_0" PORT="PWMout"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="scl_0" SIGIS="undef" SIGNAME="External_Ports_scl_0">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="i2c_user_logic_ADC_0" PORT="scl"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="sda_0" SIGIS="undef" SIGNAME="External_Ports_sda_0">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="i2c_user_logic_ADC_0" PORT="sda"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="scl_1" SIGIS="undef" SIGNAME="External_Ports_scl_1">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="i2c_user_logic_LCD_0" PORT="scl"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="sda_1" SIGIS="undef" SIGNAME="External_Ports_sda_1">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="i2c_user_logic_LCD_0" PORT="sda"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -281,7 +286,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="49999996" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="5e+07" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -337,7 +342,7 @@
             <CONNECTION INSTANCE="External_Ports" PORT="Key1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="49999996" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="5e+07" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -365,7 +370,7 @@
             <CONNECTION INSTANCE="External_Ports" PORT="Key2"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="49999996" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="5e+07" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -380,6 +385,36 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/clock_gen_0" HWVERSION="1.0" INSTANCE="clock_gen_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clock_gen" VLNV="xilinx.com:module_ref:clock_gen:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="FullBuild_clock_gen_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="5e+07" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="util_vector_logic_0_Res">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="util_vector_logic_0" PORT="Res"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="datain" RIGHT="0" SIGIS="undef" SIGNAME="i2c_user_logic_ADC_0_Data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="i2c_user_logic_ADC_0" PORT="Data_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="clock_out" SIGIS="clk" SIGNAME="clock_gen_0_clock_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clock_out_0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/i2c_user_logic_ADC_0" HWVERSION="1.0" INSTANCE="i2c_user_logic_ADC_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="i2c_user_logic_ADC" VLNV="xilinx.com:module_ref:i2c_user_logic_ADC:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -387,7 +422,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="49999996" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="5e+07" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -405,8 +440,10 @@
         <PORT DIR="O" LEFT="7" NAME="Data_out" RIGHT="0" SIGIS="undef" SIGNAME="i2c_user_logic_ADC_0_Data_out">
           <CONNECTIONS>
             <CONNECTION INSTANCE="PWM_gen_0" PORT="iData"/>
+            <CONNECTION INSTANCE="clock_gen_0" PORT="datain"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="readReady" SIGIS="undef"/>
         <PORT DIR="IO" NAME="sda" SIGIS="undef" SIGNAME="External_Ports_sda_0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="sda_0"/>
@@ -427,7 +464,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="49999996" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="5e+07" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -768,7 +805,7 @@
         <PARAMETER NAME="PCW_USE_S_AXI_HP1" VALUE="0"/>
         <PARAMETER NAME="PCW_USE_S_AXI_HP2" VALUE="0"/>
         <PARAMETER NAME="PCW_USE_S_AXI_HP3" VALUE="0"/>
-        <PARAMETER NAME="PCW_M_AXI_GP0_FREQMHZ" VALUE="49"/>
+        <PARAMETER NAME="PCW_M_AXI_GP0_FREQMHZ" VALUE="50.0"/>
         <PARAMETER NAME="PCW_M_AXI_GP1_FREQMHZ" VALUE="10"/>
         <PARAMETER NAME="PCW_S_AXI_GP0_FREQMHZ" VALUE="10"/>
         <PARAMETER NAME="PCW_S_AXI_GP1_FREQMHZ" VALUE="10"/>
@@ -1439,7 +1476,7 @@
         <PORT DIR="O" LEFT="3" NAME="M_AXI_GP0_AWLEN" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="3" NAME="M_AXI_GP0_AWQOS" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="O" LEFT="3" NAME="M_AXI_GP0_WSTRB" RIGHT="0" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="49999996" DIR="I" NAME="M_AXI_GP0_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="5e+07" DIR="I" NAME="M_AXI_GP0_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -1455,7 +1492,7 @@
         <PORT DIR="I" LEFT="1" NAME="M_AXI_GP0_BRESP" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="1" NAME="M_AXI_GP0_RRESP" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="31" NAME="M_AXI_GP0_RDATA" RIGHT="0" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="49999996" DIR="O" NAME="FCLK_CLK0" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="5e+07" DIR="O" NAME="FCLK_CLK0" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="statemachine_0" PORT="Clk"/>
@@ -1463,10 +1500,11 @@
             <CONNECTION INSTANCE="btn_debounce_toggle_1" PORT="CLK"/>
             <CONNECTION INSTANCE="Reset_Delay_0" PORT="iCLK"/>
             <CONNECTION INSTANCE="PWM_gen_0" PORT="clk"/>
-            <CONNECTION INSTANCE="LCD_Controller_0" PORT="iClk"/>
-            <CONNECTION INSTANCE="i2c_user_logic_LCD_0" PORT="clk"/>
-            <CONNECTION INSTANCE="LCD_Data_Cutter_0" PORT="iCLK"/>
             <CONNECTION INSTANCE="i2c_user_logic_ADC_0" PORT="clk"/>
+            <CONNECTION INSTANCE="i2c_user_logic_LCD_0" PORT="clk"/>
+            <CONNECTION INSTANCE="LCD_Controller_0" PORT="iClk"/>
+            <CONNECTION INSTANCE="LCD_Data_Cutter_0" PORT="iCLK"/>
+            <CONNECTION INSTANCE="clock_gen_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst"/>
@@ -1634,7 +1672,7 @@
           <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="8"/>
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI3"/>
-          <PARAMETER NAME="FREQ_HZ" VALUE="49999996"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="5e+07"/>
           <PARAMETER NAME="ID_WIDTH" VALUE="12"/>
           <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
           <PARAMETER NAME="AWUSER_WIDTH" VALUE="0"/>
@@ -1712,7 +1750,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="49999996" DIR="I" NAME="Clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT CLKFREQUENCY="5e+07" DIR="I" NAME="Clk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
           </CONNECTIONS>
@@ -1734,8 +1772,8 @@
         </PORT>
         <PORT DIR="O" LEFT="3" NAME="stateOut" RIGHT="0" SIGIS="undef" SIGNAME="statemachine_0_stateOut">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="LCD_Controller_0" PORT="state"/>
             <CONNECTION INSTANCE="i2c_user_logic_ADC_0" PORT="Mchnstate"/>
+            <CONNECTION INSTANCE="LCD_Controller_0" PORT="state"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1764,10 +1802,11 @@
         <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="statemachine_0" PORT="reset"/>
-            <CONNECTION INSTANCE="LCD_Controller_0" PORT="reset"/>
-            <CONNECTION INSTANCE="i2c_user_logic_LCD_0" PORT="reset"/>
-            <CONNECTION INSTANCE="LCD_Data_Cutter_0" PORT="reset"/>
             <CONNECTION INSTANCE="i2c_user_logic_ADC_0" PORT="reset"/>
+            <CONNECTION INSTANCE="i2c_user_logic_LCD_0" PORT="reset"/>
+            <CONNECTION INSTANCE="LCD_Controller_0" PORT="reset"/>
+            <CONNECTION INSTANCE="LCD_Data_Cutter_0" PORT="reset"/>
+            <CONNECTION INSTANCE="clock_gen_0" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
