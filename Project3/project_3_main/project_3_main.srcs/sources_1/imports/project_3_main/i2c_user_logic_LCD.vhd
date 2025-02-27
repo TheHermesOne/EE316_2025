@@ -33,7 +33,7 @@ component i2c_master IS
     scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
 END component;
 
-TYPE machine IS(start, ready, data_valid, busy_high, writeData); --needed states
+TYPE machine IS(start, ready, writeData); --needed states
 signal state		: machine := start;
 signal statebuffer  : machine := start;
 signal i2c_busy,busy_prev     : STD_LOGIC;                    --indicates transaction in progress
@@ -85,17 +85,17 @@ begin
 			  when ready => 
 				if i2c_busy = '0' then
 				  i2c_ena <= '1';
-				 statebuffer <= data_valid;
+				 statebuffer <= writeData;
 				end if; 
-			  when data_valid => 
-				 if i2c_busy = '1' then
-					i2c_ena <= '0';
-					statebuffer <= busy_high;
-				end if;
-			  when busy_high =>
-				if i2c_busy = '0' then
-					statebuffer <= writeData;
-				end if;	
+--			  when data_valid => 
+--				 if i2c_busy = '1' then
+--					i2c_ena <= '0';
+--					statebuffer <= busy_high;
+--				end if;
+--			  when busy_high =>
+--				if i2c_busy = '0' then
+--					statebuffer <= writeData;
+--				end if;	
 			  when writeData =>
 			     if i2c_busy = '0' and busy_prev = '1' then
 				    data_wr <= iData;
@@ -104,13 +104,12 @@ begin
 	end if;  
 end process;
 
-process(i2c_busy)
+process(clk)
 begin
-busy_prev <= i2c_busy;
-	if i2c_busy = '0' and busy_prev = '1' then
-		busyOut <= '1';
-	else
-		busyOut <= '0';
+	if rising_edge(clk) then
+		busy_sync(0) <= i2c_busy;
+		busy_sync(1) <= busy_sync(0);
+		busyOut <= not busy_sync(1) and busy_sync(0);
 	end if;
 end process;
 

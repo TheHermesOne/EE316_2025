@@ -60,7 +60,7 @@ ADC_addr <= x"90";
 
 inst_i2c_master : i2c_master
 generic map(
-	bus_clk => 50_000
+	bus_clk => 250_000
 )
 port map(
 	 clk     	=> clk,           

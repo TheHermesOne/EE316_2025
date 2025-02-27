@@ -14,8 +14,8 @@ end LCD_Data_Cutter;
 
 architecture Behavioral of LCD_Data_Cutter is
 
-type send_state is (hn1, hn2, hn3, ln1, ln2, ln3);
-signal current_state : send_state;
+type state_type is (hn1, hn2, hn3, ln1, ln2, ln3);
+signal current_state : state_type;
 signal state_cnt    : integer range 0 to 5 := 0;
 signal LCD_Controller_Pulse : std_logic;
 signal ndTemp       : std_logic;
@@ -25,56 +25,76 @@ signal nd_sync   : std_logic_vector(1 downto 0)  := (others => '0');
 
 begin
 
-process(current_state)
+process(iCLK)
 begin
-
-    case current_state is
+    if rising_edge(iCLK) then
+        case current_state is
+        
+            when hn1 =>
+                LCD_Nibble <= LCD_Data(7 downto 4) & "100" & LCD_Data(8);
+            when hn2 =>
+                LCD_Nibble <= LCD_Data(7 downto 4) & "110" & LCD_Data(8);
+            when hn3 =>
+                LCD_Nibble <= LCD_Data(7 downto 4) & "100" & LCD_Data(8);    
+            when ln1 =>
+                LCD_Nibble <= LCD_Data(3 downto 0) & "100" & LCD_Data(8);
+            when ln2 =>
+                LCD_Nibble <= LCD_Data(3 downto 0) & "110" & LCD_Data(8);
+            when ln3 =>
+                LCD_Nibble <= LCD_Data(3 downto 0) & "100" & LCD_Data(8);  
     
-        when hn1 =>
-            LCD_Nibble <= LCD_Data(7 downto 4) & "100" & LCD_Data(8);
-        when hn2 =>
-            LCD_Nibble <= LCD_Data(7 downto 4) & "110" & LCD_Data(8);
-        when hn3 =>
-            LCD_Nibble <= LCD_Data(7 downto 4) & "100" & LCD_Data(8);    
-        when ln1 =>
-            LCD_Nibble <= LCD_Data(3 downto 0) & "100" & LCD_Data(8);
-        when ln2 =>
-            LCD_Nibble <= LCD_Data(3 downto 0) & "110" & LCD_Data(8);
-        when ln3 =>
-            LCD_Nibble <= LCD_Data(3 downto 0) & "100" & LCD_Data(8);  
-
-    end case;
+        end case;
+    end if;
 end process;
 
-process(current_state)
-begin
-    case state_cnt is
-        when 0 =>
-            current_state <= hn1;
-        when 1 =>
-            current_state <= hn2;
-        when 2 =>
-            current_state <= hn3;
-        when 3 =>
-            current_state <= ln1;
-        when 4 =>
-            current_state <= ln2;
-        when 5 =>
-            current_state <= ln3;
-    end case;
-end process;
+--process(current_state)
+--begin
+--    case state_cnt is
+--        when 0 =>
+--            current_state <= hn1;
+--        when 1 =>
+--            current_state <= hn2;
+--        when 2 =>
+--            current_state <= hn3;
+--        when 3 =>
+--            current_state <= ln1;
+--        when 4 =>
+--            current_state <= ln2;
+--        when 5 =>
+--            current_state <= ln3;
+--    end case;
+--end process;
 
 process(iCLK)
 begin
-    if reset = '1' then
-        state_cnt <= 0;
-        if ready = '1' and rising_edge(iCLK) then
-            state_cnt <= state_cnt + 1;
+    if rising_edge(iCLK) then
+        if reset = '1' then
+            state_cnt <= 0;
+            current_state <= hn1;  -- Ensure a known initial state
+        elsif ready = '1' then
+            -- Update state first, then increment state_cnt
+            case state_cnt is
+                when 0 =>
+                    current_state <= hn1;
+                when 1 =>
+                    current_state <= hn2;
+                when 2 =>
+                    current_state <= hn3;
+                when 3 =>
+                    current_state <= ln1;
+                when 4 =>
+                    current_state <= ln2;
+                when 5 =>
+                    current_state <= ln3;
+                when others =>
+                    current_state <= hn1;
+            end case;
+
+            -- Now increment state_cnt
             if state_cnt = 5 then
                 state_cnt <= 0;
-                Next_data_ready <= '1';
             else
-                Next_data_ready <= '0';
+                state_cnt <= state_cnt + 1;
             end if;
         end if;
     end if;
@@ -164,5 +184,4 @@ end Behavioral;
 
 --    process(LCD_Nibble)
 --    begin
-
 

@@ -471,3 +471,408 @@ con
 ----------------End of Script----------------
 
 01:12:21 INFO  : Launch script is exported to file 'C:\Users\nathani\Documents\GitHub\EE316_2025\Project3\project_3_main\project_3_main.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_helloworld.elf_on_local.tcl'
+02:16:29 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1740640512204,  Project:1740636515140
+02:16:29 INFO  : Project FullBuild_wrapper_hw_platform_0's source hardware specification located at C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+02:16:34 INFO  : Copied contents of C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper.hdf into \FullBuild_wrapper_hw_platform_0\system.hdf.
+02:16:37 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+02:16:40 INFO  : 
+02:16:41 INFO  : Updating hardware inferred compiler options for HelloWorld.
+02:16:41 INFO  : Clearing existing target manager status.
+02:16:41 INFO  : Closing and re-opening the MSS file of ther project standalone_bsp_0
+02:16:41 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+02:16:43 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+02:17:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:17:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+02:17:50 INFO  : FPGA configured successfully with bitstream "C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/FullBuild_wrapper.bit"
+02:18:05 INFO  : Disconnected from the channel tcfchan#9.
+02:18:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+02:18:06 INFO  : 'fpga -state' command is executed.
+02:18:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:18:06 INFO  : Jtag cable 'JTAG-ONB4 25163300758BA' is selected.
+02:18:06 INFO  : 'jtag frequency' command is executed.
+02:18:06 INFO  : Sourcing of 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:18:07 INFO  : Context for 'APU' is selected.
+02:18:07 INFO  : Hardware design information is loaded from 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/system.hdf'.
+02:18:07 INFO  : 'configparams force-mem-access 1' command is executed.
+02:18:07 INFO  : Context for 'APU' is selected.
+02:18:07 INFO  : 'stop' command is executed.
+02:18:07 INFO  : 'ps7_init' command is executed.
+02:18:07 INFO  : 'ps7_post_config' command is executed.
+02:18:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:18:07 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:18:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:18:07 INFO  : The application 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:18:07 INFO  : 'configparams force-mem-access 0' command is executed.
+02:18:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+loadhw -hw C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+dow C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:18:07 INFO  : Memory regions updated for context APU
+02:18:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:18:07 INFO  : 'con' command is executed.
+02:18:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+con
+----------------End of Script----------------
+
+02:18:07 INFO  : Launch script is exported to file 'C:\Users\nathani\Documents\GitHub\EE316_2025\Project3\project_3_main\project_3_main.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_helloworld.elf_on_local.tcl'
+02:26:45 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1740641073080,  Project:1740640512204
+02:26:45 INFO  : Project FullBuild_wrapper_hw_platform_0's source hardware specification located at C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+02:26:46 INFO  : Copied contents of C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper.hdf into \FullBuild_wrapper_hw_platform_0\system.hdf.
+02:26:49 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+02:26:52 INFO  : 
+02:26:53 INFO  : Updating hardware inferred compiler options for HelloWorld.
+02:26:53 INFO  : Clearing existing target manager status.
+02:26:53 INFO  : Closing and re-opening the MSS file of ther project standalone_bsp_0
+02:26:54 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+02:26:55 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+02:27:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:27:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+02:27:42 INFO  : FPGA configured successfully with bitstream "C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/FullBuild_wrapper.bit"
+02:27:52 INFO  : Disconnected from the channel tcfchan#10.
+02:27:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+02:27:53 INFO  : 'fpga -state' command is executed.
+02:27:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:27:53 INFO  : Jtag cable 'JTAG-ONB4 25163300758BA' is selected.
+02:27:53 INFO  : 'jtag frequency' command is executed.
+02:27:53 INFO  : Sourcing of 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:27:53 INFO  : Context for 'APU' is selected.
+02:27:53 INFO  : Hardware design information is loaded from 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/system.hdf'.
+02:27:53 INFO  : 'configparams force-mem-access 1' command is executed.
+02:27:53 INFO  : Context for 'APU' is selected.
+02:27:53 INFO  : 'stop' command is executed.
+02:27:53 INFO  : 'ps7_init' command is executed.
+02:27:53 INFO  : 'ps7_post_config' command is executed.
+02:27:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:27:54 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:27:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:27:54 INFO  : The application 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:27:54 INFO  : 'configparams force-mem-access 0' command is executed.
+02:27:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+loadhw -hw C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+dow C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:27:54 INFO  : Memory regions updated for context APU
+02:27:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:27:54 INFO  : 'con' command is executed.
+02:27:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+con
+----------------End of Script----------------
+
+02:27:54 INFO  : Launch script is exported to file 'C:\Users\nathani\Documents\GitHub\EE316_2025\Project3\project_3_main\project_3_main.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_helloworld.elf_on_local.tcl'
+02:45:37 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1740642315061,  Project:1740641073080
+02:45:37 INFO  : Project FullBuild_wrapper_hw_platform_0's source hardware specification located at C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+02:45:51 INFO  : Copied contents of C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper.hdf into \FullBuild_wrapper_hw_platform_0\system.hdf.
+02:45:54 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+02:45:58 INFO  : 
+02:45:59 INFO  : Updating hardware inferred compiler options for HelloWorld.
+02:45:59 INFO  : Clearing existing target manager status.
+02:45:59 INFO  : Closing and re-opening the MSS file of ther project standalone_bsp_0
+02:45:59 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+02:46:01 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+02:47:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:47:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+02:47:12 INFO  : FPGA configured successfully with bitstream "C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/FullBuild_wrapper.bit"
+02:47:21 INFO  : Disconnected from the channel tcfchan#11.
+02:47:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+02:47:23 INFO  : 'fpga -state' command is executed.
+02:47:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:47:23 INFO  : Jtag cable 'JTAG-ONB4 25163300758BA' is selected.
+02:47:23 INFO  : 'jtag frequency' command is executed.
+02:47:23 INFO  : Sourcing of 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:47:23 INFO  : Context for 'APU' is selected.
+02:47:23 INFO  : Hardware design information is loaded from 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/system.hdf'.
+02:47:23 INFO  : 'configparams force-mem-access 1' command is executed.
+02:47:23 INFO  : Context for 'APU' is selected.
+02:47:23 INFO  : 'stop' command is executed.
+02:47:23 INFO  : 'ps7_init' command is executed.
+02:47:23 INFO  : 'ps7_post_config' command is executed.
+02:47:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:47:23 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:47:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:47:23 INFO  : The application 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:47:23 INFO  : 'configparams force-mem-access 0' command is executed.
+02:47:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+loadhw -hw C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+dow C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:47:23 INFO  : Memory regions updated for context APU
+02:47:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:47:23 INFO  : 'con' command is executed.
+02:47:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+con
+----------------End of Script----------------
+
+02:47:23 INFO  : Launch script is exported to file 'C:\Users\nathani\Documents\GitHub\EE316_2025\Project3\project_3_main\project_3_main.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_helloworld.elf_on_local.tcl'
+03:26:21 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1740644735075,  Project:1740642315061
+03:26:21 INFO  : Project FullBuild_wrapper_hw_platform_0's source hardware specification located at C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+03:26:25 INFO  : Copied contents of C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper.hdf into \FullBuild_wrapper_hw_platform_0\system.hdf.
+03:26:27 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+03:26:31 INFO  : 
+03:26:31 INFO  : Updating hardware inferred compiler options for HelloWorld.
+03:26:31 INFO  : Clearing existing target manager status.
+03:26:31 INFO  : Closing and re-opening the MSS file of ther project standalone_bsp_0
+03:26:32 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+03:26:34 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+03:26:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:26:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+03:26:45 INFO  : FPGA configured successfully with bitstream "C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/FullBuild_wrapper.bit"
+03:35:05 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1740645277013,  Project:1740644735075
+03:35:05 INFO  : Project FullBuild_wrapper_hw_platform_0's source hardware specification located at C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+03:35:06 INFO  : Copied contents of C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper.hdf into \FullBuild_wrapper_hw_platform_0\system.hdf.
+03:35:09 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+03:35:12 INFO  : 
+03:35:13 INFO  : Updating hardware inferred compiler options for HelloWorld.
+03:35:13 INFO  : Clearing existing target manager status.
+03:35:13 INFO  : Closing and re-opening the MSS file of ther project standalone_bsp_0
+03:35:14 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+03:35:54 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+03:36:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:36:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+03:36:45 INFO  : FPGA configured successfully with bitstream "C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/FullBuild_wrapper.bit"
+03:36:56 INFO  : Disconnected from the channel tcfchan#12.
+03:36:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+03:36:58 INFO  : 'fpga -state' command is executed.
+03:36:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:36:58 INFO  : Jtag cable 'JTAG-ONB4 25163300758BA' is selected.
+03:36:58 INFO  : 'jtag frequency' command is executed.
+03:36:58 INFO  : Sourcing of 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:36:58 INFO  : Context for 'APU' is selected.
+03:36:58 INFO  : Hardware design information is loaded from 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/system.hdf'.
+03:36:58 INFO  : 'configparams force-mem-access 1' command is executed.
+03:36:58 INFO  : Context for 'APU' is selected.
+03:36:58 INFO  : 'stop' command is executed.
+03:36:58 INFO  : 'ps7_init' command is executed.
+03:36:58 INFO  : 'ps7_post_config' command is executed.
+03:36:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:36:58 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:36:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:36:58 INFO  : The application 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:36:58 INFO  : 'configparams force-mem-access 0' command is executed.
+03:36:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+loadhw -hw C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+dow C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:36:58 INFO  : Memory regions updated for context APU
+03:36:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:36:58 INFO  : 'con' command is executed.
+03:36:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+con
+----------------End of Script----------------
+
+03:36:58 INFO  : Launch script is exported to file 'C:\Users\nathani\Documents\GitHub\EE316_2025\Project3\project_3_main\project_3_main.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_helloworld.elf_on_local.tcl'
+03:40:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:40:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+03:40:39 INFO  : FPGA configured successfully with bitstream "C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/FullBuild_wrapper.bit"
+03:40:47 INFO  : Disconnected from the channel tcfchan#13.
+03:40:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+03:40:48 INFO  : 'fpga -state' command is executed.
+03:40:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:40:48 INFO  : Jtag cable 'JTAG-ONB4 25163300758BA' is selected.
+03:40:48 INFO  : 'jtag frequency' command is executed.
+03:40:48 INFO  : Sourcing of 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:40:48 INFO  : Context for 'APU' is selected.
+03:40:48 INFO  : Hardware design information is loaded from 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/system.hdf'.
+03:40:48 INFO  : 'configparams force-mem-access 1' command is executed.
+03:40:48 INFO  : Context for 'APU' is selected.
+03:40:48 INFO  : 'stop' command is executed.
+03:40:48 INFO  : 'ps7_init' command is executed.
+03:40:48 INFO  : 'ps7_post_config' command is executed.
+03:40:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:40:48 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:40:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:40:48 INFO  : The application 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:40:48 INFO  : 'configparams force-mem-access 0' command is executed.
+03:40:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+loadhw -hw C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+dow C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:40:48 INFO  : Memory regions updated for context APU
+03:40:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:40:49 INFO  : 'con' command is executed.
+03:40:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+con
+----------------End of Script----------------
+
+03:40:49 INFO  : Launch script is exported to file 'C:\Users\nathani\Documents\GitHub\EE316_2025\Project3\project_3_main\project_3_main.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_helloworld.elf_on_local.tcl'
+03:41:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:41:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+03:41:29 INFO  : FPGA configured successfully with bitstream "C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/FullBuild_wrapper.bit"
+03:41:37 INFO  : Disconnected from the channel tcfchan#14.
+03:41:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+03:41:38 INFO  : 'fpga -state' command is executed.
+03:41:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:41:39 INFO  : Jtag cable 'JTAG-ONB4 25163300758BA' is selected.
+03:41:39 INFO  : 'jtag frequency' command is executed.
+03:41:39 INFO  : Sourcing of 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:41:39 INFO  : Context for 'APU' is selected.
+03:41:39 INFO  : Hardware design information is loaded from 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/system.hdf'.
+03:41:39 INFO  : 'configparams force-mem-access 1' command is executed.
+03:41:39 INFO  : Context for 'APU' is selected.
+03:41:39 INFO  : 'stop' command is executed.
+03:41:39 INFO  : 'ps7_init' command is executed.
+03:41:39 INFO  : 'ps7_post_config' command is executed.
+03:41:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:41:39 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:41:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:41:39 INFO  : The application 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:41:39 INFO  : 'configparams force-mem-access 0' command is executed.
+03:41:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+loadhw -hw C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+dow C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:41:39 INFO  : Memory regions updated for context APU
+03:41:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:41:39 INFO  : 'con' command is executed.
+03:41:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+con
+----------------End of Script----------------
+
+03:41:39 INFO  : Launch script is exported to file 'C:\Users\nathani\Documents\GitHub\EE316_2025\Project3\project_3_main\project_3_main.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_helloworld.elf_on_local.tcl'
+03:54:46 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1740646454541,  Project:1740645277013
+03:54:46 INFO  : Project FullBuild_wrapper_hw_platform_0's source hardware specification located at C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+03:54:59 INFO  : Copied contents of C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper.hdf into \FullBuild_wrapper_hw_platform_0\system.hdf.
+03:55:02 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+03:55:05 INFO  : 
+03:55:06 INFO  : Updating hardware inferred compiler options for HelloWorld.
+03:55:06 INFO  : Clearing existing target manager status.
+03:55:06 INFO  : Closing and re-opening the MSS file of ther project standalone_bsp_0
+03:55:06 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+03:55:08 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+03:55:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:55:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+03:55:23 INFO  : FPGA configured successfully with bitstream "C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/FullBuild_wrapper.bit"
+03:57:05 INFO  : Disconnected from the channel tcfchan#15.
+03:57:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 25163300758BA" && level==0} -index 1' command is executed.
+03:57:06 INFO  : 'fpga -state' command is executed.
+03:57:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:57:06 INFO  : Jtag cable 'JTAG-ONB4 25163300758BA' is selected.
+03:57:06 INFO  : 'jtag frequency' command is executed.
+03:57:06 INFO  : Sourcing of 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/ps7_init.tcl' is done.
+03:57:06 INFO  : Context for 'APU' is selected.
+03:57:06 INFO  : Hardware design information is loaded from 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/system.hdf'.
+03:57:06 INFO  : 'configparams force-mem-access 1' command is executed.
+03:57:06 INFO  : Context for 'APU' is selected.
+03:57:06 INFO  : 'stop' command is executed.
+03:57:06 INFO  : 'ps7_init' command is executed.
+03:57:06 INFO  : 'ps7_post_config' command is executed.
+03:57:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:57:06 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+03:57:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:57:06 INFO  : The application 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/HelloWorld/Debug/HelloWorld.elf' is downloaded to processor 'ps7_cortexa9_0'.
+03:57:06 INFO  : 'configparams force-mem-access 0' command is executed.
+03:57:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+loadhw -hw C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/FullBuild_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+dow C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.sdk/HelloWorld/Debug/HelloWorld.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+03:57:07 INFO  : Memory regions updated for context APU
+03:57:07 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+03:57:07 INFO  : 'con' command is executed.
+03:57:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "JTAG-ONB4 25163300758BA"} -index 0
+con
+----------------End of Script----------------
+
+03:57:07 INFO  : Launch script is exported to file 'C:\Users\nathani\Documents\GitHub\EE316_2025\Project3\project_3_main\project_3_main.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_helloworld.elf_on_local.tcl'

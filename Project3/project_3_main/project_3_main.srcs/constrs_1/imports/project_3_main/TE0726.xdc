@@ -14,14 +14,14 @@ set_property PACKAGE_PIN N14 [get_ports scl_1]
 ## GPIO6
 set_property PACKAGE_PIN R15 [get_ports PWMout_0]
 ## GPIO7
-set_property PACKAGE_PIN L14 [get_ports Key0[0]]
+set_property PACKAGE_PIN L14 [get_ports {Key0[0]}]
 ## GPIO8
 set_property PACKAGE_PIN L15 [get_ports Key1]
 ## GPIO9
 set_property PACKAGE_PIN J13 [get_ports Key2]
 
 
-set_property IOSTANDARD LVCMOS33 [get_ports Key0[0]]
+set_property IOSTANDARD LVCMOS33 [get_ports {Key0[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports sda_0]
 set_property IOSTANDARD LVCMOS33 [get_ports scl_0]
 set_property IOSTANDARD LVCMOS33 [get_ports sda_1]
@@ -100,3 +100,51 @@ set_property IOSTANDARD LVCMOS33 [get_ports Key2]
 #set_property PACKAGE_PIN N7 [get_ports PWM_L]
 #set_property IOSTANDARD LVCMOS33 [get_ports PWM_*]
 
+
+set_property MARK_DEBUG true [get_nets {FullBuild_i/iData[0]}]
+set_property MARK_DEBUG true [get_nets {FullBuild_i/iData[1]}]
+set_property MARK_DEBUG true [get_nets {FullBuild_i/iData[2]}]
+set_property MARK_DEBUG true [get_nets {FullBuild_i/iData[3]}]
+set_property MARK_DEBUG true [get_nets {FullBuild_i/iData[4]}]
+set_property MARK_DEBUG true [get_nets {FullBuild_i/iData[5]}]
+set_property MARK_DEBUG true [get_nets {FullBuild_i/iData[6]}]
+set_property MARK_DEBUG true [get_nets {FullBuild_i/iData[7]}]
+set_property MARK_DEBUG true [get_nets FullBuild_i/LCD_Data_Cutter_0_Next_data]
+set_property MARK_DEBUG true [get_nets FullBuild_i/i2c_user_logic_LCD_0_BusyOut]
+set_property MARK_DEBUG true [get_nets FullBuild_i/util_vector_logic_0_Res_0]
+
+
+create_debug_core u_ila_0 ila
+set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU_CNT 4 [get_debug_cores u_ila_0]
+set_property C_ADV_TRIGGER true [get_debug_cores u_ila_0]
+set_property C_DATA_DEPTH 1024 [get_debug_cores u_ila_0]
+set_property C_EN_STRG_QUAL true [get_debug_cores u_ila_0]
+set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_0]
+set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
+set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
+set_property port_width 1 [get_debug_ports u_ila_0/clk]
+connect_debug_port u_ila_0/clk [get_nets [list FullBuild_i/processing_system7_0/inst/FCLK_CLK0]]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
+set_property port_width 8 [get_debug_ports u_ila_0/probe0]
+connect_debug_port u_ila_0/probe0 [get_nets [list {FullBuild_i/iData[0]} {FullBuild_i/iData[1]} {FullBuild_i/iData[2]} {FullBuild_i/iData[3]} {FullBuild_i/iData[4]} {FullBuild_i/iData[5]} {FullBuild_i/iData[6]} {FullBuild_i/iData[7]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
+set_property port_width 8 [get_debug_ports u_ila_0/probe1]
+connect_debug_port u_ila_0/probe1 [get_nets [list {FullBuild_i/Data_out[0]} {FullBuild_i/Data_out[1]} {FullBuild_i/Data_out[2]} {FullBuild_i/Data_out[3]} {FullBuild_i/Data_out[4]} {FullBuild_i/Data_out[5]} {FullBuild_i/Data_out[6]} {FullBuild_i/Data_out[7]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
+set_property port_width 1 [get_debug_ports u_ila_0/probe2]
+connect_debug_port u_ila_0/probe2 [get_nets [list FullBuild_i/i2c_user_logic_LCD_0_BusyOut]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
+set_property port_width 1 [get_debug_ports u_ila_0/probe3]
+connect_debug_port u_ila_0/probe3 [get_nets [list FullBuild_i/LCD_Data_Cutter_0_Next_data]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe4]
+set_property port_width 1 [get_debug_ports u_ila_0/probe4]
+connect_debug_port u_ila_0/probe4 [get_nets [list FullBuild_i/util_vector_logic_0_Res_0]]
+set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
+set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
+set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
+connect_debug_port dbg_hub/clk [get_nets u_ila_0_FCLK_CLK0]

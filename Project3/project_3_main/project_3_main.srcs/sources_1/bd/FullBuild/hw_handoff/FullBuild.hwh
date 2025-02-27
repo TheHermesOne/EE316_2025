@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Feb 27 01:06:27 2025" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Feb 27 03:47:41 2025" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="trenz.biz:te0726_10_1c:part0:2.1" DEVICE="7z010" NAME="FullBuild" PACKAGE="clg225" SPEEDGRADE="-1"/>
 
@@ -1463,10 +1463,10 @@
             <CONNECTION INSTANCE="btn_debounce_toggle_1" PORT="CLK"/>
             <CONNECTION INSTANCE="Reset_Delay_0" PORT="iCLK"/>
             <CONNECTION INSTANCE="PWM_gen_0" PORT="clk"/>
-            <CONNECTION INSTANCE="LCD_Data_Cutter_0" PORT="iCLK"/>
             <CONNECTION INSTANCE="LCD_Controller_0" PORT="iClk"/>
-            <CONNECTION INSTANCE="i2c_user_logic_ADC_0" PORT="clk"/>
             <CONNECTION INSTANCE="i2c_user_logic_LCD_0" PORT="clk"/>
+            <CONNECTION INSTANCE="LCD_Data_Cutter_0" PORT="iCLK"/>
+            <CONNECTION INSTANCE="i2c_user_logic_ADC_0" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst"/>
@@ -1764,10 +1764,10 @@
         <PORT DIR="O" LEFT="0" NAME="Res" RIGHT="0" SIGIS="undef" SIGNAME="util_vector_logic_0_Res">
           <CONNECTIONS>
             <CONNECTION INSTANCE="statemachine_0" PORT="reset"/>
-            <CONNECTION INSTANCE="LCD_Data_Cutter_0" PORT="reset"/>
             <CONNECTION INSTANCE="LCD_Controller_0" PORT="reset"/>
-            <CONNECTION INSTANCE="i2c_user_logic_ADC_0" PORT="reset"/>
             <CONNECTION INSTANCE="i2c_user_logic_LCD_0" PORT="reset"/>
+            <CONNECTION INSTANCE="LCD_Data_Cutter_0" PORT="reset"/>
+            <CONNECTION INSTANCE="i2c_user_logic_ADC_0" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

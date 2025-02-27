@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Thu Feb 27 01:06:26 2025
+--Date        : Thu Feb 27 03:47:40 2025
 --Host        : UL-31 running 64-bit major release  (build 9200)
 --Command     : generate_target FullBuild.bd
 --Design      : FullBuild
@@ -179,16 +179,6 @@ architecture STRUCTURE of FullBuild is
     PWMout : out STD_LOGIC
   );
   end component FullBuild_PWM_gen_0_0;
-  component FullBuild_LCD_Data_Cutter_0_0 is
-  port (
-    iCLK : in STD_LOGIC;
-    ready : in STD_LOGIC;
-    LCD_Data : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    reset : in STD_LOGIC;
-    Next_data : out STD_LOGIC;
-    LCD_Nibble : out STD_LOGIC_VECTOR ( 7 downto 0 )
-  );
-  end component FullBuild_LCD_Data_Cutter_0_0;
   component FullBuild_LCD_Controller_0_0 is
   port (
     reset : in STD_LOGIC;
@@ -198,16 +188,6 @@ architecture STRUCTURE of FullBuild is
     LCD_DATA : out STD_LOGIC_VECTOR ( 11 downto 0 )
   );
   end component FullBuild_LCD_Controller_0_0;
-  component FullBuild_i2c_user_logic_ADC_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    Mchnstate : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    Data_out : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    sda : inout STD_LOGIC;
-    scl : inout STD_LOGIC
-  );
-  end component FullBuild_i2c_user_logic_ADC_0_0;
   component FullBuild_i2c_user_logic_LCD_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -218,6 +198,26 @@ architecture STRUCTURE of FullBuild is
     scl : inout STD_LOGIC
   );
   end component FullBuild_i2c_user_logic_LCD_0_0;
+  component FullBuild_LCD_Data_Cutter_0_0 is
+  port (
+    iCLK : in STD_LOGIC;
+    ready : in STD_LOGIC;
+    LCD_Data : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    reset : in STD_LOGIC;
+    Next_data : out STD_LOGIC;
+    LCD_Nibble : out STD_LOGIC_VECTOR ( 7 downto 0 )
+  );
+  end component FullBuild_LCD_Data_Cutter_0_0;
+  component FullBuild_i2c_user_logic_ADC_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    Mchnstate : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    Data_out : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    sda : inout STD_LOGIC;
+    scl : inout STD_LOGIC
+  );
+  end component FullBuild_i2c_user_logic_ADC_0_0;
   signal BTN_I_0_1 : STD_LOGIC;
   signal BTN_I_0_2 : STD_LOGIC;
   signal LCD_Controller_0_LCD_DATA : STD_LOGIC_VECTOR ( 11 downto 0 );

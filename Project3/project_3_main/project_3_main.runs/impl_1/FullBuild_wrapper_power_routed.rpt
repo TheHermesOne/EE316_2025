@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Thu Feb 27 01:08:25 2025
+| Date             : Thu Feb 27 03:54:01 2025
 | Host             : UL-31 running 64-bit major release  (build 9200)
 | Command          : report_power -file FullBuild_wrapper_power_routed.rpt -pb FullBuild_wrapper_power_summary_routed.pb -rpx FullBuild_wrapper_power_routed.rpx
 | Design           : FullBuild_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.300        |
+| Total On-Chip Power (W)  | 1.312        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.182        |
+| Dynamic (W)              | 1.194        |
 | Device Static (W)        | 0.118        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 70.0         |
-| Junction Temperature (C) | 40.0         |
+| Max Ambient (C)          | 69.9         |
+| Junction Temperature (C) | 40.1         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -49,21 +49,25 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+----------------+-----------+----------+-----------+-----------------+
-| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
-+----------------+-----------+----------+-----------+-----------------+
-| Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      487 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      160 |     17600 |            0.91 |
-|   CARRY4       |    <0.001 |       14 |      4400 |            0.32 |
-|   Register     |    <0.001 |      170 |     35200 |            0.48 |
-|   Others       |     0.000 |      108 |       --- |             --- |
-| Signals        |    <0.001 |      291 |       --- |             --- |
-| I/O            |    <0.001 |        8 |        54 |           14.81 |
-| PS7            |     1.180 |        1 |       --- |             --- |
-| Static Power   |     0.118 |          |           |                 |
-| Total          |     1.300 |          |           |                 |
-+----------------+-----------+----------+-----------+-----------------+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.011 |        4 |       --- |             --- |
+| Slice Logic              |    <0.001 |    10907 |       --- |             --- |
+|   LUT as Logic           |    <0.001 |     3177 |     17600 |           18.05 |
+|   Register               |    <0.001 |     4857 |     35200 |           13.80 |
+|   LUT as Distributed RAM |    <0.001 |      152 |      6000 |            2.53 |
+|   CARRY4                 |    <0.001 |      223 |      4400 |            5.07 |
+|   F7/F8 Muxes            |    <0.001 |      121 |     17600 |            0.69 |
+|   LUT as Shift Register  |    <0.001 |      593 |      6000 |            9.88 |
+|   Others                 |     0.000 |      886 |       --- |             --- |
+| Signals                  |     0.001 |     6635 |       --- |             --- |
+| Block RAM                |    <0.001 |        1 |        60 |            1.67 |
+| I/O                      |    <0.001 |        8 |        54 |           14.81 |
+| PS7                      |     1.180 |        1 |       --- |             --- |
+| Static Power             |     0.118 |          |           |                 |
+| Total                    |     1.312 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -72,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.007 |       0.001 |      0.006 |
+| Vccint    |       1.000 |     0.019 |       0.013 |      0.006 |
 | Vccaux    |       1.800 |     0.007 |       0.000 |      0.007 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -132,11 +136,12 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+------------+--------------------------------------------------------------+-----------------+
-| Clock      | Domain                                                       | Constraint (ns) |
-+------------+--------------------------------------------------------------+-----------------+
-| clk_fpga_0 | FullBuild_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0] |            20.0 |
-+------------+--------------------------------------------------------------+-----------------+
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
+| Clock                                                                                      | Domain                                                               | Constraint (ns) |
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
+| clk_fpga_0                                                                                 | FullBuild_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]         |            20.0 |
+| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/tck_bs |            33.0 |
++--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -148,10 +153,16 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| FullBuild_wrapper        |     1.182 |
+| FullBuild_wrapper        |     1.194 |
 |   FullBuild_i            |     1.181 |
 |     processing_system7_0 |     1.180 |
 |       inst               |     1.180 |
+|   dbg_hub                |     0.002 |
+|     inst                 |     0.002 |
+|       BSCANID.u_xsdbm_id |     0.002 |
+|   u_ila_0                |     0.011 |
+|     inst                 |     0.011 |
+|       ila_core_inst      |     0.011 |
 +--------------------------+-----------+
 
 
