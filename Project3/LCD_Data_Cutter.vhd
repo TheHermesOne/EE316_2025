@@ -125,7 +125,7 @@ end process;
 
 process(iCLK)
 begin
-	if falling_edge(ICLK) then
+	if rising_edge(ICLK) then
 		nd_sync(0) <= ndTemp;
 		nd_sync(1) <= nd_sync(0);
 		Next_data <= not nd_sync(1) and nd_sync(0);
