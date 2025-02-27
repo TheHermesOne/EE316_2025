@@ -6,31 +6,31 @@ use ieee.numeric_std.all;
 
 entity PWM_gen is
    port(
-      clk,en					: in std_logic;
-		Sram_DataOut			: in std_logic_vector(15 downto 0);
-		StateIn					: in std_logic_vector(1 downto 0);
+        clk,en					: in std_logic;
+		iData			: in std_logic_vector(7 downto 0);
+--		StateIn					: in std_logic_vector(1 downto 0);
 		PWMout					: out std_logic		
    );
 end PWM_gen;
 
 architecture arch of PWM_gen is
-	signal SRAMDATA 		: unsigned(15 downto 0);
-   signal Sram_data_cut : unsigned(7 downto 0);
+	signal DATA 		: unsigned(7 downto 0);
+   signal data_cut      : unsigned(7 downto 0);
    signal r_reg			: unsigned(7 downto 0) := (others => '0');
-   signal r_next			: unsigned(7 downto 0) := (others => '0');
+   signal r_next	    : unsigned(7 downto 0) := (others => '0');
 
 begin
-	SRAMDATA <= unsigned(Sram_DataOut);
+	DATA <= unsigned(iData);
 		
-	SRAMDataCut:process(StateIn,SRAMDATA)
-		begin
-			if(StateIn = "11") then
-				Sram_data_cut(5 downto 0) <= SRAMDATA(15 downto 10);
-				Sram_data_cut(7 downto 6) <= "00";
-			else
-				Sram_data_cut <= SRAMDATA(15 downto 8);
-			end if;
-	end process;
+--	SRAMDataCut:process(StateIn,DATA)
+--		begin
+--			if(StateIn = "11") then
+--				data_cut(5 downto 0) <= DATA(15 downto 10);
+--				data_cut(7 downto 6) <= "00";
+--			else
+--				data_cut <= DATA(15 downto 8);
+--			end if;
+--	end process;
 	
    InternalCounter:process(clk)
 		begin
@@ -46,7 +46,7 @@ begin
 	PWM: process(clk)
 		begin
 			if (en = '1') then
-				if(r_reg < Sram_data_cut) then
+				if(r_reg < DATA) then
 					PWMout <= '1';
 				else
 					PWMout <= '0';

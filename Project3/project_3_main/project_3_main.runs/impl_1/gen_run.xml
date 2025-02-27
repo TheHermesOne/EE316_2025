@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg225-1" LaunchTime="1740424352">
-  <File Type="BITSTR-BMM" Name="i2c_user_logic_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="i2c_user_logic_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="i2c_user_logic_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="i2c_user_logic_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="i2c_user_logic.tcl"/>
-  <File Type="OPT-TIMING" Name="i2c_user_logic_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="i2c_user_logic_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="i2c_user_logic_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="i2c_user_logic_reports.tcl"/>
-  <File Type="OPT-DRC" Name="i2c_user_logic_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="i2c_user_logic.hwdef"/>
-  <File Type="PWROPT-DCP" Name="i2c_user_logic_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="i2c_user_logic_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="i2c_user_logic_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="i2c_user_logic_placed.dcp"/>
-  <File Type="PLACE-IO" Name="i2c_user_logic_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="i2c_user_logic_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="i2c_user_logic_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="i2c_user_logic_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="i2c_user_logic_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="i2c_user_logic_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="i2c_user_logic_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BGN" Name="i2c_user_logic.bgn"/>
-  <File Type="PLACE-TIMING" Name="i2c_user_logic_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="i2c_user_logic_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="i2c_user_logic.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="i2c_user_logic_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="i2c_user_logic_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="i2c_user_logic_drc_physopted.rpt"/>
-  <File Type="BITSTR-MSK" Name="i2c_user_logic.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="i2c_user_logic_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="i2c_user_logic_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="i2c_user_logic_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="i2c_user_logic_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="i2c_user_logic_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="i2c_user_logic_drc_routed.pb"/>
+<GenRun Id="impl_1" LaunchPart="xc7z010clg225-1" LaunchTime="1740636393">
+  <File Type="BITSTR-BMM" Name="FullBuild_wrapper_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="FullBuild_wrapper_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="FullBuild_wrapper_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="FullBuild_wrapper_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="FullBuild_wrapper.tcl"/>
+  <File Type="OPT-TIMING" Name="FullBuild_wrapper_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="FullBuild_wrapper_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="FullBuild_wrapper_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="FullBuild_wrapper_reports.tcl"/>
+  <File Type="OPT-DRC" Name="FullBuild_wrapper_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="FullBuild_wrapper.hwdef"/>
+  <File Type="PWROPT-DCP" Name="FullBuild_wrapper_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="FullBuild_wrapper_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="FullBuild_wrapper_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="FullBuild_wrapper_placed.dcp"/>
+  <File Type="PLACE-IO" Name="FullBuild_wrapper_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="FullBuild_wrapper_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="FullBuild_wrapper_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="FullBuild_wrapper_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="FullBuild_wrapper_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="FullBuild_wrapper_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="FullBuild_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="FullBuild_wrapper.bgn"/>
+  <File Type="PLACE-TIMING" Name="FullBuild_wrapper_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="FullBuild_wrapper_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="FullBuild_wrapper.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="FullBuild_wrapper_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="FullBuild_wrapper_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="FullBuild_wrapper_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="FullBuild_wrapper.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="FullBuild_wrapper_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="FullBuild_wrapper_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="FullBuild_wrapper_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="FullBuild_wrapper_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="FullBuild_wrapper_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="FullBuild_wrapper_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="i2c_user_logic.ltx"/>
-  <File Type="ROUTE-DRC-RPX" Name="i2c_user_logic_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="i2c_user_logic.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="i2c_user_logic_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="i2c_user_logic_methodology_drc_routed.rpx"/>
-  <File Type="BITSTR-SYSDEF" Name="i2c_user_logic.sysdef"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="i2c_user_logic_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="i2c_user_logic_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="i2c_user_logic_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="i2c_user_logic_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="i2c_user_logic_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="i2c_user_logic_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="i2c_user_logic_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="i2c_user_logic_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="i2c_user_logic_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="i2c_user_logic_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="i2c_user_logic_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="i2c_user_logic_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="i2c_user_logic_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="i2c_user_logic_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="i2c_user_logic_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="i2c_user_logic_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="i2c_user_logic_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="i2c_user_logic_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="i2c_user_logic_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="i2c_user_logic.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="i2c_user_logic_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-RBT" Name="i2c_user_logic.rbt"/>
-  <File Type="BITSTR-NKY" Name="i2c_user_logic.nky"/>
-  <File Type="BG-DRC" Name="i2c_user_logic.drc"/>
-  <File Type="RDI-RDI" Name="i2c_user_logic.vdi"/>
+  <File Type="BITSTR-LTX" Name="FullBuild_wrapper.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="FullBuild_wrapper_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="FullBuild_wrapper.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="FullBuild_wrapper_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="FullBuild_wrapper_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="FullBuild_wrapper.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="FullBuild_wrapper_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="FullBuild_wrapper_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="FullBuild_wrapper_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="FullBuild_wrapper_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="FullBuild_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="FullBuild_wrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="FullBuild_wrapper_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="FullBuild_wrapper_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="FullBuild_wrapper_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="FullBuild_wrapper_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="FullBuild_wrapper_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="FullBuild_wrapper_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="FullBuild_wrapper_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="FullBuild_wrapper_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="FullBuild_wrapper_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="FullBuild_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="FullBuild_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="FullBuild_wrapper_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="FullBuild_wrapper_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="FullBuild_wrapper.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="FullBuild_wrapper_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="FullBuild_wrapper.rbt"/>
+  <File Type="BITSTR-NKY" Name="FullBuild_wrapper.nky"/>
+  <File Type="BG-DRC" Name="FullBuild_wrapper.drc"/>
+  <File Type="RDI-RDI" Name="FullBuild_wrapper.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -79,26 +79,32 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/project_3_main/i2c_user_logic.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/project_3_main/i2c_user_logic_ADC.vhd">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/i2c_user_logic.vhd"/>
-        <Attr Name="ImportTime" Val="1739474921"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/i2c_user_logic_ADC.vhd"/>
+        <Attr Name="ImportTime" Val="1740615709"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/project_3_main/btn_debounce_toggle.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/project_3_main/i2c_user_logic_LCD.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/btn_debounce_toggle.vhd"/>
-        <Attr Name="ImportTime" Val="1739116975"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/i2c_user_logic_LCD.vhd"/>
+        <Attr Name="ImportTime" Val="1740616234"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/project_3_main/PWM_Gen.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/PWM_Gen.vhd"/>
+        <Attr Name="ImportTime" Val="1739222631"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/imports/project_3_main/reset_delay.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/reset_delay.vhd"/>
         <Attr Name="ImportTime" Val="1739116976"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -107,62 +113,48 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/project_3_main/Statemachine.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/Statemachine.vhd"/>
         <Attr Name="ImportTime" Val="1739235514"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/project_3_main/clk_enabler.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/project_3_main/btn_debounce_toggle.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/clk_enabler.vhd"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/btn_debounce_toggle.vhd"/>
         <Attr Name="ImportTime" Val="1739116975"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/project_3_main/univ_bin_counter.vhd">
+    <File Path="$PPRDIR/LCD_Controller.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/univ_bin_counter.vhd"/>
-        <Attr Name="ImportTime" Val="1739116977"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/project_3_main/LCD_Controller.vhd">
+    <File Path="$PPRDIR/LCD_Data_Cutter.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/LCD_Controller.vhd"/>
-        <Attr Name="ImportTime" Val="1739305793"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/project_3_main/PWM_Gen.vhd">
+    <File Path="$PSRCDIR/sources_1/bd/FullBuild/FullBuild.bd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/PWM_Gen.vhd"/>
-        <Attr Name="ImportTime" Val="1739222631"/>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/project_3_main/Var_size_Counter.vhd">
+    <File Path="$PSRCDIR/sources_1/bd/FullBuild/hdl/FullBuild_wrapper.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/Var_size_Counter.vhd"/>
-        <Attr Name="ImportTime" Val="1739116975"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="i2c_user_logic"/>
-      <Option Name="TopAutoSet" Val="TRUE"/>
+      <Option Name="TopModule" Val="FullBuild_wrapper"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -170,7 +162,7 @@
     <File Path="$PSRCDIR/constrs_1/imports/project_3_main/TE0726.xdc">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/TE0726.xdc"/>
-        <Attr Name="ImportTime" Val="1740424313"/>
+        <Attr Name="ImportTime" Val="1740624709"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
@@ -186,7 +178,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

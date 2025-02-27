@@ -1,0 +1,91 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Thu Feb 27 01:08:25 2025
+| Host         : UL-31 running 64-bit major release  (build 9200)
+| Command      : report_methodology -file FullBuild_wrapper_methodology_drc_routed.rpt -pb FullBuild_wrapper_methodology_drc_routed.pb -rpx FullBuild_wrapper_methodology_drc_routed.rpx
+| Design       : FullBuild_wrapper
+| Device       : xc7z010clg225-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 11
++-----------+----------+-------------------------------+------------+
+| Rule      | Severity | Description                   | Violations |
++-----------+----------+-------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert  | 3          |
+| TIMING-18 | Warning  | Missing input or output delay | 8          |
++-----------+----------+-------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell FullBuild_i/i2c_user_logic_LCD_0/U0/i2c_ena_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) FullBuild_i/i2c_user_logic_LCD_0/U0/FSM_onehot_statebuffer_reg[1]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/FSM_onehot_statebuffer_reg[2]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/FSM_onehot_statebuffer_reg[3]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/FSM_onehot_statebuffer_reg[0]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/busy_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/FSM_onehot_state_reg[1]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/FSM_onehot_state_reg[2]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/FSM_onehot_state_reg[3]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/FSM_onehot_state_reg[4]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/FSM_onehot_state_reg[5]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/FSM_onehot_state_reg[8]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/count_reg[0]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/count_reg[1]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/count_reg[2]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/count_reg[3]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/count_reg[4]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/count_reg[5]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/count_reg[6]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/count_reg[7]/CLR, FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/count_reg[8]/CLR (the first 15 of 24 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell FullBuild_i/util_vector_logic_0/inst/Res[0]_INST_0, with 2 or more inputs, drives asynchronous preset/clear pin(s) FullBuild_i/i2c_user_logic_ADC_0/U0/FSM_sequential_statebuffer_reg[0]/CLR, FullBuild_i/i2c_user_logic_ADC_0/U0/FSM_sequential_statebuffer_reg[1]/CLR, FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/FSM_onehot_state_reg[1]/CLR, FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/FSM_onehot_state_reg[2]/CLR, FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/FSM_onehot_state_reg[3]/CLR, FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/FSM_onehot_state_reg[4]/CLR, FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/FSM_onehot_state_reg[5]/CLR, FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/FSM_onehot_state_reg[6]/CLR, FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/FSM_onehot_state_reg[7]/CLR, FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/FSM_onehot_state_reg[8]/CLR, FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/count_reg[0]/CLR, FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/count_reg[1]/CLR, FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/count_reg[2]/CLR, FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/count_reg[3]/CLR, FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/count_reg[4]/CLR (the first 15 of 39 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on Key0[0] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on Key1 relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on Key2 relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An input delay is missing on scl_0 relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An input delay is missing on scl_1 relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An input delay is missing on sda_0 relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An input delay is missing on sda_1 relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on PWMout_0 relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+

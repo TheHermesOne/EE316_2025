@@ -2,11 +2,11 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Feb 24 14:13:11 2025
-# Process ID: 6752
+# Start of session at: Thu Feb 27 01:07:28 2025
+# Process ID: 15896
 # Current directory: C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.runs/impl_1
-# Command line: vivado.exe -log i2c_user_logic.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source i2c_user_logic.tcl -notrace
-# Log file: C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.runs/impl_1/i2c_user_logic.vdi
+# Command line: vivado.exe -log FullBuild_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source FullBuild_wrapper.tcl -notrace
+# Log file: C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.runs/impl_1/FullBuild_wrapper.vdi
 # Journal file: C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
-source i2c_user_logic.tcl -notrace
+source FullBuild_wrapper.tcl -notrace

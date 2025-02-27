@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log i2c_user_logic.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source i2c_user_logic.tcl
+EAStep vivado -log FullBuild_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FullBuild_wrapper.tcl

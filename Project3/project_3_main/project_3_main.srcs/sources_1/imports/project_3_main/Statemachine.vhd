@@ -7,86 +7,70 @@ entity statemachine is
   port (
     Clk      : in std_logic;
     reset    : in std_logic;
-    CountVal : in std_logic_vector(7 downto 0);
-    Keys     : in std_logic_vector(3 downto 0);
+    Keys1      : in std_logic;
+    Keys2      : in std_logic;
     stateOut : out std_logic_vector(3 downto 0)
   );
 end statemachine;
 
 architecture struct of statemachine is
-  type State_type is (INIT, TEST, PAUSE, PWM);
+  type State_type is (ClkGenEn,ClkGenDis);
   signal stateVAR : state_type;
-  type freqType is (Hz60, Hz120, Hz1000);
-  signal freqState    : freqType;
-  signal prevCountVal : std_logic_vector(7 downto 0);
+  type ADCSource is (LDR, TEMP,AIN2, POT);
+  signal ADCState    : ADCSource;
   signal state        : std_logic_vector(3 downto 0);
 
 begin	
-   process (Clk, reset, Keys)
+   process (Clk, reset, Keys1,Keys2)
   begin
     if (reset = '1') then
-      stateVAR <= INIT;
+      stateVAR <= ClkGenDis;
+      ADCState <= LDR;
     elsif rising_edge(Clk) then
-      case stateVAR is
-        when INIT =>
-          if keys(0) = '0' then
-            if (prevCountVal = X"FF" and countVal = X"00") then
-              stateVAR <= TEST;
-            end if;
-          end if;
-          prevCountVal <= CountVal;
-        when TEST =>
-          if Keys(0) = '1' then
-            stateVAR <= INIT;
-          elsif keys(1) = '1' then
-					stateVAR <= PAUSE;
-          elsif keys(2) = '1' then
-            stateVAR <= PWM;
-          end if;
-        when PAUSE =>
-          if Keys(0) = '1' then
-            stateVAR <= INIT;
-          elsif keys(1) = '1' then
-            stateVAR <= TEST;
-          elsif keys(2) = '1' then
-            stateVAR <= PWM;
-          end if;
-        when PWM =>
-          if Keys(0) = '1' then
-            stateVAR <= INIT;
-          elsif keys(2) = '1' then
-            stateVAR <= TEST;
-          elsif keys(3) = '1' then
-            case freqState is
-              when Hz60 =>
-                freqState <= Hz120;
-              when Hz120 =>
-                freqState <= Hz1000;
-              when Hz1000 =>
-                freqState <= Hz60;
-              when others =>
-                freqState <= Hz60;
+        if keys2 = '1' then
+          case stateVAR is
+                when ClkGenDis =>
+                        stateVAR <= ClkGenEn;
+                when ClkGenEn => 
+                    stateVar <= ClkGenDis;
+            when others => stateVAR <= ClkGenDis;
+          end case;
+        elsif keys1 = '1' then
+          case ADCState is
+            when LDR => 
+                ADCState <= TEMP;
+            when TEMP =>
+                ADCState <= AIN2;
+            when AIN2 =>
+                ADCState <= POT;
+            when POT =>
+                ADCState <= LDR;
             end case;
           end if;
-        when others => stateVAR <= INIT;
-      end case;
     end if;
   end process;
-  process (stateVar, freqState, state)
+  
+  
+  
+  process (stateVar)
   begin
     case stateVAR is
-      when INIT  => state              <= "0001"; -- In init mode, counter on
-      when TEST  => state(3 downto 2)  <= "10"; -- In test mode
-      when PAUSE => state(3 downto 2) <= "01"; -- In pause mode
-      when PWM   =>
-        state(3 downto 2) <= "11"; -- In PWM mode
-        case freqState is
-          when Hz60   => state(1 downto 0)   <= "00";
-          when Hz120  => state(1 downto 0)  <= "10";
-          when Hz1000 => state(1 downto 0) <= "11";
-        end case;
-    end case;
+      when ClkGenDis  => state(3 downto 2) <= "00"; -- In init mode, counter on
+      when ClkGenEn  => state(3 downto 2)  <= "01"; -- In test mode
+      end case;
+          stateOut <= state;
+ end process;
 
-    stateOut <= state;
-  end process;
+process(ADCState)
+begin
+     case ADCState is
+          when LDR   => state(1 downto 0)   <= "00";
+          when TEMP  => state(1 downto 0)  <= "01";
+          when AIN2 => state(1 downto 0) <= "10";
+          when POT => state(1 downto 0) <= "11";
+    end case;
+        stateOut <= state;
+end process;
+
+
 end struct;

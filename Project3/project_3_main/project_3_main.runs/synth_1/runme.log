@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log i2c_user_logic.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source i2c_user_logic.tcl
+    with args -log FullBuild_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FullBuild_wrapper.tcl
 
 
 ****** Vivado v2019.1 (64-bit)
@@ -8,29 +8,312 @@
   **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
-source i2c_user_logic.tcl -notrace
-Command: synth_design -top i2c_user_logic -part xc7z010clg225-1
+source FullBuild_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'reset'.
+WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'Clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'Clk': Added interface parameter 'ASSOCIATED_RESET' with value 'reset'.
+WARNING: [IP_Flow 19-3153] Bus Interface 'Clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3153] Bus Interface 'CLK': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-5107] Inferred bus interface 'reset' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'reset'.
+WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+add_files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 306.656 ; gain = 15.531
+Command: synth_design -top FullBuild_wrapper -part xc7z010clg225-1 -flatten_hierarchy none
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg225-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 3092 
+INFO: Helper process launched with PID 13408 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 719.457 ; gain = 176.672
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 742.766 ; gain = 178.598
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'i2c_user_logic' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_user_logic.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'FullBuild_wrapper' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/hdl/FullBuild_wrapper.vhd:48]
+INFO: [Synth 8-3491] module 'FullBuild' declared at 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:14' bound to instance 'FullBuild_i' of component 'FullBuild' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/hdl/FullBuild_wrapper.vhd:83]
+INFO: [Synth 8-638] synthesizing module 'FullBuild' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:52]
+INFO: [Synth 8-3491] module 'FullBuild_LCD_Controller_0_0' declared at 'c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_LCD_Controller_0_0/synth/FullBuild_LCD_Controller_0_0.vhd:56' bound to instance 'LCD_Controller_0' of component 'FullBuild_LCD_Controller_0_0' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:333]
+INFO: [Synth 8-638] synthesizing module 'FullBuild_LCD_Controller_0_0' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_LCD_Controller_0_0/synth/FullBuild_LCD_Controller_0_0.vhd:66]
+INFO: [Synth 8-3491] module 'LCD_Controller' declared at 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Controller.vhd:4' bound to instance 'U0' of component 'LCD_Controller' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_LCD_Controller_0_0/synth/FullBuild_LCD_Controller_0_0.vhd:91]
+INFO: [Synth 8-638] synthesizing module 'LCD_Controller' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Controller.vhd:16]
+WARNING: [Synth 8-614] signal 'LCD_display' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Controller.vhd:92]
+WARNING: [Synth 8-614] signal 'LCD_index_TL' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Controller.vhd:92]
+WARNING: [Synth 8-614] signal 'LCD_index_BL' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Controller.vhd:92]
+WARNING: [Synth 8-614] signal 'current_state' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Controller.vhd:119]
+INFO: [Synth 8-256] done synthesizing module 'LCD_Controller' (1#1) [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Controller.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'FullBuild_LCD_Controller_0_0' (2#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_LCD_Controller_0_0/synth/FullBuild_LCD_Controller_0_0.vhd:66]
+INFO: [Synth 8-3491] module 'FullBuild_LCD_Data_Cutter_0_0' declared at 'c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_LCD_Data_Cutter_0_0/synth/FullBuild_LCD_Data_Cutter_0_0.vhd:56' bound to instance 'LCD_Data_Cutter_0' of component 'FullBuild_LCD_Data_Cutter_0_0' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:341]
+INFO: [Synth 8-638] synthesizing module 'FullBuild_LCD_Data_Cutter_0_0' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_LCD_Data_Cutter_0_0/synth/FullBuild_LCD_Data_Cutter_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'LCD_Data_Cutter' declared at 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Data_Cutter.vhd:4' bound to instance 'U0' of component 'LCD_Data_Cutter' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_LCD_Data_Cutter_0_0/synth/FullBuild_LCD_Data_Cutter_0_0.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'LCD_Data_Cutter' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Data_Cutter.vhd:15]
+WARNING: [Synth 8-614] signal 'LCD_Data' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Data_Cutter.vhd:28]
+WARNING: [Synth 8-614] signal 'state_cnt' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Data_Cutter.vhd:49]
+WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Data_Cutter.vhd:67]
+WARNING: [Synth 8-614] signal 'ready' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Data_Cutter.vhd:67]
+WARNING: [Synth 8-614] signal 'nd_prev' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Data_Cutter.vhd:83]
+INFO: [Synth 8-256] done synthesizing module 'LCD_Data_Cutter' (3#1) [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Data_Cutter.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'FullBuild_LCD_Data_Cutter_0_0' (4#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_LCD_Data_Cutter_0_0/synth/FullBuild_LCD_Data_Cutter_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'FullBuild_PWM_gen_0_0' declared at 'c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_PWM_gen_0_0/synth/FullBuild_PWM_gen_0_0.vhd:56' bound to instance 'PWM_gen_0' of component 'FullBuild_PWM_gen_0_0' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:350]
+INFO: [Synth 8-638] synthesizing module 'FullBuild_PWM_gen_0_0' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_PWM_gen_0_0/synth/FullBuild_PWM_gen_0_0.vhd:65]
+INFO: [Synth 8-3491] module 'PWM_gen' declared at 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/PWM_Gen.vhd:7' bound to instance 'U0' of component 'PWM_gen' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_PWM_gen_0_0/synth/FullBuild_PWM_gen_0_0.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'PWM_gen' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/PWM_Gen.vhd:16]
+WARNING: [Synth 8-614] signal 'en' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/PWM_Gen.vhd:35]
+WARNING: [Synth 8-614] signal 'en' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/PWM_Gen.vhd:46]
+WARNING: [Synth 8-614] signal 'r_reg' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/PWM_Gen.vhd:46]
+WARNING: [Synth 8-614] signal 'DATA' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/PWM_Gen.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'PWM_gen' (5#1) [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/PWM_Gen.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'FullBuild_PWM_gen_0_0' (6#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_PWM_gen_0_0/synth/FullBuild_PWM_gen_0_0.vhd:65]
+INFO: [Synth 8-3491] module 'FullBuild_Reset_Delay_0_0' declared at 'c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_Reset_Delay_0_0/synth/FullBuild_Reset_Delay_0_0.vhd:56' bound to instance 'Reset_Delay_0' of component 'FullBuild_Reset_Delay_0_0' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:357]
+INFO: [Synth 8-638] synthesizing module 'FullBuild_Reset_Delay_0_0' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_Reset_Delay_0_0/synth/FullBuild_Reset_Delay_0_0.vhd:63]
+INFO: [Synth 8-3491] module 'Reset_Delay' declared at 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/reset_delay.vhd:8' bound to instance 'U0' of component 'Reset_Delay' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_Reset_Delay_0_0/synth/FullBuild_Reset_Delay_0_0.vhd:81]
+INFO: [Synth 8-638] synthesizing module 'Reset_Delay' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/reset_delay.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'Reset_Delay' (7#1) [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/reset_delay.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'FullBuild_Reset_Delay_0_0' (8#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_Reset_Delay_0_0/synth/FullBuild_Reset_Delay_0_0.vhd:63]
+INFO: [Synth 8-3491] module 'FullBuild_btn_debounce_toggle_0_0' declared at 'c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_btn_debounce_toggle_0_0/synth/FullBuild_btn_debounce_toggle_0_0.vhd:56' bound to instance 'btn_debounce_toggle_0' of component 'FullBuild_btn_debounce_toggle_0_0' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:362]
+INFO: [Synth 8-638] synthesizing module 'FullBuild_btn_debounce_toggle_0_0' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_btn_debounce_toggle_0_0/synth/FullBuild_btn_debounce_toggle_0_0.vhd:66]
+	Parameter CNTR_MAX bound to: 16'b1111111111111111 
+INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/btn_debounce_toggle.vhd:32' bound to instance 'U0' of component 'btn_debounce_toggle' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_btn_debounce_toggle_0_0/synth/FullBuild_btn_debounce_toggle_0_0.vhd:94]
+INFO: [Synth 8-638] synthesizing module 'btn_debounce_toggle' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/btn_debounce_toggle.vhd:42]
+	Parameter CNTR_MAX bound to: 16'b1111111111111111 
+INFO: [Synth 8-256] done synthesizing module 'btn_debounce_toggle' (9#1) [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/btn_debounce_toggle.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'FullBuild_btn_debounce_toggle_0_0' (10#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_btn_debounce_toggle_0_0/synth/FullBuild_btn_debounce_toggle_0_0.vhd:66]
+INFO: [Synth 8-3491] module 'FullBuild_btn_debounce_toggle_0_1' declared at 'c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_btn_debounce_toggle_0_1/synth/FullBuild_btn_debounce_toggle_0_1.vhd:56' bound to instance 'btn_debounce_toggle_1' of component 'FullBuild_btn_debounce_toggle_0_1' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:370]
+INFO: [Synth 8-638] synthesizing module 'FullBuild_btn_debounce_toggle_0_1' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_btn_debounce_toggle_0_1/synth/FullBuild_btn_debounce_toggle_0_1.vhd:66]
+	Parameter CNTR_MAX bound to: 16'b1111111111111111 
+INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/btn_debounce_toggle.vhd:32' bound to instance 'U0' of component 'btn_debounce_toggle' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_btn_debounce_toggle_0_1/synth/FullBuild_btn_debounce_toggle_0_1.vhd:94]
+INFO: [Synth 8-256] done synthesizing module 'FullBuild_btn_debounce_toggle_0_1' (11#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_btn_debounce_toggle_0_1/synth/FullBuild_btn_debounce_toggle_0_1.vhd:66]
+INFO: [Synth 8-3491] module 'FullBuild_i2c_user_logic_ADC_0_0' declared at 'c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_i2c_user_logic_ADC_0_0/synth/FullBuild_i2c_user_logic_ADC_0_0.vhd:56' bound to instance 'i2c_user_logic_ADC_0' of component 'FullBuild_i2c_user_logic_ADC_0_0' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:378]
+INFO: [Synth 8-638] synthesizing module 'FullBuild_i2c_user_logic_ADC_0_0' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_i2c_user_logic_ADC_0_0/synth/FullBuild_i2c_user_logic_ADC_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'i2c_user_logic_ADC' declared at 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_user_logic_ADC.vhd:6' bound to instance 'U0' of component 'i2c_user_logic_ADC' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_i2c_user_logic_ADC_0_0/synth/FullBuild_i2c_user_logic_ADC_0_0.vhd:95]
+INFO: [Synth 8-638] synthesizing module 'i2c_user_logic_ADC' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_user_logic_ADC.vhd:16]
 	Parameter input_clk bound to: 50000000 - type: integer 
 	Parameter bus_clk bound to: 50000 - type: integer 
-INFO: [Synth 8-3491] module 'i2c_master' declared at 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_master.vhd:36' bound to instance 'inst_i2c_master' of component 'i2c_master' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_user_logic.vhd:50]
+INFO: [Synth 8-3491] module 'i2c_master' declared at 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_master.vhd:36' bound to instance 'inst_i2c_master' of component 'i2c_master' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_user_logic_ADC.vhd:61]
 INFO: [Synth 8-638] synthesizing module 'i2c_master' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_master.vhd:54]
 	Parameter input_clk bound to: 50000000 - type: integer 
 	Parameter bus_clk bound to: 50000 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'i2c_master' (1#1) [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_master.vhd:54]
-WARNING: [Synth 8-614] signal 'iData' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_user_logic.vhd:107]
-INFO: [Synth 8-256] done synthesizing module 'i2c_user_logic' (2#1) [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_user_logic.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'i2c_master' (12#1) [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_master.vhd:54]
+WARNING: [Synth 8-614] signal 'reset_h' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_user_logic_ADC.vhd:89]
+INFO: [Synth 8-256] done synthesizing module 'i2c_user_logic_ADC' (13#1) [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_user_logic_ADC.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'FullBuild_i2c_user_logic_ADC_0_0' (14#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_i2c_user_logic_ADC_0_0/synth/FullBuild_i2c_user_logic_ADC_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'FullBuild_i2c_user_logic_LCD_0_0' declared at 'c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_i2c_user_logic_LCD_0_0/synth/FullBuild_i2c_user_logic_LCD_0_0.vhd:56' bound to instance 'i2c_user_logic_LCD_0' of component 'FullBuild_i2c_user_logic_LCD_0_0' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:387]
+INFO: [Synth 8-638] synthesizing module 'FullBuild_i2c_user_logic_LCD_0_0' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_i2c_user_logic_LCD_0_0/synth/FullBuild_i2c_user_logic_LCD_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'i2c_user_logic_LCD' declared at 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_user_logic_LCD.vhd:6' bound to instance 'U0' of component 'i2c_user_logic_LCD' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_i2c_user_logic_LCD_0_0/synth/FullBuild_i2c_user_logic_LCD_0_0.vhd:95]
+INFO: [Synth 8-638] synthesizing module 'i2c_user_logic_LCD' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_user_logic_LCD.vhd:16]
+	Parameter input_clk bound to: 50000000 - type: integer 
+	Parameter bus_clk bound to: 50000 - type: integer 
+INFO: [Synth 8-3491] module 'i2c_master' declared at 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_master.vhd:36' bound to instance 'inst_i2c_master' of component 'i2c_master' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_user_logic_LCD.vhd:59]
+WARNING: [Synth 8-614] signal 'busy_prev' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_user_logic_LCD.vhd:107]
+INFO: [Synth 8-256] done synthesizing module 'i2c_user_logic_LCD' (15#1) [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/i2c_user_logic_LCD.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'FullBuild_i2c_user_logic_LCD_0_0' (16#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_i2c_user_logic_LCD_0_0/synth/FullBuild_i2c_user_logic_LCD_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'FullBuild_processing_system7_0_0' declared at 'c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_processing_system7_0_0/synth/FullBuild_processing_system7_0_0.v:60' bound to instance 'processing_system7_0' of component 'FullBuild_processing_system7_0_0' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:396]
+INFO: [Synth 8-6157] synthesizing module 'FullBuild_processing_system7_0_0' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_processing_system7_0_0/synth/FullBuild_processing_system7_0_0.v:60]
+INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
+	Parameter C_USE_DEFAULT_ACP_USER_VAL bound to: 0 - type: integer 
+	Parameter C_S_AXI_ACP_ARUSER_VAL bound to: 31 - type: integer 
+	Parameter C_S_AXI_ACP_AWUSER_VAL bound to: 31 - type: integer 
+	Parameter C_M_AXI_GP0_THREAD_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_M_AXI_GP1_THREAD_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_M_AXI_GP0_ENABLE_STATIC_REMAP bound to: 0 - type: integer 
+	Parameter C_M_AXI_GP1_ENABLE_STATIC_REMAP bound to: 0 - type: integer 
+	Parameter C_M_AXI_GP0_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_M_AXI_GP1_ID_WIDTH bound to: 12 - type: integer 
+	Parameter C_S_AXI_GP0_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_GP1_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_HP0_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_HP1_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_HP2_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_HP3_ID_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_ACP_ID_WIDTH bound to: 3 - type: integer 
+	Parameter C_S_AXI_HP0_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S_AXI_HP1_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S_AXI_HP2_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_S_AXI_HP3_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_INCLUDE_ACP_TRANS_CHECK bound to: 0 - type: integer 
+	Parameter C_NUM_F2P_INTR_INPUTS bound to: 1 - type: integer 
+	Parameter C_FCLK_CLK0_BUF bound to: TRUE - type: string 
+	Parameter C_FCLK_CLK1_BUF bound to: FALSE - type: string 
+	Parameter C_FCLK_CLK2_BUF bound to: FALSE - type: string 
+	Parameter C_FCLK_CLK3_BUF bound to: FALSE - type: string 
+	Parameter C_EMIO_GPIO_WIDTH bound to: 64 - type: integer 
+	Parameter C_INCLUDE_TRACE_BUFFER bound to: 0 - type: integer 
+	Parameter C_TRACE_BUFFER_FIFO_SIZE bound to: 128 - type: integer 
+	Parameter C_TRACE_BUFFER_CLOCK_DELAY bound to: 12 - type: integer 
+	Parameter USE_TRACE_DATA_EDGE_DETECTOR bound to: 0 - type: integer 
+	Parameter C_TRACE_PIPELINE_WIDTH bound to: 8 - type: integer 
+	Parameter C_PS7_SI_REV bound to: PRODUCTION - type: string 
+	Parameter C_EN_EMIO_ENET0 bound to: 0 - type: integer 
+	Parameter C_EN_EMIO_ENET1 bound to: 0 - type: integer 
+	Parameter C_EN_EMIO_TRACE bound to: 0 - type: integer 
+	Parameter C_DQ_WIDTH bound to: 16 - type: integer 
+	Parameter C_DQS_WIDTH bound to: 2 - type: integer 
+	Parameter C_DM_WIDTH bound to: 2 - type: integer 
+	Parameter C_MIO_PRIMITIVE bound to: 32 - type: integer 
+	Parameter C_PACKAGE_NAME bound to: clg225 - type: string 
+	Parameter C_IRQ_F2P_MODE bound to: DIRECT - type: string 
+	Parameter C_TRACE_INTERNAL_WIDTH bound to: 2 - type: integer 
+	Parameter C_EN_EMIO_PJTAG bound to: 0 - type: integer 
+	Parameter C_USE_AXI_NONSECURE bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_HP0 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_HP1 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_HP2 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_HP3 bound to: 0 - type: integer 
+	Parameter C_USE_M_AXI_GP0 bound to: 1 - type: integer 
+	Parameter C_USE_M_AXI_GP1 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_GP0 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_GP1 bound to: 0 - type: integer 
+	Parameter C_USE_S_AXI_ACP bound to: 0 - type: integer 
+	Parameter C_GP0_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
+	Parameter C_GP1_EN_MODIFIABLE_TXN bound to: 1 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1348]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:1349]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (17#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:1075]
+INFO: [Synth 8-6157] synthesizing module 'BIBUF' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:722]
+INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (18#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:722]
+INFO: [Synth 8-6157] synthesizing module 'PS7' [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:61707]
+INFO: [Synth 8-6155] done synthesizing module 'PS7' (19#1) [C:/Xilinx/Vivado/2019.1/scripts/rt/data/unisim_comp.v:61707]
+INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (20#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:162]
+WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_processing_system7_0_0/synth/FullBuild_processing_system7_0_0.v:337]
+INFO: [Synth 8-6155] done synthesizing module 'FullBuild_processing_system7_0_0' (21#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_processing_system7_0_0/synth/FullBuild_processing_system7_0_0.v:60]
+INFO: [Synth 8-3491] module 'FullBuild_statemachine_0_0' declared at 'c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_statemachine_0_0/synth/FullBuild_statemachine_0_0.vhd:56' bound to instance 'statemachine_0' of component 'FullBuild_statemachine_0_0' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:471]
+INFO: [Synth 8-638] synthesizing module 'FullBuild_statemachine_0_0' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_statemachine_0_0/synth/FullBuild_statemachine_0_0.vhd:66]
+INFO: [Synth 8-3491] module 'statemachine' declared at 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/Statemachine.vhd:6' bound to instance 'U0' of component 'statemachine' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_statemachine_0_0/synth/FullBuild_statemachine_0_0.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'statemachine' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/Statemachine.vhd:16]
+INFO: [Synth 8-226] default block is never used [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/Statemachine.vhd:31]
+WARNING: [Synth 8-614] signal 'state' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/Statemachine.vhd:55]
+WARNING: [Synth 8-614] signal 'state' is read in the process but is not in the sensitivity list [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/Statemachine.vhd:64]
+INFO: [Synth 8-256] done synthesizing module 'statemachine' (22#1) [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/Statemachine.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'FullBuild_statemachine_0_0' (23#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_statemachine_0_0/synth/FullBuild_statemachine_0_0.vhd:66]
+INFO: [Synth 8-3491] module 'FullBuild_util_vector_logic_0_0' declared at 'c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_util_vector_logic_0_0/synth/FullBuild_util_vector_logic_0_0.v:57' bound to instance 'util_vector_logic_0' of component 'FullBuild_util_vector_logic_0_0' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:479]
+INFO: [Synth 8-6157] synthesizing module 'FullBuild_util_vector_logic_0_0' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_util_vector_logic_0_0/synth/FullBuild_util_vector_logic_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+	Parameter C_OPERATION bound to: or - type: string 
+	Parameter C_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' (24#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'FullBuild_util_vector_logic_0_0' (25#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_util_vector_logic_0_0/synth/FullBuild_util_vector_logic_0_0.v:57]
+INFO: [Synth 8-3491] module 'FullBuild_xlconstant_0_0' declared at 'c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_xlconstant_0_0/synth/FullBuild_xlconstant_0_0.v:57' bound to instance 'xlconstant_0' of component 'FullBuild_xlconstant_0_0' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:485]
+INFO: [Synth 8-6157] synthesizing module 'FullBuild_xlconstant_0_0' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_xlconstant_0_0/synth/FullBuild_xlconstant_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant' [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 1 - type: integer 
+	Parameter CONST_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant' (26#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'FullBuild_xlconstant_0_0' (27#1) [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_xlconstant_0_0/synth/FullBuild_xlconstant_0_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'FullBuild' (28#1) [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/synth/FullBuild.vhd:52]
+INFO: [Synth 8-256] done synthesizing module 'FullBuild_wrapper' (29#1) [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/hdl/FullBuild_wrapper.vhd:48]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_COL
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_CRS
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RX_DV
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RX_ER
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[7]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[6]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[5]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[4]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[3]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[1]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[0]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_COL
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_CRS
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RX_DV
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RX_ER
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RXD[7]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RXD[6]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RXD[5]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RXD[4]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RXD[3]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RXD[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RXD[1]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RXD[0]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port S_AXI_GP0_ARSIZE[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port S_AXI_GP0_AWSIZE[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port S_AXI_GP1_ARSIZE[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port S_AXI_GP1_AWSIZE[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port S_AXI_ACP_ARSIZE[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port S_AXI_ACP_AWSIZE[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port S_AXI_HP0_ARSIZE[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port S_AXI_HP0_AWSIZE[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port S_AXI_HP1_ARSIZE[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port S_AXI_HP1_AWSIZE[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port S_AXI_HP2_ARSIZE[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port S_AXI_HP2_AWSIZE[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port S_AXI_HP3_ARSIZE[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port S_AXI_HP3_AWSIZE[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FCLK_CLKTRIG3_N
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FCLK_CLKTRIG2_N
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FCLK_CLKTRIG1_N
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FCLK_CLKTRIG0_N
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[31]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[30]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[29]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[28]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[27]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[26]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[25]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[24]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[23]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[22]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[21]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[20]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[19]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[18]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[17]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[16]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[15]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[14]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[13]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[12]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[11]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[10]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[9]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[8]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[7]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[6]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[5]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[4]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[3]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[1]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_DATA[0]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_VALID
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_ATID[3]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_ATID[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_ATID[1]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port FTMD_TRACEIN_ATID[0]
+WARNING: [Synth 8-3331] design LCD_Data_Cutter has unconnected port LCD_Data[11]
+WARNING: [Synth 8-3331] design LCD_Data_Cutter has unconnected port LCD_Data[10]
+WARNING: [Synth 8-3331] design LCD_Data_Cutter has unconnected port LCD_Data[9]
+WARNING: [Synth 8-3331] design LCD_Controller has unconnected port state[3]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 783.559 ; gain = 240.773
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 810.684 ; gain = 246.516
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -43,47 +326,71 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 783.559 ; gain = 240.773
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 810.684 ; gain = 246.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 783.559 ; gain = 240.773
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 810.684 ; gain = 246.516
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
+Parsing XDC File [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_processing_system7_0_0/FullBuild_processing_system7_0_0.xdc] for cell 'FullBuild_i/processing_system7_0/inst'
+Finished Parsing XDC File [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_processing_system7_0_0/FullBuild_processing_system7_0_0.xdc] for cell 'FullBuild_i/processing_system7_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/bd/FullBuild/ip/FullBuild_processing_system7_0_0/FullBuild_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/FullBuild_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/FullBuild_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/constrs_1/imports/project_3_main/TE0726.xdc]
-WARNING: [Vivado 12-584] No ports matched 'PWM_*'. [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/constrs_1/imports/project_3_main/TE0726.xdc:89]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/constrs_1/imports/project_3_main/TE0726.xdc:89]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/constrs_1/imports/project_3_main/TE0726.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/constrs_1/imports/project_3_main/TE0726.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/FullBuild_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/FullBuild_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/FullBuild_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/FullBuild_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 904.297 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 913.793 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-WARNING: [Constraints 18-5210] No constraints selected for write.
-Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 908.352 ; gain = 4.055
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 913.793 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 908.352 ; gain = 365.566
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 913.793 ; gain = 349.625
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg225-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 908.352 ; gain = 365.566
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 913.793 ; gain = 349.625
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for FullBuild_i/processing_system7_0/inst. (constraint file  C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.runs/synth_1/dont_touch.xdc, line 46).
+Applied set_property DONT_TOUCH = true for FullBuild_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FullBuild_i/i2c_user_logic_ADC_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FullBuild_i/i2c_user_logic_LCD_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FullBuild_i/PWM_gen_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FullBuild_i/Reset_Delay_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FullBuild_i/statemachine_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FullBuild_i/btn_debounce_toggle_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FullBuild_i/btn_debounce_toggle_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FullBuild_i/util_vector_logic_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FullBuild_i/xlconstant_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FullBuild_i/processing_system7_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FullBuild_i/LCD_Controller_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for FullBuild_i/LCD_Data_Cutter_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 908.352 ; gain = 365.566
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 913.793 ; gain = 349.625
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "LCD_Data_Temp" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'i2c_master'
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'i2c_user_logic'
+INFO: [Synth 8-802] inferred FSM for state register 'statebuffer_reg' in module 'i2c_user_logic_ADC'
+INFO: [Synth 8-802] inferred FSM for state register 'statebuffer_reg' in module 'i2c_user_logic_LCD'
+INFO: [Synth 8-802] inferred FSM for state register 'ADCState_reg' in module 'statemachine'
+WARNING: [Synth 8-327] inferring latch for variable 'prev_state_reg' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/LCD_Controller.vhd:123]
+WARNING: [Synth 8-327] inferring latch for variable 'PWMout_reg' [C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.srcs/sources_1/imports/project_3_main/PWM_Gen.vhd:50]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -101,12 +408,24 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                   start |                                0 |                               00
-              write_data |                                1 |                               01
+                   start |                               00 |                               00
+                   ready |                               01 |                               01
+              writestate |                               10 |                               10
+               readstate |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'i2c_user_logic'
+INFO: [Synth 8-3354] encoded FSM with state register 'statebuffer_reg' using encoding 'sequential' in module 'i2c_user_logic_ADC'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   start |                            00001 |                              000
+                   ready |                            00010 |                              001
+              data_valid |                            00100 |                              010
+               busy_high |                            01000 |                              011
+               writedata |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'statebuffer_reg' using encoding 'one-hot' in module 'i2c_user_logic_LCD'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 908.352 ; gain = 365.566
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 913.793 ; gain = 349.625
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -119,27 +438,41 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     10 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 2     
-	   2 Input      3 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 3     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
 +---Registers : 
-	               10 Bit    Registers := 1     
-	                8 Bit    Registers := 4     
-	                7 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 12    
+	                6 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 12    
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 31    
 +---Muxes : 
-	   9 Input      9 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 9     
-	   6 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 3     
-	   2 Input      3 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 14    
-	   3 Input      1 Bit        Muxes := 1     
-	   9 Input      1 Bit        Muxes := 7     
-	   6 Input      1 Bit        Muxes := 3     
+	   2 Input      9 Bit        Muxes := 29    
+	   8 Input      9 Bit        Muxes := 1     
+	   3 Input      9 Bit        Muxes := 4     
+	   9 Input      9 Bit        Muxes := 2     
+	   7 Input      8 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 6     
+	   2 Input      6 Bit        Muxes := 3     
+	   5 Input      6 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 4     
+	  16 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 13    
+	   4 Input      1 Bit        Muxes := 13    
+	   3 Input      1 Bit        Muxes := 2     
+	   9 Input      1 Bit        Muxes := 14    
+	   6 Input      1 Bit        Muxes := 6     
+	   5 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -147,16 +480,55 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module i2c_user_logic 
+Module LCD_Controller 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      4 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
 +---Registers : 
-	                7 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 4     
+	                6 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 10    
+	   2 Input      9 Bit        Muxes := 11    
+	   8 Input      9 Bit        Muxes := 1     
+	   3 Input      9 Bit        Muxes := 4     
+	   2 Input      6 Bit        Muxes := 3     
+	   5 Input      6 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	  16 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module LCD_Data_Cutter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   7 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module PWM_gen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+Module Reset_Delay 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module btn_debounce_toggle 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
 Module i2c_master 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -179,6 +551,32 @@ Detailed RTL Component Info :
 	   3 Input      1 Bit        Muxes := 1     
 	   9 Input      1 Bit        Muxes := 7     
 	   6 Input      1 Bit        Muxes := 3     
+Module i2c_user_logic_ADC 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 7     
+Module i2c_user_logic_LCD 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   5 Input      1 Bit        Muxes := 2     
+Module statemachine 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -195,45 +593,77 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-3886] merging instance 'FSM_sequential_state_reg' (FDE) to 'reset_n_reg'
-INFO: [Synth 8-3886] merging instance 'inst_i2c_master/data_tx_reg[6]' (FDE) to 'inst_i2c_master/data_tx_reg[4]'
-INFO: [Synth 8-3886] merging instance 'inst_i2c_master/data_tx_reg[5]' (FDE) to 'inst_i2c_master/data_tx_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i2c_addr_reg[5]' (FDE) to 'i2c_addr_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst_i2c_master/addr_rw_reg[6]' (FDE) to 'inst_i2c_master/addr_rw_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i2c_addr_reg[6]' (FDE) to 'i2c_addr_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst_i2c_master/addr_rw_reg[7]' (FDE) to 'inst_i2c_master/addr_rw_reg[1]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i2c_rw_reg)
-INFO: [Synth 8-3886] merging instance 'i2c_addr_reg[0]' (FDE) to 'i2c_addr_reg[4]'
-INFO: [Synth 8-3886] merging instance 'inst_i2c_master/addr_rw_reg[1]' (FDE) to 'inst_i2c_master/addr_rw_reg[5]'
-INFO: [Synth 8-3886] merging instance 'i2c_addr_reg[1]' (FDE) to 'i2c_addr_reg[2]'
-INFO: [Synth 8-3886] merging instance 'inst_i2c_master/addr_rw_reg[2]' (FDE) to 'inst_i2c_master/addr_rw_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i2c_addr_reg[2]' (FDE) to 'i2c_addr_reg[3]'
-INFO: [Synth 8-3886] merging instance 'inst_i2c_master/addr_rw_reg[3]' (FDE) to 'inst_i2c_master/addr_rw_reg[4]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\i2c_addr_reg[3] )
-INFO: [Synth 8-3886] merging instance 'inst_i2c_master/addr_rw_reg[4]' (FDE) to 'inst_i2c_master/addr_rw_reg[0]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\i2c_addr_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_i2c_master/addr_rw_reg[0] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\inst_i2c_master/addr_rw_reg[5] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (reset_n_reg)
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_i2c_master/data_tx_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_i2c_master/data_tx_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_i2c_master/data_tx_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_i2c_master/data_tx_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_i2c_master/data_tx_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_i2c_master/data_tx_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_i2c_master/FSM_onehot_state_reg[1] )
-INFO: [Synth 8-3886] merging instance 'inst_i2c_master/FSM_onehot_state_reg[1]' (FDCE) to 'inst_i2c_master/FSM_onehot_state_reg[3]'
-INFO: [Synth 8-3886] merging instance 'inst_i2c_master/FSM_onehot_state_reg[2]' (FDCE) to 'inst_i2c_master/FSM_onehot_state_reg[3]'
-INFO: [Synth 8-3886] merging instance 'inst_i2c_master/FSM_onehot_state_reg[6]' (FDCE) to 'inst_i2c_master/FSM_onehot_state_reg[3]'
-INFO: [Synth 8-3886] merging instance 'inst_i2c_master/FSM_onehot_state_reg[7]' (FDCE) to 'inst_i2c_master/FSM_onehot_state_reg[3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_i2c_master/FSM_onehot_state_reg[3] )
-WARNING: [Synth 8-3332] Sequential element (inst_i2c_master/FSM_onehot_state_reg[8]) is unused and will be removed from module i2c_user_logic.
-WARNING: [Synth 8-3332] Sequential element (inst_i2c_master/FSM_onehot_state_reg[5]) is unused and will be removed from module i2c_user_logic.
-WARNING: [Synth 8-3332] Sequential element (inst_i2c_master/FSM_onehot_state_reg[4]) is unused and will be removed from module i2c_user_logic.
-WARNING: [Synth 8-3332] Sequential element (inst_i2c_master/FSM_onehot_state_reg[3]) is unused and will be removed from module i2c_user_logic.
-WARNING: [Synth 8-3332] Sequential element (inst_i2c_master/FSM_onehot_state_reg[0]) is unused and will be removed from module i2c_user_logic.
+INFO: [Synth 8-5544] ROM "LCD_Data_Temp" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_COL
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_CRS
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RX_DV
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RX_ER
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[7]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[6]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[5]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[4]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[3]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[2]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[1]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET0_GMII_RXD[0]
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_COL
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_CRS
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RX_DV
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RX_ER
+WARNING: [Synth 8-3331] design processing_system7_v5_5_processing_system7 has unconnected port ENET1_GMII_RXD[7]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FullBuild_i/LCD_Data_Cutter_0/U0/\nd_sync_reg[0] )
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/LCD_Data_Cutter_0/U0/nd_sync_reg[1]' (FD) to 'FullBuild_i/LCD_Data_Cutter_0/U0/nd_sync_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FullBuild_i/LCD_Data_Cutter_0/U0/\nd_sync_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FullBuild_i/LCD_Data_Cutter_0/U0/Next_data_reg)
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/i2c_addr_reg[0]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/i2c_addr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/i2c_addr_reg[1]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/i2c_addr_reg[2]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/i2c_addr_reg[2]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/i2c_addr_reg[3]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/i2c_addr_reg[3]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/i2c_addr_reg[5]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/i2c_addr_reg[4]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/i2c_addr_reg[7]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/i2c_addr_reg[5]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/i2c_addr_reg[6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FullBuild_i/i2c_user_logic_ADC_0/U0/\i2c_addr_reg[6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (FullBuild_i/i2c_user_logic_ADC_0/U0/\i2c_addr_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FullBuild_i/i2c_user_logic_LCD_0/U0/\data_wr_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FullBuild_i/i2c_user_logic_LCD_0/U0/\data_wr_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FullBuild_i/i2c_user_logic_LCD_0/U0/\data_wr_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FullBuild_i/i2c_user_logic_LCD_0/U0/\data_wr_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FullBuild_i/i2c_user_logic_LCD_0/U0/\data_wr_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FullBuild_i/i2c_user_logic_LCD_0/U0/\data_wr_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FullBuild_i/i2c_user_logic_LCD_0/U0/\data_wr_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FullBuild_i/i2c_user_logic_LCD_0/U0/\data_wr_reg[7] )
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_statebuffer_reg[4]) is unused and will be removed from module i2c_user_logic_LCD.
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/data_tx_reg[7]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/data_tx_reg[2]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/data_tx_reg[6]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/data_tx_reg[2]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/data_tx_reg[5]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/data_tx_reg[2]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/data_tx_reg[4]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/data_tx_reg[2]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/data_tx_reg[3]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/data_tx_reg[2]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/data_tx_reg[2]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/addr_rw_reg[1]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/addr_rw_reg[6]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/addr_rw_reg[1]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/addr_rw_reg[7]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/addr_rw_reg[4]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/addr_rw_reg[1]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/addr_rw_reg[2]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/addr_rw_reg[2]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/addr_rw_reg[3]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/addr_rw_reg[3]' (FDE) to 'FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/addr_rw_reg[5]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/\addr_rw_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FullBuild_i/i2c_user_logic_ADC_0/U0/inst_i2c_master/\addr_rw_reg[5] )
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[7]' (FDE) to 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[0]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[6]' (FDE) to 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[0]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[5]' (FDE) to 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[0]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[4]' (FDE) to 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[0]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[3]' (FDE) to 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[0]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[2]' (FDE) to 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[0]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[1]' (FDE) to 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[0]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/data_tx_reg[0]' (FDE) to 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/addr_rw_reg[0]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/addr_rw_reg[6]' (FDE) to 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/addr_rw_reg[1]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/addr_rw_reg[7]' (FDE) to 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/addr_rw_reg[0]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/addr_rw_reg[0]' (FDE) to 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/addr_rw_reg[4]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/addr_rw_reg[1]' (FDE) to 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/addr_rw_reg[2]'
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/addr_rw_reg[2]' (FDE) to 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/addr_rw_reg[3]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/\addr_rw_reg[3] )
+INFO: [Synth 8-3886] merging instance 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/addr_rw_reg[4]' (FDE) to 'FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/addr_rw_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (FullBuild_i/i2c_user_logic_LCD_0/U0/inst_i2c_master/\addr_rw_reg[5] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 908.352 ; gain = 365.566
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 913.793 ; gain = 349.625
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -245,13 +675,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 908.352 ; gain = 365.566
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1058.727 ; gain = 494.559
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 908.352 ; gain = 365.566
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1091.379 ; gain = 527.211
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -262,8 +692,10 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_state_reg[7]) is unused and will be removed from module i2c_master.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_state_reg[6]) is unused and will be removed from module i2c_master.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 908.352 ; gain = 365.566
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1091.379 ; gain = 527.211
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -275,19 +707,13 @@ Report RTL Partitions:
 Start IO Insertion
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 908.352 ; gain = 365.566
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1101.500 ; gain = 537.332
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -300,7 +726,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 908.352 ; gain = 365.566
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1101.500 ; gain = 537.332
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -309,28 +735,10 @@ Report RTL Partitions:
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
-Start Rebuilding User Hierarchy
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 908.352 ; gain = 365.566
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Ports
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 908.352 ; gain = 365.566
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 908.352 ; gain = 365.566
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Nets
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 908.352 ; gain = 365.566
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1101.500 ; gain = 537.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -343,37 +751,86 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+-+-----+------+
-| |Cell |Count |
-+-+-----+------+
-+-+-----+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BIBUF  |    86|
+|2     |BUFG   |     1|
+|3     |CARRY4 |    14|
+|4     |LUT1   |   132|
+|5     |LUT2   |    28|
+|6     |LUT3   |    30|
+|7     |LUT4   |    34|
+|8     |LUT5   |    38|
+|9     |LUT6   |   110|
+|10    |MUXF7  |     4|
+|11    |PS7    |     1|
+|12    |FDCE   |    67|
+|13    |FDPE   |    14|
+|14    |FDRE   |   104|
+|15    |LD     |     3|
+|16    |IBUF   |     3|
+|17    |IOBUF  |     3|
+|18    |OBUF   |     1|
+|19    |OBUFT  |     1|
++------+-------+------+
 
 Report Instance Areas: 
-+------+---------+-------+------+
-|      |Instance |Module |Cells |
-+------+---------+-------+------+
-|1     |top      |       |     0|
-+------+---------+-------+------+
++------+--------------------------+-------------------------------------------+------+
+|      |Instance                  |Module                                     |Cells |
++------+--------------------------+-------------------------------------------+------+
+|1     |top                       |                                           |   674|
+|2     |  FullBuild_i             |FullBuild                                  |   668|
+|3     |    LCD_Controller_0      |FullBuild_LCD_Controller_0_0               |    58|
+|4     |      U0                  |LCD_Controller                             |    58|
+|5     |    LCD_Data_Cutter_0     |FullBuild_LCD_Data_Cutter_0_0              |    11|
+|6     |      U0                  |LCD_Data_Cutter                            |    11|
+|7     |    PWM_gen_0             |FullBuild_PWM_gen_0_0                      |    28|
+|8     |      U0                  |PWM_gen                                    |    28|
+|9     |    Reset_Delay_0         |FullBuild_Reset_Delay_0_0                  |    31|
+|10    |      U0                  |Reset_Delay                                |    31|
+|11    |    btn_debounce_toggle_0 |FullBuild_btn_debounce_toggle_0_0          |    34|
+|12    |      U0                  |btn_debounce_toggle__1                     |    34|
+|13    |    btn_debounce_toggle_1 |FullBuild_btn_debounce_toggle_0_1          |    34|
+|14    |      U0                  |btn_debounce_toggle                        |    34|
+|15    |    i2c_user_logic_ADC_0  |FullBuild_i2c_user_logic_ADC_0_0           |   167|
+|16    |      U0                  |i2c_user_logic_ADC                         |   167|
+|17    |        inst_i2c_master   |i2c_master__1                              |   138|
+|18    |    i2c_user_logic_LCD_0  |FullBuild_i2c_user_logic_LCD_0_0           |    96|
+|19    |      U0                  |i2c_user_logic_LCD                         |    95|
+|20    |        inst_i2c_master   |i2c_master                                 |    86|
+|21    |    processing_system7_0  |FullBuild_processing_system7_0_0           |   200|
+|22    |      inst                |processing_system7_v5_5_processing_system7 |   200|
+|23    |    statemachine_0        |FullBuild_statemachine_0_0                 |     7|
+|24    |      U0                  |statemachine                               |     7|
+|25    |    util_vector_logic_0   |FullBuild_util_vector_logic_0_0            |     1|
+|26    |      inst                |util_vector_logic_v2_0_1_util_vector_logic |     1|
+|27    |    xlconstant_0          |FullBuild_xlconstant_0_0                   |     0|
++------+--------------------------+-------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 908.352 ; gain = 365.566
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1101.500 ; gain = 537.332
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 908.352 ; gain = 240.773
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 908.352 ; gain = 365.566
+Synthesis finished with 0 errors, 0 critical warnings and 88 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1101.500 ; gain = 434.223
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1101.500 ; gain = 537.332
 INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 24 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 916.738 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1125.230 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 6 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 3 instances
+  LD => LDCE: 3 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-50 Infos, 8 Warnings, 1 Critical Warnings and 0 Errors encountered.
+190 Infos, 133 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 916.738 ; gain = 621.715
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 916.738 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1125.230 ; gain = 818.574
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1125.230 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.runs/synth_1/i2c_user_logic.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file i2c_user_logic_utilization_synth.rpt -pb i2c_user_logic_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Feb 24 14:13:04 2025...
+INFO: [Common 17-1381] The checkpoint 'C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/project_3_main/project_3_main.runs/synth_1/FullBuild_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file FullBuild_wrapper_utilization_synth.rpt -pb FullBuild_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 27 01:07:21 2025...
