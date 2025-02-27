@@ -1103,14 +1103,8 @@ set_location_assignment PIN_V24 -to HSMC_CLKOUT_N2
 set_instance_assignment -name IO_STANDARD LVDS -to HSMC_CLKOUT_N2
 set_location_assignment PIN_G24 -to HSMC_CLKOUT_N1
 set_instance_assignment -name IO_STANDARD LVDS -to HSMC_CLKOUT_N1
-set_global_assignment -name VHDL_FILE i2c_user_logic.vhd
-set_global_assignment -name VHDL_FILE i2c_master.vhd
-set_global_assignment -name VHDL_FILE DE2_115.vhd
-set_global_assignment -name CDF_FILE ../../Project2/Isaac/i2c/output_files/Chain1.cdf
-set_global_assignment -name VHDL_FILE i2c_user_logic_read.vhd
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
-set_global_assignment -name SIGNALTAP_FILE stp1.stp
 set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to CLOCK_50 -section_id auto_signaltap_0
@@ -1129,26 +1123,44 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIP
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=131072" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=131072" -section_id auto_signaltap_0
-set_global_assignment -name VHDL_FILE i2c_user_logic_combo.vhd
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "i2c_user_logic_combo:inst_i2c_user_logic_combo|state.busy_high" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "i2c_user_logic_combo:inst_i2c_user_logic_combo|state.data_valid" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "i2c_user_logic_combo:inst_i2c_user_logic_combo|state.readState" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "i2c_user_logic_combo:inst_i2c_user_logic_combo|state.ready" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "i2c_user_logic_combo:inst_i2c_user_logic_combo|state.repeat" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "i2c_user_logic_combo:inst_i2c_user_logic_combo|state.start" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "i2c_user_logic_combo:inst_i2c_user_logic_combo|state.writeState" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "i2c_user_logic_combo:inst_i2c_user_logic_combo|state.busy_high" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "i2c_user_logic_combo:inst_i2c_user_logic_combo|state.data_valid" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "i2c_user_logic_combo:inst_i2c_user_logic_combo|state.readState" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "i2c_user_logic_combo:inst_i2c_user_logic_combo|state.ready" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to "i2c_user_logic_combo:inst_i2c_user_logic_combo|state.repeat" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to "i2c_user_logic_combo:inst_i2c_user_logic_combo|state.start" -section_id auto_signaltap_0
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[6] -to "i2c_user_logic_combo:inst_i2c_user_logic_combo|state.writeState" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=7" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=7" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=0000000000000000000000000000000000000000000000000000" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=52" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_LOWORD=2935" -section_id auto_signaltap_0
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_HIWORD=46654" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[7] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[6] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[7] -to "i2c_user_logic_read:inst_i2c_user_logic_read|Data_out[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[8] -to "i2c_user_logic_read:inst_i2c_user_logic_read|i2c_master:inst_i2c_master|ack_error" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[9] -to "i2c_user_logic_read:inst_i2c_user_logic_read|i2c_master:inst_i2c_master|busy" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[10] -to "i2c_user_logic_read:inst_i2c_user_logic_read|reset" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[11] -to "i2c_user_logic_read:inst_i2c_user_logic_read|scl" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[12] -to "i2c_user_logic_read:inst_i2c_user_logic_read|sda" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[8] -to "i2c_user_logic_read:inst_i2c_user_logic_read|i2c_master:inst_i2c_master|ack_error" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[9] -to "i2c_user_logic_read:inst_i2c_user_logic_read|i2c_master:inst_i2c_master|busy" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[10] -to "i2c_user_logic_read:inst_i2c_user_logic_read|reset" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[11] -to "i2c_user_logic_read:inst_i2c_user_logic_read|scl" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[12] -to "i2c_user_logic_read:inst_i2c_user_logic_read|sda" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=13" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=13" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=0000000000000000000000000000000000000000000000000000000000000000000000" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=70" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_LOWORD=8197" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_HIWORD=33171" -section_id auto_signaltap_0
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VHDL_FILE i2c_user_logic_write.vhd
+set_global_assignment -name VHDL_FILE i2c_master.vhd
+set_global_assignment -name VHDL_FILE DE2_115.vhd
+set_global_assignment -name CDF_FILE ../../Project2/Isaac/i2c/output_files/Chain1.cdf
+set_global_assignment -name VHDL_FILE i2c_user_logic_read.vhd
+set_global_assignment -name SIGNALTAP_FILE stp1.stp
+set_global_assignment -name VHDL_FILE i2c_user_logic_combo.vhd
 set_global_assignment -name SLD_FILE "C:/Users/nathani/Documents/GitHub/EE316_2025/Project3/I2CTesting/stp1_auto_stripped.stp"

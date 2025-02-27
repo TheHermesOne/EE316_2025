@@ -5,11 +5,13 @@ USE ieee.std_logic_unsigned.all;
 
 entity i2c_user_logic_read is
 PORT(
-    clk       : IN         STD_LOGIC;                    --system clock
-    reset     : IN         STD_LOGIC;
-	iData     : IN         STD_LOGIC_vector(15 downto 0);
-    sda       : INOUT  STD_LOGIC;                    --serial data output of i2c bus
-    scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
+    clk       	: IN         STD_LOGIC;                    --system clock
+    reset    	: IN         STD_LOGIC;
+	 Mchnstate		: IN 				Std_LOGIC_VECTOR(3 downto 0);
+	 iData     	: IN         STD_LOGIC_vector(15 downto 0);
+	 Data_out	: OUT			std_LOGIC_VECTOR(7 downto 0);
+    sda       	: INOUT  STD_LOGIC;                    --serial data output of i2c bus
+    scl       	: INOUT  STD_LOGIC);                   --serial clock output of i2c bus
 end i2c_user_logic_read;
 
 ARCHITECTURE logic OF i2c_user_logic_read IS
@@ -47,8 +49,8 @@ signal ack_error	: std_logic;
 signal SvnSeg_addr     : STD_LOGIC_VECTOR(7 DOWNTO 0); 
 signal LCD_addr     : STD_LOGIC_VECTOR(7 DOWNTO 0); 
 signal ADC_addr     : STD_LOGIC_VECTOR(7 DOWNTO 0); 
-signal data_out 		: std_logic_vector(7 downto 0);
 signal i2c_busy_prev: std_LOGIC;
+signal mode				: std_LOGIC_VECTOR(7 downto 0) := x"00";
 begin
 
 state <= statebuffer;
@@ -74,6 +76,16 @@ port map(
     scl       => scl
 );
 
+process(Mchnstate)
+	begin
+		Case Mchnstate(1 downto 0) is
+			when "00" => mode <= x"00";		--	Photoresistor
+			when "01" => mode <= x"01";		--	Thermisor
+			when "10" => mode <= x"02";		-- Analog In
+			when "11" => mode <= x"03";		-- Potentiometer
+		end case;
+end process;
+
 process(clk,reset)
 begin  
 
@@ -93,7 +105,7 @@ elsif(rising_edge(clk)) then
               i2c_ena <= '1';
 				  i2c_rw <= '0';
 				  i2c_addr <= ADC_addr;
-              data_wr <= x"03";				  
+              data_wr <= mode;				  
              statebuffer <= writeState;
             end if; 
 			

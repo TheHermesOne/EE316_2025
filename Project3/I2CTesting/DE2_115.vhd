@@ -133,23 +133,26 @@ ARCHITECTURE structural OF DE2_115 IS
 
 -- TOP LEVEL COMPONENT
 
-component i2c_user_logic_combo is
+component i2c_user_logic_read is
 port(
 		clk       : IN     STD_LOGIC;                    --system clock
 		reset  : in    std_logic;                     --active-high reset
+		Mchnstate		: IN 				Std_LOGIC_VECTOR(3 downto 0);
 		idata : in    std_logic_vector(15 downto 0); --the data to display on the seven segments
-    sda       : INOUT  STD_LOGIC;                    --serial data output of i2c bus
-    scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
-end component i2c_user_logic_combo;
+		Data_out	: OUT			std_LOGIC_VECTOR(7 downto 0);
+		sda       : INOUT  STD_LOGIC;                    --serial data output of i2c bus
+		scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
+end component i2c_user_logic_read;
 
 BEGIN
    
 -- INSTANTIATION OF THE TOP LEVEL COMPONENT
 
-inst_i2c_user_logic_combo: i2c_user_logic_combo
+inst_i2c_user_logic_read: i2c_user_logic_read
 		port map (
 		clk		=> CLOCK_50, 
 		reset => Key(0),                    --active-high reset
+		Mchnstate => "0000",
 		idata		=> x"BEEF",
 		sda		=> GPIO(0),
 		scl		=> GPIO(1)	
