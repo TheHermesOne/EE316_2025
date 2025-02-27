@@ -1,102 +1,46 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 entity clock_gen is
-    Port ( clk          : in STD_LOGIC;
-           data_ready   : in STD_LOGIC;
-           ena          : in std_logic;
-           data_in      : in STD_LOGIC_VECTOR (7 downto 0);
-           clock_out    : out STD_LOGIC;
-           reset        : in std_logic);
+   port(
+		clk 		: in std_logic;
+		reset		: in std_logic;
+		datain		: in std_logic_vector(7 downto 0);
+		clock_out	: out std_logic
+   );
 end clock_gen;
 
-architecture Behavioral of clock_gen is
-TYPE machine IS(start, read_data, clock_gen);
-signal state                  : machine;
-signal clock                  : std_logic := '0';
-signal N_term1                : integer;
-signal N_term2                : integer;
-signal N_term3                : integer := 50000;
-signal N_int                  : integer := 0;
-signal counter                : integer;
-signal data_ready_prev        : std_logic;
+architecture behavioral of clock_gen is
 
-
+   signal counter	: integer range 0 to 50000 := 50000;
+	signal clk_reg	: std_logic := '0';
+	signal N_1		: integer;
+	signal N_2		: integer;
+	signal N			: integer;
 
 begin
-
-process(clk)
-begin
-    if rising_edge(clk) then
-        data_ready_prev <= data_ready;
-    end if;
-end process;
-
-inst_counter: process(clk, reset)
-begin
-    if reset = '1' then
-        counter <= 0;
-    elsif rising_edge(clk) then
-    if counter < N_int then
-        counter <= counter + 1;
-    else
-        counter <= 0;
-    end if;
+    inst_counter: process(clk, reset)
+    begin
+        if reset = '1' then
+            counter <= 50000;
+            clk_reg <= '0';
+        elsif rising_edge(clk) then
+			if counter > 16666 then
+				counter <= counter - 130;
+			elsif counter < N then
+				clk_reg <= not clk_reg;
+				counter <= 50000;
+			else
+				counter <= 50000;
+			end if;
         end if;
     end process;
 
-process(clk)
-begin
-    if rising_edge(clk) then
-        if ena = '1' then
-            CASE state IS
-                WHEN start =>
-                    N_int    <= 0;            
-                    clock    <= '0';
-                    IF data_ready = '1' THEN
-                        state <= read_data;  
-                    ELSE
-                        state <= start;
-                    END IF;
-                when read_data =>
-                    if reset = '1' then
-                        state <= start;
-                    else
-                        N_term1     <= to_integer(unsigned("0" & data_in & "0000000"));
-                        N_term2     <= to_integer(unsigned("0000000" & data_in & "0"));
-                        N_int       <= N_term3 - N_term1 - N_term2;
-                        state       <= clock_gen;
-                    end if;
-                when clock_gen =>
-                    if reset = '1' then
-                        state <= start;
-                    else
-                        if data_ready = '1' and data_ready_prev = '0' then
-                            state <= read_data;
-                        else
-                            if clock = '1' then
-                                if counter = 0 then
-                                    clock       <= '0';
-                                    clock_out   <= clock;
-                                    state       <= clock_gen;
-                                end if;
-                            else
-                                if counter = 0 then
-                                    clock       <= '1';
-                                    clock_out   <= clock;
-                                    state       <= clock_gen;
-                                end if;
-                             end if;
-                        end if;
-                    end if;
-                when others => null;
-            END CASE;
-        else
-            clock     <= '0';
-            clock_out <= clock;
-        end if;
-     end if;
-end process;
+	 N_1 <= to_integer(unsigned("0" & datain & "0000000"));
+	 N_2 <= to_integer(unsigned("0000000" & datain & "0"));
+	 N   <= 50000 - N_1 - N_2;
+			
+	clock_out <= clk_reg;
 
-end Behavioral;
+end behavioral;
