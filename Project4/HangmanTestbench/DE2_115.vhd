@@ -138,7 +138,10 @@ port(
 		reset  		: in    		std_logic;
 		word 			: IN 			string(1 to 16);
 		letter 		: IN 			character;
-		Result		: OUT 		STD_LOGIC_vector(7 downto 0));                    --active-high reset
+		vwrongGuess : OUT			Std_LOGIC_vector(3 downto 0);
+		vResult		: OUT 		STD_LOGIC_vector(7 downto 0);
+		vGameOver	: OUT			std_LOGIC_vector(1 downto 0)); 			
+		
 end component Hangman;
 
 BEGIN
@@ -151,7 +154,7 @@ inst_Hangman: Hangman
 		reset => Key(0),                    --active-high reset
 		word		=> "togetherXXXXXXXX",		-- needs to be like this, will need to fill the dictorary/ ROM with words like this
 		letter 	=> 'e',
-		Result 	=> LEDG(7 downto 0)
+		vResult 	=> LEDG(7 downto 0)
 		);
 
 END structural;

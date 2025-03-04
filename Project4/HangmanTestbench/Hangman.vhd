@@ -8,10 +8,11 @@ entity Hangman is
 PORT(
     clk       	: IN         STD_LOGIC;                    --system clock
     reset    	: IN         STD_LOGIC;
-	 word 		: IN 			String(1 to 16);
+	 Word 		: IN 			String(1 to 16);
 	 letter 		: IN 			character;
-	 Result		: OUT 		STD_LOGIC_vector(7 downto 0);
-	 wrongGuess : OUT			Std_LOGIC_vector(3 downto 0)
+	 vResult		: OUT 		STD_LOGIC_vector(7 downto 0);
+	 vwrongGuess: OUT			Std_LOGIC_vector(3 downto 0);
+	 vGameOver	: OUT			std_LOGIC_vector(1 downto 0)			
 	 );
 end Hangman;
 
@@ -74,20 +75,32 @@ signal ChkOut: std_LOGIC_vector(15 downto 0);
 signal rebuildOut: String(16 downto 1):= "0000000000000000";
 signal bLetterInWord: std_LOGIC;
 signal guesscount		:std_LOGIC_vector(3 downto 0);
+signal tempLetter		:character := letter;
+
 	
 begin
 	process(reset,clk)
 		begin		
-			if reset = '1' then
+			if reset = '0' then		-- need to have a reset that does something
+				rebuildOut <= "0000000000000000";
 			elsif(rising_edge(clk)) then
-				CheckWordletter(word,letter,ChkOut,bLetterInWord);
+				CheckWordletter(word,templetter,ChkOut,bLetterInWord);
 				if bLetterInWord = '1' then
-					RebuildWord(ChkOut,rebuildOut,letter,rebuildOut);
+					RebuildWord(ChkOut,rebuildOut,templetter,rebuildOut);
 				else
 					guesscount <= guesscount +1;
 				end if;
 			end if;
-	wrongGuess <= guesscount;
-	Result <= ChkOut(7 downto 0);
+	vwrongGuess <= guesscount;
+	vResult <= ChkOut(7 downto 0);
+	end process;
+	
+	process(guesscount,rebuildOut)
+		begin
+			if guesscount > 5 then
+				vGameOver <= "10";	--Losing Condition
+			elsif (word = rebuildOut) then
+				vGameOver <= "01";	--Winning Condition
+			end if;
 	end process;
 end logic;
