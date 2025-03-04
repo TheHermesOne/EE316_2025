@@ -45,8 +45,10 @@ procedure CheckWordletter(
 	bLetterInWord <= bLetterInWordTemp;
 end procedure;
 
----------------------------------------------
 
+----------------------------------------------
+-----------------Rebuid word-----------------
+----------------------------------------------
 procedure RebuildWord(
 				signal checkWordOut : in std_LOGIC_vector(15 downto 0);
 				signal PrevRebuildOut: in string(16 downto 1);
