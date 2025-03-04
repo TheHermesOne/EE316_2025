@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Feb 27 11:31:31 2025
+| Date         : Thu Feb 27 13:27:48 2025
 | Host         : UL-31 running 64-bit major release  (build 9200)
 | Command      : report_drc -file FullBuild_wrapper_drc_routed.rpt -pb FullBuild_wrapper_drc_routed.pb -rpx FullBuild_wrapper_drc_routed.rpx
 | Design       : FullBuild_wrapper
@@ -24,19 +24,25 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 2
-+-----------+----------+-------------------+------------+
-| Rule      | Severity | Description       | Violations |
-+-----------+----------+-------------------+------------+
-| PDRC-153  | Warning  | Gated clock check | 1          |
-| RTSTAT-10 | Warning  | No routable loads | 1          |
-+-----------+----------+-------------------+------------+
+             Violations found: 3
++-----------+----------+---------------------------------+------------+
+| Rule      | Severity | Description                     | Violations |
++-----------+----------+---------------------------------+------------+
+| PDRC-153  | Warning  | Gated clock check               | 1          |
+| RPBF-3    | Warning  | IO port buffering is incomplete | 1          |
+| RTSTAT-10 | Warning  | No routable loads               | 1          |
++-----------+----------+---------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 PDRC-153#1 Warning
 Gated clock check  
 Net FullBuild_i/util_vector_logic_0/inst/Res[0] is a gated clock net sourced by a combinational pin FullBuild_i/util_vector_logic_0/inst/Res[0]_INST_0/O, cell FullBuild_i/util_vector_logic_0/inst/Res[0]_INST_0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+RPBF-3#1 Warning
+IO port buffering is incomplete  
+Device port sda_1 expects both input and output buffering but the buffers are incomplete.
 Related violations: <none>
 
 RTSTAT-10#1 Warning

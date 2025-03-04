@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Thu Feb 27 11:31:35 2025
+| Date             : Thu Feb 27 13:27:52 2025
 | Host             : UL-31 running 64-bit major release  (build 9200)
 | Command          : report_power -file FullBuild_wrapper_power_routed.rpt -pb FullBuild_wrapper_power_summary_routed.pb -rpx FullBuild_wrapper_power_routed.rpx
 | Design           : FullBuild_wrapper
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.010 |        4 |       --- |             --- |
-| Slice Logic              |    <0.001 |     9783 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |     2929 |     17600 |           16.64 |
-|   Register               |    <0.001 |     4477 |     35200 |           12.72 |
-|   CARRY4                 |    <0.001 |      193 |      4400 |            4.39 |
+| Slice Logic              |     0.001 |    10095 |       --- |             --- |
+|   LUT as Logic           |    <0.001 |     3065 |     17600 |           17.41 |
+|   CARRY4                 |    <0.001 |      206 |      4400 |            4.68 |
+|   Register               |    <0.001 |     4584 |     35200 |           13.02 |
 |   LUT as Distributed RAM |    <0.001 |      152 |      6000 |            2.53 |
-|   F7/F8 Muxes            |    <0.001 |       95 |     17600 |            0.54 |
+|   F7/F8 Muxes            |    <0.001 |       96 |     17600 |            0.55 |
 |   LUT as Shift Register  |    <0.001 |      436 |      6000 |            7.27 |
-|   Others                 |     0.000 |      765 |       --- |             --- |
-| Signals                  |     0.001 |     6133 |       --- |             --- |
+|   Others                 |     0.000 |      768 |       --- |             --- |
+| Signals                  |     0.001 |     6322 |       --- |             --- |
 | Block RAM                |    <0.001 |        1 |        60 |            1.67 |
-| I/O                      |    <0.001 |        7 |        54 |           12.96 |
+| I/O                      |    <0.001 |        9 |        54 |           16.67 |
 | PS7                      |     1.180 |        1 |       --- |             --- |
 | Static Power             |     0.118 |          |           |                 |
 | Total                    |     1.311 |          |           |                 |
@@ -160,9 +160,9 @@ Table of Contents
 |   dbg_hub                |     0.002 |
 |     inst                 |     0.002 |
 |       BSCANID.u_xsdbm_id |     0.002 |
-|   u_ila_0                |     0.010 |
-|     inst                 |     0.010 |
-|       ila_core_inst      |     0.010 |
+|   u_ila_0                |     0.009 |
+|     inst                 |     0.009 |
+|       ila_core_inst      |     0.009 |
 +--------------------------+-----------+
 
 

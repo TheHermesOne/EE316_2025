@@ -58,6 +58,7 @@ ENTITY FullBuild_clock_gen_0_1 IS
     clk : IN STD_LOGIC;
     reset : IN STD_LOGIC;
     datain : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    btn : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     clock_out : OUT STD_LOGIC
   );
 END FullBuild_clock_gen_0_1;
@@ -70,6 +71,7 @@ ARCHITECTURE FullBuild_clock_gen_0_1_arch OF FullBuild_clock_gen_0_1 IS
       clk : IN STD_LOGIC;
       reset : IN STD_LOGIC;
       datain : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+      btn : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
       clock_out : OUT STD_LOGIC
     );
   END COMPONENT clock_gen;
@@ -95,6 +97,7 @@ BEGIN
       clk => clk,
       reset => reset,
       datain => datain,
+      btn => btn,
       clock_out => clock_out
     );
 END FullBuild_clock_gen_0_1_arch;

@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Thu Feb 27 11:06:40 2025
+--Date        : Thu Feb 27 13:24:55 2025
 --Host        : UL-31 running 64-bit major release  (build 9200)
 --Command     : generate_target FullBuild.bd
 --Design      : FullBuild
@@ -180,27 +180,6 @@ architecture STRUCTURE of FullBuild is
     PWMout : out STD_LOGIC
   );
   end component FullBuild_PWM_gen_0_0;
-  component FullBuild_i2c_user_logic_ADC_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    Mchnstate : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    Data_out : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    readReady : out STD_LOGIC;
-    sda : inout STD_LOGIC;
-    scl : inout STD_LOGIC
-  );
-  end component FullBuild_i2c_user_logic_ADC_0_0;
-  component FullBuild_i2c_user_logic_LCD_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    reset : in STD_LOGIC;
-    iData : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    BusyOut : out STD_LOGIC;
-    sda : inout STD_LOGIC;
-    scl : inout STD_LOGIC
-  );
-  end component FullBuild_i2c_user_logic_LCD_0_0;
   component FullBuild_LCD_Controller_0_0 is
   port (
     reset : in STD_LOGIC;
@@ -220,14 +199,36 @@ architecture STRUCTURE of FullBuild is
     LCD_Nibble : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component FullBuild_LCD_Data_Cutter_0_0;
+  component FullBuild_i2c_user_logic_LCD_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    iData : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    BusyOut : out STD_LOGIC;
+    sda : inout STD_LOGIC;
+    scl : inout STD_LOGIC
+  );
+  end component FullBuild_i2c_user_logic_LCD_0_0;
   component FullBuild_clock_gen_0_1 is
   port (
     clk : in STD_LOGIC;
     reset : in STD_LOGIC;
     datain : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    btn : in STD_LOGIC_VECTOR ( 3 downto 0 );
     clock_out : out STD_LOGIC
   );
   end component FullBuild_clock_gen_0_1;
+  component FullBuild_i2c_user_logic_ADC_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    reset : in STD_LOGIC;
+    Mchnstate : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    Data_out : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    readReady : out STD_LOGIC;
+    sda : inout STD_LOGIC;
+    scl : inout STD_LOGIC
+  );
+  end component FullBuild_i2c_user_logic_ADC_0_0;
   signal BTN_I_0_1 : STD_LOGIC;
   signal BTN_I_0_2 : STD_LOGIC;
   signal LCD_Controller_0_LCD_DATA : STD_LOGIC_VECTOR ( 11 downto 0 );
@@ -244,7 +245,6 @@ architecture STRUCTURE of FullBuild is
   signal btn_debounce_toggle_1_PULSE_O : STD_LOGIC;
   signal clock_gen_0_clock_out : STD_LOGIC;
   signal i2c_user_logic_ADC_0_Data_out : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal i2c_user_logic_ADC_0_readReady : STD_LOGIC;
   signal i2c_user_logic_LCD_0_BusyOut : STD_LOGIC;
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -275,6 +275,7 @@ architecture STRUCTURE of FullBuild is
   signal NLW_btn_debounce_toggle_0_TOGGLE_O_UNCONNECTED : STD_LOGIC;
   signal NLW_btn_debounce_toggle_1_BTN_O_UNCONNECTED : STD_LOGIC;
   signal NLW_btn_debounce_toggle_1_TOGGLE_O_UNCONNECTED : STD_LOGIC;
+  signal NLW_i2c_user_logic_ADC_0_readReady_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_FCLK_RESET0_N_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_ARVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_AWVALID_UNCONNECTED : STD_LOGIC;
@@ -392,6 +393,7 @@ btn_debounce_toggle_1: component FullBuild_btn_debounce_toggle_0_1
     );
 clock_gen_0: component FullBuild_clock_gen_0_1
      port map (
+      btn(3 downto 0) => statemachine_0_stateOut(3 downto 0),
       clk => processing_system7_0_FCLK_CLK0,
       clock_out => clock_gen_0_clock_out,
       datain(7 downto 0) => i2c_user_logic_ADC_0_Data_out(7 downto 0),
@@ -402,7 +404,7 @@ i2c_user_logic_ADC_0: component FullBuild_i2c_user_logic_ADC_0_0
       Data_out(7 downto 0) => i2c_user_logic_ADC_0_Data_out(7 downto 0),
       Mchnstate(3 downto 0) => statemachine_0_stateOut(3 downto 0),
       clk => processing_system7_0_FCLK_CLK0,
-      readReady => i2c_user_logic_ADC_0_readReady,
+      readReady => NLW_i2c_user_logic_ADC_0_readReady_UNCONNECTED,
       reset => util_vector_logic_0_Res(0),
       scl => scl_0,
       sda => sda_0

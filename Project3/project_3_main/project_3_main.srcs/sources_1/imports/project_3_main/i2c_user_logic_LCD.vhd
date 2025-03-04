@@ -81,17 +81,21 @@ process(clk,reset)
 begin  
 	if reset_h = '0' then 
 		 statebuffer <= start;
+		 reset_n <= '0';
+		 count15msWait <= X"00B71B0";
+		 count15msWait <= X"000C350";
 	elsif(rising_edge(clk)) then
 		CASE state is
 			when start =>
 	           if count15msWait /= X"0000000" then                         
 		          count15msWait   <= count15msWait - 1;	
 		          reset_n <= '0';	
-		          state   <= start;
+		          statebuffer   <= start;
 		          i2c_ena 	<= '0';  
 	           else
 		          reset_n <= '1'; 
-   	              state   <= ready;
+		          data_wr <= iData;
+   	              statebuffer   <= ready;
                 end if;
 			  when ready => 
 				if i2c_busy = '0' then
@@ -101,10 +105,12 @@ begin
             when INIT => 
                 if count1msWait /= X"0000000" then
                    count1msWait <= count1msWait -1;
+                else
                    data_wr <= iData;
                     busyOut <= '1';
+                    statebuffer <= writeData;
+                    count1msWait <= X"000C350";
                 end if;
-              statebuffer <= writeData;
 			  when writeData =>
 			     busyOut <= '0';
 			     if i2c_busy = '0' and busy_prev = '1' then
