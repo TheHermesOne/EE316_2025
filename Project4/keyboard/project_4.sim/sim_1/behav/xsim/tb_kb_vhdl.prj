@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../project_4.srcs/sources_1/imports/Downloads/debounce.vhd" \
+"../../../../project_4.srcs/sources_1/imports/Downloads/ps2_keyboard.vhd" \
+"../../../../project_4.srcs/sim_1/new/tb_kb.vhd" \
+
+# Do not sort compile order
+nosort
