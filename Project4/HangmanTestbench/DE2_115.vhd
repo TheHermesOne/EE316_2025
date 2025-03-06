@@ -1,5 +1,8 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+USE ieee.std_logic_unsigned.all;
+
 
 ENTITY DE2_115 IS
 PORT (
@@ -138,14 +141,31 @@ port(
 		reset  		: in    		std_logic;
 		word 			: IN 			string(1 to 16);
 		letter 		: IN 			character;
-		vwrongGuess : OUT			Std_LOGIC_vector(3 downto 0);
+		newLetterPulse: IN		std_LOGIC;
+		iwrongGuess : OUT			integer range 0 to 5;
 		vResult		: OUT 		STD_LOGIC_vector(7 downto 0);
-		vGameOver	: OUT			std_LOGIC_vector(1 downto 0)); 			
+		vGameOver	: OUT			std_LOGIC_vector(1 downto 0);
+  	   vRebuilt 	: out 		character	
+); 			
 		
 end component Hangman;
 
+component ps2_keyboard_to_ascii is
+GENERIC(
+      clk_freq                  : INTEGER := 50_000_000; --system clock frequency in Hz
+      ps2_debounce_counter_size : INTEGER := 8);         --set such that 2^size/clk_freq = 5us (size = 8 for 50MHz)
+  PORT(
+      clk        : IN  STD_LOGIC;                     --system clock input
+      ps2_clk    : IN  STD_LOGIC;                     --clock signal from PS2 keyboard
+      ps2_data   : IN  STD_LOGIC;                     --data signal from PS2 keyboard
+      ascii_new  : OUT STD_LOGIC;                     --output flag indicating new ASCII value
+      ascii_code : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)); --ASCII value
+end component ps2_keyboard_to_ascii;
+
+signal char : std_LOGIC_VECTOR(6 downto 0);
+signal pulse: std_LOGIC;
+
 BEGIN
-   
 -- INSTANTIATION OF THE TOP LEVEL COMPONENT
 
 inst_Hangman: Hangman	
@@ -153,10 +173,20 @@ inst_Hangman: Hangman
 		clk		=> CLOCK_50, 
 		reset => Key(0),                    --active-high reset
 		word		=> "togetherXXXXXXXX",		-- needs to be like this, will need to fill the dictorary/ ROM with words like this
-		letter 	=> 'e',
-		vResult 	=> LEDG(7 downto 0)
+		letter 	=> character'val(to_integer(unsigned(char))),
+		newLetterPulse => pulse,
+		vResult 	=> LEDG(7 downto 0),
+		vRebuilt => open
 		);
-
+inst_ps2_keyboard: ps2_keyboard_to_ascii
+	port map(
+		clk 	  => CLOCK_50,
+		ps2_clk =>  GPIO(6),
+		ps2_data => GPIO(7),
+		ascii_new => pulse,
+		ascii_code => char
+	);
+		
 END structural;
 
 
