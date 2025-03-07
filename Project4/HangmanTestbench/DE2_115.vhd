@@ -139,13 +139,12 @@ component Hangman is
 port(
 		clk       	: IN     	STD_LOGIC;                    --system clock
 		reset  		: in    		std_logic;
-		word 			: IN 			string(1 to 16);
+		word 			: IN 			string(1 to 17);
 		letter 		: IN 			character;
 		newLetterPulse: IN		std_LOGIC;
 		iwrongGuess : OUT			integer range 0 to 5;
-		vResult		: OUT 		STD_LOGIC_vector(7 downto 0);
 		vGameOver	: OUT			std_LOGIC_vector(1 downto 0);
-  	   vRebuilt 	: out 		character	
+  	   vRebuilt 	: out 		string(1 to 17)	
 ); 			
 		
 end component Hangman;
@@ -172,10 +171,9 @@ inst_Hangman: Hangman
 		port map (
 		clk		=> CLOCK_50, 
 		reset => Key(0),                    --active-high reset
-		word		=> "togetherXXXXXXXX",		-- needs to be like this, will need to fill the dictorary/ ROM with words like this
+		word		=> "togetherXXXXXXXXX",		-- needs to be like this, will need to fill the dictorary/ ROM with words like this
 		letter 	=> character'val(to_integer(unsigned(char))),
 		newLetterPulse => pulse,
-		vResult 	=> LEDG(7 downto 0),
 		vRebuilt => open
 		);
 inst_ps2_keyboard: ps2_keyboard_to_ascii

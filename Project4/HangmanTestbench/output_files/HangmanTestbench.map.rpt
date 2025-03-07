@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HangmanTestbench
-Thu Mar 06 15:40:41 2025
+Fri Mar 07 14:38:15 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -55,15 +55,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 06 15:40:41 2025            ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 07 14:38:15 2025            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; HangmanTestbench                                 ;
 ; Top-level Entity Name              ; DE2_115                                          ;
 ; Family                             ; Cyclone IV E                                     ;
-; Total logic elements               ; 2,794                                            ;
-;     Total combinational functions  ; 1,582                                            ;
-;     Dedicated logic registers      ; 1,753                                            ;
-; Total registers                    ; 1753                                             ;
+; Total logic elements               ; 2,809                                            ;
+;     Total combinational functions  ; 1,588                                            ;
+;     Dedicated logic registers      ; 1,760                                            ;
+; Total registers                    ; 1760                                             ;
 ; Total pins                         ; 50                                               ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 1,523,712                                        ;
@@ -245,28 +245,28 @@ applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 2,794          ;
+; Estimated Total logic elements              ; 2,809          ;
 ;                                             ;                ;
-; Total combinational functions               ; 1582           ;
+; Total combinational functions               ; 1588           ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 971            ;
-;     -- 3 input functions                    ; 328            ;
-;     -- <=2 input functions                  ; 283            ;
+;     -- 4 input functions                    ; 960            ;
+;     -- 3 input functions                    ; 342            ;
+;     -- <=2 input functions                  ; 286            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 1441           ;
-;     -- arithmetic mode                      ; 141            ;
+;     -- normal mode                          ; 1443           ;
+;     -- arithmetic mode                      ; 145            ;
 ;                                             ;                ;
-; Total registers                             ; 1753           ;
-;     -- Dedicated logic registers            ; 1753           ;
+; Total registers                             ; 1760           ;
+;     -- Dedicated logic registers            ; 1760           ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 50             ;
 ; Total memory bits                           ; 1523712        ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 1299           ;
-; Total fan-out                               ; 16404          ;
+; Maximum fan-out                             ; 1306           ;
+; Total fan-out                               ; 16437          ;
 ; Average fan-out                             ; 4.47           ;
 +---------------------------------------------+----------------+
 
@@ -276,14 +276,14 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                           ; Library Name ;
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2_115                                                                                                ; 1582 (3)          ; 1753 (0)     ; 1523712     ; 0            ; 0       ; 0         ; 50   ; 0            ; |DE2_115                                                                                                                                                                                                                                                                                                                                      ; work         ;
-;    |Hangman:inst_Hangman|                                                                               ; 158 (158)         ; 117 (117)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Hangman:inst_Hangman                                                                                                                                                                                                                                                                                                                 ; work         ;
+; |DE2_115                                                                                                ; 1588 (3)          ; 1760 (0)     ; 1523712     ; 0            ; 0       ; 0         ; 50   ; 0            ; |DE2_115                                                                                                                                                                                                                                                                                                                                      ; work         ;
+;    |Hangman:inst_Hangman|                                                                               ; 163 (163)         ; 124 (124)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Hangman:inst_Hangman                                                                                                                                                                                                                                                                                                                 ; work         ;
 ;    |ps2_keyboard_to_ascii:inst_ps2_keyboard|                                                            ; 697 (634)         ; 86 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard                                                                                                                                                                                                                                                                                              ; work         ;
 ;       |ps2_keyboard:ps2_keyboard_0|                                                                     ; 63 (21)           ; 58 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard|ps2_keyboard:ps2_keyboard_0                                                                                                                                                                                                                                                                  ; work         ;
 ;          |debounce:debounce_ps2_clk|                                                                    ; 21 (21)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard|ps2_keyboard:ps2_keyboard_0|debounce:debounce_ps2_clk                                                                                                                                                                                                                                        ; work         ;
 ;          |debounce:debounce_ps2_data|                                                                   ; 21 (21)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard|ps2_keyboard:ps2_keyboard_0|debounce:debounce_ps2_data                                                                                                                                                                                                                                       ; work         ;
-;    |sld_hub:auto_hub|                                                                                   ; 117 (1)           ; 86 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                     ; work         ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 116 (78)          ; 86 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                        ; work         ;
+;    |sld_hub:auto_hub|                                                                                   ; 118 (1)           ; 86 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                     ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 117 (79)          ; 86 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                        ; work         ;
 ;          |sld_rom_sr:hub_info_reg|                                                                      ; 21 (21)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                                                                                                                                ; work         ;
 ;          |sld_shadow_jsm:shadow_jsm|                                                                    ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                                                                                                                                                                                              ; work         ;
 ;    |sld_signaltap:auto_signaltap_0|                                                                     ; 607 (1)           ; 1464 (186)   ; 1523712     ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                       ; work         ;
@@ -444,47 +444,51 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+-----------------------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal               ; Free of Timing Hazards ;
 +-----------------------------------------------------+-----------------------------------+------------------------+
-; Hangman:inst_Hangman|ChkOut[6][0]                   ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[5][0]                   ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[4][0]                   ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[1][0]                   ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[2][0]                   ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[3][0]                   ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[7][0]                   ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[8][0]                   ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[9][6]                   ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[9][5]                   ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[9][3]                   ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[9][0]                   ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[10][6]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[10][5]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[10][3]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[10][0]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[11][6]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[11][5]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[11][3]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[11][0]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[12][6]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[12][5]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[12][3]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[12][0]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[13][6]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[13][5]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[13][3]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[13][0]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[14][6]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[14][5]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[14][3]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[14][0]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[15][6]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[15][5]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[15][3]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[15][0]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[16][6]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[16][5]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[16][3]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[16][0]                  ; Hangman:inst_Hangman|ChkOut[7][2] ; yes                    ;
-; Number of user-specified and inferred latches = 40  ;                                   ;                        ;
+; Hangman:inst_Hangman|ChkOut[6][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[5][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[4][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[1][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[2][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[3][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[7][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[8][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[9][6]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[9][5]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[9][3]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[9][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[10][6]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[10][5]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[10][3]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[10][0]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[11][6]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[11][5]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[11][3]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[11][0]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[12][6]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[12][5]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[12][3]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[12][0]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[13][6]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[13][5]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[13][3]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[13][0]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[14][6]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[14][5]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[14][3]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[14][0]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[15][6]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[15][5]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[15][3]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[15][0]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[16][6]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[16][5]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[16][3]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[16][0]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[17][6]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[17][5]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[17][3]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[17][0]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Number of user-specified and inferred latches = 44  ;                                   ;                        ;
 +-----------------------------------------------------+-----------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -510,7 +514,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Hangman:inst_Hangman|rebuildOut[14][7] ; Stuck at GND due to stuck port data_in ;
 ; Hangman:inst_Hangman|rebuildOut[15][7] ; Stuck at GND due to stuck port data_in ;
 ; Hangman:inst_Hangman|rebuildOut[16][7] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 16 ;                                        ;
+; Hangman:inst_Hangman|rebuildOut[17][7] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 17 ;                                        ;
 +----------------------------------------+----------------------------------------+
 
 
@@ -519,12 +524,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1753  ;
+; Total registers                              ; 1760  ;
 ; Number of registers using Synchronous Clear  ; 24    ;
 ; Number of registers using Synchronous Load   ; 129   ;
-; Number of registers using Asynchronous Clear ; 691   ;
+; Number of registers using Asynchronous Clear ; 698   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 719   ;
+; Number of registers using Clock Enable       ; 726   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -564,16 +569,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Hangman:inst_Hangman|rebuildOut[14][4]                                                                                                                                         ; 1       ;
 ; Hangman:inst_Hangman|rebuildOut[15][5]                                                                                                                                         ; 1       ;
 ; Hangman:inst_Hangman|rebuildOut[15][4]                                                                                                                                         ; 1       ;
-; Hangman:inst_Hangman|rebuildOut[16][5]                                                                                                                                         ; 2       ;
-; Hangman:inst_Hangman|rebuildOut[16][4]                                                                                                                                         ; 2       ;
+; Hangman:inst_Hangman|rebuildOut[16][5]                                                                                                                                         ; 1       ;
+; Hangman:inst_Hangman|rebuildOut[16][4]                                                                                                                                         ; 1       ;
+; Hangman:inst_Hangman|rebuildOut[17][5]                                                                                                                                         ; 1       ;
+; Hangman:inst_Hangman|rebuildOut[17][4]                                                                                                                                         ; 1       ;
 ; Hangman:inst_Hangman|wordChecked                                                                                                                                               ; 12      ;
 ; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[0]                                                                                                                               ; 15      ;
-; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[7]                                                                                                                               ; 6       ;
+; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[7]                                                                                                                               ; 4       ;
 ; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[1]                                                                                                                               ; 17      ;
 ; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[2]                                                                                                                               ; 16      ;
-; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[3]                                                                                                                               ; 20      ;
-; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[4]                                                                                                                               ; 17      ;
-; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[5]                                                                                                                               ; 18      ;
+; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[3]                                                                                                                               ; 17      ;
+; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[4]                                                                                                                               ; 18      ;
+; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[5]                                                                                                                               ; 19      ;
 ; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[6]                                                                                                                               ; 6       ;
 ; ps2_keyboard_to_ascii:inst_ps2_keyboard|prev_ps2_code_new                                                                                                                      ; 1       ;
 ; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|tdo                                                                                                              ; 1       ;
@@ -595,7 +602,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[14] ; 1       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|trigger_out_mode_ff                                                ; 2       ;
 ; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[0]  ; 1       ;
-; Total number of inverted registers = 61                                                                                                                                        ;         ;
+; Total number of inverted registers = 63                                                                                                                                        ;         ;
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -604,25 +611,27 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[9][1]                                                                         ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[9][6]                                                                         ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[10][3]                                                                        ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[11][6]                                                                        ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[12][2]                                                                        ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[13][0]                                                                        ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[14][2]                                                                        ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[15][1]                                                                        ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[16][3]                                                                        ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard|ps2_keyboard:ps2_keyboard_0|count_idle[3]                             ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard|ps2_keyboard:ps2_keyboard_0|debounce:debounce_ps2_clk|counter_out[0]  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard|ps2_keyboard:ps2_keyboard_0|debounce:debounce_ps2_data|counter_out[6] ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[11][0]                                                                        ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[12][1]                                                                        ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[13][1]                                                                        ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[14][1]                                                                        ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[15][6]                                                                        ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[16][1]                                                                        ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[17][0]                                                                        ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard|ps2_keyboard:ps2_keyboard_0|count_idle[6]                             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard|ps2_keyboard:ps2_keyboard_0|debounce:debounce_ps2_clk|counter_out[3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard|ps2_keyboard:ps2_keyboard_0|debounce:debounce_ps2_data|counter_out[7] ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[9][4]                                                                         ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[10][5]                                                                        ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[11][4]                                                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[10][4]                                                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[11][5]                                                                        ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[12][4]                                                                        ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[13][4]                                                                        ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[14][4]                                                                        ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[15][5]                                                                        ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[16][4]                                                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[16][5]                                                                        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |DE2_115|Hangman:inst_Hangman|rebuildOut[17][5]                                                                        ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                            ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                               ;
 ; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |DE2_115|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[0]         ;
@@ -919,22 +928,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Hangman:inst_Hangman|vGameOver[0]                     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|vGameOver[0]~1                   ; N/A                                                                                                                                                            ;
 ; Hangman:inst_Hangman|vGameOver[1]                     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|LessThan0~0                      ; N/A                                                                                                                                                            ;
 ; Hangman:inst_Hangman|vGameOver[1]                     ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|LessThan0~0                      ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[0]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|rebuildOut[16][0]                ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[0]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|rebuildOut[16][0]                ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[1]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|rebuildOut[16][1]                ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[1]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|rebuildOut[16][1]                ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[2]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|rebuildOut[16][2]                ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[2]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|rebuildOut[16][2]                ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[3]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|rebuildOut[16][3]                ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[3]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|rebuildOut[16][3]                ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[4]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|rebuildOut[16][4]~_wirecell      ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[4]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|rebuildOut[16][4]~_wirecell      ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[5]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|rebuildOut[16][5]~_wirecell      ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[5]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|rebuildOut[16][5]~_wirecell      ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[6]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|rebuildOut[16][6]                ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[6]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|rebuildOut[16][6]                ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[7]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GND                                                   ; N/A                                                                                                                                                            ;
-; Hangman:inst_Hangman|vRebuilt[7]                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; GND                                                   ; N/A                                                                                                                                                            ;
+; Hangman:inst_Hangman|vRebuilt[0]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; Hangman:inst_Hangman|vRebuilt[0]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; Hangman:inst_Hangman|vRebuilt[1]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The pre-synthesis tap must be preserved by Analysis & Synthesis before it can be tapped.  Set the partition's netlist type to Source and recompile.            ;
+; Hangman:inst_Hangman|vRebuilt[1]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The pre-synthesis tap must be preserved by Analysis & Synthesis before it can be tapped.  Set the partition's netlist type to Source and recompile.            ;
+; Hangman:inst_Hangman|vRebuilt[2]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The pre-synthesis tap must be preserved by Analysis & Synthesis before it can be tapped.  Set the partition's netlist type to Source and recompile.            ;
+; Hangman:inst_Hangman|vRebuilt[2]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The pre-synthesis tap must be preserved by Analysis & Synthesis before it can be tapped.  Set the partition's netlist type to Source and recompile.            ;
+; Hangman:inst_Hangman|vRebuilt[3]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The pre-synthesis tap must be preserved by Analysis & Synthesis before it can be tapped.  Set the partition's netlist type to Source and recompile.            ;
+; Hangman:inst_Hangman|vRebuilt[3]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The pre-synthesis tap must be preserved by Analysis & Synthesis before it can be tapped.  Set the partition's netlist type to Source and recompile.            ;
+; Hangman:inst_Hangman|vRebuilt[4]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The pre-synthesis tap must be preserved by Analysis & Synthesis before it can be tapped.  Set the partition's netlist type to Source and recompile.            ;
+; Hangman:inst_Hangman|vRebuilt[4]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The pre-synthesis tap must be preserved by Analysis & Synthesis before it can be tapped.  Set the partition's netlist type to Source and recompile.            ;
+; Hangman:inst_Hangman|vRebuilt[5]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The pre-synthesis tap must be preserved by Analysis & Synthesis before it can be tapped.  Set the partition's netlist type to Source and recompile.            ;
+; Hangman:inst_Hangman|vRebuilt[5]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The pre-synthesis tap must be preserved by Analysis & Synthesis before it can be tapped.  Set the partition's netlist type to Source and recompile.            ;
+; Hangman:inst_Hangman|vRebuilt[6]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The pre-synthesis tap must be preserved by Analysis & Synthesis before it can be tapped.  Set the partition's netlist type to Source and recompile.            ;
+; Hangman:inst_Hangman|vRebuilt[6]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The pre-synthesis tap must be preserved by Analysis & Synthesis before it can be tapped.  Set the partition's netlist type to Source and recompile.            ;
+; Hangman:inst_Hangman|vRebuilt[7]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The pre-synthesis tap must be preserved by Analysis & Synthesis before it can be tapped.  Set the partition's netlist type to Source and recompile.            ;
+; Hangman:inst_Hangman|vRebuilt[7]                      ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND                                                   ; The pre-synthesis tap must be preserved by Analysis & Synthesis before it can be tapped.  Set the partition's netlist type to Source and recompile.            ;
 ; Hangman:inst_Hangman|wordChecked                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|wordChecked~_wirecell            ; N/A                                                                                                                                                            ;
 ; Hangman:inst_Hangman|wordChecked                      ; pre-synthesis ; connected ; Top            ; post-synthesis    ; Hangman:inst_Hangman|wordChecked~_wirecell            ; N/A                                                                                                                                                            ;
 ; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii_code[0] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii_code[0] ; N/A                                                                                                                                                            ;
@@ -964,7 +973,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu Mar 06 15:40:29 2025
+    Info: Processing started: Fri Mar 07 14:38:02 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HangmanTestbench -c HangmanTestbench
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file debounce.vhd
@@ -983,144 +992,151 @@ Info (12021): Found 2 design units, including 1 entities, in source file hangman
     Info (12022): Found design unit 1: Hangman-logic
     Info (12023): Found entity 1: Hangman
 Info (12127): Elaborating entity "DE2_115" for the top level hierarchy
-Warning (10873): Using initial value X (don't care) for net "LEDG[8]" at DE2_115.vhd(28)
+Warning (10541): VHDL Signal Declaration warning at DE2_115.vhd(28): used implicit default value for signal "LEDG" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info (12128): Elaborating entity "Hangman" for hierarchy "Hangman:inst_Hangman"
-Warning (10541): VHDL Signal Declaration warning at Hangman.vhd(14): used implicit default value for signal "vResult" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10540): VHDL Signal Declaration warning at Hangman.vhd(98): used explicit default value for signal "tempLetter" because signal was never assigned a value
-Warning (10492): VHDL Process Statement warning at Hangman.vhd(117): signal "Word" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Hangman.vhd(117): signal "tempLetter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Hangman.vhd(128): signal "guesscount" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Hangman.vhd(130): signal "rebuildOut" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at Hangman.vhd(111): inferring latch(es) for signal or variable "ChkOut", which holds its previous value in one or more paths through the process
-Warning (10492): VHDL Process Statement warning at Hangman.vhd(137): signal "Word" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (10041): Inferred latch for "ChkOut[16][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[16][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[16][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[16][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[16][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[16][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[16][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[16][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[15][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[15][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[15][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[15][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[15][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[15][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[15][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[15][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[14][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[14][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[14][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[14][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[14][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[14][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[14][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[14][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[13][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[13][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[13][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[13][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[13][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[13][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[13][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[13][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[12][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[12][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[12][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[12][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[12][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[12][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[12][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[12][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[11][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[11][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[11][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[11][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[11][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[11][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[11][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[11][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[10][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[10][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[10][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[10][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[10][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[10][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[10][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[10][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[9][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[9][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[9][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[9][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[9][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[9][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[9][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[9][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[8][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[8][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[8][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[8][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[8][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[8][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[8][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[8][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[7][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[7][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[7][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[7][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[7][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[7][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[7][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[7][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[6][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[6][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[6][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[6][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[6][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[6][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[6][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[6][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[5][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[5][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[5][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[5][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[5][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[5][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[5][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[5][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[4][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[4][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[4][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[4][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[4][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[4][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[4][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[4][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[3][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[3][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[3][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[3][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[3][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[3][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[3][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[3][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[2][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[2][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[2][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[2][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[2][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[2][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[2][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[2][7]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[1][0]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[1][1]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[1][2]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[1][3]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[1][4]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[1][5]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[1][6]" at Hangman.vhd(111)
-Info (10041): Inferred latch for "ChkOut[1][7]" at Hangman.vhd(111)
+Warning (10540): VHDL Signal Declaration warning at Hangman.vhd(95): used explicit default value for signal "tempLetter" because signal was never assigned a value
+Warning (10492): VHDL Process Statement warning at Hangman.vhd(105): signal "Word" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Hangman.vhd(105): signal "tempLetter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Hangman.vhd(116): signal "guesscount" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Hangman.vhd(117): signal "rebuildOut" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at Hangman.vhd(99): inferring latch(es) for signal or variable "ChkOut", which holds its previous value in one or more paths through the process
+Warning (10492): VHDL Process Statement warning at Hangman.vhd(124): signal "Word" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (10041): Inferred latch for "ChkOut[17][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[17][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[17][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[17][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[17][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[17][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[17][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[17][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[16][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[16][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[16][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[16][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[16][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[16][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[16][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[16][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[15][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[15][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[15][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[15][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[15][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[15][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[15][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[15][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[14][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[14][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[14][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[14][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[14][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[14][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[14][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[14][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[13][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[13][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[13][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[13][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[13][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[13][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[13][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[13][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[12][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[12][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[12][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[12][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[12][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[12][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[12][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[12][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[11][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[11][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[11][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[11][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[11][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[11][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[11][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[11][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[10][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[10][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[10][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[10][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[10][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[10][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[10][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[10][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[9][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[9][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[9][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[9][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[9][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[9][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[9][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[9][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[8][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[8][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[8][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[8][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[8][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[8][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[8][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[8][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[7][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[7][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[7][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[7][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[7][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[7][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[7][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[7][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[6][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[6][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[6][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[6][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[6][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[6][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[6][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[6][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[5][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[5][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[5][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[5][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[5][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[5][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[5][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[5][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[4][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[4][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[4][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[4][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[4][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[4][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[4][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[4][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[3][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[3][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[3][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[3][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[3][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[3][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[3][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[3][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[2][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[2][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[2][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[2][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[2][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[2][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[2][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[2][7]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[1][0]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[1][1]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[1][2]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[1][3]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[1][4]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[1][5]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[1][6]" at Hangman.vhd(99)
+Info (10041): Inferred latch for "ChkOut[1][7]" at Hangman.vhd(99)
 Info (12128): Elaborating entity "ps2_keyboard_to_ascii" for hierarchy "ps2_keyboard_to_ascii:inst_ps2_keyboard"
 Info (12128): Elaborating entity "ps2_keyboard" for hierarchy "ps2_keyboard_to_ascii:inst_ps2_keyboard|ps2_keyboard:ps2_keyboard_0"
 Info (12128): Elaborating entity "debounce" for hierarchy "ps2_keyboard_to_ascii:inst_ps2_keyboard|ps2_keyboard:ps2_keyboard_0|debounce:debounce_ps2_clk"
@@ -1189,6 +1205,8 @@ Warning (13039): The following bidir pins have no drivers
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[1][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[5][0]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[7][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[4][0]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[17][6]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][6]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[17][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][6]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[16][6]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][6]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[16][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][6]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[15][6]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][6]"
@@ -1204,6 +1222,8 @@ Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[10][6]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][6]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[10][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][6]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[9][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][6]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[17][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[17][5]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[16][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[16][5]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[15][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
@@ -1243,23 +1263,23 @@ Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal 
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
 Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
-Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 91 of its 187 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 96 missing sources or connections.
+Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 75 of its 187 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 112 missing sources or connections.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]"
     Warning (15610): No output dependent on input pin "KEY[2]"
     Warning (15610): No output dependent on input pin "KEY[3]"
-Info (21057): Implemented 3073 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3086 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 10 output pins
     Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 2832 logic cells
+    Info (21061): Implemented 2845 logic cells
     Info (21064): Implemented 186 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 69 warnings
-    Info: Peak virtual memory: 4719 megabytes
-    Info: Processing ended: Thu Mar 06 15:40:41 2025
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:10
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 68 warnings
+    Info: Peak virtual memory: 4731 megabytes
+    Info: Processing ended: Fri Mar 07 14:38:15 2025
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:11
 
 
