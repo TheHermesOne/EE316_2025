@@ -1,0 +1,13 @@
+set_property SRC_FILE_INFO {cfile:C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/project_4.srcs/constrs_1/imports/Downloads/Cora-Z7-07S-Master.xdc rfile:../../../project_4.srcs/constrs_1/imports/Downloads/Cora-Z7-07S-Master.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN H16   IOSTANDARD LVCMOS33 } [get_ports { clk }]; #IO_L13P_T2_MRCC_35 Sch=sysclk
+set_property src_info {type:XDC file:1 line:19 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN D20   IOSTANDARD LVCMOS33 } [get_ports {reset }]; #IO_L4N_T0_35 Sch=btn[0]
+set_property src_info {type:XDC file:1 line:25 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN Y16   IOSTANDARD LVCMOS33 } [get_ports { kb_clk }]; #IO_L7P_T1_34 Sch=ja_p[2]
+set_property src_info {type:XDC file:1 line:26 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN Y17   IOSTANDARD LVCMOS33 } [get_ports { kb_data}]; #IO_L7N_T1_34 Sch=ja_n[2]
+set_property src_info {type:XDC file:1 line:27 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN U18   IOSTANDARD LVCMOS33 } [get_ports { rx_in }]; #IO_L12P_T1_MRCC_34 Sch=ja_p[3]
+set_property src_info {type:XDC file:1 line:28 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN U19   IOSTANDARD LVCMOS33 } [get_ports { tx_out }]; #IO_L12N_T1_MRCC_34 Sch=ja_n[3]
