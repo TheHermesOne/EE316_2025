@@ -139,12 +139,12 @@ component Hangman is
 port(
 		clk       	: IN     	STD_LOGIC;                    --system clock
 		reset  		: in    		std_logic;
-		word 			: IN 			string(1 to 17);
+		word 			: IN 			string(1 to 16);
 		letter 		: IN 			character;
 		newLetterPulse: IN		std_LOGIC;
 		iwrongGuess : OUT			integer range 0 to 5;
 		vGameOver	: OUT			std_LOGIC_vector(1 downto 0);
-  	   vRebuilt 	: out 		string(1 to 17)	
+  	   vRebuilt 	: out 		string(1 to 16)	
 ); 			
 		
 end component Hangman;
@@ -161,9 +161,21 @@ GENERIC(
       ascii_code : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)); --ASCII value
 end component ps2_keyboard_to_ascii;
 
+component i2c_user_logic_LCD is
+		port (
+			clk       : IN         	STD_LOGIC;                    --system clock
+			reset     : IN         	STD_LOGIC;
+			iData     : IN         	string(1 to 16);
+			kp_pulse	 : in 			std_LOGIC;
+			sda       : INOUT  		STD_LOGIC;                    --serial data output of i2c bus
+			scl       : INOUT  		STD_LOGIC                  --serial clock output of i2c bus
+		);
+end component i2c_user_logic_LCD;
+
+
 signal char : std_LOGIC_VECTOR(6 downto 0);
 signal pulse: std_LOGIC;
-
+signal rebuiltword: string (1 to 16);
 BEGIN
 -- INSTANTIATION OF THE TOP LEVEL COMPONENT
 
@@ -171,10 +183,10 @@ inst_Hangman: Hangman
 		port map (
 		clk		=> CLOCK_50, 
 		reset => Key(0),                    --active-high reset
-		word		=> "togetherXXXXXXXXX",		-- needs to be like this, will need to fill the dictorary/ ROM with words like this
+		word		=> "togetherXXXXXXXX",		-- needs to be like this, will need to fill the dictorary/ ROM with words like this
 		letter 	=> character'val(to_integer(unsigned(char))),
 		newLetterPulse => pulse,
-		vRebuilt => open
+		vRebuilt => rebuiltword
 		);
 inst_ps2_keyboard: ps2_keyboard_to_ascii
 	port map(
@@ -184,6 +196,16 @@ inst_ps2_keyboard: ps2_keyboard_to_ascii
 		ascii_new => pulse,
 		ascii_code => char
 	);
+	
+	Inst_i2c_user_logic_LCD: i2c_user_logic_LCD 
+		port map (
+			clk 		=> CLOCK_50,
+			reset 	=> KEY(0),
+			iData		=> rebuiltword,
+			kp_pulse	=> pulse,
+			sda		=> GPIO(0),
+			scl		=> GPIO(1)
+		);
 		
 END structural;
 
