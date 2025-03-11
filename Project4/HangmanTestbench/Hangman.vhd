@@ -8,12 +8,12 @@ entity Hangman is
 PORT(
     clk       	: IN         STD_LOGIC;                    --system clock
     reset    	: IN         STD_LOGIC;
-	 Word 		: IN 			String(1 to 17);
-	 letter 		: IN 			character;
+	 Word 		: IN 			String(1 to 16);
+	 letter 		: IN 			character:='*';
 	 newLetterPulse: IN		std_LOGIC;
 	 iwrongGuess: OUT			integer range 0 to 5;
 	 vGameOver	: OUT			std_LOGIC_vector(1 downto 0);
-	 vRebuilt 	: out 		string(1 to 17)	 
+	 vRebuilt 	: out 		string(1 to 16)	 
 	 );
 end Hangman;
 
@@ -24,9 +24,9 @@ ARCHITECTURE logic OF Hangman IS
 -----------------Word Checker-----------------
 ----------------------------------------------
 procedure CheckWordletter(
-					signal word : in string(1 to 17);
+					signal word : in string(1 to 16);
 					signal letter: in character;
-					signal output: out string(1 to 17);
+					signal output: out string(1 to 16);
 					signal bLetterInWord: out std_LOGIC;
 					signal wordChecked: out std_LOGIC)is
 			
@@ -40,7 +40,7 @@ procedure CheckWordletter(
 			elsif 'X' = word(currentIter) then
 				output(currentIter) <= 'X';
 			else
-				output(currentIter) <= '0'; 
+				output(currentIter) <= '_'; 
 			end if;
 		end loop;
 	bLetterInWord <= bLetterInWordTemp;
@@ -52,12 +52,12 @@ end procedure;
 -----------------Rebuid word-----------------
 ----------------------------------------------
 procedure RebuildWord(
-				signal checkWordOut : in string(1 to 17);
-				signal PrevRebuildOut: in string(1 to 17);
+				signal checkWordOut : in string(1 to 16);
+				signal PrevRebuildOut: in string(1 to 16);
 				signal letter : in character;
-				signal RebuildOut: out String(1 to 17))is
+				signal RebuildOut: out String(1 to 16))is
 		
-		variable tempOut : string(1 to 17) := prevRebuildOut;		
+		variable tempOut : string(1 to 16) := prevRebuildOut;		
 	
 	begin
 		for currentIter in checkWordOut'range loop
@@ -74,22 +74,22 @@ end procedure;
 function CompareString(
 	OrgWord : string;
 	NewWord : string) return boolean is
-		variable truth : integer range 1 to 17;
+		variable truth : integer range 1 to 16;
 	begin
-	for i in 1 to 17 loop
+	for i in 1 to 16 loop
 		if OrgWord(i) = NewWord(i) then
 			truth := truth+1;
 		end if;
 	end loop;
-	if (truth = 17) then
+	if (truth = 16) then
 		return true;
 	else 
 		return false;
 	end if;
 end function;
 
-signal ChkOut: string(1 to 17);
-signal rebuildOut: String(1 TO 17):= "00000000000000000";
+signal ChkOut: string(1 to 16);
+signal rebuildOut: String(1 TO 16):= "00000000000000000";
 signal bLetterInWord: std_LOGIC := '1';
 signal guesscount		:integer range 0 to 5;
 signal tempLetter		:character := letter;

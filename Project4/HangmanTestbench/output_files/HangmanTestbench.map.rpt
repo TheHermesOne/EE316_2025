@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HangmanTestbench
-Fri Mar 07 14:38:15 2025
+Sat Mar 08 10:31:10 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -55,13 +55,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Mar 07 14:38:15 2025            ;
+; Analysis & Synthesis Status        ; Successful - Sat Mar 08 10:31:10 2025            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; HangmanTestbench                                 ;
 ; Top-level Entity Name              ; DE2_115                                          ;
 ; Family                             ; Cyclone IV E                                     ;
-; Total logic elements               ; 2,809                                            ;
-;     Total combinational functions  ; 1,588                                            ;
+; Total logic elements               ; 2,814                                            ;
+;     Total combinational functions  ; 1,593                                            ;
 ;     Dedicated logic registers      ; 1,760                                            ;
 ; Total registers                    ; 1760                                             ;
 ; Total pins                         ; 50                                               ;
@@ -245,16 +245,16 @@ applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 2,809          ;
+; Estimated Total logic elements              ; 2,814          ;
 ;                                             ;                ;
-; Total combinational functions               ; 1588           ;
+; Total combinational functions               ; 1593           ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 960            ;
-;     -- 3 input functions                    ; 342            ;
-;     -- <=2 input functions                  ; 286            ;
+;     -- 4 input functions                    ; 973            ;
+;     -- 3 input functions                    ; 338            ;
+;     -- <=2 input functions                  ; 282            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 1443           ;
+;     -- normal mode                          ; 1448           ;
 ;     -- arithmetic mode                      ; 145            ;
 ;                                             ;                ;
 ; Total registers                             ; 1760           ;
@@ -266,7 +266,7 @@ applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 1306           ;
-; Total fan-out                               ; 16437          ;
+; Total fan-out                               ; 16469          ;
 ; Average fan-out                             ; 4.47           ;
 +---------------------------------------------+----------------+
 
@@ -276,9 +276,9 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                           ; Library Name ;
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2_115                                                                                                ; 1588 (3)          ; 1760 (0)     ; 1523712     ; 0            ; 0       ; 0         ; 50   ; 0            ; |DE2_115                                                                                                                                                                                                                                                                                                                                      ; work         ;
-;    |Hangman:inst_Hangman|                                                                               ; 163 (163)         ; 124 (124)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Hangman:inst_Hangman                                                                                                                                                                                                                                                                                                                 ; work         ;
-;    |ps2_keyboard_to_ascii:inst_ps2_keyboard|                                                            ; 697 (634)         ; 86 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard                                                                                                                                                                                                                                                                                              ; work         ;
+; |DE2_115                                                                                                ; 1593 (3)          ; 1760 (0)     ; 1523712     ; 0            ; 0       ; 0         ; 50   ; 0            ; |DE2_115                                                                                                                                                                                                                                                                                                                                      ; work         ;
+;    |Hangman:inst_Hangman|                                                                               ; 169 (169)         ; 124 (124)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|Hangman:inst_Hangman                                                                                                                                                                                                                                                                                                                 ; work         ;
+;    |ps2_keyboard_to_ascii:inst_ps2_keyboard|                                                            ; 696 (633)         ; 86 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard                                                                                                                                                                                                                                                                                              ; work         ;
 ;       |ps2_keyboard:ps2_keyboard_0|                                                                     ; 63 (21)           ; 58 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard|ps2_keyboard:ps2_keyboard_0                                                                                                                                                                                                                                                                  ; work         ;
 ;          |debounce:debounce_ps2_clk|                                                                    ; 21 (21)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard|ps2_keyboard:ps2_keyboard_0|debounce:debounce_ps2_clk                                                                                                                                                                                                                                        ; work         ;
 ;          |debounce:debounce_ps2_data|                                                                   ; 21 (21)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_115|ps2_keyboard_to_ascii:inst_ps2_keyboard|ps2_keyboard:ps2_keyboard_0|debounce:debounce_ps2_data                                                                                                                                                                                                                                       ; work         ;
@@ -444,14 +444,46 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+-----------------------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal               ; Free of Timing Hazards ;
 +-----------------------------------------------------+-----------------------------------+------------------------+
-; Hangman:inst_Hangman|ChkOut[6][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[5][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[4][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[1][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[2][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[3][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[7][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
-; Hangman:inst_Hangman|ChkOut[8][0]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[6][1]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[6][2]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[6][3]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[6][5]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[6][6]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[5][1]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[5][2]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[5][3]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[5][5]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[5][6]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[4][1]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[4][2]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[4][3]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[4][5]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[4][6]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[1][1]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[1][2]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[1][3]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[1][5]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[1][6]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[2][1]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[2][2]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[2][3]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[2][5]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[2][6]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[3][1]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[3][2]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[3][3]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[3][5]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[3][6]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[7][1]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[7][2]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[7][3]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[7][5]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[7][6]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[8][6]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[8][5]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[8][3]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[8][2]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
+; Hangman:inst_Hangman|ChkOut[8][1]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
 ; Hangman:inst_Hangman|ChkOut[9][6]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
 ; Hangman:inst_Hangman|ChkOut[9][5]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
 ; Hangman:inst_Hangman|ChkOut[9][3]                   ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
@@ -488,7 +520,7 @@ Encoding Type:  One-Hot
 ; Hangman:inst_Hangman|ChkOut[17][5]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
 ; Hangman:inst_Hangman|ChkOut[17][3]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
 ; Hangman:inst_Hangman|ChkOut[17][0]                  ; Hangman:inst_Hangman|ChkOut[8][7] ; yes                    ;
-; Number of user-specified and inferred latches = 44  ;                                   ;                        ;
+; Number of user-specified and inferred latches = 76  ;                                   ;                        ;
 +-----------------------------------------------------+-----------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -573,14 +605,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Hangman:inst_Hangman|rebuildOut[16][4]                                                                                                                                         ; 1       ;
 ; Hangman:inst_Hangman|rebuildOut[17][5]                                                                                                                                         ; 1       ;
 ; Hangman:inst_Hangman|rebuildOut[17][4]                                                                                                                                         ; 1       ;
-; Hangman:inst_Hangman|wordChecked                                                                                                                                               ; 12      ;
-; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[0]                                                                                                                               ; 15      ;
+; Hangman:inst_Hangman|wordChecked                                                                                                                                               ; 6       ;
+; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[0]                                                                                                                               ; 19      ;
 ; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[7]                                                                                                                               ; 4       ;
 ; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[1]                                                                                                                               ; 17      ;
 ; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[2]                                                                                                                               ; 16      ;
 ; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[3]                                                                                                                               ; 17      ;
 ; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[4]                                                                                                                               ; 18      ;
-; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[5]                                                                                                                               ; 19      ;
+; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[5]                                                                                                                               ; 18      ;
 ; ps2_keyboard_to_ascii:inst_ps2_keyboard|ascii[6]                                                                                                                               ; 6       ;
 ; ps2_keyboard_to_ascii:inst_ps2_keyboard|prev_ps2_code_new                                                                                                                      ; 1       ;
 ; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|tdo                                                                                                              ; 1       ;
@@ -767,7 +799,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+--------------+
 ; Partition Name   ; Elapsed Time ;
 +------------------+--------------+
-; Top              ; 00:00:04     ;
+; Top              ; 00:00:05     ;
 ; sld_hub:auto_hub ; 00:00:00     ;
 +------------------+--------------+
 
@@ -973,7 +1005,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Fri Mar 07 14:38:02 2025
+    Info: Processing started: Sat Mar 08 10:30:56 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HangmanTestbench -c HangmanTestbench
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file debounce.vhd
@@ -1203,8 +1235,34 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO[34]" has no driver
     Warning (13040): Bidir "GPIO[35]" has no driver
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[1][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[5][0]"
-    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[7][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[4][0]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[6][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[6][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[6][6]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[6][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[6][2]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[6][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[5][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[5][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[5][6]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[5][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[5][2]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[5][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[1][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[5][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[1][6]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[5][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[1][1]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[5][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[1][2]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[5][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[1][5]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[5][5]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[7][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[4][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[7][6]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[4][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[7][1]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[4][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[7][2]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[4][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[4][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[4][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[4][6]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[4][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[4][2]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[4][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[7][5]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[4][5]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[2][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[2][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[2][6]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[2][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[2][2]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[2][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[3][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[3][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[3][6]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[3][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[3][2]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[3][1]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[8][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[8][6]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[8][2]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[8][6]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[8][1]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[8][6]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[17][6]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][6]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[17][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][6]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[16][6]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][6]"
@@ -1222,22 +1280,22 @@ Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[10][6]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][6]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[10][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][6]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[9][3]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][6]"
-    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[17][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[17][5]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
-    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[16][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[17][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[16][5]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
-    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[15][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[16][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[15][5]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
-    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[14][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[15][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[14][5]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
-    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[13][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[14][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[13][5]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
-    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[12][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[13][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[12][5]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
-    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[11][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[12][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[11][5]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
-    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[10][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[11][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[10][5]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
+    Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[10][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
     Info (13026): Duplicate LATCH primitive "Hangman:inst_Hangman|ChkOut[9][0]" merged with LATCH primitive "Hangman:inst_Hangman|ChkOut[9][5]"
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
@@ -1270,16 +1328,16 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]"
     Warning (15610): No output dependent on input pin "KEY[2]"
     Warning (15610): No output dependent on input pin "KEY[3]"
-Info (21057): Implemented 3086 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3091 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 10 output pins
     Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 2845 logic cells
+    Info (21061): Implemented 2850 logic cells
     Info (21064): Implemented 186 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 68 warnings
-    Info: Peak virtual memory: 4731 megabytes
-    Info: Processing ended: Fri Mar 07 14:38:15 2025
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Peak virtual memory: 4720 megabytes
+    Info: Processing ended: Sat Mar 08 10:31:10 2025
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:12
 
 
