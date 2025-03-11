@@ -12,18 +12,22 @@ library ieee;
 entity uart is
     port (
         reset       :in  std_logic;
-        txclk       :in  std_logic;
-        ld_tx_data  :in  std_logic;
-        tx_data     :in  std_logic_vector (7 downto 0);
-        tx_enable   :in  std_logic;
-        tx_out      :out std_logic;
+        txclk       :in  std_logic;-- ps2_clk
+        ld_tx_data  :in  std_logic;--KB pulse 
+        tx_data     :in  std_logic_vector (7 downto 0);--ps2 data 
+        tx_enable   :in  std_logic;-- always keep enabled 
+        
+        tx_out      :out std_logic;-- serial o/p
         tx_empty    :out std_logic;
-        rxclk       :in  std_logic;
-        uld_rx_data :in  std_logic;
-        rx_data     :out std_logic_vector (7 downto 0);
+        
+        rxclk       :in  std_logic;--ps2_clk
+        uld_rx_data :in  std_logic;--pulse
         rx_enable   :in  std_logic;
         rx_in       :in  std_logic;
-        rx_empty    :out std_logic
+        
+        rx_empty    :out std_logic;
+        rx_data     :out std_logic_vector (7 downto 0)--ps2 data 
+
     );
 end entity;
 architecture rtl of uart is
@@ -42,6 +46,8 @@ architecture rtl of uart is
     signal rx_is_empty    :std_logic;
     signal tx_is_empty    :std_logic;
 begin
+
+
     -- UART RX Logic
     process (rxclk, reset) begin
         if (reset = '1') then
@@ -60,9 +66,9 @@ begin
             rx_d1 <= rx_in;
             rx_d2 <= rx_d1;
             -- Uload the rx data
-            if (uld_rx_data = '1') then
+            if (uld_rx_data = '1') then -- unloads data 
                 rx_data  <= rx_reg;
-                rx_is_empty <= '1';
+                rx_is_empty <= '1'; -- register is empty 
             end if;
             -- Receive data only when rx is enabled
             if (rx_enable = '1') then
@@ -74,11 +80,11 @@ begin
                 end if;
                 -- Start of frame detected, Proceed with rest of data
                 if (rx_busy = '1') then
-                    rx_sample_cnt <= rx_sample_cnt + 1;
+                    rx_sample_cnt <= rx_sample_cnt + 1;-- increase rx_sample _count 
                     -- Logic to sample at middle of data
                     if (rx_sample_cnt = 7) then
                         if ((rx_d2 = '1') and (rx_cnt = 0)) then
-                            rx_busy <= '0';
+                            rx_busy <= '0';-- system is empty once the previous value is hgih ( curent value is low) and the you are at the begining
                         else
                             rx_cnt <= rx_cnt + 1;
                             -- Start storing the rx data
@@ -122,7 +128,7 @@ begin
             tx_cnt        <= (others=>'0');
         elsif (rising_edge(txclk)) then
 
-            if (ld_tx_data = '1') then
+            if (ld_tx_data = '1') then -- set ld_data to always high 
                 if (tx_is_empty = '0') then
                     tx_over_run <= '0';
                 else
@@ -130,7 +136,7 @@ begin
                     tx_is_empty <= '0';
                 end if;
             end if;
-            if (tx_enable = '1' and tx_is_empty = '0') then
+            if (tx_enable = '1' and tx_is_empty = '0') then-- transmits the serial bits 1 and 0's
                 tx_cnt <= tx_cnt + 1;
                 if (tx_cnt = 0) then
                     tx_out <= '0';
