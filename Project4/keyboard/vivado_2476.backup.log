@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Mar 11 13:12:28 2025
+# Process ID: 2476
+# Current directory: C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4148 C:\Users\uonml\Documents\GitHub\EE316_2025\Project4\keyboard\project_4.xpr
+# Log file: C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/vivado.log
+# Journal file: C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/project_4.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:25 ; elapsed = 00:00:14 . Memory (MB): peak = 763.617 ; gain = 96.219
+5
+open_bd_design {C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/project_4.srcs/sources_1/bd/design_1/design_1.bd}
+Adding component instance block -- xilinx.com:module_ref:Reset_Delay:1.0 - Reset_Delay_0
