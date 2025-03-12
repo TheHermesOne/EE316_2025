@@ -1,0 +1,21 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all;
+
+Entity LCD_GM_Handler
+	port(
+			reset				: IN std_logic;
+			state				: IN std_logic_vector(3 downto 0);
+			LCD_Data			: OUT std_logic(11 downto 0)
+			);
+			
+end LCD_GM_Handler;
+
+ARCHITECTURE LOGIC OF LCD_GM_Handler is
+
+
+
+
+
+begin
+
