@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="design_1" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1741666449"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1741666449"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1741666449"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1741666449"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1741764643"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1741764643"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1741764643"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1741764643"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\design_1_ps2_keyboard_to_ascii_0_1\design_1_ps2_keyboard_to_ascii_0_1.xci" Type="IP">
         <Instance HierarchyPath="ps2_keyboard_to_ascii_0"/>
@@ -47,6 +47,14 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
+      <File Name="ip\design_1_btn_debounce_toggle_0_0\design_1_btn_debounce_toggle_0_0.xci" Type="IP">
+        <Instance HierarchyPath="btn_debounce_toggle_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
       <File Name="synth\design_1.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
@@ -55,14 +63,6 @@
       <File Name="sim\design_1.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\design_1_btn_debounce_toggle_0_0\design_1_btn_debounce_toggle_0_0.xci" Type="IP">
-        <Instance HierarchyPath="btn_debounce_toggle_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="design_1_ooc.xdc" Type="XDC">

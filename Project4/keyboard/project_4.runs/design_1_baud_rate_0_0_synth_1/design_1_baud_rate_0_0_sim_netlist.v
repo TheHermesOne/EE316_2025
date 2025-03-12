@@ -1,8 +1,8 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Mon Mar 10 23:53:22 2025
-// Host        : UL-41 running 64-bit major release  (build 9200)
+// Date        : Wed Mar 12 02:42:47 2025
+// Host        : UL-31 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_baud_rate_0_0_sim_netlist.v
 // Design      : design_1_baud_rate_0_0
@@ -20,26 +20,55 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_baud_rate
 
   wire baud;
   wire clk;
-  wire [12:0]clk_cnt;
+  wire [13:0]clk_cnt;
+  wire clk_cnt0_carry__0_n_0;
+  wire clk_cnt0_carry__0_n_1;
+  wire clk_cnt0_carry__0_n_2;
+  wire clk_cnt0_carry__0_n_3;
+  wire clk_cnt0_carry__1_n_0;
+  wire clk_cnt0_carry__1_n_1;
+  wire clk_cnt0_carry__1_n_2;
+  wire clk_cnt0_carry__1_n_3;
+  wire clk_cnt0_carry_n_0;
+  wire clk_cnt0_carry_n_1;
+  wire clk_cnt0_carry_n_2;
+  wire clk_cnt0_carry_n_3;
   wire [0:0]clk_cnt_0;
-  wire \clk_cnt_reg[12]_i_1_n_1 ;
-  wire \clk_cnt_reg[12]_i_1_n_2 ;
-  wire \clk_cnt_reg[12]_i_1_n_3 ;
-  wire \clk_cnt_reg[4]_i_1_n_0 ;
-  wire \clk_cnt_reg[4]_i_1_n_1 ;
-  wire \clk_cnt_reg[4]_i_1_n_2 ;
-  wire \clk_cnt_reg[4]_i_1_n_3 ;
-  wire \clk_cnt_reg[8]_i_1_n_0 ;
-  wire \clk_cnt_reg[8]_i_1_n_1 ;
-  wire \clk_cnt_reg[8]_i_1_n_2 ;
-  wire \clk_cnt_reg[8]_i_1_n_3 ;
   wire clk_en_i_1_n_0;
   wire clk_en_i_2_n_0;
   wire clk_en_i_3_n_0;
-  wire [12:1]data0;
-  wire [3:3]\NLW_clk_cnt_reg[12]_i_1_CO_UNCONNECTED ;
+  wire [13:1]data0;
+  wire [3:0]NLW_clk_cnt0_carry__2_CO_UNCONNECTED;
+  wire [3:1]NLW_clk_cnt0_carry__2_O_UNCONNECTED;
 
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  CARRY4 clk_cnt0_carry
+       (.CI(1'b0),
+        .CO({clk_cnt0_carry_n_0,clk_cnt0_carry_n_1,clk_cnt0_carry_n_2,clk_cnt0_carry_n_3}),
+        .CYINIT(clk_cnt[0]),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(data0[4:1]),
+        .S(clk_cnt[4:1]));
+  CARRY4 clk_cnt0_carry__0
+       (.CI(clk_cnt0_carry_n_0),
+        .CO({clk_cnt0_carry__0_n_0,clk_cnt0_carry__0_n_1,clk_cnt0_carry__0_n_2,clk_cnt0_carry__0_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(data0[8:5]),
+        .S(clk_cnt[8:5]));
+  CARRY4 clk_cnt0_carry__1
+       (.CI(clk_cnt0_carry__0_n_0),
+        .CO({clk_cnt0_carry__1_n_0,clk_cnt0_carry__1_n_1,clk_cnt0_carry__1_n_2,clk_cnt0_carry__1_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(data0[12:9]),
+        .S(clk_cnt[12:9]));
+  CARRY4 clk_cnt0_carry__2
+       (.CI(clk_cnt0_carry__1_n_0),
+        .CO(NLW_clk_cnt0_carry__2_CO_UNCONNECTED[3:0]),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({NLW_clk_cnt0_carry__2_O_UNCONNECTED[3:1],data0[13]}),
+        .S({1'b0,1'b0,1'b0,clk_cnt[13]}));
   LUT1 #(
     .INIT(2'h1)) 
     \clk_cnt[0]_i_1 
@@ -69,13 +98,12 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_baud_rate
         .D(data0[12]),
         .Q(clk_cnt[12]),
         .R(clk_en_i_1_n_0));
-  CARRY4 \clk_cnt_reg[12]_i_1 
-       (.CI(\clk_cnt_reg[8]_i_1_n_0 ),
-        .CO({\NLW_clk_cnt_reg[12]_i_1_CO_UNCONNECTED [3],\clk_cnt_reg[12]_i_1_n_1 ,\clk_cnt_reg[12]_i_1_n_2 ,\clk_cnt_reg[12]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(data0[12:9]),
-        .S(clk_cnt[12:9]));
+  FDRE \clk_cnt_reg[13] 
+       (.C(clk),
+        .CE(1'b1),
+        .D(data0[13]),
+        .Q(clk_cnt[13]),
+        .R(clk_en_i_1_n_0));
   FDRE \clk_cnt_reg[1] 
        (.C(clk),
         .CE(1'b1),
@@ -100,13 +128,6 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_baud_rate
         .D(data0[4]),
         .Q(clk_cnt[4]),
         .R(clk_en_i_1_n_0));
-  CARRY4 \clk_cnt_reg[4]_i_1 
-       (.CI(1'b0),
-        .CO({\clk_cnt_reg[4]_i_1_n_0 ,\clk_cnt_reg[4]_i_1_n_1 ,\clk_cnt_reg[4]_i_1_n_2 ,\clk_cnt_reg[4]_i_1_n_3 }),
-        .CYINIT(clk_cnt[0]),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(data0[4:1]),
-        .S(clk_cnt[4:1]));
   FDRE \clk_cnt_reg[5] 
        (.C(clk),
         .CE(1'b1),
@@ -131,46 +152,39 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_baud_rate
         .D(data0[8]),
         .Q(clk_cnt[8]),
         .R(clk_en_i_1_n_0));
-  CARRY4 \clk_cnt_reg[8]_i_1 
-       (.CI(\clk_cnt_reg[4]_i_1_n_0 ),
-        .CO({\clk_cnt_reg[8]_i_1_n_0 ,\clk_cnt_reg[8]_i_1_n_1 ,\clk_cnt_reg[8]_i_1_n_2 ,\clk_cnt_reg[8]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(data0[8:5]),
-        .S(clk_cnt[8:5]));
   FDRE \clk_cnt_reg[9] 
        (.C(clk),
         .CE(1'b1),
         .D(data0[9]),
         .Q(clk_cnt[9]),
         .R(clk_en_i_1_n_0));
-  LUT5 #(
-    .INIT(32'h00200000)) 
+  LUT6 #(
+    .INIT(64'h0000000000000400)) 
     clk_en_i_1
        (.I0(clk_en_i_2_n_0),
-        .I1(clk_en_i_3_n_0),
-        .I2(clk_cnt[1]),
+        .I1(clk_cnt[3]),
+        .I2(clk_cnt[2]),
         .I3(clk_cnt[4]),
         .I4(clk_cnt[5]),
+        .I5(clk_en_i_3_n_0),
         .O(clk_en_i_1_n_0));
-  LUT6 #(
-    .INIT(64'h0000040000000000)) 
-    clk_en_i_2
-       (.I0(clk_cnt[2]),
-        .I1(clk_cnt[8]),
-        .I2(clk_cnt[11]),
-        .I3(clk_cnt[7]),
-        .I4(clk_cnt[3]),
-        .I5(clk_cnt[12]),
-        .O(clk_en_i_2_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
-    .INIT(16'hEFFF)) 
-    clk_en_i_3
-       (.I0(clk_cnt[6]),
-        .I1(clk_cnt[10]),
+    .INIT(16'hFF7F)) 
+    clk_en_i_2
+       (.I0(clk_cnt[7]),
+        .I1(clk_cnt[6]),
         .I2(clk_cnt[9]),
-        .I3(clk_cnt[0]),
+        .I3(clk_cnt[8]),
+        .O(clk_en_i_2_n_0));
+  LUT6 #(
+    .INIT(64'hFFF7FFFFFFFFFFFF)) 
+    clk_en_i_3
+       (.I0(clk_cnt[12]),
+        .I1(clk_cnt[13]),
+        .I2(clk_cnt[10]),
+        .I3(clk_cnt[11]),
+        .I4(clk_cnt[1]),
+        .I5(clk_cnt[0]),
         .O(clk_en_i_3_n_0));
   FDRE clk_en_reg
        (.C(clk),

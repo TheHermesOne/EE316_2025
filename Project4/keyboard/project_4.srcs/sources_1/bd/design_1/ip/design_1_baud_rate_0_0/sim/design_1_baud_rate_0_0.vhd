@@ -81,7 +81,7 @@ ARCHITECTURE design_1_baud_rate_0_0_arch OF design_1_baud_rate_0_0 IS
 BEGIN
   U0 : baud_rate
     GENERIC MAP (
-      cnt_max => 5027
+      cnt_max => 13019
     )
     PORT MAP (
       clk => clk,

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x66249923A1134D98",
+      "boundary_crc": "0x4F889F3CD2C5C813",
       "device": "xc7z007sclg400-1",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -9,21 +9,18 @@
       "validated": "true"
     },
     "design_tree": {
-      "Reset_Delay_0": "",
       "util_vector_logic_0": "",
       "ps2_keyboard_to_ascii_0": "",
-      "user_logic_uart_0": "",
+      "Reset_Delay_0": "",
+      "btn_debounce_toggle_0": "",
       "baud_rate_0": "",
-      "btn_debounce_toggle_0": ""
+      "user_logic_uart_0": ""
     },
     "ports": {
       "clk": {
         "direction": "I"
       },
       "reset": {
-        "direction": "I"
-      },
-      "rx_in": {
         "direction": "I"
       },
       "tx_out": {
@@ -37,23 +34,6 @@
       }
     },
     "components": {
-      "Reset_Delay_0": {
-        "vlnv": "xilinx.com:module_ref:Reset_Delay:1.0",
-        "xci_name": "design_1_Reset_Delay_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Reset_Delay",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "iCLK": {
-            "direction": "I"
-          },
-          "oRESET": {
-            "direction": "O"
-          }
-        }
-      },
       "util_vector_logic_0": {
         "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
         "xci_name": "design_1_util_vector_logic_0_0",
@@ -93,55 +73,19 @@
           }
         }
       },
-      "user_logic_uart_0": {
-        "vlnv": "xilinx.com:module_ref:user_logic_uart:1.0",
-        "xci_name": "design_1_user_logic_uart_0_1",
+      "Reset_Delay_0": {
+        "vlnv": "xilinx.com:module_ref:Reset_Delay:1.0",
+        "xci_name": "design_1_Reset_Delay_0_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "user_logic_uart",
+          "ref_name": "Reset_Delay",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "clk": {
-            "type": "clk",
+          "iCLK": {
             "direction": "I"
           },
-          "utx_data": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "ureset": {
-            "direction": "I"
-          },
-          "utxclk": {
-            "direction": "I"
-          },
-          "urx_in": {
-            "direction": "I"
-          },
-          "utx_en": {
-            "direction": "I"
-          },
-          "utx_out": {
-            "direction": "O"
-          }
-        }
-      },
-      "baud_rate_0": {
-        "vlnv": "xilinx.com:module_ref:baud_rate:1.0",
-        "xci_name": "design_1_baud_rate_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "baud_rate",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I"
-          },
-          "baud": {
+          "oRESET": {
             "direction": "O"
           }
         }
@@ -172,17 +116,67 @@
             "direction": "O"
           }
         }
+      },
+      "baud_rate_0": {
+        "vlnv": "xilinx.com:module_ref:baud_rate:1.0",
+        "xci_name": "design_1_baud_rate_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "baud_rate",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "baud": {
+            "direction": "O"
+          }
+        }
+      },
+      "user_logic_uart_0": {
+        "vlnv": "xilinx.com:module_ref:user_logic_uart:1.0",
+        "xci_name": "design_1_user_logic_uart_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "user_logic_uart",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "utx_data": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "ureset": {
+            "direction": "I"
+          },
+          "utxclk": {
+            "direction": "I"
+          },
+          "utx_en": {
+            "direction": "I"
+          },
+          "utx_out": {
+            "direction": "O"
+          }
+        }
       }
     },
     "nets": {
       "clk_1": {
         "ports": [
           "clk",
-          "Reset_Delay_0/iCLK",
           "ps2_keyboard_to_ascii_0/clk",
-          "user_logic_uart_0/clk",
+          "Reset_Delay_0/iCLK",
+          "btn_debounce_toggle_0/CLK",
           "baud_rate_0/clk",
-          "btn_debounce_toggle_0/CLK"
+          "user_logic_uart_0/clk"
         ]
       },
       "Reset_Delay_0_oRESET": {
@@ -201,12 +195,6 @@
         "ports": [
           "baud_rate_0/baud",
           "user_logic_uart_0/utxclk"
-        ]
-      },
-      "rx_in_1": {
-        "ports": [
-          "rx_in",
-          "user_logic_uart_0/urx_in"
         ]
       },
       "user_logic_uart_0_utx_out": {

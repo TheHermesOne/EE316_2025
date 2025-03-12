@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/project_4.runs/synth_1'
+HD_PWD='C:/Users/nathani/Documents/GitHub/EE316_2025/Project4/keyboard/project_4.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

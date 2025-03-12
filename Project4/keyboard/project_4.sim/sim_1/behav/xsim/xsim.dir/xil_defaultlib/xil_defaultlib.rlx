@@ -2,6 +2,5 @@
 2019.1
 May 24 2019
 15:06:07
-C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/project_4.srcs/sim_1/new/tb_kb.vhd,1741114957,vhdl,,,,tb_kb,,,,,,,,
-C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/project_4.srcs/sources_1/imports/Downloads/debounce.vhd,1741109324,vhdl,,,,debounce,,,,,,,,
-C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/project_4.srcs/sources_1/imports/Downloads/ps2_keyboard.vhd,1741109324,vhdl,,,,ps2_keyboard,,,,,,,,
+C:/Users/nathani/Documents/GitHub/EE316_2025/Project4/keyboard/project_4.srcs/sim_1/new/tb_uart.vhd,1741750431,vhdl,,,,uart_tb,,,,,,,,
+C:/Users/nathani/Documents/GitHub/EE316_2025/Project4/keyboard/project_4.srcs/sources_1/imports/Downloads/uart.vhd,1741742971,vhdl,,,,uart,,,,,,,,

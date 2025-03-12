@@ -1,0 +1,98 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x98B46645ACDB12E",
+      "device": "xc7z007sclg400-1",
+      "name": "design_2",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "ps2_keyboard_to_ascii_0": ""
+    },
+    "ports": {
+      "clk": {
+        "direction": "I"
+      },
+      "ascii_out": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      },
+      "ascii_pulse": {
+        "direction": "O"
+      },
+      "kb_data": {
+        "direction": "I"
+      },
+      "kb_clk": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "ps2_keyboard_to_ascii_0": {
+        "vlnv": "xilinx.com:module_ref:ps2_keyboard_to_ascii:1.0",
+        "xci_name": "design_2_ps2_keyboard_to_ascii_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ps2_keyboard_to_ascii",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "ps2_clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "ps2_data": {
+            "direction": "I"
+          },
+          "ascii_new": {
+            "direction": "O"
+          },
+          "ascii_code": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_1": {
+        "ports": [
+          "clk",
+          "ps2_keyboard_to_ascii_0/clk"
+        ]
+      },
+      "ps2_keyboard_to_ascii_0_ascii_code": {
+        "ports": [
+          "ps2_keyboard_to_ascii_0/ascii_code",
+          "ascii_out"
+        ]
+      },
+      "ps2_keyboard_to_ascii_0_ascii_new": {
+        "ports": [
+          "ps2_keyboard_to_ascii_0/ascii_new",
+          "ascii_pulse"
+        ]
+      },
+      "kb_data_1": {
+        "ports": [
+          "kb_data",
+          "ps2_keyboard_to_ascii_0/ps2_data"
+        ]
+      },
+      "kb_clk_1": {
+        "ports": [
+          "kb_clk",
+          "ps2_keyboard_to_ascii_0/ps2_clk"
+        ]
+      }
+    }
+  }
+}

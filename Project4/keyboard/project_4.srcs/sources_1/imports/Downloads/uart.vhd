@@ -12,21 +12,21 @@ library ieee;
 entity uart is
     port (
         reset       :in  std_logic;
-        txclk       :in  std_logic;-- ps2_clk
+        txclk       :in  std_logic;--baud rate clk
         ld_tx_data  :in  std_logic;--KB pulse 
         tx_data     :in  std_logic_vector (7 downto 0);--ps2 data 
         tx_enable   :in  std_logic;-- always keep enabled 
         
         tx_out      :out std_logic;-- serial o/p
-        tx_empty    :out std_logic;
+        tx_empty    :out std_logic;-- N/A
         
-        rxclk       :in  std_logic;--ps2_clk
-        uld_rx_data :in  std_logic;--pulse
-        rx_enable   :in  std_logic;
-        rx_in       :in  std_logic;
+        rxclk       :in  std_logic;-- N/A
+        uld_rx_data :in  std_logic;-- N/A
+        rx_enable   :in  std_logic;-- N/A
+        rx_in       :in  std_logic;-- N/A
         
-        rx_empty    :out std_logic;
-        rx_data     :out std_logic_vector (7 downto 0)--ps2 data 
+        rx_empty    :out std_logic;-- N/A
+        rx_data     :out std_logic_vector (7 downto 0)--ps2 data (might send to trent?)
 
     );
 end entity;

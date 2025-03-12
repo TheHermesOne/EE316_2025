@@ -59,7 +59,6 @@ ENTITY design_1_user_logic_uart_0_1 IS
     utx_data : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     ureset : IN STD_LOGIC;
     utxclk : IN STD_LOGIC;
-    urx_in : IN STD_LOGIC;
     utx_en : IN STD_LOGIC;
     utx_out : OUT STD_LOGIC
   );
@@ -74,7 +73,6 @@ ARCHITECTURE design_1_user_logic_uart_0_1_arch OF design_1_user_logic_uart_0_1 I
       utx_data : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
       ureset : IN STD_LOGIC;
       utxclk : IN STD_LOGIC;
-      urx_in : IN STD_LOGIC;
       utx_en : IN STD_LOGIC;
       utx_out : OUT STD_LOGIC
     );
@@ -98,7 +96,6 @@ BEGIN
       utx_data => utx_data,
       ureset => ureset,
       utxclk => utxclk,
-      urx_in => urx_in,
       utx_en => utx_en,
       utx_out => utx_out
     );

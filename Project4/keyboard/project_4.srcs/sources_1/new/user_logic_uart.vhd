@@ -37,7 +37,6 @@ Port (
         utx_data     :in  std_logic_vector (7 downto 0);--ps2 data 
         ureset       :in  std_logic;
         utxclk       :in  std_logic;-- baud rate 
-        urx_in       :in  std_logic;-- serial data sent from isaak's tx 
         utx_en       :in  std_logic;
         utx_out      :out std_logic-- serial data sent to isaak's rx
         
@@ -104,33 +103,35 @@ uut: uart
 tx_data<=utx_data;
 reset<=ureset;
 txclk<= utxclk;
-rx_in<=urx_in;
 utx_out<=tx_out;
-tx_enable<=utx_en;
+ld_tx_data<=utx_en;
 
 
 process(clk)
 begin
+
 if rising_edge(clk) then 
-ld_tx_data<='1';
-uld_rx_data<='1';
+
+uld_rx_data<='0';
+rx_enable<='1';
+rx_data<="00000000";
+
 end if; 
+end process;
 
-
-
-prev<=rx_in;
-
-if prev /= rx_in then
-    rx_enable<='1';
-else 
-    rx_enable<='0';
+process(clk)
+begin 
+if rising_edge(clk) then 
+if 
+ld_tx_data= '1' and tx_empty ='0' then 
+tx_enable<='1';
+elsif ld_tx_data= '0' and tx_empty ='1' then 
+tx_enable<='0';
 end if; 
-
-
+end if;
 
 
 end process;
-
 
 
 

@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity baud_rate is
 GENERIC (
-		CONSTANT cnt_max : integer := 5027);-- 9600 baudrate 
+		CONSTANT cnt_max : integer := 13019);-- 125Mhz/9600
     Port ( clk : in STD_LOGIC;
            baud : out STD_LOGIC);
 end baud_rate;

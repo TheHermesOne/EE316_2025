@@ -169,7 +169,6 @@ proc create_root_design { parentCell } {
   set kb_clk [ create_bd_port -dir I kb_clk ]
   set kb_data [ create_bd_port -dir I kb_data ]
   set reset [ create_bd_port -dir I reset ]
-  set rx_in [ create_bd_port -dir I rx_in ]
   set tx_out [ create_bd_port -dir O tx_out ]
 
   # Create instance: Reset_Delay_0, and set properties
@@ -243,7 +242,6 @@ proc create_root_design { parentCell } {
   connect_bd_net -net ps2_keyboard_to_ascii_0_ascii_code [get_bd_pins ps2_keyboard_to_ascii_0/ascii_code] [get_bd_pins user_logic_uart_0/utx_data]
   connect_bd_net -net ps2_keyboard_to_ascii_0_ascii_new [get_bd_pins ps2_keyboard_to_ascii_0/ascii_new] [get_bd_pins user_logic_uart_0/utx_en]
   connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins btn_debounce_toggle_0/BTN_I]
-  connect_bd_net -net rx_in_1 [get_bd_ports rx_in] [get_bd_pins user_logic_uart_0/urx_in]
   connect_bd_net -net user_logic_uart_0_utx_out [get_bd_ports tx_out] [get_bd_pins user_logic_uart_0/utx_out]
   connect_bd_net -net util_vector_logic_0_Res [get_bd_pins user_logic_uart_0/ureset] [get_bd_pins util_vector_logic_0/Res]
 

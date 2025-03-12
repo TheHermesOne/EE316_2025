@@ -1,8 +1,8 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Tue Mar 11 00:14:08 2025
---Host        : UL-41 running 64-bit major release  (build 9200)
+--Date        : Wed Mar 12 03:30:43 2025
+--Host        : UL-31 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
 --Purpose     : IP block netlist
@@ -17,7 +17,6 @@ entity design_1 is
     kb_clk : in STD_LOGIC;
     kb_data : in STD_LOGIC;
     reset : in STD_LOGIC;
-    rx_in : in STD_LOGIC;
     tx_out : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
@@ -27,12 +26,6 @@ entity design_1 is
 end design_1;
 
 architecture STRUCTURE of design_1 is
-  component design_1_Reset_Delay_0_0 is
-  port (
-    iCLK : in STD_LOGIC;
-    oRESET : out STD_LOGIC
-  );
-  end component design_1_Reset_Delay_0_0;
   component design_1_util_vector_logic_0_0 is
   port (
     Op1 : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -49,23 +42,12 @@ architecture STRUCTURE of design_1 is
     ascii_code : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component design_1_ps2_keyboard_to_ascii_0_1;
-  component design_1_user_logic_uart_0_1 is
+  component design_1_Reset_Delay_0_0 is
   port (
-    clk : in STD_LOGIC;
-    utx_data : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    ureset : in STD_LOGIC;
-    utxclk : in STD_LOGIC;
-    urx_in : in STD_LOGIC;
-    utx_en : in STD_LOGIC;
-    utx_out : out STD_LOGIC
+    iCLK : in STD_LOGIC;
+    oRESET : out STD_LOGIC
   );
-  end component design_1_user_logic_uart_0_1;
-  component design_1_baud_rate_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    baud : out STD_LOGIC
-  );
-  end component design_1_baud_rate_0_0;
+  end component design_1_Reset_Delay_0_0;
   component design_1_btn_debounce_toggle_0_0 is
   port (
     BTN_I : in STD_LOGIC;
@@ -75,6 +57,22 @@ architecture STRUCTURE of design_1 is
     PULSE_O : out STD_LOGIC
   );
   end component design_1_btn_debounce_toggle_0_0;
+  component design_1_baud_rate_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    baud : out STD_LOGIC
+  );
+  end component design_1_baud_rate_0_0;
+  component design_1_user_logic_uart_0_1 is
+  port (
+    clk : in STD_LOGIC;
+    utx_data : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    ureset : in STD_LOGIC;
+    utxclk : in STD_LOGIC;
+    utx_en : in STD_LOGIC;
+    utx_out : out STD_LOGIC
+  );
+  end component design_1_user_logic_uart_0_1;
   signal Reset_Delay_0_oRESET : STD_LOGIC;
   signal baud_rate_0_baud : STD_LOGIC;
   signal btn_debounce_toggle_0_BTN_O : STD_LOGIC;
@@ -84,7 +82,6 @@ architecture STRUCTURE of design_1 is
   signal ps2_keyboard_to_ascii_0_ascii_code : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal ps2_keyboard_to_ascii_0_ascii_new : STD_LOGIC;
   signal reset_1 : STD_LOGIC;
-  signal rx_in_1 : STD_LOGIC;
   signal user_logic_uart_0_utx_out : STD_LOGIC;
   signal util_vector_logic_0_Res : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_btn_debounce_toggle_0_PULSE_O_UNCONNECTED : STD_LOGIC;
@@ -94,7 +91,6 @@ begin
   kb_clk_1 <= kb_clk;
   kb_data_1 <= kb_data;
   reset_1 <= reset;
-  rx_in_1 <= rx_in;
   tx_out <= user_logic_uart_0_utx_out;
 Reset_Delay_0: component design_1_Reset_Delay_0_0
      port map (
@@ -126,7 +122,6 @@ user_logic_uart_0: component design_1_user_logic_uart_0_1
      port map (
       clk => clk_1,
       ureset => util_vector_logic_0_Res(0),
-      urx_in => rx_in_1,
       utx_data(7 downto 0) => ps2_keyboard_to_ascii_0_ascii_code(7 downto 0),
       utx_en => ps2_keyboard_to_ascii_0_ascii_new,
       utx_out => user_logic_uart_0_utx_out,

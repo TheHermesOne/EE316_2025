@@ -1,0 +1,20 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port clk -pg 1 -lvl 0 -x -10 -y 60 -defaultsOSRD
+preplace port ascii_pulse -pg 1 -lvl 2 -x 310 -y 70 -defaultsOSRD
+preplace port kb_data -pg 1 -lvl 0 -x -10 -y 100 -defaultsOSRD
+preplace port kb_clk -pg 1 -lvl 0 -x -10 -y 80 -defaultsOSRD
+preplace portBus ascii_out -pg 1 -lvl 2 -x 310 -y 90 -defaultsOSRD
+preplace inst ps2_keyboard_to_ascii_0 -pg 1 -lvl 1 -x 150 -y 80 -defaultsOSRD
+preplace netloc clk_1 1 0 1 NJ 60
+preplace netloc ps2_keyboard_to_ascii_0_ascii_code 1 1 1 NJ 90
+preplace netloc ps2_keyboard_to_ascii_0_ascii_new 1 1 1 NJ 70
+preplace netloc kb_data_1 1 0 1 NJ 100
+preplace netloc kb_clk_1 1 0 1 NJ 80
+levelinfo -pg 1 -10 150 310
+pagesize -pg 1 -db -bbox -sgen -110 0 450 160
+"
+}
+0

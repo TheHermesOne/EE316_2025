@@ -1,8 +1,8 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Mon Mar 10 23:53:22 2025
-// Host        : UL-41 running 64-bit major release  (build 9200)
+// Date        : Wed Mar 12 03:31:21 2025
+// Host        : UL-31 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_user_logic_uart_0_1_sim_netlist.v
 // Design      : design_1_user_logic_uart_0_1
@@ -20,14 +20,12 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix
     utx_data,
     ureset,
     utxclk,
-    urx_in,
     utx_en,
     utx_out);
   (* x_interface_info = "xilinx.com:signal:clock:1.0 clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0" *) input clk;
   input [7:0]utx_data;
   input ureset;
   input utxclk;
-  input urx_in;
   input utx_en;
   output utx_out;
 
@@ -49,19 +47,20 @@ endmodule
 
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_uart
    (utx_out,
+    tx_enable_reg,
     utxclk,
     ureset,
+    tx_enable,
     utx_en,
-    ld_tx_data,
     utx_data);
   output utx_out;
+  output tx_enable_reg;
   input utxclk;
   input ureset;
+  input tx_enable;
   input utx_en;
-  input ld_tx_data;
   input [7:0]utx_data;
 
-  wire ld_tx_data;
   wire \tx_cnt[0]_i_1_n_0 ;
   wire \tx_cnt[1]_i_1_n_0 ;
   wire \tx_cnt[2]_i_1_n_0 ;
@@ -71,9 +70,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_uart
   wire \tx_cnt_reg_n_0_[1] ;
   wire \tx_cnt_reg_n_0_[2] ;
   wire \tx_cnt_reg_n_0_[3] ;
+  wire tx_empty;
+  wire tx_enable;
+  wire tx_enable_reg;
   wire tx_is_empty_i_1_n_0;
   wire tx_is_empty_i_2_n_0;
-  wire tx_is_empty_reg_n_0;
   wire tx_out9_out;
   wire tx_out_i_1_n_0;
   wire tx_out_i_2_n_0;
@@ -97,24 +98,24 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_uart
   LUT2 #(
     .INIT(4'h2)) 
     \tx_cnt[0]_i_1 
-       (.I0(utx_en),
+       (.I0(tx_enable),
         .I1(\tx_cnt_reg_n_0_[0] ),
         .O(\tx_cnt[0]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h080AA0A0)) 
     \tx_cnt[1]_i_1 
-       (.I0(utx_en),
+       (.I0(tx_enable),
         .I1(\tx_cnt_reg_n_0_[2] ),
         .I2(\tx_cnt_reg_n_0_[1] ),
         .I3(\tx_cnt_reg_n_0_[3] ),
         .I4(\tx_cnt_reg_n_0_[0] ),
         .O(\tx_cnt[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h2888)) 
     \tx_cnt[2]_i_1 
-       (.I0(utx_en),
+       (.I0(tx_enable),
         .I1(\tx_cnt_reg_n_0_[2] ),
         .I2(\tx_cnt_reg_n_0_[1] ),
         .I3(\tx_cnt_reg_n_0_[0] ),
@@ -122,14 +123,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_uart
   LUT2 #(
     .INIT(4'h7)) 
     \tx_cnt[3]_i_1 
-       (.I0(tx_is_empty_reg_n_0),
-        .I1(utx_en),
+       (.I0(tx_empty),
+        .I1(tx_enable),
         .O(\tx_cnt[3]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h2880AA00)) 
     \tx_cnt[3]_i_2 
-       (.I0(utx_en),
+       (.I0(tx_enable),
         .I1(\tx_cnt_reg_n_0_[2] ),
         .I2(\tx_cnt_reg_n_0_[1] ),
         .I3(\tx_cnt_reg_n_0_[3] ),
@@ -159,15 +160,24 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_uart
         .CLR(ureset),
         .D(\tx_cnt[3]_i_2_n_0 ),
         .Q(\tx_cnt_reg_n_0_[3] ));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT3 #(
+    .INIT(8'hB2)) 
+    tx_enable_i_1
+       (.I0(tx_enable),
+        .I1(tx_empty),
+        .I2(utx_en),
+        .O(tx_enable_reg));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h08F8)) 
     tx_is_empty_i_1
        (.I0(tx_is_empty_i_2_n_0),
-        .I1(utx_en),
-        .I2(tx_is_empty_reg_n_0),
-        .I3(ld_tx_data),
+        .I1(tx_enable),
+        .I2(tx_empty),
+        .I3(utx_en),
         .O(tx_is_empty_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h1000)) 
     tx_is_empty_i_2
@@ -181,7 +191,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_uart
         .CE(1'b1),
         .D(tx_is_empty_i_1_n_0),
         .PRE(ureset),
-        .Q(tx_is_empty_reg_n_0));
+        .Q(tx_empty));
   LUT3 #(
     .INIT(8'hB8)) 
     tx_out_i_1
@@ -202,8 +212,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_uart
   LUT5 #(
     .INIT(32'h00440444)) 
     tx_out_i_3
-       (.I0(tx_is_empty_reg_n_0),
-        .I1(utx_en),
+       (.I0(tx_empty),
+        .I1(tx_enable),
         .I2(\tx_cnt_reg_n_0_[1] ),
         .I3(\tx_cnt_reg_n_0_[3] ),
         .I4(\tx_cnt_reg_n_0_[2] ),
@@ -237,8 +247,8 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_uart
   LUT2 #(
     .INIT(4'h8)) 
     \tx_reg[7]_i_1 
-       (.I0(ld_tx_data),
-        .I1(tx_is_empty_reg_n_0),
+       (.I0(utx_en),
+        .I1(tx_empty),
         .O(tx_reg));
   FDCE \tx_reg_reg[0] 
        (.C(utxclk),
@@ -292,36 +302,38 @@ endmodule
 
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_user_logic_uart
    (utx_out,
-    utx_en,
     utxclk,
     ureset,
     utx_data,
+    utx_en,
     clk);
   output utx_out;
-  input utx_en;
   input utxclk;
   input ureset;
   input [7:0]utx_data;
+  input utx_en;
   input clk;
 
   wire clk;
-  wire ld_tx_data;
+  wire tx_enable;
   wire ureset;
   wire [7:0]utx_data;
   wire utx_en;
   wire utx_out;
   wire utxclk;
+  wire uut_n_1;
 
   FDRE #(
     .INIT(1'b0)) 
-    ld_tx_data_reg
+    tx_enable_reg
        (.C(clk),
         .CE(1'b1),
-        .D(1'b1),
-        .Q(ld_tx_data),
+        .D(uut_n_1),
+        .Q(tx_enable),
         .R(1'b0));
   decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_uart uut
-       (.ld_tx_data(ld_tx_data),
+       (.tx_enable(tx_enable),
+        .tx_enable_reg(uut_n_1),
         .ureset(ureset),
         .utx_data(utx_data),
         .utx_en(utx_en),
