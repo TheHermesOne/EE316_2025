@@ -1,0 +1,522 @@
+
+*** Running vivado
+    with args -log design_1_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source design_1_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-5107] Inferred bus interface 'CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3153] Bus Interface 'CLK': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'ps2_clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
+WARNING: [IP_Flow 19-3153] Bus Interface 'ps2_clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+add_files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 306.398 ; gain = 13.680
+Command: synth_design -top design_1_wrapper -part xc7z007sclg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Device 21-403] Loading part xc7z007sclg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 14284 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 734.875 ; gain = 178.086
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:24]
+INFO: [Synth 8-3491] module 'design_1' declared at 'C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/synth/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:35]
+INFO: [Synth 8-638] synthesizing module 'design_1' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/synth/design_1.vhd:28]
+INFO: [Synth 8-3491] module 'design_1_Reset_Delay_0_0' declared at 'c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_Reset_Delay_0_0/synth/design_1_Reset_Delay_0_0.vhd:56' bound to instance 'Reset_Delay_0' of component 'design_1_Reset_Delay_0_0' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/synth/design_1.vhd:95]
+INFO: [Synth 8-638] synthesizing module 'design_1_Reset_Delay_0_0' [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_Reset_Delay_0_0/synth/design_1_Reset_Delay_0_0.vhd:63]
+INFO: [Synth 8-3491] module 'Reset_Delay' declared at 'C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/reset_delay.vhd:8' bound to instance 'U0' of component 'Reset_Delay' [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_Reset_Delay_0_0/synth/design_1_Reset_Delay_0_0.vhd:81]
+INFO: [Synth 8-638] synthesizing module 'Reset_Delay' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/reset_delay.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'Reset_Delay' (1#1) [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/reset_delay.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'design_1_Reset_Delay_0_0' (2#1) [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_Reset_Delay_0_0/synth/design_1_Reset_Delay_0_0.vhd:63]
+INFO: [Synth 8-3491] module 'design_1_baud_rate_0_0' declared at 'c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_baud_rate_0_0/synth/design_1_baud_rate_0_0.vhd:56' bound to instance 'baud_rate_0' of component 'design_1_baud_rate_0_0' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/synth/design_1.vhd:100]
+INFO: [Synth 8-638] synthesizing module 'design_1_baud_rate_0_0' [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_baud_rate_0_0/synth/design_1_baud_rate_0_0.vhd:63]
+	Parameter cnt_max bound to: 13019 - type: integer 
+INFO: [Synth 8-3491] module 'baud_rate' declared at 'C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/new/baud_rate.vhd:25' bound to instance 'U0' of component 'baud_rate' [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_baud_rate_0_0/synth/design_1_baud_rate_0_0.vhd:88]
+INFO: [Synth 8-638] synthesizing module 'baud_rate' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/new/baud_rate.vhd:32]
+	Parameter cnt_max bound to: 13019 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'baud_rate' (3#1) [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/new/baud_rate.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'design_1_baud_rate_0_0' (4#1) [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_baud_rate_0_0/synth/design_1_baud_rate_0_0.vhd:63]
+INFO: [Synth 8-3491] module 'design_1_btn_debounce_toggle_0_0' declared at 'c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_btn_debounce_toggle_0_0/synth/design_1_btn_debounce_toggle_0_0.vhd:56' bound to instance 'btn_debounce_toggle_0' of component 'design_1_btn_debounce_toggle_0_0' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/synth/design_1.vhd:105]
+INFO: [Synth 8-638] synthesizing module 'design_1_btn_debounce_toggle_0_0' [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_btn_debounce_toggle_0_0/synth/design_1_btn_debounce_toggle_0_0.vhd:66]
+	Parameter CNTR_MAX bound to: 16'b1111111111111111 
+INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at 'C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/btn_debounce_toggle.vhd:32' bound to instance 'U0' of component 'btn_debounce_toggle' [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_btn_debounce_toggle_0_0/synth/design_1_btn_debounce_toggle_0_0.vhd:94]
+INFO: [Synth 8-638] synthesizing module 'btn_debounce_toggle' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/btn_debounce_toggle.vhd:42]
+	Parameter CNTR_MAX bound to: 16'b1111111111111111 
+INFO: [Synth 8-256] done synthesizing module 'btn_debounce_toggle' (5#1) [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/btn_debounce_toggle.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'design_1_btn_debounce_toggle_0_0' (6#1) [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_btn_debounce_toggle_0_0/synth/design_1_btn_debounce_toggle_0_0.vhd:66]
+INFO: [Synth 8-3491] module 'design_1_ps2_keyboard_to_ascii_0_1' declared at 'c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_ps2_keyboard_to_ascii_0_1/synth/design_1_ps2_keyboard_to_ascii_0_1.vhd:56' bound to instance 'ps2_keyboard_to_ascii_0' of component 'design_1_ps2_keyboard_to_ascii_0_1' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/synth/design_1.vhd:113]
+INFO: [Synth 8-638] synthesizing module 'design_1_ps2_keyboard_to_ascii_0_1' [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_ps2_keyboard_to_ascii_0_1/synth/design_1_ps2_keyboard_to_ascii_0_1.vhd:66]
+	Parameter clk_freq bound to: 50000000 - type: integer 
+	Parameter ps2_debounce_counter_size bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'ps2_keyboard_to_ascii' declared at 'C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/ps2_keyboard_to_ascii.vhd:26' bound to instance 'U0' of component 'ps2_keyboard_to_ascii' [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_ps2_keyboard_to_ascii_0_1/synth/design_1_ps2_keyboard_to_ascii_0_1.vhd:97]
+INFO: [Synth 8-638] synthesizing module 'ps2_keyboard_to_ascii' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/ps2_keyboard_to_ascii.vhd:38]
+	Parameter clk_freq bound to: 50000000 - type: integer 
+	Parameter ps2_debounce_counter_size bound to: 8 - type: integer 
+	Parameter clk_freq bound to: 50000000 - type: integer 
+	Parameter debounce_counter_size bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'ps2_keyboard' declared at 'C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/ps2_keyboard.vhd:26' bound to instance 'ps2_keyboard_0' of component 'ps2_keyboard' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/ps2_keyboard_to_ascii.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'ps2_keyboard' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/ps2_keyboard.vhd:38]
+	Parameter clk_freq bound to: 50000000 - type: integer 
+	Parameter debounce_counter_size bound to: 8 - type: integer 
+	Parameter counter_size bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/debounce.vhd:27' bound to instance 'debounce_ps2_clk' of component 'debounce' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/ps2_keyboard.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'debounce' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/debounce.vhd:36]
+	Parameter counter_size bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'debounce' (7#1) [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/debounce.vhd:36]
+	Parameter counter_size bound to: 8 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/debounce.vhd:27' bound to instance 'debounce_ps2_data' of component 'debounce' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/ps2_keyboard.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'ps2_keyboard' (8#1) [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/ps2_keyboard.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'ps2_keyboard_to_ascii' (9#1) [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/ps2_keyboard_to_ascii.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'design_1_ps2_keyboard_to_ascii_0_1' (10#1) [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_ps2_keyboard_to_ascii_0_1/synth/design_1_ps2_keyboard_to_ascii_0_1.vhd:66]
+INFO: [Synth 8-3491] module 'design_1_user_logic_uart2_0_0' declared at 'c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_user_logic_uart2_0_0/synth/design_1_user_logic_uart2_0_0.vhd:56' bound to instance 'user_logic_uart2_0' of component 'design_1_user_logic_uart2_0_0' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/synth/design_1.vhd:121]
+INFO: [Synth 8-638] synthesizing module 'design_1_user_logic_uart2_0_0' [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_user_logic_uart2_0_0/synth/design_1_user_logic_uart2_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'user_logic_uart2' declared at 'C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/new/user_logic_uart2.vhd:34' bound to instance 'U0' of component 'user_logic_uart2' [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_user_logic_uart2_0_0/synth/design_1_user_logic_uart2_0_0.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'user_logic_uart2' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/new/user_logic_uart2.vhd:46]
+INFO: [Synth 8-3491] module 'uart' declared at 'C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/uart.vhd:12' bound to instance 'uut' of component 'uart' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/new/user_logic_uart2.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'uart' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/uart.vhd:33]
+WARNING: [Synth 8-6014] Unused sequential element rx_frame_err_reg was removed.  [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/uart.vhd:58]
+WARNING: [Synth 8-6014] Unused sequential element rx_over_run_reg was removed.  [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/uart.vhd:59]
+WARNING: [Synth 8-6014] Unused sequential element tx_over_run_reg was removed.  [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/uart.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'uart' (11#1) [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/imports/Downloads/uart.vhd:33]
+INFO: [Synth 8-4471] merging register 'tx_enable_reg' into 'rx_enable_reg' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/new/user_logic_uart2.vhd:95]
+WARNING: [Synth 8-6014] Unused sequential element tx_enable_reg was removed.  [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/new/user_logic_uart2.vhd:95]
+INFO: [Synth 8-256] done synthesizing module 'user_logic_uart2' (12#1) [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/imports/project_4.srcs/sources_1/new/user_logic_uart2.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'design_1_user_logic_uart2_0_0' (13#1) [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_user_logic_uart2_0_0/synth/design_1_user_logic_uart2_0_0.vhd:67]
+INFO: [Synth 8-3491] module 'design_1_util_vector_logic_0_0' declared at 'c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_util_vector_logic_0_0/synth/design_1_util_vector_logic_0_0.v:57' bound to instance 'util_vector_logic_0' of component 'design_1_util_vector_logic_0_0' [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/synth/design_1.vhd:130]
+INFO: [Synth 8-6157] synthesizing module 'design_1_util_vector_logic_0_0' [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_util_vector_logic_0_0/synth/design_1_util_vector_logic_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+	Parameter C_OPERATION bound to: and - type: string 
+	Parameter C_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'util_vector_logic_v2_0_1_util_vector_logic' (14#1) [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_util_vector_logic_0_0' (15#1) [c:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/ip/design_1_util_vector_logic_0_0/synth/design_1_util_vector_logic_0_0.v:57]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (16#1) [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/synth/design_1.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (17#1) [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:24]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 799.117 ; gain = 242.328
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 799.117 ; gain = 242.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 799.117 ; gain = 242.328
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/constrs_1/imports/Downloads/Cora-Z7-07S-Master.xdc]
+Finished Parsing XDC File [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/constrs_1/imports/Downloads/Cora-Z7-07S-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.srcs/constrs_1/imports/Downloads/Cora-Z7-07S-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 918.941 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 918.941 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 918.941 ; gain = 362.152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z007sclg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 918.941 ; gain = 362.152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for design_1_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/ps2_keyboard_to_ascii_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/Reset_Delay_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/util_vector_logic_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/baud_rate_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/btn_debounce_toggle_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/user_logic_uart2_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 918.941 ; gain = 362.152
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ps2_keyboard_to_ascii'
+INFO: [Synth 8-5546] ROM "ascii" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   ready |                               00 |                               00
+                new_code |                               01 |                               01
+               translate |                               10 |                               10
+                  output |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ps2_keyboard_to_ascii'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 918.941 ; gain = 362.152
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     14 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 3     
++---XORs : 
+	   2 Input      1 Bit         XORs := 3     
+	   9 Input      1 Bit         XORs := 1     
++---Registers : 
+	               14 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 6     
+	                4 Bit    Registers := 3     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 25    
++---Muxes : 
+	   2 Input     14 Bit        Muxes := 1     
+	   3 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 16    
+	  22 Input      8 Bit        Muxes := 4     
+	  35 Input      8 Bit        Muxes := 1     
+	   7 Input      8 Bit        Muxes := 1     
+	  27 Input      8 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 2     
+	  34 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 6     
+	   7 Input      3 Bit        Muxes := 1     
+	  33 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 38    
+	   5 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 5     
+	   4 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Reset_Delay 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module baud_rate 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     14 Bit       Adders := 1     
++---Registers : 
+	               14 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module btn_debounce_toggle 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module debounce 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module ps2_keyboard 
+Detailed RTL Component Info : 
++---XORs : 
+	   9 Input      1 Bit         XORs := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module ps2_keyboard_to_ascii 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   3 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 11    
+	  22 Input      8 Bit        Muxes := 4     
+	  35 Input      8 Bit        Muxes := 1     
+	   7 Input      8 Bit        Muxes := 1     
+	  27 Input      8 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 2     
+	  34 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	  33 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 9     
+	   3 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 7     
+Module uart 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 3     
++---Registers : 
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 5     
+	   2 Input      4 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 27    
+	   3 Input      1 Bit        Muxes := 1     
+Module user_logic_uart2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 66 (col length:40)
+BRAMs: 100 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 918.941 ; gain = 362.152
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 918.941 ; gain = 362.152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 930.066 ; gain = 373.277
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 939.156 ; gain = 382.367
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 941.945 ; gain = 385.156
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 941.945 ; gain = 385.156
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 941.945 ; gain = 385.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 941.945 ; gain = 385.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 941.945 ; gain = 385.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 941.945 ; gain = 385.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    16|
+|3     |LUT1   |     9|
+|4     |LUT2   |    15|
+|5     |LUT3   |     5|
+|6     |LUT4   |    35|
+|7     |LUT5   |    14|
+|8     |LUT6   |    85|
+|9     |MUXF7  |    15|
+|10    |MUXF8  |     2|
+|11    |FDCE   |    12|
+|12    |FDPE   |     2|
+|13    |FDRE   |   143|
+|14    |IBUF   |     4|
+|15    |OBUF   |     1|
++------+-------+------+
+
+Report Instance Areas: 
++------+----------------------------+-----------------------------------+------+
+|      |Instance                    |Module                             |Cells |
++------+----------------------------+-----------------------------------+------+
+|1     |top                         |                                   |   359|
+|2     |  design_1_i                |design_1                           |   353|
+|3     |    Reset_Delay_0           |design_1_Reset_Delay_0_0           |    31|
+|4     |      U0                    |Reset_Delay                        |    31|
+|5     |    baud_rate_0             |design_1_baud_rate_0_0             |    23|
+|6     |      U0                    |baud_rate                          |    23|
+|7     |    btn_debounce_toggle_0   |design_1_btn_debounce_toggle_0_0   |    34|
+|8     |      U0                    |btn_debounce_toggle                |    34|
+|9     |    ps2_keyboard_to_ascii_0 |design_1_ps2_keyboard_to_ascii_0_1 |   237|
+|10    |      U0                    |ps2_keyboard_to_ascii              |   237|
+|11    |        ps2_keyboard_0      |ps2_keyboard                       |   208|
+|12    |          debounce_ps2_clk  |debounce                           |    26|
+|13    |          debounce_ps2_data |debounce_0                         |    25|
+|14    |    user_logic_uart2_0      |design_1_user_logic_uart2_0_0      |    27|
+|15    |      U0                    |user_logic_uart2                   |    27|
+|16    |        uut                 |uart                               |    26|
+|17    |    util_vector_logic_0     |design_1_util_vector_logic_0_0     |     1|
++------+----------------------------+-----------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 941.945 ; gain = 385.156
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 941.945 ; gain = 265.332
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 941.945 ; gain = 385.156
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 33 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 943.777 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+84 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 943.777 ; gain = 637.379
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 943.777 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.runs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 12 21:39:33 2025...

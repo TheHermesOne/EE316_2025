@@ -1,0 +1,244 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x4F889F3CD2C5C813",
+      "device": "xc7z007sclg400-1",
+      "name": "design_1",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "util_vector_logic_0": "",
+      "btn_debounce_toggle_0": "",
+      "baud_rate_0": "",
+      "ps2_keyboard_to_ascii_0": "",
+      "Reset_Delay_0": "",
+      "user_logic_uart2_0": ""
+    },
+    "ports": {
+      "clk": {
+        "direction": "I"
+      },
+      "reset": {
+        "direction": "I"
+      },
+      "tx_out": {
+        "direction": "O"
+      },
+      "kb_clk": {
+        "direction": "I"
+      },
+      "kb_data": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "design_1_util_vector_logic_0_0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "btn_debounce_toggle_0": {
+        "vlnv": "xilinx.com:module_ref:btn_debounce_toggle:1.0",
+        "xci_name": "design_1_btn_debounce_toggle_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "btn_debounce_toggle",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "BTN_I": {
+            "direction": "I"
+          },
+          "BTN_O": {
+            "direction": "O"
+          },
+          "TOGGLE_O": {
+            "direction": "O"
+          },
+          "PULSE_O": {
+            "direction": "O"
+          }
+        }
+      },
+      "baud_rate_0": {
+        "vlnv": "xilinx.com:module_ref:baud_rate:1.0",
+        "xci_name": "design_1_baud_rate_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "baud_rate",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "baud": {
+            "direction": "O"
+          }
+        }
+      },
+      "ps2_keyboard_to_ascii_0": {
+        "vlnv": "xilinx.com:module_ref:ps2_keyboard_to_ascii:1.0",
+        "xci_name": "design_1_ps2_keyboard_to_ascii_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ps2_keyboard_to_ascii",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "ps2_clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "ps2_data": {
+            "direction": "I"
+          },
+          "ascii_new": {
+            "direction": "O"
+          },
+          "ascii_code": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "Reset_Delay_0": {
+        "vlnv": "xilinx.com:module_ref:Reset_Delay:1.0",
+        "xci_name": "design_1_Reset_Delay_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Reset_Delay",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "iCLK": {
+            "direction": "I"
+          },
+          "oRESET": {
+            "direction": "O"
+          }
+        }
+      },
+      "user_logic_uart2_0": {
+        "vlnv": "xilinx.com:module_ref:user_logic_uart2:1.0",
+        "xci_name": "design_1_user_logic_uart2_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "user_logic_uart2",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "utx_data": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "ureset": {
+            "direction": "I"
+          },
+          "utxclk": {
+            "direction": "I"
+          },
+          "utx_pulse": {
+            "direction": "I"
+          },
+          "utx_out": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_1": {
+        "ports": [
+          "clk",
+          "btn_debounce_toggle_0/CLK",
+          "baud_rate_0/clk",
+          "ps2_keyboard_to_ascii_0/clk",
+          "Reset_Delay_0/iCLK",
+          "user_logic_uart2_0/clk"
+        ]
+      },
+      "Reset_Delay_0_oRESET": {
+        "ports": [
+          "Reset_Delay_0/oRESET",
+          "util_vector_logic_0/Op2"
+        ]
+      },
+      "kb_clk_1": {
+        "ports": [
+          "kb_clk",
+          "ps2_keyboard_to_ascii_0/ps2_clk"
+        ]
+      },
+      "kb_data_1": {
+        "ports": [
+          "kb_data",
+          "ps2_keyboard_to_ascii_0/ps2_data"
+        ]
+      },
+      "reset_1": {
+        "ports": [
+          "reset",
+          "btn_debounce_toggle_0/BTN_I"
+        ]
+      },
+      "btn_debounce_toggle_0_BTN_O": {
+        "ports": [
+          "btn_debounce_toggle_0/BTN_O",
+          "util_vector_logic_0/Op1"
+        ]
+      },
+      "ps2_keyboard_to_ascii_0_ascii_code": {
+        "ports": [
+          "ps2_keyboard_to_ascii_0/ascii_code",
+          "user_logic_uart2_0/utx_data"
+        ]
+      },
+      "ps2_keyboard_to_ascii_0_ascii_new": {
+        "ports": [
+          "ps2_keyboard_to_ascii_0/ascii_new",
+          "user_logic_uart2_0/utx_pulse"
+        ]
+      },
+      "baud_rate_0_baud": {
+        "ports": [
+          "baud_rate_0/baud",
+          "user_logic_uart2_0/utxclk"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "user_logic_uart2_0/ureset"
+        ]
+      },
+      "user_logic_uart2_0_utx_out": {
+        "ports": [
+          "user_logic_uart2_0/utx_out",
+          "tx_out"
+        ]
+      }
+    }
+  }
+}

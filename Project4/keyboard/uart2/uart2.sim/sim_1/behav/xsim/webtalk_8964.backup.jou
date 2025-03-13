@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Mar 12 15:59:50 2025
+# Process ID: 8964
+# Current directory: C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.sim/sim_1/behav/xsim/xsim.dir/tb_user_uart_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/uonml/Documents/GitHub/EE316_2025/Project4/keyboard/uart2/uart2.sim/sim_1/behav/xsim/xsim.dir/tb_user_uart_behav/webtalk/xsim_webtalk.tcl -notrace

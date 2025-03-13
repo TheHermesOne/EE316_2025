@@ -1,0 +1,9 @@
+design_1_ps2_keyboard_to_ascii_0_1.vhd,vhdl,xil_defaultlib,../../../bd/design_1/ip/design_1_ps2_keyboard_to_ascii_0_1/sim/design_1_ps2_keyboard_to_ascii_0_1.vhd,
+design_1_Reset_Delay_0_0.vhd,vhdl,xil_defaultlib,../../../bd/design_1/ip/design_1_Reset_Delay_0_0/sim/design_1_Reset_Delay_0_0.vhd,
+util_vector_logic_v2_0_vl_rfs.v,verilog,util_vector_logic_v2_0_1,../../../../uart2.srcs/sources_1/bd/design_1/ipshared/2137/hdl/util_vector_logic_v2_0_vl_rfs.v,
+design_1_util_vector_logic_0_0.v,verilog,xil_defaultlib,../../../bd/design_1/ip/design_1_util_vector_logic_0_0/sim/design_1_util_vector_logic_0_0.v,
+design_1_baud_rate_0_0.vhd,vhdl,xil_defaultlib,../../../bd/design_1/ip/design_1_baud_rate_0_0/sim/design_1_baud_rate_0_0.vhd,
+design_1_btn_debounce_toggle_0_0.vhd,vhdl,xil_defaultlib,../../../bd/design_1/ip/design_1_btn_debounce_toggle_0_0/sim/design_1_btn_debounce_toggle_0_0.vhd,
+design_1_user_logic_uart2_0_0.vhd,vhdl,xil_defaultlib,../../../bd/design_1/ip/design_1_user_logic_uart2_0_0/sim/design_1_user_logic_uart2_0_0.vhd,
+design_1.vhd,vhdl,xil_defaultlib,../../../bd/design_1/sim/design_1.vhd,
+glbl.v,Verilog,xil_defaultlib,glbl.v
