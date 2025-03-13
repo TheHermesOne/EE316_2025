@@ -1,0 +1,111 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Thu Mar 13 08:48:14 2025
+| Host         : UL-31 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file CombineProgram_control_sets_placed.rpt
+| Design       : CombineProgram
+| Device       : xc7z007s
+-------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    33 |
+|    Minimum number of control sets                        |    33 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   113 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    33 |
+| >= 0 to < 4        |     6 |
+| >= 4 to < 6        |     9 |
+| >= 6 to < 8        |     7 |
+| >= 8 to < 10       |     3 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     6 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              40 |           16 |
+| No           | No                    | Yes                    |              39 |           18 |
+| No           | Yes                   | No                     |              16 |            4 |
+| Yes          | No                    | No                     |              72 |           25 |
+| Yes          | No                    | Yes                    |              90 |           33 |
+| Yes          | Yes                   | No                     |              30 |            7 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------------------------------------+------------------------------------------------------------------+----------------------------------------------------------------+------------------+----------------+
+|                        Clock Signal                       |                           Enable Signal                          |                        Set/Reset Signal                        | Slice Load Count | Bel Load Count |
++-----------------------------------------------------------+------------------------------------------------------------------+----------------------------------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG                                            |                                                                  | Inst_i2c_user_logic_LCD/inst_LCD_Data_Cutter/i2c_ena_i_2_n_0   |                1 |              1 |
+|  clk_IBUF_BUFG                                            | inst_Hangman/rebuildOut[2]                                       | inst_Hangman/guesscount[2]_i_3_n_0                             |                1 |              2 |
+|  clk_IBUF_BUFG                                            | Inst_i2c_user_logic_seg/FSM_sequential_statebuffer[2]_i_1_n_0    | Inst_i2c_user_logic_seg/FSM_sequential_statebuffer[2]_i_3_n_0  |                1 |              3 |
+|  clk_IBUF_BUFG                                            | inst_Hangman/guesscount                                          | inst_Hangman/guesscount[2]_i_3_n_0                             |                2 |              3 |
+|  clk_IBUF_BUFG                                            | inst_Hangman/rebuildOut[3]                                       | inst_Hangman/guesscount[2]_i_3_n_0                             |                2 |              3 |
+|  clk_IBUF_BUFG                                            | Inst_i2c_user_logic_LCD/i2c_cnt[2]_i_1_n_0                       | Inst_i2c_user_logic_LCD/FSM_onehot_state[3]_i_3_n_0            |                1 |              3 |
+|  clk_IBUF_BUFG                                            | Inst_i2c_user_logic_seg/byteSel                                  | Inst_i2c_user_logic_seg/FSM_sequential_statebuffer[2]_i_3_n_0  |                1 |              4 |
+|  clk_IBUF_BUFG                                            | inst_Hangman/rebuildOut[1]                                       | inst_Hangman/guesscount[2]_i_3_n_0                             |                2 |              4 |
+|  clk_IBUF_BUFG                                            | inst_Hangman/rebuildOut[5]                                       | inst_Hangman/guesscount[2]_i_3_n_0                             |                1 |              4 |
+|  clk_IBUF_BUFG                                            | inst_Hangman/rebuildOut[8]                                       | inst_Hangman/guesscount[2]_i_3_n_0                             |                2 |              4 |
+|  clk_IBUF_BUFG                                            | inst_Hangman/rebuildOut[7]                                       | inst_Hangman/guesscount[2]_i_3_n_0                             |                3 |              4 |
+|  clk_IBUF_BUFG                                            | inst_Hangman/rebuildOut[4]                                       | inst_Hangman/guesscount[2]_i_3_n_0                             |                1 |              4 |
+|  clk_IBUF_BUFG                                            | Inst_i2c_user_logic_LCD/FSM_onehot_state[3]_i_1_n_0              | Inst_i2c_user_logic_LCD/FSM_onehot_state[3]_i_3_n_0            |                2 |              4 |
+|  clk_IBUF_BUFG                                            | Inst_i2c_user_logic_LCD/inst_LCD_Data_Cutter/byte_cnt[4]_i_1_n_0 | Inst_i2c_user_logic_LCD/inst_LCD_Data_Cutter/i2c_ena_i_2_n_0   |                2 |              5 |
+|  clk_IBUF_BUFG                                            | inst_Hangman/rebuildOut[6]                                       | inst_Hangman/guesscount[2]_i_3_n_0                             |                1 |              5 |
+|  clk_IBUF_BUFG                                            | inst_btn_dbounce/BTN_O                                           |                                                                |                6 |              6 |
+|  clk_IBUF_BUFG                                            | Inst_i2c_user_logic_seg/inst_i2c_master/addr_rw0                 |                                                                |                2 |              6 |
+|  clk_IBUF_BUFG                                            | Inst_i2c_user_logic_LCD/inst_i2c_master/addr_rw0                 |                                                                |                2 |              6 |
+|  clk_IBUF_BUFG                                            | Inst_i2c_user_logic_seg/inst_i2c_master/busy1                    | Inst_i2c_user_logic_seg/inst_i2c_master/busy_i_2_n_0           |                3 |              7 |
+|  clk_IBUF_BUFG                                            | inst_ps2_keyboard/ascii[6]_i_1_n_0                               |                                                                |                3 |              7 |
+|  clk_IBUF_BUFG                                            | inst_ps2_keyboard/ascii_code[6]_i_1_n_0                          |                                                                |                2 |              7 |
+|  clk_IBUF_BUFG                                            | Inst_i2c_user_logic_LCD/inst_i2c_master/busy1                    | Inst_i2c_user_logic_LCD/inst_i2c_master/busy_i_2_n_0           |                2 |              7 |
+|  clk_IBUF_BUFG                                            | inst_ps2_keyboard/ps2_keyboard_0/ps2_code_new0                   |                                                                |                2 |              8 |
+|  clk_IBUF_BUFG                                            | inst_ps2_keyboard/ps2_keyboard_0/debounce_ps2_clk/sel            | inst_ps2_keyboard/ps2_keyboard_0/debounce_ps2_clk/counter_set  |                2 |              9 |
+|  clk_IBUF_BUFG                                            | inst_ps2_keyboard/ps2_keyboard_0/debounce_ps2_data/sel           | inst_ps2_keyboard/ps2_keyboard_0/debounce_ps2_data/counter_set |                2 |              9 |
+| ~inst_ps2_keyboard/ps2_keyboard_0/debounce_ps2_clk/result |                                                                  |                                                                |                2 |             11 |
+|  clk_IBUF_BUFG                                            | inst_ps2_keyboard/ps2_keyboard_0/sel                             | inst_ps2_keyboard/ps2_keyboard_0/clear                         |                3 |             12 |
+|  clk_IBUF_BUFG                                            |                                                                  | inst_btn_dbounce/btn_cntr[0]_i_1_n_0                           |                4 |             16 |
+|  clk_IBUF_BUFG                                            |                                                                  | Inst_i2c_user_logic_LCD/inst_i2c_master/busy_i_2_n_0           |               10 |             19 |
+|  clk_IBUF_BUFG                                            |                                                                  | Inst_i2c_user_logic_seg/inst_i2c_master/busy_i_2_n_0           |                7 |             19 |
+|  clk_IBUF_BUFG                                            | newLetterPulse                                                   | inst_Hangman/guesscount[2]_i_3_n_0                             |                6 |             24 |
+|  clk_IBUF_BUFG                                            |                                                                  |                                                                |               14 |             29 |
+|  clk_IBUF_BUFG                                            | Inst_i2c_user_logic_LCD/sel                                      |                                                                |                8 |             32 |
++-----------------------------------------------------------+------------------------------------------------------------------+----------------------------------------------------------------+------------------+----------------+
+
+
