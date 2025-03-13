@@ -10,21 +10,30 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="5654060000000fs"></ZoomStartTime>
-      <ZoomEndTime time="9344060000001fs"></ZoomEndTime>
-      <Cursor1Time time="7524060000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="23593932000001fs"></ZoomEndTime>
+      <Cursor1Time time="1250996000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="219"></NameColumnWidth>
-      <ValueColumnWidth column_width="74"></ValueColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="14" />
+   <WVObjectSize size="20" />
    <wave_markers>
+      <marker time="28623220000000" label="" />
+      <marker time="38646686000000" label="" />
+      <marker time="70627384000000" label="" />
+      <marker time="70729828000000" label="" />
+      <marker time="1147676000000" label="" />
+      <marker time="2293240000000" label="" />
+      <marker time="105524000000" label="" />
+      <marker time="1251088000000" label="" />
       <marker time="8044060621000" label="" />
    </wave_markers>
    <wvobject fp_name="/tb_user_uart/utx_data" type="array">
       <obj_property name="ElementShortName">utx_data[7:0]</obj_property>
       <obj_property name="ObjectShortName">utx_data[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_user_uart/ureset" type="logic">
       <obj_property name="ElementShortName">ureset</obj_property>
@@ -75,5 +84,29 @@
    <wvobject fp_name="/tb_user_uart/uut/tx_enable" type="logic">
       <obj_property name="ElementShortName">tx_enable</obj_property>
       <obj_property name="ObjectShortName">tx_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_user_uart/uut/dummy" type="logic">
+      <obj_property name="ElementShortName">dummy</obj_property>
+      <obj_property name="ObjectShortName">dummy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_user_uart/uut/tx_empty" type="logic">
+      <obj_property name="ElementShortName">tx_empty</obj_property>
+      <obj_property name="ObjectShortName">tx_empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_user_uart/uut/tx_out" type="logic">
+      <obj_property name="ElementShortName">tx_out</obj_property>
+      <obj_property name="ObjectShortName">tx_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_user_uart/uut/empty_prev" type="logic">
+      <obj_property name="ElementShortName">empty_prev</obj_property>
+      <obj_property name="ObjectShortName">empty_prev</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_user_uart/uut/clk_cnt" type="other">
+      <obj_property name="ElementShortName">clk_cnt</obj_property>
+      <obj_property name="ObjectShortName">clk_cnt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_user_uart/uut/clk_en" type="logic">
+      <obj_property name="ElementShortName">clk_en</obj_property>
+      <obj_property name="ObjectShortName">clk_en</obj_property>
    </wvobject>
 </wave_config>

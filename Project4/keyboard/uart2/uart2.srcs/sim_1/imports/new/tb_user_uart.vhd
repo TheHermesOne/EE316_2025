@@ -55,17 +55,17 @@ process
 begin 
 wait for 400 ns; 
 
-wait for 20 ns;
-ureset<='1';
-wait for 20 ns;
-ureset <='0';
-wait for 20 ns; 
-utx_pulse<='0';
-wait for 20 ns;
-utx_pulse<='1';
-wait for 20 ns;
-utx_pulse<='0';
-wait for 20 ns; 
+--wait for 20 ns;
+--ureset<='1';
+--wait for 20 ns;
+--ureset <='0';
+--wait for 20 ns; 
+--utx_pulse<='0';
+--wait for 20 ns;
+--utx_pulse<='1';
+--wait for 20 ns;
+--utx_pulse<='0';
+--wait for 20 ns; 
 utx_data<="10101010";
 
 --wait for 400 ns;

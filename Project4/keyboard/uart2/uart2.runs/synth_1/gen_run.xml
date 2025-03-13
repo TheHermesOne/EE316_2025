@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1741829931">
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1741860250">
   <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="design_1_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
@@ -113,6 +113,7 @@
       </FileInfo>
     </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/Downloads/Cora-Z7-07S-Master.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

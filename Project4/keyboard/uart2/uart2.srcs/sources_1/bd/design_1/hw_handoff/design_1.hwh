@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Mar 12 21:38:47 2025" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Mar 13 05:36:50 2025" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:cora-z7-07s:part0:1.1" DEVICE="7z007s" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -8,8 +8,8 @@
       <CONNECTIONS>
         <CONNECTION INSTANCE="btn_debounce_toggle_0" PORT="CLK"/>
         <CONNECTION INSTANCE="baud_rate_0" PORT="clk"/>
-        <CONNECTION INSTANCE="ps2_keyboard_to_ascii_0" PORT="clk"/>
         <CONNECTION INSTANCE="Reset_Delay_0" PORT="iCLK"/>
+        <CONNECTION INSTANCE="ps2_keyboard_to_ascii_0" PORT="clk"/>
         <CONNECTION INSTANCE="user_logic_uart2_0" PORT="clk"/>
       </CONNECTIONS>
     </PORT>
@@ -31,6 +31,11 @@
     <PORT DIR="I" NAME="kb_data" SIGIS="undef" SIGNAME="External_Ports_kb_data">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ps2_keyboard_to_ascii_0" PORT="ps2_data"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="ascii_new" SIGIS="undef" SIGNAME="ps2_keyboard_to_ascii_0_ascii_new">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ps2_keyboard_to_ascii_0" PORT="ascii_new"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -133,6 +138,7 @@
         </PORT>
         <PORT DIR="O" NAME="ascii_new" SIGIS="undef" SIGNAME="ps2_keyboard_to_ascii_0_ascii_new">
           <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="ascii_new"/>
             <CONNECTION INSTANCE="user_logic_uart2_0" PORT="utx_pulse"/>
           </CONNECTIONS>
         </PORT>

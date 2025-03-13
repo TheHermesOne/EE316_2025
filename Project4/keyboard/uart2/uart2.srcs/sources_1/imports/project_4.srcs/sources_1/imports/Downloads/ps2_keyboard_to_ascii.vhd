@@ -49,6 +49,8 @@ ARCHITECTURE behavior OF ps2_keyboard_to_ascii IS
   SIGNAL shift_r           : STD_LOGIC := '0';                      --'1' if right shift is held down, else '0'
   SIGNAL shift_l           : STD_LOGIC := '0';                      --'1' if left shift is held down, else '0'
   SIGNAL ascii             : STD_LOGIC_VECTOR(7 DOWNTO 0) := x"FF"; --internal value of ASCII translation
+  SIGNAL counter           : integer range 0 to 130208;
+  SIGNAL ascii_new_pulse    : std_logic;
 
   --declare PS2 keyboard interface component
   COMPONENT ps2_keyboard IS
@@ -66,6 +68,7 @@ ARCHITECTURE behavior OF ps2_keyboard_to_ascii IS
 
 BEGIN
 
+
   --instantiate PS2 keyboard interface logic
   ps2_keyboard_0:  ps2_keyboard
     GENERIC MAP(clk_freq => clk_freq, debounce_counter_size => ps2_debounce_counter_size)
@@ -73,6 +76,8 @@ BEGIN
 
   PROCESS(clk)
   BEGIN
+--  ascii_new <= ascii_new_pulse;
+
     IF(clk'EVENT AND clk = '1') THEN
       prev_ps2_code_new <= ps2_code_new; --keep track of previous ps2_code_new values to determine low-to-high transitions
       CASE state IS
@@ -307,8 +312,18 @@ BEGIN
           IF(ascii(7) = '0') THEN            --the PS2 code has an ASCII output
             ascii_new <= '1';                  --set flag indicating new ASCII output
             ascii_code <= ascii(7 DOWNTO 0);   --output the ASCII value
+            
+--                if counter < 130208 then 
+--                    ascii_new_pulse <= '1';
+--                    counter <= counter + 1;
+--                else 
+--                    counter <= 0;
+--                    ascii_new_pulse <= '0';
+--                    state <= ready;                    --return to ready state to await next PS2 code
+--                end if;      
           END IF;
-          state <= ready;                    --return to ready state to await next PS2 code
+           state <= ready;                    --return to ready state to await next PS2 code
+
 
       END CASE;
     END IF;
@@ -316,5 +331,5 @@ BEGIN
 
 END behavior;
 
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

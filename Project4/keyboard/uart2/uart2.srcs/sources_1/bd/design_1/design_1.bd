@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x4F889F3CD2C5C813",
+      "boundary_crc": "0xC9B7CE301C436D60",
       "device": "xc7z007sclg400-1",
       "name": "design_1",
       "synth_flow_mode": "None",
@@ -12,8 +12,8 @@
       "util_vector_logic_0": "",
       "btn_debounce_toggle_0": "",
       "baud_rate_0": "",
-      "ps2_keyboard_to_ascii_0": "",
       "Reset_Delay_0": "",
+      "ps2_keyboard_to_ascii_0": "",
       "user_logic_uart2_0": ""
     },
     "ports": {
@@ -31,6 +31,9 @@
       },
       "kb_data": {
         "direction": "I"
+      },
+      "ascii_new": {
+        "direction": "O"
       }
     },
     "components": {
@@ -88,6 +91,23 @@
           }
         }
       },
+      "Reset_Delay_0": {
+        "vlnv": "xilinx.com:module_ref:Reset_Delay:1.0",
+        "xci_name": "design_1_Reset_Delay_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Reset_Delay",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "iCLK": {
+            "direction": "I"
+          },
+          "oRESET": {
+            "direction": "O"
+          }
+        }
+      },
       "ps2_keyboard_to_ascii_0": {
         "vlnv": "xilinx.com:module_ref:ps2_keyboard_to_ascii:1.0",
         "xci_name": "design_1_ps2_keyboard_to_ascii_0_1",
@@ -115,23 +135,6 @@
             "direction": "O",
             "left": "7",
             "right": "0"
-          }
-        }
-      },
-      "Reset_Delay_0": {
-        "vlnv": "xilinx.com:module_ref:Reset_Delay:1.0",
-        "xci_name": "design_1_Reset_Delay_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Reset_Delay",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "iCLK": {
-            "direction": "I"
-          },
-          "oRESET": {
-            "direction": "O"
           }
         }
       },
@@ -174,8 +177,8 @@
           "clk",
           "btn_debounce_toggle_0/CLK",
           "baud_rate_0/clk",
-          "ps2_keyboard_to_ascii_0/clk",
           "Reset_Delay_0/iCLK",
+          "ps2_keyboard_to_ascii_0/clk",
           "user_logic_uart2_0/clk"
         ]
       },
@@ -218,6 +221,7 @@
       "ps2_keyboard_to_ascii_0_ascii_new": {
         "ports": [
           "ps2_keyboard_to_ascii_0/ascii_new",
+          "ascii_new",
           "user_logic_uart2_0/utx_pulse"
         ]
       },

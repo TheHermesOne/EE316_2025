@@ -33,20 +33,20 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="cora-z7-07s"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="48"/>
+    <Option Name="WTXSimLaunchSim" Val="104"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="2"/>
-    <Option Name="WTModelSimExportSim" Val="2"/>
-    <Option Name="WTQuestaExportSim" Val="2"/>
-    <Option Name="WTIesExportSim" Val="2"/>
-    <Option Name="WTVcsExportSim" Val="2"/>
-    <Option Name="WTRivieraExportSim" Val="2"/>
-    <Option Name="WTActivehdlExportSim" Val="2"/>
+    <Option Name="WTXSimExportSim" Val="15"/>
+    <Option Name="WTModelSimExportSim" Val="15"/>
+    <Option Name="WTQuestaExportSim" Val="15"/>
+    <Option Name="WTIesExportSim" Val="15"/>
+    <Option Name="WTVcsExportSim" Val="15"/>
+    <Option Name="WTRivieraExportSim" Val="15"/>
+    <Option Name="WTActivehdlExportSim" Val="15"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -163,6 +163,7 @@
         </FileInfo>
       </File>
       <Config>
+        <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/Downloads/Cora-Z7-07S-Master.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>

@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Wed Mar 12 21:38:46 2025
+--Date        : Thu Mar 13 05:36:50 2025
 --Host        : UL-41 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -13,6 +13,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity design_1 is
   port (
+    ascii_new : out STD_LOGIC;
     clk : in STD_LOGIC;
     kb_clk : in STD_LOGIC;
     kb_data : in STD_LOGIC;
@@ -48,6 +49,12 @@ architecture STRUCTURE of design_1 is
     baud : out STD_LOGIC
   );
   end component design_1_baud_rate_0_0;
+  component design_1_Reset_Delay_0_0 is
+  port (
+    iCLK : in STD_LOGIC;
+    oRESET : out STD_LOGIC
+  );
+  end component design_1_Reset_Delay_0_0;
   component design_1_ps2_keyboard_to_ascii_0_1 is
   port (
     clk : in STD_LOGIC;
@@ -57,12 +64,6 @@ architecture STRUCTURE of design_1 is
     ascii_code : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component design_1_ps2_keyboard_to_ascii_0_1;
-  component design_1_Reset_Delay_0_0 is
-  port (
-    iCLK : in STD_LOGIC;
-    oRESET : out STD_LOGIC
-  );
-  end component design_1_Reset_Delay_0_0;
   component design_1_user_logic_uart2_0_0 is
   port (
     clk : in STD_LOGIC;
@@ -87,6 +88,7 @@ architecture STRUCTURE of design_1 is
   signal NLW_btn_debounce_toggle_0_PULSE_O_UNCONNECTED : STD_LOGIC;
   signal NLW_btn_debounce_toggle_0_TOGGLE_O_UNCONNECTED : STD_LOGIC;
 begin
+  ascii_new <= ps2_keyboard_to_ascii_0_ascii_new;
   clk_1 <= clk;
   kb_clk_1 <= kb_clk;
   kb_data_1 <= kb_data;

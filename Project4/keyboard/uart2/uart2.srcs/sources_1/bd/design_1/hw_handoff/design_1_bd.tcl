@@ -165,6 +165,7 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
+  set ascii_new [ create_bd_port -dir O ascii_new ]
   set clk [ create_bd_port -dir I clk ]
   set kb_clk [ create_bd_port -dir I kb_clk ]
   set kb_data [ create_bd_port -dir I kb_data ]
@@ -240,7 +241,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net kb_clk_1 [get_bd_ports kb_clk] [get_bd_pins ps2_keyboard_to_ascii_0/ps2_clk]
   connect_bd_net -net kb_data_1 [get_bd_ports kb_data] [get_bd_pins ps2_keyboard_to_ascii_0/ps2_data]
   connect_bd_net -net ps2_keyboard_to_ascii_0_ascii_code [get_bd_pins ps2_keyboard_to_ascii_0/ascii_code] [get_bd_pins user_logic_uart2_0/utx_data]
-  connect_bd_net -net ps2_keyboard_to_ascii_0_ascii_new [get_bd_pins ps2_keyboard_to_ascii_0/ascii_new] [get_bd_pins user_logic_uart2_0/utx_pulse]
+  connect_bd_net -net ps2_keyboard_to_ascii_0_ascii_new [get_bd_ports ascii_new] [get_bd_pins ps2_keyboard_to_ascii_0/ascii_new] [get_bd_pins user_logic_uart2_0/utx_pulse]
   connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins btn_debounce_toggle_0/BTN_I]
   connect_bd_net -net user_logic_uart2_0_utx_out [get_bd_ports tx_out] [get_bd_pins user_logic_uart2_0/utx_out]
   connect_bd_net -net util_vector_logic_0_Res [get_bd_pins user_logic_uart2_0/ureset] [get_bd_pins util_vector_logic_0/Res]

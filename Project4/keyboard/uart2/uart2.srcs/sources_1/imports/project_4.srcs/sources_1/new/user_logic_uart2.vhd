@@ -85,6 +85,13 @@ signal state2           :rst;
    signal prev         :std_logic;
    signal tmp         : std_logic; 
    signal en_cnt        :integer:=0; 
+   signal pulseTemp    :std_logic;
+   signal pulseTempPrev:std_logic;
+   signal empty_prev    :std_logic;
+   signal clk_cnt              :integer:=0;
+   signal cnt_max              :integer:=250;
+   signal clk_en               :std_logic; 
+signal dummy    :std_logic;
 begin
 uut: uart
     port map (
@@ -105,52 +112,93 @@ uut: uart
         rx_empty    => rx_empty,
         rx_data     => rx_data
     );
+
+pulseTemp <= utx_pulse;
+    
 tx_data<=utx_data;
 reset<=ureset;
 txclk<= utxclk;
-utx_out<=tx_out;
-ld_tx_data<=utx_pulse;
-
-
+--utx_out<=tx_out;
+tx_enable<='1';
+ld_tx_data<= pulseTemp;
+clk_en_inst: process(clk)
+	begin
+	if rising_edge(clk) or falling_edge(clk)  then
+		if clk_cnt = 260415 and ureset = '0'  then
+			clk_cnt <= 0;
+			clk_en <= '1';
+		else
+			clk_cnt <= clk_cnt + 1;
+			clk_en <= '0';
+		end if;
+	end if;
+end process;
 process(clk)
-begin
+begin 
 
 if rising_edge(clk) then 
+    pulseTempPrev<=pulseTemp;
+end if;    
 
-uld_rx_data<='0';
-rx_enable<='1';
-rx_data<="00000000";
-tx_enable<='1';
+if clk_en='1' then 
+empty_prev<=tx_empty;
 end if; 
+if rising_edge(clk) then 
+    if clk_cnt = 260415 then 
+        en_cnt<=en_cnt+1;
+    elsif pulseTemp = '1' and pulseTempPrev ='0' then  
+        en_cnt<=0; 
+    end if;
+end if;    
+    
+    if en_cnt=1 then 
+        utx_out<=tx_out;
+    else 
+        utx_out<='1'; 
+    end if;
+
 end process;
+
+--process(clk,pulseTemp)
+--    begin   
+--        if rising_edge(clk) then
+--            pulseTempPrev <= pulseTemp;
+--            if pulseTemp = '1' then 
+--                tx_enable <= '1';  
+           
+--            else
+--                tx_enable <= '0';
+--            end if;
+--uld_rx_data<='0';
+--rx_enable<='1';
+--rx_data<="00000000";
+        
+--        end if; 
+--end process;
 
 
 --process (clk)
 --begin
 --if rising_edge(clk) then 
+--pulseTempPrev<=pulseTemp;
 
 --case state2 is 
 
 --when low => 
-    
---    tx_enable<='0';
---    en_cnt<=0;
---    if ld_tx_data ='1' then 
---        state2<=high;
---    else 
---        state2<=low;
---    end if; 
+--    utx_out<=tx_out;
+--   if tx_empty ='1' then 
+--    state2<=high;
+--   else 
+--   state2<=low;
+--   end if; 
     
     
 --when high => 
-
---    if en_cnt < 1002625 then 
---        tx_enable<='1';
---        en_cnt<=en_cnt+1;
---    else 
---        state2<=low; 
---    end if; 
-
+--    utx_out<='1';
+--   dummy<=tx_out;
+--if pulseTemp='1' and pulseTempPrev='0' then 
+--    state2<=low;
+--end if; 
 
 --when others => state2<=low;
 --end case;
