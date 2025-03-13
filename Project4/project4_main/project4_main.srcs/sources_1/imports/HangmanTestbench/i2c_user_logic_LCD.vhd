@@ -17,8 +17,8 @@ ARCHITECTURE logic OF i2c_user_logic_LCD IS
 
 component i2c_master IS
   GENERIC(
-    input_clk : INTEGER := 50_000_000; --input clock speed from user logic in Hz
-    bus_clk   : INTEGER := 50_000);   --speed the i2c bus (scl) will run at in Hz
+    input_clk : INTEGER := 125_000_000; --input clock speed from user logic in Hz
+    bus_clk   : INTEGER := 30_000);   --speed the i2c bus (scl) will run at in Hz
   PORT(
     clk       : IN     STD_LOGIC;                    --system clock
     reset_n   : IN     STD_LOGIC;                    --active low reset
@@ -124,7 +124,7 @@ begin
 	if rising_edge(clk) then
 	  busy_prev <= i2c_busy;
 	  next_data_prev <= next_data;
-		if count_100ms < 5000000 then
+		if count_100ms < 50000000 then -- Increased power up phase, seemed to fix Start LCD Bugs 8:15
 			count_100ms <= count_100ms +1;
 			clk_en_100ms <= '0';
 		else
@@ -161,6 +161,7 @@ begin
 		when 3 => init_data <= LCD_Nibble(31 downto 24);
 		when 4 => init_data <= LCD_Nibble(39 downto 32);
 		when 5 => init_data <= LCD_Nibble(47 downto 40);
+--		when 6 => init_data <= LCD_Nibble(7 downto 0);
 	end case;
 end process;
 

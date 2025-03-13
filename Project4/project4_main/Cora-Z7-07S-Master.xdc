@@ -1,11 +1,12 @@
+
 ## This file is a general .xdc for the Cora Z7-07S Rev. B
 ## To use it in a project:
 ## - uncomment the lines corresponding to used pins
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
 
 ## PL System Clock
-set_property -dict { PACKAGE_PIN H16   IOSTANDARD LVCMOS33 } [get_ports { clk }]; #IO_L13P_T2_MRCC_35 Sch=sysclk
-create_clock -add -name sys_clk_pin -period 8.00 -waveform {0 4} [get_ports { clk }];#set
+set_property -dict {PACKAGE_PIN H16 IOSTANDARD LVCMOS33} [get_ports clk]
+create_clock -period 8.000 -name sys_clk_pin -waveform {0.000 4.000} -add [get_ports clk]
 
 ## RGB LEDs
 #set_property -dict { PACKAGE_PIN L15   IOSTANDARD LVCMOS33 } [get_ports { led0_b }]; #IO_L22N_T3_AD7N_35 Sch=led0_b
@@ -16,30 +17,30 @@ create_clock -add -name sys_clk_pin -period 8.00 -waveform {0 4} [get_ports { cl
 #set_property -dict { PACKAGE_PIN M15   IOSTANDARD LVCMOS33 } [get_ports { led1_r }]; #IO_L23N_T3_35 Sch=led1_r
 
 ## Buttons
-set_property -dict { PACKAGE_PIN D20   IOSTANDARD LVCMOS33 } [get_ports { reset }]; #IO_L4N_T0_35 Sch=btn[0]
+set_property -dict {PACKAGE_PIN D20 IOSTANDARD LVCMOS33} [get_ports reset]
 #set_property -dict { PACKAGE_PIN D19   IOSTANDARD LVCMOS33 } [get_ports { btn[1] }]; #IO_L4P_T0_35 Sch=btn[1]
 
 ## Pmod Header JA
-    set_property -dict { PACKAGE_PIN Y18   IOSTANDARD LVCMOS33 } [get_ports { sda_sevSeg }]; #IO_L17P_T2_34 Sch=ja_p[1]
-set_property -dict { PACKAGE_PIN Y19   IOSTANDARD LVCMOS33 } [get_ports { scl_sevSeg }]; #IO_L17N_T2_34 Sch=ja_n[1]
-set_property -dict { PACKAGE_PIN Y16   IOSTANDARD LVCMOS33 } [get_ports { sda_lcd }]; #IO_L7P_T1_34 Sch=ja_p[2]
-set_property -dict { PACKAGE_PIN Y17   IOSTANDARD LVCMOS33 } [get_ports { scl_lcd }]; #IO_L7N_T1_34 Sch=ja_n[2]
-set_property -dict { PACKAGE_PIN U18   IOSTANDARD LVCMOS33 } [get_ports { ps2_clk }]; #IO_L12P_T1_MRCC_34 Sch=ja_p[3]
-set_property -dict { PACKAGE_PIN U19   IOSTANDARD LVCMOS33 } [get_ports { ps2_data }]; #IO_L12N_T1_MRCC_34 Sch=ja_n[3]
+set_property -dict {PACKAGE_PIN Y18 IOSTANDARD LVCMOS33} [get_ports sda_sevSeg]
+set_property -dict {PACKAGE_PIN Y19 IOSTANDARD LVCMOS33} [get_ports scl_sevSeg]
+set_property -dict {PACKAGE_PIN Y16 IOSTANDARD LVCMOS33} [get_ports sda_lcd]
+set_property -dict {PACKAGE_PIN Y17 IOSTANDARD LVCMOS33} [get_ports scl_lcd]
+#set_property -dict { PACKAGE_PIN U18   IOSTANDARD LVCMOS33 } [get_ports { ps2_clk }]; #IO_L12P_T1_MRCC_34 Sch=ja_p[3]
+#set_property -dict { PACKAGE_PIN U19   IOSTANDARD LVCMOS33 } [get_ports { ps2_data }]; #IO_L12N_T1_MRCC_34 Sch=ja_n[3]
 #set_property -dict { PACKAGE_PIN W18   IOSTANDARD LVCMOS33 } [get_ports { ja[6] }]; #IO_L22P_T3_34 Sch=ja_p[4]
 #set_property -dict { PACKAGE_PIN W19   IOSTANDARD LVCMOS33 } [get_ports { ja[7] }]; #IO_L22N_T3_34 Sch=ja_n[4]
 
 ## Pmod Header JB
-#set_property -dict { PACKAGE_PIN W14   IOSTANDARD LVCMOS33 } [get_ports { jb[0] }]; #IO_L8P_T1_34 Sch=jb_p[1]
-#set_property -dict { PACKAGE_PIN Y14   IOSTANDARD LVCMOS33 } [get_ports { jb[1] }]; #IO_L8N_T1_34 Sch=jb_n[1]
+set_property -dict {PACKAGE_PIN W14 IOSTANDARD LVCMOS33} [get_ports ps2_clk]
+#set_property -dict { PACKAGE_PIN Y14   IOSTANDARD LVCMOS33 } [get_ports { ps2_data }]; #IO_L8N_T1_34 Sch=jb_n[1]
 #set_property -dict { PACKAGE_PIN T11   IOSTANDARD LVCMOS33 } [get_ports { jb[2] }]; #IO_L1P_T0_34 Sch=jb_p[2]
 #set_property -dict { PACKAGE_PIN T10   IOSTANDARD LVCMOS33 } [get_ports { jb[3] }]; #IO_L1N_T0_34 Sch=jb_n[2]
-#set_property -dict { PACKAGE_PIN V16   IOSTANDARD LVCMOS33 } [get_ports { jb[4] }]; #IO_L18P_T2_34 Sch=jb_p[3]
+set_property -dict {PACKAGE_PIN V16 IOSTANDARD LVCMOS33} [get_ports ps2_data]
 #set_property -dict { PACKAGE_PIN W16   IOSTANDARD LVCMOS33 } [get_ports { jb[5] }]; #IO_L18N_T2_34 Sch=jb_n[3]
 #set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { jb[6] }]; #IO_L4P_T0_34 Sch=jb_p[4]
 #set_property -dict { PACKAGE_PIN W13   IOSTANDARD LVCMOS33 } [get_ports { jb[7] }]; #IO_L4N_T0_34 Sch=jb_n[4]
 
-## Crypto SDA 
+## Crypto SDA
 #set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { crypto_sda }];
 
 ## Dedicated Analog Inputs
@@ -148,3 +149,35 @@ set_property -dict { PACKAGE_PIN U19   IOSTANDARD LVCMOS33 } [get_ports { ps2_da
 #set_property -dict { PACKAGE_PIN V20   IOSTANDARD LVCMOS33 } [get_ports { user_dio[10] }]; #IO_L16P_T2_34 Sch=user_dio[10]
 #set_property -dict { PACKAGE_PIN W20   IOSTANDARD LVCMOS33 } [get_ports { user_dio[11] }]; #IO_L16N_T2_34 Sch=user_dio[11]
 #set_property -dict { PACKAGE_PIN K19   IOSTANDARD LVCMOS33 } [get_ports { user_dio[12] }]; #IO_L10P_T1_AD11P_35 Sch=user_dio[12]
+
+set_property MARK_DEBUG true [get_nets pulse]
+set_property MARK_DEBUG true [get_nets {char[0]}]
+set_property MARK_DEBUG true [get_nets {char[1]}]
+set_property MARK_DEBUG true [get_nets {char[2]}]
+set_property MARK_DEBUG true [get_nets {char[3]}]
+set_property MARK_DEBUG true [get_nets {char[4]}]
+set_property MARK_DEBUG true [get_nets {char[5]}]
+set_property MARK_DEBUG true [get_nets {char[6]}]
+set_property MARK_DEBUG true [get_nets {wrongguesses[0]}]
+set_property MARK_DEBUG true [get_nets {wrongguesses[1]}]
+set_property MARK_DEBUG true [get_nets {wrongguesses[2]}]
+
+set_property MARK_DEBUG true [get_nets {rebuiltword[1][0]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[1][1]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[1][2]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[1][3]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[1][4]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[1][5]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[1][6]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[1][7]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[2][0]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[2][1]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[2][2]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[2][3]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[2][4]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[2][5]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[2][6]}]
+set_property MARK_DEBUG true [get_nets {rebuiltword[2][7]}]
+
+set_property MARK_DEBUG true [get_nets newLetterPulse]
+

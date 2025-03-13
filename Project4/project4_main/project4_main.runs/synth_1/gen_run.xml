@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1741826068">
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1741870017">
   <File Type="PA-TCL" Name="CombineProgram.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="CombineProgram_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="CombineProgram_reports.tcl"/>
@@ -23,6 +23,14 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../HangmanTestbench/LCD_Data_Cutter.vhd"/>
         <Attr Name="ImportTime" Val="1741800074"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/project4_main/btn_debounce_toggle.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/btn_debounce_toggle.vhd"/>
+        <Attr Name="ImportTime" Val="1741800042"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -105,6 +113,7 @@
       </FileInfo>
     </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/Cora-Z7-07S-Master.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

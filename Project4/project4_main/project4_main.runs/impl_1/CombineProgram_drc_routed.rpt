@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Wed Mar 12 20:35:54 2025
+| Date         : Thu Mar 13 08:48:27 2025
 | Host         : UL-31 running 64-bit major release  (build 9200)
 | Command      : report_drc -file CombineProgram_drc_routed.rpt -pb CombineProgram_drc_routed.pb -rpx CombineProgram_drc_routed.rpx
 | Design       : CombineProgram
@@ -24,57 +24,16 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 13
-+----------+----------+---------------------------------+------------+
-| Rule     | Severity | Description                     | Violations |
-+----------+----------+---------------------------------+------------+
-| PDRC-153 | Warning  | Gated clock check               | 8          |
-| RPBF-3   | Warning  | IO port buffering is incomplete | 4          |
-| ZPS7-1   | Warning  | PS7 block required              | 1          |
-+----------+----------+---------------------------------+------------+
+             Violations found: 5
++--------+----------+---------------------------------+------------+
+| Rule   | Severity | Description                     | Violations |
++--------+----------+---------------------------------+------------+
+| RPBF-3 | Warning  | IO port buffering is incomplete | 4          |
+| ZPS7-1 | Warning  | PS7 block required              | 1          |
++--------+----------+---------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-PDRC-153#1 Warning
-Gated clock check  
-Net Inst_i2c_user_logic_LCD/inst_LCD_Data_Cutter/lcd_data_temp_reg[8]_i_2_n_0 is a gated clock net sourced by a combinational pin Inst_i2c_user_logic_LCD/inst_LCD_Data_Cutter/lcd_data_temp_reg[8]_i_2/O, cell Inst_i2c_user_logic_LCD/inst_LCD_Data_Cutter/lcd_data_temp_reg[8]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#2 Warning
-Gated clock check  
-Net inst_Hangman/rebuildOut[1] is a gated clock net sourced by a combinational pin inst_Hangman/rebuildOut_reg[1][2]_i_1/O, cell inst_Hangman/rebuildOut_reg[1][2]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#3 Warning
-Gated clock check  
-Net inst_Hangman/rebuildOut[2] is a gated clock net sourced by a combinational pin inst_Hangman/rebuildOut_reg[2][4]_i_1/O, cell inst_Hangman/rebuildOut_reg[2][4]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#4 Warning
-Gated clock check  
-Net inst_Hangman/rebuildOut[3] is a gated clock net sourced by a combinational pin inst_Hangman/rebuildOut_reg[3][4]_i_1/O, cell inst_Hangman/rebuildOut_reg[3][4]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#5 Warning
-Gated clock check  
-Net inst_Hangman/rebuildOut[4] is a gated clock net sourced by a combinational pin inst_Hangman/rebuildOut_reg[4][4]_i_1/O, cell inst_Hangman/rebuildOut_reg[4][4]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#6 Warning
-Gated clock check  
-Net inst_Hangman/rebuildOut[6] is a gated clock net sourced by a combinational pin inst_Hangman/rebuildOut_reg[6][4]_i_1/O, cell inst_Hangman/rebuildOut_reg[6][4]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#7 Warning
-Gated clock check  
-Net inst_Hangman/rebuildOut[8] is a gated clock net sourced by a combinational pin inst_Hangman/rebuildOut_reg[8][1]_i_1/O, cell inst_Hangman/rebuildOut_reg[8][1]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#8 Warning
-Gated clock check  
-Net inst_Hangman/wordChecked2 is a gated clock net sourced by a combinational pin inst_Hangman/rebuildOut_reg[9][5]_i_1/O, cell inst_Hangman/rebuildOut_reg[9][5]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
 RPBF-3#1 Warning
 IO port buffering is incomplete  
 Device port ps2_clk expects both input and output buffering but the buffers are incomplete.

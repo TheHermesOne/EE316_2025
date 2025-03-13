@@ -19,6 +19,7 @@ proc create_report { reportName command } {
 }
 set_param chipscope.maxJobs 3
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7z007sclg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -34,6 +35,7 @@ set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
   C:/Users/nathani/Documents/GitHub/EE316_2025/Project4/project4_main/project4_main.srcs/sources_1/imports/HangmanTestbench/Hangman.vhd
   C:/Users/nathani/Documents/GitHub/EE316_2025/Project4/project4_main/project4_main.srcs/sources_1/imports/HangmanTestbench/LCD_Data_Cutter.vhd
+  C:/Users/nathani/Documents/GitHub/EE316_2025/Project4/project4_main/project4_main.srcs/sources_1/imports/project4_main/btn_debounce_toggle.vhd
   C:/Users/nathani/Documents/GitHub/EE316_2025/Project4/project4_main/project4_main.srcs/sources_1/imports/HangmanTestbench/debounce.vhd
   C:/Users/nathani/Documents/GitHub/EE316_2025/Project4/project4_main/project4_main.srcs/sources_1/imports/HangmanTestbench/i2c_master.vhd
   C:/Users/nathani/Documents/GitHub/EE316_2025/Project4/project4_main/project4_main.srcs/sources_1/imports/i2c/i2c_user_logic.vhd

@@ -65,21 +65,40 @@ component i2c_user_logic is
     scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
 end component;
 
+component btn_debounce_toggle is
+    Port ( BTN_I 	: in  STD_LOGIC;
+           CLK 		: in  STD_LOGIC;
+           BTN_O 	: out  STD_LOGIC;
+           TOGGLE_O : out  STD_LOGIC;
+		   PULSE_O  : out STD_LOGIC);
+end component;
+
 signal char : std_LOGIC_VECTOR(6 downto 0);
 signal pulse: std_LOGIC;
 signal rebuiltword: string (1 to 16);
 signal wrongguesses: std_logic_vector ( 3 downto 0);
 signal combowrongGuesses: std_logic_vector (15 downto 0) := x"000" & wrongGuesses;
+signal reset_temp: std_logic := not reset;
+signal reset_db: std_logic;
+signal pulsePrev: std_logic;
+signal pulsePulse:std_logic := pulse and not pulsePrev;
 begin
+
+inst_btn_dbounce: btn_debounce_toggle
+    port map(
+        BTN_I => reset_temp ,
+        CLK => clk,
+        BTN_O => reset_db 
+);
 
 inst_Hangman: Hangman	
 		port map (
 		clk		=> clk, 
-		reset => reset,                    --active-high reset
+		reset => reset_db,                    --active-high reset
 		word		=> "togetherXXXXXXXX",		-- needs to be like this, will need to fill the dictorary/ ROM with words like this
 		vwrongGuess =>  wrongGuesses,
 		letter 	=> character'val(to_integer(unsigned(char))),
-		newLetterPulse => pulse,
+		newLetterPulse => pulsePulse,
 		vRebuilt => rebuiltword
 		);
 inst_ps2_keyboard: ps2_keyboard_to_ascii
@@ -94,9 +113,9 @@ inst_ps2_keyboard: ps2_keyboard_to_ascii
 	Inst_i2c_user_logic_LCD: i2c_user_logic_LCD 
 		port map (
 			clk      => clk,
-			reset 	=> reset,
+			reset 	=> reset_db,
 			iData		=> rebuiltword,
-			kp_pulse	=> pulse,
+			kp_pulse	=> pulsePulse,
 			sda		=> sda_lcd,
 			scl		=> scl_lcd
 		);
@@ -104,11 +123,17 @@ inst_ps2_keyboard: ps2_keyboard_to_ascii
 Inst_i2c_user_logic_seg: i2c_user_logic
     port map(
     	clk 		=> clk,
-		reset 	=> reset,
+		reset 	=> reset_db,
 		iData	=> combowrongGuesses,
 		sda		=> sda_sevSeg,
 		scl		=> scl_sevSeg
     );
 		
+process(clk)
+    begin
+        if rising_edge(clk) then
+            pulsePrev <= pulse;
+        end if;
+end process;
 
 end Behavioral;

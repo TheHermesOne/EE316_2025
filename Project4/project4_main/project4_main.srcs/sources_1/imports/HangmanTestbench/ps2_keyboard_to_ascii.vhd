@@ -25,8 +25,8 @@ USE ieee.std_logic_1164.all;
 
 ENTITY ps2_keyboard_to_ascii IS
   GENERIC(
-      clk_freq                  : INTEGER := 50_000_000; --system clock frequency in Hz
-      ps2_debounce_counter_size : INTEGER := 8);         --set such that 2^size/clk_freq = 5us (size = 8 for 50MHz)
+      clk_freq                  : INTEGER := 125_000_000; --system clock frequency in Hz
+      ps2_debounce_counter_size : INTEGER := 25);         --set such that 2^size/clk_freq = 5us (size = 8 for 50MHz)
   PORT(
       clk        : IN  STD_LOGIC;                     --system clock input
       ps2_clk    : IN  STD_LOGIC;                     --clock signal from PS2 keyboard
@@ -306,6 +306,7 @@ BEGIN
           IF(ascii(7) = '0') THEN            --the PS2 code has an ASCII output
             ascii_new <= '1';                  --set flag indicating new ASCII output
             ascii_code <= ascii(6 DOWNTO 0);   --output the ASCII value
+           
           END IF;
           state <= ready;                    --return to ready state to await next PS2 code
 
