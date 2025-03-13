@@ -8,10 +8,11 @@ entity Hangman is
 PORT(
     clk       	: IN         STD_LOGIC;                    --system clock
     reset    	: IN         STD_LOGIC;
-	 Word 		: IN 			String(1 to 16);
-	 letter 		: IN 			character;
+	 Word 		: IN 	String(1 to 16):= "superiorityXXXXX";
+	 letter 		: IN 	character;
 	 newLetterPulse: IN		std_LOGIC;
 	 vwrongGuess: OUT	std_logic_vector(3 downto 0);
+	   game_state    : OUT std_logic_vector(3 downto 0);
 	 vGameOver	: OUT		std_LOGIC_vector(1 downto 0);
 	 vRebuilt 	: out 		string(1 to 16)	 
 	 );
@@ -24,6 +25,7 @@ ARCHITECTURE logic OF Hangman IS
 -----------------Word Checker-----------------
 ----------------------------------------------
 procedure CheckWordletter(
+                    signal clk  : in std_logic;
 					signal word : in string(1 to 16);
 					signal PrevRebuildOut: in string(1 to 16);
 					signal letter: in character;
@@ -36,13 +38,15 @@ procedure CheckWordletter(
 
 	begin
 		for currentIter in word'length downto 1 loop
+		  if rising_edge(clk) then
 			if letter = word(currentIter) then
 				tempOut(currentIter) := letter;
 				bletterInWordTemp := '1';
 			elsif 'X' = word(currentIter) then
 				tempOut(currentIter) := 'X';
 			end if;
-			if currentIter = word'length then
+		  end if;
+			if currentIter = 1 then
 			     wordchecked := '1';
 			end if;
 		end loop;
@@ -62,16 +66,19 @@ signal templetter 	: character ;
 signal truth        : integer range 0 to 16;
 signal bWordsmatch	: std_LOGIC;
 
+
 begin
+
+
+
+
 	process(reset,newLetterPulse,clk,rebuildOut)
 		begin		
 			if reset = '0' then		-- need to have a reset that does something
 				rebuildOut <= "________________";
 				guesscount <= 0;
-			elsif(rising_edge(clk)) then
-			    if(newLetterPulse = '1') then
-				    CheckWordletter(word,rebuildOut,letter,rebuildOut,guesscount);
-				end if;
+			elsif(newLetterPulse = '1') then
+				    CheckWordletter(clk,word,rebuildOut,letter,rebuildOut,guesscount);
 			end if;
 	vwrongGuess <= std_logic_vector( to_unsigned( guesscount, vwrongGuess'length));
 	vRebuilt <= rebuildOut;
@@ -93,5 +100,5 @@ begin
 --			end if;
 --	end process;
 	
-	
+
 end logic;

@@ -34,7 +34,7 @@ end component Hangman;
 
 component ps2_keyboard_to_ascii is
 GENERIC(
-      clk_freq                  : INTEGER := 50_000_000; --system clock frequency in Hz
+      clk_freq                  : INTEGER := 125_000_000; --system clock frequency in Hz
       ps2_debounce_counter_size : INTEGER := 8);         --set such that 2^size/clk_freq = 5us (size = 8 for 50MHz)
   PORT(
       clk        : IN  STD_LOGIC;                     --system clock input
@@ -82,6 +82,7 @@ signal reset_temp: std_logic := not reset;
 signal reset_db: std_logic;
 signal pulsePrev: std_logic;
 signal pulsePulse:std_logic := pulse and not pulsePrev;
+
 begin
 
 inst_btn_dbounce: btn_debounce_toggle
@@ -95,7 +96,7 @@ inst_Hangman: Hangman
 		port map (
 		clk		=> clk, 
 		reset => reset_db,                    --active-high reset
-		word		=> "togetherXXXXXXXX",		-- needs to be like this, will need to fill the dictorary/ ROM with words like this
+		word		=> "superiorityXXXXX",		-- needs to be like this, will need to fill the dictorary/ ROM with words like this
 		vwrongGuess =>  wrongGuesses,
 		letter 	=> character'val(to_integer(unsigned(char))),
 		newLetterPulse => pulsePulse,

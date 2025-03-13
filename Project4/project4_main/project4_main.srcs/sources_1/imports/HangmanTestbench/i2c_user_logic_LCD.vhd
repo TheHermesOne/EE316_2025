@@ -9,6 +9,7 @@ PORT(
     reset     : IN         STD_LOGIC;
 	 iData     : IN         string(1 to 16);
 	 kp_pulse  : IN 			std_LOGIC;
+	 game_state          : IN std_logic_vector(3 downto 0);
     sda       : INOUT  STD_LOGIC;                    --serial data output of i2c bus
     scl       : INOUT  STD_LOGIC);                   --serial clock output of i2c bus
 end i2c_user_logic_LCD;
