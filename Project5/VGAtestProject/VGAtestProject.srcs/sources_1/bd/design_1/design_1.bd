@@ -1,0 +1,338 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x7FE906213CB402D6",
+      "device": "xc7z007sclg400-1",
+      "name": "design_1",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "clk_wiz_0": "",
+      "vga_controller_0": "",
+      "util_vector_logic_0": "",
+      "hw_image_generator_0": ""
+    },
+    "ports": {
+      "Key0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW"
+          }
+        }
+      },
+      "CLK_I": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_clk_in1_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "125000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "VGA_HS_O": {
+        "direction": "O"
+      },
+      "VGA_VS_O": {
+        "direction": "O"
+      },
+      "VGA_R": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "VGA_G": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "VGA_B": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      }
+    },
+    "components": {
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "design_1_clk_wiz_0_1",
+        "parameters": {
+          "CLKIN1_JITTER_PS": {
+            "value": "80.0"
+          },
+          "CLKOUT1_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT1_JITTER": {
+            "value": "281.423"
+          },
+          "CLKOUT1_PHASE_ERROR": {
+            "value": "365.405"
+          },
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "25.175"
+          },
+          "CLKOUT2_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT3_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT4_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT5_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT6_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT7_DRIVES": {
+            "value": "BUFG"
+          },
+          "ENABLE_CLOCK_MONITOR": {
+            "value": "false"
+          },
+          "FEEDBACK_SOURCE": {
+            "value": "FDBK_AUTO"
+          },
+          "MMCM_BANDWIDTH": {
+            "value": "OPTIMIZED"
+          },
+          "MMCM_CLKFBOUT_MULT_F": {
+            "value": "61.500"
+          },
+          "MMCM_CLKIN1_PERIOD": {
+            "value": "8.000"
+          },
+          "MMCM_CLKIN2_PERIOD": {
+            "value": "10.000"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "43.625"
+          },
+          "MMCM_COMPENSATION": {
+            "value": "ZHOLD"
+          },
+          "MMCM_DIVCLK_DIVIDE": {
+            "value": "7"
+          },
+          "PRIMITIVE": {
+            "value": "MMCM"
+          },
+          "PRIM_IN_FREQ": {
+            "value": "125"
+          },
+          "USE_LOCKED": {
+            "value": "false"
+          },
+          "USE_RESET": {
+            "value": "false"
+          }
+        }
+      },
+      "vga_controller_0": {
+        "vlnv": "xilinx.com:module_ref:vga_controller:1.0",
+        "xci_name": "design_1_vga_controller_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "vga_controller",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "pixel_clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "25173966",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "reset_n": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "h_sync": {
+            "direction": "O"
+          },
+          "v_sync": {
+            "direction": "O"
+          },
+          "disp_ena": {
+            "direction": "O"
+          },
+          "column": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "row": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "n_blank": {
+            "direction": "O"
+          },
+          "n_sync": {
+            "direction": "O"
+          }
+        }
+      },
+      "util_vector_logic_0": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "design_1_util_vector_logic_0_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "hw_image_generator_0": {
+        "vlnv": "xilinx.com:module_ref:hw_image_generator:1.0",
+        "xci_name": "design_1_hw_image_generator_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "hw_image_generator",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "disp_ena": {
+            "direction": "I"
+          },
+          "row": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "column": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "red": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "green": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "blue": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "vga_controller_0_disp_ena": {
+        "ports": [
+          "vga_controller_0/disp_ena",
+          "hw_image_generator_0/disp_ena"
+        ]
+      },
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "clk_wiz_0/clk_out1",
+          "vga_controller_0/pixel_clk"
+        ]
+      },
+      "clk_in1_0_1": {
+        "ports": [
+          "CLK_I",
+          "clk_wiz_0/clk_in1"
+        ]
+      },
+      "vga_controller_0_h_sync": {
+        "ports": [
+          "vga_controller_0/h_sync",
+          "VGA_HS_O"
+        ]
+      },
+      "vga_controller_0_v_sync": {
+        "ports": [
+          "vga_controller_0/v_sync",
+          "VGA_VS_O"
+        ]
+      },
+      "hw_image_generator_0_red": {
+        "ports": [
+          "hw_image_generator_0/red",
+          "VGA_R"
+        ]
+      },
+      "hw_image_generator_0_green": {
+        "ports": [
+          "hw_image_generator_0/green",
+          "VGA_G"
+        ]
+      },
+      "hw_image_generator_0_blue": {
+        "ports": [
+          "hw_image_generator_0/blue",
+          "VGA_B"
+        ]
+      },
+      "Key0_1": {
+        "ports": [
+          "Key0",
+          "util_vector_logic_0/Op1"
+        ]
+      },
+      "util_vector_logic_0_Res": {
+        "ports": [
+          "util_vector_logic_0/Res",
+          "vga_controller_0/reset_n"
+        ]
+      },
+      "vga_controller_0_column": {
+        "ports": [
+          "vga_controller_0/column",
+          "hw_image_generator_0/column"
+        ]
+      },
+      "vga_controller_0_row": {
+        "ports": [
+          "vga_controller_0/row",
+          "hw_image_generator_0/row"
+        ]
+      }
+    }
+  }
+}
