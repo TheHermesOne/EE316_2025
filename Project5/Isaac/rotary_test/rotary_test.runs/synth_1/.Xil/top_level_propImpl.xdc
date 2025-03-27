@@ -1,0 +1,11 @@
+set_property SRC_FILE_INFO {cfile:U:/EE316/Project5/Cora-Z7-07S-Master.xdc rfile:../../../../Cora-Z7-07S-Master.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN H16   IOSTANDARD LVCMOS33 } [get_ports  iCLK ]; #IO_L13P_T2_MRCC_35 Sch=sysclk
+set_property src_info {type:XDC file:1 line:95 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN T15   IOSTANDARD LVCMOS33 } [get_ports B]; #IO_L5N_T0_34 Sch=ck_io[3]
+set_property src_info {type:XDC file:1 line:96 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN V17   IOSTANDARD LVCMOS33 } [get_ports A]; #IO_L21P_T3_DQS_34 Sch=ck_io[4]
+set_property src_info {type:XDC file:1 line:98 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN R17   IOSTANDARD LVCMOS33 } [get_ports oSDA]; #IO_L19N_T3_VREF_34 Sch=ck_io[6]
+set_property src_info {type:XDC file:1 line:99 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN R14   IOSTANDARD LVCMOS33 } [get_ports oSCL]; #IO_L6N_T0_VREF_34 Sch=ck_io[7]
