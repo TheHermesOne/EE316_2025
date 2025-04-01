@@ -8,10 +8,9 @@ entity top_level is
         usb_tx      : in std_logic;
         usb_rx      : out std_logic;
         ps2_clk     : in std_logic; 
-        ps2_data    : in std_logic;
-        LCD_EN      : out std_logic;
-        LCD_RS      : out std_logic;
-        LCD_DATA    : out std_logic_vector(7 downto 0)
+        ps2_data    : in std_logic
+--        oSDA        : inout std_logic;
+--        oSCL        : inout std_logic
     );
 end top_level;
 
@@ -29,7 +28,7 @@ architecture arch of top_level is
         GENERIC (
             CONSTANT cnt_max : integer := 49999999);      --  1.0 Hz 
             port(	
-                clock:		in std_logic;	 
+                clock:		    in std_logic;	 
                 clk_en: 		out std_logic
             );
         end component;
@@ -64,23 +63,39 @@ architecture arch of top_level is
             );
         end component;
         
-    component LCD_Controller IS
-        PORT (
-            Reset        : IN std_logic;
-            Data         : IN std_logic_vector(7 DOWNTO 0);
-            iclk          : IN std_logic;
-            LCD_RS, LCD_EN : OUT std_logic;
-            LCD_DATA      : OUT std_logic_vector(7 DOWNTO 0)
-        );
-        END component;   
-
+--    component Shift_Reg is
+--        GENERIC (
+--            CONSTANT sr_depth : integer := 8);     
+--        port(	
+--            clock:		in std_logic;
+--            en: 			in std_logic;
+--            sr_in:		in std_logic_vector(7 downto 0);
+--            sr_out:		out std_logic_vector(sr_depth-1 downto 0) :=(others => '0')
+--        );
+--    end component;
+    
+--    component I2C_user_logic is							-- Modified from SPI usr logic from last year
+--        Port ( iclk         : in STD_LOGIC;
+--              -- dataIn       : in STD_LOGIC_VECTOR (15 downto 0);
+--               oSDA         : inout STD_LOGIC;
+--               input1       : in std_logic_vector(127 downto 0);
+--               input2       : in std_logic_vector(127 downto 0);
+--               oSCL         : inout STD_LOGIC);
+--    end component;
+        
     signal reset_on         : std_logic;
     signal rx_clken         : std_logic;
     signal tx_clken         : std_logic;
+    signal shft_clken         : std_logic;
     signal ascii_new        : std_logic;
     signal ascii_data_ps2   : std_logic_vector(7 downto 0);
     signal uart_rx_data     : std_logic_vector(7 downto 0);
-
+--    signal LCD_shft_reg1    : std_logic_vector(127 downto 0);
+--    signal LCD_shft_reg2    : std_logic_vector(127 downto 0);
+--    signal shft_en          : std_logic :='0';
+    signal rx_empty         : std_logic;
+--    signal nrx_empty         : std_logic;
+    signal counter          : integer range 0 to 13201;
 begin 
 
     inst_reset_delay: reset_delay 
@@ -99,7 +114,15 @@ begin
             port map(	
                 clock   => clk, 
                 clk_en  => rx_clken
-            );
+       );
+    
+--    inst_shft_clken: clk_enabler
+--        GENERIC map (cnt_max => 1200)    
+--            port map(	
+--                clock   => clk, 
+--                clk_en  => shft_clken
+    
+--            );
     inst_keyboard: ps2_keyboard_to_ascii
         GENERIC map(
               clk_freq                  => 125000000, 
@@ -125,17 +148,45 @@ begin
             rx_data     => uart_rx_data,
             rx_enable   => '1',
             rx_in       => usb_tx,
-            rx_empty    => open
+            rx_empty    => rx_empty
         );
-    inst_lcd: LCD_controller
-        port map(
-            Reset        => reset_on,
-            Data         => uart_rx_data,
-            iclk         => clk,
-            LCD_RS       => LCD_RS,
-            LCD_EN       => LCD_EN,
-            LCD_DATA     => LCD_DATA
-        );
+    
+--    inst_LCD_shft_reg1: Shift_reg 
+--        GENERIC map (
+--            sr_depth => 128)     
+--        port map(	
+--            clock           => clk,
+--            en 			    => nrx_empty,
+--            sr_in		    => uart_rx_data,
+--            sr_out          => LCD_shft_reg1
+--        );
+        
+--    inst_LCD_shft_reg2: Shift_reg 
+--        GENERIC map (
+--            sr_depth => 128)     
+--        port map(	
+--            clock           => clk,
+--            reset           => reset_on,
+--            en 			    => pulse,
+--            sr_in		    => uart_rx_data,
+--            sr_out          => LCD_shft_reg2
+--        );
+        
+--    inst_i2c_LCD: I2C_user_logic 						
+--        Port map ( 
+--            iclk         => clk,
+--            oSDA         => oSDA,
+--            input1       => LCD_shft_reg1,
+--            input2       => x"20202020202020202020202020202020",
+--            oSCL         => OSCL
+--        );  
+
+--process(clk)
+--begin
+--    if rising_edge(clk) and shft_clken ='1' then
+--    nrx_empty <= not(rx_empty);
+--    end if;
+--end process;
 end arch;
         
         
