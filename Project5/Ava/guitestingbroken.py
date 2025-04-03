@@ -1,4 +1,7 @@
-############# testing the gui - adding serial connections next #######
+# Last Edited: 4/3/2025
+# Keyboard was connected successfully. serial input was received successfully. 
+# To add next: output from pc keyboard should be outputted through serial
+
 import threading
 import tkinter as tk
 from tkinter import filedialog
@@ -6,7 +9,7 @@ import serial
 from PIL import ImageGrab
 
 try:
-    ser = serial.Serial('COM19', 9600, timeout=1)
+    ser = serial.Serial('COM8', 9600, timeout=1)
     print(f"Connected to: {ser.name}")
 except serial.SerialException as e:
     print(f"Error: Could not open serial port: {e}")
@@ -14,66 +17,81 @@ except serial.SerialException as e:
 
 class CanvasTest:
     def __init__(self, root):
+        # formatting elements
         self.root = root
         self.window = root
+
+            # left side formatting
         self.left_frame = tk.Frame()
         self.left_frame.pack(side=tk.LEFT, padx=20, pady=20)
 
-        self.w = 512
-        self.h = 512
-        self.pencolor = "black"
-        self.penwidth = 1
-
-        self.game_active = True
-
         self.canvas = tk.Canvas(self.left_frame, width=self.w, height=self.h, bg="white")
         self.canvas.pack()
+
+            # right side formatting
+        self.right_frame = tk.Frame()
+        self.right_frame.pack(side=tk.RIGHT, padx=80, pady=80)
+
+        self.canvasz_label = tk.Label(self.right_frame, text=f"sketching area: {self.w}x{self.h}",font=("fixedsys", 14), fg="black")
+        self.canvasz_label.pack()
+
+            # save button
+        self.save_button = tk.Button(self.right_frame, text="Save Canvas as PNG", command=self.save_canvas)
+        self.save_button.pack(pady=10)
+
+        # initializing width
+        self.w = 512
+        self.h = 512
         self.x = self.w / 2
         self.y = self.h / 2
+
+        # pen color init & formatting
+        self.pencolor = "black"
+        self.pencolor_label = tk.Label(self.right_frame, text=f"pen color: {self.pencolor}", font=("fixedsys", 14),fg="black")
+        self.pencolor_label.pack()
+
+        # pen width init & formatting
+        self.penwidth = 1
+        self.penwidth_label = tk.Label(self.right_frame, text=f"pen width: {self.penwidth}", font=("fixedsys", 14), fg="black")
+        self.penwidth_label.pack()
+
+        self.game_active = True
 
         self.serial_thread = threading.Thread(target=self.read_serial_input, daemon=True)
         self.serial_thread.start()
 
-        self.right_frame = tk.Frame()
-        self.right_frame.pack(side=tk.RIGHT, padx=80, pady=80)
-
-        self.canvasz_label = tk.Label(self.right_frame, text=f"sketching area: {self.w}x{self.h}",
-                                      font=("fixedsys", 14), fg="black")
-        self.canvasz_label.pack()
-        # pen color being displayed
-        self.pencolor_label = tk.Label(self.right_frame, text=f"pen color: {self.pencolor}", font=("fixedsys", 14),
-                                       fg="black")
-        self.pencolor_label.pack()
-        # pen width
-        self.penwidth_label = tk.Label(self.right_frame, text=f"pen width: {self.penwidth}", font=("fixedsys", 14),
-                                       fg="black")
-        self.penwidth_label.pack()
         # x position
         self.xpos_label = tk.Label(self.right_frame, text="x: ", font=("fixedsys", 14), fg="black")
         self.xpos_label.pack()
         # y position
         self.ypos_label = tk.Label(self.right_frame, text="y: ", font=("fixedsys", 14), fg="black")
         self.ypos_label.pack()
-        # save button
-        self.save_button = tk.Button(self.right_frame, text="Save Canvas as PNG", command=self.save_canvas)
-        self.save_button.pack(pady=10)
 
+        # coordinates
         self.prev_x = self.x
         self.prev_y = self.y
 
+        # key binding
         self.canvas.bind("<KeyPress>", self.draw)
         self.canvas.bind("<KeyRelease>", self.handle_keyrel)
         self.canvas.focus_set()
 
+    # function used for key binding
     def handle_keyrel(self, event):
         self.colors(event)
         self.pwidth(event)
         self.cwidth(event)
 
-    def cwidth(self, event):
-        if event.keysym in ("S", "s"):
-            # get the drawing from canvas
-            bbox = self.canvas.bbox("all")  # returns (x1, y1, x2, y2)
+    def cwidth(self, input_data):
+        if isinstance(input_data, tk.Event):
+            # reg kb
+            keysym = input_data.keysym
+        else:
+            # serial kb
+            keysym = input_data
+        # m is smaller canvas, n is larger - center is recalculated when switching back and forth
+        if keysym in ("m", "n"):
+            bbox = self.canvas.bbox("all")  # (x1, y1, x2, y2)
             if bbox:
                 drawing_center_x = (bbox[0] + bbox[2]) / 2
                 drawing_center_y = (bbox[1] + bbox[3]) / 2
@@ -81,11 +99,11 @@ class CanvasTest:
                 drawing_center_x = self.x
                 drawing_center_y = self.y
 
-            # changing the size of the canvas
-            if event.keysym == "S":
+            # setting the size of the canvas
+            if keysym == "m":
                 self.w = 256
                 self.h = 256
-            else:
+            else :
                 self.w = 512
                 self.h = 512
 
@@ -109,41 +127,57 @@ class CanvasTest:
             self.canvas.create_line(self.x, self.y, self.x, self.y + 1, width=self.penwidth, fill=self.pencolor)
 
     ########### changing the color of the pen ############################################
-    def colors(self, event):
+    def colors(self, input_data):
+        if isinstance(input_data, tk.Event):
+            keysym = input_data.keysym
+        else:
+            keysym = input_data
 
         key_to_color = {"r": "red", "g": "green", "b": "blue", "k": "black", "y": "yellow"
                         }
-        color = key_to_color.get(event.keysym)
+        color = key_to_color.get(keysym)
 
         if color:
             self.pencolor = color
             self.pencolor_label.config(text=f"pen color: {self.pencolor}")
 
     ########## changing the width of the pen ##############################################
-    def pwidth(self, event):
-        key_to_pwidth = {"1": 1, "2": 2, "3": 3, "4": 4,
+    def pwidth(self, input_data):
+
+        if isinstance(input_data, tk.Event):
+            keysym = input_data.keysym
+        else:
+            keysym = input_data
+
+        key_to_penwidth = {"1": 1, "2": 2, "3": 3, "4": 4,
                          "5": 5, "6": 6, "7": 7
                          }
-        penwidth = key_to_pwidth.get(event.keysym)
-        if penwidth:
-            self.penwidth = penwidth
-            self.penwidth_label.config(text=f"pen width: {self.penwidth}")
+        self.penwidth = key_to_penwidth.get(keysym)
+        self.penwidth_label.config(text=f"pen width: {self.penwidth}")
 
-    ########## testing user changing position of the pen to draw ##########################
-    def draw(self, event):
+    ##########  user can draw     ##########################
+    def draw(self, input_data):
+
+        if isinstance(input_data, tk.Event):
+            # reg kb
+            keysym = input_data.keysym
+        else:
+            # serial kb
+            keysym = input_data
+
         self.prev_x = self.x
         self.prev_y = self.y
 
-        if event.keysym == "w":
+        if keysym == "w":
             if self.y > 0:
                 self.y -= 1
-        elif event.keysym == "s":
+        elif keysym == "s":
             if self.y < self.h:
                 self.y += 1
-        elif event.keysym == "a":
+        elif keysym == "a":
             if self.x > 0:
                 self.x -= 1
-        elif event.keysym == "d":
+        elif keysym == "d":
             if self.x < self.w:
                 self.x += 1
 
@@ -155,6 +189,7 @@ class CanvasTest:
 
     ########## saving the drawing as a png ##################################################
     def save_canvas(self):
+
         filename = filedialog.asksaveasfilename(
             defaultextension=".png",
             filetypes=[("PNG files", "*.png")],
@@ -180,35 +215,27 @@ class CanvasTest:
         img.save(filename)
         print(f"saved as {filename}.png")
 
-    def handle_serial_input(self, char):
-    class Event:
-        def __init__(self, keysym): self.keysym = keysym
-
-    event = Event(char)
-
-    # Simulate keypress
-    if char in ('w', 'a', 's', 'd'):
-        self.draw(event)
-    elif char in ('r', 'g', 'b', 'k', 'y'):
-        self.colors(event)
-    elif char in ('1', '2', '3', '4', '5', '6', '7'):
-        self.pwidth(event)
-    elif char in ('S', 's'):
-        self.cwidth(event)
-    else:
-        print(f"Unhandled serial input: {char}")
-
-
-    
     def read_serial_input(self):
-    while True:
-        if ser and ser.in_waiting > 0:
-            data = ser.read(1)
-            ascii_char = data.decode('ascii', errors='replace').strip()
-            print(f"Serial Input : {ascii_char}")
-            if ascii_char:
-                self.root.after(0, self.handle_serial_input, ascii_char)
+            while True:
+                if ser and ser.in_waiting > 0:
+                    data = ser.read(1)  # one byte read
+                    ascii_char = data.decode('ascii', errors='replace').strip()
 
+                    if self.game_active:
+
+                        if ascii_char in ['w', 'a', 's', 'd']:
+                            self.root.after(0, self.draw, ascii_char)
+                        elif ascii_char in ['r', 'g', 'b', 'k', 'y']:
+                            self.root.after(0, self.colors, ascii_char)
+                        elif ascii_char in ['1', '2', '3', '4', '5', '6', '7']:
+                            self.root.after(0, self.pwidth, ascii_char)
+                        elif ascii_char in ['m', 'n']:
+                            self.root.after(0, self.cwidth, ascii_char)
+                        else:
+                            print(f"Serial Input (no action) : {ascii_char}")
+                            ascii_char = data.decode('ascii', errors='replace').strip()
+
+                    print(f"Serial Input : {ascii_char}")
 
 
 ############ calling the function ######################################################
@@ -220,6 +247,3 @@ if __name__ == "__main__":
     if ser:
         ser.close()
         print("Serial port closed.")
-
-# self.canvas.focus_set()
-# self.window.mainloop()
