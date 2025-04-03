@@ -1,6 +1,10 @@
 # Last Edited: 4/3/2025
-# Keyboard was connected successfully. serial input was received successfully. 
-# To add next: output from pc keyboard should be outputted through serial
+# Keyboard was connected successfully
+# serial input was received successfully
+# pc keyboard data is sent thru serial comms when each key on keyboard is pressed. 
+# next: find a way to integrate rotary encoders
+# debugging: when changing between x and y direction movement, the pen width will go back to default for some reason
+# debugging: when the caps lock key is pressed on the keyboard the connection with serial is lost. 
 
 import threading
 import tkinter as tk
@@ -10,10 +14,23 @@ from PIL import ImageGrab
 
 try:
     ser = serial.Serial('COM8', 9600, timeout=1)
-    print(f"Connected to: {ser.name}")
+    print(f"Hardware Ready - Connected to:  {ser.name}")
 except serial.SerialException as e:
     print(f"Error: Could not open serial port: {e}")
     ser = None
+
+# not working
+def send_state_to_serial(input_data):
+    if ser:
+        if isinstance(input_data, tk.Event):
+            print ("")
+        else:
+            state_hex = input_data.encode('utf-8').hex()
+            print(f"sending: {state_hex} -> UART")
+
+
+        threading.Thread(target=lambda: ser.write(bytes.fromhex(state_hex)), daemon=True).start()
+
 
 class CanvasTest:
     def __init__(self, root):
@@ -25,15 +42,9 @@ class CanvasTest:
         self.left_frame = tk.Frame()
         self.left_frame.pack(side=tk.LEFT, padx=20, pady=20)
 
-        self.canvas = tk.Canvas(self.left_frame, width=self.w, height=self.h, bg="white")
-        self.canvas.pack()
-
             # right side formatting
         self.right_frame = tk.Frame()
         self.right_frame.pack(side=tk.RIGHT, padx=80, pady=80)
-
-        self.canvasz_label = tk.Label(self.right_frame, text=f"sketching area: {self.w}x{self.h}",font=("fixedsys", 14), fg="black")
-        self.canvasz_label.pack()
 
             # save button
         self.save_button = tk.Button(self.right_frame, text="Save Canvas as PNG", command=self.save_canvas)
@@ -45,6 +56,13 @@ class CanvasTest:
         self.x = self.w / 2
         self.y = self.h / 2
 
+        self.canvas = tk.Canvas(self.left_frame, width=self.w, height=self.h, bg="white")
+        self.canvas.pack()
+
+        self.canvasz_label = tk.Label(self.right_frame, text=f"sketching area: {self.w}x{self.h}",font=("fixedsys", 14), fg="black")
+        self.canvasz_label.pack()
+
+
         # pen color init & formatting
         self.pencolor = "black"
         self.pencolor_label = tk.Label(self.right_frame, text=f"pen color: {self.pencolor}", font=("fixedsys", 14),fg="black")
@@ -54,6 +72,8 @@ class CanvasTest:
         self.penwidth = 1
         self.penwidth_label = tk.Label(self.right_frame, text=f"pen width: {self.penwidth}", font=("fixedsys", 14), fg="black")
         self.penwidth_label.pack()
+
+
 
         self.game_active = True
 
@@ -86,6 +106,8 @@ class CanvasTest:
         if isinstance(input_data, tk.Event):
             # reg kb
             keysym = input_data.keysym
+            send_state_to_serial(keysym)
+
         else:
             # serial kb
             keysym = input_data
@@ -130,6 +152,8 @@ class CanvasTest:
     def colors(self, input_data):
         if isinstance(input_data, tk.Event):
             keysym = input_data.keysym
+            #send_state_to_serial(keysym)
+
         else:
             keysym = input_data
 
@@ -146,6 +170,9 @@ class CanvasTest:
 
         if isinstance(input_data, tk.Event):
             keysym = input_data.keysym
+            #send_state_to_serial(keysym)
+
+
         else:
             keysym = input_data
 
@@ -161,6 +188,9 @@ class CanvasTest:
         if isinstance(input_data, tk.Event):
             # reg kb
             keysym = input_data.keysym
+            #send_state_to_serial(keysym)  # Send the key press to serial
+
+
         else:
             # serial kb
             keysym = input_data
@@ -232,10 +262,13 @@ class CanvasTest:
                         elif ascii_char in ['m', 'n']:
                             self.root.after(0, self.cwidth, ascii_char)
                         else:
-                            print(f"Serial Input (no action) : {ascii_char}")
+                            print(f"ps2 kb (no commands): {ascii_char}")
                             ascii_char = data.decode('ascii', errors='replace').strip()
 
-                    print(f"Serial Input : {ascii_char}")
+                    print(f"ps2 kb : {ascii_char}")
+
+
+
 
 
 ############ calling the function ######################################################
