@@ -180,55 +180,35 @@ class CanvasTest:
         img.save(filename)
         print(f"saved as {filename}.png")
 
+    def handle_serial_input(self, char):
+    class Event:
+        def __init__(self, keysym): self.keysym = keysym
+
+    event = Event(char)
+
+    # Simulate keypress
+    if char in ('w', 'a', 's', 'd'):
+        self.draw(event)
+    elif char in ('r', 'g', 'b', 'k', 'y'):
+        self.colors(event)
+    elif char in ('1', '2', '3', '4', '5', '6', '7'):
+        self.pwidth(event)
+    elif char in ('S', 's'):
+        self.cwidth(event)
+    else:
+        print(f"Unhandled serial input: {char}")
+
+
+    
     def read_serial_input(self):
-            while True:
-                if ser and ser.in_waiting > 0:
-                    data = ser.read(1)  # Read one byte
-                    ascii_char = data.decode('ascii', errors='replace').strip()
+    while True:
+        if ser and ser.in_waiting > 0:
+            data = ser.read(1)
+            ascii_char = data.decode('ascii', errors='replace').strip()
+            print(f"Serial Input : {ascii_char}")
+            if ascii_char:
+                self.root.after(0, self.handle_serial_input, ascii_char)
 
-                   # if self.game_active:
-
-                       # if ascii_char == 'w':
-                          #  self.root(self.draw, ascii_char)
-                       # elif ascii_char == 'a':
-                         #   self.root(self.draw, ascii_char)
-                       # elif ascii_char == 's':
-                       #     self.root(self.draw, ascii_char)
-                       # elif ascii_char == 'd':
-                         #   self.root(self.draw, ascii_char)
-                      #  elif ascii_char == 'r' :
-                         #   self.root(self.colors, ascii_char)
-                      #  elif ascii_char == 'g' :
-                        #    self.root(self.colors, ascii_char)
-                      #  elif ascii_char == 'b' :
-                          #  self.root(self.colors, ascii_char)
-                      #  elif ascii_char == 'k' :
-                          #  self.root(self.colors, ascii_char)
-                      #  elif ascii_char == 'y' :
-                          #      self.root(self.colors, ascii_char)
-                       #     elif ascii_char == '1' :
-                           #     self.root(self.pwidth, ascii_char)
-                      #      elif ascii_char == '2' :
-                          #      self.root(self.pwidth, ascii_char)
-                       #     elif ascii_char == '3' :
-                      #          self.root(self.pwidth, ascii_char)
-                      #      elif ascii_char == '4' :
-                      #          self.root(self.pwidth, ascii_char)
-                       #     elif ascii_char == '5' :
-                     #           self.root(self.pwidth, ascii_char)
-                      #      elif ascii_char == '6' :
-                     #           self.root(self.pwidth, ascii_char)
-                     #       elif ascii_char == '7' :
-                      #          self.root(self.pwidth, ascii_char)
-                     #       else:
-                     #           print(f"Serial Input (no action) : {ascii_char}")
-                       #         ascii_char = data.decode('ascii', errors='replace').strip()
-
-                    print(f"Serial Input : {ascii_char}")
-                # self.root.after(0, self.draw, ascii_char)
-                # self.root.after(0, self.pwidth, ascii_char)
-                # self.root.after(0, self.colors, ascii_char)
-                # self.root.after(0, self.cwidth, ascii_char)
 
 
 ############ calling the function ######################################################
