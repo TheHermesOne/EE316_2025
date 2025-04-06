@@ -1,0 +1,98 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sun Apr  6 18:18:49 2025
+| Host         : UL-32 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_level_control_sets_placed.rpt
+| Design       : top_level
+| Device       : xc7z007s
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    20 |
+|    Minimum number of control sets                        |    20 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    45 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    20 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |     5 |
+| >= 10 to < 12      |     3 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     8 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              53 |           20 |
+| No           | No                    | Yes                    |              19 |            9 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |             409 |          101 |
+| Yes          | No                    | Yes                    |               7 |            3 |
+| Yes          | Yes                   | No                     |             163 |           35 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------------------------------------------+---------------------------------------------------------------------------+------------------------------------------------------------+------------------+----------------+
+|                    Clock Signal                    |                               Enable Signal                               |                      Set/Reset Signal                      | Slice Load Count | Bel Load Count |
++----------------------------------------------------+---------------------------------------------------------------------------+------------------------------------------------------------+------------------+----------------+
+|  iclk_IBUF_BUFG                                    | inst_LCD/INST_i2c_manager/addr_rw0                                        |                                                            |                2 |              7 |
+|  iclk_IBUF_BUFG                                    | inst_LCD/INST_i2c_manager/busy1                                           | inst_LCD/INST_i2c_manager/FSM_onehot_state[8]_i_3_n_0      |                3 |              7 |
+|  iclk_IBUF_BUFG                                    | inst_keyboard/ps2_keyboard_0/E[0]                                         |                                                            |                7 |              7 |
+|  iclk_IBUF_BUFG                                    | inst_state/state_sig_active[4]                                            |                                                            |                3 |              8 |
+|  iclk_IBUF_BUFG                                    | inst_state/state_sig_active[12]                                           |                                                            |                1 |              8 |
+|  iclk_IBUF_BUFG                                    | en                                                                        | inst_keyboard/SR[1]                                        |                3 |              8 |
+|  iclk_IBUF_BUFG                                    | inst_LCD/INST_i2c_manager/E[0]                                            |                                                            |                3 |              8 |
+|  iclk_IBUF_BUFG                                    | inst_keyboard/ps2_keyboard_0/ps2_code_new0                                |                                                            |                1 |              8 |
+|  iclk_IBUF_BUFG                                    | inst_keyboard/ps2_keyboard_0/debounce_ps2_clk/sel                         | inst_keyboard/ps2_keyboard_0/debounce_ps2_clk/counter_set  |                3 |             11 |
+|  iclk_IBUF_BUFG                                    | inst_keyboard/ps2_keyboard_0/debounce_ps2_data/counter_out[10]_i_2__0_n_0 | inst_keyboard/ps2_keyboard_0/debounce_ps2_data/counter_set |                2 |             11 |
+| ~inst_keyboard/ps2_keyboard_0/debounce_ps2_clk/CLK |                                                                           |                                                            |                2 |             11 |
+|  iclk_IBUF_BUFG                                    | inst_keyboard/ps2_keyboard_0/count_idle[0]_i_2_n_0                        | inst_keyboard/ps2_keyboard_0/debounce_ps2_clk/clear        |                4 |             13 |
+|  iclk_IBUF_BUFG                                    |                                                                           | inst_LCD/INST_i2c_manager/FSM_onehot_state[8]_i_3_n_0      |                9 |             19 |
+|  iclk_IBUF_BUFG                                    | inst_keyboard/ascii_code[7]_i_1_n_0                                       |                                                            |                9 |             26 |
+|  iclk_IBUF_BUFG                                    | inst_LCD/Counter[0]_i_1_n_0                                               |                                                            |                8 |             32 |
+|  iclk_IBUF_BUFG                                    |                                                                           |                                                            |               18 |             42 |
+|  iclk_IBUF_BUFG                                    | inst_state/state_sig_active[63]_i_1_n_0                                   |                                                            |               14 |             48 |
+|  iclk_IBUF_BUFG                                    | inst_state/state_out[63]_i_1_n_0                                          |                                                            |               13 |             64 |
+|  iclk_IBUF_BUFG                                    | en                                                                        | inst_keyboard/SR[0]                                        |               23 |            120 |
+|  iclk_IBUF_BUFG                                    | inst_LCD/regBusy                                                          |                                                            |               40 |            193 |
++----------------------------------------------------+---------------------------------------------------------------------------+------------------------------------------------------------+------------------+----------------+
+
+
