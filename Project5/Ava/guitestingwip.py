@@ -1,10 +1,20 @@
-# Last Edited: 4/3/2025
-# Keyboard was connected successfully
-# serial input was received successfully
-# pc keyboard data is sent thru serial comms when each key on keyboard is pressed. 
-# next: find a way to integrate rotary encoders
-# debugging: when changing between x and y direction movement, the pen width will go back to default for some reason
-# debugging: when the caps lock key is pressed on the keyboard the connection with serial is lost. 
+# Last Edited: 4/6/2025
+
+# what was/ has been done:
+    # serial input was received successfully
+    #     pc and serial kb's can now send commands
+    #        example : cFF00FF w4 s2  (enter)  -- color: magenta, pen width 3, canvas size 512x512
+    # the commands are shown on the GUI: string updating when the user changes 
+    #                                    either the entire command or just a partition
+    # other keys for functionality:
+    #     direction is now changed by t,f,g,h
+    #     you can save the canvas image by pressing 'o' or clicking button on gui
+    #     you can reset the canvas image by pressing 'k' or the button on the gui
+    # minor appearance changes to try to resemble an etch a sketch :)
+
+# next: find a way to integrate rotary encoders!
+
+#################################################################################################################
 
 import threading
 import tkinter as tk
@@ -19,101 +29,192 @@ except serial.SerialException as e:
     print(f"Error: Could not open serial port: {e}")
     ser = None
 
-# not working
+
 def send_state_to_serial(input_data):
     if ser:
         if isinstance(input_data, tk.Event):
-            print ("")
+            return
         else:
             state_hex = input_data.encode('utf-8').hex()
             print(f"sending: {state_hex} -> UART")
-
-
         threading.Thread(target=lambda: ser.write(bytes.fromhex(state_hex)), daemon=True).start()
 
 
 class CanvasTest:
     def __init__(self, root):
-        # formatting elements
         self.root = root
         self.window = root
 
-            # left side formatting
-        self.left_frame = tk.Frame()
-        self.left_frame.pack(side=tk.LEFT, padx=20, pady=20)
+        self.left_frame = tk.Frame(self.window, bg="#b53337")
+        self.left_frame.pack(side=tk.LEFT, padx=60, pady=60)
 
-            # right side formatting
         self.right_frame = tk.Frame()
         self.right_frame.pack(side=tk.RIGHT, padx=80, pady=80)
 
-            # save button
-        self.save_button = tk.Button(self.right_frame, text="Save Canvas as PNG", command=self.save_canvas)
-        self.save_button.pack(pady=10)
-
-        # initializing width
         self.w = 512
         self.h = 512
         self.x = self.w / 2
         self.y = self.h / 2
 
-        self.canvas = tk.Canvas(self.left_frame, width=self.w, height=self.h, bg="white")
-        self.canvas.pack()
-
-        self.canvasz_label = tk.Label(self.right_frame, text=f"sketching area: {self.w}x{self.h}",font=("fixedsys", 14), fg="black")
+        self.canvasz_label = tk.Label(self.left_frame, text=f"Etch a Sketch",font=("Brush Script MT", 25), fg = "#d4ba7b", bg="#b53337")
         self.canvasz_label.pack()
 
+        self.sketch_area_label = tk.Label(self.left_frame, text=f"sketching area: {self.w}x{self.h}", font=("fixedsys", 14), fg = "white", bg="#b53337")
+        self.sketch_area_label.pack()
 
-        # pen color init & formatting
+        self.canvas = tk.Canvas(self.left_frame, width=self.w, height=self.h, bg="#d2d4d6")
+        self.canvas.pack()
+
+        self.coord_frame = tk.Frame(self.left_frame)
+        self.coord_frame.pack()
+
+        # X and Y coords
+        self.xpos_label = tk.Label(self.coord_frame, text=f"x: {self.x}", font=("fixedsys", 14),  fg = "white", bg="#b53337")
+        self.xpos_label.pack(side=tk.LEFT)
+
+        self.ypos_label = tk.Label(self.coord_frame, text=f"y: {self.y}", font=("fixedsys", 14),  fg = "white", bg="#b53337")
+        self.ypos_label.pack(side=tk.LEFT)
+
+
         self.pencolor = "black"
-        self.pencolor_label = tk.Label(self.right_frame, text=f"pen color: {self.pencolor}", font=("fixedsys", 14),fg="black")
+        self.pencolor_label = tk.Label(self.right_frame, text=f"pen color: {self.pencolor}", font=("fixedsys", 14),
+                                       fg="black")
         self.pencolor_label.pack()
 
-        # pen width init & formatting
         self.penwidth = 1
-        self.penwidth_label = tk.Label(self.right_frame, text=f"pen width: {self.penwidth}", font=("fixedsys", 14), fg="black")
+        self.penwidth_label = tk.Label(self.right_frame, text=f"pen width: {self.penwidth}", font=("fixedsys", 14),
+                                       fg="black")
         self.penwidth_label.pack()
 
+        # Entry for user commands
+        self.command_entry = tk.Entry(self.right_frame, font=("fixedsys", 14), width=30)
+        self.command_entry.pack(pady=10)
+        self.command_entry.bind("<Return>", self.handle_command)
+        self.command_entry.focus_set()
+
+        self.command_display = tk.Label(self.right_frame, text="Commands:  ",
+                                        font=("fixedsys", 14), fg="black")
+        self.command_display.pack(pady=10)
+
+        self.save_button = tk.Button(self.right_frame, text="click me or press 'o' to save canvas", command=self.save_canvas, font=("fixedsys", 12),
+                                       fg="white", bg="#1977bf")
+        self.save_button.pack(pady=10)
+
+        self.reset_button = tk.Button(self.right_frame, text="click me or press 'k' to reset canvas", command=self.reset_canvas, font=("fixedsys", 12),
+                                       fg="white", bg="#a12024")
+        self.save_button.pack(pady=10)
+        self.reset_button.pack(pady=10)
+
+        # movement keys - will be changed when adding rotary encoders
+        self.root.bind("<KeyPress-t>", lambda e: self.draw('t') or "break")
+        self.root.bind("<KeyPress-g>", lambda e: self.draw('g') or "break")
+        self.root.bind("<KeyPress-f>", lambda e: self.draw('f') or "break")
+        self.root.bind("<KeyPress-h>", lambda e: self.draw('h') or "break")
+        self.root.bind("<KeyPress-o>", lambda e: self.save_canvas('o') or "break")
+        self.root.bind("<KeyPress-k>", self.reset_canvas)
 
 
-        self.game_active = True
-
-        self.serial_thread = threading.Thread(target=self.read_serial_input, daemon=True)
-        self.serial_thread.start()
-
-        # x position
-        self.xpos_label = tk.Label(self.right_frame, text="x: ", font=("fixedsys", 14), fg="black")
-        self.xpos_label.pack()
-        # y position
-        self.ypos_label = tk.Label(self.right_frame, text="y: ", font=("fixedsys", 14), fg="black")
-        self.ypos_label.pack()
-
-        # coordinates
         self.prev_x = self.x
         self.prev_y = self.y
 
-        # key binding
-        self.canvas.bind("<KeyPress>", self.draw)
-        self.canvas.bind("<KeyRelease>", self.handle_keyrel)
-        self.canvas.focus_set()
+        self.game_active = True
+        self.serial_thread = threading.Thread(target=self.read_serial_input, daemon=True)
+        self.serial_thread.start()
 
-    # function used for key binding
-    def handle_keyrel(self, event):
-        self.colors(event)
-        self.pwidth(event)
-        self.cwidth(event)
+        # dict. to store recent commands
+        self.recent_commands = {"c": None, "w": None, "s": None}
+
+    def handle_command(self, command_entry, command_ser=None):
+        if command_entry is not None:  # from  ps2_kb
+            command = self.command_entry.get().strip()
+        elif command_ser is not None:  # from serial
+            command = command_ser.strip()
+        else:
+            return
+
+        self.command_entry.delete(0, tk.END)  # clear
+        self.command_entry.focus_set()
+
+        if not command:
+            return
+
+        commands = command.split()
+
+        for cmd in commands:
+            # pen color commands
+            if cmd.startswith("c") and len(cmd) == 7:
+                try:
+                    red = cmd[1:3]
+                    green = cmd[3:5]
+                    blue = cmd[5:7]
+                    hex_color = f"#{red}{green}{blue}"
+                    self.pencolor = hex_color
+                    self.pencolor_label.config(text=f"pen color: {self.pencolor}")
+                    self.recent_commands["c"] = cmd
+                except Exception as e:
+                    print(f"Invalid color input: {e}")
+                    continue
+
+            # pen width commands
+            elif cmd.startswith("w") and len(cmd) == 2:
+                level = cmd[1]
+                if level in ['1', '2', '3', '4', '5', '6', '7']:
+                    self.pwidth(level)
+                    self.recent_commands["w"] = cmd
+                else:
+                    print("Invalid pen width level.")
+                    continue
+
+            # canvas size commands
+            elif cmd.startswith("s") and len(cmd) == 2:
+                if cmd == "s1":
+                    self.cwidth("s1")  # 256x256
+                    self.recent_commands["s"] = cmd
+                elif cmd == "s2":
+                    self.cwidth("s2")  # 512x512
+                    self.recent_commands["s"] = cmd
+                else:
+                    print("Invalid canvas size command.")
+                    continue
+
+            else:
+                print(f"No associated command: {cmd}")
+                continue
+
+        self.update_command_display()
+
+    def update_command_display(self):
+        command_text = f"Command: {self.recent_commands['c']} {self.recent_commands['w']} {self.recent_commands['s']}"
+        self.command_display.config(text=command_text)
+
+    def colors(self, input_data):
+        keysym = input_data
+        key_to_color = {"r": "red", "g": "green", "b": "blue", "k": "black", "y": "yellow"}
+        color = key_to_color.get(keysym)
+
+        if color:
+            self.pencolor = color
+            self.pencolor_label.config(text=f"pen color: {self.pencolor}")
+
+    def pwidth(self, input_data):
+        keysym = input_data
+        key_to_penwidth = {"1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7}
+        width = key_to_penwidth.get(keysym)
+        if width:
+            self.penwidth = width
+            self.penwidth_label.config(text=f"pen width: {self.penwidth}")
 
     def cwidth(self, input_data):
         if isinstance(input_data, tk.Event):
             # reg kb
             keysym = input_data.keysym
             send_state_to_serial(keysym)
-
         else:
             # serial kb
             keysym = input_data
-        # m is smaller canvas, n is larger - center is recalculated when switching back and forth
-        if keysym in ("m", "n"):
-            bbox = self.canvas.bbox("all")  # (x1, y1, x2, y2)
+
+        if keysym in ("s1", "s2"):
+            bbox = self.canvas.bbox("all")
             if bbox:
                 drawing_center_x = (bbox[0] + bbox[2]) / 2
                 drawing_center_y = (bbox[1] + bbox[3]) / 2
@@ -122,15 +223,15 @@ class CanvasTest:
                 drawing_center_y = self.y
 
             # setting the size of the canvas
-            if keysym == "m":
+            if keysym == "s1":
                 self.w = 256
                 self.h = 256
-            else :
+            else:
                 self.w = 512
                 self.h = 512
 
             self.canvas.config(width=self.w, height=self.h)
-            self.canvasz_label.config(text=f"sketching area: {self.w}x{self.h}")
+            self.sketch_area_label.config(text=f"sketching area: {self.w}x{self.h}")
 
             # find the center
             canvas_center_x = self.w / 2
@@ -148,130 +249,97 @@ class CanvasTest:
             self.ypos_label.config(text=f"y: {self.y}")
             self.canvas.create_line(self.x, self.y, self.x, self.y + 1, width=self.penwidth, fill=self.pencolor)
 
-    ########### changing the color of the pen ############################################
-    def colors(self, input_data):
-        if isinstance(input_data, tk.Event):
-            keysym = input_data.keysym
-            #send_state_to_serial(keysym)
-
-        else:
-            keysym = input_data
-
-        key_to_color = {"r": "red", "g": "green", "b": "blue", "k": "black", "y": "yellow"
-                        }
-        color = key_to_color.get(keysym)
-
-        if color:
-            self.pencolor = color
-            self.pencolor_label.config(text=f"pen color: {self.pencolor}")
-
-    ########## changing the width of the pen ##############################################
-    def pwidth(self, input_data):
-
-        if isinstance(input_data, tk.Event):
-            keysym = input_data.keysym
-            #send_state_to_serial(keysym)
-
-
-        else:
-            keysym = input_data
-
-        key_to_penwidth = {"1": 1, "2": 2, "3": 3, "4": 4,
-                         "5": 5, "6": 6, "7": 7
-                         }
-        self.penwidth = key_to_penwidth.get(keysym)
-        self.penwidth_label.config(text=f"pen width: {self.penwidth}")
-
-    ##########  user can draw     ##########################
     def draw(self, input_data):
-
-        if isinstance(input_data, tk.Event):
-            # reg kb
-            keysym = input_data.keysym
-            #send_state_to_serial(keysym)  # Send the key press to serial
-
-
-        else:
-            # serial kb
-            keysym = input_data
+        keysym = input_data
 
         self.prev_x = self.x
         self.prev_y = self.y
 
-        if keysym == "w":
+        if keysym == "t":
             if self.y > 0:
                 self.y -= 1
-        elif keysym == "s":
+        elif keysym == "g":
             if self.y < self.h:
                 self.y += 1
-        elif keysym == "a":
+        elif keysym == "f":
             if self.x > 0:
                 self.x -= 1
-        elif keysym == "d":
+        elif keysym == "h":
             if self.x < self.w:
                 self.x += 1
 
-        # draw line
         self.canvas.create_line(self.prev_x, self.prev_y, self.x, self.y, width=self.penwidth, fill=self.pencolor)
-
         self.xpos_label.config(text=f"x: {self.x}")
         self.ypos_label.config(text=f"y: {self.y}")
 
-    ########## saving the drawing as a png ##################################################
-    def save_canvas(self):
+    def save_canvas(self, event = None):
 
         filename = filedialog.asksaveasfilename(
             defaultextension=".png",
             filetypes=[("PNG files", "*.png")],
             title="Save your drawing"
         )
+
+        # set default name if nothing is typed
         if not filename:
-            return
+            filename = "drawing.png"
 
         self.canvas.update_idletasks()
         self.root.lift()
         self.root.attributes("-topmost", True)
         self.root.after_idle(lambda: self.root.attributes("-topmost", True))
 
-        # get the size of the canvas
+        # canvas coords
         x = self.canvas.winfo_rootx()
         y = self.canvas.winfo_rooty()
         x1 = x + self.canvas.winfo_width()
         y1 = y + self.canvas.winfo_height()
 
-        # save the drawing on canvas
         img = ImageGrab.grab(bbox=(x, y, x1, y1))
 
         img.save(filename)
-        print(f"saved as {filename}.png")
+        print(f"Saved as {filename}")
+
+    def reset_canvas(self, event = None):
+        # reset
+        self.canvas.delete("all")
+        self.x = self.w / 2
+        self.y = self.h / 2
+        self.xpos_label.config(text=f"x: {self.x}")
+        self.ypos_label.config(text=f"y: {self.y}")
+        self.canvas.create_line(self.x, self.y, self.x, self.y + 1, width=self.penwidth, fill=self.pencolor)
 
     def read_serial_input(self):
-            while True:
-                if ser and ser.in_waiting > 0:
-                    data = ser.read(1)  # one byte read
-                    ascii_char = data.decode('ascii', errors='replace').strip()
+        buffer = ""  # buffer for command string
 
-                    if self.game_active:
+        while True:
+            if ser and ser.in_waiting > 0:
+                try:
+                    data = ser.read(1)  # Read one byte
+                    ascii_char = data.decode('ascii', errors='replace')
 
-                        if ascii_char in ['w', 'a', 's', 'd']:
-                            self.root.after(0, self.draw, ascii_char)
-                        elif ascii_char in ['r', 'g', 'b', 'k', 'y']:
-                            self.root.after(0, self.colors, ascii_char)
-                        elif ascii_char in ['1', '2', '3', '4', '5', '6', '7']:
-                            self.root.after(0, self.pwidth, ascii_char)
-                        elif ascii_char in ['m', 'n']:
-                            self.root.after(0, self.cwidth, ascii_char)
-                        else:
-                            print(f"ps2 kb (no commands): {ascii_char}")
-                            ascii_char = data.decode('ascii', errors='replace').strip()
+                    if ascii_char in ['t', 'f', 'g', 'h']:
+                        self.root.after(0, self.draw, ascii_char)
+                    if ascii_char in ['o']:
+                        self.root.after(0, self.save_canvas, ascii_char)
+                    if ascii_char in ['k']:
+                        self.root.after(0, self.reset_canvas, ascii_char)
+                    elif ascii_char == '\r' or ascii_char == '\n':
+                        command_ser = buffer.strip()
+                        buffer = ""
 
-                    print(f"ps2 kb : {ascii_char}")
+                        if command_ser:  # if not empty
+                            print(f"Command from serial: {command_ser}")
+                            self.root.after(0, self.handle_command, None, command_ser)
+
+                    else:
+                        buffer += ascii_char  # add  to buffer before entering
+                        print(f"ps2 kb typing...: {ascii_char}")
+
+                except Exception as e:
+                    print(f"Error while reading serial input: {e}")
 
 
-
-
-
-############ calling the function ######################################################
 if __name__ == "__main__":
     root = tk.Tk()
     app = CanvasTest(root)
