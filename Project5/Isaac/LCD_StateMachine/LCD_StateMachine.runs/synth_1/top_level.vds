@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sun Apr  6 18:17:30 2025
-# Process ID: 12924
+# Start of session at: Mon Apr  7 14:55:39 2025
+# Process ID: 6736
 # Current directory: U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.runs/synth_1
 # Command line: vivado.exe -log top_level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl
 # Log file: U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.runs/synth_1/top_level.vds
@@ -16,14 +16,15 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
 INFO: [Device 21-403] Loading part xc7z007sclg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 9592 
+INFO: Helper process launched with PID 12108 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 720.289 ; gain = 176.988
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 721.250 ; gain = 177.621
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'top_level' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'top_level' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:48]
+WARNING: [Synth 8-614] signal 'count' is read in the process but is not in the sensitivity list [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:117]
 	Parameter clk_freq bound to: 125000000 - type: integer 
 	Parameter ps2_debounce_counter_size bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'ps2_keyboard_to_ascii' declared at 'U:/EE316/Project5/LCD_StateMachine/ps2_keyboard_to_ascii.vhd:26' bound to instance 'inst_keyboard' of component 'ps2_keyboard_to_ascii' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:151]
+INFO: [Synth 8-3491] module 'ps2_keyboard_to_ascii' declared at 'U:/EE316/Project5/LCD_StateMachine/ps2_keyboard_to_ascii.vhd:26' bound to instance 'inst_keyboard' of component 'ps2_keyboard_to_ascii' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:190]
 INFO: [Synth 8-638] synthesizing module 'ps2_keyboard_to_ascii' [U:/EE316/Project5/LCD_StateMachine/ps2_keyboard_to_ascii.vhd:38]
 	Parameter clk_freq bound to: 125000000 - type: integer 
 	Parameter ps2_debounce_counter_size bound to: 10 - type: integer 
@@ -44,11 +45,11 @@ INFO: [Synth 8-256] done synthesizing module 'ps2_keyboard' (2#1) [U:/EE316/Proj
 WARNING: [Synth 8-614] signal 'ascii_new_pulse' is read in the process but is not in the sensitivity list [U:/EE316/Project5/LCD_StateMachine/ps2_keyboard_to_ascii.vhd:74]
 INFO: [Synth 8-256] done synthesizing module 'ps2_keyboard_to_ascii' (3#1) [U:/EE316/Project5/LCD_StateMachine/ps2_keyboard_to_ascii.vhd:38]
 	Parameter sr_depth bound to: 128 - type: integer 
-INFO: [Synth 8-3491] module 'Shift_Register' declared at 'U:/EE316/Project5/LCD_StateMachine/shift_register.vhd:7' bound to instance 'inst_shift' of component 'Shift_Register' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:164]
+INFO: [Synth 8-3491] module 'Shift_Register' declared at 'U:/EE316/Project5/LCD_StateMachine/shift_register.vhd:7' bound to instance 'inst_shift' of component 'Shift_Register' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:203]
 INFO: [Synth 8-638] synthesizing module 'Shift_Register' [U:/EE316/Project5/LCD_StateMachine/shift_register.vhd:22]
 	Parameter sr_depth bound to: 128 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Shift_Register' (4#1) [U:/EE316/Project5/LCD_StateMachine/shift_register.vhd:22]
-INFO: [Synth 8-3491] module 'I2C_user_logic' declared at 'U:/EE316/Project5/LCD_StateMachine/I2C_userlogic.vhd:5' bound to instance 'inst_LCD' of component 'I2C_user_logic' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:178]
+INFO: [Synth 8-3491] module 'I2C_user_logic' declared at 'U:/EE316/Project5/LCD_StateMachine/I2C_userlogic.vhd:5' bound to instance 'inst_LCD' of component 'I2C_user_logic' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:217]
 INFO: [Synth 8-638] synthesizing module 'I2C_user_logic' [U:/EE316/Project5/LCD_StateMachine/I2C_userlogic.vhd:14]
 	Parameter input_clk bound to: 125000000 - type: integer 
 	Parameter bus_clk bound to: 50000 - type: integer 
@@ -58,15 +59,15 @@ INFO: [Synth 8-638] synthesizing module 'i2c_manager' [U:/EE316/Project5/LCD_Sta
 	Parameter bus_clk bound to: 50000 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'i2c_manager' (5#1) [U:/EE316/Project5/LCD_StateMachine/i2c_manager.vhd:52]
 INFO: [Synth 8-256] done synthesizing module 'I2C_user_logic' (6#1) [U:/EE316/Project5/LCD_StateMachine/I2C_userlogic.vhd:14]
-INFO: [Synth 8-3491] module 'state_machine' declared at 'U:/EE316/Project5/LCD_StateMachine/state_machine.vhd:34' bound to instance 'inst_state' of component 'state_machine' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:187]
+INFO: [Synth 8-3491] module 'state_machine' declared at 'U:/EE316/Project5/LCD_StateMachine/state_machine.vhd:34' bound to instance 'inst_state' of component 'state_machine' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:226]
 INFO: [Synth 8-638] synthesizing module 'state_machine' [U:/EE316/Project5/LCD_StateMachine/state_machine.vhd:44]
 WARNING: [Synth 8-6014] Unused sequential element ascii_new_prev_reg was removed.  [U:/EE316/Project5/LCD_StateMachine/state_machine.vhd:59]
 WARNING: [Synth 8-3936] Found unconnected internal register 'lcd_data_prev_reg' and it is trimmed from '128' to '8' bits. [U:/EE316/Project5/LCD_StateMachine/state_machine.vhd:58]
 INFO: [Synth 8-256] done synthesizing module 'state_machine' (7#1) [U:/EE316/Project5/LCD_StateMachine/state_machine.vhd:44]
-INFO: [Synth 8-256] done synthesizing module 'top_level' (8#1) [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:47]
-WARNING: [Synth 8-3917] design top_level has port led0_r driven by constant 1
-WARNING: [Synth 8-3917] design top_level has port led0_g driven by constant 1
-WARNING: [Synth 8-3917] design top_level has port led0_b driven by constant 1
+WARNING: [Synth 8-3848] Net led0_r in module/entity top_level does not have driver. [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:40]
+WARNING: [Synth 8-3848] Net led0_g in module/entity top_level does not have driver. [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:41]
+WARNING: [Synth 8-3848] Net led0_b in module/entity top_level does not have driver. [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'top_level' (8#1) [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:48]
 WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[127]
 WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[126]
 WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[125]
@@ -148,8 +149,11 @@ WARNING: [Synth 8-3331] design state_machine has unconnected port ascii_code[2]
 WARNING: [Synth 8-3331] design state_machine has unconnected port ascii_code[1]
 WARNING: [Synth 8-3331] design state_machine has unconnected port ascii_code[0]
 WARNING: [Synth 8-3331] design state_machine has unconnected port ascii_new
+WARNING: [Synth 8-3331] design top_level has unconnected port led0_r
+WARNING: [Synth 8-3331] design top_level has unconnected port led0_g
+WARNING: [Synth 8-3331] design top_level has unconnected port led0_b
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 785.020 ; gain = 241.719
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 785.523 ; gain = 241.895
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -162,10 +166,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 785.020 ; gain = 241.719
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 785.523 ; gain = 241.895
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 785.020 ; gain = 241.719
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 785.523 ; gain = 241.895
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -177,26 +181,26 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 911.715 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 913.512 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 911.715 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 913.512 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 911.715 ; gain = 368.414
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 913.512 ; gain = 369.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 911.715 ; gain = 368.414
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 913.512 ; gain = 369.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 911.715 ; gain = 368.414
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 913.512 ; gain = 369.883
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ps2_keyboard_to_ascii'
 INFO: [Synth 8-5546] ROM "ascii" won't be mapped to RAM because it is too sparse
@@ -245,8 +249,10 @@ INFO: [Synth 8-3354] encoded FSM with state register 'State_reg' using encoding 
                     send |                              100 |                              101
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'state_machine'
+WARNING: [Synth 8-327] inferring latch for variable 'sr_reset_reg' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:128]
+WARNING: [Synth 8-327] inferring latch for variable 'count_reg' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:125]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 911.715 ; gain = 368.414
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 913.512 ; gain = 369.883
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -259,6 +265,7 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input     32 Bit       Adders := 1     
 	   2 Input     12 Bit       Adders := 1     
 	   2 Input     11 Bit       Adders := 2     
 	   2 Input      8 Bit       Adders := 1     
@@ -281,6 +288,7 @@ Detailed RTL Component Info :
 	   4 Input    128 Bit        Muxes := 1     
 	   2 Input    128 Bit        Muxes := 1     
 	   5 Input     64 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 1     
 	   9 Input      9 Bit        Muxes := 1     
 	   2 Input      9 Bit        Muxes := 9     
@@ -302,7 +310,7 @@ Detailed RTL Component Info :
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 3     
 	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 18    
+	   2 Input      1 Bit        Muxes := 20    
 	   3 Input      1 Bit        Muxes := 12    
 	   5 Input      1 Bit        Muxes := 7     
 	   4 Input      1 Bit        Muxes := 12    
@@ -317,10 +325,13 @@ Start RTL Hierarchical Component Statistics
 Hierarchical RTL Component report 
 Module top_level 
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
 +---Registers : 
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
 Module debounce 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -436,9 +447,9 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3917] design top_level has port led0_r driven by constant 1
-WARNING: [Synth 8-3917] design top_level has port led0_g driven by constant 1
-WARNING: [Synth 8-3917] design top_level has port led0_b driven by constant 1
+WARNING: [Synth 8-3331] design top_level has unconnected port led0_r
+WARNING: [Synth 8-3331] design top_level has unconnected port led0_g
+WARNING: [Synth 8-3331] design top_level has unconnected port led0_b
 INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[0]' (FDE) to 'inst_LCD/prevdata1_reg[1]'
 INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[1]' (FDE) to 'inst_LCD/prevdata1_reg[2]'
 INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[2]' (FDE) to 'inst_LCD/prevdata1_reg[3]'
@@ -522,7 +533,7 @@ INFO: [Synth 8-3886] merging instance 'inst_LCD/INST_i2c_manager/addr_rw_reg[5]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\inst_LCD/INST_i2c_manager/addr_rw_reg[3] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_LCD/INST_i2c_manager/data_tx_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 911.715 ; gain = 368.414
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 913.512 ; gain = 369.883
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -534,13 +545,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 911.715 ; gain = 368.414
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 913.512 ; gain = 369.883
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 988.266 ; gain = 444.965
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 983.762 ; gain = 440.133
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -554,7 +565,7 @@ Start Technology Mapping
 WARNING: [Synth 8-3332] Sequential element (inst_LCD/INST_i2c_manager/FSM_onehot_state_reg[7]) is unused and will be removed from module top_level.
 WARNING: [Synth 8-3332] Sequential element (inst_LCD/INST_i2c_manager/FSM_onehot_state_reg[6]) is unused and will be removed from module top_level.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 989.312 ; gain = 446.012
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 984.816 ; gain = 441.188
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -578,7 +589,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 989.312 ; gain = 446.012
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 984.816 ; gain = 441.188
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -591,7 +602,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 989.312 ; gain = 446.012
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 984.816 ; gain = 441.188
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -603,25 +614,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 989.312 ; gain = 446.012
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 984.816 ; gain = 441.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 989.312 ; gain = 446.012
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 984.816 ; gain = 441.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 989.312 ; gain = 446.012
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 984.816 ; gain = 441.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 989.312 ; gain = 446.012
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 984.816 ; gain = 441.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -637,63 +648,66 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     1|
-|2     |CARRY4 |    37|
-|3     |LUT1   |    45|
-|4     |LUT2   |    87|
-|5     |LUT3   |   163|
-|6     |LUT4   |    51|
-|7     |LUT5   |   119|
-|8     |LUT6   |   292|
-|9     |MUXF7  |    33|
-|10    |MUXF8  |     7|
+|1     |BUFG   |     3|
+|2     |CARRY4 |    49|
+|3     |LUT1   |    50|
+|4     |LUT2   |   135|
+|5     |LUT3   |   154|
+|6     |LUT4   |    57|
+|7     |LUT5   |   135|
+|8     |LUT6   |   264|
+|9     |MUXF7  |    40|
+|10    |MUXF8  |     9|
 |11    |FDCE   |    20|
 |12    |FDPE   |     6|
 |13    |FDRE   |   609|
 |14    |FDSE   |    16|
-|15    |IBUF   |     3|
-|16    |IOBUF  |     1|
-|17    |OBUF   |     3|
-|18    |OBUFT  |     1|
+|15    |LD     |    32|
+|16    |LDC    |     1|
+|17    |IBUF   |     3|
+|18    |IOBUF  |     1|
+|19    |OBUFT  |     4|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+------------------------+----------------------+------+
 |      |Instance                |Module                |Cells |
 +------+------------------------+----------------------+------+
-|1     |top                     |                      |  1494|
-|2     |  inst_LCD              |I2C_user_logic        |   575|
-|3     |    INST_i2c_manager    |i2c_manager           |   204|
-|4     |  inst_keyboard         |ps2_keyboard_to_ascii |   392|
-|5     |    ps2_keyboard_0      |ps2_keyboard          |   302|
+|1     |top                     |                      |  1588|
+|2     |  inst_LCD              |I2C_user_logic        |   560|
+|3     |    INST_i2c_manager    |i2c_manager           |   188|
+|4     |  inst_keyboard         |ps2_keyboard_to_ascii |   383|
+|5     |    ps2_keyboard_0      |ps2_keyboard          |   292|
 |6     |      debounce_ps2_clk  |debounce              |    30|
 |7     |      debounce_ps2_data |debounce_0            |    29|
-|8     |  inst_shift            |Shift_Register        |   344|
-|9     |  inst_state            |state_machine         |   172|
+|8     |  inst_shift            |Shift_Register        |   343|
+|9     |  inst_state            |state_machine         |   190|
 +------+------------------------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 989.312 ; gain = 446.012
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 984.816 ; gain = 441.188
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:27 . Memory (MB): peak = 989.312 ; gain = 319.316
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 989.312 ; gain = 446.012
+Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:27 . Memory (MB): peak = 984.816 ; gain = 313.199
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 984.816 ; gain = 441.188
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 78 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 132 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1005.195 ; gain = 0.000
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1000.668 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 1 instances were transformed.
+  A total of 34 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instances
+  LD => LDCE: 32 instances
+  LDC => LDCE (inverted pins: G): 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-128 Infos, 92 Warnings, 0 Critical Warnings and 0 Errors encountered.
+128 Infos, 98 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1005.195 ; gain = 713.609
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1005.195 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1000.668 ; gain = 709.211
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1000.668 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.runs/synth_1/top_level.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Apr  6 18:18:12 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  7 14:56:21 2025...

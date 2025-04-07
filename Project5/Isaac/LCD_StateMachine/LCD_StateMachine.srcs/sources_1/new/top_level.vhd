@@ -21,6 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -94,6 +95,7 @@ end component;
 signal ascii_new_sig            : std_logic;
 signal ascii_new_prev           : std_logic;
 signal ascii_code_sig           : std_logic_vector(7 downto 0);
+signal sr_in_sig                : std_logic_vector(7 downto 0);
 signal state_sig                : std_logic_vector(6 downto 0);
 signal sr_out_sig               : std_logic_vector(127 downto 0);
 signal back_sig                 : std_logic := '0';
@@ -101,6 +103,10 @@ signal sr_en                    : std_logic;
 signal sr_reset                 : std_logic;
 signal input2_sig               : std_logic_vector(127 downto 0);
 signal state_out_sig            : std_logic_vector(63 downto 0) ;
+signal red                      : std_logic_vector(7 downto 0);
+signal green                    : std_logic_vector(7 downto 0);
+signal blue                     : std_logic_vector(7 downto 0);
+
 signal count                    : integer;
 --signal muxed_sr_input_prev      : std_logic_vector(7 downto 0);
 --signal muxed_sr_input           : std_logic_vector(7 downto 0);
@@ -116,13 +122,14 @@ begin
         back_sig <= '0';
     end if;
     if ascii_code_sig = x"0D" then
---        if count < 1000 then
---            count <= count + 1;
---        else
+        if count < 50_000_000 then
+            count <= count + 1;
+        else
             sr_reset <= '1';
---            count <= 0;
---        end if;
+            count <= 0;
+        end if;
     else 
+        sr_in_sig <= ascii_code_sig;
         sr_reset <= '0';
     end if;
 end process;
@@ -130,8 +137,9 @@ end process;
 process(iclk)
 begin
     if rising_edge(iclk) then
+
         ascii_new_prev <= ascii_new_sig;
-        if ascii_new_sig = '1' and ascii_new_prev = '0' then
+        if ascii_new_sig = '1' and ascii_new_prev = '0' and ascii_code_sig /= x"0D" then
             sr_en <= '1';
         else
             sr_en <= '0';
@@ -141,12 +149,43 @@ end process;
 
 process(state_out_sig)
 begin
-    input2_sig <= x"63" & state_out_sig(63 downto 16) & x"2077" & state_out_sig(15 downto 8) & x"2073" & state_out_sig(7 downto 0) & x"202020";
- --   if state_out_sig(31 downto 16) > state_out-sig(47 downto 32)
-    led0_r     <= '1';
-    led0_g     <= '1';
-    led0_b     <= '1';
- --   input2_sig <= state_out_sig & x"6320772073202020";
+    input2_sig <= x"63" & state_out_sig(63 downto 16) & x"2077" & state_out_sig(15 downto 8) & x"2073" & state_out_sig(7 downto 0) & x"202020"; -- led 2nd line display
+--    red   <= unsigned(state_out_sig(63 downto 48));
+--    green <= unsigned(state_out_sig(47 downto 32));
+--    blue  <= unsigned(state_out_sig(31 downto 16));
+--    if red > green and red > blue then -- red
+--        led0_r     <= '1';
+--        led0_g     <= '0';
+--        led0_b     <= '0';
+--    elsif green > blue and green > red then -- green
+--        led0_r     <= '0';
+--        led0_g     <= '1';
+--        led0_b     <= '0';
+--    elsif blue > red and blue > green then -- blue
+--        led0_r     <= '0';
+--        led0_g     <= '0';
+--        led0_b     <= '1';
+--    elsif blue = red and blue /= green then-- purple
+--        led0_r     <= '1';
+--        led0_g     <= '0';
+--        led0_b     <= '1';
+--    elsif green = red and green /= blue then-- orange
+--        led0_r     <= '1';
+--        led0_g     <= '1';
+--        led0_b     <= '0';
+--    elsif green = blue and green /= red then -- cyan
+--        led0_r     <= '0';
+--        led0_g     <= '1';
+--        led0_b     <= '1';
+--    elsif green = 65535 and red = 65535 and blue = 65535 then -- white
+--        led0_r     <= '1';
+--        led0_g     <= '1';
+--        led0_b     <= '1';
+--    elsif green = 0 and red = 0 and blue = 0 then -- black
+--        led0_r     <= '0';
+--        led0_g     <= '0';
+--        led0_b     <= '0';
+--    end if;
 end process;
 inst_keyboard: ps2_keyboard_to_ascii
     GENERIC MAP(
@@ -161,7 +200,7 @@ inst_keyboard: ps2_keyboard_to_ascii
         ascii_code  => ascii_code_sig
         );
 
-inst_shift: shift_register
+inst_shift_lcd: shift_register
     generic map(
         sr_depth => 128
         )
@@ -173,7 +212,19 @@ inst_shift: shift_register
         sr_in   => ascii_code_sig,
         sr_out  => sr_out_sig
         );
-        
+ 
+inst_shift_uart: shift_register
+    generic map(
+        sr_depth => 128
+        )
+    port map(
+        clock   => iclk,
+        reset   => sr_reset,
+        en      => sr_en,
+        back    => back_sig,
+        sr_in   => ascii_code_sig,
+        sr_out  => sr_out_sig
+        );       
 
 inst_LCD: I2C_user_logic
     port map(
