@@ -15,3 +15,7 @@ set_property src_info {type:XDC file:1 line:97 export:INPUT save:INPUT read:READ
 set_property -dict { PACKAGE_PIN R17   IOSTANDARD LVCMOS33 } [get_ports oSDA]; #IO_L19N_T3_VREF_34 Sch=ck_io[6]
 set_property src_info {type:XDC file:1 line:98 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN R14   IOSTANDARD LVCMOS33 } [get_ports oSCL]; #IO_L6N_T0_VREF_34 Sch=ck_io[7]
+set_property src_info {type:XDC file:1 line:99 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN N18   IOSTANDARD LVCMOS33 } [get_ports usb_tx]; #IO_L13P_T2_MRCC_34 Sch=ck_io[8]
+set_property src_info {type:XDC file:1 line:100 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN M18   IOSTANDARD LVCMOS33 } [get_ports usb_rx]; #IO_L8N_T1_AD10N_35 Sch=ck_io[9]

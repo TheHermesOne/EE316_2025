@@ -56,7 +56,7 @@ process(clk)
 begin
     if rising_edge(clk) then
         lcd_data_prev   <= lcd_data;
-        ascii_new_prev  <= ascii_new;
+--        ascii_new_prev  <= ascii_new;
     end if;
 end process;
 
@@ -72,21 +72,21 @@ begin
                     state <= cursor;
                 elsif lcd_data(15 downto 8) = x"73" then -- lowercase 's'
                     state <= screen;
-                elsif lcd_data(7 downto 0) = x"20" and lcd_data_prev(7 downto 0) /= x"20" then
-                    state <= send;
+--                elsif ascii_code = x"0D" then
+--                    state <= send;
                 else
                     state <= ready;
                 end if;
 
            when color =>
                 state_sig_active(63 downto 16) <= lcd_data(47 downto 0);
-                state <= ready;
+                state <= send;
            when cursor =>
                 state_sig_active(15 downto 8) <= lcd_data(7 downto 0);
-                state <= ready;
+                state <= send;
            when screen => 
                 state_sig_active(7 downto 0) <= lcd_data(7 downto 0);
-                state <= ready;
+                state <= send;
            when send =>
                 state_out <= state_sig_active;
                 state <= ready;

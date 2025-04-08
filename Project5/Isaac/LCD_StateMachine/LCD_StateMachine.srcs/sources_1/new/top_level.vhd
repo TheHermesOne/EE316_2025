@@ -41,7 +41,9 @@ entity top_level is
   led0_g        : out std_logic;
   led0_b        : out std_logic;
   oSDA          : inout STD_LOGIC;   
-  oSCL          : inout STD_LOGIC                  
+  oSCL          : inout STD_LOGIC;         
+  usb_tx        : in  std_logic;
+  usb_rx        : out std_logic       
   );
 end top_level;
 
@@ -55,6 +57,16 @@ component I2C_user_logic is
            oSCL         : inout STD_LOGIC
            );
 end component;
+
+component btn_debounce_toggle is
+GENERIC (
+	CONSTANT CNTR_MAX : std_logic_vector(15 downto 0) := X"FFFF");  
+    Port ( BTN_I 	: in  STD_LOGIC;
+           CLK 		: in  STD_LOGIC;
+           BTN_O 	: out  STD_LOGIC;
+           TOGGLE_O : out  STD_LOGIC;
+		   PULSE_O  : out STD_LOGIC);
+end component; 
 
 component Shift_Register is
     GENERIC (
@@ -85,71 +97,78 @@ component state_machine is
 port (
 clk         : in std_logic;
 lcd_data    : in std_logic_vector(127 downto 0);
-ascii_code  : in std_logic_vector(7 downto 0);
-ascii_new   : in std_logic;
+--ascii_code  : in std_logic_vector(7 downto 0);
+--ascii_new   : in std_logic;
 state_out   : out std_logic_vector(63 downto 0) -- 63 downto 16 = color; 15 downto 8 = cursor size; 7 downto 0 = screen size
 );
+end component;
+
+component clk_enabler is
+	GENERIC (
+		CONSTANT cnt_max : integer);      --  1.0 Hz 
+	port(	
+		clock:		in std_logic;	 
+		clk_en: 		out std_logic
+	);
+end component;
+
+component uart is
+    port (
+        reset       :in  std_logic;
+        txclk       :in  std_logic;
+        ld_tx_data  :in  std_logic;
+        tx_data     :in  std_logic_vector (7 downto 0);
+        tx_enable   :in  std_logic;
+        tx_out      :out std_logic;
+        tx_empty    :out std_logic;
+        rxclk       :in  std_logic;
+        uld_rx_data :in  std_logic;
+        rx_data     :out std_logic_vector (7 downto 0);
+        rx_enable   :in  std_logic;
+        rx_in       :in  std_logic;
+        rx_empty    :out std_logic
+    );
 end component;
 -------------------------------------------------------------------------------------------------------------------
 -- Signals
 signal ascii_new_sig            : std_logic;
 signal ascii_new_prev           : std_logic;
 signal ascii_code_sig           : std_logic_vector(7 downto 0);
+signal ascii_code_sig_prev      : std_logic_vector(7 downto 0);
 signal sr_in_sig                : std_logic_vector(7 downto 0);
 signal state_sig                : std_logic_vector(6 downto 0);
 signal sr_out_sig               : std_logic_vector(127 downto 0);
+signal sr_out_uart_active       : std_logic_vector(127 downto 0);
+signal sr_out_uart_final        : std_logic_vector(127 downto 0);
+signal sr_out_lcd               : std_logic_vector(127 downto 0);
 signal back_sig                 : std_logic := '0';
 signal sr_en                    : std_logic;
 signal sr_reset                 : std_logic;
-signal input2_sig               : std_logic_vector(127 downto 0);
-signal state_out_sig            : std_logic_vector(63 downto 0) ;
+signal input2_sig               : std_logic_vector(127 downto 0) := x"63303030303030207731207331202020";
+signal state_out_sig            : std_logic_vector(63 downto 0);
 signal red                      : std_logic_vector(7 downto 0);
 signal green                    : std_logic_vector(7 downto 0);
 signal blue                     : std_logic_vector(7 downto 0);
-
+signal rx_clk                   : std_logic;
+signal tx_clk                   : std_logic;
 signal count                    : integer;
---signal muxed_sr_input_prev      : std_logic_vector(7 downto 0);
---signal muxed_sr_input           : std_logic_vector(7 downto 0);
-begin
+signal shift_count              : integer;
+signal tx_out_sig               : std_logic;
+signal rx_data_sig              : std_logic_vector(7 downto 0);
+signal rx_in_sig                : std_logic;
+signal rx_empty_sig             : std_logic;
+signal rx_full                  : std_logic;
+signal uart_en                  : std_logic;
+signal uart_en_prev             : std_logic;
+signal ascii_code_uart          : std_logic_vector(7 downto 0);
+signal ascii_code_ps2           : std_logic_vector(7 downto 0);
+signal enter_flag               : std_logic;
+begin    
 
-
-
-process(ascii_code_sig, ascii_new_sig)
-begin
-    if ascii_code_sig = x"08" then
-        back_sig <= '1'; 
-    else
-        back_sig <= '0';
-    end if;
-    if ascii_code_sig = x"0D" then
-        if count < 50_000_000 then
-            count <= count + 1;
-        else
-            sr_reset <= '1';
-            count <= 0;
-        end if;
-    else 
-        sr_in_sig <= ascii_code_sig;
-        sr_reset <= '0';
-    end if;
-end process;
-        
-process(iclk)
-begin
-    if rising_edge(iclk) then
-
-        ascii_new_prev <= ascii_new_sig;
-        if ascii_new_sig = '1' and ascii_new_prev = '0' and ascii_code_sig /= x"0D" then
-            sr_en <= '1';
-        else
-            sr_en <= '0';
-        end if;
-    end if;
-end process;      
-
-process(state_out_sig)
-begin
-    input2_sig <= x"63" & state_out_sig(63 downto 16) & x"2077" & state_out_sig(15 downto 8) & x"2073" & state_out_sig(7 downto 0) & x"202020"; -- led 2nd line display
+--process(state_out_sig)
+--begin
+--             input2_sig          <= x"63" & state_out_sig(63 downto 16) & x"2077" & state_out_sig(15 downto 8) & x"2073" & state_out_sig(7 downto 0) & x"202020";   
+     -- led 2nd line display
 --    red   <= unsigned(state_out_sig(63 downto 48));
 --    green <= unsigned(state_out_sig(47 downto 32));
 --    blue  <= unsigned(state_out_sig(31 downto 16));
@@ -184,9 +203,71 @@ begin
 --    elsif green = 0 and red = 0 and blue = 0 then -- black
 --        led0_r     <= '0';
 --        led0_g     <= '0';
---        led0_b     <= '0';
+----        led0_b     <= '0';
+----    end if;
+--end process;
+    
+--process(iclk)
+--begin
+--    if rising_edge(iclk) then
+--        ascii_new_prev <= ascii_new_sig;
+--        if ascii_new_sig = '1' and ascii_new_prev = '0' and ascii_code_sig /= x"0D" then
+--            sr_en <= '1';
+--        else
+--            sr_en <= '0';
+--        end if;
 --    end if;
+--end process; 
+rx_full <= not rx_empty_sig;
+process(iclk)
+begin
+    if rising_edge(iclk) then
+
+        led0_r              <= not rx_empty_sig;
+        ascii_new_prev      <= ascii_new_sig;
+        uart_en_prev        <= uart_en;
+        ascii_code_sig_prev <= ascii_code_sig;
+
+        sr_en     <= '0';
+        sr_reset  <= '0';
+        back_sig  <= '0';
+
+        if uart_en_prev = '1' and uart_en = '0' and ascii_code_uart /= x"0D" then
+            ascii_code_sig <= ascii_code_uart;
+            sr_en <= '1';
+        elsif ascii_new_prev = '0' and ascii_new_sig = '1' then
+            if ascii_code_ps2 /= x"0D" then
+                ascii_code_sig <= ascii_code_ps2;
+                sr_en <= '1';
+            end if;
+        end if;
+
+
+        if ascii_code_ps2 = x"08" then
+            back_sig <= '1';
+        end if;
+
+
+        if ascii_new_prev = '0' and ascii_new_sig = '1' then
+            if ascii_code_ps2 = x"0D" then
+                enter_flag <= '1';
+                input2_sig <= x"63" & state_out_sig(63 downto 16) & x"2077" & state_out_sig(15 downto 8) & x"2073" & state_out_sig(7 downto 0) & x"202020";
+                count <= 0;
+            end if;
+        end if;
+        
+        if enter_flag = '1' then
+            if count < 50_000_000 then
+                count <= count + 1;
+            else
+                sr_reset <= '1';
+                enter_flag <= '0';
+            end if;
+        end if;
+    end if;
 end process;
+    
+
 inst_keyboard: ps2_keyboard_to_ascii
     GENERIC MAP(
         clk_freq                  => 125_000_000,
@@ -197,7 +278,7 @@ inst_keyboard: ps2_keyboard_to_ascii
         ps2_clk     => ps2_clk,
         ps2_data    => ps2_data,
         ascii_new   => ascii_new_sig,
-        ascii_code  => ascii_code_sig
+        ascii_code  => ascii_code_ps2
         );
 
 inst_shift_lcd: shift_register
@@ -210,38 +291,73 @@ inst_shift_lcd: shift_register
         en      => sr_en,
         back    => back_sig,
         sr_in   => ascii_code_sig,
-        sr_out  => sr_out_sig
+        sr_out  => sr_out_lcd
         );
- 
-inst_shift_uart: shift_register
-    generic map(
-        sr_depth => 128
-        )
-    port map(
-        clock   => iclk,
-        reset   => sr_reset,
-        en      => sr_en,
-        back    => back_sig,
-        sr_in   => ascii_code_sig,
-        sr_out  => sr_out_sig
-        );       
+    
 
 inst_LCD: I2C_user_logic
     port map(
         iclk    => iclk,
         oSDA    => oSDA,
         oSCL    => oSCL,
-        input1  => sr_out_sig,
+        input1  => sr_out_lcd,
         input2  => input2_sig
         );
 
 inst_state: state_machine
     port map(
         clk         => iclk,
-        ascii_code  => ascii_code_sig,
-        ascii_new   => ascii_new_sig,
-        lcd_data    => sr_out_sig,
+--        ascii_code  => ascii_code_sig_prev,
+--        ascii_new   => ascii_new_sig,
+        lcd_data    => sr_out_lcd,
         state_out   => state_out_sig
         );
+        
+inst_uart: uart 
+    port map(
+            reset       => '0',
+            txclk       => tx_clk,
+            ld_tx_data  => uart_en,
+            tx_data     => ascii_code_uart,
+            tx_enable   => '1',
+            tx_out      => usb_rx,
+            tx_empty    => open,
+            rxclk       => rx_clk,
+            uld_rx_data => '1',
+            rx_data     => ascii_code_uart,
+            rx_enable   => '1',
+            rx_in       => usb_tx,
+            rx_empty    => rx_empty_sig
+            );
 
-end Behavioral;
+tx_inst: clk_enabler
+    GENERIC map(
+        cnt_max => 13201  
+    )     
+    PORT map(    
+        clock  => iclk,     
+        clk_en => tx_clk
+    );  
+    
+rx_inst: clk_enabler
+    GENERIC map(
+        cnt_max => 13201  
+    )     
+    PORT map(    
+        clock  => iclk,     
+        clk_en => rx_clk
+    );  
+
+inst_debounce: btn_debounce_toggle 
+GENERIC map(
+	 CNTR_MAX => X"0001"
+	 )  
+    Port map
+    (       BTN_I 	=> rx_full,
+           CLK 		=> iclk,
+           BTN_O 	=> open,
+           TOGGLE_O => open,
+		   PULSE_O  => uart_en
+);
+
+end behavioral;
