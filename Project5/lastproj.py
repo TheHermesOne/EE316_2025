@@ -5,7 +5,7 @@ import serial
 
 # init serial communication
 try:
-    ser = serial.Serial('COM5', 9600, timeout=1)
+    ser = serial.Serial('COM3', 9600, timeout=1)
     print(f"Connected to: {ser.name}")
 except serial.SerialException as e:
     print(f"Error: Could not open serial port: {e}")

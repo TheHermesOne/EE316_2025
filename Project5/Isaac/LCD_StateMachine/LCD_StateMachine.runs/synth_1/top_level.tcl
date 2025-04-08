@@ -19,7 +19,6 @@ proc create_report { reportName command } {
 }
 set_param chipscope.maxJobs 3
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7z007sclg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -40,6 +39,8 @@ read_vhdl -library xil_defaultlib {
   U:/EE316/Project5/LCD_StateMachine/i2c_manager.vhd
   U:/EE316/Project5/LCD_StateMachine/ps2_keyboard.vhd
   U:/EE316/Project5/LCD_StateMachine/ps2_keyboard_to_ascii.vhd
+  U:/EE316/Project5/LCD_StateMachine/reset_delay.vhd
+  U:/EE316/Project5/LCD_StateMachine/rotary.vhd
   U:/EE316/Project5/LCD_StateMachine/shift_register.vhd
   U:/EE316/Project5/LCD_StateMachine/state_machine.vhd
   U:/EE316/Project5/LCD_StateMachine/uart.vhd

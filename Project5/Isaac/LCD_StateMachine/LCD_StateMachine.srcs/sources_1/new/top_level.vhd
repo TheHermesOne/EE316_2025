@@ -43,11 +43,34 @@ entity top_level is
   oSDA          : inout STD_LOGIC;   
   oSCL          : inout STD_LOGIC;         
   usb_tx        : in  std_logic;
-  usb_rx        : out std_logic       
+  usb_rx        : out std_logic;
+  A_x           : in std_logic;
+  B_x           : in std_logic;
+  A_y           : in std_logic;
+  B_y           : in std_logic       
   );
 end top_level;
 
 architecture Behavioral of top_level is
+component Reset_Delay IS  
+        PORT (
+            SIGNAL iCLK : IN std_logic; 
+            SIGNAL oRESET : OUT std_logic
+        );  
+    END component;
+    
+ component rotary is
+        generic(N: integer := 8; N2: integer := 255; N1: integer := 0);
+        port (
+        iCLK                    : in std_logic; 
+        reset                   : in std_logic;
+        A                       : in std_logic; -- A value
+        B                       : in std_logic; -- B value
+        left_tick               : out std_logic;
+        right_tick              : out std_logic
+        );
+    end component;
+
 component I2C_user_logic is							
     Port ( 
            iclk         : in STD_LOGIC;
@@ -146,9 +169,9 @@ signal sr_en                    : std_logic;
 signal sr_reset                 : std_logic;
 signal input2_sig               : std_logic_vector(127 downto 0) := x"63303030303030207731207331202020";
 signal state_out_sig            : std_logic_vector(63 downto 0);
-signal red                      : std_logic_vector(7 downto 0);
-signal green                    : std_logic_vector(7 downto 0);
-signal blue                     : std_logic_vector(7 downto 0);
+signal red                      : std_logic_vector(15 downto 0);
+signal green                    : std_logic_vector(15 downto 0);
+signal blue                     : std_logic_vector(15 downto 0);
 signal rx_clk                   : std_logic;
 signal tx_clk                   : std_logic;
 signal count                    : integer;
@@ -163,67 +186,62 @@ signal uart_en_prev             : std_logic;
 signal ascii_code_uart          : std_logic_vector(7 downto 0);
 signal ascii_code_ps2           : std_logic_vector(7 downto 0);
 signal enter_flag               : std_logic;
+signal rotary_x_left_tick  : std_logic;
+    signal rotary_x_right_tick : std_logic;
+    signal rotary_y_left_tick  : std_logic;
+    signal rotary_y_right_tick : std_logic;
+    signal prev_x_left_tick   : std_logic := '0';
+    signal prev_x_right_tick  : std_logic := '0';
+    signal prev_y_left_tick   : std_logic := '0';
+    signal prev_y_right_tick  : std_logic := '0';
+signal cursor_x        : integer := 0;                     -- X cursor position
+    signal cursor_y        : integer := 0;
+signal red_val, blue_val, green_val :integer := 0;
+  signal uart_tx_data     : std_logic_vector(7 downto 0);
+  signal reset_on         : std_logic;
+  signal uart_wr            : std_logic := '0';    
 begin    
 
---process(state_out_sig)
---begin
---             input2_sig          <= x"63" & state_out_sig(63 downto 16) & x"2077" & state_out_sig(15 downto 8) & x"2073" & state_out_sig(7 downto 0) & x"202020";   
-     -- led 2nd line display
---    red   <= unsigned(state_out_sig(63 downto 48));
---    green <= unsigned(state_out_sig(47 downto 32));
---    blue  <= unsigned(state_out_sig(31 downto 16));
---    if red > green and red > blue then -- red
---        led0_r     <= '1';
---        led0_g     <= '0';
---        led0_b     <= '0';
---    elsif green > blue and green > red then -- green
---        led0_r     <= '0';
---        led0_g     <= '1';
---        led0_b     <= '0';
---    elsif blue > red and blue > green then -- blue
---        led0_r     <= '0';
---        led0_g     <= '0';
---        led0_b     <= '1';
---    elsif blue = red and blue /= green then-- purple
---        led0_r     <= '1';
---        led0_g     <= '0';
---        led0_b     <= '1';
---    elsif green = red and green /= blue then-- orange
---        led0_r     <= '1';
---        led0_g     <= '1';
---        led0_b     <= '0';
---    elsif green = blue and green /= red then -- cyan
---        led0_r     <= '0';
---        led0_g     <= '1';
---        led0_b     <= '1';
---    elsif green = 65535 and red = 65535 and blue = 65535 then -- white
---        led0_r     <= '1';
---        led0_g     <= '1';
---        led0_b     <= '1';
---    elsif green = 0 and red = 0 and blue = 0 then -- black
---        led0_r     <= '0';
---        led0_g     <= '0';
-----        led0_b     <= '0';
-----    end if;
---end process;
-    
---process(iclk)
---begin
---    if rising_edge(iclk) then
---        ascii_new_prev <= ascii_new_sig;
---        if ascii_new_sig = '1' and ascii_new_prev = '0' and ascii_code_sig /= x"0D" then
---            sr_en <= '1';
---        else
---            sr_en <= '0';
---        end if;
---    end if;
---end process; 
-rx_full <= not rx_empty_sig;
-process(iclk)
+process(iclk, reset_on) -- ava rotary control
+begin
+    if reset_on = '1' then
+        uart_tx_data <= (others => '0');
+        uart_wr <= '0';
+
+        prev_x_left_tick   <= '0';
+        prev_x_right_tick  <= '0';
+        prev_y_left_tick   <= '0';
+        prev_y_right_tick  <= '0';
+
+    elsif rising_edge(iclk) then
+        uart_wr <= '0'; -- default no write
+
+        -- Rising edge detection
+        if rotary_x_left_tick = '1' and prev_x_left_tick = '0' then
+            uart_tx_data <= x"68"; -- 'f'
+            uart_wr <= '1';
+        elsif rotary_x_right_tick = '1' and prev_x_right_tick = '0' then
+            uart_tx_data <= x"66"; -- 'h'
+            uart_wr <= '1';
+        elsif rotary_y_left_tick = '1' and prev_y_left_tick = '0' then
+            uart_tx_data <= x"67"; -- 't'
+            uart_wr <= '1';
+        elsif rotary_y_right_tick = '1' and prev_y_right_tick = '0' then
+            uart_tx_data <= x"74"; -- 'g'
+            uart_wr <= '1';
+        end if;
+
+        -- Store previous states
+        prev_x_left_tick   <= rotary_x_left_tick;
+        prev_x_right_tick  <= rotary_x_right_tick;
+        prev_y_left_tick   <= rotary_y_left_tick;
+        prev_y_right_tick  <= rotary_y_right_tick;
+    end if;
+end process;
+
+process(iclk) -- keyboard/lcd/led control
 begin
     if rising_edge(iclk) then
-
-        led0_r              <= not rx_empty_sig;
         ascii_new_prev      <= ascii_new_sig;
         uart_en_prev        <= uart_en;
         ascii_code_sig_prev <= ascii_code_sig;
@@ -242,31 +260,104 @@ begin
             end if;
         end if;
 
-
         if ascii_code_ps2 = x"08" then
             back_sig <= '1';
         end if;
 
-
         if ascii_new_prev = '0' and ascii_new_sig = '1' then
+        --------------------------------------------------------------------------------------------------------------------
             if ascii_code_ps2 = x"0D" then
                 enter_flag <= '1';
                 input2_sig <= x"63" & state_out_sig(63 downto 16) & x"2077" & state_out_sig(15 downto 8) & x"2073" & state_out_sig(7 downto 0) & x"202020";
                 count <= 0;
+                red   <= state_out_sig(63 downto 48);
+                green <= state_out_sig(47 downto 32);
+                blue  <= state_out_sig(31 downto 16);
+
+                red_val   <= to_integer(unsigned(red));
+                green_val <= to_integer(unsigned(green));
+                blue_val  <= to_integer(unsigned(blue));
+
+   
+
+                if red_val > green_val and red_val > blue_val then -- red
+                    led0_r <= '1';
+                    led0_g <= '0';
+                    led0_b <= '0';
+                elsif green_val > red_val and green_val > blue_val then
+                    led0_r <= '0';
+                    led0_g <= '1';
+                    led0_b <= '0';
+                elsif blue_val > red_val and blue_val > green_val then
+                    led0_r <= '0';
+                    led0_g <= '0';
+                    led0_b <= '1';
+                elsif red_val = blue_val and red_val /= green_val then
+                    led0_r <= '1';
+                    led0_g <= '0';
+                    led0_b <= '1'; -- purple
+                elsif red_val = green_val and red_val /= blue_val then
+                    led0_r <= '1';
+                    led0_g <= '1';
+                    led0_b <= '0'; -- orange
+                elsif green_val = blue_val and green_val /= red_val then
+                    led0_r <= '0';
+                    led0_g <= '1';
+                    led0_b <= '1'; -- cyan
+                elsif red_val = 26214 and green_val = 26214 and blue_val = 26214 then
+                    led0_r <= '1';
+                    led0_g <= '1';
+                    led0_b <= '1'; -- white
+                elsif red_val = 0 and green_val = 0 and blue_val = 0 then
+                    led0_r <= '0';
+                    led0_g <= '0';
+                    led0_b <= '0'; -- black
+                end if;
             end if;
         end if;
-        
         if enter_flag = '1' then
-            if count < 50_000_000 then
+            if count < 1000 then
                 count <= count + 1;
             else
                 sr_reset <= '1';
                 enter_flag <= '0';
             end if;
         end if;
+
+        
     end if;
 end process;
     
+
+rx_full <= not rx_empty_sig;
+
+inst_reset_delay: reset_delay 
+        port map(
+            iclk    => iclk,
+            oRESET  => reset_on
+        );
+
+     -- Rotary Encoder Component
+inst_rotary_x: rotary
+        port map (
+            iCLK        => iclk,
+            reset       => reset_on,
+            A           => A_x,
+            B           => B_x,
+            left_tick   => rotary_x_left_tick,
+            right_tick  => rotary_x_right_tick
+        );
+
+    -- Rotary Encoder for Y (reuse A/B for demo or expand as needed)
+inst_rotary_y: rotary
+        port map (
+            iCLK        => iclk,
+            reset       => reset_on,
+            A           => A_y,
+            B           => B_y,
+            left_tick   => rotary_y_left_tick,
+            right_tick  => rotary_y_right_tick
+        );   
 
 inst_keyboard: ps2_keyboard_to_ascii
     GENERIC MAP(
@@ -315,10 +406,10 @@ inst_state: state_machine
         
 inst_uart: uart 
     port map(
-            reset       => '0',
+            reset       => reset_on,
             txclk       => tx_clk,
-            ld_tx_data  => uart_en,
-            tx_data     => ascii_code_uart,
+            ld_tx_data  => '1',
+            tx_data     => uart_tx_data,
             tx_enable   => '1',
             tx_out      => usb_rx,
             tx_empty    => open,

@@ -15,14 +15,37 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
 INFO: [Device 21-403] Loading part xc7z007sclg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 12748 
+INFO: Helper process launched with PID 13944 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 719.832 ; gain = 176.883
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 719.680 ; gain = 177.613
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'top_level' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'top_level' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:54]
+INFO: [Synth 8-3491] module 'Reset_Delay' declared at 'U:/EE316/Project5/LCD_StateMachine/reset_delay.vhd:8' bound to instance 'inst_reset_delay' of component 'Reset_Delay' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:334]
+INFO: [Synth 8-638] synthesizing module 'Reset_Delay' [U:/EE316/Project5/LCD_StateMachine/reset_delay.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'Reset_Delay' (1#1) [U:/EE316/Project5/LCD_StateMachine/reset_delay.vhd:16]
+	Parameter N bound to: 8 - type: integer 
+	Parameter N2 bound to: 255 - type: integer 
+	Parameter N1 bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'rotary' declared at 'U:/EE316/Project5/LCD_StateMachine/rotary.vhd:5' bound to instance 'inst_rotary_x' of component 'rotary' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:341]
+INFO: [Synth 8-638] synthesizing module 'rotary' [U:/EE316/Project5/LCD_StateMachine/rotary.vhd:17]
+	Parameter N bound to: 8 - type: integer 
+WARNING: [Synth 8-3819] Generic 'n2' not present in instantiated entity will be ignored [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:341]
+WARNING: [Synth 8-3819] Generic 'n1' not present in instantiated entity will be ignored [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:341]
+	Parameter CNTR_MAX bound to: 16'b1111111111111111 
+INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at 'U:/EE316/Project5/LCD_StateMachine/btn_debounce_toggle.vhd:32' bound to instance 'inst_A' of component 'btn_debounce_toggle' [U:/EE316/Project5/LCD_StateMachine/rotary.vhd:64]
+INFO: [Synth 8-638] synthesizing module 'btn_debounce_toggle' [U:/EE316/Project5/LCD_StateMachine/btn_debounce_toggle.vhd:42]
+	Parameter CNTR_MAX bound to: 16'b1111111111111111 
+INFO: [Synth 8-256] done synthesizing module 'btn_debounce_toggle' (2#1) [U:/EE316/Project5/LCD_StateMachine/btn_debounce_toggle.vhd:42]
+	Parameter CNTR_MAX bound to: 16'b1111111111111111 
+INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at 'U:/EE316/Project5/LCD_StateMachine/btn_debounce_toggle.vhd:32' bound to instance 'inst_B' of component 'btn_debounce_toggle' [U:/EE316/Project5/LCD_StateMachine/rotary.vhd:75]
+INFO: [Synth 8-256] done synthesizing module 'rotary' (3#1) [U:/EE316/Project5/LCD_StateMachine/rotary.vhd:17]
+	Parameter N bound to: 8 - type: integer 
+	Parameter N2 bound to: 255 - type: integer 
+	Parameter N1 bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'rotary' declared at 'U:/EE316/Project5/LCD_StateMachine/rotary.vhd:5' bound to instance 'inst_rotary_y' of component 'rotary' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:352]
 	Parameter clk_freq bound to: 125000000 - type: integer 
 	Parameter ps2_debounce_counter_size bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'ps2_keyboard_to_ascii' declared at 'U:/EE316/Project5/LCD_StateMachine/ps2_keyboard_to_ascii.vhd:26' bound to instance 'inst_keyboard' of component 'ps2_keyboard_to_ascii' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:271]
+INFO: [Synth 8-3491] module 'ps2_keyboard_to_ascii' declared at 'U:/EE316/Project5/LCD_StateMachine/ps2_keyboard_to_ascii.vhd:26' bound to instance 'inst_keyboard' of component 'ps2_keyboard_to_ascii' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:362]
 INFO: [Synth 8-638] synthesizing module 'ps2_keyboard_to_ascii' [U:/EE316/Project5/LCD_StateMachine/ps2_keyboard_to_ascii.vhd:38]
 	Parameter clk_freq bound to: 125000000 - type: integer 
 	Parameter ps2_debounce_counter_size bound to: 10 - type: integer 
@@ -36,18 +59,18 @@ INFO: [Synth 8-638] synthesizing module 'ps2_keyboard' [U:/EE316/Project5/LCD_St
 INFO: [Synth 8-3491] module 'debounce' declared at 'U:/EE316/Project5/LCD_StateMachine/debounce.vhd:27' bound to instance 'debounce_ps2_clk' of component 'debounce' [U:/EE316/Project5/LCD_StateMachine/ps2_keyboard.vhd:67]
 INFO: [Synth 8-638] synthesizing module 'debounce' [U:/EE316/Project5/LCD_StateMachine/debounce.vhd:36]
 	Parameter counter_size bound to: 10 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'debounce' (1#1) [U:/EE316/Project5/LCD_StateMachine/debounce.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'debounce' (4#1) [U:/EE316/Project5/LCD_StateMachine/debounce.vhd:36]
 	Parameter counter_size bound to: 10 - type: integer 
 INFO: [Synth 8-3491] module 'debounce' declared at 'U:/EE316/Project5/LCD_StateMachine/debounce.vhd:27' bound to instance 'debounce_ps2_data' of component 'debounce' [U:/EE316/Project5/LCD_StateMachine/ps2_keyboard.vhd:70]
-INFO: [Synth 8-256] done synthesizing module 'ps2_keyboard' (2#1) [U:/EE316/Project5/LCD_StateMachine/ps2_keyboard.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'ps2_keyboard' (5#1) [U:/EE316/Project5/LCD_StateMachine/ps2_keyboard.vhd:38]
 WARNING: [Synth 8-614] signal 'ascii_new_pulse' is read in the process but is not in the sensitivity list [U:/EE316/Project5/LCD_StateMachine/ps2_keyboard_to_ascii.vhd:74]
-INFO: [Synth 8-256] done synthesizing module 'ps2_keyboard_to_ascii' (3#1) [U:/EE316/Project5/LCD_StateMachine/ps2_keyboard_to_ascii.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'ps2_keyboard_to_ascii' (6#1) [U:/EE316/Project5/LCD_StateMachine/ps2_keyboard_to_ascii.vhd:38]
 	Parameter sr_depth bound to: 128 - type: integer 
-INFO: [Synth 8-3491] module 'Shift_Register' declared at 'U:/EE316/Project5/LCD_StateMachine/shift_register.vhd:7' bound to instance 'inst_shift_lcd' of component 'Shift_Register' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:284]
+INFO: [Synth 8-3491] module 'Shift_Register' declared at 'U:/EE316/Project5/LCD_StateMachine/shift_register.vhd:7' bound to instance 'inst_shift_lcd' of component 'Shift_Register' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:375]
 INFO: [Synth 8-638] synthesizing module 'Shift_Register' [U:/EE316/Project5/LCD_StateMachine/shift_register.vhd:22]
 	Parameter sr_depth bound to: 128 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Shift_Register' (4#1) [U:/EE316/Project5/LCD_StateMachine/shift_register.vhd:22]
-INFO: [Synth 8-3491] module 'I2C_user_logic' declared at 'U:/EE316/Project5/LCD_StateMachine/I2C_userlogic.vhd:5' bound to instance 'inst_LCD' of component 'I2C_user_logic' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:298]
+INFO: [Synth 8-256] done synthesizing module 'Shift_Register' (7#1) [U:/EE316/Project5/LCD_StateMachine/shift_register.vhd:22]
+INFO: [Synth 8-3491] module 'I2C_user_logic' declared at 'U:/EE316/Project5/LCD_StateMachine/I2C_userlogic.vhd:5' bound to instance 'inst_LCD' of component 'I2C_user_logic' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:389]
 INFO: [Synth 8-638] synthesizing module 'I2C_user_logic' [U:/EE316/Project5/LCD_StateMachine/I2C_userlogic.vhd:14]
 	Parameter input_clk bound to: 125000000 - type: integer 
 	Parameter bus_clk bound to: 50000 - type: integer 
@@ -55,36 +78,35 @@ INFO: [Synth 8-3491] module 'i2c_manager' declared at 'U:/EE316/Project5/LCD_Sta
 INFO: [Synth 8-638] synthesizing module 'i2c_manager' [U:/EE316/Project5/LCD_StateMachine/i2c_manager.vhd:52]
 	Parameter input_clk bound to: 125000000 - type: integer 
 	Parameter bus_clk bound to: 50000 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'i2c_manager' (5#1) [U:/EE316/Project5/LCD_StateMachine/i2c_manager.vhd:52]
-INFO: [Synth 8-256] done synthesizing module 'I2C_user_logic' (6#1) [U:/EE316/Project5/LCD_StateMachine/I2C_userlogic.vhd:14]
-WARNING: [Synth 8-5640] Port 'ascii_code' is missing in component declaration [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:96]
-WARNING: [Synth 8-5640] Port 'ascii_new' is missing in component declaration [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:96]
-INFO: [Synth 8-3491] module 'state_machine' declared at 'U:/EE316/Project5/LCD_StateMachine/state_machine.vhd:34' bound to instance 'inst_state' of component 'state_machine' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:307]
+INFO: [Synth 8-256] done synthesizing module 'i2c_manager' (8#1) [U:/EE316/Project5/LCD_StateMachine/i2c_manager.vhd:52]
+INFO: [Synth 8-256] done synthesizing module 'I2C_user_logic' (9#1) [U:/EE316/Project5/LCD_StateMachine/I2C_userlogic.vhd:14]
+WARNING: [Synth 8-5640] Port 'ascii_code' is missing in component declaration [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:119]
+WARNING: [Synth 8-5640] Port 'ascii_new' is missing in component declaration [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:119]
+INFO: [Synth 8-3491] module 'state_machine' declared at 'U:/EE316/Project5/LCD_StateMachine/state_machine.vhd:34' bound to instance 'inst_state' of component 'state_machine' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:398]
 INFO: [Synth 8-638] synthesizing module 'state_machine' [U:/EE316/Project5/LCD_StateMachine/state_machine.vhd:44]
 WARNING: [Synth 8-6014] Unused sequential element lcd_data_prev_reg was removed.  [U:/EE316/Project5/LCD_StateMachine/state_machine.vhd:58]
-INFO: [Synth 8-256] done synthesizing module 'state_machine' (7#1) [U:/EE316/Project5/LCD_StateMachine/state_machine.vhd:44]
-INFO: [Synth 8-3491] module 'uart' declared at 'U:/EE316/Project5/LCD_StateMachine/uart.vhd:12' bound to instance 'inst_uart' of component 'uart' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:316]
+INFO: [Synth 8-256] done synthesizing module 'state_machine' (10#1) [U:/EE316/Project5/LCD_StateMachine/state_machine.vhd:44]
+INFO: [Synth 8-3491] module 'uart' declared at 'U:/EE316/Project5/LCD_StateMachine/uart.vhd:12' bound to instance 'inst_uart' of component 'uart' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:407]
 INFO: [Synth 8-638] synthesizing module 'uart' [U:/EE316/Project5/LCD_StateMachine/uart.vhd:29]
 WARNING: [Synth 8-6014] Unused sequential element rx_frame_err_reg was removed.  [U:/EE316/Project5/LCD_StateMachine/uart.vhd:52]
 WARNING: [Synth 8-6014] Unused sequential element rx_over_run_reg was removed.  [U:/EE316/Project5/LCD_StateMachine/uart.vhd:53]
 WARNING: [Synth 8-6014] Unused sequential element tx_over_run_reg was removed.  [U:/EE316/Project5/LCD_StateMachine/uart.vhd:120]
-INFO: [Synth 8-256] done synthesizing module 'uart' (8#1) [U:/EE316/Project5/LCD_StateMachine/uart.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'uart' (11#1) [U:/EE316/Project5/LCD_StateMachine/uart.vhd:29]
 	Parameter cnt_max bound to: 13201 - type: integer 
-INFO: [Synth 8-3491] module 'clk_enabler' declared at 'U:/EE316/Project5/LCD_StateMachine/clk_enabler.vhd:7' bound to instance 'tx_inst' of component 'clk_enabler' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:333]
+INFO: [Synth 8-3491] module 'clk_enabler' declared at 'U:/EE316/Project5/LCD_StateMachine/clk_enabler.vhd:7' bound to instance 'tx_inst' of component 'clk_enabler' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:424]
 INFO: [Synth 8-638] synthesizing module 'clk_enabler' [U:/EE316/Project5/LCD_StateMachine/clk_enabler.vhd:18]
 	Parameter cnt_max bound to: 13201 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'clk_enabler' (9#1) [U:/EE316/Project5/LCD_StateMachine/clk_enabler.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'clk_enabler' (12#1) [U:/EE316/Project5/LCD_StateMachine/clk_enabler.vhd:18]
 	Parameter cnt_max bound to: 13201 - type: integer 
-INFO: [Synth 8-3491] module 'clk_enabler' declared at 'U:/EE316/Project5/LCD_StateMachine/clk_enabler.vhd:7' bound to instance 'rx_inst' of component 'clk_enabler' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:342]
+INFO: [Synth 8-3491] module 'clk_enabler' declared at 'U:/EE316/Project5/LCD_StateMachine/clk_enabler.vhd:7' bound to instance 'rx_inst' of component 'clk_enabler' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:433]
 	Parameter CNTR_MAX bound to: 16'b0000000000000001 
-INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at 'U:/EE316/Project5/LCD_StateMachine/btn_debounce_toggle.vhd:32' bound to instance 'inst_debounce' of component 'btn_debounce_toggle' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:351]
-INFO: [Synth 8-638] synthesizing module 'btn_debounce_toggle' [U:/EE316/Project5/LCD_StateMachine/btn_debounce_toggle.vhd:42]
+INFO: [Synth 8-3491] module 'btn_debounce_toggle' declared at 'U:/EE316/Project5/LCD_StateMachine/btn_debounce_toggle.vhd:32' bound to instance 'inst_debounce' of component 'btn_debounce_toggle' [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:442]
+INFO: [Synth 8-638] synthesizing module 'btn_debounce_toggle__parameterized2' [U:/EE316/Project5/LCD_StateMachine/btn_debounce_toggle.vhd:42]
 	Parameter CNTR_MAX bound to: 16'b0000000000000001 
-INFO: [Synth 8-256] done synthesizing module 'btn_debounce_toggle' (10#1) [U:/EE316/Project5/LCD_StateMachine/btn_debounce_toggle.vhd:42]
-WARNING: [Synth 8-6014] Unused sequential element ascii_code_sig_prev_reg was removed.  [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:229]
-WARNING: [Synth 8-3848] Net led0_g in module/entity top_level does not have driver. [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:41]
-WARNING: [Synth 8-3848] Net led0_b in module/entity top_level does not have driver. [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'top_level' (11#1) [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'btn_debounce_toggle__parameterized2' (12#1) [U:/EE316/Project5/LCD_StateMachine/btn_debounce_toggle.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element uart_wr_reg was removed.  [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:209]
+WARNING: [Synth 8-6014] Unused sequential element ascii_code_sig_prev_reg was removed.  [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:247]
+INFO: [Synth 8-256] done synthesizing module 'top_level' (13#1) [U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.srcs/sources_1/new/top_level.vhd:54]
 WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[127]
 WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[126]
 WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[125]
@@ -166,10 +188,9 @@ WARNING: [Synth 8-3331] design state_machine has unconnected port ascii_code[2]
 WARNING: [Synth 8-3331] design state_machine has unconnected port ascii_code[1]
 WARNING: [Synth 8-3331] design state_machine has unconnected port ascii_code[0]
 WARNING: [Synth 8-3331] design state_machine has unconnected port ascii_new
-WARNING: [Synth 8-3331] design top_level has unconnected port led0_g
-WARNING: [Synth 8-3331] design top_level has unconnected port led0_b
+WARNING: [Synth 8-3331] design rotary has unconnected port reset
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 784.543 ; gain = 241.594
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 785.027 ; gain = 242.961
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -182,10 +203,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 784.543 ; gain = 241.594
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 785.027 ; gain = 242.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 784.543 ; gain = 241.594
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 785.027 ; gain = 242.961
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -197,26 +218,26 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_level_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 918.461 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 921.766 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 918.461 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 921.766 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 918.461 ; gain = 375.512
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 921.766 ; gain = 379.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z007sclg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 918.461 ; gain = 375.512
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 921.766 ; gain = 379.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 918.461 ; gain = 375.512
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 921.766 ; gain = 379.699
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ps2_keyboard_to_ascii'
 INFO: [Synth 8-5546] ROM "ascii" won't be mapped to RAM because it is too sparse
@@ -266,7 +287,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'State_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'state_machine'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 918.461 ; gain = 375.512
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 921.766 ; gain = 379.699
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'tx_inst' (clk_enabler) to 'rx_inst'
 
@@ -289,26 +310,28 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit       Adders := 4     
 	   2 Input      3 Bit       Adders := 1     
 +---XORs : 
-	   2 Input      1 Bit         XORs := 3     
+	   2 Input      1 Bit         XORs := 7     
 	   9 Input      1 Bit         XORs := 1     
 +---Registers : 
 	              128 Bit    Registers := 4     
 	               64 Bit    Registers := 2     
-	               32 Bit    Registers := 1     
+	               32 Bit    Registers := 4     
+	               16 Bit    Registers := 3     
 	               14 Bit    Registers := 1     
 	               12 Bit    Registers := 1     
 	               11 Bit    Registers := 3     
-	                8 Bit    Registers := 12    
+	                8 Bit    Registers := 13    
 	                7 Bit    Registers := 1     
 	                4 Bit    Registers := 3     
 	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 42    
+	                2 Bit    Registers := 8     
+	                1 Bit    Registers := 67    
 +---Muxes : 
 	   4 Input    128 Bit        Muxes := 1     
 	   2 Input    128 Bit        Muxes := 1     
 	   5 Input     64 Bit        Muxes := 2     
 	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     17 Bit        Muxes := 1     
 	   2 Input     14 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 1     
 	   9 Input      9 Bit        Muxes := 1     
@@ -323,6 +346,7 @@ Detailed RTL Component Info :
 	   6 Input      8 Bit        Muxes := 1     
 	  34 Input      7 Bit        Muxes := 1     
 	   2 Input      7 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 6     
 	   7 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 5     
@@ -332,12 +356,12 @@ Detailed RTL Component Info :
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 3     
 	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 60    
-	   3 Input      1 Bit        Muxes := 14    
+	   2 Input      1 Bit        Muxes := 70    
+	   3 Input      1 Bit        Muxes := 13    
 	   5 Input      1 Bit        Muxes := 7     
 	   4 Input      1 Bit        Muxes := 12    
 	   9 Input      1 Bit        Muxes := 7     
-	   6 Input      1 Bit        Muxes := 3     
+	   6 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -351,14 +375,34 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit       Adders := 1     
 +---Registers : 
 	              128 Bit    Registers := 1     
-	               32 Bit    Registers := 1     
-	                8 Bit    Registers := 1     
-	                1 Bit    Registers := 7     
+	               32 Bit    Registers := 4     
+	               16 Bit    Registers := 3     
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 13    
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     17 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 15    
-	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 21    
+	   6 Input      1 Bit        Muxes := 1     
+Module Reset_Delay 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module btn_debounce_toggle 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module rotary 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
 Module debounce 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -481,7 +525,7 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     14 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
-Module btn_debounce_toggle 
+Module btn_debounce_toggle__parameterized2 
 Detailed RTL Component Info : 
 +---XORs : 
 	   2 Input      1 Bit         XORs := 1     
@@ -506,69 +550,88 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3331] design top_level has unconnected port led0_g
-WARNING: [Synth 8-3331] design top_level has unconnected port led0_b
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[7]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[3]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[11]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[15]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[19]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[23]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[35]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[39]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[43]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[47]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[59]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[63]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[67]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[71]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[123]' (FDE) to 'input2_sig_reg[127]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[127]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[6]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[2]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[10]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[14]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[18]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[22]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[34]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[38]' (FDE) to 'input2_sig_reg[126]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[42]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[46]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[58]' (FDE) to 'input2_sig_reg[126]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[62]' (FDE) to 'input2_sig_reg[126]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[66]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[70]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[122]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[126]' (FDE) to 'input2_sig_reg[125]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[5]' (FDE) to 'input2_sig_reg[125]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[1]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[9]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[13]' (FDE) to 'input2_sig_reg[125]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[17]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[21]' (FDE) to 'input2_sig_reg[125]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[33]' (FDE) to 'input2_sig_reg[125]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[37]' (FDE) to 'input2_sig_reg[125]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[41]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[45]' (FDE) to 'input2_sig_reg[125]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[57]' (FDE) to 'input2_sig_reg[125]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[61]' (FDE) to 'input2_sig_reg[125]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[65]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[69]' (FDE) to 'input2_sig_reg[125]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[121]' (FDE) to 'input2_sig_reg[125]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[125]' (FDE) to 'input2_sig_reg[120]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[4]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[0]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[8]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[12]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[16]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[20]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[32]' (FDE) to 'input2_sig_reg[120]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[36]' (FDE) to 'input2_sig_reg[120]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[40]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[44]' (FDE) to 'input2_sig_reg[124]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[56]' (FDE) to 'input2_sig_reg[120]'
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[127]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[126]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[125]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[124]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[123]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[122]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[121]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[120]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[119]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[118]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[117]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[116]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[115]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[114]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[113]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[112]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[111]
+WARNING: [Synth 8-3331] design state_machine has unconnected port lcd_data[110]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart_tx_data_reg[7] )
+INFO: [Synth 8-3886] merging instance 'uart_tx_data_reg[6]' (FDCE) to 'uart_tx_data_reg[5]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[7]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[3]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[11]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[15]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[19]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[23]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[35]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[39]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[43]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[47]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[59]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[63]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[67]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[71]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[123]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[127]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[6]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[2]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[10]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[14]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[18]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[22]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[34]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[38]' (FDE) to 'input2_sig_reg[5]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[42]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[46]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[58]' (FDE) to 'input2_sig_reg[5]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[62]' (FDE) to 'input2_sig_reg[5]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[66]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[70]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[122]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[126]' (FDE) to 'input2_sig_reg[5]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[5]' (FDE) to 'input2_sig_reg[13]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[1]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[9]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[13]' (FDE) to 'input2_sig_reg[21]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[17]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[21]' (FDE) to 'input2_sig_reg[32]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[33]' (FDE) to 'input2_sig_reg[32]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[37]' (FDE) to 'input2_sig_reg[32]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[41]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[45]' (FDE) to 'input2_sig_reg[32]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[57]' (FDE) to 'input2_sig_reg[32]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[61]' (FDE) to 'input2_sig_reg[32]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[65]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[69]' (FDE) to 'input2_sig_reg[32]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[121]' (FDE) to 'input2_sig_reg[32]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[125]' (FDE) to 'input2_sig_reg[32]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[4]' (FDE) to 'input2_sig_reg[0]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[0]' (FDE) to 'input2_sig_reg[8]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[8]' (FDE) to 'input2_sig_reg[12]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[12]' (FDE) to 'input2_sig_reg[16]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[16]' (FDE) to 'input2_sig_reg[20]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[20]' (FDE) to 'input2_sig_reg[40]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[32]' (FDE) to 'input2_sig_reg[36]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[36]' (FDE) to 'input2_sig_reg[56]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[40]' (FDE) to 'input2_sig_reg[44]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[44]' (FDE) to 'input2_sig_reg[64]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[56]' (FDE) to 'input2_sig_reg[60]'
 INFO: [Synth 8-3886] merging instance 'input2_sig_reg[60]' (FDE) to 'input2_sig_reg[120]'
-INFO: [Synth 8-3886] merging instance 'input2_sig_reg[64]' (FDE) to 'input2_sig_reg[124]'
+INFO: [Synth 8-3886] merging instance 'input2_sig_reg[64]' (FDE) to 'input2_sig_reg[68]'
 INFO: [Synth 8-3886] merging instance 'input2_sig_reg[68]' (FDE) to 'input2_sig_reg[124]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\input2_sig_reg[120] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\input2_sig_reg[124] )
@@ -588,39 +651,39 @@ INFO: [Synth 8-3886] merging instance 'inst_LCD/address_reg[3]' (FDE) to 'inst_L
 INFO: [Synth 8-3886] merging instance 'inst_LCD/INST_i2c_manager/addr_rw_reg[4]' (FDE) to 'inst_LCD/INST_i2c_manager/addr_rw_reg[5]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_LCD/address_reg[4] )
 INFO: [Synth 8-3886] merging instance 'inst_LCD/INST_i2c_manager/addr_rw_reg[5]' (FDE) to 'inst_LCD/INST_i2c_manager/data_tx_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[0]' (FDE) to 'inst_LCD/prevdata1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[1]' (FDE) to 'inst_LCD/prevdata1_reg[2]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[2]' (FDE) to 'inst_LCD/prevdata1_reg[3]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[3]' (FDE) to 'inst_LCD/prevdata1_reg[4]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[4]' (FDE) to 'inst_LCD/prevdata1_reg[6]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[5]' (FDE) to 'inst_LCD/prevdata1_reg[13]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[6]' (FDE) to 'inst_LCD/prevdata1_reg[7]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[7]' (FDE) to 'inst_LCD/prevdata1_reg[8]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[8]' (FDE) to 'inst_LCD/prevdata1_reg[9]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[9]' (FDE) to 'inst_LCD/prevdata1_reg[10]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[10]' (FDE) to 'inst_LCD/prevdata1_reg[11]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[11]' (FDE) to 'inst_LCD/prevdata1_reg[12]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[12]' (FDE) to 'inst_LCD/prevdata1_reg[14]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[13]' (FDE) to 'inst_LCD/prevdata1_reg[21]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[14]' (FDE) to 'inst_LCD/prevdata1_reg[15]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[15]' (FDE) to 'inst_LCD/prevdata1_reg[16]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[16]' (FDE) to 'inst_LCD/prevdata1_reg[17]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[17]' (FDE) to 'inst_LCD/prevdata1_reg[18]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[18]' (FDE) to 'inst_LCD/prevdata1_reg[19]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[19]' (FDE) to 'inst_LCD/prevdata1_reg[20]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[20]' (FDE) to 'inst_LCD/prevdata1_reg[22]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[21]' (FDE) to 'inst_LCD/prevdata1_reg[32]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[22]' (FDE) to 'inst_LCD/prevdata1_reg[23]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[23]' (FDE) to 'inst_LCD/prevdata1_reg[34]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[32]' (FDE) to 'inst_LCD/prevdata1_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst_LCD/prevdata1_reg[33]' (FDE) to 'inst_LCD/prevdata1_reg[36]'
+INFO: [Synth 8-3886] merging instance 'inst_uart/tx_reg_reg[6]' (FDCE) to 'inst_uart/tx_reg_reg[5]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[16]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[17]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[18]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[19]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[20]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[21]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[22]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[23]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[24]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[25]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[26]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[27]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[28]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[29]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[30]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'green_val_reg[31]' (FDRE) to 'blue_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'blue_val_reg[16]' (FDRE) to 'red_val_reg[16]'
+INFO: [Synth 8-3886] merging instance 'red_val_reg[16]' (FDRE) to 'blue_val_reg[17]'
+INFO: [Synth 8-3886] merging instance 'blue_val_reg[17]' (FDRE) to 'red_val_reg[17]'
+INFO: [Synth 8-3886] merging instance 'red_val_reg[17]' (FDRE) to 'blue_val_reg[18]'
+INFO: [Synth 8-3886] merging instance 'blue_val_reg[18]' (FDRE) to 'red_val_reg[18]'
+INFO: [Synth 8-3886] merging instance 'red_val_reg[18]' (FDRE) to 'blue_val_reg[19]'
+INFO: [Synth 8-3886] merging instance 'blue_val_reg[19]' (FDRE) to 'red_val_reg[19]'
+INFO: [Synth 8-3886] merging instance 'red_val_reg[19]' (FDRE) to 'blue_val_reg[20]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\blue_val_reg[31] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\inst_LCD/prevdata1_reg[126] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_LCD/prevdata1_reg[127] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\inst_LCD/INST_i2c_manager/addr_rw_reg[3] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst_LCD/INST_i2c_manager/data_tx_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 918.461 ; gain = 375.512
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 921.766 ; gain = 379.699
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -632,13 +695,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 918.461 ; gain = 375.512
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 921.766 ; gain = 379.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 974.867 ; gain = 431.918
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 921.766 ; gain = 379.699
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -652,7 +715,7 @@ Start Technology Mapping
 WARNING: [Synth 8-3332] Sequential element (inst_LCD/INST_i2c_manager/FSM_onehot_state_reg[7]) is unused and will be removed from module top_level.
 WARNING: [Synth 8-3332] Sequential element (inst_LCD/INST_i2c_manager/FSM_onehot_state_reg[6]) is unused and will be removed from module top_level.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 975.887 ; gain = 432.938
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 933.242 ; gain = 391.176
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -676,7 +739,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 975.887 ; gain = 432.938
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 938.656 ; gain = 396.590
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -689,7 +752,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 975.887 ; gain = 432.938
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 938.656 ; gain = 396.590
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -701,25 +764,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 975.887 ; gain = 432.938
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 938.656 ; gain = 396.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 975.887 ; gain = 432.938
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 938.656 ; gain = 396.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 975.887 ; gain = 432.938
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 938.656 ; gain = 396.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 975.887 ; gain = 432.938
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 938.656 ; gain = 396.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -736,65 +799,72 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     2|
-|2     |CARRY4 |    57|
-|3     |LUT1   |    58|
-|4     |LUT2   |   120|
-|5     |LUT3   |   172|
-|6     |LUT4   |    64|
-|7     |LUT5   |   124|
-|8     |LUT6   |   324|
-|9     |MUXF7  |    17|
-|10    |MUXF8  |     8|
-|11    |FDCE   |    20|
-|12    |FDPE   |     6|
-|13    |FDRE   |   787|
-|14    |FDSE   |    16|
-|15    |IBUF   |     4|
+|2     |CARRY4 |   100|
+|3     |LUT1   |    56|
+|4     |LUT2   |   124|
+|5     |LUT3   |   186|
+|6     |LUT4   |   183|
+|7     |LUT5   |   166|
+|8     |LUT6   |   320|
+|9     |MUXF7  |    45|
+|10    |MUXF8  |    14|
+|11    |FDCE   |    65|
+|12    |FDPE   |    11|
+|13    |FDRE   |   937|
+|14    |FDSE   |    17|
+|15    |IBUF   |     8|
 |16    |IOBUF  |     1|
-|17    |OBUF   |     2|
-|18    |OBUFT  |     3|
+|17    |OBUF   |     4|
+|18    |OBUFT  |     1|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+------------------------+----------------------+------+
-|      |Instance                |Module                |Cells |
-+------+------------------------+----------------------+------+
-|1     |top                     |                      |  1785|
-|2     |  inst_LCD              |I2C_user_logic        |   583|
-|3     |    INST_i2c_manager    |i2c_manager           |   237|
-|4     |  inst_debounce         |btn_debounce_toggle   |    33|
-|5     |  inst_keyboard         |ps2_keyboard_to_ascii |   392|
-|6     |    ps2_keyboard_0      |ps2_keyboard          |   305|
-|7     |      debounce_ps2_clk  |debounce              |    30|
-|8     |      debounce_ps2_data |debounce_0            |    29|
-|9     |  inst_shift_lcd        |Shift_Register        |   366|
-|10    |  inst_state            |state_machine         |   140|
-|11    |  inst_uart             |uart                  |    90|
-|12    |  tx_inst               |clk_enabler           |    23|
-+------+------------------------+----------------------+------+
++------+------------------------+------------------------------------+------+
+|      |Instance                |Module                              |Cells |
++------+------------------------+------------------------------------+------+
+|1     |top                     |                                    |  2240|
+|2     |  inst_LCD              |I2C_user_logic                      |   590|
+|3     |    INST_i2c_manager    |i2c_manager                         |   211|
+|4     |  inst_debounce         |btn_debounce_toggle__parameterized2 |    32|
+|5     |  inst_keyboard         |ps2_keyboard_to_ascii               |   403|
+|6     |    ps2_keyboard_0      |ps2_keyboard                        |   312|
+|7     |      debounce_ps2_clk  |debounce                            |    30|
+|8     |      debounce_ps2_data |debounce_4                          |    29|
+|9     |  inst_reset_delay      |Reset_Delay                         |    32|
+|10    |  inst_rotary_x         |rotary                              |    68|
+|11    |    inst_A              |btn_debounce_toggle_2               |    28|
+|12    |    inst_B              |btn_debounce_toggle_3               |    30|
+|13    |  inst_rotary_y         |rotary_0                            |    61|
+|14    |    inst_A              |btn_debounce_toggle                 |    28|
+|15    |    inst_B              |btn_debounce_toggle_1               |    30|
+|16    |  inst_shift_lcd        |Shift_Register                      |   358|
+|17    |  inst_state            |state_machine                       |   138|
+|18    |  inst_uart             |uart                                |    87|
+|19    |  tx_inst               |clk_enabler                         |    23|
++------+------------------------+------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 975.887 ; gain = 432.938
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 938.656 ; gain = 396.590
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 975.887 ; gain = 299.020
-Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 975.887 ; gain = 432.938
+Synthesis finished with 0 errors, 0 critical warnings and 84 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:28 . Memory (MB): peak = 938.656 ; gain = 259.852
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 938.656 ; gain = 396.590
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 83 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 160 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 991.832 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 942.984 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-168 Infos, 97 Warnings, 0 Critical Warnings and 0 Errors encountered.
+182 Infos, 113 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:43 . Memory (MB): peak = 991.832 ; gain = 698.988
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 991.832 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 942.984 ; gain = 647.984
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 942.984 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'U:/EE316/Project5/LCD_StateMachine/LCD_StateMachine.runs/synth_1/top_level.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Apr  7 21:21:11 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  7 23:19:42 2025...
