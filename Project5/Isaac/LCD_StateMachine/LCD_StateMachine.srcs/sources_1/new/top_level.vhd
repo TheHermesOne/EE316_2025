@@ -58,7 +58,17 @@ component Reset_Delay IS
             SIGNAL oRESET : OUT std_logic
         );  
     END component;
-    
+  component ps2_keyboard_to_ascii IS
+  GENERIC(
+      clk_freq                  : INTEGER := 125_000_000; --system clock frequency in Hz
+      ps2_debounce_counter_size : INTEGER := 10);         --set such that 2^size/clk_freq = 5us (size = 8 for 50MHz)
+  PORT(
+      clk        : IN  STD_LOGIC;                     --system clock input
+      ps2_clk    : IN  STD_LOGIC;                     --clock signal from PS2 keyboard
+      ps2_data   : IN  STD_LOGIC;                     --data signal from PS2 keyboard
+      ascii_new  : OUT STD_LOGIC;                     --output flag indicating new ASCII value
+      ascii_code : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)); --ASCII value
+END component;  
  component rotary is
         generic(N: integer := 8; N2: integer := 255; N1: integer := 0);
         port (
@@ -70,18 +80,7 @@ component Reset_Delay IS
         right_tick              : out std_logic
         );
     end component;
-
-component I2C_user_logic is							
-    Port ( 
-           iclk         : in STD_LOGIC;
-           oSDA         : inout STD_LOGIC;
-           input1       : in     std_logic_vector(127 downto 0);
-           input2       : in     std_logic_vector(127 downto 0);
-           oSCL         : inout STD_LOGIC
-           );
-end component;
-
-component btn_debounce_toggle is
+    component btn_debounce_toggle is
 GENERIC (
 	CONSTANT CNTR_MAX : std_logic_vector(15 downto 0) := X"FFFF");  
     Port ( BTN_I 	: in  STD_LOGIC;
@@ -90,42 +89,6 @@ GENERIC (
            TOGGLE_O : out  STD_LOGIC;
 		   PULSE_O  : out STD_LOGIC);
 end component; 
-
-component Shift_Register is
-    GENERIC (
-    CONSTANT sr_depth : integer := 128);    
-        port(
-        clock: in std_logic;
-        reset : in std_logic;
-        back : in std_logic;
-        en: in std_logic;
-        sr_in: in std_logic_vector(7 downto 0);
-        sr_out: out std_logic_vector(sr_depth-1 downto 0) :=(others => '0')
-    );
-end component;
-
-component ps2_keyboard_to_ascii IS
-  GENERIC(
-      clk_freq                  : INTEGER := 125_000_000; --system clock frequency in Hz
-      ps2_debounce_counter_size : INTEGER := 10);         --set such that 2^size/clk_freq = 5us (size = 8 for 50MHz)
-  PORT(
-      clk        : IN  STD_LOGIC;                     --system clock input
-      ps2_clk    : IN  STD_LOGIC;                     --clock signal from PS2 keyboard
-      ps2_data   : IN  STD_LOGIC;                     --data signal from PS2 keyboard
-      ascii_new  : OUT STD_LOGIC;                     --output flag indicating new ASCII value
-      ascii_code : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)); --ASCII value
-END component;
-
-component state_machine is
-port (
-clk         : in std_logic;
-lcd_data    : in std_logic_vector(127 downto 0);
---ascii_code  : in std_logic_vector(7 downto 0);
---ascii_new   : in std_logic;
-state_out   : out std_logic_vector(63 downto 0) -- 63 downto 16 = color; 15 downto 8 = cursor size; 7 downto 0 = screen size
-);
-end component;
-
 component clk_enabler is
 	GENERIC (
 		CONSTANT cnt_max : integer);      --  1.0 Hz 
@@ -152,54 +115,101 @@ component uart is
         rx_empty    :out std_logic
     );
 end component;
+-- Components needed for Ava
+component I2C_user_logic is							
+    Port ( 
+           iclk         : in STD_LOGIC;
+           oSDA         : inout STD_LOGIC;
+           input1       : in     std_logic_vector(127 downto 0);
+           input2       : in     std_logic_vector(127 downto 0);
+           oSCL         : inout STD_LOGIC
+           );
+end component;
+
+component Shift_Register is
+    GENERIC (
+    CONSTANT sr_depth : integer := 128);    
+        port(
+        clock: in std_logic;
+        reset : in std_logic;
+        back : in std_logic;
+        en: in std_logic;
+        sr_in: in std_logic_vector(7 downto 0);
+        sr_out: out std_logic_vector(sr_depth-1 downto 0) :=(others => '0')
+    );
+end component;
+
+
+component state_machine is
+port (
+clk         : in std_logic;
+lcd_data    : in std_logic_vector(127 downto 0);
+--ascii_code  : in std_logic_vector(7 downto 0);
+--ascii_new   : in std_logic;
+state_out   : out std_logic_vector(63 downto 0) -- 63 downto 16 = color; 15 downto 8 = cursor size; 7 downto 0 = screen size
+);
+end component;
+
+
 -------------------------------------------------------------------------------------------------------------------
--- Signals
+-- =======================
+-- === USED SIGNALS =====
+-- =======================
+
 signal ascii_new_sig            : std_logic;
 signal ascii_new_prev           : std_logic;
 signal ascii_code_sig           : std_logic_vector(7 downto 0);
 signal ascii_code_sig_prev      : std_logic_vector(7 downto 0);
-signal sr_in_sig                : std_logic_vector(7 downto 0);
-signal state_sig                : std_logic_vector(6 downto 0);
-signal sr_out_sig               : std_logic_vector(127 downto 0);
-signal sr_out_uart_active       : std_logic_vector(127 downto 0);
-signal sr_out_uart_final        : std_logic_vector(127 downto 0);
-signal sr_out_lcd               : std_logic_vector(127 downto 0);
-signal back_sig                 : std_logic := '0';
+signal ascii_code_uart          : std_logic_vector(7 downto 0);
+signal ascii_code_ps2           : std_logic_vector(7 downto 0);
+signal uart_en                  : std_logic;
+signal uart_en_prev             : std_logic;
 signal sr_en                    : std_logic;
 signal sr_reset                 : std_logic;
+signal sr_out_lcd               : std_logic_vector(127 downto 0);
 signal input2_sig               : std_logic_vector(127 downto 0) := x"63303030303030207731207331202020";
 signal state_out_sig            : std_logic_vector(63 downto 0);
 signal red                      : std_logic_vector(15 downto 0);
 signal green                    : std_logic_vector(15 downto 0);
 signal blue                     : std_logic_vector(15 downto 0);
+signal red_val                  : integer := 0;
+signal green_val                : integer := 0;
+signal blue_val                 : integer := 0;
+signal enter_flag               : std_logic;
+signal count                    : integer;
+signal back_sig                 : std_logic := '0';
+signal rx_empty_sig             : std_logic;
+signal rx_full                  : std_logic;
+
+-- ==========================
+-- === UNUSED SIGNALS =======
+-- ==========================
+
+signal sr_in_sig                : std_logic_vector(7 downto 0);
+signal sr_out_sig               : std_logic_vector(127 downto 0);
+signal sr_out_uart_active       : std_logic_vector(127 downto 0);
+signal sr_out_uart_final        : std_logic_vector(127 downto 0);
+signal state_sig                : std_logic_vector(6 downto 0);
 signal rx_clk                   : std_logic;
 signal tx_clk                   : std_logic;
-signal count                    : integer;
 signal shift_count              : integer;
 signal tx_out_sig               : std_logic;
 signal rx_data_sig              : std_logic_vector(7 downto 0);
 signal rx_in_sig                : std_logic;
-signal rx_empty_sig             : std_logic;
-signal rx_full                  : std_logic;
-signal uart_en                  : std_logic;
-signal uart_en_prev             : std_logic;
-signal ascii_code_uart          : std_logic_vector(7 downto 0);
-signal ascii_code_ps2           : std_logic_vector(7 downto 0);
-signal enter_flag               : std_logic;
-signal rotary_x_left_tick  : std_logic;
-    signal rotary_x_right_tick : std_logic;
-    signal rotary_y_left_tick  : std_logic;
-    signal rotary_y_right_tick : std_logic;
-    signal prev_x_left_tick   : std_logic := '0';
-    signal prev_x_right_tick  : std_logic := '0';
-    signal prev_y_left_tick   : std_logic := '0';
-    signal prev_y_right_tick  : std_logic := '0';
-signal cursor_x        : integer := 0;                     -- X cursor position
-    signal cursor_y        : integer := 0;
-signal red_val, blue_val, green_val :integer := 0;
-  signal uart_tx_data     : std_logic_vector(7 downto 0);
-  signal reset_on         : std_logic;
-  signal uart_wr            : std_logic := '0';    
+signal uart_tx_data             : std_logic_vector(7 downto 0);
+signal reset_on                 : std_logic;
+signal uart_wr                  : std_logic := '0';
+signal rotary_x_left_tick       : std_logic;
+signal rotary_x_right_tick      : std_logic;
+signal rotary_y_left_tick       : std_logic;
+signal rotary_y_right_tick      : std_logic;
+signal prev_x_left_tick         : std_logic := '0';
+signal prev_x_right_tick        : std_logic := '0';
+signal prev_y_left_tick         : std_logic := '0';
+signal prev_y_right_tick        : std_logic := '0';
+signal cursor_x                 : integer := 0;
+signal cursor_y                 : integer := 0;
+   
 begin    
 
 process(iclk, reset_on) -- ava rotary control
@@ -239,7 +249,38 @@ begin
     end if;
 end process;
 
-process(iclk) -- keyboard/lcd/led control
+process(state_out_sig)
+begin
+if ascii_new_prev = '0' and ascii_new_sig = '1' then
+        --------------------------------------------------------------------------------------------------------------------
+            if ascii_code_ps2 = x"0D" then
+                red   <= state_out_sig(63 downto 48);
+                green <= state_out_sig(47 downto 32);
+                blue  <= state_out_sig(31 downto 16);
+
+                red_val   <= to_integer(unsigned(red));
+                green_val <= to_integer(unsigned(green));
+                blue_val  <= to_integer(unsigned(blue));
+
+                if red_val > green_val and red_val > blue_val then -- red
+                    led0_r <= '1';
+                    led0_g <= '0';
+                    led0_b <= '0';
+                elsif green_val > red_val and green_val > blue_val then -- green
+                    led0_r <= '0';
+                    led0_g <= '1';
+                    led0_b <= '0';
+                elsif blue_val > red_val and blue_val > green_val then -- blue
+                    led0_r <= '0';
+                    led0_g <= '0';
+                    led0_b <= '1';
+                end if;
+                end if;
+                end if;
+                
+end process;
+
+process(iclk) -- keyboard/lcd control
 begin
     if rising_edge(iclk) then
         ascii_new_prev      <= ascii_new_sig;
@@ -270,49 +311,7 @@ begin
                 enter_flag <= '1';
                 input2_sig <= x"63" & state_out_sig(63 downto 16) & x"2077" & state_out_sig(15 downto 8) & x"2073" & state_out_sig(7 downto 0) & x"202020";
                 count <= 0;
-                red   <= state_out_sig(63 downto 48);
-                green <= state_out_sig(47 downto 32);
-                blue  <= state_out_sig(31 downto 16);
-
-                red_val   <= to_integer(unsigned(red));
-                green_val <= to_integer(unsigned(green));
-                blue_val  <= to_integer(unsigned(blue));
-
-   
-
-                if red_val > green_val and red_val > blue_val then -- red
-                    led0_r <= '1';
-                    led0_g <= '0';
-                    led0_b <= '0';
-                elsif green_val > red_val and green_val > blue_val then
-                    led0_r <= '0';
-                    led0_g <= '1';
-                    led0_b <= '0';
-                elsif blue_val > red_val and blue_val > green_val then
-                    led0_r <= '0';
-                    led0_g <= '0';
-                    led0_b <= '1';
-                elsif red_val = blue_val and red_val /= green_val then
-                    led0_r <= '1';
-                    led0_g <= '0';
-                    led0_b <= '1'; -- purple
-                elsif red_val = green_val and red_val /= blue_val then
-                    led0_r <= '1';
-                    led0_g <= '1';
-                    led0_b <= '0'; -- orange
-                elsif green_val = blue_val and green_val /= red_val then
-                    led0_r <= '0';
-                    led0_g <= '1';
-                    led0_b <= '1'; -- cyan
-                elsif red_val = 26214 and green_val = 26214 and blue_val = 26214 then
-                    led0_r <= '1';
-                    led0_g <= '1';
-                    led0_b <= '1'; -- white
-                elsif red_val = 0 and green_val = 0 and blue_val = 0 then
-                    led0_r <= '0';
-                    led0_g <= '0';
-                    led0_b <= '0'; -- black
-                end if;
+                
             end if;
         end if;
         if enter_flag = '1' then
@@ -330,34 +329,8 @@ end process;
     
 
 rx_full <= not rx_empty_sig;
+ -- instances needed for ava
 
-inst_reset_delay: reset_delay 
-        port map(
-            iclk    => iclk,
-            oRESET  => reset_on
-        );
-
-     -- Rotary Encoder Component
-inst_rotary_x: rotary
-        port map (
-            iCLK        => iclk,
-            reset       => reset_on,
-            A           => A_x,
-            B           => B_x,
-            left_tick   => rotary_x_left_tick,
-            right_tick  => rotary_x_right_tick
-        );
-
-    -- Rotary Encoder for Y (reuse A/B for demo or expand as needed)
-inst_rotary_y: rotary
-        port map (
-            iCLK        => iclk,
-            reset       => reset_on,
-            A           => A_y,
-            B           => B_y,
-            left_tick   => rotary_y_left_tick,
-            right_tick  => rotary_y_right_tick
-        );   
 
 inst_keyboard: ps2_keyboard_to_ascii
     GENERIC MAP(
@@ -403,7 +376,17 @@ inst_state: state_machine
         lcd_data    => sr_out_lcd,
         state_out   => state_out_sig
         );
-        
+inst_debounce: btn_debounce_toggle 
+GENERIC map(
+	 CNTR_MAX => X"0001"
+	 )  
+    Port map
+    (       BTN_I 	=> rx_full,
+           CLK 		=> iclk,
+           BTN_O 	=> open,
+           TOGGLE_O => open,
+		   PULSE_O  => uart_en
+);
 inst_uart: uart 
     port map(
             reset       => reset_on,
@@ -439,16 +422,32 @@ rx_inst: clk_enabler
         clk_en => rx_clk
     );  
 
-inst_debounce: btn_debounce_toggle 
-GENERIC map(
-	 CNTR_MAX => X"0001"
-	 )  
-    Port map
-    (       BTN_I 	=> rx_full,
-           CLK 		=> iclk,
-           BTN_O 	=> open,
-           TOGGLE_O => open,
-		   PULSE_O  => uart_en
-);
 
+inst_reset_delay: reset_delay 
+        port map(
+            iclk    => iclk,
+            oRESET  => reset_on
+        );
+
+     -- Rotary Encoder Component
+inst_rotary_x: rotary
+        port map (
+            iCLK        => iclk,
+            reset       => reset_on,
+            A           => A_x,
+            B           => B_x,
+            left_tick   => rotary_x_left_tick,
+            right_tick  => rotary_x_right_tick
+        );
+
+    -- Rotary Encoder for Y (reuse A/B for demo or expand as needed)
+inst_rotary_y: rotary
+        port map (
+            iCLK        => iclk,
+            reset       => reset_on,
+            A           => A_y,
+            B           => B_y,
+            left_tick   => rotary_y_left_tick,
+            right_tick  => rotary_y_right_tick
+        );   
 end behavioral;
