@@ -63,8 +63,8 @@ constant BOX_CLK_DIV : natural := 1000000; --MAX=(2^25 - 1)
 signal box_cntr_reg : std_logic_vector(24 downto 0) := (others =>'0');
 signal update_box : std_logic;
 
-signal Stringin: string(1 to 11):= "Hello World";
-signal CharIn: unsigned(7 downto 0);
+signal Stringin: string(1 to 2):= "AB";
+signal CharIn: unsigned(5 downto 0);
 
 signal LetterNum: unsigned ( 8 downto 0);
 signal letterRowIndex: unsigned(2 downto 0);
@@ -72,11 +72,12 @@ signal letter_col_index:integer;
 
 constant text_x : integer := 100; -- column position
 constant text_y : integer := 50;  -- row position
-signal tempiteratior : integer;
 
 signal RAMaddrTemp: unsigned(15 downto 0);
-signal RAM_YAxis : integer;
-signal RAM_XAxis : integer;
+
+
+
+
 
 BEGIN
 
@@ -85,18 +86,18 @@ RAMADDR <= std_logic_vector(RAMaddrTemp);
   PROCESS(disp_ena, row, column)
   BEGIN
     IF(disp_ena = '1') THEN        --display time
---      IF row >= text_y and row < text_y + 8 and column >= text_x*tempiteratior and column < text_x + 8*tempiteratior then
---            letter_col_index <= column - text_x;
---         if letterData(7 - letter_col_index) = '1' then
---                  red   <= (others => '1');
---                  green <= (others => '0');
---                  blue  <= (others => '0');
---                else
---                  red   <= (others => '0');
---                  green <= (others => '0');
---                  blue  <= (others => '0');
---                END IF;
-      IF((row < (pixels_y+offsetY) AND row > offsetY)  AND (column < (pixels_x + offsetX) AND column > offsetX)) THEN
+      IF row >= text_y and row < text_y + 8 and column >= text_x and column < text_x + (stringIn'length * 8) then
+            letter_col_index <= (column - text_x) mod 8;
+         if letterData(7 - letter_col_index) = '1' then
+                  red   <= (others => '1');
+                  green <= (others => '0');
+                  blue  <= (others => '0');
+                else
+                  red   <= (others => '0');
+                  green <= (others => '0');
+                  blue  <= (others => '0');
+                END IF;
+      elsIF((row < (pixels_y+offsetY) AND row > offsetY)  AND (column < (pixels_x + offsetX) AND column > offsetX)) THEN
                     RAMaddrTemp <= to_unsigned(((row - offsetY) * 256) + (column - offsetX), RAMaddrTemp'length);
                     red <= (others => RAMData(2));
                     green <= (others => RAMData(1));
@@ -129,20 +130,24 @@ RAMADDR <= std_logic_vector(RAMaddrTemp);
   
 
 process (pixel_clk)
+variable  char_index : integer;
+variable ascii : integer;
+variable char_off:integer;
 begin
     if rising_edge(pixel_clk) then
         if (disp_ena = '1') THEN
             if (row >= text_y and row < text_y + 8) then
-                for i in stringin'length downto 0 loop
-                 if column >= text_x + (i - 1) * 8 and column < text_x + i * 8 then
-                    tempiteratior <= i;
-                    CharIn <= to_unsigned(character 'pos(stringIn(i)),8);
-                    LetterNum <= shift_left((CharIn & '0'),2);
+             if (column >= text_x) then
+                    char_index := ((column - text_x) / 8) + 1;
+                   if ((column - text_x) mod 8 = 0) then
+                    ascii := character'pos(stringIn(char_index));
+                    char_off := ascii - 64;
+                    CharIn <= to_unsigned(char_off,6);
+                    end if;
                     letterRowIndex <= to_unsigned(row - text_y,3);
-                    letterAddr <= std_logic_vector(unsigned(LetterNum) + resize(letterRowIndex, LetterNum'length));
-                    
+                    letterAddr <= std_logic_vector(CharIn & letterRowIndex);
                 end if;
-            end loop;
+
       end if;
     end if;    
   end if;

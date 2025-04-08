@@ -11,10 +11,10 @@
       <spirit:configurableElementValues>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PIXEL_CLK.ASSOCIATED_BUSIF"/>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PIXEL_CLK.ASSOCIATED_RESET"/>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PIXEL_CLK.CLK_DOMAIN"/>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PIXEL_CLK.FREQ_HZ">100000000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PIXEL_CLK.CLK_DOMAIN">/clk_wiz_0_clk_out1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PIXEL_CLK.FREQ_HZ">25173966</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PIXEL_CLK.INSERT_VIP">0</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PIXEL_CLK.PHASE">0.000</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.PIXEL_CLK.PHASE">0.0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.pixels_x">256</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.pixels_y">256</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.screen_x">640</spirit:configurableElementValue>
@@ -46,6 +46,15 @@
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.SWVERSION">2019.1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="RUNTIME_PARAM.SYNTHESISFLOW">GLOBAL</spirit:configurableElementValue>
       </spirit:configurableElementValues>
+      <spirit:vendorExtensions>
+        <xilinx:componentInstanceExtensions>
+          <xilinx:configElementInfos>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PIXEL_CLK.CLK_DOMAIN" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd_and_user"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PIXEL_CLK.FREQ_HZ" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd_and_user"/>
+            <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.PIXEL_CLK.PHASE" xilinx:valueSource="ip_propagated" xilinx:valuePermission="bd_and_user"/>
+          </xilinx:configElementInfos>
+        </xilinx:componentInstanceExtensions>
+      </spirit:vendorExtensions>
     </spirit:componentInstance>
   </spirit:componentInstances>
 </spirit:design>

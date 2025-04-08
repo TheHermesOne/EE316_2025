@@ -55,7 +55,6 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_blk_mem_gen_0_0 (
   clka,
-  ena,
   wea,
   addra,
   dina,
@@ -67,8 +66,6 @@ module design_1_blk_mem_gen_0_0 (
 
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA CLK" *)
 input wire clka;
-(* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA EN" *)
-input wire ena;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA WE" *)
 input wire [0 : 0] wea;
 (* X_INTERFACE_INFO = "xilinx.com:interface:bram:1.0 BRAM_PORTA ADDR" *)
@@ -111,7 +108,7 @@ output wire [2 : 0] doutb;
     .C_RST_PRIORITY_A("CE"),
     .C_RSTRAM_A(0),
     .C_INITA_VAL("0"),
-    .C_HAS_ENA(1),
+    .C_HAS_ENA(0),
     .C_HAS_REGCEA(0),
     .C_USE_BYTE_WEA(0),
     .C_WEA_WIDTH(1),
@@ -136,7 +133,7 @@ output wire [2 : 0] doutb;
     .C_READ_DEPTH_B(65536),
     .C_ADDRB_WIDTH(16),
     .C_HAS_MEM_OUTPUT_REGS_A(0),
-    .C_HAS_MEM_OUTPUT_REGS_B(1),
+    .C_HAS_MEM_OUTPUT_REGS_B(0),
     .C_HAS_MUX_OUTPUT_REGS_A(0),
     .C_HAS_MUX_OUTPUT_REGS_B(0),
     .C_MUX_PIPELINE_STAGES(0),
@@ -165,7 +162,7 @@ output wire [2 : 0] doutb;
   ) inst (
     .clka(clka),
     .rsta(1'D0),
-    .ena(ena),
+    .ena(1'D0),
     .regcea(1'D0),
     .wea(wea),
     .addra(addra),
