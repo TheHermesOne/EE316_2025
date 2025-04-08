@@ -10,45 +10,51 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="2048001fs"></ZoomEndTime>
+      <ZoomEndTime time="3404fs"></ZoomEndTime>
       <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="146"></ValueColumnWidth>
+      <ValueColumnWidth column_width="122"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="4" />
+   <WVObjectSize size="5" />
    <wave_markers>
    </wave_markers>
-   <wvobject fp_name="design_1_i/vga_controller_0_column_1" type="array">
+   <wvobject fp_name="design_1_i/addra" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/vga_controller_0_column_1[9:0]</obj_property>
-      <obj_property name="ObjectShortName">vga_controller_0_column_1[9:0]</obj_property>
+      <obj_property name="ElementShortName">design_1_i/addra[15:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="design_1_i/vga_controller_0_column" type="array">
+   <wvobject fp_name="design_1_i/hw_image_generator_0_RAMADDR" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/vga_controller_0_column[31:10]</obj_property>
-      <obj_property name="ObjectShortName">vga_controller_0_column[31:10]</obj_property>
+      <obj_property name="ElementShortName">design_1_i/hw_image_generator_0_RAMADDR[15:0]</obj_property>
+      <obj_property name="ObjectShortName">hw_image_generator_0_RAMADDR[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="design_1_i/vga_controller_0_column" type="array">
+   <wvobject fp_name="design_1_i/RAMData" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/vga_controller_0_column[31:10]</obj_property>
-      <obj_property name="ObjectShortName">vga_controller_0_column[31:10]</obj_property>
+      <obj_property name="ElementShortName">design_1_i/RAMData[2:0]</obj_property>
+      <obj_property name="ObjectShortName">RAMData[2:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="design_1_i/vga_controller_0_column_1" type="array">
+   <wvobject fp_name="u_ila_0_DrawingController_0_RAMWriteEnable" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">design_1_i/vga_controller_0_column_1[9:0]</obj_property>
-      <obj_property name="ObjectShortName">vga_controller_0_column_1[9:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">u_ila_0_DrawingController_0_RAMWriteEnable</obj_property>
+      <obj_property name="ObjectShortName">u_ila_0_DrawingController_0_RAMWriteEnable</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject fp_name="u_ila_0_util_vector_logic_0_Res_0" type="logic">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">u_ila_0_util_vector_logic_0_Res_0</obj_property>
+      <obj_property name="ObjectShortName">u_ila_0_util_vector_logic_0_Res_0</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

@@ -1,6 +1,7 @@
 vhdl xil_defaultlib  \
 "../../../bd/design_1/ip/design_1_hw_image_generator_0_0/sim/design_1_hw_image_generator_0_0.vhd" \
 "../../../bd/design_1/ip/design_1_vga_controller_0_0/sim/design_1_vga_controller_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_DrawingController_0_0/sim/design_1_DrawingController_0_0.vhd" \
 "../../../bd/design_1/sim/design_1.vhd" \
 
 nosort

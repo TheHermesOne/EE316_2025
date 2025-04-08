@@ -56,8 +56,13 @@ USE ieee.numeric_std.ALL;
 ENTITY design_1_hw_image_generator_0_0 IS
   PORT (
     disp_ena : IN STD_LOGIC;
+    pixel_clk : IN STD_LOGIC;
     row : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     column : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    RAMData : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+    RAMADDR : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    letterData : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    letterAddr : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
     red : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     green : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
     blue : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
@@ -70,12 +75,19 @@ ARCHITECTURE design_1_hw_image_generator_0_0_arch OF design_1_hw_image_generator
   COMPONENT hw_image_generator IS
     GENERIC (
       pixels_y : INTEGER;
-      pixels_x : INTEGER
+      pixels_x : INTEGER;
+      screen_y : INTEGER;
+      screen_x : INTEGER
     );
     PORT (
       disp_ena : IN STD_LOGIC;
+      pixel_clk : IN STD_LOGIC;
       row : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       column : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      RAMData : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+      RAMADDR : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+      letterData : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+      letterAddr : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
       red : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
       green : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
       blue : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
@@ -83,16 +95,27 @@ ARCHITECTURE design_1_hw_image_generator_0_0_arch OF design_1_hw_image_generator
   END COMPONENT hw_image_generator;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF design_1_hw_image_generator_0_0_arch: ARCHITECTURE IS "module_ref";
+  ATTRIBUTE X_INTERFACE_INFO : STRING;
+  ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
+  ATTRIBUTE X_INTERFACE_PARAMETER OF pixel_clk: SIGNAL IS "XIL_INTERFACENAME pixel_clk, FREQ_HZ 25173966, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF pixel_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 pixel_clk CLK";
 BEGIN
   U0 : hw_image_generator
     GENERIC MAP (
-      pixels_y => 100,
-      pixels_x => 200
+      pixels_y => 256,
+      pixels_x => 256,
+      screen_y => 480,
+      screen_x => 640
     )
     PORT MAP (
       disp_ena => disp_ena,
+      pixel_clk => pixel_clk,
       row => row,
       column => column,
+      RAMData => RAMData,
+      RAMADDR => RAMADDR,
+      letterData => letterData,
+      letterAddr => letterAddr,
       red => red,
       green => green,
       blue => blue

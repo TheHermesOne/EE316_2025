@@ -60,7 +60,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -77,7 +76,7 @@ set rc [catch {
   set_property parent.project_path C:/Users/nathani/Documents/GitHub/EE316_2025/Project5/VGAtestProject/VGAtestProject.xpr [current_project]
   set_property ip_output_repo C:/Users/nathani/Documents/GitHub/EE316_2025/Project5/VGAtestProject/VGAtestProject.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES XPM_CDC [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   add_files -quiet C:/Users/nathani/Documents/GitHub/EE316_2025/Project5/VGAtestProject/VGAtestProject.runs/synth_1/design_1_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
@@ -166,7 +165,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES XPM_CDC [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force design_1_wrapper.mmi }
   write_bitstream -force design_1_wrapper.bit 
   catch { write_sysdef -hwdef design_1_wrapper.hwdef -bitfile design_1_wrapper.bit -meminfo design_1_wrapper.mmi -file design_1_wrapper.sysdef }

@@ -4,13 +4,16 @@ vlib riviera
 vlib riviera/xil_defaultlib
 vlib riviera/xpm
 vlib riviera/util_vector_logic_v2_0_1
+vlib riviera/blk_mem_gen_v8_4_3
 
 vmap xil_defaultlib riviera/xil_defaultlib
 vmap xpm riviera/xpm
 vmap util_vector_logic_v2_0_1 riviera/util_vector_logic_v2_0_1
+vmap blk_mem_gen_v8_4_3 riviera/blk_mem_gen_v8_4_3
 
 vlog -work xil_defaultlib  -sv2k12 "+incdir+../../../../VGAtestProject.srcs/sources_1/bd/design_1/ipshared/c923" \
 "C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm -93 \
 "C:/Xilinx/Vivado/2019.1/data/ip/xpm/xpm_VCOMP.vhd" \
@@ -29,7 +32,15 @@ vlog -work util_vector_logic_v2_0_1  -v2k5 "+incdir+../../../../VGAtestProject.s
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../VGAtestProject.srcs/sources_1/bd/design_1/ipshared/c923" \
 "../../../bd/design_1/ip/design_1_util_vector_logic_0_0/sim/design_1_util_vector_logic_0_0.v" \
 
+vlog -work blk_mem_gen_v8_4_3  -v2k5 "+incdir+../../../../VGAtestProject.srcs/sources_1/bd/design_1/ipshared/c923" \
+"../../../../VGAtestProject.srcs/sources_1/bd/design_1/ipshared/c001/simulation/blk_mem_gen_v8_4.v" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../VGAtestProject.srcs/sources_1/bd/design_1/ipshared/c923" \
+"../../../bd/design_1/ip/design_1_blk_mem_gen_0_0/sim/design_1_blk_mem_gen_0_0.v" \
+"../../../bd/design_1/ip/design_1_blk_mem_gen_1_0/sim/design_1_blk_mem_gen_1_0.v" \
+
 vcom -work xil_defaultlib -93 \
+"../../../bd/design_1/ip/design_1_DrawingController_0_0/sim/design_1_DrawingController_0_0.vhd" \
 "../../../bd/design_1/sim/design_1.vhd" \
 
 vlog -work xil_defaultlib \
