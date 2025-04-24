@@ -1,0 +1,13 @@
+00:09:47 **** Auto Build of configuration Debug for project standalone_bsp_0_ultrasonic_sensor_final ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/ultrasonic_sensor.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ultrasonic_sensor.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/ultrasonic_sensor.d" -MT"src/ultrasonic_sensor.o" -o "src/ultrasonic_sensor.o" "../src/ultrasonic_sensor.c"
+'Finished building: ../src/ultrasonic_sensor.c'
+' '
+make: *** No rule to make target 'lcd.o', needed by 'standalone_bsp_0_ultrasonic_sensor_final.elf'.  Stop.
+
+00:09:47 Build Finished (took 878ms)
+

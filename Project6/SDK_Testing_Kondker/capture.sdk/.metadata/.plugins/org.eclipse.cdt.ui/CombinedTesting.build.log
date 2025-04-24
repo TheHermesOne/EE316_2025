@@ -1,0 +1,56 @@
+12:03:39 **** Auto Build of configuration Debug for project CombinedTesting ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/comb.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/comb.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/comb.d" -MT"src/comb.o" -o "src/comb.o" "../src/comb.c"
+../src/comb.c: In function 'update_lcd_line1_with_distance':
+../src/comb.c:78:9: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+         sprintf(lcd_text, "Enabled    %02d.%02din", (int)dist, (int)((dist - (int)dist) * 100));
+         ^~~~~~~
+../src/comb.c:78:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+../src/comb.c:78:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../src/comb.c:15:1:
++#include <stdio.h>
+ #define INTC XScuGic
+../src/comb.c:78:9:
+         sprintf(lcd_text, "Enabled    %02d.%02din", (int)dist, (int)((dist - (int)dist) * 100));
+         ^~~~~~~
+../src/comb.c:80:9: warning: incompatible implicit declaration of built-in function 'sprintf'
+         sprintf(lcd_text, "Disabled   %02d.%02din", (int)dist, (int)((dist - (int)dist) * 100));
+         ^~~~~~~
+../src/comb.c:80:9: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../src/comb.c: In function 'main':
+../src/comb.c:327:10: warning: unused variable 'lcd_text' [-Wunused-variable]
+     char lcd_text[16];
+          ^~~~~~~~
+../src/comb.c: In function 'update_lcd_line1_with_distance':
+../src/comb.c:80:48: warning: 'in' directive writing 2 bytes into a region of size 0 [-Wformat-overflow=]
+         sprintf(lcd_text, "Disabled   %02d.%02din", (int)dist, (int)((dist - (int)dist) * 100));
+                                                ^~
+../src/comb.c:80:9: note: 'sprintf' output between 19 and 37 bytes into a destination of size 16
+         sprintf(lcd_text, "Disabled   %02d.%02din", (int)dist, (int)((dist - (int)dist) * 100));
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/comb.c:78:48: warning: 'in' directive writing 2 bytes into a region of size 0 [-Wformat-overflow=]
+         sprintf(lcd_text, "Enabled    %02d.%02din", (int)dist, (int)((dist - (int)dist) * 100));
+                                                ^~
+../src/comb.c:78:9: note: 'sprintf' output between 19 and 37 bytes into a destination of size 16
+         sprintf(lcd_text, "Enabled    %02d.%02din", (int)dist, (int)((dist - (int)dist) * 100));
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+'Finished building: ../src/comb.c'
+' '
+'Building target: CombinedTesting.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "CombinedTesting.elf"  ./src/comb.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: CombinedTesting.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size CombinedTesting.elf  |tee "CombinedTesting.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  65688	   3456	  23440	  92584	  169a8	CombinedTesting.elf
+'Finished building: CombinedTesting.elf.size'
+' '
+
+12:03:40 Build Finished (took 1s.577ms)
+

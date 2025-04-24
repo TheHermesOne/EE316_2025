@@ -1,0 +1,207 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Apr 22 15:34:07 2025
+# Process ID: 4376
+# Current directory: U:/SDK_Testing_Kondker
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11432 U:\SDK_Testing_Kondker\capture.xpr
+# Log file: U:/SDK_Testing_Kondker/vivado.log
+# Journal file: U:/SDK_Testing_Kondker\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project U:/SDK_Testing_Kondker/capture.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Temp/capture' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] Board Part Repository Path: Could not find the directory 'U:/../Users/Khondker/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store', nor could it be found using path 'C:/Users/Khondker/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 779.531 ; gain = 136.562
+update_compile_order -fileset sources_1
+open_bd_design {U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd}
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:axi_timer:2.0 - axi_timer_0
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_50M
+Adding component instance block -- xilinx.com:ip:axi_timer:2.0 - axi_timer_1
+Adding component instance block -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Successfully read diagram <design_1> from BD file <U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 881.074 ; gain = 75.723
+INFO: [Vivado 12-4158] Exported Hardware file is out of date. Exported hardware information may be inconsistent with respect to the current state of the design. It is recommended that you re-export the design and launch SDK otherwise SDK is launched with out of date hardware system file.
+launch_sdk -workspace U:/SDK_Testing_Kondker/capture.sdk -hwspec U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace U:/SDK_Testing_Kondker/capture.sdk -hwspec U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_3eg:part0:1.0 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-3eg/B.0/board.xml as part xczu3eg-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_3eg:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-3eg/D.0/board.xml as part xczu3eg-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_5ev:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-5ev/C.0/board.xml as part xczu5ev-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_3eg:part0:1.0 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-3eg/B.0/board.xml as part xczu3eg-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_3eg:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-3eg/D.0/board.xml as part xczu3eg-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_5ev:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-5ev/C.0/board.xml as part xczu5ev-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_3eg:part0:1.0 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-3eg/B.0/board.xml as part xczu3eg-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_3eg:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-3eg/D.0/board.xml as part xczu3eg-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_5ev:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-5ev/C.0/board.xml as part xczu5ev-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_3eg:part0:1.0 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-3eg/B.0/board.xml as part xczu3eg-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_3eg:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-3eg/D.0/board.xml as part xczu3eg-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_5ev:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-5ev/C.0/board.xml as part xczu5ev-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_3eg:part0:1.0 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-3eg/B.0/board.xml as part xczu3eg-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_3eg:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-3eg/D.0/board.xml as part xczu3eg-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_5ev:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-5ev/C.0/board.xml as part xczu5ev-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:genesys2:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys2/H/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_3eg:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-3eg/D.0/board.xml as part xczu3eg-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:gzu_5ev:part0:1.1 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/genesys-zu-5ev/C.0/board.xml as part xczu5ev-sfvc784-1-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part digilentinc.com:sword:part0:1.0 available at C:/Xilinx/Vivado/2019.1/data/boards/board_files/sword/C.0/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+set_property BOARD_PART_REPO_PATHS {C:/Users/nathani/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store} [current_project]
+WARNING: [Board 49-91] Board repository path 'C:/Users/nathani/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store' does not exist, it will not be used to search board files.
+set_param board.repoPaths {C:/Users/nathani/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store}
+set_property BOARD_PART_REPO_PATHS {C:/Users/nathani/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store} [current_project]
+set_param board.repoPaths {C:/Users/nathani/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store}
+set_property board_part digilentinc.com:cora-z7-07s:part0:1.1 [current_project]
+WARNING: [Project 1-153] The current project device 'xc7z010clg400-1' does not match with the device on the 'DIGILENTINC.COM:CORA-Z7-07S:PART0:1.1' board part. A device change to match the device on 'DIGILENTINC.COM:CORA-Z7-07S:PART0:1.1' board part is being done. Please upgrade the IP in the project via the upgrade_ip command or by selecting Reports => Reports IP Status.
+INFO: [Project 1-152] Project part set to zynq (xc7z007sclg400-1)
+set_property BOARD_PART_REPO_PATHS {C:/Users/nathani/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store} [current_project]
+set_param board.repoPaths {C:/Users/nathani/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store}
+report_ip_status -name ip_status 
+upgrade_ip [get_ips  {design_1_axi_timer_1_0 design_1_ps7_0_axi_periph_0 design_1_xlconcat_0_0 design_1_axi_timer_0_0 design_1_rst_ps7_0_50M_0 design_1_processing_system7_0_0}] -log ip_upgrade.log
+Upgrading 'U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_axi_timer_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_axi_timer_1_0 to use current project options
+INFO: [PS7-6] Configuring Board Preset part0. Please wait ......
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+INFO: [IP_Flow 19-3420] Updated design_1_processing_system7_0_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_ps7_0_axi_periph_0 to use current project options
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [IP_Flow 19-3420] Updated design_1_rst_ps7_0_50M_0 to use current project options
+INFO: [IP_Flow 19-3420] Updated design_1_xlconcat_0_0 to use current project options
+Wrote  : <U:\SDK_Testing_Kondker\capture.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'U:/SDK_Testing_Kondker/ip_upgrade.log'.
+upgrade_ip: Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1056.168 ; gain = 57.027
+export_ip_user_files -of_objects [get_ips {design_1_axi_timer_1_0 design_1_ps7_0_axi_periph_0 design_1_xlconcat_0_0 design_1_axi_timer_0_0 design_1_rst_ps7_0_50M_0 design_1_processing_system7_0_0}] -no_script -sync -force -quiet
+generate_target all [get_files  U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd]
+Wrote  : <U:\SDK_Testing_Kondker\capture.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/synth/design_1.vhd
+VHDL Output written to : U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_50M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconcat_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'u:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+generate_target: Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1236.008 ; gain = 179.840
+catch { config_ip_cache -export [get_ips -all design_1_processing_system7_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_axi_timer_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_rst_ps7_0_50M_0] }
+catch { config_ip_cache -export [get_ips -all design_1_axi_timer_1_0] }
+catch { config_ip_cache -export [get_ips -all design_1_xbar_0] }
+catch { config_ip_cache -export [get_ips -all design_1_auto_pc_0] }
+export_ip_user_files -of_objects [get_files U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs -jobs 6 {design_1_processing_system7_0_0_synth_1 design_1_axi_timer_0_0_synth_1 design_1_rst_ps7_0_50M_0_synth_1 design_1_axi_timer_1_0_synth_1 design_1_xbar_0_synth_1 design_1_auto_pc_0_synth_1}
+[Tue Apr 22 15:38:26 2025] Launched design_1_processing_system7_0_0_synth_1, design_1_axi_timer_0_0_synth_1, design_1_rst_ps7_0_50M_0_synth_1, design_1_axi_timer_1_0_synth_1, design_1_xbar_0_synth_1, design_1_auto_pc_0_synth_1...
+Run output will be captured here:
+design_1_processing_system7_0_0_synth_1: U:/SDK_Testing_Kondker/capture.runs/design_1_processing_system7_0_0_synth_1/runme.log
+design_1_axi_timer_0_0_synth_1: U:/SDK_Testing_Kondker/capture.runs/design_1_axi_timer_0_0_synth_1/runme.log
+design_1_rst_ps7_0_50M_0_synth_1: U:/SDK_Testing_Kondker/capture.runs/design_1_rst_ps7_0_50M_0_synth_1/runme.log
+design_1_axi_timer_1_0_synth_1: U:/SDK_Testing_Kondker/capture.runs/design_1_axi_timer_1_0_synth_1/runme.log
+design_1_xbar_0_synth_1: U:/SDK_Testing_Kondker/capture.runs/design_1_xbar_0_synth_1/runme.log
+design_1_auto_pc_0_synth_1: U:/SDK_Testing_Kondker/capture.runs/design_1_auto_pc_0_synth_1/runme.log
+export_simulation -of_objects [get_files U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd] -directory U:/SDK_Testing_Kondker/capture.ip_user_files/sim_scripts -ip_user_files_dir U:/SDK_Testing_Kondker/capture.ip_user_files -ipstatic_source_dir U:/SDK_Testing_Kondker/capture.ip_user_files/ipstatic -lib_map_path [list {modelsim=U:/SDK_Testing_Kondker/capture.cache/compile_simlib/modelsim} {questa=U:/SDK_Testing_Kondker/capture.cache/compile_simlib/questa} {riviera=U:/SDK_Testing_Kondker/capture.cache/compile_simlib/riviera} {activehdl=U:/SDK_Testing_Kondker/capture.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+make_wrapper -files [get_files U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd] -top
+report_ip_status -name ip_status 
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory U:/SDK_Testing_Kondker/capture.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Apr 22 15:39:33 2025] Launched design_1_auto_pc_0_synth_1, synth_1...
+Run output will be captured here:
+design_1_auto_pc_0_synth_1: U:/SDK_Testing_Kondker/capture.runs/design_1_auto_pc_0_synth_1/runme.log
+synth_1: U:/SDK_Testing_Kondker/capture.runs/synth_1/runme.log
+[Tue Apr 22 15:39:33 2025] Launched impl_1...
+Run output will be captured here: U:/SDK_Testing_Kondker/capture.runs/impl_1/runme.log
+file copy -force U:/SDK_Testing_Kondker/capture.runs/impl_1/design_1_wrapper.sysdef U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace U:/SDK_Testing_Kondker/capture.sdk -hwspec U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace U:/SDK_Testing_Kondker/capture.sdk -hwspec U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+file copy -force U:/SDK_Testing_Kondker/capture.runs/impl_1/design_1_wrapper.sysdef U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace U:/SDK_Testing_Kondker/capture.sdk -hwspec U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace U:/SDK_Testing_Kondker/capture.sdk -hwspec U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+delete_bd_objs [get_bd_nets xlconcat_0_dout]
+delete_bd_objs [get_bd_nets axi_timer_0_interrupt] [get_bd_nets axi_timer_1_interrupt] [get_bd_cells xlconcat_0]
+validate_bd_design
+reset_target all [get_files  U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects  [get_files  U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd] -sync -no_script -force -quiet
+delete_ip_run [get_files -of_objects [get_fileset sources_1] U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd]
+set_property synth_checkpoint_mode None [get_files  U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd]
+generate_target all [get_files  U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd]
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+Wrote  : <U:\SDK_Testing_Kondker\capture.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+VHDL Output written to : U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/synth/design_1.vhd
+VHDL Output written to : U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_50M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/xbar .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'u:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps7_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/synth/design_1.hwdef
+generate_target: Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 1330.793 ; gain = 52.582
+export_ip_user_files -of_objects [get_files U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd] -directory U:/SDK_Testing_Kondker/capture.ip_user_files/sim_scripts -ip_user_files_dir U:/SDK_Testing_Kondker/capture.ip_user_files -ipstatic_source_dir U:/SDK_Testing_Kondker/capture.ip_user_files/ipstatic -lib_map_path [list {modelsim=U:/SDK_Testing_Kondker/capture.cache/compile_simlib/modelsim} {questa=U:/SDK_Testing_Kondker/capture.cache/compile_simlib/questa} {riviera=U:/SDK_Testing_Kondker/capture.cache/compile_simlib/riviera} {activehdl=U:/SDK_Testing_Kondker/capture.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+make_wrapper -files [get_files U:/SDK_Testing_Kondker/capture.srcs/sources_1/bd/design_1/design_1.bd] -top
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Tue Apr 22 16:17:18 2025] Launched synth_1...
+Run output will be captured here: U:/SDK_Testing_Kondker/capture.runs/synth_1/runme.log
+[Tue Apr 22 16:17:18 2025] Launched impl_1...
+Run output will be captured here: U:/SDK_Testing_Kondker/capture.runs/impl_1/runme.log
+file copy -force U:/SDK_Testing_Kondker/capture.runs/impl_1/design_1_wrapper.sysdef U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace U:/SDK_Testing_Kondker/capture.sdk -hwspec U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace U:/SDK_Testing_Kondker/capture.sdk -hwspec U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+launch_sdk -workspace U:/SDK_Testing_Kondker/capture.sdk -hwspec U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace U:/SDK_Testing_Kondker/capture.sdk -hwspec U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+launch_sdk -workspace U:/SDK_Testing_Kondker/capture.sdk -hwspec U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace U:/SDK_Testing_Kondker/capture.sdk -hwspec U:/SDK_Testing_Kondker/capture.sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 22 16:28:52 2025...
